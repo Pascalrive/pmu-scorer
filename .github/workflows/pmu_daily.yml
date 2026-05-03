@@ -1,23 +1,25 @@
 # ============================================================
-#  GitHub Actions — PMU Daily Scorer v2 + Telegram
+#  GitHub Actions - PMU Daily Scorer v6 + Bilan du soir
 #
-#  Deux exécutions par jour :
-#    - 06h00 UTC (08h00 Paris) : analyse du matin
-#    - 10h30 UTC (12h30 Paris) : analyse H-30 avec cotes fraîches
+#  Trois executions par jour :
+#    - 09h00 UTC (11h00 Paris) : pronostics du matin
+#    - 10h30 UTC (12h30 Paris) : pronostics H-30 cotes fraiches
+#    - 18h00 UTC (20h00 Paris) : bilan du soir / comparaison resultats
 #
-#  Secrets GitHub à configurer (Settings → Secrets → Actions) :
-#    TELEGRAM_TOKEN     →  token de ton bot Telegram
-#    TELEGRAM_CHAT_ID   →  ton identifiant de chat Telegram
-#    ANTHROPIC_API_KEY  →  clé Claude API (optionnel, pour la presse)
+#  Secrets GitHub requis :
+#    TELEGRAM_TOKEN    -> token de ton bot Telegram
+#    TELEGRAM_CHAT_ID  -> ton Chat ID Telegram
+#    ANTHROPIC_API_KEY -> cle Claude API (optionnel, pour presse+fers)
 # ============================================================
 
-name: 🏇 PMU Daily Scorer v2
+name: PMU Daily Scorer v6
 
 on:
   schedule:
-    - cron: '0 9 * * *'       # 08h00 Paris — analyse du matin
-    - cron: '30 10 * * *'     # 12h30 Paris — analyse H-30
-  workflow_dispatch:            # Déclenchement manuel depuis GitHub UI
+    - cron: '0 9 * * *'      # 11h00 Paris - pronostics du matin
+    - cron: '30 10 * * *'    # 12h30 Paris - pronostics H-30
+    - cron: '0 18 * * *'     # 20h00 Paris - bilan du soir
+  workflow_dispatch:           # Declenchement manuel depuis GitHub UI
 
 jobs:
   score:
@@ -27,38 +29,57 @@ jobs:
 
     steps:
 
-      - name: 📥 Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 🐍 Setup Python 3.12
+      - name: Setup Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: 📦 Installer les dépendances
+      - name: Installer les dependances
         run: pip install requests
 
-      - name: 📁 Créer le dossier de résultats
+      - name: Creer le dossier de resultats
         run: mkdir -p resultats
 
-      - name: 🏇 Lancer le scorer PMU v2
+      - name: Recuperer les CSV du jour precedent (pour le bilan)
+        uses: actions/download-artifact@v4
+        with:
+          name: pmu-resultats-du-jour
+          path: resultats/
+        continue-on-error: true
+
+      - name: Lancer le scorer PMU v6 (pronostics)
+        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && (contains(github.event.schedule, '0 9') || contains(github.event.schedule, '30 10'))) }}
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python pmu_scorer.py
 
-      - name: 📊 Sauvegarder résultats CSV + logs
+      - name: Lancer le bilan du soir
+        if: ${{ github.event_name == 'schedule' && contains(github.event.schedule, '0 18') }}
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python pmu_results.py
+
+      - name: Sauvegarder resultats CSV
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pmu-resultats-${{ github.run_number }}-${{ github.run_attempt }}
+          name: pmu-resultats-du-jour
           path: |
             resultats/
             pmu_scorer.log
-          retention-days: 7
+            pmu_results.log
+          retention-days: 2
+          overwrite: true
 
-      - name: 📋 Afficher les dernières lignes du log
+      - name: Afficher les logs
         if: always()
-        run: tail -50 pmu_scorer.log || echo "Pas de log"
+        run: |
+          echo "=== SCORER LOG ===" && tail -30 pmu_scorer.log 2>/dev/null || true
+          echo "=== RESULTS LOG ===" && tail -30 pmu_results.log 2>/dev/null || true
