@@ -562,7 +562,7 @@ def main():
         for course in courses:
             nc         = course.get("numOfficiel") or course.get("numero")
             discipline = course.get("discipline", "")
-            if discipline not in DISCIPLINES:
+        if discipline not in DISCIPLINES and discipline not in {"ATTELE", "MONTE", "GALOP"}:
                 continue
             try:
                 res = analyser_course(
