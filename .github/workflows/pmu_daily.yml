@@ -1,0 +1,64 @@
+# ============================================================
+#  GitHub Actions — PMU Daily Scorer v2 + Telegram
+#
+#  Deux exécutions par jour :
+#    - 06h00 UTC (08h00 Paris) : analyse du matin
+#    - 10h30 UTC (12h30 Paris) : analyse H-30 avec cotes fraîches
+#
+#  Secrets GitHub à configurer (Settings → Secrets → Actions) :
+#    TELEGRAM_TOKEN     →  token de ton bot Telegram
+#    TELEGRAM_CHAT_ID   →  ton identifiant de chat Telegram
+#    ANTHROPIC_API_KEY  →  clé Claude API (optionnel, pour la presse)
+# ============================================================
+
+name: 🏇 PMU Daily Scorer v2
+
+on:
+  schedule:
+    - cron: '0 6 * * *'       # 08h00 Paris — analyse du matin
+    - cron: '30 10 * * *'     # 12h30 Paris — analyse H-30
+  workflow_dispatch:            # Déclenchement manuel depuis GitHub UI
+
+jobs:
+  score:
+    name: Analyser et envoyer sur Telegram
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Installer les dépendances
+        run: pip install requests
+
+      - name: 📁 Créer le dossier de résultats
+        run: mkdir -p resultats
+
+      - name: 🏇 Lancer le scorer PMU v2
+        env:
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python pmu_scorer.py
+
+      - name: 📊 Sauvegarder résultats CSV + logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pmu-resultats-${{ github.run_number }}-${{ github.run_attempt }}
+          path: |
+            resultats/
+            pmu_scorer.log
+          retention-days: 7
+
+      - name: 📋 Afficher les dernières lignes du log
+        if: always()
+        run: tail -50 pmu_scorer.log || echo "Pas de log"
