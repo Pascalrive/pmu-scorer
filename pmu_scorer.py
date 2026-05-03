@@ -1,7 +1,8 @@
 """
 =============================================================
-  PMU RACING SCORER v3 - Galop & Trot
+  PMU RACING SCORER v4 - Galop & Trot - France uniquement
 =============================================================
+  - Filtre : courses en France uniquement
   - Score proprietaire + trio ecurie
   - Mouvement de cote J-1 -> J
   - Signal presse via Claude API + web search
@@ -27,7 +28,10 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "")
 OUTPUT_DIR     = "resultats"
 
-# Tous les codes de discipline acceptes
+# Filtre pays : France uniquement
+PAYS_AUTORISES = {"FRA", "FRANCE"}
+
+# Codes de discipline acceptes
 DISCIPLINES = {
     "PLAT", "HAIES", "STEEPLE",
     "TROT_ATTELE", "TROT_MONTE",
@@ -46,12 +50,15 @@ W_ECURIE     = 8
 GRANDES_ECURIES = {
     "WERTHEIMER ET FRERE":   85,
     "AGA KHAN":              82,
+    "AGA KHAN STUDS":        82,
     "ROTHSCHILD":            80,
     "NIARCHOS":              78,
     "AL SHAQAB RACING":      80,
+    "WATHNAN RACING":        80,
     "GODOLPHIN":             83,
     "COOLMORE":              82,
     "JUDDMONTE":             81,
+    "FLAXMAN STABLES":       79,
     "HARAS DE BOUQUETOT":    72,
     "ECURIE ANTONIO CARO":   70,
     "GESTUT AMMERLAND":      68,
@@ -59,6 +66,9 @@ GRANDES_ECURIES = {
     "HARAS DE LA GOURDAINE": 68,
     "SAINT CLOUD RACING":    65,
     "FRANCOIS ROHAUT":       70,
+    "HARAS DE CLAIREFONTAINE": 72,
+    "ECURIE MESSICA":        68,
+    "G.AUGUSTIN-NORMAND":    75,
 }
 
 # ──────────────────────────────────────────────
@@ -84,8 +94,8 @@ def telegram_send(texte: str) -> bool:
         log.warning("Telegram non configure - message ignore.")
         return False
 
-    url    = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    limite = 4096
+    url      = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    limite   = 4096
     morceaux = [texte[i:i+limite] for i in range(0, len(texte), limite)]
 
     succes = True
@@ -93,10 +103,7 @@ def telegram_send(texte: str) -> bool:
         try:
             r = requests.post(
                 url,
-                json={
-                    "chat_id": TELEGRAM_CHAT,
-                    "text":    morceau,
-                },
+                json={"chat_id": TELEGRAM_CHAT, "text": morceau},
                 timeout=15,
             )
             if r.status_code != 200:
@@ -110,14 +117,10 @@ def telegram_send(texte: str) -> bool:
 
 
 def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: str) -> str:
-    """
-    Formate le recap des pronostics en texte brut pour Telegram.
-    Format : R2 C4 pour identifier les courses.
-    """
     lignes = [
-        f"PMU - Pronostics du {date_aff}",
+        f"PMU France - Pronostics du {date_aff}",
         run_label,
-        "=" * 30,
+        "=" * 35,
     ]
 
     vus = set()
@@ -131,54 +134,59 @@ def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: st
     courses_traitees.sort(key=lambda x: (x["reunion"], x["course"]))
 
     for r in courses_traitees:
-        disc  = r.get("discipline", "").replace("_", " ")
-        heure = r.get("heure", "")
-        cote  = r.get("cote_jour", 0)
-        score = r.get("score_total", 0)
-        nom   = r.get("nom_cheval", "?")
-        jock  = r.get("jockey", "?")
-        prop  = r.get("proprietaire", "")
+        disc      = r.get("discipline", "").replace("_", " ")
+        heure_ts  = r.get("heure", 0)
+        cote      = r.get("cote_jour", 0)
+        score     = r.get("score_total", 0)
+        nom       = r.get("nom_cheval", "?")
+        jock      = r.get("jockey", "?")
+        prop      = r.get("proprietaire", "")
+        hippodrome = r.get("hippodrome", "")
+        libelle   = r.get("libelle", "")
+
+        # Conversion timestamp -> heure lisible
+        heure_str = ""
+        if heure_ts and isinstance(heure_ts, (int, float)) and heure_ts > 0:
+            try:
+                heure_str = datetime.fromtimestamp(heure_ts / 1000).strftime("%Hh%M")
+            except Exception:
+                heure_str = ""
 
         # Mouvement de cote
         mvt = ""
         val = r.get("variation_cote_%", "")
         if val != "" and isinstance(val, (int, float)):
             if val <= -25:
-                mvt = f" [CHUTE COTE {val:+.0f}%!!!]"
+                mvt = f"  [CHUTE COTE {val:+.0f}%!!!]"
             elif val <= -10:
-                mvt = f" [cote -{abs(val):.0f}%]"
+                mvt = f"  [cote {val:+.0f}%]"
             elif val >= 15:
-                mvt = f" [cote +{val:.0f}%]"
+                mvt = f"  [cote +{val:.0f}%]"
 
-        # Ligne course
         lignes.append("")
-        lignes.append(f"{r['reunion']} {r['course']} - {disc} - {heure}")
-        lignes.append(f"** {nom} **")
-        lignes.append(f"   Cote: {cote:.1f}{mvt}")
-        lignes.append(f"   Score: {score:.1f}/100")
-        lignes.append(f"   Jockey: {jock}")
+        lignes.append(f"--- {r['reunion']} {r['course']} | {heure_str} | {disc} ---")
+        if libelle:
+            lignes.append(f"    {libelle[:45]}")
+        lignes.append(f"    >> {nom} <<")
+        lignes.append(f"    Cote: {cote:.1f}{mvt}")
+        lignes.append(f"    Score: {score:.1f}/100")
+        lignes.append(f"    Jockey: {jock}")
         if prop:
-            lignes.append(f"   Proprio: {prop[:35]}")
+            lignes.append(f"    Proprio: {prop[:35]}")
 
         # Signal presse
-        resume  = r.get("presse_resume", "")
-        signaux = r.get("presse_signaux", "")
+        resume    = r.get("presse_resume", "")
+        signaux   = r.get("presse_signaux", "")
         sentiment = r.get("presse_sentiment", 50)
         if resume and "Aucune" not in resume and len(resume) > 5:
-            if sentiment >= 65:
-                indicateur = "[+]"
-            elif sentiment <= 35:
-                indicateur = "[-]"
-            else:
-                indicateur = "[=]"
-            lignes.append(f"   Presse {indicateur}: {resume[:120]}")
+            indicateur = "[+]" if sentiment >= 65 else ("[-]" if sentiment <= 35 else "[=]")
+            lignes.append(f"    Presse {indicateur}: {resume[:120]}")
         if signaux:
-            lignes.append(f"   Signaux: {signaux[:80]}")
+            lignes.append(f"    Signaux: {signaux[:80]}")
 
     lignes.append("")
-    lignes.append("=" * 30)
-    lignes.append("Outil d'aide statistique. Jouer responsable.")
-
+    lignes.append("=" * 35)
+    lignes.append("Outil statistique - Jouer responsable.")
     return "\n".join(lignes)
 
 
@@ -186,7 +194,7 @@ def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: st
 #  2. APPELS API PMU
 # ──────────────────────────────────────────────
 HEADERS_PMU = {
-    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/3.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/4.0)",
     "Accept": "application/json",
 }
 
@@ -240,6 +248,35 @@ def get_cote_veille(date_str_veille: str, nom_cheval: str, nr, nc):
     return None
 
 
+def extraire_cote(partant: dict) -> float:
+    """Extrait la cote d'un partant en essayant plusieurs champs."""
+    # Priorite 1 : dernierRapportDirect
+    if partant.get("dernierRapportDirect"):
+        try:
+            val = partant["dernierRapportDirect"].get("rapport", 0)
+            if val and float(val) > 0:
+                return float(val)
+        except (ValueError, TypeError):
+            pass
+    # Priorite 2 : dernierRapportReference
+    if partant.get("dernierRapportReference"):
+        try:
+            val = partant["dernierRapportReference"].get("rapport", 0)
+            if val and float(val) > 0:
+                return float(val)
+        except (ValueError, TypeError):
+            pass
+    # Priorite 3 : cotesPmu
+    if partant.get("cotesPmu"):
+        try:
+            val = partant["cotesPmu"].get("rapport", 0)
+            if val and float(val) > 0:
+                return float(val)
+        except (ValueError, TypeError):
+            pass
+    return 0.0
+
+
 # ──────────────────────────────────────────────
 #  3. SCORES STATISTIQUES
 # ──────────────────────────────────────────────
@@ -273,7 +310,10 @@ def score_distance(performances: list, distance_course: int) -> float:
 def score_cote_statique(cote: float, cotes_course: list) -> float:
     if not cotes_course or not cote:
         return 50.0
-    mediane = sorted(cotes_course)[len(cotes_course) // 2]
+    cotes_valides = [c for c in cotes_course if c > 0]
+    if not cotes_valides:
+        return 50.0
+    mediane = sorted(cotes_valides)[len(cotes_valides) // 2]
     rapport = mediane / cote if cote > 0 else 0
     return min(100, max(0, rapport * 50))
 
@@ -343,12 +383,12 @@ def score_ecurie(proprietaire: str, entraineur: str, jockey: str, tous_partants:
 
 def calculer_score_total(s_forme, s_distance, s_cote, s_mouvement, s_jockey, s_ecurie) -> float:
     return (
-        s_forme      * W_FORME      / 100
-        + s_distance * W_DISTANCE   / 100
-        + s_cote     * W_COTE       / 100
-        + s_mouvement* W_MOUVEMENT  / 100
-        + s_jockey   * W_JOCKEY     / 100
-        + s_ecurie   * W_ECURIE     / 100
+        s_forme       * W_FORME      / 100
+        + s_distance  * W_DISTANCE   / 100
+        + s_cote      * W_COTE       / 100
+        + s_mouvement * W_MOUVEMENT  / 100
+        + s_jockey    * W_JOCKEY     / 100
+        + s_ecurie    * W_ECURIE     / 100
     )
 
 
@@ -419,12 +459,13 @@ def analyser_course(
     nr,
     nc,
     info_course: dict,
+    hippodrome: str = "",
     activer_presse: bool = True,
 ) -> list:
 
     discipline = info_course.get("discipline", "")
     distance   = info_course.get("distance", 0)
-    libelle    = info_course.get("libelle", f"R{nr}C{nc}")
+    libelle    = info_course.get("libelle", f"R{nr} C{nc}")
     heure      = info_course.get("heureDepart", "")
 
     partants = get_participants(date_str, nr, nc)
@@ -434,18 +475,7 @@ def analyser_course(
 
     log.info(f"  -> {len(partants)} partants trouves")
 
-    cotes_course = []
-    for p in partants:
-        rapport = None
-        if p.get("dernierRapportDirect"):
-            rapport = p["dernierRapportDirect"].get("rapport")
-        elif p.get("cotesPmu"):
-            rapport = p["cotesPmu"].get("rapport")
-        if rapport:
-            try:
-                cotes_course.append(float(rapport))
-            except (ValueError, TypeError):
-                pass
+    cotes_course = [extraire_cote(p) for p in partants if extraire_cote(p) > 0]
 
     resultats = []
     for partant in partants:
@@ -464,18 +494,7 @@ def analyser_course(
         if isinstance(proprietaire, dict):
             proprietaire = proprietaire.get("nom", "")
 
-        cote_jour = 0.0
-        if partant.get("dernierRapportDirect"):
-            try:
-                cote_jour = float(partant["dernierRapportDirect"].get("rapport", 0) or 0)
-            except (ValueError, TypeError):
-                pass
-        elif partant.get("cotesPmu"):
-            try:
-                cote_jour = float(partant["cotesPmu"].get("rapport", 0) or 0)
-            except (ValueError, TypeError):
-                pass
-
+        cote_jour   = extraire_cote(partant)
         perfs       = get_performances(date_str, nr, nc, num)
         time.sleep(0.3)
         cote_veille = get_cote_veille(date_veille, nom, nr, nc)
@@ -504,6 +523,7 @@ def analyser_course(
             "reunion":          f"R{nr}",
             "course":           f"C{nc}",
             "heure":            heure,
+            "hippodrome":       hippodrome,
             "libelle":          libelle,
             "discipline":       discipline,
             "distance_m":       distance,
@@ -532,14 +552,14 @@ def analyser_course(
     resultats.sort(key=lambda x: x["score_total"], reverse=True)
 
     log.info(f"\n{'─'*70}")
-    log.info(f"  {libelle} - {discipline} - {distance}m - {heure}")
+    log.info(f"  {libelle} - {discipline} - {distance}m - {hippodrome}")
     log.info(f"{'─'*70}")
     for i, r in enumerate(resultats[:5], 1):
         mvt  = f"{r['variation_cote_%']:+.0f}%" if r["variation_cote_%"] != "" else "n/a"
         flag = " *" if i == 1 else ""
         log.info(
-            f"  {i}. {r['nom_cheval']:<22} {str(r['proprietaire'])[:18]:<18} "
-            f"Cote:{r['cote_jour']:>5.1f} Mvt:{mvt:>5} Score:{r['score_total']:>5.1f}{flag}"
+            f"  {i}. {r['nom_cheval']:<22} Cote:{r['cote_jour']:>5.1f} "
+            f"Mvt:{mvt:>5} Score:{r['score_total']:>5.1f}{flag}"
         )
 
     return resultats
@@ -565,9 +585,9 @@ def main():
     activer_presse = bool(ANTHROPIC_KEY)
 
     log.info("=" * 70)
-    log.info(f"  PMU SCORER v3 - {date_aff} - {heure_run}")
-    log.info(f"  Presse  : {'OK active' if activer_presse else 'desactive (ANTHROPIC_API_KEY manquante)'}")
-    log.info(f"  Telegram: {'OK configure' if TELEGRAM_TOKEN else 'desactive (TELEGRAM_TOKEN manquant)'}")
+    log.info(f"  PMU SCORER v4 - France uniquement - {date_aff} - {heure_run}")
+    log.info(f"  Presse  : {'OK active' if activer_presse else 'desactive'}")
+    log.info(f"  Telegram: {'OK configure' if TELEGRAM_TOKEN else 'desactive'}")
     log.info("=" * 70)
 
     if TELEGRAM_TOKEN:
@@ -575,26 +595,35 @@ def main():
 
     programme = get_programme(date_str)
     if not programme:
-        msg = f"ERREUR PMU Scorer - impossible de recuperer le programme du {date_aff}"
+        msg = f"ERREUR - impossible de recuperer le programme du {date_aff}"
         log.error(msg)
         telegram_send(msg)
         return
 
     reunions = programme.get("programme", {}).get("reunions", [])
     if not reunions:
-        msg = f"ERREUR PMU Scorer - aucune reunion trouvee pour le {date_aff}"
+        msg = f"ERREUR - aucune reunion trouvee pour le {date_aff}"
         log.error(msg)
         telegram_send(msg)
         return
 
-    log.info(f"{len(reunions)} reunions trouvees.")
+    log.info(f"{len(reunions)} reunions trouvees au total.")
     tous_resultats = []
+    reunions_france = 0
 
     for reunion in reunions:
+        # Filtre France uniquement
+        pays = reunion.get("pays", {})
+        code_pays = pays.get("code", "") if isinstance(pays, dict) else str(pays)
+        if code_pays not in PAYS_AUTORISES:
+            log.info(f"  Ignore reunion {reunion.get('numExterne')} - pays: {code_pays}")
+            continue
+
+        reunions_france += 1
         nr         = reunion.get("numExterne") or reunion.get("numOfficiel") or reunion.get("numero")
         hippodrome = reunion.get("hippodrome", {}).get("libelleLong", "?")
         courses    = reunion.get("courses", [])
-        log.info(f"\n> R{nr} - {hippodrome} ({len(courses)} courses)")
+        log.info(f"\n> R{nr} - {hippodrome} ({len(courses)} courses) [FRANCE]")
 
         for course in courses:
             nc         = course.get("numExterne") or course.get("numOfficiel") or course.get("numero")
@@ -608,6 +637,7 @@ def main():
                 res = analyser_course(
                     date_str, date_veille, date_aff,
                     nr, nc, course,
+                    hippodrome=hippodrome,
                     activer_presse=activer_presse,
                 )
                 tous_resultats.extend(res)
@@ -615,10 +645,12 @@ def main():
                 log.error(f"Erreur R{nr} C{nc}: {e}")
             time.sleep(1)
 
+    log.info(f"\n{reunions_france} reunions francaises analysees.")
+
     if tous_resultats:
         nom_fichier = os.path.join(OUTPUT_DIR, f"pmu_{today.strftime('%Y%m%d_%H%M')}.csv")
         colonnes = [
-            "reunion", "course", "heure", "libelle", "discipline", "distance_m",
+            "reunion", "course", "heure", "hippodrome", "libelle", "discipline", "distance_m",
             "num_partant", "nom_cheval", "jockey", "entraineur", "proprietaire",
             "cote_veille", "cote_jour", "variation_cote_%",
             "score_forme", "score_distance", "score_cote", "score_mouvement",
@@ -629,7 +661,7 @@ def main():
             writer = csv.DictWriter(f, fieldnames=colonnes)
             writer.writeheader()
             writer.writerows(tous_resultats)
-        log.info(f"\nCSV exporte : {nom_fichier}")
+        log.info(f"CSV exporte : {nom_fichier}")
 
         message = formater_message_telegram(tous_resultats, date_aff, run_label)
         if telegram_send(message):
@@ -637,11 +669,11 @@ def main():
         else:
             log.warning("Envoi Telegram echoue.")
     else:
-        log.warning("Aucun resultat.")
-        telegram_send(f"PMU Scorer {date_aff} - aucun resultat trouve.")
+        log.warning("Aucun resultat France trouve.")
+        telegram_send(f"PMU Scorer {date_aff} - aucun resultat France trouve.")
 
     log.info("\n" + "=" * 70)
-    log.info("  SCORER v3 TERMINE")
+    log.info("  SCORER v4 TERMINE")
     log.info("=" * 70)
 
 
