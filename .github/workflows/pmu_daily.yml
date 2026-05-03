@@ -1,18 +1,18 @@
 # ============================================================
-#  GitHub Actions - PMU Daily Scorer v6 + Bilan du soir
+#  GitHub Actions - PMU Daily Scorer v7 + Bilan du soir
 #
 #  Trois executions par jour :
 #    - 09h00 UTC (11h00 Paris) : pronostics du matin
 #    - 10h30 UTC (12h30 Paris) : pronostics H-30 cotes fraiches
-#    - 18h00 UTC (20h00 Paris) : bilan du soir / comparaison resultats
+#    - 18h00 UTC (20h00 Paris) : bilan du soir
 #
 #  Secrets GitHub requis :
 #    TELEGRAM_TOKEN    -> token de ton bot Telegram
 #    TELEGRAM_CHAT_ID  -> ton Chat ID Telegram
-#    ANTHROPIC_API_KEY -> cle Claude API (optionnel, pour presse+fers)
+#    ANTHROPIC_API_KEY -> cle Claude API (presse + pronostics externes)
 # ============================================================
 
-name: PMU Daily Scorer v6
+name: PMU Daily Scorer v7
 
 on:
   schedule:
@@ -20,6 +20,9 @@ on:
     - cron: '30 10 * * *'    # 12h30 Paris - pronostics H-30
     - cron: '0 18 * * *'     # 20h00 Paris - bilan du soir
   workflow_dispatch:           # Declenchement manuel depuis GitHub UI
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # Node.js 24 pour eviter les warnings
 
 jobs:
   score:
@@ -44,14 +47,14 @@ jobs:
       - name: Creer le dossier de resultats
         run: mkdir -p resultats
 
-      - name: Recuperer les CSV du jour precedent (pour le bilan)
+      - name: Recuperer les CSV du jour (pour bilan du soir)
         uses: actions/download-artifact@v4
         with:
           name: pmu-resultats-du-jour
           path: resultats/
         continue-on-error: true
 
-      - name: Lancer le scorer PMU v6 (pronostics)
+      - name: Lancer le scorer PMU v7 (pronostics)
         if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && (contains(github.event.schedule, '0 9') || contains(github.event.schedule, '30 10'))) }}
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
@@ -66,7 +69,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_results.py
 
-      - name: Sauvegarder resultats CSV
+      - name: Sauvegarder resultats CSV et logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -78,8 +81,8 @@ jobs:
           retention-days: 2
           overwrite: true
 
-      - name: Afficher les logs
+      - name: Afficher les derniers logs
         if: always()
         run: |
-          echo "=== SCORER LOG ===" && tail -30 pmu_scorer.log 2>/dev/null || true
+          echo "=== SCORER LOG ===" && tail -50 pmu_scorer.log 2>/dev/null || true
           echo "=== RESULTS LOG ===" && tail -30 pmu_results.log 2>/dev/null || true
