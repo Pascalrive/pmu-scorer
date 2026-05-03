@@ -1,9 +1,9 @@
 """
 =============================================================
-  PMU RACING SCORER v2 — Galop & Trot
+  PMU RACING SCORER v3 - Galop & Trot
 =============================================================
-  - Score propriétaire + trio écurie
-  - Mouvement de cote J-1 → J
+  - Score proprietaire + trio ecurie
+  - Mouvement de cote J-1 -> J
   - Signal presse via Claude API + web search
   - Envoi automatique des pronostics sur Telegram
 =============================================================
@@ -27,7 +27,7 @@ TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "")
 OUTPUT_DIR     = "resultats"
 
-# Tous les codes de discipline acceptés (API PMU utilise plusieurs variantes)
+# Tous les codes de discipline acceptes
 DISCIPLINES = {
     "PLAT", "HAIES", "STEEPLE",
     "TROT_ATTELE", "TROT_MONTE",
@@ -42,7 +42,7 @@ W_MOUVEMENT  = 13
 W_JOCKEY     = 12
 W_ECURIE     = 8
 
-# Grandes écuries françaises — bonus notoriété
+# Grandes ecuries francaises - bonus notoriete
 GRANDES_ECURIES = {
     "WERTHEIMER ET FRERE":   85,
     "AGA KHAN":              82,
@@ -77,11 +77,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 # ──────────────────────────────────────────────
-#  1. TELEGRAM
+#  1. TELEGRAM (texte brut, sans HTML)
 # ──────────────────────────────────────────────
 def telegram_send(texte: str) -> bool:
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
-        log.warning("Telegram non configuré — message ignoré.")
+        log.warning("Telegram non configure - message ignore.")
         return False
 
     url    = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
@@ -93,11 +93,14 @@ def telegram_send(texte: str) -> bool:
         try:
             r = requests.post(
                 url,
-                json={"chat_id": TELEGRAM_CHAT, "text": morceau, "parse_mode": "HTML"},
+                json={
+                    "chat_id": TELEGRAM_CHAT,
+                    "text":    morceau,
+                },
                 timeout=15,
             )
             if r.status_code != 200:
-                log.warning(f"Telegram HTTP {r.status_code}: {r.text[:100]}")
+                log.warning(f"Telegram HTTP {r.status_code}: {r.text[:200]}")
                 succes = False
             time.sleep(0.5)
         except Exception as e:
@@ -107,15 +110,14 @@ def telegram_send(texte: str) -> bool:
 
 
 def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: str) -> str:
-    emoji_disc = {
-        "PLAT": "🐎", "HAIES": "🏇", "STEEPLE": "🏇", "GALOP": "🐎",
-        "TROT_ATTELE": "🏎", "TROT_MONTE": "🏇", "ATTELE": "🏎", "MONTE": "🏇",
-    }
-
+    """
+    Formate le recap des pronostics en texte brut pour Telegram.
+    Format : R2 C4 pour identifier les courses.
+    """
     lignes = [
-        f"🏇 <b>PMU — Pronostics du {date_aff}</b>",
-        f"<i>{run_label}</i>",
-        "━━━━━━━━━━━━━━━━━━━━━━━━",
+        f"PMU - Pronostics du {date_aff}",
+        run_label,
+        "=" * 30,
     ]
 
     vus = set()
@@ -129,46 +131,54 @@ def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: st
     courses_traitees.sort(key=lambda x: (x["reunion"], x["course"]))
 
     for r in courses_traitees:
-        disc  = r.get("discipline", "")
-        emoji = emoji_disc.get(disc, "🏇")
+        disc  = r.get("discipline", "").replace("_", " ")
         heure = r.get("heure", "")
+        cote  = r.get("cote_jour", 0)
+        score = r.get("score_total", 0)
+        nom   = r.get("nom_cheval", "?")
+        jock  = r.get("jockey", "?")
+        prop  = r.get("proprietaire", "")
 
-        mvt_txt = ""
+        # Mouvement de cote
+        mvt = ""
         val = r.get("variation_cote_%", "")
         if val != "" and isinstance(val, (int, float)):
             if val <= -25:
-                mvt_txt = f" 🔥<b>{val:+.0f}%</b>"
+                mvt = f" [CHUTE COTE {val:+.0f}%!!!]"
             elif val <= -10:
-                mvt_txt = f" 📈{val:+.0f}%"
+                mvt = f" [cote -{abs(val):.0f}%]"
             elif val >= 15:
-                mvt_txt = f" 📉{val:+.0f}%"
+                mvt = f" [cote +{val:.0f}%]"
 
-        lignes.append(
-            f"\n{emoji} <b>{r['reunion']}{r['course']}</b> {heure} — "
-            f"{disc.replace('_', ' ').title()}"
-        )
-        lignes.append(
-            f"⭐ <b>{r['nom_cheval']}</b>  •  Cote: <code>{r['cote_jour']:.1f}</code>{mvt_txt}"
-        )
-        lignes.append(
-            f"   Score: <code>{r['score_total']:.1f}/100</code>  •  Jockey: {r.get('jockey','?')}"
-        )
+        # Ligne course
+        lignes.append("")
+        lignes.append(f"{r['reunion']} {r['course']} - {disc} - {heure}")
+        lignes.append(f"** {nom} **")
+        lignes.append(f"   Cote: {cote:.1f}{mvt}")
+        lignes.append(f"   Score: {score:.1f}/100")
+        lignes.append(f"   Jockey: {jock}")
+        if prop:
+            lignes.append(f"   Proprio: {prop[:35]}")
 
-        proprio = r.get("proprietaire", "")
-        if proprio:
-            lignes.append(f"   Proprio: {proprio[:30]}")
-
+        # Signal presse
+        resume  = r.get("presse_resume", "")
+        signaux = r.get("presse_signaux", "")
         sentiment = r.get("presse_sentiment", 50)
-        resume    = r.get("presse_resume", "")
-        signaux   = r.get("presse_signaux", "")
-        if resume and "Aucune" not in resume:
-            icone = "🟢" if sentiment >= 65 else ("🔴" if sentiment <= 35 else "🟡")
-            lignes.append(f"   {icone} Presse: {resume[:120]}")
+        if resume and "Aucune" not in resume and len(resume) > 5:
+            if sentiment >= 65:
+                indicateur = "[+]"
+            elif sentiment <= 35:
+                indicateur = "[-]"
+            else:
+                indicateur = "[=]"
+            lignes.append(f"   Presse {indicateur}: {resume[:120]}")
         if signaux:
-            lignes.append(f"   💬 {signaux[:80]}")
+            lignes.append(f"   Signaux: {signaux[:80]}")
 
-    lignes.append("\n━━━━━━━━━━━━━━━━━━━━━━━━")
-    lignes.append("⚠️ <i>Outil d'aide statistique. Jouer responsable.</i>")
+    lignes.append("")
+    lignes.append("=" * 30)
+    lignes.append("Outil d'aide statistique. Jouer responsable.")
+
     return "\n".join(lignes)
 
 
@@ -176,7 +186,7 @@ def formater_message_telegram(tous_resultats: list, date_aff: str, run_label: st
 #  2. APPELS API PMU
 # ──────────────────────────────────────────────
 HEADERS_PMU = {
-    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/2.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/3.0)",
     "Accept": "application/json",
 }
 
@@ -187,7 +197,7 @@ def api_get(path: str):
         r = requests.get(url, headers=HEADERS_PMU, timeout=20)
         return r.json() if r.status_code == 200 else None
     except Exception as e:
-        log.warning(f"Erreur réseau {path}: {e}")
+        log.warning(f"Erreur reseau {path}: {e}")
         return None
 
 
@@ -201,7 +211,6 @@ def get_participants(date_str: str, nr, nc) -> list:
         participants = data.get("participants", [])
         if participants:
             return participants
-    # Fallback avec paramètre supplémentaire
     data2 = api_get(f"/programme/{date_str}/R{nr}/C{nc}/participants?combinePlacesEtCouplees=true")
     if data2 and isinstance(data2, dict):
         return data2.get("participants", [])
@@ -222,9 +231,11 @@ def get_cote_veille(date_str_veille: str, nom_cheval: str, nr, nc):
     partants = get_participants(date_str_veille, nr, nc)
     for p in partants:
         if p.get("nom", "").upper() == nom_cheval.upper():
-            cote_raw = p.get("cotesPmu", {}) or p.get("dernierRapportDirect", {})
-            if isinstance(cote_raw, dict):
-                val = cote_raw.get("rapport")
+            if p.get("dernierRapportDirect"):
+                val = p["dernierRapportDirect"].get("rapport")
+                return float(val) if val else None
+            elif p.get("cotesPmu"):
+                val = p["cotesPmu"].get("rapport")
                 return float(val) if val else None
     return None
 
@@ -290,7 +301,8 @@ def score_jockey(jockey_nom: str, tous_partants: list) -> float:
         return 50.0
     v = c = 0
     for p in tous_partants:
-        if p.get("nomJockey", "").lower() == jockey_nom.lower():
+        nom_j = p.get("driver") or p.get("nomJockey") or ""
+        if nom_j.lower() == jockey_nom.lower():
             v += p.get("nombreVictoires") or 0
             c += p.get("nombreCourses") or 0
     return (v / c * 100) if c else 50.0
@@ -299,7 +311,7 @@ def score_jockey(jockey_nom: str, tous_partants: list) -> float:
 def score_ecurie(proprietaire: str, entraineur: str, jockey: str, tous_partants: list) -> float:
     v_prop = c_prop = 0
     for p in tous_partants:
-        prop_p = (p.get("proprietaire") or "").upper()
+        prop_p = str(p.get("proprietaire") or "").upper()
         if prop_p and prop_p == proprietaire.upper():
             v_prop += p.get("nombreVictoires") or 0
             c_prop += p.get("nombreCourses") or 0
@@ -315,10 +327,10 @@ def score_ecurie(proprietaire: str, entraineur: str, jockey: str, tous_partants:
 
     tv = tc = 0
     for p in tous_partants:
-        prop_p   = (p.get("proprietaire") or "").upper()
-        entr_p   = (p.get("entraineur") or {})
+        prop_p   = str(p.get("proprietaire") or "").upper()
+        entr_p   = p.get("entraineur") or {}
         entr_nom = entr_p.get("nom", "") if isinstance(entr_p, dict) else str(entr_p)
-        jock_p   = (p.get("nomJockey") or "").lower()
+        jock_p   = str(p.get("driver") or p.get("nomJockey") or "").lower()
         if (prop_p == proprietaire.upper()
                 and entr_nom.lower() == entraineur.lower()
                 and jock_p == jockey.lower()):
@@ -341,26 +353,26 @@ def calculer_score_total(s_forme, s_distance, s_cote, s_mouvement, s_jockey, s_e
 
 
 # ──────────────────────────────────────────────
-#  4. SIGNAL PRESSE — CLAUDE API + WEB SEARCH
+#  4. SIGNAL PRESSE - CLAUDE API + WEB SEARCH
 # ──────────────────────────────────────────────
 def get_signal_presse(nom_cheval: str, date_affichage: str) -> dict:
     if not ANTHROPIC_KEY:
         return {"resume": "", "sentiment": 50.0, "sources": [], "signaux": []}
 
-    prompt = f"""Tu es un expert en courses hippiques françaises.
+    prompt = f"""Tu es un expert en courses hippiques francaises.
 Recherche sur le web les informations du {date_affichage} sur le cheval "{nom_cheval}"
-pour les courses PMU de ce jour (Paris-Turf, Equidia, At Racing, Turf Magazine, Google News turf).
+pour les courses PMU de ce jour (Paris-Turf, Equidia, At Racing, Turf Magazine).
 
-Réponds UNIQUEMENT en JSON valide sans texte autour :
+Reponds UNIQUEMENT en JSON valide sans texte autour :
 {{
   "resume": "2-3 phrases factuelles",
   "sentiment": 70,
   "sources": ["Paris-Turf"],
-  "signaux": ["entraîneur confiant"]
+  "signaux": ["entraineur confiant"]
 }}
 
-sentiment : 0-30 mauvais, 31-49 négatif, 50 neutre, 51-69 positif, 70-100 très positif.
-Si rien trouvé : {{"resume": "Aucune information presse trouvée", "sentiment": 50, "sources": [], "signaux": []}}"""
+sentiment : 0-30 mauvais, 50 neutre, 70-100 tres positif.
+Si rien trouve : {{"resume": "Aucune information presse trouvee", "sentiment": 50, "sources": [], "signaux": []}}"""
 
     try:
         r = requests.post(
@@ -417,10 +429,10 @@ def analyser_course(
 
     partants = get_participants(date_str, nr, nc)
     if not partants:
-        log.warning(f"  Pas de partants pour R{nr}C{nc}")
+        log.warning(f"  Pas de partants pour R{nr} C{nc}")
         return []
 
-    log.info(f"  → {len(partants)} partants trouvés")
+    log.info(f"  -> {len(partants)} partants trouves")
 
     cotes_course = []
     for p in partants:
@@ -440,17 +452,18 @@ def analyser_course(
         if partant.get("statut") == "NON_PARTANT":
             continue
 
-        num          = partant.get("numPmu") or partant.get("numero")
-        nom          = partant.get("nom", f"Partant {num}")
-        jockey       = partant.get("driver") or partant.get("nomJockey") or ""
-        entraineur   = partant.get("entraineur") or ""
+        num   = partant.get("numPmu") or partant.get("numero")
+        nom   = partant.get("nom", f"Partant {num}")
+        jockey = partant.get("driver") or partant.get("nomJockey") or ""
+
+        entraineur = partant.get("entraineur") or ""
         if isinstance(entraineur, dict):
             entraineur = entraineur.get("nom", "")
+
         proprietaire = partant.get("proprietaire") or ""
         if isinstance(proprietaire, dict):
             proprietaire = proprietaire.get("nom", "")
 
-        # Récupération de la cote
         cote_jour = 0.0
         if partant.get("dernierRapportDirect"):
             try:
@@ -472,7 +485,7 @@ def analyser_course(
         s_dist   = score_distance(perfs, distance)
         s_cote   = score_cote_statique(cote_jour, cotes_course)
         s_mvt    = score_mouvement_cote(cote_veille, cote_jour)
-        s_jockey = score_jockey(jockey, partants)
+        s_jockey = score_jockey(str(jockey), partants)
         s_ecurie = score_ecurie(str(proprietaire), str(entraineur), str(jockey), partants)
         s_total  = calculer_score_total(s_forme, s_dist, s_cote, s_mvt, s_jockey, s_ecurie)
 
@@ -518,13 +531,12 @@ def analyser_course(
 
     resultats.sort(key=lambda x: x["score_total"], reverse=True)
 
-    # Affichage console
     log.info(f"\n{'─'*70}")
-    log.info(f"  {libelle} — {discipline} — {distance}m — {heure}")
+    log.info(f"  {libelle} - {discipline} - {distance}m - {heure}")
     log.info(f"{'─'*70}")
     for i, r in enumerate(resultats[:5], 1):
-        mvt = f"{r['variation_cote_%']:+.0f}%" if r["variation_cote_%"] != "" else "n/a"
-        flag = " ⭐" if i == 1 else ""
+        mvt  = f"{r['variation_cote_%']:+.0f}%" if r["variation_cote_%"] != "" else "n/a"
+        flag = " *" if i == 1 else ""
         log.info(
             f"  {i}. {r['nom_cheval']:<22} {str(r['proprietaire'])[:18]:<18} "
             f"Cote:{r['cote_jour']:>5.1f} Mvt:{mvt:>5} Score:{r['score_total']:>5.1f}{flag}"
@@ -547,51 +559,49 @@ def main():
     run_label = (
         "Analyse du matin (cotes d'ouverture)"
         if today.hour < 10
-        else "Analyse de mi-journée (cotes fraîches + presse)"
+        else "Analyse de mi-journee (cotes fraiches + presse)"
     )
 
     activer_presse = bool(ANTHROPIC_KEY)
 
-    log.info("═" * 70)
-    log.info(f"  PMU SCORER v2 — {date_aff} — {heure_run}")
-    log.info(f"  Presse  : {'✅ activé' if activer_presse else '⚠️  désactivé (ANTHROPIC_API_KEY manquante)'}")
-    log.info(f"  Telegram: {'✅ configuré' if TELEGRAM_TOKEN else '⚠️  désactivé (TELEGRAM_TOKEN manquant)'}")
-    log.info("═" * 70)
+    log.info("=" * 70)
+    log.info(f"  PMU SCORER v3 - {date_aff} - {heure_run}")
+    log.info(f"  Presse  : {'OK active' if activer_presse else 'desactive (ANTHROPIC_API_KEY manquante)'}")
+    log.info(f"  Telegram: {'OK configure' if TELEGRAM_TOKEN else 'desactive (TELEGRAM_TOKEN manquant)'}")
+    log.info("=" * 70)
 
     if TELEGRAM_TOKEN:
-        telegram_send(f"🏇 <b>PMU Scorer démarré</b> — {date_aff} {heure_run}\n<i>{run_label}...</i>")
+        telegram_send(f"PMU Scorer demarre - {date_aff} {heure_run}\n{run_label}...")
 
     programme = get_programme(date_str)
     if not programme:
-        msg = f"❌ PMU Scorer — impossible de récupérer le programme du {date_aff}"
+        msg = f"ERREUR PMU Scorer - impossible de recuperer le programme du {date_aff}"
         log.error(msg)
         telegram_send(msg)
         return
 
     reunions = programme.get("programme", {}).get("reunions", [])
     if not reunions:
-        msg = f"❌ PMU Scorer — aucune réunion trouvée pour le {date_aff}"
+        msg = f"ERREUR PMU Scorer - aucune reunion trouvee pour le {date_aff}"
         log.error(msg)
         telegram_send(msg)
         return
 
-    log.info(f"{len(reunions)} réunions trouvées.")
+    log.info(f"{len(reunions)} reunions trouvees.")
     tous_resultats = []
 
     for reunion in reunions:
-        # Utilise numExterne en priorité (correspond à l'URL de l'API)
         nr         = reunion.get("numExterne") or reunion.get("numOfficiel") or reunion.get("numero")
         hippodrome = reunion.get("hippodrome", {}).get("libelleLong", "?")
         courses    = reunion.get("courses", [])
-        log.info(f"\n▶ R{nr} — {hippodrome} ({len(courses)} courses)")
+        log.info(f"\n> R{nr} - {hippodrome} ({len(courses)} courses)")
 
         for course in courses:
-            # Utilise numExterne en priorité
             nc         = course.get("numExterne") or course.get("numOfficiel") or course.get("numero")
             discipline = course.get("discipline", "")
 
             if discipline not in DISCIPLINES:
-                log.info(f"  Ignoré R{nr}C{nc} — discipline: {discipline}")
+                log.info(f"  Ignore R{nr} C{nc} - discipline: {discipline}")
                 continue
 
             try:
@@ -602,7 +612,7 @@ def main():
                 )
                 tous_resultats.extend(res)
             except Exception as e:
-                log.error(f"Erreur R{nr}C{nc}: {e}")
+                log.error(f"Erreur R{nr} C{nc}: {e}")
             time.sleep(1)
 
     if tous_resultats:
@@ -619,20 +629,20 @@ def main():
             writer = csv.DictWriter(f, fieldnames=colonnes)
             writer.writeheader()
             writer.writerows(tous_resultats)
-        log.info(f"\n✅ CSV exporté : {nom_fichier}")
+        log.info(f"\nCSV exporte : {nom_fichier}")
 
         message = formater_message_telegram(tous_resultats, date_aff, run_label)
         if telegram_send(message):
-            log.info("✅ Message Telegram envoyé.")
+            log.info("Message Telegram envoye.")
         else:
-            log.warning("⚠️  Envoi Telegram échoué.")
+            log.warning("Envoi Telegram echoue.")
     else:
-        log.warning("Aucun résultat.")
-        telegram_send(f"⚠️ PMU Scorer {date_aff} — aucun résultat trouvé.")
+        log.warning("Aucun resultat.")
+        telegram_send(f"PMU Scorer {date_aff} - aucun resultat trouve.")
 
-    log.info("\n" + "═" * 70)
-    log.info("  SCORER v2 TERMINÉ ✓")
-    log.info("═" * 70)
+    log.info("\n" + "=" * 70)
+    log.info("  SCORER v3 TERMINE")
+    log.info("=" * 70)
 
 
 if __name__ == "__main__":
