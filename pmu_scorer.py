@@ -196,11 +196,11 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
             avantage   = " (AVANTAGE)" if corde and corde <= 3 else ""
             poids_info = f"Poids {poids/10:.1f}kg" if poids else ""
 
-            # Pronostics
-            if nb_sources_total > 0 and nb_prono > 0:
+            # Pronostics — toujours afficher meme si 0
+            if nb_sources_total > 0:
                 prono_line = f"{nb_prono} source(s) sur {nb_sources_total} donnent ce cheval gagnant ({pct_prono:.0f}%)"
             else:
-                prono_line = ""
+                prono_line = "Pronostics externes : en cours de collecte"
 
             # Presse
             resume    = cheval.get("presse_resume", "")
@@ -208,11 +208,11 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
             sentiment = cheval.get("presse_sentiment", 50)
 
             # Affichage
+            prob       = cheval.get("probabilite", 0)
             prefixe = ">> " if rang == 1 else "   "
             lignes.append(f"{prefixe}{rang}. {nom} (cote {cote:.1f}){mvt}")
-            lignes.append(f"   Score global: {score:.1f}%")
-            if prono_line:
-                lignes.append(f"   {prono_line}")
+            lignes.append(f"   Score global: {score:.1f}% | Probabilite: {prob:.1f}%")
+            lignes.append(f"   {prono_line}")
 
             details = []
             if corde_info:
