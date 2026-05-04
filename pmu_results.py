@@ -1,9 +1,9 @@
 """
 =============================================================
-  PMU RESULTS v2 - Bilan du soir
+  PMU RESULTS v3 - Bilan du soir
 =============================================================
-  Compare les pronostics du matin avec les resultats reels.
-  Affiche les probabilites et le taux de reussite.
+  Lit le CSV depuis le depot Git (plus fiable que les artifacts).
+  Compare pronostics top2 avec resultats reels.
 =============================================================
 """
 
@@ -32,7 +32,7 @@ logging.basicConfig(
 log = logging.getLogger("pmu_results")
 
 HEADERS_PMU = {
-    "User-Agent": "Mozilla/5.0 (compatible; PMU-Results/2.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; PMU-Results/3.0)",
     "Accept": "application/json",
 }
 
@@ -75,13 +75,11 @@ def get_resultats_course(date_str: str, nr, nc) -> dict:
     data = api_get(f"/programme/{date_str}/R{nr}/C{nc}/participants")
     if not data or not isinstance(data, dict):
         return {}
-
     resultats = {}
     for partant in data.get("participants", []):
         num   = partant.get("numPmu") or partant.get("numero")
         nom   = partant.get("nom", "")
         place = partant.get("ordreArrivee") or partant.get("place")
-
         if num and place:
             try:
                 resultats[str(num)] = int(place)
@@ -111,64 +109,74 @@ def get_rapport_gagnant(date_str: str, nr, nc) -> float:
     return 0.0
 
 
-def lire_pronostics_du_jour(date_str_fichier: str) -> list:
+def lire_pronostics_du_jour(date_str_fichier: str) -> dict:
+    """
+    Lit le CSV du jour depuis le dossier resultats/.
+    Retourne un dict {(reunion, course): [top1, top2]}
+    """
+    # Chercher tous les CSV du jour
     pattern  = os.path.join(OUTPUT_DIR, f"pmu_{date_str_fichier}_*.csv")
     fichiers = sorted(glob.glob(pattern))
 
     if not fichiers:
-        log.warning(f"Aucun fichier CSV trouve pour {date_str_fichier}")
-        return []
+        log.warning(f"Aucun fichier CSV trouve pour {date_str_fichier} dans {OUTPUT_DIR}/")
+        log.info(f"Fichiers disponibles : {os.listdir(OUTPUT_DIR) if os.path.exists(OUTPUT_DIR) else 'dossier absent'}")
+        return {}
 
     fichier = fichiers[-1]
     log.info(f"Lecture : {fichier}")
 
-    pronostics = []
-    vus        = set()
-
+    courses = {}
     try:
         with open(fichier, "r", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             rows   = list(reader)
 
-        # Grouper par course et garder le top 2
-        courses = {}
+        # Grouper par course
+        grouped = {}
         for row in rows:
             cle = (row.get("reunion", ""), row.get("course", ""))
-            if cle not in courses:
-                courses[cle] = []
-            courses[cle].append(row)
+            if cle not in grouped:
+                grouped[cle] = []
+            grouped[cle].append(row)
 
-        for cle, partants in courses.items():
-            partants_tries = sorted(
+        # Garder le top 2 par course
+        for cle, partants in grouped.items():
+            tries = sorted(
                 partants,
                 key=lambda x: float(x.get("score_total", 0) or 0),
                 reverse=True
             )
-            for rang, row in enumerate(partants_tries[:2], 1):
-                pronostics.append({
-                    "reunion":       row.get("reunion", ""),
-                    "course":        row.get("course", ""),
-                    "hippodrome":    row.get("hippodrome", ""),
-                    "libelle":       row.get("libelle", ""),
-                    "discipline":    row.get("discipline", ""),
-                    "nom_cheval":    row.get("nom_cheval", ""),
-                    "num_partant":   row.get("num_partant", ""),
-                    "cote_jour":     float(row.get("cote_jour", 0) or 0),
-                    "score_total":   float(row.get("score_total", 0) or 0),
-                    "nb_pronostics": int(float(row.get("nb_pronostics", 0) or 0)),
-                    "pct_pronostics": float(row.get("pct_pronostics", 0) or 0),
-                    "nb_sources":    int(float(row.get("nb_sources_total", 0) or 0)),
-                    "jockey":        row.get("jockey", ""),
-                    "rang_prono":    rang,
-                    "nr":            row.get("reunion", "R0").replace("R", ""),
-                    "nc":            row.get("course", "C0").replace("C", ""),
-                })
+            courses[cle] = [
+                {
+                    "reunion":       r.get("reunion", ""),
+                    "course":        r.get("course", ""),
+                    "hippodrome":    r.get("hippodrome", ""),
+                    "terrain":       r.get("terrain", ""),
+                    "libelle":       r.get("libelle", ""),
+                    "discipline":    r.get("discipline", ""),
+                    "nom_cheval":    r.get("nom_cheval", ""),
+                    "num_partant":   r.get("num_partant", ""),
+                    "cote_jour":     float(r.get("cote_jour", 0) or 0),
+                    "score_total":   float(r.get("score_total", 0) or 0),
+                    "probabilite":   0.0,
+                    "nb_pronostics": int(float(r.get("nb_pronostics", 0) or 0)),
+                    "pct_pronostics": float(r.get("pct_pronostics", 0) or 0),
+                    "nb_sources":    int(float(r.get("nb_sources_total", 0) or 0)),
+                    "value_bet":     r.get("value_bet", "False") == "True",
+                    "jockey":        r.get("jockey", ""),
+                    "rang":          i + 1,
+                    "nr":            r.get("reunion", "R0").replace("R", ""),
+                    "nc":            r.get("course", "C0").replace("C", ""),
+                }
+                for i, r in enumerate(tries[:2])
+            ]
 
     except Exception as e:
         log.error(f"Erreur lecture CSV: {e}")
 
-    log.info(f"{len(pronostics)} pronostics charges.")
-    return pronostics
+    log.info(f"{len(courses)} courses chargees.")
+    return courses
 
 
 def main():
@@ -179,39 +187,33 @@ def main():
     heure_run     = today.strftime("%Hh%M")
 
     log.info("=" * 70)
-    log.info(f"  PMU RESULTS v2 - Bilan du {date_aff} - {heure_run}")
+    log.info(f"  PMU RESULTS v3 - Bilan du {date_aff} - {heure_run}")
     log.info("=" * 70)
 
-    if TELEGRAM_TOKEN:
-        telegram_send(f"PMU Bilan du soir - {date_aff} {heure_run}\nComparaison pronostics vs resultats...")
+    telegram_send(f"PMU Bilan du soir - {date_aff} {heure_run}\nComparaison pronostics vs resultats...")
 
-    pronostics = lire_pronostics_du_jour(date_str_fich)
-    if not pronostics:
-        msg = f"PMU Bilan {date_aff} - Aucun pronostic trouve."
+    courses = lire_pronostics_du_jour(date_str_fich)
+    if not courses:
+        msg = f"PMU Bilan {date_aff} - Aucun pronostic du jour trouve.\nVerifiez que le script du matin a bien tourne."
+        log.warning(msg)
         telegram_send(msg)
         return
 
-    # Grouper par course pour afficher les 2 chevaux ensemble
-    courses_dict = {}
-    for p in pronostics:
-        cle = (p["reunion"], p["course"])
-        if cle not in courses_dict:
-            courses_dict[cle] = []
-        courses_dict[cle].append(p)
-
-    lignes_bilan = [
+    lignes = [
         f"PMU France - Bilan du {date_aff}",
         "Pronostics vs Resultats reels",
         "=" * 38,
     ]
 
-    nb_gagnants_1  = 0   # 1er exact
-    nb_places      = 0   # top 3
-    nb_top2_ok     = 0   # gagnant dans notre top 2
+    nb_gagnants_1  = 0
+    nb_places      = 0
+    nb_top2_ok     = 0
     nb_courses     = 0
-    gains_theoriques = 0.0
+    gains          = 0.0
+    value_bets_ok  = 0
+    value_bets_tot = 0
 
-    for (reunion, course), chevaux in sorted(courses_dict.items()):
+    for (reunion, course), chevaux in sorted(courses.items()):
         nr = chevaux[0]["nr"]
         nc = chevaux[0]["nc"]
 
@@ -220,18 +222,21 @@ def main():
 
         disc    = chevaux[0].get("discipline", "").replace("_", " ")
         libelle = chevaux[0].get("libelle", "")
+        terrain = chevaux[0].get("terrain", "")
 
-        lignes_bilan.append("")
-        lignes_bilan.append(f"{reunion} {course} | {disc}")
+        terrain_str = f" | {terrain}" if terrain else ""
+        lignes.append("")
+        lignes.append(f"{reunion} {course} | {disc}{terrain_str}")
         if libelle:
-            lignes_bilan.append(f"  {libelle[:45]}")
+            lignes.append(f"  {libelle[:45]}")
 
         if not resultats_course:
-            lignes_bilan.append("  Course non encore disputee ou resultats non disponibles")
+            lignes.append("  Resultats non encore disponibles")
             continue
 
         nb_courses += 1
         gagnant_dans_top2 = False
+        rapport = 0.0
 
         for cheval in chevaux:
             nom       = cheval["nom_cheval"]
@@ -240,22 +245,28 @@ def main():
             nb_prono  = cheval["nb_pronostics"]
             nb_src    = cheval["nb_sources"]
             pct_prono = cheval["pct_pronostics"]
-            rang      = cheval["rang_prono"]
+            rang      = cheval["rang"]
+            value     = cheval["value_bet"]
 
             place = (
                 resultats_course.get(nom.upper())
                 or resultats_course.get(str(cheval["num_partant"]))
             )
 
-            # Statut
+            # Compter les value bets
+            if rang == 1 and value:
+                value_bets_tot += 1
+
             if place == 1:
                 statut = "GAGNANT !!!"
-                if rang == 1:
-                    nb_gagnants_1 += 1
                 gagnant_dans_top2 = True
                 rapport = get_rapport_gagnant(date_str, nr, nc)
                 if rapport > 0:
-                    gains_theoriques += rapport
+                    gains += rapport
+                if rang == 1:
+                    nb_gagnants_1 += 1
+                    if value:
+                        value_bets_ok += 1
             elif place and place <= 3:
                 statut = f"{place}eme - Place"
                 if rang == 1:
@@ -263,15 +274,19 @@ def main():
             elif place:
                 statut = f"{place}eme - Rate"
             else:
-                statut = "Position non disponible"
+                statut = "Non disponible"
 
+            vb_str = " [VALUE BET]" if value else ""
             prefixe = "  1." if rang == 1 else "  2."
-            lignes_bilan.append(f"{prefixe} {nom} (cote {cote:.1f}) -> {statut}")
+            lignes.append(f"{prefixe} {nom} (cote {cote:.1f}){vb_str} -> {statut}")
+
             if nb_src > 0:
-                lignes_bilan.append(
-                    f"     {nb_prono} source(s) sur {nb_src} donnaient ce cheval gagnant ({pct_prono:.0f}%)"
-                )
-            lignes_bilan.append(f"     Score: {score:.1f}%")
+                lignes.append(f"     {nb_prono}/{nb_src} sources ({pct_prono:.0f}%) | Score: {score:.1f}%")
+            else:
+                lignes.append(f"     Score: {score:.1f}%")
+
+            if place == 1 and rapport > 0:
+                lignes.append(f"     Rapport gagnant: {rapport:.1f}x")
 
         if gagnant_dans_top2:
             nb_top2_ok += 1
@@ -279,31 +294,33 @@ def main():
         time.sleep(0.3)
 
     # Bilan global
-    lignes_bilan.append("")
-    lignes_bilan.append("=" * 38)
-    lignes_bilan.append(f"BILAN DU JOUR - {date_aff}")
-    lignes_bilan.append(f"  Courses analysees       : {nb_courses}")
-    lignes_bilan.append(f"  1er exact (choix n1)    : {nb_gagnants_1}/{nb_courses}")
-    lignes_bilan.append(f"  Gagnant dans notre top2 : {nb_top2_ok}/{nb_courses}")
-    lignes_bilan.append(f"  Places (1er-3eme, n1)   : {nb_places}/{nb_courses}")
+    lignes.append("")
+    lignes.append("=" * 38)
+    lignes.append(f"BILAN DU JOUR - {date_aff}")
+    lignes.append(f"  Courses analysees       : {nb_courses}")
+    lignes.append(f"  1er exact (choix n1)    : {nb_gagnants_1}/{nb_courses}")
+    lignes.append(f"  Gagnant dans notre top2 : {nb_top2_ok}/{nb_courses}")
+    lignes.append(f"  Places top3 (choix n1)  : {nb_places}/{nb_courses}")
     if nb_courses > 0:
-        lignes_bilan.append(f"  Taux 1er exact          : {nb_gagnants_1/nb_courses*100:.0f}%")
-        lignes_bilan.append(f"  Taux top2 gagnant       : {nb_top2_ok/nb_courses*100:.0f}%")
-    if gains_theoriques > 0:
-        lignes_bilan.append(f"  Gains theoriques        : {gains_theoriques:.1f}x (pour 1 euro/course)")
-    lignes_bilan.append("")
-    lignes_bilan.append("Outil statistique - Jouer responsable.")
+        lignes.append(f"  Taux 1er exact          : {nb_gagnants_1/nb_courses*100:.0f}%")
+        lignes.append(f"  Taux top2 gagnant       : {nb_top2_ok/nb_courses*100:.0f}%")
+    if value_bets_tot > 0:
+        lignes.append(f"  Value bets              : {value_bets_ok}/{value_bets_tot} gagnants")
+    if gains > 0:
+        lignes.append(f"  Gains theoriques        : {gains:.1f}x (pour 1 euro/course)")
+    lignes.append("")
+    lignes.append("Outil statistique - Jouer responsable.")
 
-    message = "\n".join(lignes_bilan)
+    message = "\n".join(lignes)
     log.info(message)
 
     if telegram_send(message):
-        log.info("Bilan Telegram envoye.")
+        log.info("Bilan envoye sur Telegram.")
     else:
         log.warning("Envoi Telegram echoue.")
 
     log.info("\n" + "=" * 70)
-    log.info("  RESULTS v2 TERMINE")
+    log.info("  RESULTS v3 TERMINE")
     log.info("=" * 70)
 
 
