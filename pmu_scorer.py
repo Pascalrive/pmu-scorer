@@ -1,14 +1,23 @@
 """
 =============================================================
-  PMU RACING SCORER v8 - France uniquement
+  PMU RACING SCORER v9 - France uniquement
 =============================================================
-  Nouveautes v8 :
-    - Etat du terrain (nouveau critere)
-    - Historique sur l'hippodrome
-    - Forme fraiche (30 derniers jours)
-    - Value betting : cherche les chevaux sous-cotes
-    - Poids revus : pronostics externes = 25pts
-    - Sauvegarde CSV dans le depot Git
+  Nouveautes v9 :
+    - GALOP et TROT traites separement (criteres differents)
+    - Sources pronostics ponderees par taux de reussite top3
+    - Score entraineur (forme + taux victoire)
+    - Alerte consensus fort (3 sources premium d'accord)
+    - Poids revus selon discipline
+=============================================================
+
+  GALOP (Plat, Haies, Steeple) :
+    Cle : Forme, Distance, Terrain, Jockey, Cote
+    Corde moins importante, Poids important
+
+  TROT (Attele, Monte) :
+    Cle : Corde (decisive !), Forme, Allure, Distance
+    Poids moins important, Corde primordiale
+
 =============================================================
 """
 
@@ -32,35 +41,79 @@ OUTPUT_DIR     = "resultats"
 
 PAYS_AUTORISES = {"FRA", "FRANCE"}
 
-DISCIPLINES = {
-    "PLAT", "HAIES", "STEEPLE",
-    "TROT_ATTELE", "TROT_MONTE",
-    "ATTELE", "MONTE", "GALOP",
+DISCIPLINES_GALOP = {"PLAT", "HAIES", "STEEPLE", "GALOP"}
+DISCIPLINES_TROT  = {"TROT_ATTELE", "TROT_MONTE", "ATTELE", "MONTE"}
+DISCIPLINES       = DISCIPLINES_GALOP | DISCIPLINES_TROT
+
+# ── Sources ponderees par taux de reussite TOP 3 ──
+SOURCES_POIDS = {
+    "Turf BZH":          4.0,   # IA + ELO, ~70% top3
+    "Paris-Turf":        3.5,   # Référence, ~58% top3
+    "Frequence Turf":    3.2,   # Outsiders, ~58% top3
+    "Equidia":           3.0,   # Tuyaux derniere minute, ~54% top3
+    "Turfomania":        2.5,   # Communautaire, ~52% top3
+    "Zone-Turf":         2.5,   # Synthese presse, ~50% top3
+    "Turfoo":            2.5,   # Algo temps reel, ~50% top3
+    "Geny":              2.0,   # Video + analyses, ~48% top3
+    "Canalturf":         2.0,   # Journalistes, ~45% top3
+    "GRM Turf":          2.0,   # IA benefices, ~45% top3
+    "Turf-fr":           1.5,   # General, ~42% top3
+    "Tierce Magazine":   1.5,   # Presse traditionnelle
+    "Paris Courses":     1.5,
+    "Teleturf":          1.5,
+    "Le Trot":           2.0,   # Specialiste trot
+    "Jeu Gagnant":       1.5,
+    "PMU officiel":      2.5,   # Pronostics PMU internes
 }
 
-SOURCES_PRONOSTICS = [
-    "Paris-Turf", "Equidia", "Geny Courses", "Turf Magazine",
-    "At Racing", "Teleturf", "Le Trot", "Jeu Gagnant",
-    "Les Turfistes", "Pronostics-courses.fr", "Cheval-FR",
-    "Turf-fr.com", "Mes-pronostics.com", "Zone-Turf",
+SOURCES_GALOP = [
+    "Turf BZH", "Paris-Turf", "Frequence Turf", "Equidia",
+    "Turfomania", "Zone-Turf", "Turfoo", "Geny", "Canalturf",
+    "GRM Turf", "Tierce Magazine", "PMU officiel",
 ]
 
-# ── Poids du score final (total = 100) ──────────
-W_FORME_RECENTE  = 15   # Forme globale
-W_FORME_FRAICHE  = 7    # NOUVEAU : courses des 30 derniers jours
-W_DISTANCE       = 10   # Adequation distance
-W_TERRAIN        = 8    # NOUVEAU : etat du terrain
-W_HIPPODROME     = 5    # NOUVEAU : historique sur cet hippodrome
-W_PRONOSTICS     = 25   # Consensus sources externes (augmente)
-W_MOUVEMENT      = 12   # Mouvement de cote J-1->J
-W_COTE           = 5    # Valeur de cote (reduit - evite de suivre les favoris)
-W_JOCKEY         = 8    # Stats jockey
-W_CORDE          = 5    # Place a la corde
+SOURCES_TROT = [
+    "Le Trot", "Equidia", "Paris-Turf", "Turfomania",
+    "Zone-Turf", "Turfoo", "Geny", "Frequence Turf",
+    "GRM Turf", "PMU officiel", "Tierce Magazine",
+]
 
-# Total = 100
-assert W_FORME_RECENTE + W_FORME_FRAICHE + W_DISTANCE + W_TERRAIN + W_HIPPODROME + \
-       W_PRONOSTICS + W_MOUVEMENT + W_COTE + W_JOCKEY + W_CORDE == 100, "Total != 100"
+# Sources premium - si 3 d'accord = alerte consensus fort
+SOURCES_PREMIUM = {"Turf BZH", "Paris-Turf", "Equidia", "Frequence Turf", "Le Trot"}
 
+# ── Poids GALOP (total = 100) ──────────────────
+W_GALOP = {
+    "pronostics":    25,   # Consensus sources ponderees
+    "forme_recente": 18,   # Forme globale
+    "forme_fraiche":  7,   # 30 derniers jours
+    "distance":       9,   # Adequation distance
+    "terrain":       10,   # Etat du terrain (crucial en galop)
+    "mouvement":     10,   # Mouvement de cote
+    "jockey":        10,   # Stats jockey (important en galop)
+    "entraineur":     5,   # Forme entraineur (nouveau)
+    "hippodrome":     4,   # Historique hippodrome
+    "corde":          2,   # Peu important en galop
+}
+
+# ── Poids TROT (total = 100) ──────────────────
+W_TROT = {
+    "pronostics":    25,   # Consensus sources ponderees
+    "forme_recente": 18,   # Forme globale
+    "forme_fraiche":  5,   # 30 derniers jours
+    "distance":       8,   # Distance
+    "terrain":        5,   # Moins crucial en trot
+    "mouvement":     10,   # Mouvement de cote
+    "jockey":         7,   # Driver (moins decisif qu'en galop)
+    "entraineur":     5,   # Forme entraineur
+    "hippodrome":     5,   # Historique hippodrome
+    "corde":         12,   # CRUCIAL en trot (triple en galop !)
+}
+
+# Verifications
+assert sum(W_GALOP.values()) == 100, f"W_GALOP = {sum(W_GALOP.values())}"
+assert sum(W_TROT.values()) == 100,  f"W_TROT = {sum(W_TROT.values())}"
+
+# Grandes ecuries
 GRANDES_ECURIES = {
     "WERTHEIMER ET FRERE":     85,
     "AGA KHAN":                82,
@@ -82,13 +135,12 @@ GRANDES_ECURIES = {
     "G.AUGUSTIN-NORMAND":      75,
 }
 
-# Compatibilite terrain : bon pour chaque type
 TERRAIN_COMPAT = {
-    "BON":         {"BON": 100, "BON_SOUPLE": 80, "SOUPLE": 50, "LOURD": 20, "TRES_LOURD": 0},
-    "BON_SOUPLE":  {"BON": 80, "BON_SOUPLE": 100, "SOUPLE": 80, "LOURD": 40, "TRES_LOURD": 20},
-    "SOUPLE":      {"BON": 50, "BON_SOUPLE": 80, "SOUPLE": 100, "LOURD": 80, "TRES_LOURD": 60},
-    "LOURD":       {"BON": 20, "BON_SOUPLE": 40, "SOUPLE": 80, "LOURD": 100, "TRES_LOURD": 80},
-    "TRES_LOURD":  {"BON": 0,  "BON_SOUPLE": 20, "SOUPLE": 60, "LOURD": 80,  "TRES_LOURD": 100},
+    "BON":        {"BON": 100, "BON_SOUPLE": 80, "SOUPLE": 50, "LOURD": 20, "TRES_LOURD": 0},
+    "BON_SOUPLE": {"BON": 80, "BON_SOUPLE": 100, "SOUPLE": 80, "LOURD": 40, "TRES_LOURD": 20},
+    "SOUPLE":     {"BON": 50, "BON_SOUPLE": 80, "SOUPLE": 100, "LOURD": 80, "TRES_LOURD": 60},
+    "LOURD":      {"BON": 20, "BON_SOUPLE": 40, "SOUPLE": 80, "LOURD": 100, "TRES_LOURD": 80},
+    "TRES_LOURD": {"BON": 0, "BON_SOUPLE": 20, "SOUPLE": 60, "LOURD": 80, "TRES_LOURD": 100},
 }
 
 # ──────────────────────────────────────────────
@@ -106,12 +158,15 @@ log = logging.getLogger("pmu")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
+def est_trot(discipline: str) -> bool:
+    return discipline.upper() in DISCIPLINES_TROT
+
+
 # ──────────────────────────────────────────────
 #  1. TELEGRAM
 # ──────────────────────────────────────────────
 def telegram_send(texte: str) -> bool:
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
-        log.warning("Telegram non configure.")
         return False
     url      = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     limite   = 4096
@@ -134,16 +189,17 @@ def telegram_send(texte: str) -> bool:
     return succes
 
 
-def formater_message_telegram(resultats_par_course: list, date_aff: str, run_label: str) -> str:
-    lignes = [
-        f"PMU France - Pronostics du {date_aff}",
-        run_label,
-        "=" * 38,
-    ]
+def formater_message_telegram(
+    courses_galop: list,
+    courses_trot: list,
+    date_aff: str,
+    run_label: str
+) -> str:
 
-    for course in resultats_par_course:
+    def formater_course(course: dict) -> list:
+        lignes = []
         if not course.get("top2"):
-            continue
+            return lignes
 
         disc     = course.get("discipline", "").replace("_", " ")
         heure_ts = course.get("heure", 0)
@@ -152,6 +208,7 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
         nc       = course.get("course", "")
         terrain  = course.get("terrain", "")
         nb_src   = course.get("nb_sources_total", 0)
+        consensus_fort = course.get("consensus_fort", False)
 
         heure_str = ""
         if heure_ts and isinstance(heure_ts, (int, float)) and heure_ts > 0:
@@ -160,30 +217,33 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
             except Exception:
                 pass
 
-        terrain_str = f" | Terrain: {terrain}" if terrain else ""
+        terrain_str = f" | {terrain}" if terrain else ""
+        alert_str   = " *** CONSENSUS FORT ***" if consensus_fort else ""
 
         lignes.append("")
-        lignes.append(f"{reunion} {nc} | {heure_str} | {disc}{terrain_str}")
+        lignes.append(f"{reunion} {nc} | {heure_str} | {disc}{terrain_str}{alert_str}")
         if libelle:
             lignes.append(f"{libelle[:50]}")
         lignes.append("-" * 35)
 
         for rang, cheval in enumerate(course["top2"], 1):
             nom        = cheval.get("nom_cheval", "?")
-            num_cheval = cheval.get("num_partant", "")
-            cote      = cheval.get("cote_jour", 0)
-            score     = cheval.get("score_total", 0)
-            prob      = cheval.get("probabilite", 0)
-            nb_prono  = cheval.get("nb_pronostics", 0)
-            pct_prono = cheval.get("pct_pronostics", 0)
-            corde     = cheval.get("place_corde", 0)
-            nb_part   = cheval.get("nb_partants", 0)
-            poids     = cheval.get("poids_porte", 0)
-            jockey    = cheval.get("jockey", "?")
-            deferre   = cheval.get("deferre", False)
-            value     = cheval.get("value_bet", False)
+            num_ch     = cheval.get("num_partant", "")
+            cote       = cheval.get("cote_jour", 0)
+            score      = cheval.get("score_total", 0)
+            prob       = cheval.get("probabilite", 0)
+            nb_prono   = cheval.get("nb_pronostics_pondere", 0)
+            pct_prono  = cheval.get("pct_pronostics", 0)
+            corde      = cheval.get("place_corde", 0)
+            nb_part    = cheval.get("nb_partants", 0)
+            poids      = cheval.get("poids_porte", 0)
+            jockey     = cheval.get("jockey", "?")
+            entraineur = cheval.get("entraineur", "")
+            deferre    = cheval.get("deferre", False)
+            value      = cheval.get("value_bet", False)
+            sources_p  = cheval.get("sources_premium_citees", [])
+            trot       = est_trot(disc.replace(" ", "_"))
 
-            # Mouvement de cote
             mvt = ""
             val = cheval.get("variation_cote_%", "")
             if val != "" and isinstance(val, (int, float)):
@@ -192,33 +252,35 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
                 elif val <= -10:
                     mvt = f" [cote {val:+.0f}%]"
                 elif val >= 15:
-                    mvt = f" [cote +{val:.0f}%]"
+                    mvt = f" [+{val:.0f}%]"
 
-            # Value bet
             value_str = " *** VALUE BET ***" if value else ""
+            nom_aff   = f"N{num_ch}. {nom}" if num_ch else nom
+            prefixe   = ">> " if rang == 1 else "   "
 
-            prefixe = ">> " if rang == 1 else "   "
-            nom_aff = f"N{num_cheval}. {nom}" if num_cheval else nom
             lignes.append(f"{prefixe}{rang}. {nom_aff} (cote {cote:.1f}){mvt}{value_str}")
             lignes.append(f"   Score: {score:.1f}% | Proba: {prob:.1f}%")
 
-            # Pronostics
             if nb_src > 0:
-                lignes.append(f"   {nb_prono} source(s) sur {nb_src} donnent ce cheval gagnant ({pct_prono:.0f}%)")
+                lignes.append(f"   {nb_prono:.0f} pts pronostics sur {nb_src} sources ({pct_prono:.0f}%)")
             else:
-                lignes.append(f"   Pronostics externes: collecte en cours")
+                lignes.append(f"   Pronostics: collecte en cours")
 
-            # Corde et poids
-            details = []
+            if sources_p:
+                lignes.append(f"   Sources premium: {', '.join(sources_p)}")
+
+            # Corde - mise en avant pour le trot
             if corde and nb_part:
-                av = " AVANTAGE" if corde <= 3 else ""
-                details.append(f"Corde {corde}/{nb_part}{av}")
-            if poids:
-                details.append(f"Poids {poids/10:.1f}kg")
-            if details:
-                lignes.append(f"   {' | '.join(details)}")
+                av = " AVANTAGE DECISIF" if (trot and corde <= 3) else (" AVANTAGE" if corde <= 3 else "")
+                lignes.append(f"   Corde {corde}/{nb_part}{av}")
+
+            # Poids - mis en avant pour le galop
+            if poids and not trot:
+                lignes.append(f"   Poids: {poids/10:.1f}kg")
 
             lignes.append(f"   Jockey: {jockey}")
+            if entraineur:
+                lignes.append(f"   Entraineur: {entraineur[:30]}")
 
             if deferre:
                 lignes.append(f"   *** DEFERRE aujourd'hui ***")
@@ -232,6 +294,31 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
             if signaux:
                 lignes.append(f"   Signaux: {signaux[:80]}")
 
+        return lignes
+
+    # Construction du message complet
+    lignes = [
+        f"PMU France - Pronostics du {date_aff}",
+        run_label,
+        "=" * 38,
+    ]
+
+    if courses_galop:
+        lignes.append("")
+        lignes.append("=" * 38)
+        lignes.append("  GALOP (Plat / Haies / Steeple)")
+        lignes.append("=" * 38)
+        for course in courses_galop:
+            lignes.extend(formater_course(course))
+
+    if courses_trot:
+        lignes.append("")
+        lignes.append("=" * 38)
+        lignes.append("  TROT (Attele / Monte)")
+        lignes.append("=" * 38)
+        for course in courses_trot:
+            lignes.extend(formater_course(course))
+
     lignes.append("")
     lignes.append("=" * 38)
     lignes.append("Outil statistique - Jouer responsable.")
@@ -242,7 +329,7 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
 #  2. APPELS API PMU
 # ──────────────────────────────────────────────
 HEADERS_PMU = {
-    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/8.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; PMU-Scorer/9.0)",
     "Accept": "application/json",
 }
 
@@ -257,11 +344,11 @@ def api_get(path: str):
         return None
 
 
-def get_programme(date_str: str):
+def get_programme(date_str):
     return api_get(f"/programme/{date_str}")
 
 
-def get_participants(date_str: str, nr, nc) -> list:
+def get_participants(date_str, nr, nc) -> list:
     data = api_get(f"/programme/{date_str}/R{nr}/C{nc}/participants")
     if data and isinstance(data, dict):
         p = data.get("participants", [])
@@ -273,7 +360,7 @@ def get_participants(date_str: str, nr, nc) -> list:
     return []
 
 
-def get_pronostics_pmu(date_str: str, nr, nc) -> list:
+def get_pronostics_pmu(date_str, nr, nc) -> list:
     data = api_get(f"/programme/{date_str}/R{nr}/C{nc}/pronostics")
     if not data:
         return []
@@ -288,7 +375,7 @@ def get_pronostics_pmu(date_str: str, nr, nc) -> list:
     return []
 
 
-def get_performances(date_str: str, nr, nc, num_partant) -> list:
+def get_performances(date_str, nr, nc, num_partant) -> list:
     data = api_get(
         f"/programme/{date_str}/R{nr}/C{nc}"
         f"/performances-detaillees/PARTANT/{num_partant}"
@@ -298,7 +385,7 @@ def get_performances(date_str: str, nr, nc, num_partant) -> list:
     return data if isinstance(data, list) else data.get("performances", [])
 
 
-def get_cote_veille(date_str_veille: str, nom_cheval: str, nr, nc):
+def get_cote_veille(date_str_veille, nom_cheval, nr, nc):
     partants = get_participants(date_str_veille, nr, nc)
     for p in partants:
         if p.get("nom", "").upper() == nom_cheval.upper():
@@ -325,34 +412,49 @@ def extraire_cote(partant: dict) -> float:
 # ──────────────────────────────────────────────
 #  3. PRONOSTICS EXTERNES VIA CLAUDE
 # ──────────────────────────────────────────────
-def get_pronostics_externes(noms_chevaux, libelle_course, date_affichage, hippodrome) -> dict:
+def get_pronostics_externes(
+    noms_chevaux: list,
+    libelle_course: str,
+    date_affichage: str,
+    hippodrome: str,
+    discipline: str,
+) -> dict:
     if not ANTHROPIC_KEY or not noms_chevaux:
-        return {"citations": {}, "nb_sources": 0}
+        return {"citations": {}, "citations_ponderees": {}, "nb_sources": 0, "sources_par_cheval": {}}
 
-    noms_str    = ", ".join(noms_chevaux[:16])
-    sources_str = ", ".join(SOURCES_PRONOSTICS)
+    trot = est_trot(discipline)
+    sources_liste = SOURCES_TROT if trot else SOURCES_GALOP
+    sources_str   = ", ".join(sources_liste)
+    noms_str      = ", ".join(noms_chevaux[:16])
+    type_course   = "trot (attele/monte)" if trot else "galop (plat/haies/steeple)"
 
-    prompt = f"""Tu es un expert en courses hippiques francaises.
-Nous analysons la course "{libelle_course}" a {hippodrome} le {date_affichage}.
-Les partants sont : {noms_str}
+    prompt = f"""Tu es un expert en courses hippiques francaises, specialiste du {type_course}.
+Course : "{libelle_course}" a {hippodrome} le {date_affichage}.
+Partants : {noms_str}
 
-Recherche sur le web les pronostics de ces sources pour cette course :
+Recherche les pronostics de ces sources specialisees {type_course} :
 {sources_str}
 
-Pour chaque source trouvee, note quel(s) cheval/chevaux elle donne comme favoris ou selectionnes.
+Pour chaque source trouvee, note quels chevaux elle cite dans son TOP 3.
 
-Reponds UNIQUEMENT en JSON valide sans texte autour :
+Reponds UNIQUEMENT en JSON valide :
 {{
   "nb_sources_trouvees": 8,
   "citations": {{
     "NOM_CHEVAL_1": 6,
     "NOM_CHEVAL_2": 4
   }},
+  "sources_par_cheval": {{
+    "NOM_CHEVAL_1": ["Paris-Turf", "Equidia", "Turf BZH"],
+    "NOM_CHEVAL_2": ["Equidia", "Zone-Turf"]
+  }},
   "sources_consultees": ["Paris-Turf", "Equidia"],
-  "resume": "Tendance generale des pronostics"
+  "resume": "Tendance generale"
 }}
 
-Si aucune source trouvee : {{"nb_sources_trouvees": 0, "citations": {{}}, "sources_consultees": [], "resume": "Aucun pronostic trouve"}}"""
+- citations : nombre de sources qui citent ce cheval dans leur TOP 3
+- sources_par_cheval : liste des sources qui citent chaque cheval
+- Si aucune source : {{"nb_sources_trouvees": 0, "citations": {{}}, "sources_par_cheval": {{}}, "sources_consultees": [], "resume": "Aucun pronostic"}}"""
 
     try:
         r = requests.post(
@@ -364,14 +466,14 @@ Si aucune source trouvee : {{"nb_sources_trouvees": 0, "citations": {{}}, "sourc
             },
             json={
                 "model": "claude-sonnet-4-20250514",
-                "max_tokens": 600,
+                "max_tokens": 800,
                 "tools": [{"type": "web_search_20250305", "name": "web_search"}],
                 "messages": [{"role": "user", "content": prompt}],
             },
             timeout=60,
         )
         if r.status_code != 200:
-            return {"citations": {}, "nb_sources": 0}
+            return {"citations": {}, "citations_ponderees": {}, "nb_sources": 0, "sources_par_cheval": {}}
 
         data  = r.json()
         texte = " ".join(
@@ -379,35 +481,49 @@ Si aucune source trouvee : {{"nb_sources_trouvees": 0, "citations": {{}}, "sourc
         ).strip()
         parsed = json.loads(texte.replace("```json", "").replace("```", "").strip())
 
+        # Citations brutes
         citations = {}
         for nom, nb in parsed.get("citations", {}).items():
             citations[nom.upper().strip()] = int(nb)
 
+        # Citations ponderees par taux de reussite
+        citations_pond = {}
+        sources_par_cheval = {}
+        for nom, sources in parsed.get("sources_par_cheval", {}).items():
+            nom_up = nom.upper().strip()
+            sources_par_cheval[nom_up] = sources
+            poids_total = sum(SOURCES_POIDS.get(s, 1.0) for s in sources)
+            citations_pond[nom_up] = round(poids_total, 2)
+
         nb_sources = int(parsed.get("nb_sources_trouvees", 0))
-        log.info(f"  Pronostics: {nb_sources} sources | {len(citations)} chevaux cites")
+        log.info(f"  Pronostics {type_course}: {nb_sources} sources | {len(citations)} chevaux")
 
         return {
-            "citations":  citations,
-            "nb_sources": nb_sources,
-            "resume":     parsed.get("resume", ""),
-            "sources":    parsed.get("sources_consultees", []),
+            "citations":           citations,
+            "citations_ponderees": citations_pond,
+            "nb_sources":          nb_sources,
+            "sources_par_cheval":  sources_par_cheval,
+            "resume":              parsed.get("resume", ""),
         }
     except Exception as e:
         log.warning(f"Erreur pronostics externes: {e}")
-        return {"citations": {}, "nb_sources": 0}
+        return {"citations": {}, "citations_ponderees": {}, "nb_sources": 0, "sources_par_cheval": {}}
 
 
-def get_signal_presse_et_fers(nom_cheval: str, date_affichage: str) -> dict:
+def get_signal_presse_et_fers(nom_cheval: str, date_affichage: str, discipline: str) -> dict:
     if not ANTHROPIC_KEY:
         return {"resume": "", "sentiment": 50.0, "sources": [], "signaux": [], "deferre": False}
 
-    prompt = f"""Expert courses hippiques. Recherche infos du {date_affichage} sur "{nom_cheval}"
-(Paris-Turf, Equidia, At Racing, Turf Magazine). Cherche aussi si deferre aujourd'hui.
+    trot = est_trot(discipline)
+    spec = "trot attele/monte" if trot else "galop plat/haies"
+
+    prompt = f"""Expert courses hippiques {spec}. Infos du {date_affichage} sur "{nom_cheval}".
+Recherche aussi si deferre/pieds nus aujourd'hui.
 
 JSON uniquement :
 {{"resume": "2-3 phrases", "sentiment": 70, "sources": ["Paris-Turf"], "signaux": ["confiant"], "deferre": false}}
 
-sentiment 0-100. deferre true si sans fers. Si rien : {{"resume": "Aucune info", "sentiment": 50, "sources": [], "signaux": [], "deferre": false}}"""
+Si rien : {{"resume": "Aucune info", "sentiment": 50, "sources": [], "signaux": [], "deferre": false}}"""
 
     try:
         r = requests.post(
@@ -460,7 +576,6 @@ def score_forme_recente(performances: list, n: int = 5) -> float:
 
 
 def score_forme_fraiche(performances: list) -> float:
-    """Forme des 30 derniers jours uniquement."""
     if not performances:
         return 50.0
     maintenant = datetime.now().timestamp() * 1000
@@ -471,7 +586,7 @@ def score_forme_fraiche(performances: list) -> float:
         and (p.get("date") or 0) > 0
     ]
     if not recentes:
-        return 50.0  # Neutre si pas de course recente
+        return 50.0
     scores = []
     for p in recentes:
         place = p.get("place") or p.get("ordreArrivee")
@@ -497,94 +612,122 @@ def score_distance(performances: list, distance_course: int) -> float:
 
 
 def score_terrain(performances: list, terrain_actuel: str) -> float:
-    """
-    Score base sur la compatibilite entre le terrain actuel et
-    les terrains sur lesquels le cheval a deja bien performe.
-    """
     if not terrain_actuel or not performances:
         return 50.0
-
     terrain_actuel = terrain_actuel.upper().replace(" ", "_")
     compat = TERRAIN_COMPAT.get(terrain_actuel, {})
     if not compat:
         return 50.0
-
     scores_terrain = []
     for p in performances:
-        terrain_perf = (p.get("terrain") or p.get("etatSol") or "").upper().replace(" ", "_")
+        terrain_p = (p.get("terrain") or p.get("etatSol") or "").upper().replace(" ", "_")
         place = p.get("place") or p.get("ordreArrivee")
-        if terrain_perf and place and str(place).isdigit():
-            score_compat = compat.get(terrain_perf, 50)
-            score_place  = max(0, 110 - int(place) * 10)
-            scores_terrain.append(score_compat * score_place / 100)
-
+        if terrain_p and place and str(place).isdigit():
+            score_c = compat.get(terrain_p, 50)
+            score_p = max(0, 110 - int(place) * 10)
+            scores_terrain.append(score_c * score_p / 100)
     if not scores_terrain:
         return 50.0
     return min(100, sum(scores_terrain) / len(scores_terrain))
 
 
 def score_hippodrome(performances: list, hippodrome_actuel: str) -> float:
-    """
-    Score base sur l'historique du cheval sur cet hippodrome specifique.
-    """
     if not hippodrome_actuel or not performances:
         return 50.0
-
-    hippo_upper = hippodrome_actuel.upper()
-    courses_hippo = [
+    hippo_up = hippodrome_actuel.upper()
+    courses_h = [
         p for p in performances
-        if hippo_upper in (p.get("hippodrome") or p.get("lieu") or "").upper()
+        if hippo_up in (p.get("hippodrome") or p.get("lieu") or "").upper()
     ]
+    if not courses_h:
+        return 50.0
+    victoires = sum(1 for p in courses_h if str(p.get("place") or p.get("ordreArrivee") or 99) == "1")
+    places    = sum(1 for p in courses_h if str(p.get("place") or p.get("ordreArrivee") or 99) in ("1","2","3"))
+    return min(100, (victoires / len(courses_h) * 60 + places / len(courses_h) * 40) * 100)
 
-    if not courses_hippo:
-        return 50.0  # Neutre - jamais couru ici
 
-    victoires = sum(
-        1 for p in courses_hippo
-        if str(p.get("place") or p.get("ordreArrivee") or 99) == "1"
-    )
-    places = sum(
-        1 for p in courses_hippo
-        if str(p.get("place") or p.get("ordreArrivee") or 99) in ("1", "2", "3")
-    )
+def score_corde(place_corde: int, nb_partants: int, discipline: str, distance: int) -> float:
+    if not place_corde or not nb_partants or nb_partants <= 1:
+        return 50.0
+    score_base = ((nb_partants - place_corde) / (nb_partants - 1)) * 100
+    disc = discipline.upper()
+    if disc in ("TROT_ATTELE", "ATTELE"):
+        # Impact TRES fort en trot attele court
+        facteur = 1.0 if distance <= 2200 else (0.85 if distance <= 2750 else 0.7)
+    elif disc in ("TROT_MONTE", "MONTE"):
+        facteur = 0.85
+    elif disc in ("PLAT", "GALOP"):
+        facteur = 0.4   # Peu important en galop
+    elif disc in ("HAIES", "STEEPLE"):
+        facteur = 0.2
+    else:
+        facteur = 0.5
+    return min(100, max(0, 50 + (score_base - 50) * facteur))
 
-    taux_victoire = victoires / len(courses_hippo)
-    taux_place    = places / len(courses_hippo)
 
-    # Score combine victoires + places sur cet hippodrome
-    return min(100, (taux_victoire * 60 + taux_place * 40) * 100)
+def score_jockey(jockey_nom: str, tous_partants: list) -> float:
+    if not jockey_nom:
+        return 50.0
+    v = c = 0
+    for p in tous_partants:
+        nom_j = p.get("driver") or p.get("nomJockey") or ""
+        if nom_j.lower() == jockey_nom.lower():
+            v += p.get("nombreVictoires") or 0
+            c += p.get("nombreCourses") or 0
+    return (v / c * 100) if c else 50.0
+
+
+def score_entraineur(entraineur_nom: str, tous_partants: list) -> float:
+    """
+    Score base sur les performances de l'entraineur dans cette course.
+    Taux de victoire global + bonus si entraineur "en forme".
+    """
+    if not entraineur_nom:
+        return 50.0
+
+    v = c = 0
+    for p in tous_partants:
+        entr = p.get("entraineur") or {}
+        nom_e = entr.get("nom", "") if isinstance(entr, dict) else str(entr)
+        if nom_e.lower() == entraineur_nom.lower():
+            v += p.get("nombreVictoiresEntraineur") or p.get("nombreVictoires") or 0
+            c += p.get("nombreCoursesEntraineur") or p.get("nombreCourses") or 0
+
+    if c >= 5:
+        return min(100, (v / c) * 100)
+
+    # Bonus grandes ecuries si pas assez de stats
+    for key, bonus in GRANDES_ECURIES.items():
+        if key in entraineur_nom.upper():
+            return float(bonus)
+    return 50.0
+
+
+def score_pronostics_pondere(nom_cheval: str, citations_pond: dict, poids_total_max: float) -> float:
+    """Score base sur les citations ponderees par fiabilite des sources."""
+    if not citations_pond or poids_total_max <= 0:
+        return 0.0
+    poids = citations_pond.get(nom_cheval.upper().strip(), 0)
+    return min(100, (poids / poids_total_max) * 100) if poids > 0 else 0.0
 
 
 def score_cote_value(cote: float, pct_pronostics: float) -> float:
-    """
-    VALUE BETTING : cherche les chevaux sous-cotes par rapport
-    au consensus des pronostics.
-    
-    Si beaucoup de sources citent ce cheval mais sa cote est haute
-    -> le marche le sous-estime -> valeur !
-    """
     if not cote or cote <= 0 or pct_pronostics <= 0:
         return 50.0
-
-    # Cote "attendue" selon les pronostics (si 60% le citent, cote attendue ~2/1)
     cote_attendue = 100 / max(pct_pronostics, 1)
-
-    if cote_attendue <= 0:
-        return 50.0
-
     ratio = cote / cote_attendue
     if ratio >= 2.0:
-        return 95.0   # Grosse valeur - cote 2x plus haute que prevu
+        return 95.0
     elif ratio >= 1.5:
-        return 80.0   # Bonne valeur
+        return 80.0
     elif ratio >= 1.1:
-        return 65.0   # Legere valeur
+        return 65.0
     elif ratio >= 0.9:
-        return 50.0   # Neutre - cote coherente
+        return 50.0
     elif ratio >= 0.7:
-        return 35.0   # Favori "pricé" - peu de valeur
+        return 35.0
     else:
-        return 20.0   # Sur-favori - mauvaise valeur
+        return 20.0
 
 
 def score_mouvement_cote(cote_veille, cote_jour: float) -> float:
@@ -605,55 +748,19 @@ def score_mouvement_cote(cote_veille, cote_jour: float) -> float:
         return 20.0
 
 
-def score_corde(place_corde: int, nb_partants: int, discipline: str, distance: int) -> float:
-    if not place_corde or not nb_partants or nb_partants <= 1:
-        return 50.0
-    score_base = ((nb_partants - place_corde) / (nb_partants - 1)) * 100
-    disc = discipline.upper()
-    if disc in ("TROT_ATTELE", "ATTELE"):
-        facteur = 1.0 if distance <= 2200 else (0.8 if distance <= 2750 else 0.6)
-    elif disc in ("TROT_MONTE", "MONTE"):
-        facteur = 0.7
-    elif disc in ("PLAT", "GALOP"):
-        facteur = 0.5
-    elif disc in ("HAIES", "STEEPLE"):
-        facteur = 0.3
-    else:
-        facteur = 0.5
-    return min(100, max(0, 50 + (score_base - 50) * facteur))
-
-
-def score_jockey(jockey_nom: str, tous_partants: list) -> float:
-    if not jockey_nom:
-        return 50.0
-    v = c = 0
-    for p in tous_partants:
-        nom_j = p.get("driver") or p.get("nomJockey") or ""
-        if nom_j.lower() == jockey_nom.lower():
-            v += p.get("nombreVictoires") or 0
-            c += p.get("nombreCourses") or 0
-    return (v / c * 100) if c else 50.0
-
-
-def score_pronostics(nom_cheval: str, citations: dict, nb_sources: int) -> float:
-    if not citations or nb_sources == 0:
-        return 0.0
-    nb = citations.get(nom_cheval.upper().strip(), 0)
-    return min(100, (nb / nb_sources) * 100) if nb > 0 else 0.0
-
-
-def calculer_score_total(s: dict) -> float:
+def calculer_score_total(s: dict, discipline: str) -> float:
+    W = W_TROT if est_trot(discipline) else W_GALOP
     return (
-        s["forme_recente"]  * W_FORME_RECENTE  / 100
-        + s["forme_fraiche"]* W_FORME_FRAICHE  / 100
-        + s["distance"]     * W_DISTANCE       / 100
-        + s["terrain"]      * W_TERRAIN        / 100
-        + s["hippodrome"]   * W_HIPPODROME     / 100
-        + s["pronostics"]   * W_PRONOSTICS     / 100
-        + s["mouvement"]    * W_MOUVEMENT      / 100
-        + s["cote_value"]   * W_COTE           / 100
-        + s["jockey"]       * W_JOCKEY         / 100
-        + s["corde"]        * W_CORDE          / 100
+        s["pronostics"]    * W["pronostics"]    / 100
+        + s["forme_r"]     * W["forme_recente"] / 100
+        + s["forme_f"]     * W["forme_fraiche"] / 100
+        + s["distance"]    * W["distance"]      / 100
+        + s["terrain"]     * W["terrain"]       / 100
+        + s["mouvement"]   * W["mouvement"]     / 100
+        + s["jockey"]      * W["jockey"]        / 100
+        + s["entraineur"]  * W["entraineur"]    / 100
+        + s["hippodrome"]  * W["hippodrome"]    / 100
+        + s["corde"]       * W["corde"]         / 100
     )
 
 
@@ -685,6 +792,8 @@ def analyser_course(
     distance   = info_course.get("distance", 0)
     libelle    = info_course.get("libelle", f"R{nr} C{nc}")
     heure      = info_course.get("heureDepart", "")
+    trot       = est_trot(discipline)
+    type_str   = "TROT" if trot else "GALOP"
 
     partants = get_participants(date_str, nr, nc)
     if not partants:
@@ -693,30 +802,40 @@ def analyser_course(
 
     partants_actifs = [p for p in partants if p.get("statut") != "NON_PARTANT"]
     nb_partants     = len(partants_actifs)
-    log.info(f"  -> {nb_partants} partants | terrain: {terrain}")
+    log.info(f"  [{type_str}] {nb_partants} partants | terrain: {terrain}")
 
     # Pronostics PMU officiels
     pronostics_pmu = get_pronostics_pmu(date_str, nr, nc)
     time.sleep(0.5)
 
-    # Pronostics externes via Claude (1 appel par course)
-    noms_actifs = [p.get("nom", "") for p in partants_actifs if p.get("nom")]
-    pronostics_ext = {"citations": {}, "nb_sources": 0}
+    # Pronostics externes via Claude
+    noms_actifs    = [p.get("nom", "") for p in partants_actifs if p.get("nom")]
+    pronostics_ext = {"citations": {}, "citations_ponderees": {}, "nb_sources": 0, "sources_par_cheval": {}}
     if activer_presse and ANTHROPIC_KEY:
-        pronostics_ext = get_pronostics_externes(noms_actifs, libelle, date_aff, hippodrome)
+        pronostics_ext = get_pronostics_externes(noms_actifs, libelle, date_aff, hippodrome, discipline)
         time.sleep(2)
 
-    # Fusion pronostics PMU + externes
-    citations = dict(pronostics_ext.get("citations", {}))
-    nb_sources = pronostics_ext.get("nb_sources", 0)
+    # Fusion avec PMU officiel
+    citations      = dict(pronostics_ext.get("citations", {}))
+    citations_pond = dict(pronostics_ext.get("citations_ponderees", {}))
+    sources_par_ch = dict(pronostics_ext.get("sources_par_cheval", {}))
+    nb_sources     = pronostics_ext.get("nb_sources", 0)
 
     if pronostics_pmu:
         nb_sources += 1
+        poids_pmu = SOURCES_POIDS.get("PMU officiel", 2.5)
         for num_str in pronostics_pmu:
             for p in partants_actifs:
                 if str(p.get("numPmu") or "") == num_str:
                     nom_up = p.get("nom", "").upper()
-                    citations[nom_up] = citations.get(nom_up, 0) + 1
+                    citations[nom_up]      = citations.get(nom_up, 0) + 1
+                    citations_pond[nom_up] = citations_pond.get(nom_up, 0) + poids_pmu
+                    if nom_up not in sources_par_ch:
+                        sources_par_ch[nom_up] = []
+                    sources_par_ch[nom_up].append("PMU officiel")
+
+    # Poids total max pour normalisation
+    poids_max = max(citations_pond.values()) if citations_pond else 1.0
 
     resultats = []
     for partant in partants_actifs:
@@ -732,6 +851,7 @@ def analyser_course(
 
         place_corde = int(partant.get("placeCorde") or 0)
         poids       = int(partant.get("handicapPoids") or 0)
+        oeilleres   = partant.get("oeilleres") or ""
         cote_jour   = extraire_cote(partant)
 
         perfs       = get_performances(date_str, nr, nc, num)
@@ -739,31 +859,41 @@ def analyser_course(
         cote_veille = get_cote_veille(date_veille, nom, nr, nc)
         time.sleep(0.3)
 
-        nb_cit  = citations.get(nom.upper().strip(), 0)
+        nom_up  = nom.upper().strip()
+        nb_cit  = citations.get(nom_up, 0)
+        pond    = citations_pond.get(nom_up, 0)
         pct_cit = round((nb_cit / nb_sources * 100) if nb_sources > 0 else 0, 1)
 
+        # Sources premium qui citent ce cheval
+        sources_p_cheval = [
+            s for s in sources_par_ch.get(nom_up, [])
+            if s in SOURCES_PREMIUM
+        ]
+
+        # Consensus fort : 3+ sources premium d'accord
+        consensus_fort_cheval = len(sources_p_cheval) >= 3
+
         s = {
-            "forme_recente":  score_forme_recente(perfs),
-            "forme_fraiche":  score_forme_fraiche(perfs),
-            "distance":       score_distance(perfs, distance),
-            "terrain":        score_terrain(perfs, terrain),
-            "hippodrome":     score_hippodrome(perfs, hippodrome),
-            "pronostics":     score_pronostics(nom, citations, nb_sources),
-            "mouvement":      score_mouvement_cote(cote_veille, cote_jour),
-            "cote_value":     score_cote_value(cote_jour, pct_cit),
-            "jockey":         score_jockey(str(jockey), partants_actifs),
-            "corde":          score_corde(place_corde, nb_partants, discipline, distance),
+            "pronostics":  score_pronostics_pondere(nom, citations_pond, poids_max),
+            "forme_r":     score_forme_recente(perfs),
+            "forme_f":     score_forme_fraiche(perfs),
+            "distance":    score_distance(perfs, distance),
+            "terrain":     score_terrain(perfs, terrain),
+            "mouvement":   score_mouvement_cote(cote_veille, cote_jour),
+            "jockey":      score_jockey(str(jockey), partants_actifs),
+            "entraineur":  score_entraineur(str(entraineur), partants_actifs),
+            "hippodrome":  score_hippodrome(perfs, hippodrome),
+            "corde":       score_corde(place_corde, nb_partants, discipline, distance),
         }
-        s_total = calculer_score_total(s)
+        s_total = calculer_score_total(s, discipline)
 
         # Bonus/malus oeilleres
-        oeilleres = partant.get("oeilleres") or ""
         if "AUSTRALIENNES" in oeilleres:
             s_total = max(0, s_total - 2)
         elif "CLASSIQUE" in oeilleres:
             s_total = max(0, s_total - 1)
 
-        # Value bet flag
+        # Value bet
         value_bet = (pct_cit >= 40 and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
 
         var_cote = ""
@@ -771,56 +901,65 @@ def analyser_course(
             var_cote = round((cote_veille - cote_jour) / cote_veille * 100, 1)
 
         resultats.append({
-            "reunion":           f"R{nr}",
-            "course":            f"C{nc}",
-            "heure":             heure,
-            "hippodrome":        hippodrome,
-            "terrain":           terrain,
-            "libelle":           libelle,
-            "discipline":        discipline,
-            "distance_m":        distance,
-            "nb_partants":       nb_partants,
-            "num_partant":       num,
-            "nom_cheval":        nom,
-            "place_corde":       place_corde,
-            "poids_porte":       poids,
-            "oeilleres":         oeilleres,
-            "deferre":           False,
-            "value_bet":         value_bet,
-            "jockey":            jockey,
-            "entraineur":        entraineur,
-            "proprietaire":      proprietaire,
-            "cote_veille":       round(cote_veille, 2) if cote_veille else "",
-            "cote_jour":         round(cote_jour, 2),
-            "variation_cote_%":  var_cote,
-            "nb_pronostics":     nb_cit,
-            "pct_pronostics":    pct_cit,
-            "nb_sources_total":  nb_sources,
-            "score_forme":       round(s["forme_recente"], 1),
-            "score_forme_fraiche": round(s["forme_fraiche"], 1),
-            "score_distance":    round(s["distance"], 1),
-            "score_terrain":     round(s["terrain"], 1),
-            "score_hippodrome":  round(s["hippodrome"], 1),
-            "score_pronostics":  round(s["pronostics"], 1),
-            "score_mouvement":   round(s["mouvement"], 1),
-            "score_cote_value":  round(s["cote_value"], 1),
-            "score_jockey":      round(s["jockey"], 1),
-            "score_corde":       round(s["corde"], 1),
-            "score_total":       round(s_total, 1),
-            "presse_resume":     "",
-            "presse_sentiment":  50.0,
-            "presse_sources":    "",
-            "presse_signaux":    "",
+            "reunion":                  f"R{nr}",
+            "course":                   f"C{nc}",
+            "heure":                    heure,
+            "hippodrome":               hippodrome,
+            "terrain":                  terrain,
+            "libelle":                  libelle,
+            "discipline":               discipline,
+            "type_course":              type_str,
+            "distance_m":               distance,
+            "nb_partants":              nb_partants,
+            "num_partant":              num,
+            "nom_cheval":               nom,
+            "place_corde":              place_corde,
+            "poids_porte":              poids,
+            "oeilleres":                oeilleres,
+            "deferre":                  False,
+            "value_bet":                value_bet,
+            "consensus_fort":           consensus_fort_cheval,
+            "sources_premium_citees":   sources_p_cheval,
+            "jockey":                   jockey,
+            "entraineur":               str(entraineur),
+            "proprietaire":             str(proprietaire),
+            "cote_veille":              round(cote_veille, 2) if cote_veille else "",
+            "cote_jour":                round(cote_jour, 2),
+            "variation_cote_%":         var_cote,
+            "nb_pronostics":            nb_cit,
+            "nb_pronostics_pondere":    round(pond, 1),
+            "pct_pronostics":           pct_cit,
+            "nb_sources_total":         nb_sources,
+            "score_pronostics":         round(s["pronostics"], 1),
+            "score_forme":              round(s["forme_r"], 1),
+            "score_forme_fraiche":      round(s["forme_f"], 1),
+            "score_distance":           round(s["distance"], 1),
+            "score_terrain":            round(s["terrain"], 1),
+            "score_mouvement":          round(s["mouvement"], 1),
+            "score_jockey":             round(s["jockey"], 1),
+            "score_entraineur":         round(s["entraineur"], 1),
+            "score_hippodrome":         round(s["hippodrome"], 1),
+            "score_corde":              round(s["corde"], 1),
+            "score_total":              round(s_total, 1),
+            "presse_resume":            "",
+            "presse_sentiment":         50.0,
+            "presse_sources":           "",
+            "presse_signaux":           "",
         })
         time.sleep(0.5)
 
     resultats.sort(key=lambda x: x["score_total"], reverse=True)
     resultats = normaliser_scores(resultats)
 
-    # Signal presse uniquement pour le top 2
+    # Consensus fort au niveau de la course
+    consensus_fort_course = any(
+        r.get("consensus_fort") for r in resultats[:2]
+    )
+
+    # Signal presse pour top 2 uniquement
     if activer_presse and ANTHROPIC_KEY:
         for r in resultats[:2]:
-            presse = get_signal_presse_et_fers(r["nom_cheval"], date_aff)
+            presse = get_signal_presse_et_fers(r["nom_cheval"], date_aff, discipline)
             r["presse_resume"]    = presse.get("resume", "")
             r["presse_sentiment"] = presse.get("sentiment", 50.0)
             r["presse_sources"]   = ", ".join(presse.get("sources", []))
@@ -830,16 +969,17 @@ def analyser_course(
                 r["score_total"] = min(100, r["score_total"] + 3)
             time.sleep(1)
 
-    # Log console
+    # Log
     log.info(f"\n{'─'*70}")
-    log.info(f"  {libelle} | {discipline} | {distance}m | terrain: {terrain}")
-    log.info(f"  {'#':<3} {'Cheval':<22} {'Cote':>6} {'Prono':>8} {'Value':>6} {'Score':>7}")
+    log.info(f"  [{type_str}] {libelle} | {distance}m | {terrain}")
+    log.info(f"  {'#':<3} {'Cheval':<22} {'Cote':>6} {'Prono':>8} {'Corde':>6} {'Score':>7}")
     for i, r in enumerate(resultats[:4], 1):
         vb = " VALUE" if r["value_bet"] else ""
+        cf = " CONSENSUS" if r["consensus_fort"] else ""
         log.info(
             f"  {i:<3} {r['nom_cheval']:<22} {r['cote_jour']:>6.1f} "
             f"{r['nb_pronostics']:>4}/{r['nb_sources_total']:<3} "
-            f"{r['probabilite']:>5.1f}% {r['score_total']:>7.1f}{vb}"
+            f"{str(r['place_corde']):>5} {r['score_total']:>7.1f}{vb}{cf}"
         )
 
     return {
@@ -850,7 +990,9 @@ def analyser_course(
         "terrain":          terrain,
         "libelle":          libelle,
         "discipline":       discipline,
+        "type_course":      type_str,
         "nb_sources_total": nb_sources,
+        "consensus_fort":   consensus_fort_course,
         "top2":             resultats[:2],
         "tous_resultats":   resultats,
     }
@@ -876,14 +1018,13 @@ def main():
     activer_presse = bool(ANTHROPIC_KEY)
 
     log.info("=" * 70)
-    log.info(f"  PMU SCORER v8 - France - {date_aff} - {heure_run}")
+    log.info(f"  PMU SCORER v9 - GALOP & TROT separes - {date_aff} - {heure_run}")
+    log.info(f"  Sources ponderees par taux top3")
     log.info(f"  Pronostics/presse : {'OK' if activer_presse else 'desactive'}")
-    log.info(f"  Terrain/hippodrome: actif")
-    log.info(f"  Value betting     : actif")
     log.info("=" * 70)
 
     if TELEGRAM_TOKEN:
-        telegram_send(f"PMU Scorer v8 demarre - {date_aff} {heure_run}\n{run_label}...")
+        telegram_send(f"PMU Scorer v9 demarre - {date_aff} {heure_run}\n{run_label}...")
 
     programme = get_programme(date_str)
     if not programme:
@@ -900,8 +1041,10 @@ def main():
         return
 
     log.info(f"{len(reunions)} reunions au total.")
+
     tous_resultats_csv   = []
-    resultats_par_course = []
+    courses_galop        = []
+    courses_trot         = []
 
     for reunion in reunions:
         pays = reunion.get("pays", {})
@@ -913,7 +1056,6 @@ def main():
         hippodrome = reunion.get("hippodrome", {}).get("libelleLong", "?")
         courses    = reunion.get("courses", [])
 
-        # Etat du terrain au niveau de la reunion
         terrain_reunion = reunion.get("terrain") or reunion.get("etatSol") or ""
         if isinstance(terrain_reunion, dict):
             terrain_reunion = terrain_reunion.get("libelle", "") or terrain_reunion.get("code", "")
@@ -926,7 +1068,6 @@ def main():
             if discipline not in DISCIPLINES:
                 continue
 
-            # Terrain peut aussi etre au niveau de la course
             terrain = course.get("terrain") or course.get("etatSol") or terrain_reunion
             if isinstance(terrain, dict):
                 terrain = terrain.get("libelle", "") or terrain.get("code", "")
@@ -941,24 +1082,31 @@ def main():
                 )
                 if res and res.get("tous_resultats"):
                     tous_resultats_csv.extend(res["tous_resultats"])
-                    resultats_par_course.append(res)
+                    if res["type_course"] == "GALOP":
+                        courses_galop.append(res)
+                    else:
+                        courses_trot.append(res)
             except Exception as e:
                 log.error(f"Erreur R{nr} C{nc}: {e}")
             time.sleep(1)
 
+    nb_galop = len(courses_galop)
+    nb_trot  = len(courses_trot)
+    log.info(f"\nGALOP: {nb_galop} courses | TROT: {nb_trot} courses")
+
     if tous_resultats_csv:
-        # Sauvegarde CSV dans le depot (accessible pour pmu_results.py)
         nom_fichier = os.path.join(OUTPUT_DIR, f"pmu_{today.strftime('%Y%m%d_%H%M')}.csv")
         colonnes = [
             "reunion", "course", "heure", "hippodrome", "terrain", "libelle",
-            "discipline", "distance_m", "nb_partants", "num_partant", "nom_cheval",
-            "place_corde", "poids_porte", "oeilleres", "deferre", "value_bet",
+            "discipline", "type_course", "distance_m", "nb_partants",
+            "num_partant", "nom_cheval", "place_corde", "poids_porte",
+            "oeilleres", "deferre", "value_bet", "consensus_fort",
             "jockey", "entraineur", "proprietaire",
             "cote_veille", "cote_jour", "variation_cote_%",
-            "nb_pronostics", "pct_pronostics", "nb_sources_total",
-            "score_forme", "score_forme_fraiche", "score_distance", "score_terrain",
-            "score_hippodrome", "score_pronostics", "score_mouvement", "score_cote_value",
-            "score_jockey", "score_corde", "score_total",
+            "nb_pronostics", "nb_pronostics_pondere", "pct_pronostics", "nb_sources_total",
+            "score_pronostics", "score_forme", "score_forme_fraiche", "score_distance",
+            "score_terrain", "score_mouvement", "score_jockey", "score_entraineur",
+            "score_hippodrome", "score_corde", "score_total",
             "presse_resume", "presse_sentiment", "presse_sources", "presse_signaux",
         ]
         with open(nom_fichier, "w", newline="", encoding="utf-8-sig") as f:
@@ -967,7 +1115,7 @@ def main():
             writer.writerows(tous_resultats_csv)
         log.info(f"CSV exporte : {nom_fichier}")
 
-        message = formater_message_telegram(resultats_par_course, date_aff, run_label)
+        message = formater_message_telegram(courses_galop, courses_trot, date_aff, run_label)
         if telegram_send(message):
             log.info("Message Telegram envoye.")
         else:
@@ -977,7 +1125,7 @@ def main():
         telegram_send(f"PMU Scorer {date_aff} - aucun resultat France trouve.")
 
     log.info("\n" + "=" * 70)
-    log.info("  SCORER v8 TERMINE")
+    log.info("  SCORER v9 TERMINE")
     log.info("=" * 70)
 
 
