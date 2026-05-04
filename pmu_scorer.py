@@ -169,7 +169,8 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
         lignes.append("-" * 35)
 
         for rang, cheval in enumerate(course["top2"], 1):
-            nom       = cheval.get("nom_cheval", "?")
+            nom        = cheval.get("nom_cheval", "?")
+            num_cheval = cheval.get("num_partant", "")
             cote      = cheval.get("cote_jour", 0)
             score     = cheval.get("score_total", 0)
             prob      = cheval.get("probabilite", 0)
@@ -197,7 +198,8 @@ def formater_message_telegram(resultats_par_course: list, date_aff: str, run_lab
             value_str = " *** VALUE BET ***" if value else ""
 
             prefixe = ">> " if rang == 1 else "   "
-            lignes.append(f"{prefixe}{rang}. {nom} (cote {cote:.1f}){mvt}{value_str}")
+            nom_aff = f"N{num_cheval}. {nom}" if num_cheval else nom
+            lignes.append(f"{prefixe}{rang}. {nom_aff} (cote {cote:.1f}){mvt}{value_str}")
             lignes.append(f"   Score: {score:.1f}% | Proba: {prob:.1f}%")
 
             # Pronostics
