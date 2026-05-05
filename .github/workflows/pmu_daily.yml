@@ -1,94 +1,162 @@
 # ============================================================
-#  GitHub Actions - PMU Daily Scorer v8 + Bilan du soir
+#  GitHub Actions - PMU Daily Scorer v9 + Notifier H-15min
 #
-#  Trois executions par jour :
-#    - 09h00 UTC (11h00 Paris) : pronostics du matin
-#    - 10h30 UTC (12h30 Paris) : pronostics H-30 cotes fraiches
+#  4 jobs par jour :
+#    - 09h00 UTC (11h00 Paris) : scores statistiques du matin
+#    - 09h15 UTC (11h15 Paris) : notifier H-15min (tourne 9h)
+#    - 10h30 UTC (12h30 Paris) : mise a jour scores H-30
 #    - 18h00 UTC (20h00 Paris) : bilan du soir
-#
-#  Secrets GitHub requis :
-#    TELEGRAM_TOKEN    -> token de ton bot Telegram
-#    TELEGRAM_CHAT_ID  -> ton Chat ID Telegram
-#    ANTHROPIC_API_KEY -> cle Claude API (presse + pronostics externes)
 # ============================================================
 
-name: PMU Daily Scorer v8
+name: PMU Daily Scorer v9
 
 on:
   schedule:
-    - cron: '0 9 * * *'      # 11h00 Paris - pronostics du matin
-    - cron: '30 10 * * *'    # 12h30 Paris - pronostics H-30
+    - cron: '0 9 * * *'      # 11h00 Paris - scores du matin
+    - cron: '15 9 * * *'     # 11h15 Paris - notifier H-15min
+    - cron: '30 10 * * *'    # 12h30 Paris - scores H-30
     - cron: '0 18 * * *'     # 20h00 Paris - bilan du soir
   workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job a lancer (scorer / notifier / results)'
+        required: false
+        default: 'scorer'
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  score:
-    name: Analyser et envoyer sur Telegram
+
+  # ── Job 1 : Scores statistiques ──────────────
+  scorer:
+    name: Scores PMU v9
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 90
+    if: >
+      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer' ||
+      github.event_name == 'schedule' && (
+        contains(github.event.schedule, '0 9 ') ||
+        contains(github.event.schedule, '30 10')
+      )
     permissions:
-      contents: write   # Necessite pour git push des CSV
+      contents: write
 
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
-      - name: Setup Python 3.12
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: Installer les dependances
+      - name: Installer dependances
         run: pip install requests
 
-      - name: Creer le dossier de resultats
+      - name: Creer dossier resultats
         run: mkdir -p resultats
 
-      - name: Lancer le scorer PMU v8 (pronostics)
-        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && (contains(github.event.schedule, '0 9') || contains(github.event.schedule, '30 10'))) }}
+      - name: Lancer scorer PMU v9
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python pmu_scorer.py
 
-      - name: Sauvegarder le CSV dans le depot Git
-        if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && (contains(github.event.schedule, '0 9') || contains(github.event.schedule, '30 10'))) }}
+      - name: Sauvegarder CSV dans Git
         run: |
-          git config user.name "PMU Scorer Bot"
-          git config user.email "pmu-scorer@github-actions"
+          git config user.name "PMU Bot"
+          git config user.email "pmu@github-actions"
           git add resultats/*.csv 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "PMU CSV $(date +%Y%m%d_%H%M)"
+          git diff --staged --quiet || git commit -m "CSV $(date +%Y%m%d_%H%M)"
           git push || true
 
-      - name: Lancer le bilan du soir
-        if: ${{ github.event_name == 'schedule' && contains(github.event.schedule, '0 18') }}
+      - name: Sauvegarder logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pmu-scorer-logs
+          path: pmu_scorer.log
+          retention-days: 7
+          overwrite: true
+
+      - name: Afficher logs
+        if: always()
+        run: tail -50 pmu_scorer.log 2>/dev/null || true
+
+
+  # ── Job 2 : Notifier H-15min ──────────────────
+  notifier:
+    name: Notifier H-15min
+    runs-on: ubuntu-latest
+    timeout-minutes: 540    # 9h max - couvre toute la journee de courses
+    if: >
+      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier' ||
+      github.event_name == 'schedule' && contains(github.event.schedule, '15 9')
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Installer dependances
+        run: pip install requests
+
+      - name: Lancer notifier H-15min
+        env:
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python pmu_notifier.py
+
+      - name: Sauvegarder logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pmu-notifier-logs
+          path: pmu_notifier.log
+          retention-days: 7
+          overwrite: true
+
+
+  # ── Job 3 : Bilan du soir ────────────────────
+  results:
+    name: Bilan du soir
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: >
+      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results' ||
+      github.event_name == 'schedule' && contains(github.event.schedule, '0 18')
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Installer dependances
+        run: pip install requests
+
+      - name: Lancer bilan du soir
         env:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_results.py
 
-      - name: Sauvegarder logs en artifact
+      - name: Sauvegarder logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pmu-logs
-          path: |
-            pmu_scorer.log
-            pmu_results.log
+          name: pmu-results-logs
+          path: pmu_results.log
           retention-days: 7
           overwrite: true
-
-      - name: Afficher les derniers logs
-        if: always()
-        run: |
-          echo "=== SCORER LOG ===" && tail -50 pmu_scorer.log 2>/dev/null || true
-          echo "=== RESULTS LOG ===" && tail -30 pmu_results.log 2>/dev/null || true
