@@ -1,10 +1,10 @@
 # ============================================================
 #  GitHub Actions - PMU Daily Scorer v9 + Notifier H-15min
 #
-#  4 jobs par jour :
-#    - 09h00 UTC (11h00 Paris) : scores statistiques du matin
-#    - 09h15 UTC (11h15 Paris) : notifier H-15min (tourne 9h)
-#    - 10h30 UTC (12h30 Paris) : mise a jour scores H-30
+#  Declenchements automatiques :
+#    - 09h00 UTC (11h00 Paris) : scores du matin
+#    - 09h15 UTC (11h15 Paris) : notifier H-15min (9h)
+#    - 10h30 UTC (12h30 Paris) : scores H-30
 #    - 18h00 UTC (20h00 Paris) : bilan du soir
 # ============================================================
 
@@ -19,9 +19,14 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'Job a lancer (scorer / notifier / results)'
-        required: false
+        description: 'Job a lancer : scorer / notifier / results'
+        required: true
         default: 'scorer'
+        type: choice
+        options:
+          - scorer
+          - notifier
+          - results
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -33,12 +38,9 @@ jobs:
     name: Scores PMU v9
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    if: >
-      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer' ||
-      github.event_name == 'schedule' && (
-        contains(github.event.schedule, '0 9 ') ||
-        contains(github.event.schedule, '30 10')
-      )
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
+      (github.event_name == 'schedule' && (github.event.schedule == '0 9 * * *' || github.event.schedule == '30 10 * * *'))
     permissions:
       contents: write
 
@@ -77,7 +79,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pmu-scorer-logs
+          name: scorer-logs
           path: pmu_scorer.log
           retention-days: 7
           overwrite: true
@@ -91,10 +93,10 @@ jobs:
   notifier:
     name: Notifier H-15min
     runs-on: ubuntu-latest
-    timeout-minutes: 540    # 9h max - couvre toute la journee de courses
-    if: >
-      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier' ||
-      github.event_name == 'schedule' && contains(github.event.schedule, '15 9')
+    timeout-minutes: 540
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
+      (github.event_name == 'schedule' && github.event.schedule == '15 9 * * *')
 
     steps:
       - uses: actions/checkout@v4
@@ -118,7 +120,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pmu-notifier-logs
+          name: notifier-logs
           path: pmu_notifier.log
           retention-days: 7
           overwrite: true
@@ -129,11 +131,9 @@ jobs:
     name: Bilan du soir
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    if: >
-      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results' ||
-      github.event_name == 'schedule' && contains(github.event.schedule, '0 18')
-    permissions:
-      contents: read
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 18 * * *')
 
     steps:
       - uses: actions/checkout@v4
@@ -156,7 +156,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pmu-results-logs
+          name: results-logs
           path: pmu_results.log
           retention-days: 7
           overwrite: true
