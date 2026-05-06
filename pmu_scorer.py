@@ -765,20 +765,46 @@ def normaliser_scores(resultats) -> list:
     return resultats
 
 
-def appliquer_filtre_cote(resultats, nb_sources) -> list:
+def est_outsider_suspect(r: dict, nb_sources: int, type_course: str) -> bool:
+    """
+    Suspect UNIQUEMENT si toutes ces conditions reunies :
+    - Cote > 25.0
+    - 0 sources ne le citent
+    - Pas de chute de cote >= 25%
+    - Pas un HANDICAP
+    """
+    cote  = r.get("cote_jour", 0)
+    nb_cit = r.get("nb_pronostics", 0)
+    mvt   = r.get("variation_cote_%", "")
+    chute = isinstance(mvt, (int, float)) and mvt <= -25
+
+    if cote <= 25.0 or cote == 0:
+        return False
+    if nb_cit > 0:
+        return False
+    if chute:
+        return False
+    if type_course == TYPE_HANDICAP:
+        return False
+    return True
+
+
+def appliquer_filtre_cote(resultats, nb_sources, type_course=TYPE_CONDITIONS) -> list:
+    """
+    Logique intelligente : ne remplace le N1 que si vraiment suspect.
+    Garde les gros outsiders cites par des sources ou en chute de cote.
+    """
     if not resultats:
         return resultats
-    cote_max  = COTE_MAX_AVEC_PRONOSTICS if nb_sources > 0 else COTE_MAX_SANS_PRONOSTICS
-    n1        = resultats[0]
-    cote_n1   = n1.get("cote_jour", 0)
-    mvt_n1    = n1.get("variation_cote_%", "")
-    chute_forte = isinstance(mvt_n1, (int, float)) and mvt_n1 <= -30
-
-    if cote_n1 > cote_max and not chute_forte:
+    n1 = resultats[0]
+    if est_outsider_suspect(n1, nb_sources, type_course):
         for i, r in enumerate(resultats[1:], 1):
-            if r.get("cote_jour", 0) <= cote_max:
+            if not est_outsider_suspect(r, nb_sources, type_course):
                 resultats[0], resultats[i] = resultats[i], resultats[0]
-                log.info(f"  Filtre cote: {n1['nom_cheval']} ({cote_n1}) -> {resultats[0]['nom_cheval']}")
+                log.info(
+                    f"  Filtre intelligent: {n1['nom_cheval']} "
+                    f"(cote {n1['cote_jour']}, 0 sources) -> {resultats[0]['nom_cheval']}"
+                )
                 break
     return resultats
 
@@ -950,7 +976,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
 
     resultats.sort(key=lambda x: x["score_total"], reverse=True)
     resultats = normaliser_scores(resultats)
-    resultats = appliquer_filtre_cote(resultats, nb_sources)
+    resultats = appliquer_filtre_cote(resultats, nb_sources, type_course)
 
     consensus_fort = any(r.get("consensus_fort") for r in resultats[:2])
 
