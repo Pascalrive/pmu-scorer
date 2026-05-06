@@ -430,30 +430,19 @@ def get_pronostics_externes(noms_chevaux, libelle, date_aff, hippodrome, discipl
 - https://www.turf-fr.com/ (cherche "{libelle}")
 - https://www.geny.com/ (cherche "{libelle}")"""
 
-    prompt = f"""Expert PMU {type_str}. Pronostics pour cette course PRECISE :
-Course : "{libelle}" — {hippodrome} — {date_aff}
+    prompt = f"""Cherche pronostics PMU pour : "{libelle}" {hippodrome} {date_aff}
 Partants : {noms_str}
 
-URLs a visiter (cherche UNIQUEMENT "{libelle}" a {hippodrome}) :
-{urls}
+Reponds UNIQUEMENT avec ce JSON (rien d'autre, pas de texte, pas de ```):
+{{"nb_sources_trouvees":5,"citations_top3":{{"NOM1":4,"NOM2":2}},"sources_par_cheval":{{"NOM1":["Paris-Turf","Equidia"]}},"sources_consultees":["Paris-Turf"],"resume_tendance":"tendance"}}
 
-JSON :
-{{
-  "nb_sources_trouvees": 8,
-  "citations_top3": {{"NOM1": 6, "NOM2": 4}},
-  "sources_par_cheval": {{"NOM1": ["Paris-Turf","Equidia"], "NOM2": ["Equidia"]}},
-  "sources_consultees": ["Paris-Turf"],
-  "resume_tendance": "description"
-}}
-Si rien : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_par_cheval": {{}}, "sources_consultees": [], "resume_tendance": "Aucun pronostic"}}
-
-IMPORTANT : reponds UNIQUEMENT avec le JSON. Pas de texte avant, pas de texte apres, pas de markdown, pas de ##, pas d'explication. Commence directement par {{ et termine par }}."""
+Si aucun pronostic trouve: {{"nb_sources_trouvees":0,"citations_top3":{{}},"sources_par_cheval":{{}},"sources_consultees":[],"resume_tendance":"Aucun pronostic"}}"""
 
     try:
         r = requests.post(
             "https://api.anthropic.com/v1/messages",
             headers={"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            json={"model": "claude-sonnet-4-5", "max_tokens": 800,
+            json={"model": "claude-sonnet-4-5", "max_tokens": 1500,
                   "tools": [{"type": "web_search_20250305", "name": "web_search"}],
                   "messages": [{"role": "user", "content": prompt}]},
             timeout=60,
