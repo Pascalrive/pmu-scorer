@@ -1,10 +1,10 @@
-
+"""
 =============================================================
   PMU RACING SCORER v11 - France uniquement
 =============================================================
   Nouveautes v11 :
     - Detection type de course (HANDICAP / CONDITIONS / GROUPE / RECLAMER)
-    - Score progression (cheval qui s'ameliore a chaque course)
+    - Score progression (cheval qui s ameliore a chaque course)
     - Bonus jeunes chevaux en debut de saison
     - Cote neutralisee dans les handicaps (outsiders = meme chance)
     - Distance neutre si premier essai (plus de penalite)
@@ -531,7 +531,7 @@ def score_forme_recente(performances, n=5) -> float:
 
 def score_progression(performances, n=4) -> float:
     """
-    Detecte si le cheval s'ameliore progressivement.
+    Detecte si le cheval s ameliore progressivement.
     Compare les places des n dernieres courses.
     Un cheval qui fait 5e, 4e, 3e, 2e est EN PROGRESSION = signal fort.
     """
