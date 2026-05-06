@@ -457,10 +457,13 @@ Si rien : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_par_cheva
             timeout=60,
         )
         if r.status_code != 200:
+            log.error(f"Claude API ERREUR {r.status_code}: {r.text[:300]}")
             return {"citations": {}, "citations_pond": {}, "nb_sources": 0, "sources_par_ch": {}}
 
+        log.info(f"  Claude API OK - traitement reponse...")
         data  = r.json()
         texte = " ".join(b.get("text","") for b in data.get("content",[]) if b.get("type")=="text").strip()
+        log.info(f"  Reponse Claude: {texte[:200]}")
         parsed = json.loads(texte.replace("```json","").replace("```","").strip())
 
         citations = {k.upper(): int(v) for k, v in parsed.get("citations_top3", {}).items()}
