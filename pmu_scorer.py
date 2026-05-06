@@ -451,7 +451,7 @@ Si rien : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_par_cheva
         r = requests.post(
             "https://api.anthropic.com/v1/messages",
             headers={"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            json={"model": "claude-sonnet-4-20250514", "max_tokens": 800,
+            json={"model": "claude-sonnet-4-5", "max_tokens": 800,
                   "tools": [{"type": "web_search_20250305", "name": "web_search"}],
                   "messages": [{"role": "user", "content": prompt}]},
             timeout=60,
@@ -498,7 +498,7 @@ Si rien : {{"resume":"Aucune info","sentiment":50,"sources":[],"signaux":[],"def
         r = requests.post(
             "https://api.anthropic.com/v1/messages",
             headers={"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            json={"model": "claude-sonnet-4-20250514", "max_tokens": 400,
+            json={"model": "claude-sonnet-4-5", "max_tokens": 400,
                   "tools": [{"type": "web_search_20250305", "name": "web_search"}],
                   "messages": [{"role": "user", "content": prompt}]},
             timeout=45,
