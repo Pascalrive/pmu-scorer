@@ -445,7 +445,9 @@ JSON :
   "sources_consultees": ["Paris-Turf"],
   "resume_tendance": "description"
 }}
-Si rien : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_par_cheval": {{}}, "sources_consultees": [], "resume_tendance": "Aucun pronostic"}}"""
+Si rien : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_par_cheval": {{}}, "sources_consultees": [], "resume_tendance": "Aucun pronostic"}}
+
+IMPORTANT : reponds UNIQUEMENT avec le JSON. Pas de texte avant, pas de texte apres, pas de markdown, pas de ##, pas d'explication. Commence directement par {{ et termine par }}."""
 
     try:
         r = requests.post(
@@ -857,7 +859,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
     pronostics_ext = {"citations": {}, "citations_pond": {}, "nb_sources": 0, "sources_par_ch": {}}
     if activer_presse and ANTHROPIC_KEY:
         pronostics_ext = get_pronostics_externes(noms_actifs, libelle, date_aff, hippodrome, discipline)
-        time.sleep(2)
+        time.sleep(30)  # Eviter rate limit 30k tokens/min
 
     citations      = dict(pronostics_ext.get("citations", {}))
     citations_pond = dict(pronostics_ext.get("citations_pond", {}))
@@ -984,7 +986,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
     consensus_fort = any(r.get("consensus_fort") for r in resultats[:2])
 
     # Signal presse top 2
-    if activer_presse and ANTHROPIC_KEY:
+    if False:  # Presse desactivee - economise tokens
         for r in resultats[:2]:
             presse = get_signal_presse(r["nom_cheval"], date_aff, discipline)
             r["presse_resume"]    = presse.get("resume", "")
