@@ -172,7 +172,7 @@ Si aucune source : {{"nb_sources_trouvees": 0, "citations_top3": {{}}, "sources_
             "https://api.anthropic.com/v1/messages",
             headers={"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"},
             json={
-                "model": "claude-sonnet-4-20250514",
+                "model": "claude-sonnet-4-5",
                 "max_tokens": 1000,
                 "tools": [{"type": "web_search_20250305", "name": "web_search"}],
                 "messages": [{"role": "user", "content": prompt}],
