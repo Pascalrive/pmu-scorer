@@ -81,7 +81,7 @@ SOURCES_PREMIUM = {"Turf BZH", "Paris-Turf", "Equidia", "Frequence Turf", "Le Tr
 
 # Poids GALOP
 W_GALOP_NORMAL = {
-    "pronostics": 15, "outsider": 5, "forme_r": 14, "mouvement": 10,
+    "pronostics": 15, "outsider": 5, "forme_r": 16, "mouvement": 12,
     "terrain": 8, "trio_pje": 18, "distance": 7, "jockey_hippo": 5,
     "progression": 5, "forme_f": 4, "hippodrome": 3, "corde": 2,
     "rk": 0, "fautes": 0,
@@ -90,7 +90,7 @@ W_GALOP_HANDICAP = {
     "pronostics": 15, "outsider": 5, "forme_r": 12, "mouvement": 12,
     "terrain": 6, "trio_pje": 18, "distance": 5, "jockey_hippo": 5,
     "progression": 8, "forme_f": 4, "hippodrome": 3, "corde": 2,
-    "rk": 0, "fautes": 0,
+    "rk": 0, "fautes": 5,
 }
 
 # Poids TROT
