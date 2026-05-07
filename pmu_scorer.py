@@ -428,10 +428,11 @@ def get_pronostics_externes(noms_chevaux, libelle, date_aff, hippodrome, discipl
 Partants : {noms_str}
 
 Reponds UNIQUEMENT avec ce JSON (rien d autre, pas de texte, pas de ```):
-{{"nb_sources_trouvees":5,"citations_top3":{{"NOM1":4,"NOM2":2}},"sources_par_cheval":{{"NOM1":["Paris-Turf","Equidia"]}},"outsiders_surprises":["NOM_OUTSIDER"],"sources_consultees":["Paris-Turf"],"resume_tendance":"tendance"}}
+{{"nb_sources_trouvees":5,"citations_top3":{{"NOM1":4,"NOM2":2}},"sources_par_cheval":{{"NOM1":["Paris-Turf","Equidia"]}},"outsiders_surprises":["NOM_OUTSIDER"],"deferres":["NOM_DEFERRE"],"sources_consultees":["Paris-Turf"],"resume_tendance":"tendance"}}
 
-outsiders_surprises = chevaux a grosse cote cites par au moins 1 source comme trouble-fete ou surprise.
-Si aucun pronostic : {{"nb_sources_trouvees":0,"citations_top3":{{}},"sources_par_cheval":{{}},"outsiders_surprises":[],"sources_consultees":[],"resume_tendance":"Aucun pronostic"}}"""
+outsiders_surprises = chevaux a grosse cote cites comme trouble-fete.
+deferres = chevaux annonces sans fers (deferres) aujourd hui - cherche dans presse du jour.
+Si aucun pronostic : {{"nb_sources_trouvees":0,"citations_top3":{{}},"sources_par_cheval":{{}},"outsiders_surprises":[],"deferres":[],"sources_consultees":[],"resume_tendance":"Aucun pronostic"}}"""
 
     try:
         r = requests.post(
@@ -476,18 +477,22 @@ Si aucun pronostic : {{"nb_sources_trouvees":0,"citations_top3":{{}},"sources_pa
         log.info(f"  Pronostics [{type_str}]: {nb_sources} sources | "
                  f"{len(citations)} chevaux | {len(outsiders)} outsiders")
 
+        deferres = [d.upper().strip() for d in parsed.get("deferres", [])]
+        log.info(f"  Deferres detectes: {deferres}")
+
         return {
             "citations": citations,
             "citations_pond": citations_pond,
             "nb_sources": nb_sources,
             "sources_par_ch": sources_par_ch,
             "outsiders": outsiders,
+            "deferres": deferres,
             "resume": parsed.get("resume_tendance", ""),
         }
     except Exception as e:
         log.warning(f"Pronostics: {e}")
         return {"citations": {}, "citations_pond": {}, "nb_sources": 0,
-                "sources_par_ch": {}, "outsiders": []}
+                "sources_par_ch": {}, "outsiders": [], "deferres": []}
 
 
 def get_stats_proprietaire(proprietaire: str, hippodrome: str) -> float:
@@ -567,45 +572,58 @@ def score_forme_fraiche(performances) -> float:
     return sum(scores) / len(scores) if scores else 50.0
 
 
-def score_fautes_trot(performances, n=5) -> float:
+def score_fautes_trot(performances, n=5, musique="") -> float:
     """
     Malus pour les chevaux qui se mettent souvent au galop ou commettent
     des erreurs en trot sur les 5 dernieres courses.
-    Retourne un score de penalite (0 = aucune faute, negatif = penalite).
+
+    Lit :
+    1. Le champ incident/typeIncident dans les performances
+    2. Le champ ordreArrivee (D=Disqualifie/Galop, A=Arrete, T=Tombe)
+    3. La musique PMU : D, G, A dans les 5 derniers caracteres
+
+    Retourne un malus negatif (0 = pas de faute).
     """
-    if not performances:
-        return 0.0
-
     nb_fautes = 0
-    nb_courses_analysees = 0
+    nb_analysees = 0
 
+    # Analyser les performances detaillees
     for p in performances[:n]:
-        nb_courses_analysees += 1
-        # Champs possibles pour les incidents/fautes
-        incident = p.get("incident") or p.get("typeIncident") or ""
-        arrivee  = str(p.get("ordreArrivee") or p.get("place") or "")
+        nb_analysees += 1
+        incident = str(p.get("incident") or p.get("typeIncident") or "").upper()
+        arrivee  = str(p.get("ordreArrivee") or p.get("place") or "").upper()
 
-        if isinstance(incident, str) and incident.upper() in (
-            "GALOP", "DECROCHEMENT", "DISQUALIFIE", "NON_PARTANT",
-            "TOMBE", "CHUTE", "ABANDON", "G", "D"
-        ):
+        if incident in ("GALOP", "DECROCHEMENT", "DISQUALIFIE", "TOMBE",
+                        "CHUTE", "ABANDON", "G", "D", "A", "T"):
             nb_fautes += 1
-        elif arrivee.upper() in ("D", "G", "T", "A"):  # Decroche, Galop, Tombe, Abandon
+        elif arrivee in ("D", "G", "T", "A"):
             nb_fautes += 1
 
-    if nb_courses_analysees == 0:
+    # Analyser la musique PMU si peu de performances detaillees
+    if nb_analysees < 3 and musique:
+        # Extraire les 10 derniers caracteres de la musique
+        musique_recente = musique.upper().replace(" ", "")[-20:]
+        # Compter les codes de fautes
+        for code in ["D", "G", "A", "T"]:
+            nb_fautes += musique_recente.count(code)
+        nb_analysees = max(nb_analysees, min(5, len(musique_recente) // 2))
+
+    if nb_analysees == 0:
         return 0.0
 
-    taux_fautes = nb_fautes / nb_courses_analysees
-    # Pas de faute = 0 | 1 faute sur 5 = -4 pts | 2 sur 5 = -8 pts | 3+ = -15 pts
-    if taux_fautes == 0:
+    taux = nb_fautes / nb_analysees
+
+    # Malus progressif
+    if taux == 0:
         return 0.0
-    elif taux_fautes <= 0.2:
+    elif taux <= 0.2:   # 1 faute sur 5
         return -4.0
-    elif taux_fautes <= 0.4:
+    elif taux <= 0.4:   # 2 fautes sur 5
         return -8.0
-    else:
-        return -15.0
+    elif taux <= 0.6:   # 3 fautes sur 5
+        return -12.0
+    else:               # 4+ fautes sur 5
+        return -18.0
 
 
 def score_progression(performances, n=4) -> float:
@@ -866,11 +884,19 @@ def normaliser_scores(resultats) -> list:
 
 
 def est_outsider_suspect(r, nb_sources, type_course) -> bool:
-    cote  = r.get("cote_jour", 0)
+    """
+    Suspect si grosse cote ET aucun signal externe.
+    Seuil : 15.0 sans pronostics / 30.0 avec pronostics.
+    """
+    cote   = r.get("cote_jour", 0)
     nb_cit = r.get("nb_pronostics", 0)
-    mvt   = r.get("variation_cote_%", "")
-    chute = isinstance(mvt, (int, float)) and mvt <= -25
-    if cote <= 25.0 or cote == 0:
+    mvt    = r.get("variation_cote_%", "")
+    chute  = isinstance(mvt, (int, float)) and mvt <= -25
+
+    # Seuil selon disponibilite des pronostics
+    seuil = 30.0 if nb_sources > 0 else 15.0
+
+    if cote <= seuil or cote == 0:
         return False
     if nb_cit > 0:
         return False
@@ -885,6 +911,7 @@ def appliquer_filtre_et_inversion(resultats, nb_sources, type_course) -> list:
     """
     1. Filtre les outsiders suspects en N1
     2. Inverse N1/N2 si pronostics le justifient
+    3. Si scores egaux et pas de pronostics : favori de cote en N1
     """
     if not resultats:
         return resultats
@@ -908,6 +935,21 @@ def appliquer_filtre_et_inversion(resultats, nb_sources, type_course) -> list:
         if pond_n2 > pond_n1 * 1.5 and ecart < 5:
             resultats[0], resultats[1] = resultats[1], resultats[0]
             log.info(f"  Inversion N1/N2: {n2['nom_cheval']} -> N1")
+
+    # Si scores tres proches (< 1 pt) et pas de pronostics
+    # -> le favori de cote (plus basse cote = plus confiance du marche) en N1
+    if len(resultats) >= 2 and nb_sources == 0:
+        n1 = resultats[0]
+        n2 = resultats[1]
+        ecart_score = abs(n1.get("score_total", 0) - n2.get("score_total", 0))
+        cote_n1 = n1.get("cote_jour", 999)
+        cote_n2 = n2.get("cote_jour", 999)
+        if ecart_score < 1.0 and cote_n2 > 0 and cote_n1 > cote_n2 * 1.5:
+            resultats[0], resultats[1] = resultats[1], resultats[0]
+            log.info(
+                f"  Favori marche: {n2['nom_cheval']} (cote {cote_n2}) "
+                f"-> N1 (scores egaux, marche prefere)"
+            )
 
     return resultats
 
@@ -964,6 +1006,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
     citations_pond = dict(pronostics_ext.get("citations_pond", {}))
     sources_par_ch = dict(pronostics_ext.get("sources_par_ch", {}))
     outsiders      = pronostics_ext.get("outsiders", [])
+    deferres       = pronostics_ext.get("deferres", [])
     nb_sources     = pronostics_ext.get("nb_sources", 0)
 
     sources_dict = SOURCES_POIDS_TROT if trot else SOURCES_POIDS_GALOP
@@ -1010,6 +1053,9 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
         pct_cit = round((nb_cit / nb_sources * 100) if nb_sources > 0 else 0, 1)
         src_p   = [s for s in sources_par_ch.get(nom_up, []) if s in SOURCES_PREMIUM]
 
+        # Initialisation
+        est_deferre = False
+
         # Scores individuels
         s_proprio  = get_stats_proprietaire(str(proprietaire), hippodrome) if str(proprietaire) else 50.0
         s_joc_glob = score_jockey_global(str(jockey), partants_actifs)
@@ -1017,7 +1063,8 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
         s_trio     = score_trio_proprietaire_jockey_entraineur(s_proprio, s_joc_glob, s_entr)
         s_joc_hippo = score_jockey_sur_hippodrome(perfs, str(jockey), hippodrome)
         s_rk, rk_best = score_record_kilometrique(perfs, distance, partants_actifs) if trot else (0.0, 0.0)
-        s_fautes   = score_fautes_trot(perfs) if trot else 0.0
+        musique_ch = partant.get('musique') or ''
+        s_fautes   = score_fautes_trot(perfs, musique=musique_ch) if trot else 0.0
 
         s = {
             "pronostics":   score_pronostics_pond(nom, citations_pond, poids_max),
@@ -1043,6 +1090,12 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
         # Bonus age saison
         s_total = min(100, s_total + bonus_age_saison(partant))
 
+        # Bonus deferre : cheval sans fers = plus rapide (+4 pts)
+        est_deferre = nom_up in deferres
+        if est_deferre:
+            s_total = min(100, s_total + 4)
+            log.info(f"  *** DEFERRE: {nom} +4 pts ***")
+
         # Value bet : minimum 3 sources
         value_bet = (nb_cit >= 3 and pct_cit >= 40
                      and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
@@ -1061,7 +1114,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
             "type_course_details": type_course, "distance_m": distance,
             "nb_partants": nb_partants, "num_partant": num, "nom_cheval": nom,
             "age": age, "place_corde": place_corde, "poids_porte": poids,
-            "deferre": False, "value_bet": value_bet,
+            "deferre": est_deferre, "value_bet": value_bet,
             "est_outsider_surprise": est_outsider_surprise,
             "consensus_fort": len(src_p) >= 3,
             "sources_premium_citees": src_p, "rk_meilleur": round(rk_best, 2),
