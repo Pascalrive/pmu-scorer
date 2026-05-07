@@ -1,6 +1,6 @@
 """
 =============================================================
-  PMU RACING SCORER v11 - France uniquement
+  PMU RACING SCORER v12 - France uniquement
 =============================================================
   Nouveautes v11 :
     - Detection type de course (HANDICAP / CONDITIONS / GROUPE / RECLAMER)
@@ -803,6 +803,38 @@ def appliquer_filtre_cote(resultats, nb_sources, type_course=TYPE_CONDITIONS) ->
     return resultats
 
 
+def inverser_si_pronostics_justifient(resultats) -> list:
+    """
+    Si le N2 a significativement plus de pronostics que le N1
+    et que la difference de score est faible → inverser N1 et N2.
+
+    Cas typique : N1 score stat eleve mais 0 sources
+                  N2 score stat plus bas mais 3+ sources → N2 devrait etre N1
+    """
+    if len(resultats) < 2:
+        return resultats
+
+    n1 = resultats[0]
+    n2 = resultats[1]
+
+    pond_n1 = n1.get("nb_pronostics_pondere", 0) or 0
+    pond_n2 = n2.get("nb_pronostics_pondere", 0) or 0
+    score_n1 = n1.get("score_total", 0)
+    score_n2 = n2.get("score_total", 0)
+    ecart_score = score_n1 - score_n2
+
+    # Inverser si N2 a beaucoup plus de pronostics
+    # et que l ecart de score est inferieur a 5 pts
+    if pond_n2 > pond_n1 * 1.5 and ecart_score < 5:
+        resultats[0], resultats[1] = resultats[1], resultats[0]
+        log.info(
+            f"  Inversion N1/N2: {n2['nom_cheval']} (pond {pond_n2:.1f}) "
+            f"-> N1 | {n1['nom_cheval']} (pond {pond_n1:.1f}) -> N2"
+        )
+
+    return resultats
+
+
 # ──────────────────────────────────────────────
 #  5. ANALYSE D'UNE COURSE
 # ──────────────────────────────────────────────
@@ -848,7 +880,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
     pronostics_ext = {"citations": {}, "citations_pond": {}, "nb_sources": 0, "sources_par_ch": {}}
     if activer_presse and ANTHROPIC_KEY:
         pronostics_ext = get_pronostics_externes(noms_actifs, libelle, date_aff, hippodrome, discipline)
-        time.sleep(30)  # Eviter rate limit 30k tokens/min
+        time.sleep(60)  # Eviter rate limit 30k tokens/min
 
     citations      = dict(pronostics_ext.get("citations", {}))
     citations_pond = dict(pronostics_ext.get("citations_pond", {}))
@@ -928,7 +960,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
             s_total = max(0, s_total - 1)
 
         # Value bet
-        value_bet = (pct_cit >= 40 and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
+        value_bet = (nb_cit >= 3 and pct_cit >= 40 and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
 
         var_cote = ""
         if cote_veille and cote_jour:
@@ -971,6 +1003,7 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
     resultats.sort(key=lambda x: x["score_total"], reverse=True)
     resultats = normaliser_scores(resultats)
     resultats = appliquer_filtre_cote(resultats, nb_sources, type_course)
+    resultats = inverser_si_pronostics_justifient(resultats)
 
     consensus_fort = any(r.get("consensus_fort") for r in resultats[:2])
 
@@ -1027,7 +1060,7 @@ def main():
     activer_presse = bool(ANTHROPIC_KEY)
 
     log.info("=" * 70)
-    log.info(f"  PMU SCORER v11 - {date_aff} - {heure_run}")
+    log.info(f"  PMU SCORER v12 - {date_aff} - {heure_run}")
     log.info(f"  Type course detecte | Progression | Bonus age")
     log.info(f"  R/K trot | Filtre cote | Sources ponderees")
     log.info(f"  Pronostics: {'OK' if activer_presse else 'desactive'}")
@@ -1119,7 +1152,7 @@ def main():
         telegram_send(f"PMU Scorer {date_aff} - aucun resultat.")
 
     log.info("\n" + "=" * 70)
-    log.info("  SCORER v11 TERMINE")
+    log.info("  SCORER v12 TERMINE")
     log.info("=" * 70)
 
 
