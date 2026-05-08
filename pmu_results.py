@@ -194,32 +194,27 @@ def evaluer_strategies(chevaux) -> dict:
     n4 = chevaux[3] if len(chevaux) > 3 else None
     strategies = {}
 
-    # P1 - Simple Place
-    if (n1.get("consensus_fort") or
-            (n1["score_total"] >= SEUIL_P1_SCORE
-             and n1["nb_pronostics"] >= SEUIL_P1_SOURCES)):
-        raison = ("CONSENSUS FORT" if n1.get("consensus_fort")
-                  else f"Score {n1['score_total']:.1f}% + {n1['nb_pronostics']} source(s)")
-        strategies["P1"] = {
-            "label": "Simple Place N1", "mise": MISE_P1,
-            "cheval1": n1["nom_cheval"], "raison": raison,
-        }
+    # P1 - Simple Place sur N1 — TOUJOURS joue
+    raison = ("CONSENSUS FORT" if n1.get("consensus_fort")
+              else f"Score {n1['score_total']:.1f}%")
+    strategies["P1"] = {
+        "label": "Simple Place N1", "mise": MISE_P1,
+        "cheval1": n1["nom_cheval"], "raison": raison,
+    }
 
-    # P2 - Couple Place
-    if n1["score_total"] >= SEUIL_P2_SCORE and n1["nb_sources"] > 0:
-        strategies["P2"] = {
-            "label": "Couple Place N1+N2", "mise": MISE_P2,
-            "cheval1": n1["nom_cheval"], "cheval2": n2["nom_cheval"],
-            "raison": f"Score N1 {n1['score_total']:.1f}% + pronostics confirmes",
-        }
+    # P2 - Couple Place N1+N2 — TOUJOURS joue (condition : 8+ partants geree dans simuler_p2)
+    strategies["P2"] = {
+        "label": "Couple Place N1+N2", "mise": MISE_P2,
+        "cheval1": n1["nom_cheval"], "cheval2": n2["nom_cheval"],
+        "raison": f"N1+N2 systeme",
+    }
 
-    # P3 - 2sur4
-    if n3 and n4 and (n3["score_total"] - n4["score_total"]) >= SEUIL_P3_ECART:
-        strategies["P3"] = {
-            "label": "2sur4 N1+N2 fixes", "mise": MISE_P3,
-            "cheval1": n1["nom_cheval"], "cheval2": n2["nom_cheval"],
-            "raison": f"Top5 coherent | ecart N3-N4: {n3['score_total']-n4['score_total']:.1f} pts",
-        }
+    # P3 - 2sur4 N1+N2 fixes — TOUJOURS joue
+    strategies["P3"] = {
+        "label": "2sur4 N1+N2 fixes", "mise": MISE_P3,
+        "cheval1": n1["nom_cheval"], "cheval2": n2["nom_cheval"],
+        "raison": "2sur4 systeme",
+    }
     return strategies
 
 
@@ -450,12 +445,15 @@ def main():
     tp = total_r - total_i
     sgn_t = "+" if tp >= 0 else ""
     roi_t = tp / total_i * 100 if total_i > 0 else 0
+    verdict = "BENEFICE" if tp > 0 else ("EQUILIBRE" if tp == 0 else "PERTE")
     bilan += [
         "─" * 35,
         f"  TOTAL INVESTI  : {total_i:.2f}e",
         f"  TOTAL RETOUR   : {total_r:.2f}e",
-        f"  PROFIT NET     : {sgn_t}{tp:.2f}e",
+        f"  GAIN / PERTE   : {sgn_t}{tp:.2f}e  [{verdict}]",
         f"  ROI GLOBAL     : {sgn_t}{roi_t:.0f}%",
+        "",
+        f"  Investissement - Gains = {total_i:.2f}e - {total_r:.2f}e = {sgn_t}{tp:.2f}e",
         "", "Outil statistique - Jouer responsable.",
     ]
 
