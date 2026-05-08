@@ -5,7 +5,7 @@ on:
     - cron: '5 9 * * *'       # 11h05 Paris - scores du matin
     - cron: '15 9 * * *'      # 11h15 Paris - notifier H-15min
     - cron: '30 10 * * *'     # 12h30 Paris - scores H-30
-    - cron: '0 18 * * *'      # 20h00 Paris - bilan du soir
+    - cron: '30 17 * * *'     # 19h30 Paris - bilan du soir
   workflow_dispatch:
     inputs:
       job:
