@@ -40,7 +40,14 @@ import json
 import logging
 import os
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+try:
+    from zoneinfo import ZoneInfo
+    TZ_PARIS = ZoneInfo('Europe/Paris')
+except ImportError:
+    from datetime import timezone
+    import datetime as dt
+    TZ_PARIS = timezone(timedelta(hours=2))  # UTC+2 ete
 
 import requests
 
@@ -207,7 +214,7 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         heure_str = ""
         if heure_ts and isinstance(heure_ts, (int, float)) and heure_ts > 0:
             try:
-                heure_str = datetime.fromtimestamp(heure_ts / 1000).strftime("%Hh%M")
+                heure_str = datetime.fromtimestamp(heure_ts / 1000, tz=TZ_PARIS).strftime("%Hh%M")
             except Exception:
                 pass
 
@@ -937,20 +944,34 @@ def est_outsider_suspect(r, nb_sources, type_course) -> bool:
 
 def appliquer_filtre_et_inversion(resultats, nb_sources, type_course) -> list:
     """
-    1. Filtre les outsiders suspects en N1
+    1. Filtre les outsiders suspects dans TOUT le top5
     2. Inverse N1/N2 si pronostics le justifient
     3. Si scores egaux et pas de pronostics : favori de cote en N1
     """
     if not resultats:
         return resultats
 
-    # Filtre N1 suspect
+    # Filtre sur TOUT le top5 : remonter les chevaux credibles
+    # Un outsider suspect (cote > seuil, 0 sources, pas handicap) est pousse apres
+    # les chevaux credibles dans le classement
+    top5 = resultats[:5]
+    reste = resultats[5:]
+
+    credibles = [r for r in top5 if not est_outsider_suspect(r, nb_sources, type_course)]
+    suspects  = [r for r in top5 if est_outsider_suspect(r, nb_sources, type_course)]
+
+    if suspects:
+        for s in suspects:
+            log.info(f"  Filtre top5: {s['nom_cheval']} (cote {s['cote_jour']}) suspect -> recule")
+        resultats = credibles + suspects + reste
+    
+    # Si N1 toujours suspect apres tri
     n1 = resultats[0]
     if est_outsider_suspect(n1, nb_sources, type_course):
         for i, r in enumerate(resultats[1:], 1):
             if not est_outsider_suspect(r, nb_sources, type_course):
                 resultats[0], resultats[i] = resultats[i], resultats[0]
-                log.info(f"  Filtre intelligent: {n1['nom_cheval']} ({n1['cote_jour']}) -> {resultats[0]['nom_cheval']}")
+                log.info(f"  Filtre N1: {n1['nom_cheval']} ({n1['cote_jour']}) -> {resultats[0]['nom_cheval']}")
                 break
 
     # Inversion N1/N2 si pronostics justifient
@@ -1005,6 +1026,12 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
 
     partants_actifs = [p for p in partants if p.get("statut") != "NON_PARTANT"]
     nb_partants     = len(partants_actifs)
+
+    # Exclure les courses sans cotes disponibles (courses amateurs, R11, etc.)
+    partants_avec_cote = [p for p in partants_actifs if extraire_cote(p) > 0]
+    if len(partants_avec_cote) < 3:
+        log.info(f"  Cours ignoree : moins de 3 partants avec cote ({len(partants_avec_cote)})")
+        return {}
 
     # Pre-calculer R/K pour trot
     if trot:
