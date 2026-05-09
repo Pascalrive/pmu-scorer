@@ -175,6 +175,55 @@ def telegram_send(texte: str) -> bool:
     return succes
 
 
+def evaluer_fiabilite_course(course: dict) -> str:
+    """
+    Renvoie un emoji indiquant la fiabilite du pronostic N1 :
+      🔴 = TRES FORTE probabilite de reussite (top fiabilite)
+      🟠 = FORTE probabilite
+      🟢 = MODEREE
+      (rien) = faible / incertain
+
+    Criteres combines :
+      - Score N1 >= 45 : signal stat solide
+      - Au moins 1 source pronostique externe d'accord
+      - Cote N1 < 8 (favori du marche)
+      - Bonus si consensus_fort (>=3 sources premium)
+    """
+    if not course.get("top5"):
+        return ""
+    n1 = course["top5"][0]
+    score    = n1.get("score_total", 0) or 0
+    cote     = n1.get("cote_jour", 99) or 99
+    nb_src   = n1.get("nb_sources_total", 0) or 0
+    nb_cit   = n1.get("nb_pronostics", 0) or 0
+    consens  = n1.get("consensus_fort", False)
+    value    = n1.get("value_bet", False)
+
+    # Score de fiabilite agrege (sur 100)
+    f = 0
+    if score >= 50:           f += 35
+    elif score >= 45:         f += 25
+    elif score >= 40:         f += 15
+    if nb_cit >= 3:           f += 25
+    elif nb_cit >= 2:         f += 15
+    elif nb_cit >= 1:         f += 8
+    if cote < 3:              f += 25
+    elif cote < 5:            f += 18
+    elif cote < 8:            f += 10
+    if consens:               f += 15
+    if value:                 f += 10
+    # Penalite si pas de sources externes
+    if nb_src == 0:           f -= 15
+
+    if f >= 60:
+        return "🔴 "  # TRES FORTE
+    elif f >= 40:
+        return "🟠 "  # FORTE
+    elif f >= 25:
+        return "🟢 "  # MODEREE
+    return ""
+
+
 def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) -> str:
 
     def formater_course(course: dict) -> list:
@@ -203,9 +252,10 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         terrain_str = f" | {terrain}" if terrain else ""
         alert_str   = " *** CONSENSUS FORT ***" if consensus else ""
         type_str    = f" [{type_c}]" if type_c not in (TYPE_CONDITIONS, TYPE_INCONNU) else ""
+        fiab_emoji  = evaluer_fiabilite_course(course)
 
         lignes.append("")
-        lignes.append(f"{reunion} {nc} | {heure_str} | {disc}{terrain_str}{type_str}{alert_str}")
+        lignes.append(f"{fiab_emoji}{reunion} {nc} | {heure_str} | {disc}{terrain_str}{type_str}{alert_str}")
         if libelle:
             lignes.append(f"{libelle[:50]}")
         lignes.append("-" * 35)
@@ -296,6 +346,11 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
     lignes = [
         f"PMU France - Pronostics du {date_aff}",
         run_label,
+        "=" * 38,
+        "",
+        "Fiabilite N1 :",
+        "🔴 = TRES FORTE | 🟠 = FORTE | 🟢 = MODEREE",
+        "(rien) = faible / a surveiller",
         "=" * 38,
     ]
 
