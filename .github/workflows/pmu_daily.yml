@@ -2,9 +2,12 @@ name: PMU Daily Scorer v13
 
 on:
   schedule:
-    - cron: '5 9 * * *'       # 11h05 Paris - scores du matin
-    - cron: '15 9 * * *'      # 11h15 Paris - notifier H-15min
-    - cron: '30 10 * * *'     # 12h30 Paris - scores H-30
+    - cron: '5 9 * * *'       # 11h05 Paris - scorer matin
+    - cron: '15 9 * * *'      # 11h15 Paris - notifier session 1 (11h15-13h15)
+    - cron: '30 10 * * *'     # 12h30 Paris - scorer midi
+    - cron: '15 11 * * *'     # 13h15 Paris - notifier session 2 (13h15-15h15)
+    - cron: '15 13 * * *'     # 15h15 Paris - notifier session 3 (15h15-17h15)
+    - cron: '15 15 * * *'     # 17h15 Paris - notifier session 4 (17h15-19h15)
     - cron: '30 17 * * *'     # 19h30 Paris - bilan du soir
   workflow_dispatch:
     inputs:
@@ -73,10 +76,10 @@ jobs:
   notifier:
     name: Notifier H-15min
     runs-on: ubuntu-latest
-    timeout-minutes: 540
+    timeout-minutes: 130
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
-      (github.event_name == 'schedule' && github.event.schedule == '15 9 * * *')
+      (github.event_name == 'schedule' && (github.event.schedule == '15 9 * * *' || github.event.schedule == '15 11 * * *' || github.event.schedule == '15 13 * * *' || github.event.schedule == '15 15 * * *'))
 
     steps:
       - uses: actions/checkout@v4
