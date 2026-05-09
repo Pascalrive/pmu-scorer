@@ -14,6 +14,12 @@ import logging
 import os
 import time
 from datetime import datetime, timedelta
+try:
+    from zoneinfo import ZoneInfo
+    TZ_PARIS = ZoneInfo('Europe/Paris')
+except ImportError:
+    from datetime import timezone, timedelta
+    TZ_PARIS = timezone(timedelta(hours=2))
 
 import requests
 
@@ -174,7 +180,7 @@ def formater_message_h15(course: dict, partants: list) -> str:
     heure_str = ""
     if heure_ts:
         try:
-            heure_str = datetime.fromtimestamp(heure_ts / 1000).strftime("%Hh%M")
+            heure_str = datetime.fromtimestamp(heure_ts / 1000, tz=TZ_PARIS).strftime("%Hh%M")
         except Exception:
             pass
 
@@ -258,7 +264,7 @@ def main():
 
     # Filtrer les courses de la session actuelle (2h devant nous)
     # Chaque session couvre 2 heures de courses
-    maintenant = datetime.now().timestamp() * 1000
+    maintenant = datetime.now(tz=TZ_PARIS).timestamp() * 1000
     fin_session = maintenant + (2 * 60 * 60 * 1000)  # +2h en ms
 
     courses_a_faire = []
