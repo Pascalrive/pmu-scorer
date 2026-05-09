@@ -974,6 +974,28 @@ def appliquer_filtre_et_inversion(resultats, nb_sources, type_course) -> list:
                 log.info(f"  Filtre N1: {n1['nom_cheval']} ({n1['cote_jour']}) -> {resultats[0]['nom_cheval']}")
                 break
 
+    # Regle absolue : le grand favori (cote < 2.0) doit etre dans le top2
+    # Le marche PMU est tres efficace sur les tres grands favoris
+    grand_favori = None
+    for i, r in enumerate(resultats):
+        if 0 < r.get("cote_jour", 99) < 2.0:
+            grand_favori = (i, r)
+            break
+    if grand_favori:
+        idx, fav = grand_favori
+        if idx > 1:  # Grand favori hors top2
+            # L'inserer en N1 si son score est proche du N1 actuel
+            score_n1 = resultats[0].get("score_total", 0)
+            score_fav = fav.get("score_total", 0)
+            if score_n1 - score_fav < 10:  # Ecart raisonnable
+                resultats.pop(idx)
+                resultats.insert(0, fav)
+                log.info(f"  Grand favori: {fav['nom_cheval']} (cote {fav['cote_jour']}) remonte en N1")
+            else:
+                resultats.pop(idx)
+                resultats.insert(1, fav)
+                log.info(f"  Grand favori: {fav['nom_cheval']} (cote {fav['cote_jour']}) remonte en N2")
+
     # Inversion N1/N2 si pronostics justifient
     if len(resultats) >= 2:
         n1 = resultats[0]
