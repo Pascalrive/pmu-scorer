@@ -1,6 +1,6 @@
 """
 =============================================================
-  PMU RACING SCORER v13 - France uniquement
+  PMU RACING SCORER v14 - France uniquement
 =============================================================
   Nouveautes v13 :
     - Score propriétaire (via boturfers.fr / france-galop)
@@ -79,31 +79,33 @@ SOURCES_POIDS_TROT = {
 }
 SOURCES_PREMIUM = {"Turf BZH", "Paris-Turf", "Equidia", "Frequence Turf", "Le Trot", "Canalturf"}
 
-# Poids GALOP
+# Poids GALOP v14
+# jockey_hippo 5->8 | terrain 8->6 | forme_r 14->12 | mouvement 12->12
 W_GALOP_NORMAL = {
-    "pronostics": 15, "outsider": 5, "forme_r": 16, "mouvement": 12,
-    "terrain": 8, "trio_pje": 18, "distance": 7, "jockey_hippo": 5,
+    "pronostics": 15, "outsider": 5, "forme_r": 12, "mouvement": 12,
+    "terrain": 6, "trio_pje": 18, "distance": 7, "jockey_hippo": 8,
     "progression": 5, "forme_f": 4, "hippodrome": 3, "corde": 2,
-    "rk": 0, "fautes": 0,
+    "rk": 0, "fautes": 3,
 }
 W_GALOP_HANDICAP = {
-    "pronostics": 15, "outsider": 5, "forme_r": 12, "mouvement": 12,
-    "terrain": 6, "trio_pje": 18, "distance": 5, "jockey_hippo": 5,
+    "pronostics": 15, "outsider": 5, "forme_r": 9, "mouvement": 12,
+    "terrain": 5, "trio_pje": 18, "distance": 5, "jockey_hippo": 8,
     "progression": 8, "forme_f": 4, "hippodrome": 3, "corde": 2,
-    "rk": 0, "fautes": 5,
+    "rk": 0, "fautes": 6,
 }
 
-# Poids TROT
+# Poids TROT v14
+# jockey_hippo 5->8 | corde 12->13 | rk 13->11
 W_TROT_NORMAL = {
-    "pronostics": 15, "outsider": 5, "forme_r": 12, "rk": 13,
-    "corde": 12, "mouvement": 8, "trio_pje": 15, "jockey_hippo": 5,
-    "distance": 5, "progression": 3, "hippodrome": 3, "forme_f": 4,
+    "pronostics": 15, "outsider": 5, "forme_r": 12, "rk": 11,
+    "corde": 13, "mouvement": 8, "trio_pje": 15, "jockey_hippo": 8,
+    "distance": 5, "progression": 3, "hippodrome": 3, "forme_f": 2,
     "terrain": 0, "fautes": 0,
 }
 W_TROT_HANDICAP = {
-    "pronostics": 15, "outsider": 5, "forme_r": 10, "rk": 13,
-    "corde": 12, "mouvement": 10, "trio_pje": 15, "jockey_hippo": 5,
-    "distance": 3, "progression": 6, "hippodrome": 3, "forme_f": 3,
+    "pronostics": 15, "outsider": 5, "forme_r": 10, "rk": 11,
+    "corde": 13, "mouvement": 10, "trio_pje": 15, "jockey_hippo": 8,
+    "distance": 3, "progression": 6, "hippodrome": 2, "forme_f": 2,
     "terrain": 0, "fautes": 0,
 }
 
@@ -389,6 +391,28 @@ def get_performances(date_str, nr, nc, num_partant) -> list:
 
 
 def get_cote_veille(date_str_veille, nom_cheval, nr, nc):
+    """
+    Cherche la cote de reference dans cet ordre :
+    1. CSV du matin (si scorer de midi) - variation intra-journee
+    2. API PMU de la veille - variation jour J-1
+    """
+    import glob, csv as csv_mod
+    # 1. Chercher dans les CSV du matin
+    pattern = os.path.join(OUTPUT_DIR, f"pmu_{datetime.now().strftime('%Y%m%d')}_*.csv")
+    fichiers = sorted(glob.glob(pattern))
+    if fichiers:
+        try:
+            with open(fichiers[0], "r", encoding="utf-8-sig") as f:
+                for row in csv_mod.DictReader(f):
+                    if (row.get("nom_cheval", "").upper() == nom_cheval.upper()
+                            and row.get("reunion", "") == f"R{nr}"
+                            and row.get("course", "") == f"C{nc}"):
+                        cote = float(row.get("cote_jour", 0) or 0)
+                        if cote > 0:
+                            return cote
+        except Exception:
+            pass
+    # 2. API veille
     for p in get_participants(date_str_veille, nr, nc):
         if p.get("nom", "").upper() == nom_cheval.upper():
             for champ in ["dernierRapportDirect", "dernierRapportReference", "cotesPmu"]:
@@ -753,7 +777,11 @@ def score_corde(place_corde, nb_partants, discipline, distance) -> float:
         facteur = 0.2
     else:
         facteur = 0.5
-    return min(100, max(0, 50 + (score_base - 50) * facteur))
+    score = min(100, max(0, 50 + (score_base - 50) * facteur))
+    # Bonus v14 : corde <= 2 ET distance courte en trot attele = signal tres fort
+    if disc in ("TROT_ATTELE", "ATTELE") and place_corde <= 2 and distance <= 2400:
+        score = min(100, score + 8)
+    return score
 
 
 def score_record_kilometrique(performances, distance_course, partants_actifs) -> tuple:
@@ -944,7 +972,7 @@ def appliquer_filtre_et_inversion(resultats, nb_sources, type_course) -> list:
         ecart_score = abs(n1.get("score_total", 0) - n2.get("score_total", 0))
         cote_n1 = n1.get("cote_jour", 999)
         cote_n2 = n2.get("cote_jour", 999)
-        if ecart_score < 1.0 and cote_n2 > 0 and cote_n1 > cote_n2 * 1.5:
+        if ecart_score < 1.5 and cote_n2 > 0 and cote_n1 > cote_n2 * 1.3:  # Seuil assoupli v14
             resultats[0], resultats[1] = resultats[1], resultats[0]
             log.info(
                 f"  Favori marche: {n2['nom_cheval']} (cote {cote_n2}) "
@@ -1096,6 +1124,16 @@ def analyser_course(date_str, date_veille, date_aff, nr, nc, info_course,
             s_total = min(100, s_total + 4)
             log.info(f"  *** DEFERRE: {nom} +4 pts ***")
 
+        # Bonus v14 : driver = entraineur (meme nom = proprietaire conduit son cheval)
+        # Signal fort de confiance - le patron sait exactement ce que vaut son cheval
+        jockey_str = str(jockey).upper().strip()
+        entr_str   = str(entraineur).upper().strip()
+        if (jockey_str and entr_str and len(jockey_str) > 3
+                and (jockey_str in entr_str or entr_str in jockey_str
+                     or jockey_str.split()[0] in entr_str)):
+            s_total = min(100, s_total + 4)
+            log.info(f"  *** DRIVER=ENTRAINEUR: {nom} ({jockey_str}) +4 pts ***")
+
         # Value bet : minimum 3 sources
         value_bet = (nb_cit >= 3 and pct_cit >= 40
                      and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
@@ -1191,7 +1229,7 @@ def main():
     activer_presse = bool(ANTHROPIC_KEY)
 
     log.info("=" * 70)
-    log.info(f"  PMU SCORER v13 - {date_aff} - {heure_run}")
+    log.info(f"  PMU SCORER v14 - {date_aff} - {heure_run}")
     log.info(f"  Trio proprio+jockey+entraineur | Outsider surprise | Fautes trot")
     log.info(f"  Pronostics 15% | Top5 affiche | Delai 60s")
     log.info(f"  Pronostics: {'OK' if activer_presse else 'desactive'}")
@@ -1284,7 +1322,7 @@ def main():
         telegram_send(f"PMU Scorer {date_aff} - aucun resultat.")
 
     log.info("\n" + "=" * 70)
-    log.info("  SCORER v13 TERMINE")
+    log.info("  SCORER v14 TERMINE")
     log.info("=" * 70)
 
 
