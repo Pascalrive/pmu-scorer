@@ -256,15 +256,20 @@ def main():
         telegram_send(f"ERREUR : aucune course trouvee pour {date_aff}")
         return
 
-    # Filtrer les courses deja passees ou trop proches
+    # Filtrer les courses de la session actuelle (2h devant nous)
+    # Chaque session couvre 2 heures de courses
     maintenant = datetime.now().timestamp() * 1000
+    fin_session = maintenant + (2 * 60 * 60 * 1000)  # +2h en ms
+
     courses_a_faire = []
     for c in courses:
         heure_notif_ts = c["heure_ts"] - (15 * 60 * 1000)  # H-15min en ms
-        if heure_notif_ts > maintenant:
+        if heure_notif_ts > maintenant and c["heure_ts"] <= fin_session + (15 * 60 * 1000):
             courses_a_faire.append(c)
+        elif heure_notif_ts <= maintenant:
+            log.info(f"  Course passee : R{c['nr']} C{c['nc']} — ignoree")
         else:
-            log.info(f"  Course passee ou trop proche : R{c['nr']} C{c['nc']} — ignoree")
+            log.info(f"  Course hors session : R{c['nr']} C{c['nc']} — couverte par session suivante")
 
     log.info(f"{len(courses_a_faire)} courses a couvrir")
     telegram_send(f"PMU Notifier {date_aff}\n{len(courses_a_faire)} courses a couvrir\nMessages H-15min avant chaque course")
