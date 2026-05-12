@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'Job a lancer : scorer / notifier / results'
+        description: 'Job a lancer : scorer / notifier / results / analyse'
         required: true
         default: 'scorer'
         type: choice
@@ -20,6 +20,7 @@ on:
           - scorer
           - notifier
           - results
+          - analyse
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -109,9 +110,13 @@ jobs:
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
       (github.event_name == 'schedule' && github.event.schedule == '30 17 * * *')
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -123,6 +128,13 @@ jobs:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_results.py
+      - name: Sauvegarder CSV audit dans Git
+        run: |
+          git config user.name "PMU Bot"
+          git config user.email "pmu@github-actions"
+          git add resultats/audit_*.csv 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Audit $(date +%Y%m%d)"
+          git push || true
       - name: Sauvegarder logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -130,4 +142,35 @@ jobs:
           name: results-logs
           path: pmu_results.log
           retention-days: 7
+          overwrite: true
+
+  analyse:
+    name: Analyse audit accumulee
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: >-
+      github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'analyse'
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Installer dependances
+        run: pip install -r requirements.txt
+      - name: Compter les CSV audit disponibles
+        run: |
+          echo "Fichiers audit detectes :"
+          ls -la resultats/audit_*.csv 2>/dev/null | wc -l
+          ls -la resultats/audit_*.csv 2>/dev/null || echo "(aucun)"
+      - name: Lancer analyse audit
+        run: python analyse_audit.py | tee analyse_audit_rapport.txt
+      - name: Sauvegarder rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: analyse-audit-rapport
+          path: analyse_audit_rapport.txt
+          retention-days: 30
           overwrite: true
