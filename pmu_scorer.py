@@ -1,15 +1,20 @@
 """
 =============================================================
-  PMU RACING SCORER v15 - France uniquement
-  (v15 = v14 SANS API Claude, scraping gratuit a la place)
+  PMU RACING SCORER v15.1 - France uniquement
+  (v15.1 = v15 + emojis visuels + patterns historiques)
 =============================================================
+  Changements v15 -> v15.1 :
+    - 🔴 emoji devant les numeros de chevaux Top1/Top2
+    - 🔥 + encadre pour les courses Top10 du jour (score V2)
+    - 🎯 si la course matche un pattern historique gagnant
+    - Mention du score_opportunite pour le tri Top10
+
   Changements v14 -> v15 :
     - Suppression API Anthropic / Claude (cout ~360 EUR/mois)
     - get_pronostics_externes() utilise maintenant pronos_gratuit.py
       (scrape Geny + Zone-Turf + Canalturf + Equidia)
     - get_stats_proprietaire() : table GRANDES_ECURIES uniquement
     - Suppression delai 60s entre courses (plus de rate limit Claude)
-    - Tout le reste de la logique v14 est conserve a l'identique
 =============================================================
   Poids GALOP (100 pts) :
     Pronostics consensus   15 | Outsider surprise      5
@@ -46,6 +51,23 @@ import requests
 
 # v15 : module de scraping gratuit qui remplace les appels Claude
 from pronos_gratuit import get_pronostics_gratuit
+
+# v15.1 : module patterns historiques pour identifier les courses
+# qui matchent un profil gagnant observe (>=50 audits requis).
+try:
+    from patterns_historiques import (
+        detecter_pattern_gagnant,
+        calculer_score_opportunite,
+        compter_audits,
+        info_patterns,
+    )
+    PATTERNS_DISPO = True
+except ImportError:
+    PATTERNS_DISPO = False
+    def detecter_pattern_gagnant(*args, **kwargs): return False
+    def calculer_score_opportunite(*args, **kwargs): return 0.0
+    def compter_audits(): return 0
+    def info_patterns(): return "patterns_historiques.py absent"
 
 # ──────────────────────────────────────────────
 #  CONFIGURATION
@@ -216,15 +238,43 @@ def evaluer_fiabilite_course(course: dict) -> str:
     if nb_src == 0:           f -= 15
 
     if f >= 60:
-        return "🔴 "  # TRES FORTE
+        return "⭐⭐⭐ "  # TRES FORTE
     elif f >= 40:
-        return "🟠 "  # FORTE
+        return "⭐⭐ "  # FORTE
     elif f >= 25:
-        return "🟢 "  # MODEREE
+        return "⭐ "  # MODEREE
     return ""
 
 
 def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) -> str:
+
+    # v15.1 : calcule le score d'opportunite de chaque course pour
+    # identifier le Top10 du jour (encadre avec 🔥).
+    toutes_courses = list(courses_galop) + list(courses_trot)
+    courses_avec_opp = []
+    for c in toutes_courses:
+        if not c.get("top5"):
+            continue
+        n1 = c["top5"][0]
+        n2 = c["top5"][1] if len(c["top5"]) > 1 else {}
+        data_pattern = {
+            "score_n1":     n1.get("score_total", 0),
+            "cote_n1":      n1.get("cote_jour", 0),
+            "ecart_n1_n2":  n1.get("score_total", 0) - n2.get("score_total", 0),
+            "nb_partants":  n1.get("nb_partants", 0),
+        }
+        c["_score_opp"]      = calculer_score_opportunite(data_pattern)
+        c["_pattern_match"]  = detecter_pattern_gagnant(data_pattern)
+        courses_avec_opp.append(c)
+
+    # Identifier les Top10 du jour selon score_opportunite
+    top10_ids = set()
+    if courses_avec_opp:
+        tries = sorted(courses_avec_opp,
+                       key=lambda x: x.get("_score_opp", 0),
+                       reverse=True)[:10]
+        # Identifier chaque course par sa cle (reunion, course)
+        top10_ids = {(c.get("reunion"), c.get("course")) for c in tries}
 
     def formater_course(course: dict) -> list:
         lignes = []
@@ -242,6 +292,11 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         type_c    = course.get("type_course_details", TYPE_CONDITIONS)
         trot      = est_trot(course.get("discipline", ""))
 
+        # v15.1 : flags visuels
+        is_top10        = (reunion, nc) in top10_ids
+        is_pattern      = course.get("_pattern_match", False)
+        score_opp       = course.get("_score_opp", 0)
+
         heure_str = ""
         if heure_ts and isinstance(heure_ts, (int, float)) and heure_ts > 0:
             try:
@@ -254,8 +309,23 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         type_str    = f" [{type_c}]" if type_c not in (TYPE_CONDITIONS, TYPE_INCONNU) else ""
         fiab_emoji  = evaluer_fiabilite_course(course)
 
+        # v15.1 : prefixe visuel pour les courses prioritaires
+        prefix_special = ""
+        if is_top10:
+            prefix_special = "🔥 "  # Top10 du jour
+        pattern_str = " 🎯" if is_pattern else ""
+
         lignes.append("")
-        lignes.append(f"{fiab_emoji}{reunion} {nc} | {heure_str} | {disc}{terrain_str}{type_str}{alert_str}")
+        # Encadre special pour les Top10
+        if is_top10:
+            lignes.append("╔" + "═" * 36 + "╗")
+            lignes.append(f"║ {prefix_special}{fiab_emoji}{reunion} {nc} | {heure_str} | {disc}{pattern_str}")
+            if terrain or type_str or alert_str:
+                lignes.append(f"║ {terrain_str.strip(' |')}{type_str}{alert_str}".rstrip())
+            lignes.append("╚" + "═" * 36 + "╝")
+        else:
+            lignes.append(f"{fiab_emoji}{reunion} {nc} | {heure_str} | {disc}{terrain_str}{type_str}{alert_str}{pattern_str}")
+
         if libelle:
             lignes.append(f"{libelle[:50]}")
         lignes.append("-" * 35)
@@ -295,7 +365,8 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
 
             value_str   = " *** VALUE BET ***" if value else ""
             outsider_str = " [SURPRISE]" if outsider else ""
-            nom_aff     = f"N{num_ch}. {nom}" if num_ch else nom
+            # v15.1 : 🔴 emoji devant le numero du cheval (Top1 + Top2)
+            nom_aff     = f"🔴 N{num_ch}. {nom}" if num_ch else f"🔴 {nom}"
             prefixe     = ">> " if rang == 1 else "   "
 
             lignes.append(f"{prefixe}{rang}. {nom_aff} (cote {cote:.1f}){mvt}{value_str}{outsider_str}")
@@ -348,11 +419,18 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         run_label,
         "=" * 38,
         "",
-        "Fiabilite N1 :",
-        "🔴 = TRES FORTE | 🟠 = FORTE | 🟢 = MODEREE",
-        "(rien) = faible / a surveiller",
+        "LEGENDE :",
+        "🔴 N4. = numero du cheval (Top1+Top2)",
+        "⭐⭐⭐/⭐⭐/⭐ = fiabilite N1 (forte/moyenne/legere)",
+        "🔥 + encadre = TOP 10 du jour",
+        "🎯 = matche un pattern historique gagnant",
         "=" * 38,
     ]
+    if PATTERNS_DISPO:
+        nb_a = compter_audits()
+        if nb_a < 50:
+            lignes.append(f"(patterns inactifs : {nb_a}/50 audits)")
+            lignes.append("=" * 38)
 
     if courses_galop:
         lignes.append("")
@@ -1235,13 +1313,13 @@ def main():
     activer_presse = True  # v15 : toujours actif (gratuit)
 
     log.info("=" * 70)
-    log.info(f"  PMU SCORER v15 - {date_aff} - {heure_run}")
+    log.info(f"  PMU SCORER v15.1 - {date_aff} - {heure_run}")
     log.info(f"  Mode GRATUIT : scraping Geny + Zone-Turf + Canalturf + Equidia")
-    log.info(f"  Plus d'API Claude / Anthropic - Cout = 0 EUR")
+    log.info(f"  {info_patterns()}")
     log.info("=" * 70)
 
     if TELEGRAM_TOKEN:
-        telegram_send(f"PMU Scorer v15 demarre - {date_aff} {heure_run}\n{run_label}...")
+        telegram_send(f"PMU Scorer v15.1 demarre - {date_aff} {heure_run}\n{run_label}...")
 
     programme = get_programme(date_str)
     if not programme:
@@ -1327,7 +1405,7 @@ def main():
         telegram_send(f"PMU Scorer {date_aff} - aucun resultat.")
 
     log.info("\n" + "=" * 70)
-    log.info("  SCORER v15 TERMINE")
+    log.info("  SCORER v15.1 TERMINE")
     log.info("=" * 70)
 
 
