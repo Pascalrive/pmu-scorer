@@ -1,24 +1,23 @@
-name: PMU Daily Scorer v15
+name: PMU Daily Scorer v15.1
 
-# IMPORTANT: les crons sont en UTC. Paris = UTC+2 en ete, UTC+1 en hiver.
-# Minutes choisies : 17, 23, 37, 47 (eviter 0, 5, 15, 30, 45 = surcharge GitHub).
+# Crons en UTC. Paris = UTC+2 (ete) ou UTC+1 (hiver).
+# v15.1 : 1 scorer matin + 4 sessions notifier de 2h chacune
+# Minutes choisies : 17, 23, 37, 47 (eviter 0, 5, 15, 30, 45).
 on:
   schedule:
-    # --- SCORER MATIN (double tir pour fiabilite) ---
-    - cron: '17 9 * * *'    # 11h17 Paris (ete) - scorer matin tir 1
-    - cron: '47 9 * * *'    # 11h47 Paris (ete) - scorer matin tir 2 (retry si tir 1 a manque)
+    # --- SCORER MATIN (11h17 + retry 11h47) ---
+    - cron: '17 9 * * *'    # 11h17 Paris - scorer matin tir 1
+    - cron: '47 9 * * *'    # 11h47 Paris - scorer matin tir 2 (retry si rate)
 
-    # --- NOTIFIERS H-15min ---
-    - cron: '23 9 * * *'    # 11h23 Paris (ete) - notifier session 1 (11h30-13h30)
-    - cron: '23 11 * * *'   # 13h23 Paris (ete) - notifier session 2 (13h30-15h30)
-    - cron: '23 13 * * *'   # 15h23 Paris (ete) - notifier session 3 (15h30-17h30)
-    - cron: '23 15 * * *'   # 17h23 Paris (ete) - notifier session 4 (17h30-19h30)
-
-    # --- SCORER MIDI (cotes fraiches) ---
-    - cron: '37 10 * * *'   # 12h37 Paris (ete) - scorer midi
+    # --- NOTIFIER : 4 sessions de 2h qui couvrent 11h30 -> 19h30 ---
+    - cron: '23 9 * * *'    # 11h23 Paris - session 1 (couvre 11h30-13h30)
+    - cron: '23 11 * * *'   # 13h23 Paris - session 2 (couvre 13h30-15h30)
+    - cron: '23 13 * * *'   # 15h23 Paris - session 3 (couvre 15h30-17h30)
+    - cron: '23 15 * * *'   # 17h23 Paris - session 4 (couvre 17h30-19h30)
 
     # --- BILAN DU SOIR ---
-    - cron: '37 17 * * *'   # 19h37 Paris (ete) - bilan du soir
+    - cron: '37 18 * * *'   # 20h37 Paris - bilan (apres derniere course)
+
   workflow_dispatch:
     inputs:
       job:
@@ -38,16 +37,14 @@ env:
 jobs:
 
   scorer:
-    name: Scores PMU v15
+    name: Scores PMU v15.1 (matin)
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    # v15.1 : tir matin (11h17), retry (11h47) et midi (12h37) + manuel
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
       (github.event_name == 'schedule' && (
         github.event.schedule == '17 9 * * *' ||
-        github.event.schedule == '47 9 * * *' ||
-        github.event.schedule == '37 10 * * *'
+        github.event.schedule == '47 9 * * *'
       ))
     permissions:
       contents: write
@@ -57,22 +54,18 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # v15.1 : pour le tir de 11h47, on ne tourne que si le CSV
-      # du matin (genere par le tir de 11h17) n'existe pas deja.
-      # Cela evite de relancer inutilement si tout s'est bien passe.
+      # Le tir de 11h47 ne s'execute que si le tir de 11h17 a echoue
       - name: Verifier si scorer matin deja execute
         id: check_csv
         run: |
           if [ "${{ github.event.schedule }}" = "47 9 * * *" ]; then
             DATE_TODAY=$(date +%Y%m%d)
-            # Cherche un CSV de moins de 1h
             RECENT=$(find resultats -name "pmu_${DATE_TODAY}_*.csv" -mmin -60 2>/dev/null | wc -l)
             if [ "$RECENT" -gt "0" ]; then
               echo "skip=true" >> $GITHUB_OUTPUT
               echo "Scorer deja execute dans la derniere heure - retry annule"
             else
               echo "skip=false" >> $GITHUB_OUTPUT
-              echo "Aucun CSV recent trouve - retry necessaire"
             fi
           else
             echo "skip=false" >> $GITHUB_OUTPUT
@@ -83,22 +76,18 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
-
       - name: Installer dependances
         if: steps.check_csv.outputs.skip != 'true'
         run: pip install -r requirements.txt
-
       - name: Creer dossier resultats
         if: steps.check_csv.outputs.skip != 'true'
         run: mkdir -p resultats
-
-      - name: Lancer scorer PMU v15
+      - name: Lancer scorer PMU v15.1
         if: steps.check_csv.outputs.skip != 'true'
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_scorer.py
-
       - name: Sauvegarder CSV dans Git
         if: steps.check_csv.outputs.skip != 'true'
         run: |
@@ -107,7 +96,6 @@ jobs:
           git add resultats/*.csv 2>/dev/null || true
           git diff --staged --quiet || git commit -m "CSV $(date +%Y%m%d_%H%M)"
           git push || true
-
       - name: Sauvegarder logs
         if: always() && steps.check_csv.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
@@ -117,12 +105,8 @@ jobs:
           retention-days: 7
           overwrite: true
 
-      - name: Afficher logs
-        if: always() && steps.check_csv.outputs.skip != 'true'
-        run: tail -60 pmu_scorer.log 2>/dev/null || true
-
   notifier:
-    name: Notifier H-15min
+    name: Notifier H-15min v4
     runs-on: ubuntu-latest
     timeout-minutes: 130
     if: >-
@@ -142,7 +126,7 @@ jobs:
           cache: 'pip'
       - name: Installer dependances
         run: pip install -r requirements.txt
-      - name: Lancer notifier H-15min
+      - name: Lancer notifier H-15min v4
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -162,7 +146,7 @@ jobs:
     timeout-minutes: 30
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
-      (github.event_name == 'schedule' && github.event.schedule == '37 17 * * *')
+      (github.event_name == 'schedule' && github.event.schedule == '37 18 * * *')
     permissions:
       contents: write
 
