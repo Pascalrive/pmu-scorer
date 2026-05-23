@@ -301,6 +301,78 @@ def main():
             print(f"{nom:<25} {nb:>5} {places:>7} "
                   f"{investi:>8.2f}e {retour:>8.2f}e {roi:>+6.0f}%")
 
+    # 7bis. Backtest des formules alternatives (v7+)
+    print("\nBACKTEST FORMULES ALTERNATIVES (2sur4 + Couple ameliore)")
+    print("-" * 78)
+
+    # Ne garder que les lignes qui ont les nouvelles colonnes
+    rows_enrichis = [r for r in rows if "2sur4_gagne" in r and r.get("2sur4_gagne") != ""]
+
+    if not rows_enrichis:
+        print("  Aucune donnee enrichie disponible (colonnes N3/N4/favoris absentes).")
+        print("  Ces formules seront backtestables apres quelques jours de collecte v7+.")
+    else:
+        print(f"  Donnees enrichies disponibles : {len(rows_enrichis)} courses")
+        print()
+
+        # --- 2sur4 sur courses retenues par V2N ---
+        # On simule : jouer le 2sur4 (Top4 scoring) sur les courses ou V2N dit PRUDENT/FORT
+        v2n_retenues = [r for r in rows_enrichis
+                        if r.get("v2n_decision") in ("PARI FORT", "PARI PRUDENT")]
+        if v2n_retenues:
+            nb_2s4 = len(v2n_retenues)
+            gagnes_2s4 = sum(to_int(r.get("2sur4_gagne")) for r in v2n_retenues)
+            taux_2s4 = gagnes_2s4 / nb_2s4 * 100 if nb_2s4 else 0
+            # rapport 2sur4 estime forfaitaire (~3x) faute de rapport reel
+            mise_2s4 = 3.0
+            invest_2s4 = nb_2s4 * mise_2s4
+            retour_2s4 = gagnes_2s4 * mise_2s4 * 3.0
+            roi_2s4 = (retour_2s4 - invest_2s4) / invest_2s4 * 100 if invest_2s4 else 0
+            print(f"  2sur4 sur courses V2N retenues :")
+            print(f"    {nb_2s4} courses | {gagnes_2s4} gagnes ({taux_2s4:.0f}%) | "
+                  f"ROI estime {roi_2s4:+.0f}% (rapport forfait 3x)")
+        else:
+            print("  2sur4 : aucune course V2N retenue dans les donnees enrichies")
+
+        # --- 2sur4 sur courses 14+ partants (la ou le pari existe) ---
+        grosses = [r for r in rows_enrichis if to_int(r.get("nb_partants")) >= 14]
+        if grosses:
+            nb_g = len(grosses)
+            gagnes_g = sum(to_int(r.get("2sur4_gagne")) for r in grosses)
+            taux_g = gagnes_g / nb_g * 100 if nb_g else 0
+            print(f"  2sur4 sur courses 14+ partants :")
+            print(f"    {nb_g} courses | {gagnes_g} gagnes ({taux_g:.0f}%)")
+
+        print()
+
+        # --- Couple : comparaison 3 variantes ---
+        print("  COUPLE - comparaison des variantes (sur courses V2N retenues) :")
+        if v2n_retenues:
+            # Variante A : N1+N2 (actuel)
+            cgagne_a = sum(1 for r in v2n_retenues
+                           if to_int(r.get("n1_a_place")) and to_int(r.get("n2_a_place")))
+            # Variante B : N1+N2 seulement si cote N2 < 10
+            elig_b = [r for r in v2n_retenues if 0 < to_float(r.get("n2_cote")) < 10]
+            cgagne_b = sum(1 for r in elig_b
+                           if to_int(r.get("n1_a_place")) and to_int(r.get("n2_a_place")))
+            # Variante C : N1 + 2e favori marche
+            def fav2_place(r):
+                p = r.get("fav2_marche_pos")
+                lim = to_int(r.get("limite_place"), 3)
+                return 1 if (p not in ("", None) and to_int(p) <= lim) else 0
+            cgagne_c = sum(1 for r in v2n_retenues
+                           if to_int(r.get("n1_a_place")) and fav2_place(r))
+
+            n = len(v2n_retenues)
+            print(f"    A. N1+N2 (actuel)         : {cgagne_a}/{n} gagnes "
+                  f"({cgagne_a/n*100:.0f}%)")
+            print(f"    B. N1+N2 si cote N2<10    : {cgagne_b}/{len(elig_b)} gagnes "
+                  f"({cgagne_b/len(elig_b)*100 if elig_b else 0:.0f}%) "
+                  f"[{len(elig_b)} courses eligibles]")
+            print(f"    C. N1+2e favori marche    : {cgagne_c}/{n} gagnes "
+                  f"({cgagne_c/n*100:.0f}%)")
+            print(f"    -> La variante avec le meilleur taux est candidate.")
+
     # 8. Conclusion automatique
     print("\n" + "=" * 78)
     print("RECOMMANDATIONS")
