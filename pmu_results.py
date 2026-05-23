@@ -410,11 +410,21 @@ def main():
         nr, nc = chevaux[0]["nr"], chevaux[0]["nc"]
         n1 = chevaux[0]
         n2 = chevaux[1] if len(chevaux) > 1 else None
+        n3 = chevaux[2] if len(chevaux) > 2 else None
+        n4 = chevaux[3] if len(chevaux) > 3 else None
+        n5 = chevaux[4] if len(chevaux) > 4 else None
         disc = n1.get("discipline", "").replace("_", " ")
         libelle  = n1.get("libelle", "")
         terrain  = n1.get("terrain", "")
         hippodrome = n1.get("hippodrome", "")
         type_course = n1.get("type_course", "")
+
+        # v7+ : favoris du marche (chevaux a la cote la plus basse)
+        # Parmi le top5 du scoring, on identifie ceux a plus basse cote.
+        chevaux_avec_cote = [c for c in chevaux if c.get("cote_jour", 0) > 0]
+        favoris_marche = sorted(chevaux_avec_cote, key=lambda c: c.get("cote_jour", 999))
+        fav1_marche = favoris_marche[0] if len(favoris_marche) > 0 else None
+        fav2_marche = favoris_marche[1] if len(favoris_marche) > 1 else None
 
         resultats = get_resultats_course(date_str, nr, nc)
         rapports  = get_rapports(date_str, nr, nc)
@@ -435,6 +445,22 @@ def main():
 
         p1_place = get_place(n1, resultats)
         p2_place = get_place(n2, resultats) if n2 else None
+        p3_place = get_place(n3, resultats) if n3 else None
+        p4_place = get_place(n4, resultats) if n4 else None
+        p5_place = get_place(n5, resultats) if n5 else None
+
+        # v7+ : positions des favoris marche
+        pfav1_place = get_place(fav1_marche, resultats) if fav1_marche else None
+        pfav2_place = get_place(fav2_marche, resultats) if fav2_marche else None
+
+        # v7+ : combien de notre Top4 finit dans le top4 reel (pour 2sur4)
+        top4_chevaux = [c for c in (n1, n2, n3, n4) if c]
+        nb_top4_dans_top4 = sum(
+            1 for c in top4_chevaux
+            if (get_place(c, resultats) or 99) <= 4
+        )
+        # 2sur4 gagne si au moins 2 de nos 4 chevaux sont dans le top 4 reel
+        deux_sur_quatre_gagne = 1 if nb_top4_dans_top4 >= 2 else 0
 
         # Statut N1 pour le rapport
         if p1_place == 1:
@@ -583,6 +609,24 @@ def main():
             "v2n_gain":         round(gain_v2n_simple, 2),
             "couple_type":      type_couple,
             "couple_gain":      round(gain_couple_brut, 2),
+            # v7+ : donnees pour backtest futur (2sur4, couple favori marche)
+            "n3_nom":           n3.get("nom_cheval", "") if n3 else "",
+            "n3_cote":          round(n3.get("cote_jour", 0), 2) if n3 else 0,
+            "n3_position":      p3_place if p3_place else "",
+            "n4_nom":           n4.get("nom_cheval", "") if n4 else "",
+            "n4_cote":          round(n4.get("cote_jour", 0), 2) if n4 else 0,
+            "n4_position":      p4_place if p4_place else "",
+            "n5_nom":           n5.get("nom_cheval", "") if n5 else "",
+            "n5_cote":          round(n5.get("cote_jour", 0), 2) if n5 else 0,
+            "n5_position":      p5_place if p5_place else "",
+            "fav1_marche_nom":  fav1_marche.get("nom_cheval", "") if fav1_marche else "",
+            "fav1_marche_cote": round(fav1_marche.get("cote_jour", 0), 2) if fav1_marche else 0,
+            "fav1_marche_pos":  pfav1_place if pfav1_place else "",
+            "fav2_marche_nom":  fav2_marche.get("nom_cheval", "") if fav2_marche else "",
+            "fav2_marche_cote": round(fav2_marche.get("cote_jour", 0), 2) if fav2_marche else 0,
+            "fav2_marche_pos":  pfav2_place if pfav2_place else "",
+            "nb_top4_dans_top4": nb_top4_dans_top4,
+            "2sur4_gagne":      deux_sur_quatre_gagne,
         })
 
         time.sleep(0.3)
