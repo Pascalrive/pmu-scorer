@@ -4,20 +4,6 @@ name: PMU Daily Scorer v15.1
 # v15.1 : 1 scorer matin + 4 sessions notifier de 2h chacune
 # Minutes choisies : 17, 23, 37, 47 (eviter 0, 5, 15, 30, 45).
 on:
-  schedule:
-    # --- SCORER MATIN (11h17 + retry 11h47) ---
-    - cron: '17 9 * * *'    # 11h17 Paris - scorer matin tir 1
-    - cron: '47 9 * * *'    # 11h47 Paris - scorer matin tir 2 (retry si rate)
-
-    # --- NOTIFIER : 4 sessions de 2h qui couvrent 11h30 -> 19h30 ---
-    - cron: '23 9 * * *'    # 11h23 Paris - session 1 (couvre 11h30-13h30)
-    - cron: '23 11 * * *'   # 13h23 Paris - session 2 (couvre 13h30-15h30)
-    - cron: '23 13 * * *'   # 15h23 Paris - session 3 (couvre 15h30-17h30)
-    - cron: '23 15 * * *'   # 17h23 Paris - session 4 (couvre 17h30-19h30)
-
-    # --- BILAN DU SOIR ---
-    - cron: '37 18 * * *'   # 20h37 Paris - bilan (apres derniere course)
-
   workflow_dispatch:
     inputs:
       job:
@@ -30,7 +16,6 @@ on:
           - notifier
           - results
           - analyse
-
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
