@@ -128,34 +128,64 @@ def get_resultats_course(date_str, nr, nc) -> dict:
     return res
 
 
+def _parse_rapports_payload(data, r) -> bool:
+    """Tente de remplir r depuis un payload rapports. Renvoie True si au moins 1 rapport trouve."""
+    trouve = False
+    try:
+        # Format 1 : liste de dicts {typePari, combinaisons:[{rapport}]}
+        items = data.get("rapports", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+        for rap in items:
+            if not isinstance(rap, dict):
+                continue
+            tp     = (rap.get("typePari") or rap.get("typePariFusionne") or "").upper()
+            combis = rap.get("combinaisons") or rap.get("rapports") or []
+            if not combis:
+                # Format 2 : rapport directement sur l'objet
+                val = float(rap.get("rapport", 0) or 0)
+                if val <= 0:
+                    continue
+                val = val / 100 if val > 100 else val
+                combis = [{"rapport": rap.get("rapport", 0)}]
+            raw = float(combis[0].get("rapport", 0) or 0)
+            if raw <= 0:
+                continue
+            # Les rapports PMU sont en centimes d'euro (base 1e) -> diviser par 100 si > 100
+            val = raw / 100 if raw > 100 else raw
+            if "SIMPLE_GAGNANT" in tp and r["simple_gagnant"] == 0:
+                r["simple_gagnant"] = val; trouve = True
+            elif "SIMPLE_PLACE" in tp and r["simple_place"] == 0:
+                r["simple_place"] = val; trouve = True
+            elif "COUPLE_GAGNANT" in tp and r["couple_gagnant"] == 0:
+                r["couple_gagnant"] = val; trouve = True
+            elif "COUPLE_PLACE" in tp and r["couple_place"] == 0:
+                r["couple_place"] = val; trouve = True
+    except Exception as e:
+        log.warning(f"Parse rapports: {e}")
+    return trouve
+
+
 def get_rapports(date_str, nr, nc) -> dict:
-    """Rapports reels PMU."""
+    """Rapports reels PMU, avec fallback sur plusieurs endpoints (robuste depuis la
+    regression du 19/05 ou l'endpoint 'rapports-definitifs' a cesse de repondre)."""
     r = {
         "simple_gagnant": 0.0,
         "simple_place": 0.0,
         "couple_gagnant": 0.0,
         "couple_place": 0.0,
     }
-    data = api_get(f"/programme/{date_str}/R{nr}/C{nc}/rapports-definitifs")
-    if not data:
-        return r
-    try:
-        for rap in (data.get("rapports", []) if isinstance(data, dict) else []):
-            tp     = rap.get("typePari", "").upper()
-            combis = rap.get("combinaisons", [])
-            if not combis:
-                continue
-            val = float(combis[0].get("rapport", 0) or 0) / 100
-            if "SIMPLE_GAGNANT" in tp:
-                r["simple_gagnant"] = val
-            elif "SIMPLE_PLACE" in tp and r["simple_place"] == 0:
-                r["simple_place"] = val
-            elif "COUPLE_GAGNANT" in tp and r["couple_gagnant"] == 0:
-                r["couple_gagnant"] = val
-            elif "COUPLE_PLACE" in tp and r["couple_place"] == 0:
-                r["couple_place"] = val
-    except Exception as e:
-        log.warning(f"Rapports: {e}")
+    # On essaie plusieurs endpoints connus, dans l'ordre. Le premier qui renvoie
+    # des rapports exploitables gagne.
+    endpoints = [
+        f"/programme/{date_str}/R{nr}/C{nc}/rapports-definitifs",
+        f"/programme/{date_str}/R{nr}/C{nc}/rapports-definitifs?specialisation=INTERNET",
+        f"/programme/{date_str}/R{nr}/C{nc}/rapports",
+        f"/programme/{date_str}/R{nr}/C{nc}/rapports?specialisation=INTERNET",
+    ]
+    for ep in endpoints:
+        data = api_get(ep)
+        if data and _parse_rapports_payload(data, r):
+            return r
+    log.warning(f"Rapports introuvables R{nr}C{nc} ({date_str}) sur tous les endpoints")
     return r
 
 
@@ -431,6 +461,19 @@ def main():
         nb_part   = get_nb_partants(date_str, nr, nc)
         time.sleep(0.5)
 
+        # Filet de securite : si le rapport simple place reel est introuvable,
+        # on l'estime a partir de la cote du N1 (place ~ cote * 0.30, plancher 1.10).
+        # Ainsi le ROI reste calculable meme si l'API rapports est en panne.
+        rapports["simple_place_estime"] = False
+        if rapports["simple_place"] == 0:
+            try:
+                cote_n1 = float(n1.get("cote_jour", 0) or 0)
+            except Exception:
+                cote_n1 = 0
+            if cote_n1 > 0:
+                rapports["simple_place"] = max(1.10, round(cote_n1 * 0.30, 2))
+                rapports["simple_place_estime"] = True
+
         terrain_str = f" | {terrain}" if terrain else ""
         lignes_res.append(f"\n{reunion} {course} | {disc}{terrain_str}")
         if libelle:    lignes_res.append(f"  {libelle[:45]}")
@@ -598,6 +641,7 @@ def main():
             "nb_sources":       nb_src,
             "rapport_simple_gagnant": round(rapports["simple_gagnant"], 2),
             "rapport_simple_place":   round(rapports["simple_place"], 2),
+            "rapport_place_estime":   1 if rapports.get("simple_place_estime") else 0,
             "rapport_couple_gagnant": round(rapports["couple_gagnant"], 2),
             "rapport_couple_place":   round(rapports["couple_place"], 2),
             # Strategies
