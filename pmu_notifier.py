@@ -1,17 +1,20 @@
 """
 =============================================================
-  PMU NOTIFIER v4 - Messages H-15min avec recalcul leger
+  PMU NOTIFIER v5 - Version ECONOME (ponctuelle)
 =============================================================
-  Changements v3 -> v4 :
-    - Charge le CSV du matin (genere par pmu_scorer.py)
-    - Re-recupere la cote actuelle juste avant H-15min
-    - Re-scrape les pronostics frais (Geny, Zone-Turf, etc.)
-    - VERDICT : CONFIRME / RENFORCE / ATTENTION / CHANGEMENT
-    - Garde le timing intelligent : attend jusqu a H-15min
-    - 🔴 emoji devant numero de cheval (Top1 et Top2)
+  Changement MAJEUR v4 -> v5 :
+    - SUPPRESSION de l'attente active (time.sleep de 2h)
+    - Le notifier regarde les courses dont H-15min tombe
+      dans une FENETRE de [FENETRE_MIN] minutes a partir de
+      maintenant, envoie les notifs, puis S'ARRETE.
+    - Duree d'execution : ~30 secondes au lieu de 2h.
+    - Doit etre appele frequemment (toutes les 15-20 min)
+      par cron-job.org entre ~11h et ~20h.
 
-  Architecture B : 4 sessions/jour, chacune couvre ~2h de courses.
-  Cron du workflow : 11h23, 13h23, 15h23, 17h23 (Paris).
+  ECONOMIE : passe de ~8h/jour de runtime a ~10 min/jour.
+
+  Tout le reste (verdict, scraping frais, formatage) est
+  identique a la v4.
 =============================================================
 """
 
@@ -58,11 +61,23 @@ DISCIPLINES_GALOP = {"PLAT", "HAIES", "STEEPLE", "GALOP"}
 DISCIPLINES_TROT  = {"TROT_ATTELE", "TROT_MONTE", "ATTELE", "MONTE"}
 DISCIPLINES       = DISCIPLINES_GALOP | DISCIPLINES_TROT
 
-# Duree d'une session : 2h ; on couvre les courses dans cet intervalle
-SESSION_DUREE_H = 2
+# ── v5 : FENETRE PONCTUELLE ───────────────────────────────
+# On notifie les courses dont l'heure de depart tombe entre
+# (maintenant + MARGE_MIN_MIN) et (maintenant + FENETRE_MIN).
+# Avec un appel cron toutes les 15-20 min, ca couvre tout.
+#
+# Exemple : FENETRE_MIN=22, MARGE_MIN_MIN=3
+#   -> on notifie les courses qui partent entre 3 et 22 min.
+#   -> a H-15min en moyenne, comme avant.
+FENETRE_MIN     = 22   # borne haute : courses partant dans <= 22 min
+MARGE_MIN_MIN   = 2    # borne basse : courses partant dans >= 2 min
+# Anti-doublon : on note les courses deja notifiees dans un
+# petit fichier JSON du jour (evite de re-notifier au prochain
+# reveil cron si la course est encore dans la fenetre).
+ETAT_FICHIER    = os.path.join(OUTPUT_DIR, "notifier_etat_{date}.json")
 
 HEADERS_PMU = {
-    "User-Agent": "Mozilla/5.0 (compatible; PMU-Notifier/4.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; PMU-Notifier/5.0)",
     "Accept": "application/json",
 }
 
@@ -95,6 +110,30 @@ def telegram_send(texte: str) -> bool:
         except Exception as e:
             log.warning(f"Telegram: {e}")
     return True
+
+
+# ──────────────────────────────────────────────
+#  ETAT (anti-doublon) - v5
+# ──────────────────────────────────────────────
+def charger_etat(date_str_fich: str) -> set:
+    """Renvoie l'ensemble des cles 'R{nr}C{nc}' deja notifiees aujourd'hui."""
+    chemin = ETAT_FICHIER.format(date=date_str_fich)
+    try:
+        with open(chemin, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return set(data.get("notifiees", []))
+    except Exception:
+        return set()
+
+
+def sauver_etat(date_str_fich: str, notifiees: set):
+    chemin = ETAT_FICHIER.format(date=date_str_fich)
+    try:
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        with open(chemin, "w", encoding="utf-8") as f:
+            json.dump({"notifiees": sorted(notifiees)}, f)
+    except Exception as e:
+        log.warning(f"Sauvegarde etat: {e}")
 
 
 # ──────────────────────────────────────────────
@@ -134,10 +173,6 @@ def get_partants(date_str, nr, nc) -> list:
 #  CHARGEMENT DU CSV DU MATIN (v4)
 # ──────────────────────────────────────────────
 def charger_pronos_matin(date_str_fich: str) -> dict:
-    """
-    Charge le dernier CSV genere par pmu_scorer.py du matin.
-    Retourne un dict {(reunion, course): [top5 sorted by score]}
-    """
     pattern  = os.path.join(OUTPUT_DIR, f"pmu_{date_str_fich}_*.csv")
     fichiers = sorted(glob.glob(pattern))
     if not fichiers:
@@ -193,41 +228,26 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
 
 
 # ──────────────────────────────────────────────
-#  RECALCUL LEGER A H-15MIN (v4)
+#  RECALCUL LEGER A H-15MIN (v4 - inchange)
 # ──────────────────────────────────────────────
 def actualiser_course(course_matin_top5: list, date_iso: str,
                       nr: int, nc: int, libelle: str,
                       partants_actuels: list) -> dict:
-    """
-    Compare l'etat actuel avec le pronostic du matin.
-
-    Renvoie un dict :
-      {
-        "verdict":     "CONFIRME" | "RENFORCE" | "ATTENTION" | "CHANGEMENT",
-        "n1_matin":    nom du N1 du matin,
-        "n1_actuel":   nom du nouveau N1 (peut differer),
-        "details":     liste de strings explicatives,
-        "top2_final":  les 2 chevaux a parier maintenant (avec cotes fraiches),
-      }
-    """
     if not course_matin_top5:
         return {"verdict": "INDISPONIBLE", "details": ["CSV matin vide"]}
 
-    # 1. Index par numero/nom des partants actuels
     partants_par_nom = {}
     for p in partants_actuels:
         nom_up = (p.get("nom") or "").upper().strip()
         if nom_up:
             partants_par_nom[nom_up] = p
 
-    # 2. Detecter les non-partants depuis le matin
     non_partants_matin = []
     for ch in course_matin_top5:
         nom_up = ch["nom_cheval"].upper().strip()
         if nom_up not in partants_par_nom:
             non_partants_matin.append(ch["nom_cheval"])
 
-    # 3. Recuperer les pronos frais (scraping)
     pronos_frais = {"scores": {}, "nb_sources": 0}
     if SCRAPING_DISPO:
         try:
@@ -243,21 +263,19 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         except Exception as e:
             log.debug(f"Scraping H-15 echoue R{nr}C{nc}: {e}")
 
-    # 4. Pour chaque cheval du Top5 matin, recuperer cote actuelle + pronos
     chevaux_actualises = []
     for ch in course_matin_top5:
         nom_up = ch["nom_cheval"].upper().strip()
         p_actuel = partants_par_nom.get(nom_up)
         if not p_actuel:
-            continue  # non-partant, ignore
+            continue
 
         cote_matin   = ch["cote_jour"]
         cote_actuel  = extraire_cote(p_actuel)
         variation    = 0.0
         if cote_matin > 0 and cote_actuel > 0:
-            variation = (cote_matin - cote_actuel) / cote_matin * 100
+            variation = (cote_actuel - cote_matin) / cote_matin * 100
 
-        # Score frais des pronos scrapes
         score_pronos_frais = pronos_frais.get("scores", {}).get(nom_up, 0)
 
         chevaux_actualises.append({
@@ -270,9 +288,8 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
     if not chevaux_actualises:
         return {"verdict": "INDISPONIBLE", "details": ["Aucun cheval Top5 retrouve"]}
 
-    # 5. Tri final (score combine : score matin + boost si pronos frais confirment)
     def score_combine(c):
-        boost = c["score_pronos_frais"] * 0.2  # max 20 pts de boost
+        boost = c["score_pronos_frais"] * 0.2
         return c["score_total"] + boost
 
     chevaux_actualises.sort(key=score_combine, reverse=True)
@@ -281,7 +298,6 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
     n1_actuel  = chevaux_actualises[0]["nom_cheval"]
     n1_data    = chevaux_actualises[0]
 
-    # 6. Verdict
     details = []
     if non_partants_matin:
         details.append(f"FORFAITS : {', '.join(non_partants_matin)}")
@@ -290,22 +306,24 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         verdict = "CHANGEMENT"
         details.append(f"Nouveau favori : {n1_actuel} (etait {n1_matin})")
     else:
-        # Meme N1 : analyser la cote pour affiner
         var = n1_data["variation_cote_pc"]
         pronos_frais_bonus = n1_data["score_pronos_frais"]
 
-        if var >= 15 or pronos_frais_bonus >= 60:
+        # v5 : variation = (cote_actuel - cote_matin)/cote_matin
+        #   var < 0  => cote BAISSE (marche favorable) => RENFORCE
+        #   var > 0  => cote MONTE (marche delaisse)   => ATTENTION
+        if var <= -15 or pronos_frais_bonus >= 60:
             verdict = "RENFORCE"
-            if var >= 15:
-                details.append(f"Cote en baisse de {var:.0f}% (marche favorable)")
+            if var <= -15:
+                details.append(f"Cote en baisse de {abs(var):.0f}% (marche favorable)")
             if pronos_frais_bonus >= 60:
                 details.append(f"Confirme par pronostics frais ({pronos_frais.get('nb_sources', 0)} sources)")
-        elif var <= -25:
+        elif var >= 25:
             verdict = "ATTENTION"
-            details.append(f"CHUTE cote {var:.0f}% (signal negatif)")
-        elif var <= -15:
+            details.append(f"Cote monte de {var:.0f}% (signal negatif)")
+        elif var >= 15:
             verdict = "ATTENTION"
-            details.append(f"Cote remonte de {abs(var):.0f}% (prudence)")
+            details.append(f"Cote monte de {var:.0f}% (prudence)")
         else:
             verdict = "CONFIRME"
             details.append(f"Cote stable ({var:+.0f}%)")
@@ -323,7 +341,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
 
 
 # ──────────────────────────────────────────────
-#  CONSTRUCTION DU PROGRAMME
+#  CONSTRUCTION DU PROGRAMME (v4 - inchange)
 # ──────────────────────────────────────────────
 def get_courses_du_jour(date_str: str) -> list:
     programme = api_get(f"/programme/{date_str}")
@@ -376,7 +394,7 @@ def get_courses_du_jour(date_str: str) -> list:
 
 
 # ──────────────────────────────────────────────
-#  FORMAT MESSAGE H-15MIN (v4)
+#  FORMAT MESSAGE H-15MIN (v4 - inchange sauf emoji mvt)
 # ──────────────────────────────────────────────
 def formater_message_h15(course: dict, partants: list,
                           maj: dict) -> str:
@@ -388,7 +406,6 @@ def formater_message_h15(course: dict, partants: list,
     discipline = course["discipline"].replace("_", " ")
     distance   = course["distance"]
     terrain    = course["terrain"]
-    trot       = discipline.upper() in ("TROT ATTELE", "TROT MONTE", "ATTELE", "MONTE")
 
     heure_str = ""
     if heure_ts:
@@ -402,7 +419,6 @@ def formater_message_h15(course: dict, partants: list,
 
     verdict = maj.get("verdict", "INDISPONIBLE")
 
-    # Emoji du verdict (impact visuel immediat)
     verdict_emoji = {
         "CONFIRME":     "✅",
         "RENFORCE":     "🔥",
@@ -426,7 +442,6 @@ def formater_message_h15(course: dict, partants: list,
         lignes.append("")
         lignes.append(f"FORFAITS : {', '.join(maj['non_partants'])}")
 
-    # Top 2 final (avec cote actuelle)
     top2 = maj.get("top2_final", [])
     if top2:
         lignes.append("")
@@ -442,22 +457,23 @@ def formater_message_h15(course: dict, partants: list,
             nb_p        = ch.get("nb_pronostics", 0)
 
             prefix = ">>" if i == 0 else "  "
-            # 🔴 sur le numero du cheval
             nom_aff = f"🔴 N{num}. {nom}" if num else f"🔴 {nom}"
 
+            # v5 : var = (actuel - matin)/matin
+            #   var < 0 => cote baisse (favorable) => 📉
+            #   var > 0 => cote monte => 📈
             mvt_str = ""
             if abs(var) >= 5:
                 mvt_str = f" [{var:+.0f}%]"
-                if var >= 15:
-                    mvt_str += " 📉baisse"
-                elif var <= -15:
-                    mvt_str += " 📈monte"
+                if var <= -15:
+                    mvt_str += " 📉 baisse (favorable)"
+                elif var >= 15:
+                    mvt_str += " 📈 monte"
 
             lignes.append(f"{prefix} {i+1}. {nom_aff}")
             lignes.append(f"   Cote matin {cote_m:.1f} -> actuelle {cote_a:.1f}{mvt_str}")
             lignes.append(f"   Score matin : {score:.1f}% | {nb_p}/{nb_src} sources")
 
-    # Top5 actualise (rappel rapide)
     lignes.append("")
     lignes.append("--- TOP 5 ACTUALISE ---")
     for i, ch in enumerate(maj.get("tous_top5", [])[:5]):
@@ -480,114 +496,81 @@ def formater_message_h15(course: dict, partants: list,
 
 
 # ──────────────────────────────────────────────
-#  PROGRAMME PRINCIPAL
+#  PROGRAMME PRINCIPAL v5 - PONCTUEL (sans attente)
 # ──────────────────────────────────────────────
 def main():
-    today    = datetime.now()
+    today         = datetime.now()
     date_str      = today.strftime("%d%m%Y")
     date_iso      = today.strftime("%Y-%m-%d")
     date_str_fich = today.strftime("%Y%m%d")
     date_aff      = today.strftime("%d/%m/%Y")
 
     log.info("=" * 60)
-    log.info(f"  PMU NOTIFIER v4 - {date_aff}")
-    log.info(f"  Messages H-15min : recalcul leger + verdict")
+    log.info(f"  PMU NOTIFIER v5 (ECONOME) - {date_aff}")
+    log.info(f"  Fenetre : courses partant dans {MARGE_MIN_MIN}-{FENETRE_MIN} min")
     log.info(f"  Scraping : {'OK' if SCRAPING_DISPO else 'NON'}")
-    log.info(f"  Patterns : {'OK' if PATTERNS_DISPO else 'NON'}")
     log.info("=" * 60)
 
     # 1. Charger le CSV du matin
     pronos_matin = charger_pronos_matin(date_str_fich)
     if not pronos_matin:
-        msg = f"PMU Notifier {date_aff} - ERREUR : pas de CSV matin"
-        log.error(msg)
-        telegram_send(msg)
+        log.warning("Pas de CSV matin - le notifier ne peut rien faire (silencieux)")
+        # v5 : pas de message Telegram d'erreur (evite le spam a chaque reveil)
         return
 
     # 2. Charger le programme du jour
     courses = get_courses_du_jour(date_str)
     if not courses:
-        telegram_send(f"PMU Notifier {date_aff} - Aucune course")
+        log.info("Aucune course au programme")
         return
 
-    # 3. Filtrer les courses de la session actuelle (2h devant nous)
-    maintenant = datetime.now(tz=TZ_PARIS).timestamp() * 1000
-    fin_session = maintenant + (SESSION_DUREE_H * 60 * 60 * 1000)
+    # 3. Selectionner SEULEMENT les courses dans la fenetre
+    maintenant_ts = datetime.now(tz=TZ_PARIS).timestamp() * 1000
+    borne_basse   = maintenant_ts + (MARGE_MIN_MIN * 60 * 1000)
+    borne_haute   = maintenant_ts + (FENETRE_MIN * 60 * 1000)
 
-    courses_a_faire = []
-    for c in courses:
-        heure_notif_ts = c["heure_ts"] - (15 * 60 * 1000)
-        if heure_notif_ts > maintenant and c["heure_ts"] <= fin_session + (15 * 60 * 1000):
-            courses_a_faire.append(c)
+    courses_fenetre = [
+        c for c in courses
+        if borne_basse <= c["heure_ts"] <= borne_haute
+    ]
 
-    if not courses_a_faire:
-        log.info("Aucune course dans cette session")
-        telegram_send(
-            f"PMU Notifier {date_aff}\n"
-            "Pas de course dans les 2 prochaines heures.\n"
-            "Prochain notifier dans 2h."
-        )
+    if not courses_fenetre:
+        log.info("Aucune course dans la fenetre - arret immediat (economie)")
         return
 
-    log.info(f"{len(courses_a_faire)} courses a couvrir dans cette session")
-    telegram_send(
-        f"PMU Notifier v4 - {date_aff}\n"
-        f"Session : {len(courses_a_faire)} courses\n"
-        f"Verdict H-15min : CONFIRME / RENFORCE / ATTENTION / CHANGEMENT"
-    )
+    # 4. Anti-doublon : retirer celles deja notifiees aujourd'hui
+    deja = charger_etat(date_str_fich)
+    courses_a_notifier = [
+        c for c in courses_fenetre
+        if f"R{c['nr']}C{c['nc']}" not in deja
+    ]
 
-    # 4. Boucle principale
-    for course in courses_a_faire:
-        nr       = course["nr"]
-        nc       = course["nc"]
-        heure_ts = course["heure_ts"]
+    if not courses_a_notifier:
+        log.info("Toutes les courses de la fenetre deja notifiees - arret")
+        return
 
-        heure_notif_ts = heure_ts - (15 * 60 * 1000)
-        maintenant_ts  = datetime.now().timestamp() * 1000
-        attente_ms     = heure_notif_ts - maintenant_ts
+    log.info(f"{len(courses_a_notifier)} course(s) a notifier maintenant")
 
-        if attente_ms > 0:
-            attente_sec = attente_ms / 1000
-            heure_notif  = datetime.fromtimestamp(heure_notif_ts / 1000)
-            heure_course = datetime.fromtimestamp(heure_ts / 1000)
-            log.info(
-                f"  Attente {attente_sec:.0f}s jusqu a {heure_notif.strftime('%Hh%M')} "
-                f"(course a {heure_course.strftime('%Hh%M')}) - R{nr} C{nc}"
-            )
-            # Attente par tranches de 30s pour eviter le timeout
-            while attente_sec > 0:
-                tranche = min(30, attente_sec)
-                time.sleep(tranche)
-                attente_sec -= tranche
-                if datetime.now().timestamp() * 1000 >= heure_notif_ts:
-                    break
+    # 5. Notifier chaque course (SANS attente - elles sont deja proches)
+    for course in courses_a_notifier:
+        nr = course["nr"]
+        nc = course["nc"]
+        cle = f"R{nr}C{nc}"
 
-        # Recuperation H-15min : partants frais + actualisation
-        log.info(f"  Recalcul H-15min R{nr} C{nc} - {course['libelle']}")
+        log.info(f"  Notif R{nr}C{nc} - {course['libelle']}")
         partants_actuels = get_partants(date_str, nr, nc)
 
         if not partants_actuels:
             log.warning(f"  Partants indisponibles R{nr}C{nc}")
-            telegram_send(
-                f"⚠️ DANS 15 MIN  R{nr} C{nc}\n"
-                f"{course['libelle']}\n"
-                f"{course['hippodrome']}\n"
-                "Partants non disponibles a H-15min"
-            )
+            deja.add(cle)  # on marque quand meme pour eviter de reessayer en boucle
             continue
 
-        # Recuperer le pronostic du matin
         course_matin = pronos_matin.get((f"R{nr}", f"C{nc}"), [])
         if not course_matin:
-            log.warning(f"  Pas de prono matin pour R{nr}C{nc}")
-            telegram_send(
-                f"❓ DANS 15 MIN  R{nr} C{nc}\n"
-                f"{course['libelle']}\n"
-                "Pas de pronostic matin disponible"
-            )
+            log.warning(f"  Pas de prono matin pour R{nr}C{nc} - ignore (pas de message)")
+            deja.add(cle)
             continue
 
-        # Actualisation
         maj = actualiser_course(
             course_matin_top5=course_matin,
             date_iso=date_iso,
@@ -596,16 +579,18 @@ def main():
             partants_actuels=partants_actuels,
         )
 
-        # Envoi message
         message = formater_message_h15(course, partants_actuels, maj)
         telegram_send(message)
         log.info(f"  Envoye R{nr}C{nc} : {maj.get('verdict', '?')}")
+
+        deja.add(cle)
         time.sleep(1)
 
-    # Fin de session
-    telegram_send(f"PMU Notifier {date_aff} - Session terminee.")
+    # 6. Sauvegarder l'etat (anti-doublon pour les prochains reveils)
+    sauver_etat(date_str_fich, deja)
+
     log.info("=" * 60)
-    log.info("  NOTIFIER v4 TERMINE")
+    log.info(f"  NOTIFIER v5 TERMINE - {len(courses_a_notifier)} notif(s) envoyee(s)")
     log.info("=" * 60)
 
 
