@@ -765,17 +765,13 @@ def score_corde(place_corde, nb_partants, discipline, distance) -> float:
     return score
 
 
-def score_record_kilometrique(performances, distance_course, partants_actifs) -> tuple:
-    if not performances:
+def score_record_kilometrique(meilleur_rk_partant, distance_course, partants_actifs) -> tuple:
+    """Note la reduction kilometrique du partant courant par rapport au peloton.
+    meilleur_rk_partant : la R/K du cheval (plus petit = plus rapide), 0 si inconnue.
+    Renvoie (score 0-100, rk_du_partant). Score eleve = cheval rapide vs ses rivaux."""
+    meilleur_rk = float(meilleur_rk_partant or 0)
+    if meilleur_rk <= 0:
         return 50.0, 0.0
-    rk_values = []
-    for p in performances:
-        rk = p.get("reductionKilometrique") or p.get("tempsObtenu")
-        if rk and isinstance(rk, (int, float)) and rk > 0:
-            rk_values.append(float(rk))
-    if not rk_values:
-        return 50.0, 0.0
-    meilleur_rk = min(rk_values)
     tous_rk = [p.get("_meilleur_rk", 0) for p in partants_actifs if p.get("_meilleur_rk", 0) > 0]
     if not tous_rk or len(tous_rk) < 2:
         return 50.0, meilleur_rk
@@ -783,6 +779,7 @@ def score_record_kilometrique(performances, distance_course, partants_actifs) ->
     rk_max = max(tous_rk)
     if rk_max == rk_min:
         return 50.0, meilleur_rk
+    # Plus la R/K est petite (rapide), plus le score est haut
     score = ((rk_max - meilleur_rk) / (rk_max - rk_min)) * 100
     return min(100, max(0, score)), meilleur_rk
 
@@ -1005,15 +1002,29 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
 
     if trot:
         for partant in partants_actifs:
-            num   = partant.get("numPmu") or partant.get("numero")
-            perfs = get_performances(date_str, nr, nc, num)
-            rk_vals = [
-                float(p.get("reductionKilometrique") or p.get("tempsObtenu") or 0)
-                for p in perfs
-                if (p.get("reductionKilometrique") or p.get("tempsObtenu") or 0) > 0
-            ]
-            partant["_meilleur_rk"] = min(rk_vals) if rk_vals else 0
-            time.sleep(0.2)
+            # La reduction kilometrique est disponible DIRECTEMENT dans le JSON
+            # participants (champ reductionKilometrique, sinon tempsObtenu).
+            # Plus petit = plus rapide. On ne depend plus de l'endpoint mort
+            # performances-detaillees.
+            rk_direct = (partant.get("reductionKilometrique")
+                         or partant.get("tempsObtenu") or 0)
+            try:
+                rk_direct = float(rk_direct)
+            except (TypeError, ValueError):
+                rk_direct = 0
+            if rk_direct > 0:
+                partant["_meilleur_rk"] = rk_direct
+            else:
+                # Fallback : ancien endpoint detaille (au cas ou, sans bloquer si vide)
+                num   = partant.get("numPmu") or partant.get("numero")
+                perfs = get_performances(date_str, nr, nc, num)
+                rk_vals = [
+                    float(p.get("reductionKilometrique") or p.get("tempsObtenu") or 0)
+                    for p in perfs
+                    if (p.get("reductionKilometrique") or p.get("tempsObtenu") or 0) > 0
+                ]
+                partant["_meilleur_rk"] = min(rk_vals) if rk_vals else 0
+                time.sleep(0.2)
 
     pronostics_pmu = get_pronostics_pmu(date_str, nr, nc)
     time.sleep(0.5)
@@ -1081,7 +1092,7 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         s_entr     = score_entraineur_global(str(entraineur), partants_actifs)
         s_trio     = score_trio_proprietaire_jockey_entraineur(s_proprio, s_joc_glob, s_entr)
         s_joc_hippo = score_jockey_sur_hippodrome(perfs, str(jockey), hippodrome)
-        s_rk, rk_best = score_record_kilometrique(perfs, distance, partants_actifs) if trot else (0.0, 0.0)
+        s_rk, rk_best = score_record_kilometrique(partant.get("_meilleur_rk", 0), distance, partants_actifs) if trot else (0.0, 0.0)
         musique_ch = partant.get('musique') or ''
         s_fautes   = score_fautes_trot(perfs, musique=musique_ch) if trot else 0.0
 
