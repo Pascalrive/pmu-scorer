@@ -767,6 +767,20 @@ def main():
     telegram_send("\n".join(bilan))
 
     log.info("Bilan v7 envoye.")
+
+    # ── Generation du tableau de bord ROI (HTML autonome) ──
+    # Relit tous les audits (y compris celui qu'on vient d'ecrire) et regenere
+    # resultats/tableau_bord_roi.html. Echoue silencieusement si le module
+    # n'est pas present, pour ne jamais bloquer le bilan.
+    try:
+        from generer_dashboard import generer_dashboard, calculer_bilan
+        chemin = generer_dashboard(output_dir=OUTPUT_DIR)
+        b = calculer_bilan(OUTPUT_DIR)
+        log.info(f"Dashboard ROI mis a jour : {chemin} "
+                 f"({b['tot_paris']} paris, ROI {b['tot_roi']:+.1f}%)")
+    except Exception as e:
+        log.warning(f"Dashboard non genere : {e}")
+
     log.info("=" * 70)
     log.info("  RESULTS v7 TERMINE")
     log.info("=" * 70)
