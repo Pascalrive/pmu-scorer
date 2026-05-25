@@ -1170,6 +1170,16 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
 
     consensus_fort = any(r.get("consensus_fort") for r in resultats[:2])
 
+    # v15.2 : calcul du niveau de selection (pour tracabilite CSV)
+    # On classe la course une seule fois ici, puis on inscrit le niveau
+    # dans CHAQUE ligne (toutes les lignes d'une meme course ont le meme
+    # niveau, qui depend du N1). Vide = course rejetee.
+    course_pour_niveau = {"top5": resultats[:5]}
+    classement = classer_niveau_course(course_pour_niveau)
+    niveau_sel = classement.get("niveau") or ""
+    for r in resultats:
+        r["niveau_selection"] = niveau_sel
+
     log.info(f"\n{'-'*70}")
     log.info(f"  [{type_str}] [{type_course}] {libelle} | {distance}m")
     for i, r in enumerate(resultats[:5], 1):
@@ -1285,6 +1295,7 @@ def main():
             "score_rk","score_fautes","score_distance","score_terrain","score_mouvement",
             "score_trio_pje","score_jockey_hippo","score_progression",
             "score_hippodrome","score_corde","score_total",
+            "niveau_selection",
             "presse_resume","presse_sentiment","presse_sources","presse_signaux",
         ]
         with open(nom_fichier, "w", newline="", encoding="utf-8-sig") as f:
