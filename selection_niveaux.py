@@ -1,30 +1,40 @@
 """
 Module de selection a 3 niveaux (a integrer dans pmu_scorer.py v15.2)
-Base sur l'analyse de 401 paris (12-24/05/2026) :
-  - Cote 2-8 = zone rentable (ROI +37 a +71%)
-  - Partants <= 10 (ideal <=8) = ROI +62 a +89%
-  - Ecart N1/N2 >= 3 = meilleure separation
-  - Score N1 >= 45 = signal solide
 
-NIVEAUX :
-  PEPITE  💎 : cote 2-8 + partants <=8  + ecart>=3 + score>=45
-  SOLIDE  🟢 : cote 2-8 + partants <=10 + ecart>=3
-  CORRECT 🔵 : cote 2-8 + partants <=10
-  (rien)     : tout le reste = non affiche
+=== MODIF 26/05/2026 : recentrage sur la COTE BASSE ===
+Analyse de 401 courses + cas reels (CELAGO, AMARIS, STEALITWITHAKISS) ont montre :
+  - Au GALOP, le placement du N1 depend ENORMEMENT de sa cote :
+      favori <2.5 place ~100% | 2.5-4 ~79% | 4-6 ~44% | 6-8 ~28% | >8 tres faible
+  - Le critere le PLUS fiable = la cote basse. Les autres (score, ecart) sont
+    moins fiables (certains sous-scores etaient morts).
+  - Probleme constate : l'ancien filtre cote 2-8 laissait passer des N1 a 6-8
+    (voire le score poussait des outsiders), qui placent peu.
+DECISION : resserrer la fenetre de cote pour privilegier les favoris.
+  COTE_MAX 8.0 -> 5.0 (au-dela, le placement s'effondre).
+  Ajout d'un sous-niveau PEPITE pour les tres bas (<=4) = coeur de cible.
+Ancienne valeur conservee en commentaire pour pouvoir revenir en arriere.
+
+NIVEAUX (apres modif) :
+  PEPITE  💎 : cote 2-4   + partants <=10                (coeur de cible, place le +)
+  SOLIDE  🟢 : cote 2-5   + partants <=10 + ecart>=2
+  CORRECT 🔵 : cote 2-5   + partants <=12
+  (rien)     : cote >5 ou <2  = non affiche
 """
 
 # Seuils des niveaux
-COTE_MIN = 2.0
-COTE_MAX = 8.0
+COTE_MIN = 1.3          # MODIF 26/05 : etait 2.0 — un favori a 1.5-2.0 place ~100%,
+                        # il ne faut SURTOUT pas le rejeter (cas STEALITWITHAKISS 1.5).
+COTE_MAX = 5.0          # MODIF 26/05 : etait 8.0 (au-dela de 5, placement s'effondre)
 
-PEPITE_PARTANTS_MAX = 8
-PEPITE_ECART_MIN    = 3.0
-PEPITE_SCORE_MIN    = 45.0
+PEPITE_COTE_MAX     = 4.0   # MODIF 26/05 : nouveau, coeur de cible "favori"
+PEPITE_PARTANTS_MAX = 14    # MODIF 26/05 : etait 8 (assoupli, la cote basse prime sur le nb)
+PEPITE_ECART_MIN    = 0.0   # MODIF 26/05 : etait 3.0 (la cote prime sur l'ecart)
+PEPITE_SCORE_MIN    = 0.0   # MODIF 26/05 : etait 45.0 (score peu fiable, desactive)
 
 SOLIDE_PARTANTS_MAX = 10
-SOLIDE_ECART_MIN    = 3.0
+SOLIDE_ECART_MIN    = 2.0   # MODIF 26/05 : etait 3.0
 
-CORRECT_PARTANTS_MAX = 10
+CORRECT_PARTANTS_MAX = 12   # MODIF 26/05 : etait 10
 
 
 def classer_niveau_course(course: dict) -> dict:
@@ -53,12 +63,13 @@ def classer_niveau_course(course: dict) -> dict:
         return {"niveau": None, "emoji": "",
                 "raison": f"partants {nb_partants} > {CORRECT_PARTANTS_MAX}"}
 
-    # PEPITE
-    if (nb_partants <= PEPITE_PARTANTS_MAX
+    # PEPITE = coeur de cible : cote basse (favori). La cote prime.
+    if (cote_n1 <= PEPITE_COTE_MAX
+            and nb_partants <= PEPITE_PARTANTS_MAX
             and ecart >= PEPITE_ECART_MIN
             and score_n1 >= PEPITE_SCORE_MIN):
         return {"niveau": "PEPITE", "emoji": "💎",
-                "raison": f"cote {cote_n1:.1f}, {nb_partants} part., ecart {ecart:.1f}, score {score_n1:.0f}"}
+                "raison": f"cote {cote_n1:.1f} (favori), {nb_partants} part."}
 
     # SOLIDE
     if (nb_partants <= SOLIDE_PARTANTS_MAX
@@ -96,6 +107,36 @@ def identifier_couple_c(course: dict) -> dict:
     fav2 = sorted(avec_cote, key=lambda c: c.get("cote_jour", 999))[0]
 
     return {"n1": n1, "fav2_marche": fav2}
+
+
+def choisir_cheval_a_jouer(course: dict, ecart_cote_max: float = 6.0) -> dict:
+    """
+    MODIF 26/05/2026 — RÈGLE LA MIEUX VALIDÉE (sur 401 courses) :
+    Entre nos 2 meilleurs choix (top5[0] et top5[1]), JOUER CELUI DONT LA COTE
+    EST LA PLUS BASSE. Mesure : jouer la cote la + basse place +6 a +10 points
+    de plus que jouer le N1 par defaut (galop 49% vs 40%, trot 34% vs 27%).
+
+    Renvoie le cheval recommande a jouer en simple place, avec la raison.
+    ecart_cote_max : si les 2 cotes sont tres eloignees, on fait quand meme
+    confiance a la cote basse (la regle tient a tous les ecarts mesures).
+
+    N'ALTERE PAS le scoring : c'est une aide a la DECISION, calculee a part.
+    A utiliser dans le notifier pour afficher "cheval conseille".
+    """
+    top5 = course.get("top5", [])
+    if not top5:
+        return {}
+    n1 = top5[0]
+    n2 = top5[1] if len(top5) > 1 else None
+    c1 = n1.get("cote_jour", 0) or 0
+    if not n2:
+        return {"cheval": n1, "raison": "seul choix"}
+    c2 = n2.get("cote_jour", 0) or 0
+    # On joue la cote la plus basse (si dispo)
+    if c2 > 0 and (c1 <= 0 or c2 < c1):
+        return {"cheval": n2, "raison": f"cote plus basse ({c2:.1f} < {c1:.1f}) = +fiable",
+                "inverse": True}
+    return {"cheval": n1, "raison": f"cote la plus basse ({c1:.1f})", "inverse": False}
 
 
 # ──────────────────────────────────────────────
