@@ -288,11 +288,30 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
     if not chevaux_actualises:
         return {"verdict": "INDISPONIBLE", "details": ["Aucun cheval Top5 retrouve"]}
 
-    def score_combine(c):
-        boost = c["score_pronos_frais"] * 0.2
-        return c["score_total"] + boost
+    # MODIF 26/05/2026 : la COTE prime sur le score (validé sur 401 courses).
+    # Avant, le notifier triait par score seul -> sortait des N1 a 43/1 (cote ignoree).
+    # Desormais : on ecarte les outsiders a cote trop haute, puis on classe par
+    # COTE CROISSANTE (favori d'abord). Coherent avec selection_niveaux.py.
+    COTE_MAX_NOTIFIER = 6.0   # garde-fou : pas de N1 outsider. (sélection matin = 5.0,
+                              # 6.0 ici pour garder un peu de souplesse au notifier)
 
-    chevaux_actualises.sort(key=score_combine, reverse=True)
+    def _cote_ok(c):
+        ca = c.get("cote_actuel", 0) or 0
+        return 0 < ca <= COTE_MAX_NOTIFIER
+
+    _raisonnables = [c for c in chevaux_actualises if _cote_ok(c)]
+    # Si au moins un cheval a une cote raisonnable, on ne garde que ceux-la.
+    # Sinon (course 100% outsiders), on garde tout pour ne pas planter / rester muet.
+    _pool = _raisonnables if _raisonnables else chevaux_actualises
+
+    def _cle_tri(c):
+        # cote croissante (favori d'abord) ; a cote egale, meilleur score d'abord
+        ca = c.get("cote_actuel", 0) or 999
+        boost = c["score_pronos_frais"] * 0.2
+        return (ca, -(c["score_total"] + boost))
+
+    _pool.sort(key=_cle_tri)
+    chevaux_actualises = _pool
 
     n1_matin   = course_matin_top5[0]["nom_cheval"]
     n1_actuel  = chevaux_actualises[0]["nom_cheval"]
