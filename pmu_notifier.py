@@ -193,10 +193,20 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
             grouped.setdefault(cle, []).append(row)
 
         for cle, partants in grouped.items():
+            # MODIF 27/05/2026 : CORRECTION BUG du top5-par-score.
+            # AVANT : on triait par score_total et on gardait tries[:5].
+            #   -> les vrais FAVORIS (cote basse) ont souvent un score faible,
+            #      donc ils tombaient HORS du top5 et le notifier ne les voyait pas.
+            #      Resultat : le filtre cote basse ne pouvait choisir que parmi des
+            #      outsiders (ex Prix de Dax 26/05 : N1 BAKENEKO 13/1 alors que
+            #      IMPERIAL CHOPE 3.8 et DECLA 2.8 gagnaient, hors top5 score).
+            # APRES : on trie par COTE CROISSANTE (favori d'abord) et on garde TOUS
+            #   les partants. Le filtre cote basse de actualiser_course() peut alors
+            #   voir et choisir les vrais favoris. Coherent avec la regle validee.
             tries = sorted(
                 partants,
-                key=lambda x: float(x.get("score_total", 0) or 0),
-                reverse=True,
+                key=lambda x: (float(x.get("cote_jour", 0) or 0) <= 0,   # cotes 0/absentes a la fin
+                               float(x.get("cote_jour", 0) or 9999)),    # puis cote croissante
             )
             courses[cle] = [
                 {
@@ -217,7 +227,7 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
                     "distance_m":     r.get("distance_m", ""),
                     "nb_partants":    int(float(r.get("nb_partants", 0) or 0)),
                 }
-                for r in tries[:5]
+                for r in tries   # MODIF 27/05 : TOUS les partants (etait tries[:5])
             ]
     except Exception as e:
         log.error(f"Lecture CSV matin : {e}")
