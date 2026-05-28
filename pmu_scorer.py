@@ -89,25 +89,25 @@ W_GALOP_NORMAL = {
     "pronostics": 15, "outsider": 5, "forme_r": 12, "mouvement": 12,
     "terrain": 6, "trio_pje": 18, "distance": 7, "jockey_hippo": 8,
     "progression": 5, "forme_f": 4, "hippodrome": 3, "corde": 2,
-    "rk": 0, "fautes": 3,
+    "rk": 0, "fautes": 3, "deferre_pmu": 0,
 }
 W_GALOP_HANDICAP = {
     "pronostics": 15, "outsider": 5, "forme_r": 9, "mouvement": 12,
     "terrain": 5, "trio_pje": 18, "distance": 5, "jockey_hippo": 8,
     "progression": 8, "forme_f": 4, "hippodrome": 3, "corde": 2,
-    "rk": 0, "fautes": 6,
+    "rk": 0, "fautes": 6, "deferre_pmu": 0,
 }
 W_TROT_NORMAL = {
     "pronostics": 15, "outsider": 5, "forme_r": 12, "rk": 11,
-    "corde": 13, "mouvement": 8, "trio_pje": 15, "jockey_hippo": 8,
+    "corde": 11, "mouvement": 8, "trio_pje": 15, "jockey_hippo": 2,
     "distance": 5, "progression": 3, "hippodrome": 3, "forme_f": 2,
-    "terrain": 0, "fautes": 0,
+    "terrain": 0, "fautes": 0, "deferre_pmu": 8,
 }
 W_TROT_HANDICAP = {
     "pronostics": 15, "outsider": 5, "forme_r": 10, "rk": 11,
-    "corde": 13, "mouvement": 10, "trio_pje": 15, "jockey_hippo": 8,
+    "corde": 11, "mouvement": 10, "trio_pje": 15, "jockey_hippo": 2,
     "distance": 3, "progression": 6, "hippodrome": 2, "forme_f": 2,
-    "terrain": 0, "fautes": 0,
+    "terrain": 0, "fautes": 0, "deferre_pmu": 8,
 }
 
 for w in [W_GALOP_NORMAL, W_GALOP_HANDICAP, W_TROT_NORMAL, W_TROT_HANDICAP]:
@@ -580,7 +580,68 @@ def get_stats_proprietaire(proprietaire: str, hippodrome: str) -> float:
 
 
 # ──────────────────────────────────────────────
-#  4. SCORES STATISTIQUES (inchanges depuis v14)
+#  DÉCODEUR DE MUSIQUE (ajout 27/05/2026)
+#  La musique (ex "8a3m1m0a1m(25)1m2a9a0a") est dans l'endpoint participants
+#  DÉJÀ appelé (comme le R/K). Elle remplace l'endpoint mort performances-detaillees
+#  comme source primaire de forme/fautes/progression.
+# ──────────────────────────────────────────────
+import re as _re
+_MUSIQUE_PATTERN = _re.compile(r"\((\d{2})\)|([0-9DTRA])([a-zA-Z])")
+
+def decoder_musique(musique: str) -> list:
+    """Décode une musique PMU en liste de perfs : {place, faute, discipline}.
+    place 1-9 = rang ; 0 = hors top 10 (=11) ; D/T/A/R = faute (place=None).
+    La perf la plus récente est à GAUCHE."""
+    if not musique:
+        return []
+    perfs = []
+    for m in _MUSIQUE_PATTERN.finditer(musique.strip().replace(" ", "")):
+        if m.group(1):  # marqueur d'année (25), on ignore
+            continue
+        place_raw = m.group(2).upper()
+        faute = place_raw in ("D", "T", "A", "R")
+        if place_raw.isdigit():
+            place = int(place_raw)
+            place = 11 if place == 0 else place
+        else:
+            place = None
+        perfs.append({"place": place, "faute": faute})
+    return perfs
+
+
+def musique_vers_perfs(musique: str) -> list:
+    """Convertit la musique en pseudo-performances compatibles avec les fonctions
+    de score existantes (clé 'place').
+    Une faute (D/T/A/R) est encodée comme une mauvaise place (10) : elle pénalise
+    la forme et la progression, ce qui est le comportement voulu (un cheval qui
+    faute souvent n'est pas "en forme")."""
+    out = []
+    for p in decoder_musique(musique):
+        if p["faute"]:
+            out.append({"place": 10, "ordreArrivee": "D", "_faute": True})
+        else:
+            out.append({"place": p["place"]})
+    return out
+
+
+def score_deferre_pmu(partant: dict) -> float:
+    """Score de déferrage basé sur la donnée OFFICIELLE PMU (champ 'deferre').
+    Grille experte : déferré des 4 pieds = signal d'intention le plus fort au trot
+    (recherche de vitesse max ce jour-là). Hiérarchie :
+      4 pieds > postérieurs > antérieurs > ferré normal.
+    NON ENCORE VALIDÉ statistiquement (journée expérimentale 28/05)."""
+    d = str(partant.get("deferre") or "").upper()
+    if "ANTERIEURS_POSTERIEURS" in d or "QUATRE" in d or d in ("D4", "DA", "DP4"):
+        return 80.0   # déferré des 4 pieds
+    if "POSTERIEUR" in d:
+        return 65.0
+    if "ANTERIEUR" in d:
+        return 58.0
+    return 50.0       # ferré normal = neutre
+
+
+# ──────────────────────────────────────────────
+#  4. SCORES STATISTIQUES — réparés via la musique (27/05/2026)
 # ──────────────────────────────────────────────
 def score_forme_recente(performances, n=5) -> float:
     if not performances:
@@ -1094,32 +1155,40 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         s_joc_hippo = score_jockey_sur_hippodrome(perfs, str(jockey), hippodrome)
         s_rk, rk_best = score_record_kilometrique(partant.get("_meilleur_rk", 0), distance, partants_actifs) if trot else (0.0, 0.0)
         musique_ch = partant.get('musique') or ''
+
+        # RÉPARATION 27/05 : l'endpoint performances-detaillees est mort (perfs vide).
+        # On reconstruit des pseudo-perfs depuis la MUSIQUE (gratuite, déjà là) pour
+        # RÉVEILLER forme_r, forme_f, distance, terrain, progression, hippodrome qui
+        # renvoyaient une constante (0 ou 50) faute de données.
+        # Si l'endpoint redevient vivant un jour, on garde ses perfs (plus riches).
+        perfs_pour_score = perfs if perfs else musique_vers_perfs(musique_ch)
+
         s_fautes   = score_fautes_trot(perfs, musique=musique_ch) if trot else 0.0
 
         s = {
             "pronostics":   score_pronostics_pond(nom, citations_pond, poids_max),
             "outsider":     score_outsider(nom, outsiders, cote_jour),
-            "forme_r":      score_forme_recente(perfs),
-            "forme_f":      score_forme_fraiche(perfs),
+            "forme_r":      score_forme_recente(perfs_pour_score),
+            "forme_f":      score_forme_fraiche(perfs_pour_score),
             "rk":           s_rk,
-            "distance":     score_distance(perfs, distance, type_course),
-            "terrain":      score_terrain(perfs, terrain),
+            "distance":     score_distance(perfs_pour_score, distance, type_course),
+            "terrain":      score_terrain(perfs_pour_score, terrain),
             "mouvement":    score_mouvement_cote(cote_veille, cote_jour),
             "trio_pje":     s_trio,
             "jockey_hippo": s_joc_hippo,
-            "progression":  score_progression(perfs),
-            "hippodrome":   score_hippodrome_cheval(perfs, hippodrome),
+            "progression":  score_progression(perfs_pour_score),
+            "hippodrome":   score_hippodrome_cheval(perfs_pour_score, hippodrome),
             "corde":        score_corde(place_corde, nb_partants, discipline, distance),
+            "deferre_pmu":  score_deferre_pmu(partant) if trot else 50.0,
             "fautes":       0.0,
         }
         s_total = calculer_score_total(s, discipline, type_course)
         s_total = max(0, s_total + s_fautes)
         s_total = min(100, s_total + bonus_age_saison(partant))
 
+        # NOTE 28/05 : l'ancien bonus +4 "deferre" (base sur scraping externe) est
+        # remplace par le vrai score_deferre_pmu (base donnee officielle PMU, pondere).
         est_deferre = nom_up in deferres
-        if est_deferre:
-            s_total = min(100, s_total + 4)
-            log.info(f"  *** DEFERRE: {nom} +4 pts ***")
 
         jockey_str = str(jockey).upper().strip()
         entr_str   = str(entraineur).upper().strip()
@@ -1149,6 +1218,7 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
             "est_outsider_surprise": est_outsider_surprise,
             "consensus_fort": len(src_p) >= 3,
             "sources_premium_citees": src_p, "rk_meilleur": round(rk_best, 2),
+            "musique": musique_ch,
             "jockey": jockey, "entraineur": str(entraineur),
             "proprietaire": str(proprietaire),
             "cote_veille": round(cote_veille, 2) if cote_veille else "",
@@ -1300,6 +1370,7 @@ def main():
             "discipline","type_course","type_course_details","distance_m",
             "nb_partants","num_partant","nom_cheval","age","place_corde","poids_porte",
             "deferre","value_bet","est_outsider_surprise","consensus_fort","rk_meilleur",
+            "musique",
             "jockey","entraineur","proprietaire","cote_veille","cote_jour","variation_cote_%",
             "nb_pronostics","nb_pronostics_pondere","pct_pronostics","nb_sources_total",
             "score_pronostics","score_outsider","score_forme","score_forme_fraiche",
