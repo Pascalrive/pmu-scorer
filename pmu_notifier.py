@@ -376,7 +376,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         "n1_matin":    n1_matin,
         "n1_actuel":   n1_actuel,
         "details":     details,
-        "top2_final":  chevaux_actualises[:2],
+        "top2_final":  chevaux_actualises[:5],  # MODIF 28/05 : 5 choix (était 2)
         "tous_top5":   chevaux_actualises,
         "non_partants": non_partants_matin,
         "nb_sources_frais": pronos_frais.get("nb_sources", 0),
@@ -488,7 +488,12 @@ def formater_message_h15(course: dict, partants: list,
     top2 = maj.get("top2_final", [])
     if top2:
         lignes.append("")
-        lignes.append("--- NOS 2 CHOIX FINAUX ---")
+        # MODIF 28/05 : titre dynamique selon le nombre réel de chevaux affichés.
+        nb_choix = len(top2)
+        if nb_choix == 1:
+            lignes.append("--- NOTRE CHOIX FINAL ---")
+        else:
+            lignes.append(f"--- NOS {nb_choix} CHEVAUX (classes) ---")
         for i, ch in enumerate(top2):
             num         = ch.get("num_partant", "")
             nom         = ch.get("nom_cheval", "?")
@@ -499,7 +504,8 @@ def formater_message_h15(course: dict, partants: list,
             nb_src      = ch.get("nb_sources", 0)
             nb_p        = ch.get("nb_pronostics", 0)
 
-            prefix = ">>" if i == 0 else "  "
+            # >> sur les 2 premiers (choix principaux), espace sur les suivants
+            prefix = ">>" if i < 2 else "  "
             nom_aff = f"🔴 N{num}. {nom}" if num else f"🔴 {nom}"
 
             # v5 : var = (actuel - matin)/matin
