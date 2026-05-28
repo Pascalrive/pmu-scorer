@@ -128,6 +128,28 @@ def get_resultats_course(date_str, nr, nc) -> dict:
     return res
 
 
+def get_arrivee_complete(date_str, nr, nc) -> dict:
+    """Renvoie l'ARRIVÉE COMPLÈTE : {1: num_gagnant, 2: num_2e, ... 5: num_5e}.
+    Ajout 28/05 : indispensable pour analyser les critères des VRAIS gagnants
+    (pas seulement nos N1/N2). Permet de mesurer, plus tard, si forme/déferrage/etc.
+    prédisent le placement au-delà de la cote."""
+    data = api_get(f"/programme/{date_str}/R{nr}/C{nc}/participants")
+    if not data or not isinstance(data, dict):
+        return {}
+    arrivee = {}
+    for p in data.get("participants", []):
+        num   = p.get("numPmu") or p.get("numero")
+        place = p.get("ordreArrivee") or p.get("place")
+        if num and place:
+            try:
+                pos = int(place)
+                if 1 <= pos <= 5:
+                    arrivee[pos] = str(num)
+            except (TypeError, ValueError):
+                pass
+    return arrivee
+
+
 def _parse_rapports_payload(data, r) -> bool:
     """Tente de remplir r depuis un payload rapports. Renvoie True si au moins 1 rapport trouve."""
     trouve = False
@@ -457,6 +479,7 @@ def main():
         fav2_marche = favoris_marche[1] if len(favoris_marche) > 1 else None
 
         resultats = get_resultats_course(date_str, nr, nc)
+        arrivee   = get_arrivee_complete(date_str, nr, nc)  # 28/05 : 5 premiers
         rapports  = get_rapports(date_str, nr, nc)
         nb_part   = get_nb_partants(date_str, nr, nc)
         time.sleep(0.5)
@@ -671,6 +694,13 @@ def main():
             "fav2_marche_pos":  pfav2_place if pfav2_place else "",
             "nb_top4_dans_top4": nb_top4_dans_top4,
             "2sur4_gagne":      deux_sur_quatre_gagne,
+            # 28/05 : ARRIVÉE COMPLÈTE (n° des 5 premiers) pour analyser les VRAIS
+            # gagnants et mesurer la valeur des critères (forme, déferrage...) plus tard.
+            "arrivee_1":        arrivee.get(1, ""),
+            "arrivee_2":        arrivee.get(2, ""),
+            "arrivee_3":        arrivee.get(3, ""),
+            "arrivee_4":        arrivee.get(4, ""),
+            "arrivee_5":        arrivee.get(5, ""),
         })
 
         time.sleep(0.3)
