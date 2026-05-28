@@ -298,29 +298,43 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
     if not chevaux_actualises:
         return {"verdict": "INDISPONIBLE", "details": ["Aucun cheval Top5 retrouve"]}
 
-    # MODIF 26/05/2026 : la COTE prime sur le score (validé sur 401 courses).
-    # Avant, le notifier triait par score seul -> sortait des N1 a 43/1 (cote ignoree).
-    # Desormais : on ecarte les outsiders a cote trop haute, puis on classe par
-    # COTE CROISSANTE (favori d'abord). Coherent avec selection_niveaux.py.
-    COTE_MAX_NOTIFIER = 6.0   # garde-fou : pas de N1 outsider. (sélection matin = 5.0,
-                              # 6.0 ici pour garder un peu de souplesse au notifier)
+    # MODIF 28/05/2026 : SCORE COMBINÉ (cote + score enrichi).
+    # Objectif (choix utilisateur) : laisser le SCORE ENRICHI (forme, déferrage,
+    # progression... = notre recherche subtile) s'exprimer, MAIS en gardant un poids
+    # MODÉRÉ sur la cote comme garde-fou (ne pas retomber sur des outsiders à 43/1).
+    # Méthode :
+    #   1. Garde-fou dur : on écarte les cotes > COTE_MAX_NOTIFIER (aberrations).
+    #   2. On classe par une note combinée :
+    #        note = POIDS_COTE * note_cote + POIDS_SCORE * note_score
+    #      où note_cote favorise les cotes basses, note_score le score enrichi.
+    # NON VALIDÉ (journée expérimentale) : poids à ajuster selon les résultats.
+    COTE_MAX_NOTIFIER = 6.0    # garde-fou dur : pas de N1 outsider aberrant
+    POIDS_COTE   = 0.55        # la cote reste le garde-fou principal (modéré)
+    POIDS_SCORE  = 0.45        # mais le score enrichi pèse presque autant
 
     def _cote_ok(c):
         ca = c.get("cote_actuel", 0) or 0
         return 0 < ca <= COTE_MAX_NOTIFIER
 
     _raisonnables = [c for c in chevaux_actualises if _cote_ok(c)]
-    # Si au moins un cheval a une cote raisonnable, on ne garde que ceux-la.
-    # Sinon (course 100% outsiders), on garde tout pour ne pas planter / rester muet.
     _pool = _raisonnables if _raisonnables else chevaux_actualises
 
-    def _cle_tri(c):
-        # cote croissante (favori d'abord) ; a cote egale, meilleur score d'abord
+    # note_cote : basée sur la VALEUR de la cote (pas une normalisation relative qui
+    # écrasait tout). cote 1.5 -> ~100, cote 6 -> ~0. Dégressif doux.
+    def _note_cote(c):
         ca = c.get("cote_actuel", 0) or 999
-        boost = c["score_pronos_frais"] * 0.2
-        return (ca, -(c["score_total"] + boost))
+        if ca <= 0:
+            return 0.0
+        # 100 a cote 1.5, decroit lineairement jusqu'a 0 vers cote 7
+        return max(0.0, min(100.0, 100.0 * (7.0 - ca) / (7.0 - 1.5)))
 
-    _pool.sort(key=_cle_tri)
+    def _note_combinee(c):
+        nc = _note_cote(c)
+        ns = c.get("score_total", 0) or 0       # score enrichi (0-100)
+        ns += c.get("score_pronos_frais", 0) * 0.2
+        return POIDS_COTE * nc + POIDS_SCORE * ns
+
+    _pool.sort(key=_note_combinee, reverse=True)   # meilleure note d'abord
     chevaux_actualises = _pool
 
     n1_matin   = course_matin_top5[0]["nom_cheval"]
