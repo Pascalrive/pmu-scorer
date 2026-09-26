@@ -716,12 +716,12 @@ def main():
         log.info(f"CSV audit : {chemin_audit} ({len(audit_rows)} lignes)")
 
     # ── Bilan Telegram ───────────────────────────────────
-    bilan = ["", "=" * 38, f"BILAN RESULTATS - {date_aff}"]
+    bilan = ["", "=" * 38, f"📊 SCORE DE REUSSITE — {date_aff}"]
     if nb_courses > 0:
         bilan += [
-            f"  Courses : {nb_courses}",
-            f"  N1 1er : {nb_g1}/{nb_courses} ({nb_g1/nb_courses*100:.0f}%)",
-            f"  N1 Place : {nb_pl1}/{nb_courses} ({nb_pl1/nb_courses*100:.0f}%)",
+            f"Courses evaluees : {nb_courses}",
+            f"Pronostic principal GAGNANT : {nb_g1}/{nb_courses} ({nb_g1/nb_courses*100:.0f}%)",
+            f"Pronostic principal PLACE : {nb_pl1}/{nb_courses} ({nb_pl1/nb_courses*100:.0f}%)",
         ]
 
     def bloc_strategie(label, s):

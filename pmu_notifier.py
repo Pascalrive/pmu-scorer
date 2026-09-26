@@ -471,9 +471,10 @@ def formater_message_h15(course: dict, partants: list,
     }.get(verdict, "")
 
     lignes = [
-        f"{verdict_emoji} DANS 15 MIN  R{nr} C{nc} | {heure_str} | {discipline}",
-        libelle[:50],
-        f"HIPPODROME {hippodrome}{terrain_str}{dist_str}",
+        f"{verdict_emoji} ACTUALISATION DE L'ALGORITHME — DEPART DANS 15 MIN",
+        f"COURSE : R{nr}C{nc} — {hippodrome}",
+        f"HEURE : {heure_str} | {discipline}{terrain_str}{dist_str}",
+        f"EPREUVE : {libelle[:50]}",
         "=" * 35,
         f"VERDICT : {verdict}",
     ]
@@ -519,7 +520,8 @@ def formater_message_h15(course: dict, partants: list,
                 elif var >= 15:
                     mvt_str += " 📈 monte"
 
-            lignes.append(f"{prefix} {i+1}. {nom_aff}")
+            role = "PRONOSTIC PRINCIPAL" if i == 0 else "DEUXIEME CHOIX"
+            lignes.append(f"{prefix} {role} : {nom_aff}")
             lignes.append(f"   Cote matin {cote_m:.1f} -> actuelle {cote_a:.1f}{mvt_str}")
             lignes.append(f"   Score matin : {score:.1f}% | {nb_p}/{nb_src} sources")
 

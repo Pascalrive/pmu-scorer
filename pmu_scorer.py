@@ -295,7 +295,8 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
 
         lignes.append("")
         lignes.append("╔" + "═" * 36 + "╗")
-        lignes.append(f"║ {niveau_emoji} {niveau} | {fiab_emoji}{reunion} {nc} | {heure_str} | {disc}{pattern_str}")
+        lignes.append(f"║ COURSE {reunion}{nc} — DEPART {heure_str}")
+        lignes.append(f"║ {niveau_emoji} {niveau} | {fiab_emoji}{disc}{pattern_str}")
         if terrain or type_str or alert_str:
             lignes.append(f"║ {terrain_str.strip(' |')}{type_str}{alert_str}".rstrip())
         lignes.append("╚" + "═" * 36 + "╝")
@@ -329,7 +330,8 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
             nom_aff   = f"🔴 N{num_ch}. {nom}" if num_ch else f"🔴 {nom}"
             prefixe   = ">> " if rang == 1 else "   "
 
-            lignes.append(f"{prefixe}{rang}. {nom_aff} (cote {cote:.1f}){mvt}{value_str}")
+            role = "PRONOSTIC PRINCIPAL" if rang == 1 else "DEUXIEME CHOIX"
+            lignes.append(f"{prefixe}{role} : {nom_aff} (cote {cote:.1f}){mvt}{value_str}")
             lignes.append(f"   Score: {score:.1f}% | Proba: {prob:.1f}%")
             if nb_src_ch > 0:
                 lignes.append(f"   {nb_prono} source(s)/{nb_src_ch}")
@@ -355,11 +357,11 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
 
     # ── Construction du message ──
     lignes = [
-        f"PMU France - Pronostics du {date_aff}",
+        f"🐎 PRONOSTICS DE L'ALGORITHME — {date_aff}",
         run_label,
         "=" * 38,
         "",
-        "📊 SELECTION DU JOUR",
+        "📊 COURSES RETENUES AUJOURD'HUI",
         f"💎 PEPITES  : {nb_pepite} course(s)",
         f"🟢 SOLIDES  : {nb_solide} course(s)",
         f"🔵 CORRECTES: {nb_correct} course(s)",
