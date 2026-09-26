@@ -4,6 +4,17 @@ name: PMU Daily Scorer v15.1
 # v15.1 : 1 scorer matin + 4 sessions notifier de 2h chacune
 # Minutes choisies : 17, 23, 37, 47 (eviter 0, 5, 15, 30, 45).
 on:
+  schedule:
+    # Pronostics du matin, puis seconde tentative si le premier lancement echoue.
+    - cron: '17 9 * * *'
+    - cron: '47 9 * * *'
+    # Actualisations avant les courses, reparties sur la journee.
+    - cron: '23 9 * * *'
+    - cron: '23 11 * * *'
+    - cron: '23 13 * * *'
+    - cron: '23 15 * * *'
+    # Bilan quotidien du soir.
+    - cron: '37 18 * * *'
   workflow_dispatch:
     inputs:
       job:
