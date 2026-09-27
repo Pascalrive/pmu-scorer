@@ -9,7 +9,7 @@
         SOLIDE  : cote 2-8 + partants <=10 + ecart>=3
         CORRECT : cote 2-8 + partants <=10
     - Compteur de courses selectionnees en tete de message
-    - Affiche le Couple C (N1 + 2e favori marche) sur chaque course
+    - Affiche le couple des deux choix du scoring presentes dans le message
     - N'affiche QUE les courses selectionnees (le CSV garde tout)
     - Base sur l'analyse de 401 paris (12-24/05/2026)
 
@@ -56,12 +56,11 @@ except ImportError:
 
 # v15.2 : module de selection a 3 niveaux (PEPITE / SOLIDE / CORRECT)
 try:
-    from selection_niveaux import classer_niveau_course, identifier_couple_c
+    from selection_niveaux import classer_niveau_course
     SELECTION_DISPO = True
 except ImportError:
     SELECTION_DISPO = False
     def classer_niveau_course(course): return {"niveau": None, "emoji": "", "raison": ""}
-    def identifier_couple_c(course): return None
 
 # ──────────────────────────────────────────────
 #  CONFIGURATION
@@ -221,8 +220,8 @@ def evaluer_fiabilite_course(course: dict) -> str:
 def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) -> str:
     """
     v15.2 : n'affiche QUE les courses selectionnees (PEPITE/SOLIDE/CORRECT),
-    triees par niveau. Ajoute un compteur en tete + le Couple C
-    (N1 + 2e favori marche) sur chaque course retenue.
+    triees par niveau. Le simple reprend le premier choix affiche ;
+    le couple reprend exclusivement les deux choix affiches.
     """
 
     toutes_courses = list(courses_galop) + list(courses_trot)
@@ -341,16 +340,18 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         lignes.append("")
         lignes.append(f"   PARI : Simple Place sur N{n1.get('num_partant','')} {n1.get('nom_cheval','')}")
 
-        # v15.2 : COUPLE C (N1 + 2e favori marche)
-        cpl = identifier_couple_c(course)
-        if cpl:
-            n1c = cpl["n1"]
-            f2  = cpl["fav2_marche"]
-            # On ne propose le couple que si le 2e favori a une cote correcte (<12)
-            if (f2.get("cote_jour", 99) or 99) < 12:
+        # Le couple doit reprendre les deux choix affiches ci-dessus.
+        if len(top2) == 2:
+            n2 = top2[1]
+            num1 = str(n1.get("num_partant") or "").strip()
+            num2 = str(n2.get("num_partant") or "").strip()
+            # Conserver le seuil de cote, sans substituer un autre cheval.
+            cote2 = n2.get("cote_jour", 0) or 0
+            if num1 and num2 and num1 != num2 and 0 < cote2 < 12:
                 lignes.append(
-                    f"   COUPLE : N{n1c.get('num_partant','')} + N{f2.get('num_partant','')} "
-                    f"{f2.get('nom_cheval','')} (cote {f2.get('cote_jour',0):.1f})"
+                    f"   COUPLE (les 2 choix ci-dessus) : "
+                    f"N{num1} {n1.get('nom_cheval','')} + "
+                    f"N{num2} {n2.get('nom_cheval','')}"
                 )
 
         return lignes
