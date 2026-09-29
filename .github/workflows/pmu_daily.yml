@@ -27,6 +27,15 @@ on:
           - notifier
           - results
           - analyse
+          - verification
+      date_bilan:
+        description: 'Bilan uniquement : AAAAMMJJ (vide = aujourd hui a Paris)'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Bilan uniquement : verifier sans envoi Telegram'
+        type: boolean
+        default: false
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -78,12 +87,26 @@ jobs:
       - name: Creer dossier resultats
         if: steps.check_csv.outputs.skip != 'true'
         run: mkdir -p resultats
+      - name: Tester le journal et le bilan
+        if: steps.check_csv.outputs.skip != 'true'
+        run: python -m unittest -v test_pmu_tracking.py
       - name: Lancer scorer PMU v15.1
         if: steps.check_csv.outputs.skip != 'true'
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_scorer.py
+      - name: Archiver les preuves d envoi
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: journal-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: resultats/journal/
+          retention-days: 90
+          if-no-files-found: ignore
+      - name: Persister le journal pour le bilan
+        if: always()
+        run: python persist_journal.py
       - name: Sauvegarder CSV dans Git
         if: steps.check_csv.outputs.skip != 'true'
         run: |
@@ -102,6 +125,8 @@ jobs:
           overwrite: true
 
   notifier:
+    permissions:
+      contents: write
     name: Notifier H-15min v4
     runs-on: ubuntu-latest
     timeout-minutes: 130
@@ -122,11 +147,24 @@ jobs:
           cache: 'pip'
       - name: Installer dependances
         run: pip install -r requirements.txt
+      - name: Tester le journal et le bilan
+        run: python -m unittest -v test_pmu_tracking.py
       - name: Lancer notifier H-15min v4
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_notifier.py
+      - name: Archiver les preuves d envoi
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: journal-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: resultats/journal/
+          retention-days: 90
+          if-no-files-found: ignore
+      - name: Persister le journal pour le bilan
+        if: always()
+        run: python persist_journal.py
       - name: Sauvegarder logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -156,11 +194,32 @@ jobs:
           cache: 'pip'
       - name: Installer dependances
         run: pip install -r requirements.txt
+      - name: Tester le journal et le bilan
+        run: python -m unittest -v test_pmu_tracking.py
       - name: Lancer bilan du soir
         env:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python pmu_results.py
+          PMU_BILAN_DATE_INPUT: ${{ inputs.date_bilan }}
+          PMU_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: |
+          if [ -n "$PMU_BILAN_DATE_INPUT" ]; then
+            export PMU_BILAN_DATE="$PMU_BILAN_DATE_INPUT"
+          fi
+          python pmu_results.py
+      - name: Archiver le bilan et ses sources officielles
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bilan-officiel-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            resultats/bilans/
+            resultats/officiels/
+          retention-days: 90
+          if-no-files-found: ignore
+      - name: Persister le bilan officiel
+        if: always()
+        run: python persist_journal.py
       - name: Sauvegarder CSV audit dans Git
         run: |
           git config user.name "PMU Bot"
@@ -207,3 +266,17 @@ jobs:
           path: analyse_audit_rapport.txt
           retention-days: 30
           overwrite: true
+
+  verification:
+    name: Verification sans Telegram
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'verification'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v test_pmu_tracking.py
+      - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_results.py persist_journal.py
