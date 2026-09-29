@@ -34,6 +34,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))
 
 import requests
+from pmu_tracking import envoyer_trace, paris_affiches
 
 # v4 : reutilise le module de scraping gratuit
 try:
@@ -96,20 +97,7 @@ log = logging.getLogger("pmu_notifier")
 #  TELEGRAM
 # ──────────────────────────────────────────────
 def telegram_send(texte: str) -> bool:
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
-        log.warning("Telegram non configure")
-        return False
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    morceaux = [texte[i:i+4096] for i in range(0, len(texte), 4096)]
-    for morceau in morceaux:
-        try:
-            r = requests.post(url, json={"chat_id": TELEGRAM_CHAT, "text": morceau}, timeout=15)
-            if r.status_code != 200:
-                log.warning(f"Telegram {r.status_code}: {r.text[:100]}")
-            time.sleep(0.3)
-        except Exception as e:
-            log.warning(f"Telegram: {e}")
-    return True
+    return envoyer_trace(texte, TELEGRAM_TOKEN, TELEGRAM_CHAT)
 
 
 # ──────────────────────────────────────────────
@@ -520,11 +508,14 @@ def formater_message_h15(course: dict, partants: list,
                 elif var >= 15:
                     mvt_str += " 📈 monte"
 
-            role = "PRONOSTIC PRINCIPAL" if i == 0 else "DEUXIEME CHOIX"
+            role = "PRONOSTIC PRINCIPAL" if i == 0 else ("DEUXIEME CHOIX" if i == 1 else f"CHOIX {i+1}")
             lignes.append(f"{prefix} {role} : {nom_aff}")
             lignes.append(f"   Cote matin {cote_m:.1f} -> actuelle {cote_a:.1f}{mvt_str}")
             lignes.append(f"   Score matin : {score:.1f}% | {nb_p}/{nb_src} sources")
 
+    lignes.append("")
+    lignes.extend(paris_affiches(top2[:2], len(partants)))
+    lignes.append("Ces paris remplacent les conseils precedents pour cette course.")
     lignes.append("")
     lignes.append("--- TOP 5 ACTUALISE ---")
     for i, ch in enumerate(maj.get("tous_top5", [])[:5]):
@@ -631,10 +622,11 @@ def main():
         )
 
         message = formater_message_h15(course, partants_actuels, maj)
-        telegram_send(message)
-        log.info(f"  Envoye R{nr}C{nc} : {maj.get('verdict', '?')}")
-
-        deja.add(cle)
+        if telegram_send(message):
+            log.info(f"  Envoye R{nr}C{nc} : {maj.get('verdict', '?')}")
+            deja.add(cle)
+        else:
+            log.error(f"  Envoi non confirme R{nr}C{nc} : pas de validation anti-doublon")
         time.sleep(1)
 
     # 6. Sauvegarder l'etat (anti-doublon pour les prochains reveils)

@@ -34,6 +34,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))  # UTC+2 ete
 
 import requests
+from pmu_tracking import envoyer_trace, paris_affiches
 
 # v15 : module de scraping gratuit qui remplace les appels Claude
 from pronos_gratuit import get_pronostics_gratuit
@@ -165,22 +166,7 @@ def detecter_type_course(info_course: dict) -> str:
 #  1. TELEGRAM
 # ──────────────────────────────────────────────
 def telegram_send(texte: str) -> bool:
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
-        return False
-    url      = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    morceaux = [texte[i:i+4096] for i in range(0, len(texte), 4096)]
-    succes = True
-    for morceau in morceaux:
-        try:
-            r = requests.post(url, json={"chat_id": TELEGRAM_CHAT, "text": morceau}, timeout=15)
-            if r.status_code != 200:
-                log.warning(f"Telegram {r.status_code}: {r.text[:100]}")
-                succes = False
-            time.sleep(0.5)
-        except Exception as e:
-            log.warning(f"Telegram: {e}")
-            succes = False
-    return succes
+    return envoyer_trace(texte, TELEGRAM_TOKEN, TELEGRAM_CHAT)
 
 
 def evaluer_fiabilite_course(course: dict) -> str:
@@ -335,24 +321,8 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
             if nb_src_ch > 0:
                 lignes.append(f"   {nb_prono} source(s)/{nb_src_ch}")
 
-        # v15.2 : PARI SIMPLE PLACE recommande (le N1)
-        n1 = course["top5"][0]
         lignes.append("")
-        lignes.append(f"   PARI : Simple Place sur N{n1.get('num_partant','')} {n1.get('nom_cheval','')}")
-
-        # Le couple doit reprendre les deux choix affiches ci-dessus.
-        if len(top2) == 2:
-            n2 = top2[1]
-            num1 = str(n1.get("num_partant") or "").strip()
-            num2 = str(n2.get("num_partant") or "").strip()
-            # Conserver le seuil de cote, sans substituer un autre cheval.
-            cote2 = n2.get("cote_jour", 0) or 0
-            if num1 and num2 and num1 != num2 and 0 < cote2 < 12:
-                lignes.append(
-                    f"   COUPLE (les 2 choix ci-dessus) : "
-                    f"N{num1} {n1.get('nom_cheval','')} + "
-                    f"N{num2} {n2.get('nom_cheval','')}"
-                )
+        lignes.extend(paris_affiches(top2, top2[0].get("nb_partants", 0)))
 
         return lignes
 
