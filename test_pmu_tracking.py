@@ -29,7 +29,7 @@ def record(text=TEXT,sent=NOW,delivery='SENT'):
 def formatter(name,function):
  tree=ast.parse(Path(__file__).with_name(name).read_text())
  nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name==function]
- env=dict(datetime=datetime,TZ_PARIS=p.TZ,paris_affiches=p.paris_affiches,TYPE_CONDITIONS='CONDITIONS',TYPE_INCONNU='AUTRE',PATTERNS_DISPO=False,
+ env=dict(formater_selection=p.formater_selection,datetime=datetime,TZ_PARIS=p.TZ,paris_affiches=p.paris_affiches,TYPE_CONDITIONS='CONDITIONS',TYPE_INCONNU='AUTRE',PATTERNS_DISPO=False,
  calculer_score_opportunite=lambda d:0,detecter_pattern_gagnant=lambda d:False,classer_niveau_course=lambda c:dict(niveau='CORRECT',emoji='',raison=''),
  est_trot=lambda d:False,evaluer_fiabilite_course=lambda c:'')
  exec(compile(ast.Module(body=nodes,type_ignores=[]),name,'exec'),env)
@@ -118,5 +118,65 @@ class TrackingTests(unittest.TestCase):
   self.assertEqual(len(p.paris_affiches([a,b],10)),1);self.assertEqual(len(p.paris_affiches([a],10)),1)
   b['cote_jour']=4
   self.assertIn('COUPLE GAGNANT',p.paris_affiches([a,b],7)[1]);self.assertIn('COUPLE PLACE',p.paris_affiches([a,b],8)[1])
+
+class CollectionTests(unittest.TestCase):
+ def test_block_after_start_without_telegram_call(self):
+  with tempfile.TemporaryDirectory() as d:
+   self.assertFalse(p.envoyer_trace(TEXT,'test','test',post=lambda *a,**k:self.fail('Late message sent'),journal=d,now=NOW+timedelta(minutes=20)))
+   doc=json.loads(next(Path(d).glob('*.json')).read_text())
+   self.assertEqual(doc['delivery'],'BLOCKED_AFTER_START')
+ def test_explicit_date_prevents_midnight_reinterpretation(self):
+  text=TEXT+'\nDATE : 2026-09-27'
+  self.assertEqual(p.analyser_message(text,NOW)['date'],'20260927')
+  with tempfile.TemporaryDirectory() as d:
+   self.assertFalse(p.envoyer_trace(text,'test','test',post=lambda *a,**k:self.fail('Old date sent'),journal=d,now=NOW))
+ def test_new_presentation_preserves_bets_and_source(self):
+  horses=[dict(num_partant=11,nom_cheval='MOONLIGHT STAR',cote_jour=3,cote_actuel=3.1),dict(num_partant=7,nom_cheval='MILADY',cote_jour=9.1,cote_actuel=5.4)]
+  txt='COURSE R1C5 — DEPART 20h45\nACTUALISATION\n'+'\n'.join(p.formater_selection(horses,13,True))
+  e=p.analyser_message(txt,NOW)
+  self.assertEqual(e['source'],'H15');self.assertEqual(e['paris'][1]['numeros'],['11','7'])
+  self.assertIn('-41 %',txt);self.assertNotIn('VALUE BET',txt);self.assertNotIn('Proba',txt)
+ def test_passage_windows_never_include_departed_race(self):
+  phase=formatter('pmu_notifier.py','phase_collecte')
+  for n,expected in [(-1,None),(0,None),(5,'H5'),(15,'H15'),(60,'H60'),(90,None)]:
+   self.assertEqual(phase(n),expected)
+ def test_missing_odds_not_displayed_as_zero(self):
+  txt='\n'.join(p.formater_selection([dict(num_partant=1,nom_cheval='A',cote_jour=0)],10))
+  self.assertIn('indisponible',txt);self.assertNotIn('Cote 0',txt)
+ def test_snapshot_keeps_excluded_outsiders_without_ranking_change(self):
+  tree=ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
+  node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='actualiser_course')
+  env=dict(SCRAPING_DISPO=False,extraire_cote=lambda p:p['cote'])
+  exec(compile(ast.Module(body=[node],type_ignores=[]),'notifier','exec'),env)
+  matin=[dict(nom_cheval='A',num_partant=1,cote_jour=3,score_total=40),dict(nom_cheval='B',num_partant=2,cote_jour=12,score_total=60)]
+  result=env['actualiser_course'](matin,'2026-10-03',1,1,'TEST',[dict(nom='A',cote=3),dict(nom='B',cote=12)])
+  self.assertEqual(len(result['tous_partants_observes']),2)
+  self.assertEqual([c['num_partant'] for c in result['top2_final']],[1])
+ def test_unchanged_advice_ignores_odds_only_changes(self):
+  fn=formatter('pmu_notifier.py','conseil_change')
+  horses=[dict(num_partant=4,nom_cheval='FEEL WELL',cote_jour=3,cote_actuel=4),dict(num_partant=12,nom_cheval='WINNIE CEN',cote_jour=3,cote_actuel=4)]
+  self.assertFalse(fn(dict(top2_final=horses),10,record()))
+  self.assertTrue(fn(dict(top2_final=horses),7,record()))
+  self.assertTrue(fn(dict(top2_final=horses[::-1]),10,record()))
+ def test_collection_retries_missing_odds_without_sending(self):
+  import logging
+  tree=ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
+  nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ('main','phase_collecte')]
+  horses=[dict(num_partant='4',nom_cheval='FEEL WELL',cote_jour=3),dict(num_partant='12',nom_cheval='WINNIE CEN',cote_jour=3)]
+  calls=[];archives=[];sent=[];state=set()
+  class Clock(datetime):
+   @classmethod
+   def now(cls,tz=None):return NOW
+  env=dict(datetime=Clock,TZ_PARIS=p.TZ,Path=lambda name:Path('/tmp/pmu-no-such-journal-for-tests'),json=json,log=logging.getLogger('test'),SOURCE_CSV=None,
+   charger_pronos_matin=lambda d:{('R4','C2'):horses},charger_etat=lambda d:state.copy(),sauver_etat=lambda d,s:state.update(s),
+   get_courses_du_jour=lambda d:[dict(nr=4,nc=2,heure_ts=int((NOW+timedelta(minutes=15)).timestamp()*1000),libelle='TEST')],
+   api_get=lambda url:(calls.append(url) or {'participants':[dict(numPmu=4,cote=0),dict(numPmu=12,cote=3)]}),
+   extraire_cote=lambda d:d['cote'],archiver_observation=lambda *a,**k:archives.append((a,k)),
+   actualiser_course=lambda *a:dict(top2_final=horses),dernieres_selections=lambda *a:{},
+   telegram_send=lambda text:sent.append(text))
+  exec(compile(ast.Module(body=nodes,type_ignores=[]),'notifier','exec'),env)
+  env['main']()
+  self.assertEqual(len(calls),2);self.assertEqual(len(archives),2)
+  self.assertEqual(sent,[]);self.assertEqual(state,set())
 
 if __name__=='__main__':unittest.main()

@@ -1,28 +1,12 @@
-"""
-=============================================================
-  PMU NOTIFIER v5 - Version ECONOME (ponctuelle)
-=============================================================
-  Changement MAJEUR v4 -> v5 :
-    - SUPPRESSION de l'attente active (time.sleep de 2h)
-    - Le notifier regarde les courses dont H-15min tombe
-      dans une FENETRE de [FENETRE_MIN] minutes a partir de
-      maintenant, envoie les notifs, puis S'ARRETE.
-    - Duree d'execution : ~30 secondes au lieu de 2h.
-    - Doit etre appele frequemment (toutes les 15-20 min)
-      par cron-job.org entre ~11h et ~20h.
-
-  ECONOMIE : passe de ~8h/jour de runtime a ~10 min/jour.
-
-  Tout le reste (verdict, scraping frais, formatage) est
-  identique a la v4.
-=============================================================
-"""
+"""Collectes avant course et conseils actualises. Aucune modification des ponderations."""
 
 import csv
 import glob
 import json
 import logging
 import os
+from pathlib import Path
+import hashlib
 import time
 from datetime import datetime, timedelta
 
@@ -34,7 +18,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))
 
 import requests
-from pmu_tracking import envoyer_trace, paris_affiches
+from pmu_tracking import envoyer_trace, paris_affiches, formater_selection, archiver_observation, dernieres_selections
 
 # v4 : reutilise le module de scraping gratuit
 try:
@@ -75,7 +59,8 @@ MARGE_MIN_MIN   = 2    # borne basse : courses partant dans >= 2 min
 # Anti-doublon : on note les courses deja notifiees dans un
 # petit fichier JSON du jour (evite de re-notifier au prochain
 # reveil cron si la course est encore dans la fenetre).
-ETAT_FICHIER    = os.path.join(OUTPUT_DIR, "notifier_etat_{date}.json")
+ETAT_FICHIER    = os.path.join(OUTPUT_DIR, "observations", "etat_{date}.json")
+SOURCE_CSV = None
 
 HEADERS_PMU = {
     "User-Agent": "Mozilla/5.0 (compatible; PMU-Notifier/5.0)",
@@ -117,7 +102,7 @@ def charger_etat(date_str_fich: str) -> set:
 def sauver_etat(date_str_fich: str, notifiees: set):
     chemin = ETAT_FICHIER.format(date=date_str_fich)
     try:
-        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        os.makedirs(os.path.dirname(chemin), exist_ok=True)
         with open(chemin, "w", encoding="utf-8") as f:
             json.dump({"notifiees": sorted(notifiees)}, f)
     except Exception as e:
@@ -168,6 +153,8 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
         return {}
 
     fichier = fichiers[-1]
+    global SOURCE_CSV
+    SOURCE_CSV = {'fichier': fichier, 'sha256': hashlib.sha256(Path(fichier).read_bytes()).hexdigest()}
     log.info(f"Chargement CSV matin : {fichier}")
 
     courses = {}
@@ -304,6 +291,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         ca = c.get("cote_actuel", 0) or 0
         return 0 < ca <= COTE_MAX_NOTIFIER
 
+    tous_partants_observes = [dict(c) for c in chevaux_actualises]
     _raisonnables = [c for c in chevaux_actualises if _cote_ok(c)]
     _pool = _raisonnables if _raisonnables else chevaux_actualises
 
@@ -364,6 +352,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         "n1_matin":    n1_matin,
         "n1_actuel":   n1_actuel,
         "details":     details,
+        "tous_partants_observes": tous_partants_observes,
         "top2_final":  chevaux_actualises[:5],  # MODIF 28/05 : 5 choix (était 2)
         "tous_top5":   chevaux_actualises,
         "non_partants": non_partants_matin,
@@ -429,212 +418,113 @@ def get_courses_du_jour(date_str: str) -> list:
 # ──────────────────────────────────────────────
 def formater_message_h15(course: dict, partants: list,
                           maj: dict) -> str:
-    nr         = course["nr"]
-    nc         = course["nc"]
-    heure_ts   = course["heure_ts"]
-    hippodrome = course["hippodrome"]
-    libelle    = course["libelle"]
-    discipline = course["discipline"].replace("_", " ")
-    distance   = course["distance"]
-    terrain    = course["terrain"]
-
-    heure_str = ""
-    if heure_ts:
-        try:
-            heure_str = datetime.fromtimestamp(heure_ts / 1000, tz=TZ_PARIS).strftime("%Hh%M")
-        except Exception:
-            pass
-
-    terrain_str = f" | {terrain}" if terrain else ""
-    dist_str    = f" | {distance}m" if distance else ""
-
-    verdict = maj.get("verdict", "INDISPONIBLE")
-
-    verdict_emoji = {
-        "CONFIRME":     "✅",
-        "RENFORCE":     "🔥",
-        "ATTENTION":    "⚠️",
-        "CHANGEMENT":   "🔄",
-        "INDISPONIBLE": "❓",
-    }.get(verdict, "")
-
-    lignes = [
-        f"{verdict_emoji} ACTUALISATION DE L'ALGORITHME — DEPART DANS 15 MIN",
-        f"COURSE : R{nr}C{nc} — {hippodrome}",
-        f"HEURE : {heure_str} | {discipline}{terrain_str}{dist_str}",
-        f"EPREUVE : {libelle[:50]}",
-        "=" * 35,
-        f"VERDICT : {verdict}",
-    ]
-
-    for d in maj.get("details", []):
-        lignes.append(f"  -> {d}")
-
-    if maj.get("non_partants"):
-        lignes.append("")
-        lignes.append(f"FORFAITS : {', '.join(maj['non_partants'])}")
-
-    top2 = maj.get("top2_final", [])
-    if top2:
-        lignes.append("")
-        # MODIF 28/05 : titre dynamique selon le nombre réel de chevaux affichés.
-        nb_choix = len(top2)
-        if nb_choix == 1:
-            lignes.append("--- NOTRE CHOIX FINAL ---")
-        else:
-            lignes.append(f"--- NOS {nb_choix} CHEVAUX (classes) ---")
-        for i, ch in enumerate(top2):
-            num         = ch.get("num_partant", "")
-            nom         = ch.get("nom_cheval", "?")
-            cote_a      = ch.get("cote_actuel", 0)
-            cote_m      = ch.get("cote_jour", 0)
-            var         = ch.get("variation_cote_pc", 0)
-            score       = ch.get("score_total", 0)
-            nb_src      = ch.get("nb_sources", 0)
-            nb_p        = ch.get("nb_pronostics", 0)
-
-            # >> sur les 2 premiers (choix principaux), espace sur les suivants
-            prefix = ">>" if i < 2 else "  "
-            nom_aff = f"🔴 N{num}. {nom}" if num else f"🔴 {nom}"
-
-            # v5 : var = (actuel - matin)/matin
-            #   var < 0 => cote baisse (favorable) => 📉
-            #   var > 0 => cote monte => 📈
-            mvt_str = ""
-            if abs(var) >= 5:
-                mvt_str = f" [{var:+.0f}%]"
-                if var <= -15:
-                    mvt_str += " 📉 baisse (favorable)"
-                elif var >= 15:
-                    mvt_str += " 📈 monte"
-
-            role = "PRONOSTIC PRINCIPAL" if i == 0 else ("DEUXIEME CHOIX" if i == 1 else f"CHOIX {i+1}")
-            lignes.append(f"{prefix} {role} : {nom_aff}")
-            lignes.append(f"   Cote matin {cote_m:.1f} -> actuelle {cote_a:.1f}{mvt_str}")
-            lignes.append(f"   Score matin : {score:.1f}% | {nb_p}/{nb_src} sources")
-
-    lignes.append("")
-    lignes.extend(paris_affiches(top2[:2], len(partants)))
-    lignes.append("Ces paris remplacent les conseils precedents pour cette course.")
-    lignes.append("")
-    lignes.append("--- TOP 5 ACTUALISE ---")
-    for i, ch in enumerate(maj.get("tous_top5", [])[:5]):
-        num    = ch.get("num_partant", "")
-        nom    = ch.get("nom_cheval", "?")[:22]
-        cote_a = ch.get("cote_actuel", 0)
-        var    = ch.get("variation_cote_pc", 0)
-        var_str = f" {var:+.0f}%" if abs(var) >= 5 else ""
-        prefix = ">>" if i < 2 else "  "
-        lignes.append(f"{prefix} {i+1}. N{num} {nom} | cote {cote_a:.1f}{var_str}")
-
-    if maj.get("nb_sources_frais"):
-        lignes.append("")
-        lignes.append(f"Pronostics frais : {maj['nb_sources_frais']} source(s) consultee(s)")
-
-    lignes.append("=" * 35)
-    lignes.append("Outil statistique - Jouer responsable.")
-
-    return "\n".join(lignes)
+    depart = datetime.fromtimestamp(course['heure_ts'] / 1000, tz=TZ_PARIS)
+    phase = course.get('phase', 'H15')
+    lignes = [f"COURSE R{course['nr']}C{course['nc']} — DEPART {depart:%Hh%M}",
+               f"DATE : {depart:%Y-%m-%d}",
+               course['hippodrome'].replace('HIPPODROME DE ', ''), course['libelle'],
+               '', '🔄 ACTUALISATION' if phase == 'H15' else '🔄 CONTROLE FINAL',
+               f"Donnees verifiees a {datetime.now(TZ_PARIS):%Hh%M}"]
+    # Le marqueur ACTUALISATION reste present pour le journal des controles finaux.
+    if phase != 'H15':
+        lignes.append('ACTUALISATION des conseils')
+    etats = {'CHANGEMENT': 'Selection modifiee', 'ATTENTION': 'Points a verifier',
+              'CONFIRME': 'Selection confirmee', 'RENFORCE': 'Selection maintenue',
+              'INDISPONIBLE': 'Donnees insuffisantes'}
+    lignes.append(etats.get(maj.get('verdict'), 'Selection actualisee'))
+    if maj.get('non_partants'):
+        lignes.append('Non-partants : ' + ', '.join(maj['non_partants']))
+    lignes.append('')
+    lignes.extend(formater_selection(maj.get('top2_final', [])[:2], len(partants), True))
+    lignes.extend(['', 'Remplace le conseil precedent pour cette course.'])
+    return '\n'.join(lignes)
 
 
 # ──────────────────────────────────────────────
 #  PROGRAMME PRINCIPAL v5 - PONCTUEL (sans attente)
 # ──────────────────────────────────────────────
+def phase_collecte(minutes):
+    # Fenetres tolerantes aux retards GitHub ; aucun passage exact garanti.
+    if 0 < minutes <= 8:
+        return 'H5'
+    if 8 < minutes <= 25:
+        return 'H15'
+    if 40 <= minutes <= 75:
+        return 'H60'
+    return None
+
+
+def conseil_change(maj, nb_partants, precedent):
+    if not precedent:
+        return True
+    top = maj.get('top2_final', [])[:2]
+    # Comparer les numeros ET le type de pari, sans compter les variations de cote.
+    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True))
+    from pmu_tracking import analyser_message
+    event = analyser_message(txt, datetime.now(TZ_PARIS))
+    old = precedent['event']
+    return (event['choix'], event['paris']) != (old['choix'], old['paris'])
+
+
 def main():
-    today         = datetime.now()
-    date_str      = today.strftime("%d%m%Y")
-    date_iso      = today.strftime("%Y-%m-%d")
-    date_str_fich = today.strftime("%Y%m%d")
-    date_aff      = today.strftime("%d/%m/%Y")
-
-    log.info("=" * 60)
-    log.info(f"  PMU NOTIFIER v5 (ECONOME) - {date_aff}")
-    log.info(f"  Fenetre : courses partant dans {MARGE_MIN_MIN}-{FENETRE_MIN} min")
-    log.info(f"  Scraping : {'OK' if SCRAPING_DISPO else 'NON'}")
-    log.info("=" * 60)
-
-    # 1. Charger le CSV du matin
-    pronos_matin = charger_pronos_matin(date_str_fich)
-    if not pronos_matin:
-        log.warning("Pas de CSV matin - le notifier ne peut rien faire (silencieux)")
-        # v5 : pas de message Telegram d'erreur (evite le spam a chaque reveil)
-        return
-
-    # 2. Charger le programme du jour
+    today = datetime.now(TZ_PARIS)
+    date_str, date_iso, day = today.strftime('%d%m%Y'), today.strftime('%Y-%m-%d'), today.strftime('%Y%m%d')
+    pronos = charger_pronos_matin(day)
+    if not pronos:
+        log.warning('Pas de CSV du jour : aucun conseil actualise')
     courses = get_courses_du_jour(date_str)
-    if not courses:
-        log.info("Aucune course au programme")
-        return
-
-    # 3. Selectionner SEULEMENT les courses dans la fenetre
-    maintenant_ts = datetime.now(tz=TZ_PARIS).timestamp() * 1000
-    borne_basse   = maintenant_ts + (MARGE_MIN_MIN * 60 * 1000)
-    borne_haute   = maintenant_ts + (FENETRE_MIN * 60 * 1000)
-
-    courses_fenetre = [
-        c for c in courses
-        if borne_basse <= c["heure_ts"] <= borne_haute
-    ]
-
-    if not courses_fenetre:
-        log.info("Aucune course dans la fenetre - arret immediat (economie)")
-        return
-
-    # 4. Anti-doublon : retirer celles deja notifiees aujourd'hui
-    deja = charger_etat(date_str_fich)
-    courses_a_notifier = [
-        c for c in courses_fenetre
-        if f"R{c['nr']}C{c['nc']}" not in deja
-    ]
-
-    if not courses_a_notifier:
-        log.info("Toutes les courses de la fenetre deja notifiees - arret")
-        return
-
-    log.info(f"{len(courses_a_notifier)} course(s) a notifier maintenant")
-
-    # 5. Notifier chaque course (SANS attente - elles sont deja proches)
-    for course in courses_a_notifier:
-        nr = course["nr"]
-        nc = course["nc"]
-        cle = f"R{nr}C{nc}"
-
-        log.info(f"  Notif R{nr}C{nc} - {course['libelle']}")
-        partants_actuels = get_partants(date_str, nr, nc)
-
-        if not partants_actuels:
-            log.warning(f"  Partants indisponibles R{nr}C{nc}")
-            deja.add(cle)  # on marque quand meme pour eviter de reessayer en boucle
+    deja = charger_etat(day)
+    records = [json.loads(p.read_text()) for p in Path('resultats/journal').glob(f'{day}-*.json')]
+    derniers = dernieres_selections(records, day)
+    for course in courses:
+        nr, nc = course['nr'], course['nc']
+        cle = f'R{nr}C{nc}'
+        now = datetime.now(TZ_PARIS)
+        phase = phase_collecte((course['heure_ts'] / 1000 - now.timestamp()) / 60)
+        if not phase or f'{cle}:{phase}' in deja:
             continue
-
-        course_matin = pronos_matin.get((f"R{nr}", f"C{nc}"), [])
-        if not course_matin:
-            log.warning(f"  Pas de prono matin pour R{nr}C{nc} - ignore (pas de message)")
-            deja.add(cle)
+        debut = now.isoformat()
+        payload = api_get(f'/programme/{date_str}/R{nr}/C{nc}/participants')
+        raw = payload.get('participants', []) if isinstance(payload, dict) else []
+        if not raw:
+            archiver_observation(course, phase, raw, debut=debut, calcul={'erreur': 'Partants indisponibles'})
+            continue  # Reessayer au prochain passage, sans valider l'etape.
+        actifs = [p for p in raw if p.get('statut') != 'NON_PARTANT']
+        if any(extraire_cote(p) <= 0 for p in actifs):
+            archiver_observation(course, phase + '_AVANT_REESSAI', raw, debut=debut, source_csv=SOURCE_CSV)
+            second = api_get(f'/programme/{date_str}/R{nr}/C{nc}/participants')
+            if isinstance(second, dict) and second.get('participants'):
+                raw = second['participants']
+                actifs = [p for p in raw if p.get('statut') != 'NON_PARTANT']
+        matin = pronos.get((f'R{nr}', f'C{nc}'), [])
+        if phase == 'H60':
+            archiver_observation(course, phase, raw, debut=debut, source_csv=SOURCE_CSV)
+            deja.add(f'{cle}:{phase}')
+            sauver_etat(day, deja)
             continue
-
-        maj = actualiser_course(
-            course_matin_top5=course_matin,
-            date_iso=date_iso,
-            nr=int(nr), nc=int(nc),
-            libelle=course["libelle"],
-            partants_actuels=partants_actuels,
-        )
-
-        message = formater_message_h15(course, partants_actuels, maj)
-        if telegram_send(message):
-            log.info(f"  Envoye R{nr}C{nc} : {maj.get('verdict', '?')}")
-            deja.add(cle)
-        else:
-            log.error(f"  Envoi non confirme R{nr}C{nc} : pas de validation anti-doublon")
-        time.sleep(1)
-
-    # 6. Sauvegarder l'etat (anti-doublon pour les prochains reveils)
-    sauver_etat(date_str_fich, deja)
-
-    log.info("=" * 60)
-    log.info(f"  NOTIFIER v5 TERMINE - {len(courses_a_notifier)} notif(s) envoyee(s)")
-    log.info("=" * 60)
+        if not matin:
+            archiver_observation(course, phase, raw, debut=debut, calcul={'erreur': 'CSV initial absent'})
+            continue
+        # Une absence dans une reponse partielle ne prouve pas un forfait.
+        numeros = {str(p.get('numPmu') or p.get('numero')) for p in raw}
+        if {str(c['num_partant']) for c in matin} - numeros:
+            archiver_observation(course, phase, raw, debut=debut,
+                                  calcul={'erreur': 'Liste des partants incomplete'}, source_csv=SOURCE_CSV)
+            continue
+        maj = actualiser_course(matin, date_iso, int(nr), int(nc), course['libelle'], actifs)
+        archiver_observation(course, phase, raw, calcul=maj, debut=debut, source_csv=SOURCE_CSV)
+        if not actifs or any(extraire_cote(p) <= 0 for p in actifs):
+            log.warning('%s : cotes incompletes, aucun nouveau conseil', cle)
+            continue
+        precedent = derniers.get(cle)
+        if precedent and precedent.get('delivery') != 'SENT':
+            log.warning('%s : envoi precedent incertain, verification manuelle necessaire', cle)
+            continue
+        if precedent and precedent['event'].get('source') != 'MATIN' and not conseil_change(maj, len(actifs), precedent):
+            deja.add(f'{cle}:{phase}')  # Donnees archivees, aucun message identique.
+        elif telegram_send(formater_message_h15({**course, 'phase': phase}, actifs, maj)):
+            deja.add(f'{cle}:{phase}')
+        sauver_etat(day, deja)
 
 
 if __name__ == "__main__":

@@ -34,7 +34,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))  # UTC+2 ete
 
 import requests
-from pmu_tracking import envoyer_trace, paris_affiches
+from pmu_tracking import envoyer_trace, paris_affiches, formater_selection, archiver_observation
 
 # v15 : module de scraping gratuit qui remplace les appels Claude
 from pronos_gratuit import get_pronostics_gratuit
@@ -247,137 +247,26 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
     nb_total_analyse = sum(1 for c in toutes_courses if c.get("top5"))
 
     def formater_course(course: dict) -> list:
-        lignes = []
         if not course.get("top5"):
-            return lignes
-
-        disc      = course.get("discipline", "").replace("_", " ")
-        heure_ts  = course.get("heure", 0)
-        libelle   = course.get("libelle", "")
-        reunion   = course.get("reunion", "")
-        nc        = course.get("course", "")
-        terrain   = course.get("terrain", "")
-        consensus = course.get("consensus_fort", False)
-        type_c    = course.get("type_course_details", TYPE_CONDITIONS)
-        trot      = est_trot(course.get("discipline", ""))
-
-        niveau       = course.get("_niveau", "")
-        niveau_emoji = course.get("_niveau_emoji", "")
-        is_pattern   = course.get("_pattern_match", False)
-
-        heure_str = ""
-        if heure_ts and isinstance(heure_ts, (int, float)) and heure_ts > 0:
-            try:
-                heure_str = datetime.fromtimestamp(heure_ts / 1000, tz=TZ_PARIS).strftime("%Hh%M")
-            except Exception:
-                pass
-
-        terrain_str = f" | {terrain}" if terrain else ""
-        alert_str   = " *** CONSENSUS FORT ***" if consensus else ""
-        type_str    = f" [{type_c}]" if type_c not in (TYPE_CONDITIONS, TYPE_INCONNU) else ""
-        fiab_emoji  = evaluer_fiabilite_course(course)
-        pattern_str = " 🎯" if is_pattern else ""
-
-        lignes.append("")
-        lignes.append("╔" + "═" * 36 + "╗")
-        lignes.append(f"║ COURSE {reunion}{nc} — DEPART {heure_str}")
-        lignes.append(f"║ {niveau_emoji} {niveau} | {fiab_emoji}{disc}{pattern_str}")
-        if terrain or type_str or alert_str:
-            lignes.append(f"║ {terrain_str.strip(' |')}{type_str}{alert_str}".rstrip())
-        lignes.append("╚" + "═" * 36 + "╝")
-
-        if libelle:
-            lignes.append(f"{libelle[:50]}")
-        lignes.append("-" * 35)
-
-        top2 = course["top5"][:2]
-        for rang, cheval in enumerate(top2, 1):
-            nom       = cheval.get("nom_cheval", "?")
-            num_ch    = cheval.get("num_partant", "")
-            cote      = cheval.get("cote_jour", 0)
-            score     = cheval.get("score_total", 0)
-            prob      = cheval.get("probabilite", 0)
-            nb_prono  = cheval.get("nb_pronostics", 0)
-            nb_src_ch = cheval.get("nb_sources_total", 0)
-            value     = cheval.get("value_bet", False)
-
-            mvt = ""
-            val = cheval.get("variation_cote_%", "")
-            if val != "" and isinstance(val, (int, float)):
-                if val <= -25:
-                    mvt = f" [CHUTE {val:+.0f}%!!!]"
-                elif val <= -10:
-                    mvt = f" [cote {val:+.0f}%]"
-                elif val >= 15:
-                    mvt = f" [+{val:.0f}%]"
-
-            value_str = " *** VALUE BET ***" if value else ""
-            nom_aff   = f"🔴 N{num_ch}. {nom}" if num_ch else f"🔴 {nom}"
-            prefixe   = ">> " if rang == 1 else "   "
-
-            role = "PRONOSTIC PRINCIPAL" if rang == 1 else "DEUXIEME CHOIX"
-            lignes.append(f"{prefixe}{role} : {nom_aff} (cote {cote:.1f}){mvt}{value_str}")
-            lignes.append(f"   Score: {score:.1f}% | Proba: {prob:.1f}%")
-            if nb_src_ch > 0:
-                lignes.append(f"   {nb_prono} source(s)/{nb_src_ch}")
-
-        lignes.append("")
-        lignes.extend(paris_affiches(top2, top2[0].get("nb_partants", 0)))
-
+            return []
+        stamp = course.get("heure", 0)
+        depart = datetime.fromtimestamp(stamp / 1000, tz=TZ_PARIS) if stamp else None
+        top = course["top5"][:2]
+        lignes = [f"COURSE {course.get('reunion', '')}{course.get('course', '')} — DEPART {depart:%Hh%M}" if depart else f"COURSE {course.get('reunion', '')}{course.get('course', '')}"]
+        if depart:
+            lignes.append(f"DATE : {depart:%Y-%m-%d}")
+        lignes.extend([str(course.get('hippodrome', '')).replace('HIPPODROME DE ', ''),
+                       course.get('libelle', ''),
+                       str(course.get('discipline', '')).replace('_', ' '), '', 'SELECTION INITIALE', ''])
+        lignes.extend(formater_selection(top, top[0].get('nb_partants', 0)))
+        lignes.append('')
         return lignes
 
-    # ── Construction du message ──
-    lignes = [
-        f"🐎 PRONOSTICS DE L'ALGORITHME — {date_aff}",
-        run_label,
-        "=" * 38,
-        "",
-        "📊 COURSES RETENUES AUJOURD'HUI",
-        f"💎 PEPITES  : {nb_pepite} course(s)",
-        f"🟢 SOLIDES  : {nb_solide} course(s)",
-        f"🔵 CORRECTES: {nb_correct} course(s)",
-        f"TOTAL RETENU : {len(selection)} sur {nb_total_analyse} analysees",
-        "=" * 38,
-        "",
-        "LEGENDE :",
-        "💎 PEPITE = cote 2-8 + <=8 part. + ecart>=3 + score>=45",
-        "🟢 SOLIDE = cote 2-8 + <=10 part. + ecart>=3",
-        "🔵 CORRECT = cote 2-8 + <=10 part.",
-        "🔴 N4. = numero du cheval | ⭐ = fiabilite N1",
-        "🎯 = pattern historique gagnant",
-        "=" * 38,
-    ]
-
-    if PATTERNS_DISPO:
-        nb_a = compter_audits()
-        if nb_a < 50:
-            lignes.append(f"(patterns inactifs : {nb_a}/50 audits)")
-            lignes.append("=" * 38)
-
+    lignes = [f"🐎 PMU — {date_aff}", f"{len(selection)} course(s) retenue(s).", '']
     if not selection:
-        lignes.append("")
-        lignes.append("Aucune course ne correspond aux criteres aujourd'hui.")
-        lignes.append("(cote 2-8 + partants <=10 requis)")
-        lignes.append("")
-        lignes.append("=" * 38)
-        lignes.append("Outil statistique - Jouer responsable.")
-        return "\n".join(lignes)
-
-    # Afficher les courses selectionnees, groupees par niveau
-    niveau_courant = None
+        lignes.append("Aucune course retenue aujourd'hui.")
     for c in selection:
-        if c["_niveau"] != niveau_courant:
-            niveau_courant = c["_niveau"]
-            emoji = {"PEPITE": "💎", "SOLIDE": "🟢", "CORRECT": "🔵"}.get(niveau_courant, "")
-            lignes.append("")
-            lignes.append("=" * 38)
-            lignes.append(f"  {emoji} {niveau_courant}S")
-            lignes.append("=" * 38)
         lignes.extend(formater_course(c))
-
-    lignes.append("")
-    lignes.append("=" * 38)
-    lignes.append("Outil statistique - Jouer responsable.")
     return "\n".join(lignes)
 
 
@@ -1027,6 +916,13 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         return {}
 
     partants_actifs = [p for p in partants if p.get("statut") != "NON_PARTANT"]
+    archiver_observation({'reunion': nr, 'course': nc, **info_course}, 'INITIAL_BRUT', partants)
+    if any(extraire_cote(p) <= 0 for p in partants_actifs):
+        nouveau = get_participants(date_str, nr, nc)
+        if nouveau:
+            partants = nouveau
+            partants_actifs = [p for p in partants if p.get('statut') != 'NON_PARTANT']
+            archiver_observation({'reunion': nr, 'course': nc, **info_course}, 'INITIAL_REESSAI', partants)
     nb_partants     = len(partants_actifs)
 
     partants_avec_cote = [p for p in partants_actifs if extraire_cote(p) > 0]
@@ -1257,7 +1153,7 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
 #  6. PROGRAMME PRINCIPAL
 # ──────────────────────────────────────────────
 def main():
-    today        = datetime.now()
+    today        = datetime.now(TZ_PARIS)
     yesterday    = today - timedelta(days=1)
     date_str     = today.strftime("%d%m%Y")
     date_str_iso = today.strftime("%Y-%m-%d")
@@ -1279,8 +1175,6 @@ def main():
     log.info(f"  {info_patterns()}")
     log.info("=" * 70)
 
-    if TELEGRAM_TOKEN:
-        telegram_send(f"PMU Scorer v15.2 demarre - {date_aff} {heure_run}\n{run_label}...")
 
     programme = get_programme(date_str)
     if not programme:
@@ -1320,6 +1214,10 @@ def main():
             if isinstance(terrain, dict):
                 terrain = terrain.get("libelle", "") or terrain.get("code", "")
 
+            if course.get("heureDepart", 0) <= datetime.now(TZ_PARIS).timestamp() * 1000:
+                log.info(f"R{nr}C{nc} deja partie : ignoree")
+                continue
+            debut_collecte = datetime.now(TZ_PARIS).isoformat()
             try:
                 res = analyser_course(
                     date_str, date_str_iso, date_veille, date_aff, nr, nc, course,
@@ -1328,6 +1226,8 @@ def main():
                     activer_presse=activer_presse,
                 )
                 if res and res.get("tous_resultats"):
+                    archiver_observation(course, 'INITIAL', res['tous_resultats'],
+                                          calcul=res, debut=debut_collecte)
                     tous_csv.extend(res["tous_resultats"])
                     (courses_trot if res["type_course"] == "TROT" else courses_galop).append(res)
             except Exception as e:

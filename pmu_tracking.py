@@ -21,6 +21,35 @@ LABELS = {'SIMPLE_PLACE': 'Simple place', 'COUPLE_PLACE': 'Couple place',
 LOG = logging.getLogger(__name__)
 
 
+def formater_selection(top, nb_partants, actualisation=False):
+    """Présentation seule : aucun changement des chevaux ni des mises."""
+    lines = ['CHEVAUX RETENUS']
+    for i, ch in enumerate(top[:2]):
+        role = '1er choix' if i == 0 else '2e choix'
+        lines.append(f"{role} : N{ch.get('num_partant', '?')}. {ch.get('nom_cheval', '?')}")
+        cote = ch.get('cote_actuel' if actualisation else 'cote_jour', 0) or 0
+        detail = f"Cote {cote:.1f}" if cote > 0 else 'Cote indisponible'
+        initiale = ch.get('cote_jour', 0) or 0
+        if actualisation and initiale > 0 and cote > 0:
+            variation = (cote / initiale - 1) * 100
+            detail += f" (initiale {initiale:.1f} ; {variation:+.0f} %)"
+        lines.append(detail)
+        lines.append('')
+    lines.append('PARIS CONSEILLES')
+    lines.extend(paris_affiches(top[:2], nb_partants))
+    return lines
+
+
+def archiver_observation(course, phase, partants, *, calcul=None, debut=None, source_csv=None):
+    now = datetime.now(TZ)
+    path = Path('resultats/observations') / f'{now:%Y%m%d}' / f'{uuid4().hex}.json'
+    _write(path, {'schema': 1, 'phase': phase, 'debut_collecte': debut or now.isoformat(),
+                  'fin_collecte': now.isoformat(), 'course': course, 'partants': partants,
+                  'calcul': calcul, 'source_csv': source_csv,
+                  'revision': os.environ.get('GITHUB_SHA', 'local')})
+    return path
+
+
 def paris_affiches(top, nb_partants):
     """Une seule source pour les lignes de paris, sans modifier le classement."""
     if not top:
@@ -29,14 +58,14 @@ def paris_affiches(top, nb_partants):
     n1 = str(a.get('num_partant') or '').strip()
     if not n1.isdigit():
         return ['AUCUN PARI CONSEILLE : numero manquant.']
-    lines = [f"PARI : Simple Place sur N{n1} {a.get('nom_cheval', '')}"]
+    lines = [f"PARI : Simple Place sur N{n1}"]
     if len(top) > 1:
         b = top[1]
         n2 = str(b.get('num_partant') or '').strip()
         odds = b.get('cote_actuel', b.get('cote_jour', 0)) or 0
         if n2.isdigit() and n1 != n2 and 0 < odds < 12 and nb_partants >= 4:
             kind = 'GAGNANT' if nb_partants <= 7 else 'PLACE'
-            lines.append(f"COUPLE {kind} (les 2 choix ci-dessus) : N{n1} {a.get('nom_cheval', '')} + N{n2} {b.get('nom_cheval', '')}")
+            lines.append(f"COUPLE {kind} : N{n1} + N{n2}")
     return lines
 
 
@@ -49,8 +78,12 @@ def analyser_message(text, now):
     if not clock:
         raise ValueError('Course sans heure de depart : journal incomplet')
     depart = now.replace(hour=int(clock[1]), minute=int(clock[2]), second=0, microsecond=0)
+    date = re.search(r'DATE : (\d{4}-\d{2}-\d{2})', text)
+    if date:
+        day = datetime.strptime(date[1], '%Y-%m-%d')
+        depart = depart.replace(year=day.year, month=day.month, day=day.day)
     choices = []
-    for role, num, name in re.findall(r'(PRONOSTIC PRINCIPAL|DEUXIEME CHOIX)\s*:\s*🔴\s*N(\d+)\.\s*([^\n]+)', text):
+    for role, num, name in re.findall(r'(PRONOSTIC PRINCIPAL|DEUXIEME CHOIX|1er choix|2e choix)\s*:\s*(?:🔴\s*)?N(\d+)\.\s*([^\n]+)', text):
         if len(choices) == 2:
             break
         choices.append({'num': str(int(num)), 'nom': name.split(' (cote')[0].strip()})
@@ -67,7 +100,7 @@ def analyser_message(text, now):
     for bet in bets:
         if not selected or bet['numeros'] != selected[:len(bet['numeros'])]:
             raise ValueError('Incoherence entre chevaux affiches et paris')
-    return {'date': now.strftime('%Y%m%d'), 'course': f'R{match[1]}C{match[2]}',
+    return {'date': depart.strftime('%Y%m%d'), 'course': f'R{match[1]}C{match[2]}',
             'depart': depart.isoformat(), 'source': 'H15' if 'ACTUALISATION' in text else 'MATIN',
             'choix': choices, 'paris': bets}
 
@@ -86,16 +119,20 @@ def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None):
     if post is None:
         import requests
         post = requests.post
+    fixed_now = now
     now = now or datetime.now(TZ)
     journal = Path(journal) if journal is not None else JOURNAL
     # Separer les courses pour pouvoir attester chaque selection independamment.
     blocks = re.split(r'(?=^[^\w\n]*COURSE\s*:?\s*R\d+\s*C\d+)', text, flags=re.M)
     source_h15 = 'ACTUALISATION DE L\'ALGORITHME' in text
+    has_courses = bool(re.search(r'COURSE\s*:?\s*R\d+\s*C\d+', text))
     success = True
     for block in blocks:
         if not block.strip():
             continue
         event = analyser_message(('ACTUALISATION\n' if source_h15 else '') + block, now)
+        if has_courses and event is None:
+            continue  # Une fiche par course, sans en-tete isole ni recapitulatif perime.
         record = {'schema': 1, 'id': uuid4().hex, 'sent_at': now.isoformat(),
                   'revision': os.environ.get('GITHUB_SHA', 'local'), 'event': event,
                   'text': block, 'sha256': hashlib.sha256(block.encode()).hexdigest(),
@@ -103,6 +140,12 @@ def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None):
         path = journal / f"{now:%Y%m%d}-{record['id']}.json"
         if event:
             _write(path, record)  # Echec disque => ne pas envoyer sans trace.
+            if (fixed_now or datetime.now(TZ)) >= datetime.fromisoformat(event['depart']):
+                record['delivery'] = 'BLOCKED_AFTER_START'
+                _write(path, record)
+                LOG.warning('Envoi bloque apres depart : %s', event['course'])
+                success = False
+                continue
         try:
             for pos in range(0, len(block), 3500):
                 response = post(f'https://api.telegram.org/bot{token}/sendMessage',
