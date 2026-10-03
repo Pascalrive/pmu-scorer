@@ -1,20 +1,13 @@
 name: PMU Daily Scorer v15.1
 
-# Crons en UTC. Paris = UTC+2 (ete) ou UTC+1 (hiver).
-# v15.1 : 1 scorer matin + 4 sessions notifier de 2h chacune
-# Minutes choisies : 17, 23, 37, 47 (eviter 0, 5, 15, 30, 45).
+# Crons UTC : GitHub peut retarder ou manquer un passage.
+# Collecte H60, actualisation H15, controle H5 selon le delai reel restant.
 on:
   schedule:
-    # Pronostics du matin, puis seconde tentative si le premier lancement echoue.
-    - cron: '17 9 * * *'
-    - cron: '47 9 * * *'
-    # Actualisations avant les courses, reparties sur la journee.
-    - cron: '23 9 * * *'
-    - cron: '23 11 * * *'
-    - cron: '23 13 * * *'
-    - cron: '23 15 * * *'
-    # Bilan quotidien du soir.
-    - cron: '37 18 * * *'
+    - cron: '17 7 * * *'
+    - cron: '47 7 * * *'
+    - cron: '*/10 8-22 * * *'
+    - cron: '47 22 * * *'
   workflow_dispatch:
     inputs:
       job:
@@ -39,6 +32,10 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+concurrency:
+  group: pmu-collecte-production
+  cancel-in-progress: false
+
 jobs:
 
   scorer:
@@ -48,8 +45,8 @@ jobs:
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '17 9 * * *' ||
-        github.event.schedule == '47 9 * * *'
+        github.event.schedule == '17 7 * * *' ||
+        github.event.schedule == '47 7 * * *'
       ))
     permissions:
       contents: write
@@ -59,13 +56,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Le tir de 11h47 ne s'execute que si le tir de 11h17 a echoue
+      # La seconde tentative ne tourne que si aucun CSV du jour n'existe
       - name: Verifier si scorer matin deja execute
         id: check_csv
         run: |
-          if [ "${{ github.event.schedule }}" = "47 9 * * *" ]; then
-            DATE_TODAY=$(date +%Y%m%d)
-            RECENT=$(find resultats -name "pmu_${DATE_TODAY}_*.csv" -mmin -60 2>/dev/null | wc -l)
+          if [ "${{ github.event.schedule }}" = "47 7 * * *" ]; then
+            DATE_TODAY=$(TZ=Europe/Paris date +%Y%m%d)
+            RECENT=$(find resultats -name "pmu_${DATE_TODAY}_*.csv" 2>/dev/null | wc -l)
             if [ "$RECENT" -gt "0" ]; then
               echo "skip=true" >> $GITHUB_OUTPUT
               echo "Scorer deja execute dans la derniere heure - retry annule"
@@ -101,7 +98,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: journal-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: resultats/journal/
+          path: |
+            resultats/journal/
+            resultats/observations/
           retention-days: 90
           if-no-files-found: ignore
       - name: Persister le journal pour le bilan
@@ -133,10 +132,7 @@ jobs:
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '23 9 * * *' ||
-        github.event.schedule == '23 11 * * *' ||
-        github.event.schedule == '23 13 * * *' ||
-        github.event.schedule == '23 15 * * *'
+        github.event.schedule == '*/10 8-22 * * *'
       ))
 
     steps:
@@ -159,7 +155,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: journal-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: resultats/journal/
+          path: |
+            resultats/journal/
+            resultats/observations/
           retention-days: 90
           if-no-files-found: ignore
       - name: Persister le journal pour le bilan
@@ -175,12 +173,12 @@ jobs:
           overwrite: true
 
   results:
-    name: Bilan du soir
+    name: Bilan de la journee terminee
     runs-on: ubuntu-latest
     timeout-minutes: 30
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
-      (github.event_name == 'schedule' && github.event.schedule == '37 18 * * *')
+      (github.event_name == 'schedule' && github.event.schedule == '47 22 * * *')
     permissions:
       contents: write
 
@@ -201,10 +199,14 @@ jobs:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PMU_BILAN_DATE_INPUT: ${{ inputs.date_bilan }}
+          PMU_SCHEDULED: ${{ github.event_name == 'schedule' && '1' || '0' }}
           PMU_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
         run: |
           if [ -n "$PMU_BILAN_DATE_INPUT" ]; then
             export PMU_BILAN_DATE="$PMU_BILAN_DATE_INPUT"
+          fi
+          if [ "$PMU_SCHEDULED" = "1" ]; then
+            export PMU_BILAN_DATE=$(TZ=Europe/Paris date -d '3 hours ago' +%Y%m%d)
           fi
           python pmu_results.py
       - name: Archiver le bilan et ses sources officielles
