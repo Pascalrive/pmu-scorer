@@ -251,6 +251,13 @@ def regler_pari(bet, participants, tables):
 
 def bilan(records, day, fetch):
     selections = dernieres_selections(records, day)
+    if not selections:
+        return (f'ALERTE SUIVI PMU — {day[6:8]}/{day[4:6]}/{day[:4]}\n'
+                'Bilan indisponible : aucun pronostic envoye avant depart retrouve.\n'
+                f'Journaux charges : {len(records)}.\n'
+                'Aucun historique exploitable : verifier la collecte initiale et les envois.\n'
+                'Aucun taux de reussite ni resultat financier calculable.\n'
+                'Aucun remplacement par les CSV du scoreur.'), []
     lines = [f'BILAN DES PRONOSTICS ENVOYES — {day[6:8]}/{day[4:6]}/{day[:4]}',
              'Derniere version envoyee avant depart, une seule selection par course.',
              'Simulation : 5 EUR par pari explicitement conseille ; aucun pari execute.',
@@ -341,6 +348,8 @@ def main():
     if os.environ.get('PMU_DRY_RUN') != '1':
         if not envoyer_trace(message, os.environ.get('TELEGRAM_TOKEN'), os.environ.get('TELEGRAM_CHAT_ID')):
             raise RuntimeError('Bilan non envoye a Telegram')
+    if not dernieres_selections(records, day):
+        raise RuntimeError('SUIVI EN ECHEC : aucun historique avant depart ; diagnostic archive')
 
 
 if __name__ == '__main__':
