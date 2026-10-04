@@ -9,6 +9,7 @@ def run(*args, check=True):
 
 def main():
     paths = [str(p) for p in (Path('resultats/journal'), Path('resultats/bilans'), Path('resultats/officiels'), Path('resultats/observations')) if p.exists()]
+    paths.extend(str(p) for p in Path('resultats').glob('pmu_*.csv'))
     if not paths:
         return
     run('git', 'config', 'user.name', 'PMU Bot')
