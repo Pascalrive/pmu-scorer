@@ -2,12 +2,13 @@ name: PMU Daily Scorer v15.1
 
 # Crons UTC : GitHub peut retarder ou manquer un passage.
 # Collecte H60, actualisation H15, controle H5 selon le delai reel restant.
+# Bilan a 05h17 UTC pour la veille civile a Paris, meme si le lancement est retarde.
 on:
   schedule:
     - cron: '17 7 * * *'
     - cron: '47 7 * * *'
     - cron: '*/10 8-22 * * *'
-    - cron: '47 22 * * *'
+    - cron: '17 5 * * *'
   workflow_dispatch:
     inputs:
       job:
@@ -86,13 +87,16 @@ jobs:
         run: mkdir -p resultats
       - name: Tester le journal et le bilan
         if: steps.check_csv.outputs.skip != 'true'
-        run: python -m unittest -v test_pmu_tracking.py
+        run: python -m unittest discover -v -p 'test_pmu_*.py'
       - name: Lancer scorer PMU v15.1
         if: steps.check_csv.outputs.skip != 'true'
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_scorer.py
+      - name: Verifier la collecte initiale
+        if: steps.check_csv.outputs.skip != 'true'
+        run: python pmu_runtime.py check
       - name: Archiver les preuves d envoi
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,6 +105,7 @@ jobs:
           path: |
             resultats/journal/
             resultats/observations/
+            resultats/pmu_*.csv
           retention-days: 90
           if-no-files-found: ignore
       - name: Persister le journal pour le bilan
@@ -144,12 +149,12 @@ jobs:
       - name: Installer dependances
         run: pip install -r requirements.txt
       - name: Tester le journal et le bilan
-        run: python -m unittest -v test_pmu_tracking.py
+        run: python -m unittest discover -v -p 'test_pmu_*.py'
       - name: Lancer notifier H-15min v4
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python pmu_notifier.py
+        run: python pmu_runtime.py collect
       - name: Archiver les preuves d envoi
         if: always()
         uses: actions/upload-artifact@v4
@@ -158,6 +163,7 @@ jobs:
           path: |
             resultats/journal/
             resultats/observations/
+            resultats/pmu_*.csv
           retention-days: 90
           if-no-files-found: ignore
       - name: Persister le journal pour le bilan
@@ -178,7 +184,7 @@ jobs:
     timeout-minutes: 30
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
-      (github.event_name == 'schedule' && github.event.schedule == '47 22 * * *')
+      (github.event_name == 'schedule' && github.event.schedule == '17 5 * * *')
     permissions:
       contents: write
 
@@ -193,7 +199,7 @@ jobs:
       - name: Installer dependances
         run: pip install -r requirements.txt
       - name: Tester le journal et le bilan
-        run: python -m unittest -v test_pmu_tracking.py
+        run: python -m unittest discover -v -p 'test_pmu_*.py'
       - name: Lancer bilan du soir
         env:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
@@ -201,14 +207,7 @@ jobs:
           PMU_BILAN_DATE_INPUT: ${{ inputs.date_bilan }}
           PMU_SCHEDULED: ${{ github.event_name == 'schedule' && '1' || '0' }}
           PMU_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
-        run: |
-          if [ -n "$PMU_BILAN_DATE_INPUT" ]; then
-            export PMU_BILAN_DATE="$PMU_BILAN_DATE_INPUT"
-          fi
-          if [ "$PMU_SCHEDULED" = "1" ]; then
-            export PMU_BILAN_DATE=$(TZ=Europe/Paris date -d '3 hours ago' +%Y%m%d)
-          fi
-          python pmu_results.py
+        run: python pmu_runtime.py bilan
       - name: Archiver le bilan et ses sources officielles
         if: always()
         uses: actions/upload-artifact@v4
@@ -280,5 +279,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest -v test_pmu_tracking.py
-      - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_results.py persist_journal.py
+      - run: python -m unittest discover -v -p 'test_pmu_*.py'
+      - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_results.py persist_journal.py pmu_runtime.py
+      - name: Diagnostic lecture seule de la veille et du jour
+        run: python pmu_runtime.py diagnostic "$(TZ=Europe/Paris date -d yesterday +%Y%m%d)" "$(TZ=Europe/Paris date +%Y%m%d)"
