@@ -179,4 +179,87 @@ class CollectionTests(unittest.TestCase):
   self.assertEqual(len(calls),2);self.assertEqual(len(archives),2)
   self.assertEqual(sent,[]);self.assertEqual(state,set())
 
-if __name__=='__main__':unittest.main()
+
+
+from datetime import datetime, timezone
+from pathlib import Path
+import tempfile
+import unittest
+from unittest.mock import patch
+import pmu_runtime as r
+import pmu_tracking as tracking
+
+
+class RuntimeTests(unittest.TestCase):
+    def csv(self, root, day='20261004'):
+        path = root / f'pmu_{day}_0900.csv'
+        path.write_text('reunion,course,num_partant\nR1,C1,4\n')
+        return path
+
+    def test_missing_initial_is_recovered(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            calls = []
+            def run(args, check):
+                calls.append(args)
+                self.assertTrue(check)
+                self.csv(root)
+            r.assurer_initial('20261004', root, run)
+            self.assertEqual(len(calls), 1)
+            self.assertEqual(calls[0][-1], 'pmu_scorer.py')
+
+    def test_existing_initial_is_not_sent_again(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.csv(root)
+            r.assurer_initial('20261004', root, lambda *a, **k: self.fail('No replay'))
+
+    def test_empty_csv_and_silent_scorer_fail(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.csv(root).write_text('reunion,course,num_partant\n')
+            with self.assertRaisesRegex(RuntimeError, 'COLLECTE EN ECHEC'):
+                r.assurer_initial('20261004', root, lambda *a, **k: None)
+
+    def test_yesterdays_csv_does_not_mask_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.csv(root, '20261003')
+            self.assertIsNone(r.csv_du_jour('20261004', root))
+
+    def test_delayed_night_report_keeps_previous_day(self):
+        # Regression : le lancement observe a 03h59 ciblait a tort le 4 octobre.
+        for hour in (3, 7, 11, 17):
+            now = datetime(2026, 10, 4, hour, 59, tzinfo=r.TZ)
+            self.assertEqual(r.date_bilan(now, scheduled=True), '20261003')
+
+    def test_explicit_date_and_manual_default(self):
+        now = datetime(2026, 10, 4, 8, tzinfo=timezone.utc)
+        self.assertEqual(r.date_bilan(now), '20261004')
+        self.assertEqual(r.date_bilan(now, '20261002', True), '20261002')
+        with self.assertRaises(ValueError):
+            r.date_bilan(now, '20260230')
+
+    def test_winter_and_summer_transitions(self):
+        for month, day, expected in ((3, 29, '20260328'), (10, 25, '20261024'), (1, 1, '20251231')):
+            self.assertEqual(r.date_bilan(datetime(2026, month, day, 5, 17, tzinfo=timezone.utc),
+                                         scheduled=True), expected)
+
+    def test_empty_report_is_an_alert_not_zero_profit(self):
+        message, audit = tracking.bilan([], '20261003', lambda path: self.fail('No fabricated results'))
+        self.assertIn('ALERTE SUIVI', message)
+        self.assertNotIn('0/0', message)
+        self.assertNotIn('+0.00', message)
+        self.assertEqual(audit, [])
+
+    def test_collect_does_not_continue_after_failed_recovery(self):
+        with patch.object(r, 'assurer_initial', side_effect=RuntimeError('absent')), \
+             patch.object(r.sys, 'argv', ['pmu_runtime.py', 'collect']), \
+             patch.object(r.subprocess, 'run') as run:
+            with self.assertRaises(RuntimeError):
+                r.main()
+            run.assert_not_called()
+
+
+if __name__ == '__main__':
+    unittest.main()
