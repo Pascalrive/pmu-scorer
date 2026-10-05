@@ -61,6 +61,9 @@ def main():
     now = datetime.now(TZ)
     day = now.strftime('%Y%m%d')
     if mode == 'collect':
+        if now.hour < 8:
+            print('Collecte reportee : hors plage diurne (avant 08h00 Paris).', flush=True)
+            return
         assurer_initial(day)
         subprocess.run([sys.executable, 'pmu_notifier.py'], check=True)
     elif mode == 'check':
