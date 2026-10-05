@@ -18,7 +18,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))
 
 import requests
-from pmu_tracking import envoyer_trace, paris_affiches, formater_selection, archiver_observation, dernieres_selections
+from pmu_tracking import erreur_identite, erreur_chevaux, envoyer_trace, paris_affiches, formater_selection, archiver_observation, dernieres_selections
 
 # v4 : reutilise le module de scraping gratuit
 try:
@@ -377,14 +377,20 @@ def get_courses_du_jour(date_str: str) -> list:
         if code not in PAYS_AUTORISES:
             continue
 
-        nr         = reunion.get("numExterne") or reunion.get("numOfficiel") or reunion.get("numero")
+        nr         = reunion.get("numOfficiel")
+        if not nr:
+            log.warning("Reunion sans numero officiel : ignoree")
+            continue
         hippodrome = reunion.get("hippodrome", {}).get("libelleLong", "?")
         terrain_r  = reunion.get("terrain") or reunion.get("etatSol") or ""
         if isinstance(terrain_r, dict):
             terrain_r = terrain_r.get("libelle", "") or terrain_r.get("code", "")
 
         for course in reunion.get("courses", []):
-            nc         = course.get("numExterne") or course.get("numOfficiel") or course.get("numero")
+            nc         = course.get("numOrdre")
+            if not nc:
+                log.warning("Course sans numero officiel : ignoree")
+                continue
             discipline = course.get("discipline", "")
             if discipline not in DISCIPLINES:
                 continue
@@ -510,6 +516,15 @@ def main():
         if {str(c['num_partant']) for c in matin} - numeros:
             archiver_observation(course, phase, raw, debut=debut,
                                   calcul={'erreur': 'Liste des partants incomplete'}, source_csv=SOURCE_CSV)
+            continue
+        officiel = api_get(f'/programme/{date_str}/R{nr}/C{nc}')
+        raison = erreur_identite(course, officiel, nr, nc)
+        for ch in matin:
+            raison = raison or erreur_identite(ch, officiel, nr, nc)
+        raison = raison or erreur_chevaux([{'num': c['num_partant'], 'nom': c['nom_cheval']} for c in matin], raw)
+        if raison:
+            log.error('%s : %s ; aucun conseil', cle, raison)
+            archiver_observation(course, phase, raw, debut=debut, calcul={'erreur': raison}, source_csv=SOURCE_CSV)
             continue
         maj = actualiser_course(matin, date_iso, int(nr), int(nc), course['libelle'], actifs)
         archiver_observation(course, phase, raw, calcul=maj, debut=debut, source_csv=SOURCE_CSV)
