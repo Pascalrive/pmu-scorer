@@ -34,7 +34,7 @@ except ImportError:
     TZ_PARIS = timezone(timedelta(hours=2))  # UTC+2 ete
 
 import requests
-from pmu_tracking import envoyer_trace, paris_affiches, formater_selection, archiver_observation
+from pmu_tracking import erreur_identite, erreur_chevaux, envoyer_trace, paris_affiches, formater_selection, archiver_observation
 
 # v15 : module de scraping gratuit qui remplace les appels Claude
 from pronos_gratuit import get_pronostics_gratuit
@@ -910,6 +910,13 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
 
     log.info(f"  [{type_str}] [{type_course}] {libelle}")
 
+    officiel = api_get(f'/programme/{date_str}/R{nr}/C{nc}')
+    raison = erreur_identite({'hippodrome': hippodrome, 'libelle': libelle}, officiel, nr, nc)
+    if raison:
+        log.error('R%sC%s : %s ; aucun conseil', nr, nc, raison)
+        archiver_observation(info_course, 'IDENTITE_NON_VALIDEE', [], calcul={'erreur': raison})
+        return {}
+
     partants = get_participants(date_str, nr, nc)
     if not partants:
         log.warning(f"  Pas de partants R{nr} C{nc}")
@@ -1195,7 +1202,10 @@ def main():
         if code not in PAYS_AUTORISES:
             continue
 
-        nr         = reunion.get("numExterne") or reunion.get("numOfficiel") or reunion.get("numero")
+        nr         = reunion.get("numOfficiel")
+        if not nr:
+            log.warning("Reunion sans numero officiel : ignoree")
+            continue
         hippodrome = reunion.get("hippodrome", {}).get("libelleLong", "?")
         courses    = reunion.get("courses", [])
         terrain_r  = reunion.get("terrain") or reunion.get("etatSol") or ""
@@ -1205,7 +1215,10 @@ def main():
         log.info(f"\n> R{nr} - {hippodrome} | {terrain_r} ({len(courses)} courses)")
 
         for course in courses:
-            nc         = course.get("numExterne") or course.get("numOfficiel") or course.get("numero")
+            nc         = course.get("numOrdre")
+            if not nc:
+                log.warning("Course sans numero officiel : ignoree")
+                continue
             discipline = course.get("discipline", "")
             if discipline not in DISCIPLINES:
                 continue
