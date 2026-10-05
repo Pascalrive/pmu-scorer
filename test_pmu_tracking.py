@@ -20,12 +20,13 @@ COUPLE PLACE (les 2 choix ci-dessus) : N4 FEEL WELL + N12 WINNIE CEN
 PAYLOAD=[{'typePari':'E_SIMPLE_GAGNANT','rapports':[{'combinaison':'9','dividendePourUnEuro':1470}]},
  {'typePari':'E_SIMPLE_PLACE','rapports':[{'combinaison':n,'dividendePourUnEuro':r} for n,r in [('9',290),('7',340),('2',160)]]},
  {'typePari':'E_COUPLE_PLACE','rapports':[{'combinaison':n,'dividendePourUnEuro':r} for n,r in [('9-7',1130),('9-2',1010),('7-2',860),('9-NP',0)]]}]
-PARTICIPANTS=[dict(numPmu=n,ordreArrivee=rank,statut='PARTANT') for n,rank in ((9,1),(7,2),(2,3),(4,5),(12,6))]
+META=dict(numReunion=4,numOrdre=2,hippodrome={'libelleLong':'BORDEAUX'},libelle='TEST')
+PARTICIPANTS=[dict(numPmu=n,nom={4:'FEEL WELL',12:'WINNIE CEN'}.get(n,'OTHER'),ordreArrivee=rank,statut='PARTANT') for n,rank in ((9,1),(7,2),(2,3),(4,5),(12,6))]
 
 def bet(kind='SIMPLE_PLACE',nums=('9',)):
  return dict(type=kind,numeros=list(nums),mise='5.00')
 def record(text=TEXT,sent=NOW,delivery='SENT'):
- return dict(id='test',sent_at=sent.isoformat(),event=p.analyser_message(text,sent),delivery=delivery,sha256=text)
+ return dict(id='test',sent_at=sent.isoformat(),event={**p.analyser_message(text,sent),'identite':{'hippodrome':'BORDEAUX','libelle':'TEST'}},delivery=delivery,sha256=text)
 def formatter(name,function):
  tree=ast.parse(Path(__file__).with_name(name).read_text())
  nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name==function]
@@ -80,7 +81,7 @@ class TrackingTests(unittest.TestCase):
  def test_incoherent_selection(self):
   with self.assertRaises(ValueError):p.analyser_message(TEXT.replace('PARI : Simple Place sur N4','PARI : Simple Place sur N9'),NOW)
  def test_real_final_choices_not_morning_winner(self):
-  msg,a=p.bilan([record()],'20260928',lambda path: PAYLOAD if 'rapports' in path else {'participants':PARTICIPANTS})
+  msg,a=p.bilan([record()],'20260928',lambda path: PAYLOAD if 'rapports' in path else ({'participants':PARTICIPANTS} if path.endswith('/participants') else META))
   self.assertEqual([r['statut'] for r in a],['PERDU','PERDU']);self.assertNotIn('DANCING EAGLE',msg);self.assertIn('solde -10.00',msg)
  def test_pending_no_global_roi(self):
   msg,_=p.bilan([record()],'20260928',lambda path:None)
@@ -162,21 +163,21 @@ class CollectionTests(unittest.TestCase):
   import logging
   tree=ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
   nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ('main','phase_collecte')]
-  horses=[dict(num_partant='4',nom_cheval='FEEL WELL',cote_jour=3),dict(num_partant='12',nom_cheval='WINNIE CEN',cote_jour=3)]
+  horses=[dict(num_partant='4',nom_cheval='FEEL WELL',cote_jour=3,hippodrome='BORDEAUX',libelle='TEST'),dict(num_partant='12',nom_cheval='WINNIE CEN',cote_jour=3,hippodrome='BORDEAUX',libelle='TEST')]
   calls=[];archives=[];sent=[];state=set()
   class Clock(datetime):
    @classmethod
    def now(cls,tz=None):return NOW
-  env=dict(datetime=Clock,TZ_PARIS=p.TZ,Path=lambda name:Path('/tmp/pmu-no-such-journal-for-tests'),json=json,log=logging.getLogger('test'),SOURCE_CSV=None,
+  env=dict(erreur_identite=p.erreur_identite,erreur_chevaux=p.erreur_chevaux,datetime=Clock,TZ_PARIS=p.TZ,Path=lambda name:Path('/tmp/pmu-no-such-journal-for-tests'),json=json,log=logging.getLogger('test'),SOURCE_CSV=None,
    charger_pronos_matin=lambda d:{('R4','C2'):horses},charger_etat=lambda d:state.copy(),sauver_etat=lambda d,s:state.update(s),
-   get_courses_du_jour=lambda d:[dict(nr=4,nc=2,heure_ts=int((NOW+timedelta(minutes=15)).timestamp()*1000),libelle='TEST')],
-   api_get=lambda url:(calls.append(url) or {'participants':[dict(numPmu=4,cote=0),dict(numPmu=12,cote=3)]}),
+   get_courses_du_jour=lambda d:[dict(nr=4,nc=2,heure_ts=int((NOW+timedelta(minutes=15)).timestamp()*1000),libelle='TEST',hippodrome='BORDEAUX')],
+   api_get=lambda url:(calls.append(url) or ({'participants':[dict(numPmu=4,nom='FEEL WELL',cote=0),dict(numPmu=12,nom='WINNIE CEN',cote=3)]} if url.endswith('/participants') else META)),
    extraire_cote=lambda d:d['cote'],archiver_observation=lambda *a,**k:archives.append((a,k)),
    actualiser_course=lambda *a:dict(top2_final=horses),dernieres_selections=lambda *a:{},
    telegram_send=lambda text:sent.append(text))
   exec(compile(ast.Module(body=nodes,type_ignores=[]),'notifier','exec'),env)
   env['main']()
-  self.assertEqual(len(calls),2);self.assertEqual(len(archives),2)
+  self.assertEqual(len(calls),3);self.assertEqual(len(archives),2)
   self.assertEqual(sent,[]);self.assertEqual(state,set())
 
 
@@ -253,13 +254,65 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(audit, [])
 
     def test_collect_does_not_continue_after_failed_recovery(self):
-        with patch.object(r, 'assurer_initial', side_effect=RuntimeError('absent')), \
+        with patch.object(r, 'datetime') as clock, \
+             patch.object(r, 'assurer_initial', side_effect=RuntimeError('absent')), \
              patch.object(r.sys, 'argv', ['pmu_runtime.py', 'collect']), \
              patch.object(r.subprocess, 'run') as run:
+            clock.now.return_value = NOW
             with self.assertRaises(RuntimeError):
                 r.main()
             run.assert_not_called()
 
+
+
+class IdentityRegressionTests(unittest.TestCase):
+    def test_duplicate_external_numbers_use_distinct_official_reunions(self):
+        import logging
+        tree = ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
+        node = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'get_courses_du_jour')
+        course = dict(numOrdre=8, numExterne=18, discipline='ATTELE', heureDepart=1)
+        reunions = [dict(numOfficiel=n, numExterne=5, pays={'code':'FRA'}, courses=[course]) for n in (5,6,7)]
+        env = dict(api_get=lambda _: {'programme':{'reunions':reunions}}, PAYS_AUTORISES={'FRA'}, DISCIPLINES={'ATTELE'}, log=logging.getLogger('test'))
+        exec(compile(ast.Module(body=[node], type_ignores=[]), 'notifier', 'exec'), env)
+        self.assertEqual([(c['nr'],c['nc']) for c in env['get_courses_du_jour']('04102026')], [(5,8),(6,8),(7,8)])
+
+    def test_wrong_hippodrome_blocks_report_even_if_horses_match(self):
+        row = record()
+        row['event']['identite']['hippodrome'] = 'CORDEMAIS'
+        msg, audit = p.bilan([row], '20260928', lambda _: META)
+        self.assertEqual(audit[0]['statut'], 'IDENTITE_NON_VALIDEE')
+        self.assertIn('aucun ROI global', msg)
+        self.assertNotIn('ROI simule', msg)
+
+    def test_same_number_different_horse_is_blocked(self):
+        participants = deepcopy(PARTICIPANTS)
+        participants[-1]['nom'] = 'ANOTHER HORSE'
+        msg, audit = p.bilan([record()], '20260928', lambda path: {'participants':participants} if path.endswith('/participants') else META)
+        self.assertEqual(audit[0]['statut'], 'IDENTITE_NON_VALIDEE')
+        self.assertIn('N12', audit[0]['raison'])
+
+    def test_old_journal_header_can_be_validated_without_rewriting_it(self):
+        row = record()
+        row['event'].pop('identite')
+        row['text'] = 'COURSE R4C2 — DEPART 15h59\nDATE : 2026-09-28\nBORDEAUX\nTEST\n'
+        msg, audit = p.bilan([row], '20260928', lambda path: PAYLOAD if 'rapports' in path else ({'participants':PARTICIPANTS} if path.endswith('/participants') else META))
+        self.assertEqual([a['statut'] for a in audit], ['PERDU','PERDU'])
+        self.assertNotIn('identite', row['event'])
+
+    def test_conflicting_messages_same_second_remain_uncertain(self):
+        a, b = record(), record(TEXT.replace('WINNIE CEN','OTHER'))
+        self.assertEqual(p.dernieres_selections([a,b], '20260928')['R4C2']['delivery'], 'UNCERTAIN')
+
+    def test_missing_identity_does_not_become_a_financial_result(self):
+        msg, audit = p.bilan([record()], '20260928', lambda _: None)
+        self.assertEqual(audit[0]['statut'], 'IDENTITE_NON_VALIDEE')
+
+    def test_delayed_night_collection_never_starts_new_day_scorer(self):
+        with patch.object(r, 'datetime') as clock, patch.object(r.sys, 'argv', ['pmu_runtime.py','collect']), patch.object(r, 'assurer_initial') as collect, patch.object(r.subprocess, 'run') as run:
+            clock.now.return_value = datetime(2026,10,5,1,56,tzinfo=r.TZ)
+            r.main()
+            collect.assert_not_called()
+            run.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main()
