@@ -8,6 +8,7 @@ import logging
 import os
 from pathlib import Path
 import re
+import unicodedata
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from uuid import uuid4
@@ -19,6 +20,45 @@ BASE = 'https://online.turfinfo.api.pmu.fr/rest/client/61'
 LABELS = {'SIMPLE_PLACE': 'Simple place', 'COUPLE_PLACE': 'Couple place',
           'COUPLE_GAGNANT': 'Couple gagnant'}
 LOG = logging.getLogger(__name__)
+
+
+def normaliser_identite(value):
+    return re.sub(r'[^A-Z0-9]', '', unicodedata.normalize('NFKD', str(value or '')).encode('ascii', 'ignore').decode().upper())
+
+
+def identite_message(text):
+    match = re.search(r'^DATE : \d{4}-\d{2}-\d{2}\s*\n([^\n]+)\n([^\n]+)', text, re.M)
+    return {'hippodrome': match[1].strip(), 'libelle': match[2].strip()} if match else {}
+
+
+def erreur_identite(identite, officiel, nr, nc):
+    """Identite officielle obligatoire ; ne jamais corriger un journal a posteriori."""
+    if not isinstance(officiel, dict) or not officiel.get('numReunion') or not officiel.get('numOrdre'):
+        return 'Identite officielle indisponible'
+    if (str(officiel['numReunion']), str(officiel['numOrdre'])) != (str(nr), str(nc)):
+        return 'Numero de course incompatible avec la source officielle'
+    if not identite.get('hippodrome') or not identite.get('libelle'):
+        return 'Identite absente du message ou du CSV initial'
+    def hip(value):
+        return re.sub(r'^HIPPODROME(?:DE|D)?', '', normaliser_identite(value))
+    hippodrome = officiel.get('hippodrome') or {}
+    noms = {hip(hippodrome.get(k)) for k in ('libelleLong', 'libelleCourt')}
+    if hip(identite['hippodrome']) not in noms:
+        return 'Hippodrome different de la course officielle'
+    if normaliser_identite(identite['libelle']) != normaliser_identite(officiel.get('libelle')):
+        return 'Nom de course different de la course officielle'
+    return ''
+
+
+def erreur_chevaux(choix, participants):
+    runners = {str(p.get('numPmu')): p for p in participants}
+    for ch in choix:
+        runner = runners.get(str(ch['num']))
+        if not runner or not runner.get('nom'):
+            return f"Identite du cheval N{ch['num']} indisponible"
+        if normaliser_identite(ch['nom']) != normaliser_identite(runner['nom']):
+            return f"Numero et nom du cheval N{ch['num']} incompatibles"
+    return ''
 
 
 def formater_selection(top, nb_partants, actualisation=False):
@@ -102,7 +142,7 @@ def analyser_message(text, now):
             raise ValueError('Incoherence entre chevaux affiches et paris')
     return {'date': depart.strftime('%Y%m%d'), 'course': f'R{match[1]}C{match[2]}',
             'depart': depart.isoformat(), 'source': 'H15' if 'ACTUALISATION' in text else 'MATIN',
-            'choix': choices, 'paris': bets}
+            'choix': choices, 'paris': bets, 'identite': identite_message(text)}
 
 
 def _write(path, data):
@@ -278,9 +318,21 @@ def bilan(records, day, fetch):
         nr, nc = re.fullmatch(r'R(\d+)C(\d+)', key).groups()
         api_date = day[6:8] + day[4:6] + day[:4]
         prefix = f'/programme/{api_date}/R{nr}/C{nc}'
-        participants_payload = fetch(prefix + '/participants')
-        payload = fetch(prefix + '/rapports-definitifs?specialisation=INTERNET')
+        officiel = fetch(prefix)
+        raison = erreur_identite(event.get('identite') or identite_message(record.get('text', '')), officiel, nr, nc)
+        participants_payload = fetch(prefix + '/participants') if not raison else None
         participants = (participants_payload or {}).get('participants', []) if isinstance(participants_payload, dict) else []
+        raison = raison or erreur_chevaux(event['choix'], participants)
+        if not raison and officiel.get('heureDepart'):
+            if datetime.fromisoformat(record['sent_at']).timestamp() * 1000 >= officiel['heureDepart']:
+                raison = 'Envoi apres le depart officiel'
+        if raison:
+            lines.append('CONTROLE BLOQUANT : ' + raison + '. Course exclue des calculs.')
+            audit.append({'course': key, 'statut': 'IDENTITE_NON_VALIDEE', 'raison': raison,
+                          'journal_id': record['id'], 'source_url': BASE + prefix})
+            pending_choices += 1
+            continue
+        payload = fetch(prefix + '/rapports-definitifs?specialisation=INTERNET')
         tables = tables_rapports(payload)
         runners = {str(p.get('numPmu')): p for p in participants}
         for i, c in enumerate(event['choix']):
@@ -304,9 +356,9 @@ def bilan(records, day, fetch):
                     pending_choices += 1
     lines += ['', f'Premier choix gagnant : {won}/{evaluated} classes et regles.',
               f'Premier choix place (gagnants inclus) : {placed}/{evaluated} classes et regles.',
-              f'Courses en attente ou envoi incertain : {pending_choices}. Non-partants exclus des taux.']
+              f'Courses en attente, incoherentes ou envoi incertain : {pending_choices}. Non-partants exclus des taux.']
     settled = [r for r in audit if r.get('retour') is not None]
-    unresolved = [r for r in audit if r.get('statut') in {'EN_ATTENTE', 'ENVOI_INCERTAIN'}]
+    unresolved = [r for r in audit if r.get('statut') in {'EN_ATTENTE', 'ENVOI_INCERTAIN', 'IDENTITE_NON_VALIDEE'}]
     refunded = sum(r['statut'] == 'REMBOURSE' for r in settled)
     invested = sum((Decimal(r['mise']) for r in settled), Decimal(0))
     returns = sum((Decimal(r['retour']) for r in settled), Decimal(0))
