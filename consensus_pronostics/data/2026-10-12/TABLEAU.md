@@ -4,7 +4,7 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX JACQUES ROSSI (PRIX JULES MORGAN)
 
-Collecte : 2026-10-12T15:05:14.424706+00:00. Avant départ : False. Sources complètes : 6/8.
+Collecte : 2026-10-12T15:13:52.228124+00:00. Avant départ : False. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Outsider / trouble-fête |
 |---|---|---|---|---|
