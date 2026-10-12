@@ -1,0 +1,64 @@
+name: Consensus pronostics independant
+on:
+  schedule:
+    - cron: '5 7,9,11 * * *'
+    - cron: '25 5 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date ISO (vide = aujourd hui a Paris)'
+        required: false
+  push:
+    branches: [main]
+    paths:
+      - 'consensus_pronostics/collector.py'
+      - 'consensus_pronostics/evaluate.py'
+      - 'consensus_pronostics/tests/**'
+      - '.github/workflows/consensus_pronostics.yml'
+permissions:
+  contents: write
+concurrency:
+  group: consensus-pronostics-independant
+  cancel-in-progress: false
+jobs:
+  collecte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r consensus_pronostics/requirements.txt
+      - name: Tests des selections et des bilans
+        run: python -m unittest discover -s consensus_pronostics/tests -v
+      - name: Collecte et controle HTTP depuis GitHub
+        if: github.event.schedule != '25 5 * * *'
+        env:
+          REQUESTED_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$REQUESTED_DATE" ]; then
+            python consensus_pronostics/collector.py --date "$REQUESTED_DATE"
+          else
+            python consensus_pronostics/collector.py
+          fi
+      - name: Bilan PMU INTERNET independant
+        run: python consensus_pronostics/evaluate.py
+      - name: Archiver uniquement les donnees du consensus
+        run: |
+          git config user.name 'Consensus collector'
+          git config user.email 'consensus-collector@users.noreply.github.com'
+          git add consensus_pronostics/data
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive consensus editorial independant'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: consensus-pronostics-${{ github.run_id }}
+          path: consensus_pronostics/data
+          retention-days: 90
