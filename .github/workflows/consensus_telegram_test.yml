@@ -1,0 +1,33 @@
+name: Test Telegram consensus sur demande
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'consensus_pronostics/telegram_test_request.json'
+permissions:
+  contents: read
+concurrency:
+  group: consensus-telegram-test
+  cancel-in-progress: false
+jobs:
+  test-telegram:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r consensus_pronostics/requirements.txt
+      - name: Envoyer uniquement le test demande
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python consensus_pronostics/send_telegram_test.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preuve-test-telegram-${{ github.run_id }}
+          path: consensus_pronostics/telegram_test_receipt.json
+          if-no-files-found: error
+          retention-days: 90
