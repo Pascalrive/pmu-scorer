@@ -40,3 +40,7 @@ Le programme collecte le Quinté pour comparer ces rédactions sur une même cou
 | Boturfers | https://www.boturfers.fr/cheval-outsider-du-jour | 403 Forbidden | Écarté ; de plus, distinguer outsider éditorial et simple filtre de cote |
 
 Au total : 20 candidats, 8 sources éditoriales prévues pour l'expérience. La disponibilité et l'absence d'avis sont affichées chaque jour. Rien ne permet de garantir qu'un cumul de recommandations sera rentable : le bilan prospectif sert précisément à le mesurer.
+
+## Vérification réelle depuis GitHub Actions
+
+[Exécution du 12 octobre 2026](https://github.com/Pascalrive/pmu-scorer/actions/runs/38268662396), runner Ubuntu hébergé aux États-Unis : tests, collecte, bilan et archivage réussis. Six sélections complètes récupérées (Canalturf, ZEturf, Zone-Turf, Stats-Quinté, Turf-Pronostics, Rue des Joueurs), plus la base publique de Prono Turf Gratuit. Fréquence Turf : article du 12/10 absent (404), sans substitution par celui du 13/10. Sept avis récupérés, six complets. Cette collecte réelle après départ est exclue du bilan. La prochaine collecte prospective est prévue le 13/10 au matin.
