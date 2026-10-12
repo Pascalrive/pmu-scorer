@@ -18,7 +18,7 @@ TZ = ZoneInfo('Europe/Paris')
 JOURNAL = Path('resultats/journal')
 BASE = 'https://online.turfinfo.api.pmu.fr/rest/client/61'
 LABELS = {'SIMPLE_PLACE': 'Simple place', 'COUPLE_PLACE': 'Couple place',
-          'COUPLE_GAGNANT': 'Couple gagnant'}
+          'COUPLE_GAGNANT': 'Couple gagnant', 'COUPLE_ORDRE': 'Couple ordre'}
 LOG = logging.getLogger(__name__)
 
 
@@ -61,7 +61,7 @@ def erreur_chevaux(choix, participants):
     return ''
 
 
-def formater_selection(top, nb_partants, actualisation=False):
+def formater_selection(top, nb_partants, actualisation=False, marches=None):
     """Présentation seule : aucun changement des chevaux ni des mises."""
     lines = ['CHEVAUX RETENUS']
     for i, ch in enumerate(top[:2]):
@@ -76,7 +76,7 @@ def formater_selection(top, nb_partants, actualisation=False):
         lines.append(detail)
         lines.append('')
     lines.append('PARIS CONSEILLES')
-    lines.extend(paris_affiches(top[:2], nb_partants))
+    lines.extend(paris_affiches(top[:2], nb_partants, marches))
     return lines
 
 
@@ -90,7 +90,7 @@ def archiver_observation(course, phase, partants, *, calcul=None, debut=None, so
     return path
 
 
-def paris_affiches(top, nb_partants):
+def paris_affiches(top, nb_partants, marches=None):
     """Une seule source pour les lignes de paris, sans modifier le classement."""
     if not top:
         return ['AUCUN PARI CONSEILLE : selection indisponible.']
@@ -98,14 +98,21 @@ def paris_affiches(top, nb_partants):
     n1 = str(a.get('num_partant') or '').strip()
     if not n1.isdigit():
         return ['AUCUN PARI CONSEILLE : numero manquant.']
+    if marches is not None and 'SIMPLE_PLACE' not in marches:
+        return ['AUCUN PARI CONSEILLE : simple place PMU Internet non disponible.']
     lines = [f"PARI : Simple Place sur N{n1}"]
     if len(top) > 1:
         b = top[1]
         n2 = str(b.get('num_partant') or '').strip()
         odds = b.get('cote_actuel', b.get('cote_jour', 0)) or 0
         if n2.isdigit() and n1 != n2 and 0 < odds < 12 and nb_partants >= 4:
-            kind = 'GAGNANT' if nb_partants <= 7 else 'PLACE'
-            lines.append(f"COUPLE {kind} : N{n1} + N{n2}")
+            if marches is None:
+                kind = 'GAGNANT' if nb_partants <= 7 else 'PLACE'  # Lecture des anciens formats.
+            else:
+                kind = next((k for k in ('PLACE', 'ORDRE', 'GAGNANT') if 'COUPLE_' + k in marches), None)
+            if kind:
+                suffix = ' (dans cet ordre)' if kind == 'ORDRE' else ''
+                lines.append(f"COUPLE {kind} : N{n1} + N{n2}{suffix}")
     return lines
 
 
@@ -131,7 +138,7 @@ def analyser_message(text, now):
     simple = re.search(r'PARI\s*:\s*Simple Place sur N(\d+)', text)
     if simple:
         bets.append({'type': 'SIMPLE_PLACE', 'numeros': [str(int(simple[1]))], 'mise': '5.00'})
-    couple = re.search(r'COUPLE (PLACE|GAGNANT)[^\n]*?:\s*N(\d+)[^\n]*?\+\s*N(\d+)', text)
+    couple = re.search(r'COUPLE (PLACE|GAGNANT|ORDRE)[^\n]*?:\s*N(\d+)[^\n]*?\+\s*N(\d+)', text)
     if couple:
         bets.append({'type': 'COUPLE_' + couple[1], 'numeros': [str(int(couple[2])), str(int(couple[3]))], 'mise': '5.00'})
     if choices and not bets:
@@ -152,7 +159,7 @@ def _write(path, data):
     temp.replace(path)
 
 
-def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None):
+def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None, experience=None):
     """Un recu par course ; les envois incomplets restent explicitement incertains."""
     if not token or not chat_id:
         return False
@@ -177,6 +184,8 @@ def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None):
                   'revision': os.environ.get('GITHUB_SHA', 'local'), 'event': event,
                   'text': block, 'sha256': hashlib.sha256(block.encode()).hexdigest(),
                   'delivery': 'PENDING', 'receipts': []}
+        if event and experience is not None:
+            record['experience'] = experience
         path = journal / f"{now:%Y%m%d}-{record['id']}.json"
         if event:
             _write(path, record)  # Echec disque => ne pas envoyer sans trace.
@@ -250,7 +259,7 @@ def tables_rapports(payload):
                 continue
             if not amount.is_finite() or amount <= 0:
                 continue
-            key = tuple(sorted(combination.split('-')))
+            key = tuple(combination.split('-')) if kind == 'COUPLE_ORDRE' else tuple(sorted(combination.split('-')))
             if key in table['valeurs'] and table['valeurs'][key] != amount:
                 raise ValueError('Rapports contradictoires pour une combinaison')
             table['valeurs'][key] = amount
@@ -261,7 +270,7 @@ def tables_rapports(payload):
     return tables
 
 
-def regler_pari(bet, participants, tables):
+def regler_pari(bet, participants, tables, *, definitif=False):
     kind, nums = bet['type'], bet['numeros']
     stake = Decimal(bet['mise'])
     def result(status, returned=None, reason=''):
@@ -277,16 +286,50 @@ def regler_pari(bet, participants, tables):
     np = {n for n in nums if runners[n].get('statut') == 'NON_PARTANT' or runners[n].get('incident') == 'NON_PARTANT'}
     if np and kind == 'SIMPLE_PLACE':
         return result('REMBOURSE', stake, 'Non-partant officiel')
-    key = tuple(sorted('NP' if n in np else n for n in nums))
+    key = tuple('NP' if n in np else n for n in nums)
+    if kind != 'COUPLE_ORDRE':
+        key = tuple(sorted(key))
     dividend = table['valeurs'].get(key)
     if dividend is not None:
         return result('REGLE_NP' if np else 'GAGNE', stake * dividend, f'Rapport officiel {dividend} EUR pour 1 EUR')
     if np:
         return result('EN_ATTENTE', reason='Couple avec non-partant : rapport specifique requis')
+    if definitif and any(not (runners[n].get('statut') == 'PARTANT' or runners[n].get('ordreArrivee')
+                             or runners[n].get('incident') in {'DISQUALIFIE', 'ARRETE', 'TOMBE', 'DISTANCE'}) for n in nums):
+        return result('EN_ATTENTE', reason='Statut du participant non confirme')
     # Ne pas convertir un resultat de participant inconnu en perte.
-    if not all(p.get('ordreArrivee', 0) or p.get('incident') in {'DISQUALIFIE', 'ARRETE', 'TOMBE', 'DISTANCE'} for p in (runners[n] for n in nums)):
+    if not definitif and not all(p.get('ordreArrivee', 0) or p.get('incident') in {'DISQUALIFIE', 'ARRETE', 'TOMBE', 'DISTANCE'} for p in (runners[n] for n in nums)):
         return result('EN_ATTENTE', reason='Classement ou incident non confirme')
     return result('PERDU', Decimal(0), 'Combinaison absente des rapports definitifs')
+
+
+def regler_experience(record, participants, tables):
+    if record.get('delivery') != 'SENT':
+        return None
+    exp = record.get('experience') or {}
+    reference, variante = exp.get('reference'), exp.get('variante_outsider')
+    if not reference or not variante:
+        return None
+    event = record['event']
+    if reference.get('choix') != event['choix'] or reference.get('paris') != event['paris']:
+        return None  # Comparaison exclusivement avec le conseil confirme par Telegram.
+    if len(variante.get('paris', [])) != len(reference['paris']):
+        return None
+    if sum(Decimal(b['mise']) for b in variante['paris']) != sum(Decimal(b['mise']) for b in reference['paris']):
+        return None
+    if erreur_chevaux(variante.get('choix', []), participants):
+        return None
+    result = {'version': exp.get('version'), 'reference': reference, 'variante_outsider': variante}
+    complete = True
+    for key in ('reference', 'variante_outsider'):
+        bets = [regler_pari(b, participants, tables, definitif=bool(tables)) for b in exp[key]['paris']]
+        done = all(b['retour'] is not None for b in bets)
+        complete = complete and done
+        result[key] = {**exp[key], 'reglements': bets,
+                       'mise': str(sum(Decimal(b['mise']) for b in bets)),
+                       'retour': str(sum(Decimal(b['retour']) for b in bets)) if done else None}
+    result['complet'] = complete
+    return result
 
 
 def bilan(records, day, fetch):
@@ -303,6 +346,7 @@ def bilan(records, day, fetch):
              'Simulation : 5 EUR par pari explicitement conseille ; aucun pari execute.',
              'Rapports officiels PMU INTERNET uniquement.']
     audit = []
+    experiences = []
     won = placed = evaluated = pending_choices = 0
     for key, record in sorted(selections.items()):
         event = record['event']
@@ -341,7 +385,20 @@ def bilan(records, day, fetch):
             status = 'NON-PARTANT' if runner.get('statut') == 'NON_PARTANT' else (f'{rank}e' if rank else 'EN ATTENTE / NON CLASSE')
             lines.append(f"Choix {i+1} : N{c['num']} {c['nom']} — {status}")
         primary = event['choix'][0]['num']
-        settlements = [regler_pari(b, participants, tables) for b in event['paris']]
+        # Les rapports definitifs complets permettent aussi de regler un partant
+        # non classe sans confondre absence de rang et absence de resultat.
+        settlements = []
+        marches = {p.get('typePari', '')[2:] for p in officiel.get('paris', []) if p.get('typePari', '').startswith('E_')}
+        for b in event['paris']:
+            if officiel.get('hasEParis') is False or ('paris' in officiel and b['type'] not in marches):
+                settlements.append({**b, 'statut': 'NON_PROPOSE', 'retour': None,
+                                    'raison': 'Pari exact non propose par PMU Internet ; mise exclue'})
+            else:
+                settlements.append(regler_pari(b, participants, tables, definitif=bool(tables)))
+        experiment = regler_experience(record, participants, tables)
+        if experiment and settlements:
+            settlements[0]['comparaison_experimentale'] = experiment
+            experiences.append(experiment)
         for settled in settlements:
             audit.append({**settled, 'course': key, 'journal_id': record['id'], 'source': event['source'], 'sent_at': record['sent_at'],
                           'rapport_url': BASE + prefix + '/rapports-definitifs?specialisation=INTERNET'})
@@ -360,14 +417,26 @@ def bilan(records, day, fetch):
     settled = [r for r in audit if r.get('retour') is not None]
     unresolved = [r for r in audit if r.get('statut') in {'EN_ATTENTE', 'ENVOI_INCERTAIN', 'IDENTITE_NON_VALIDEE'}]
     refunded = sum(r['statut'] == 'REMBOURSE' for r in settled)
+    excluded = sum(r.get('statut') == 'NON_PROPOSE' for r in audit)
     invested = sum((Decimal(r['mise']) for r in settled), Decimal(0))
     returns = sum((Decimal(r['retour']) for r in settled), Decimal(0))
     lines += [f'Paris regles : {len(settled)}, dont {refunded} rembourses. Paris/envois en attente : {len(unresolved)}.',
               f'Sous-total regle : mises {invested:.2f} EUR ; retours {returns:.2f} EUR ; solde {returns-invested:+.2f} EUR.']
+    if excluded:
+        lines.append(f'Paris non proposes exclus des mises : {excluded}. ROI limite aux paris valides.')
     if unresolved or not selections:
         lines.append('BILAN INCOMPLET : aucun ROI global publie.')
     elif invested:
         lines.append(f'ROI simule sur les paris regles : {(returns/invested-1)*100:+.1f} %.')
+    matched = [e for e in experiences if e['complet']]
+    if matched:
+        lines += ['', f'EXPERIENCE OUTSIDER — {len(matched)} course(s) comparee(s), memes mises. Simulation uniquement.']
+        for key, label in (('reference', 'Conseils envoyes'), ('variante_outsider', 'Variante outsider non conseillee')):
+            stakes = sum(Decimal(e[key]['mise']) for e in matched)
+            returned = sum(Decimal(e[key]['retour']) for e in matched)
+            lines.append(f'{label} : mises {stakes:.2f} EUR ; retours {returned:.2f} EUR ; ROI {(returned/stakes-1)*100:+.1f} %.')
+    if any(not e['complet'] for e in experiences):
+        lines.append('Comparaisons outsider en attente de reglement : ' + str(sum(not e['complet'] for e in experiences)))
     if not selections:
         lines.append('Aucun historique d\'envoi avant depart disponible. Aucun remplacement par les CSV du scoreur.')
     lines.append('Les anciennes simulations estimees ne sont pas comparables a ce bilan.')
@@ -406,3 +475,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

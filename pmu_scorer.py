@@ -35,6 +35,7 @@ except ImportError:
 
 import requests
 from pmu_tracking import erreur_identite, erreur_chevaux, envoyer_trace, paris_affiches, formater_selection, archiver_observation
+from pmu_signaux import VERSION, deferrage_officiel, marches_internet
 
 # v15 : module de scraping gratuit qui remplace les appels Claude
 from pronos_gratuit import get_pronostics_gratuit
@@ -258,7 +259,7 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         lignes.extend([str(course.get('hippodrome', '')).replace('HIPPODROME DE ', ''),
                        course.get('libelle', ''),
                        str(course.get('discipline', '')).replace('_', ' '), '', 'SELECTION INITIALE', ''])
-        lignes.extend(formater_selection(top, top[0].get('nb_partants', 0)))
+        lignes.extend(formater_selection(top, top[0].get('nb_partants', 0), marches=course.get('paris_disponibles')))
         lignes.append('')
         return lignes
 
@@ -395,19 +396,13 @@ def get_pronostics_externes(date_str_iso, nr, nc, libelle, partants_actifs,
 
     for nom, score in scores.items():
         nom_up = nom.upper().strip()
-        if score >= 80:
-            nb_cit = 5
-        elif score >= 60:
-            nb_cit = 4
-        elif score >= 40:
-            nb_cit = 3
-        elif score >= 20:
-            nb_cit = 2
-        else:
-            nb_cit = 1
+        src = list(dict.fromkeys(res.get('sources_par_ch', {}).get(nom, [])))
+        nb_cit = len(src)
+        if not nb_cit:
+            continue  # Aucun nombre de citations reconstruit depuis une note.
         citations[nom_up]      = nb_cit
         citations_pond[nom_up] = round(score / 20, 2)
-        sources_par_ch[nom_up] = ["Scraping"]
+        sources_par_ch[nom_up] = src
 
     outsiders: list = []
     for p in partants_actifs:
@@ -492,14 +487,7 @@ def score_deferre_pmu(partant: dict) -> float:
     (recherche de vitesse max ce jour-là). Hiérarchie :
       4 pieds > postérieurs > antérieurs > ferré normal.
     NON ENCORE VALIDÉ statistiquement (journée expérimentale 28/05)."""
-    d = str(partant.get("deferre") or "").upper()
-    if "ANTERIEURS_POSTERIEURS" in d or "QUATRE" in d or d in ("D4", "DA", "DP4"):
-        return 80.0   # déferré des 4 pieds
-    if "POSTERIEUR" in d:
-        return 65.0
-    if "ANTERIEUR" in d:
-        return 58.0
-    return 50.0       # ferré normal = neutre
+    return deferrage_officiel(partant)['score']
 
 
 # ──────────────────────────────────────────────
@@ -982,7 +970,7 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
     if pronostics_pmu:
         nb_sources += 1
         poids_pmu = 2.5
-        for num_str in pronostics_pmu:
+        for num_str in set(pronostics_pmu):
             for p in partants_actifs:
                 if str(p.get("numPmu") or "") == num_str:
                     nom_up = p.get("nom", "").upper()
@@ -1064,7 +1052,8 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
 
         # NOTE 28/05 : l'ancien bonus +4 "deferre" (base sur scraping externe) est
         # remplace par le vrai score_deferre_pmu (base donnee officielle PMU, pondere).
-        est_deferre = nom_up in deferres
+        deferrage = deferrage_officiel(partant)
+        est_deferre = deferrage['deferre']
 
         jockey_str = str(jockey).upper().strip()
         entr_str   = str(entraineur).upper().strip()
@@ -1090,7 +1079,9 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
             "type_course_details": type_course, "distance_m": distance,
             "nb_partants": nb_partants, "num_partant": num, "nom_cheval": nom,
             "age": age, "place_corde": place_corde, "poids_porte": poids,
-            "deferre": est_deferre, "value_bet": value_bet,
+            "deferre": est_deferre, "deferrage_code": deferrage['code'], "value_bet": value_bet,
+            "qualite_version": VERSION,
+            "paris_disponibles": ';'.join(marches_internet(info_course)),
             "est_outsider_surprise": est_outsider_surprise,
             "consensus_fort": len(src_p) >= 3,
             "sources_premium_citees": src_p, "rk_meilleur": round(rk_best, 2),
@@ -1153,6 +1144,7 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         "type_course_details": type_course,
         "nb_sources_total": nb_sources, "consensus_fort": consensus_fort,
         "top5": resultats[:5], "top2": resultats[:2], "tous_resultats": resultats,
+        "paris_disponibles": marches_internet(info_course),
     }
 
 
@@ -1222,6 +1214,9 @@ def main():
             discipline = course.get("discipline", "")
             if discipline not in DISCIPLINES:
                 continue
+            if 'SIMPLE_PLACE' not in marches_internet(course):
+                log.info(f'R{nr}C{nc} sans simple place PMU Internet : ignoree')
+                continue
 
             terrain = course.get("terrain") or course.get("etatSol") or terrain_r
             if isinstance(terrain, dict):
@@ -1255,7 +1250,7 @@ def main():
             "reunion","course","heure","hippodrome","terrain","libelle",
             "discipline","type_course","type_course_details","distance_m",
             "nb_partants","num_partant","nom_cheval","age","place_corde","poids_porte",
-            "deferre","value_bet","est_outsider_surprise","consensus_fort","rk_meilleur",
+            "deferre","deferrage_code","qualite_version","paris_disponibles","value_bet","est_outsider_surprise","consensus_fort","rk_meilleur",
             "musique",
             "jockey","entraineur","proprietaire","cote_veille","cote_jour","variation_cote_%",
             "nb_pronostics","nb_pronostics_pondere","pct_pronostics","nb_sources_total",
@@ -1287,3 +1282,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

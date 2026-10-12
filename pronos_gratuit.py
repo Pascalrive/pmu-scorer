@@ -207,16 +207,57 @@ def scrape_zone_turf(date_str: str, reunion: int, course: int,
 
 
 def scrape_canalturf(date_str: str, reunion: int, course: int,
-                     partants: list[dict]) -> ResultatSource:
-    """Canalturf - pronostics gratuits du jour."""
+                     partants: list[dict], nom_course: str = '') -> ResultatSource:
+    """Uniquement la selection du journaliste pour la course identifiee."""
     res = ResultatSource("canalturf", POIDS_SOURCES["canalturf"])
     html = http_get("https://www.canalturf.com/courses_liste_pronostics.php")
     if not html:
         return res
-    chevaux_trouves = trouver_cheval(html, partants)
-    for c in chevaux_trouves:
-        res.rangs[c] = 1
+    if not nom_course:
+        return res
+    index = BeautifulSoup(html, 'html.parser')
+    target = normalize(nom_course)
+    for a in index.find_all('a', href=True):
+        href = a['href']
+        label = a.find('strong')
+        if f'/pronostics-PMU/{date_str}/' not in href or not label or normalize(label.get_text(' ', strip=True)) != target:
+            continue
+        url = href if href.startswith('https://www.canalturf.com/') else 'https://www.canalturf.com' + href
+        if not url.startswith('https://www.canalturf.com/pronostics-PMU/'):
+            continue
+        detail = http_get(url)
+        if detail:
+            res.rangs = selection_canalturf(detail, reunion, course, nom_course, partants)
+        break
     return res
+
+
+def selection_canalturf(html, reunion, course, nom_course, partants):
+    soup = BeautifulSoup(html, 'html.parser')
+    title = soup.find('h1')
+    if not title or normalize(title.get_text()).removeprefix('LE PRONOSTIC DU ') != normalize(nom_course):
+        return {}
+    identity = title.find_next_sibling()
+    if not identity or not re.search(rf'Reunion\s+{reunion}\s+Course\s+{course}(?!\d)', normalize(identity.get_text(' ')), re.I):
+        return {}
+    block = soup.select_one('#tab-prono-ct')
+    if not block:
+        return {}
+    heading = next((h for h in block.find_all('h3') if normalize(h.get_text()).startswith('LA SELECTION DE ')), None)
+    table_area = heading.find_next_sibling() if heading else None
+    if table_area is None:
+        return {}
+    known = {str(p.get('num') or p.get('numPmu')): p['nom'] for p in partants}
+    ranks = {}
+    for row in table_area.select('tr'):
+        cells = row.find_all('td')
+        if len(cells) < 2:
+            continue
+        number, name = cells[0].get_text(strip=True), cells[1].get_text(strip=True)
+        if number not in known or normalize(known[number]) != normalize(name):
+            return {}  # Un numero et un nom incompatibles invalident cette source.
+        ranks.setdefault(known[number], len(ranks) + 1)
+    return ranks
 
 
 def scrape_equidia(date_str: str, reunion: int, course: int,
@@ -263,18 +304,14 @@ def get_pronostics_gratuit(date_str: str,
           "raw_text": str,           # bonus debug
         }
     """
-    scrapers = [
-        scrape_geny_reperes,
-        scrape_geny_course,
-        scrape_zone_turf,
-        scrape_canalturf,
-        scrape_equidia,
-    ]
+    # Les autres parseurs identifiaient de simples noms dans les tableaux de
+    # partants. Ils restent hors scoring jusqu'a preuve d'une selection explicite.
+    scrapers = [scrape_canalturf]
 
     resultats: list[ResultatSource] = []
     for fn in scrapers:
         try:
-            res = fn(date_str, reunion_num, course_num, partants)
+            res = fn(date_str, reunion_num, course_num, partants, nom_course=nom_course)
             if res.rangs:
                 resultats.append(res)
         except Exception as e:
@@ -285,10 +322,12 @@ def get_pronostics_gratuit(date_str: str,
     coef_rang = {1: 1.00, 2: 0.70, 3: 0.50, 4: 0.35, 5: 0.25}
 
     scores_brut: dict[str, float] = {}
+    sources_par_ch = {}
     for r in resultats:
         for nom, rang in r.rangs.items():
             coef = coef_rang.get(rang, 0.20)
             scores_brut[nom] = scores_brut.get(nom, 0.0) + r.poids * coef
+            sources_par_ch.setdefault(nom, set()).add(r.source)
 
     # Normalise sur 100 (le max devient 100)
     if scores_brut:
@@ -309,6 +348,8 @@ def get_pronostics_gratuit(date_str: str,
     return {
         "nb_sources": nb_sources,
         "scores": scores,
+        "citations": {nom: len(sources) for nom, sources in sources_par_ch.items()},
+        "sources_par_ch": {nom: sorted(sources) for nom, sources in sources_par_ch.items()},
         "details": details,
         "raw_text": "",  # pas remonte par defaut (peut etre ajoute pour debug)
     }
@@ -334,3 +375,4 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"Resultat : {res['details']}")
     print(f"Scores : {res['scores']}")
+

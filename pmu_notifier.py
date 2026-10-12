@@ -19,6 +19,7 @@ except ImportError:
 
 import requests
 from pmu_tracking import erreur_identite, erreur_chevaux, envoyer_trace, paris_affiches, formater_selection, archiver_observation, dernieres_selections
+from pmu_signaux import marches_internet, preparer_experience, formater_alertes
 
 # v4 : reutilise le module de scraping gratuit
 try:
@@ -81,8 +82,8 @@ log = logging.getLogger("pmu_notifier")
 # ──────────────────────────────────────────────
 #  TELEGRAM
 # ──────────────────────────────────────────────
-def telegram_send(texte: str) -> bool:
-    return envoyer_trace(texte, TELEGRAM_TOKEN, TELEGRAM_CHAT)
+def telegram_send(texte: str, experience=None) -> bool:
+    return envoyer_trace(texte, TELEGRAM_TOKEN, TELEGRAM_CHAT, experience=experience)
 
 
 # ──────────────────────────────────────────────
@@ -201,6 +202,8 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
                     "terrain":        r.get("terrain", ""),
                     "distance_m":     r.get("distance_m", ""),
                     "nb_partants":    int(float(r.get("nb_partants", 0) or 0)),
+                    "musique":        r.get('musique', ''),
+                    "qualite_version": r.get('qualite_version', 'avant-correctifs'),
                 }
                 for r in tries   # MODIF 27/05 : TOUS les partants (etait tries[:5])
             ]
@@ -217,7 +220,7 @@ def charger_pronos_matin(date_str_fich: str) -> dict:
 # ──────────────────────────────────────────────
 def actualiser_course(course_matin_top5: list, date_iso: str,
                       nr: int, nc: int, libelle: str,
-                      partants_actuels: list) -> dict:
+                      partants_actuels: list, marches=None) -> dict:
     if not course_matin_top5:
         return {"verdict": "INDISPONIBLE", "details": ["CSV matin vide"]}
 
@@ -268,6 +271,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
             "cote_actuel":       cote_actuel,
             "variation_cote_pc": round(variation, 1),
             "score_pronos_frais": score_pronos_frais,
+            "musique": p_actuel.get('musique') or ch.get('musique', ''),
         })
 
     if not chevaux_actualises:
@@ -312,6 +316,7 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
 
     _pool.sort(key=_note_combinee, reverse=True)   # meilleure note d'abord
     chevaux_actualises = _pool
+    experience = preparer_experience(tous_partants_observes, chevaux_actualises[:2], len(partants_actuels), marches)
 
     n1_matin   = course_matin_top5[0]["nom_cheval"]
     n1_actuel  = chevaux_actualises[0]["nom_cheval"]
@@ -357,6 +362,8 @@ def actualiser_course(course_matin_top5: list, date_iso: str,
         "tous_top5":   chevaux_actualises,
         "non_partants": non_partants_matin,
         "nb_sources_frais": pronos_frais.get("nb_sources", 0),
+        "paris_disponibles": marches,
+        "experience": experience,
     }
 
 
@@ -412,6 +419,7 @@ def get_courses_du_jour(date_str: str) -> list:
                 "discipline": discipline,
                 "distance":   distance,
                 "terrain":    str(terrain).upper() if terrain else "",
+                "paris_disponibles": marches_internet(course),
             })
 
     courses.sort(key=lambda x: x["heure_ts"])
@@ -441,7 +449,8 @@ def formater_message_h15(course: dict, partants: list,
     if maj.get('non_partants'):
         lignes.append('Non-partants : ' + ', '.join(maj['non_partants']))
     lignes.append('')
-    lignes.extend(formater_selection(maj.get('top2_final', [])[:2], len(partants), True))
+    lignes.extend(formater_selection(maj.get('top2_final', [])[:2], len(partants), True, maj.get('paris_disponibles')))
+    lignes.extend(formater_alertes(maj.get('experience', {}).get('alertes', [])))
     lignes.extend(['', 'Remplace le conseil precedent pour cette course.'])
     return '\n'.join(lignes)
 
@@ -465,11 +474,13 @@ def conseil_change(maj, nb_partants, precedent):
         return True
     top = maj.get('top2_final', [])[:2]
     # Comparer les numeros ET le type de pari, sans compter les variations de cote.
-    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True))
+    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True, maj.get('paris_disponibles')))
     from pmu_tracking import analyser_message
     event = analyser_message(txt, datetime.now(TZ_PARIS))
     old = precedent['event']
-    return (event['choix'], event['paris']) != (old['choix'], old['paris'])
+    alerts = lambda e: [(str(p['num_partant']), p['motif']) for p in (e or {}).get('alertes', [])]
+    return ((event['choix'], event['paris']) != (old['choix'], old['paris'])
+            or alerts(maj.get('experience')) != alerts(precedent.get('experience')))
 
 
 def main():
@@ -526,7 +537,12 @@ def main():
             log.error('%s : %s ; aucun conseil', cle, raison)
             archiver_observation(course, phase, raw, debut=debut, calcul={'erreur': raison}, source_csv=SOURCE_CSV)
             continue
-        maj = actualiser_course(matin, date_iso, int(nr), int(nc), course['libelle'], actifs)
+        marches = marches_internet(officiel)
+        if 'SIMPLE_PLACE' not in marches:
+            archiver_observation(course, phase, raw, debut=debut,
+                                  calcul={'erreur': 'Simple place PMU Internet non propose'}, source_csv=SOURCE_CSV)
+            continue
+        maj = actualiser_course(matin, date_iso, int(nr), int(nc), course['libelle'], actifs, marches)
         archiver_observation(course, phase, raw, calcul=maj, debut=debut, source_csv=SOURCE_CSV)
         if not actifs or any(extraire_cote(p) <= 0 for p in actifs):
             log.warning('%s : cotes incompletes, aucun nouveau conseil', cle)
@@ -537,10 +553,11 @@ def main():
             continue
         if precedent and precedent['event'].get('source') != 'MATIN' and not conseil_change(maj, len(actifs), precedent):
             deja.add(f'{cle}:{phase}')  # Donnees archivees, aucun message identique.
-        elif telegram_send(formater_message_h15({**course, 'phase': phase}, actifs, maj)):
+        elif telegram_send(formater_message_h15({**course, 'phase': phase}, actifs, maj), maj.get('experience')):
             deja.add(f'{cle}:{phase}')
         sauver_etat(day, deja)
 
 
 if __name__ == "__main__":
     main()
+

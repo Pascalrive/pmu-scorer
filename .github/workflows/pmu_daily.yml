@@ -4,6 +4,12 @@ name: PMU Daily Scorer v15.1
 # Collecte H60, actualisation H15, controle H5 selon le delai reel restant.
 # Bilan a 05h17 UTC pour la veille civile a Paris, meme si le lancement est retarde.
 on:
+  push:
+    branches: [main]
+    paths:
+      - '*.py'
+      - 'tests/**'
+      - '.github/workflows/pmu_daily.yml'
   schedule:
     - cron: '17 7 * * *'
     - cron: '47 7 * * *'
@@ -270,7 +276,7 @@ jobs:
 
   verification:
     name: Verification sans Telegram
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'verification'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'verification')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -279,7 +285,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: pip install -r requirements.txt
       - run: python -m unittest discover -v -p 'test_pmu_*.py'
-      - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_results.py persist_journal.py pmu_runtime.py
+      - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_signaux.py pronos_gratuit.py pmu_results.py persist_journal.py pmu_runtime.py
       - name: Diagnostic lecture seule de la veille et du jour
         run: python pmu_runtime.py diagnostic "$(TZ=Europe/Paris date -d yesterday +%Y%m%d)" "$(TZ=Europe/Paris date +%Y%m%d)"
+

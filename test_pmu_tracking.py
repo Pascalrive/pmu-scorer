@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import pmu_tracking as p
+from pmu_signaux import preparer_experience, marches_internet, formater_alertes
 
 NOW=datetime(2026,9,28,15,44,tzinfo=p.TZ)
 TEXT='''ACTUALISATION DE L'ALGORITHME
@@ -20,7 +21,7 @@ COUPLE PLACE (les 2 choix ci-dessus) : N4 FEEL WELL + N12 WINNIE CEN
 PAYLOAD=[{'typePari':'E_SIMPLE_GAGNANT','rapports':[{'combinaison':'9','dividendePourUnEuro':1470}]},
  {'typePari':'E_SIMPLE_PLACE','rapports':[{'combinaison':n,'dividendePourUnEuro':r} for n,r in [('9',290),('7',340),('2',160)]]},
  {'typePari':'E_COUPLE_PLACE','rapports':[{'combinaison':n,'dividendePourUnEuro':r} for n,r in [('9-7',1130),('9-2',1010),('7-2',860),('9-NP',0)]]}]
-META=dict(numReunion=4,numOrdre=2,hippodrome={'libelleLong':'BORDEAUX'},libelle='TEST')
+META=dict(numReunion=4,numOrdre=2,hippodrome={'libelleLong':'BORDEAUX'},libelle='TEST',paris=[{'typePari':'E_SIMPLE_PLACE'},{'typePari':'E_COUPLE_PLACE'}])
 PARTICIPANTS=[dict(numPmu=n,nom={4:'FEEL WELL',12:'WINNIE CEN'}.get(n,'OTHER'),ordreArrivee=rank,statut='PARTANT') for n,rank in ((9,1),(7,2),(2,3),(4,5),(12,6))]
 
 def bet(kind='SIMPLE_PLACE',nums=('9',)):
@@ -30,7 +31,7 @@ def record(text=TEXT,sent=NOW,delivery='SENT'):
 def formatter(name,function):
  tree=ast.parse(Path(__file__).with_name(name).read_text())
  nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name==function]
- env=dict(formater_selection=p.formater_selection,datetime=datetime,TZ_PARIS=p.TZ,paris_affiches=p.paris_affiches,TYPE_CONDITIONS='CONDITIONS',TYPE_INCONNU='AUTRE',PATTERNS_DISPO=False,
+ env=dict(formater_alertes=formater_alertes,marches_internet=marches_internet,formater_selection=p.formater_selection,datetime=datetime,TZ_PARIS=p.TZ,paris_affiches=p.paris_affiches,TYPE_CONDITIONS='CONDITIONS',TYPE_INCONNU='AUTRE',PATTERNS_DISPO=False,
  calculer_score_opportunite=lambda d:0,detecter_pattern_gagnant=lambda d:False,classer_niveau_course=lambda c:dict(niveau='CORRECT',emoji='',raison=''),
  est_trot=lambda d:False,evaluer_fiabilite_course=lambda c:'')
  exec(compile(ast.Module(body=nodes,type_ignores=[]),name,'exec'),env)
@@ -147,7 +148,7 @@ class CollectionTests(unittest.TestCase):
  def test_snapshot_keeps_excluded_outsiders_without_ranking_change(self):
   tree=ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
   node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='actualiser_course')
-  env=dict(SCRAPING_DISPO=False,extraire_cote=lambda p:p['cote'])
+  env=dict(preparer_experience=preparer_experience,SCRAPING_DISPO=False,extraire_cote=lambda p:p['cote'])
   exec(compile(ast.Module(body=[node],type_ignores=[]),'notifier','exec'),env)
   matin=[dict(nom_cheval='A',num_partant=1,cote_jour=3,score_total=40),dict(nom_cheval='B',num_partant=2,cote_jour=12,score_total=60)]
   result=env['actualiser_course'](matin,'2026-10-03',1,1,'TEST',[dict(nom='A',cote=3),dict(nom='B',cote=12)])
@@ -168,7 +169,7 @@ class CollectionTests(unittest.TestCase):
   class Clock(datetime):
    @classmethod
    def now(cls,tz=None):return NOW
-  env=dict(erreur_identite=p.erreur_identite,erreur_chevaux=p.erreur_chevaux,datetime=Clock,TZ_PARIS=p.TZ,Path=lambda name:Path('/tmp/pmu-no-such-journal-for-tests'),json=json,log=logging.getLogger('test'),SOURCE_CSV=None,
+  env=dict(marches_internet=marches_internet,erreur_identite=p.erreur_identite,erreur_chevaux=p.erreur_chevaux,datetime=Clock,TZ_PARIS=p.TZ,Path=lambda name:Path('/tmp/pmu-no-such-journal-for-tests'),json=json,log=logging.getLogger('test'),SOURCE_CSV=None,
    charger_pronos_matin=lambda d:{('R4','C2'):horses},charger_etat=lambda d:state.copy(),sauver_etat=lambda d,s:state.update(s),
    get_courses_du_jour=lambda d:[dict(nr=4,nc=2,heure_ts=int((NOW+timedelta(minutes=15)).timestamp()*1000),libelle='TEST',hippodrome='BORDEAUX')],
    api_get=lambda url:(calls.append(url) or ({'participants':[dict(numPmu=4,nom='FEEL WELL',cote=0),dict(numPmu=12,nom='WINNIE CEN',cote=3)]} if url.endswith('/participants') else META)),
@@ -272,7 +273,7 @@ class IdentityRegressionTests(unittest.TestCase):
         node = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'get_courses_du_jour')
         course = dict(numOrdre=8, numExterne=18, discipline='ATTELE', heureDepart=1)
         reunions = [dict(numOfficiel=n, numExterne=5, pays={'code':'FRA'}, courses=[course]) for n in (5,6,7)]
-        env = dict(api_get=lambda _: {'programme':{'reunions':reunions}}, PAYS_AUTORISES={'FRA'}, DISCIPLINES={'ATTELE'}, log=logging.getLogger('test'))
+        env = dict(marches_internet=marches_internet, api_get=lambda _: {'programme':{'reunions':reunions}}, PAYS_AUTORISES={'FRA'}, DISCIPLINES={'ATTELE'}, log=logging.getLogger('test'))
         exec(compile(ast.Module(body=[node], type_ignores=[]), 'notifier', 'exec'), env)
         self.assertEqual([(c['nr'],c['nc']) for c in env['get_courses_du_jour']('04102026')], [(5,8),(6,8),(7,8)])
 
@@ -316,3 +317,4 @@ class IdentityRegressionTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
