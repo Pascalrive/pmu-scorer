@@ -70,3 +70,13 @@ Telegram affiche trois messages numérotés : synthèse des cinq chevaux les plu
 Sept sources publient actuellement cinq choix exploitables ; Prono Turf Gratuit reste partiel lorsqu'une seule base est publique. Fréquence Turf affiche favori, base, tocard, outsider, puis ses compléments ; Turf-Pronostics distingue première puis seconde chance. L'ordre de ces rubriques est précisé.
 
 La synthèse visuelle des cinq chevaux classe par nombre de sources les citant parmi leurs cinq choix, puis points 5–4–3–2–1 en cas d'égalité, puis numéro croissant. Elle est une présentation supplémentaire : le suivi prospectif déjà lancé conserve sa règle initiale sur les trois premiers choix (3–2–1), son budget et son règlement. Les historiques et le programme principal ne changent pas.
+
+## Trois variantes figées de cinq chevaux — activées le 13 octobre 2026
+
+Version `trois-selections-v1-2026-10-13`, trois méthodes : citations dans les cinq choix généraux (départage 5–4–3–2–1 puis numéro), cinq plus petites cotes connues parmi tous les partants (départage numéro), trois bases statistiques plus deux outsiders distincts cités par au moins deux sources (départage outsiders : cote puis numéro). Les cotes de référence restent explicitement marquées lorsque le direct manque. Aucun cheval manquant n'est inventé pour compléter la méthode mixte.
+
+Simulation : **2 € par variante complète**, mise fixe, sans Option Max ni augmentation après les pertes. Conditions : cinq sources avec cinq choix publics, cinq chevaux distincts et marché E_QUINTE_PLUS disponible à 2 € de base. Les variantes sont des alternatives comparées à budget égal ; les simulations ne sont pas des paris exécutés.
+
+Les variantes sont ajoutées au premier message Telegram et au tableau GitHub. Chaque archive capture les règles, les cinq numéros, les citations et cotes. Le bilan séparé `data/BILAN_TROIS_SELECTIONS.md` / `.json` ne compare que les courses où les trois variantes complètes ont été confirmées sur Telegram avant départ, en retenant le dernier envoi confirmé admissible. Les collectes sans reçu et les anciens jours sans cette version ne sont pas reconstruits a posteriori.
+
+Le règlement utilise exclusivement E_QUINTE_PLUS définitif PMU INTERNET : ticket dans l'ordre affiché, rapport Ordre s'il correspond exactement, sinon Désordre ou Bonus applicable. On ne cumule pas le rapport principal et les bonus d'un même ticket. Les non-partants et les rapports ambigus restent en attente plutôt que de fabriquer un ROI. La couverture des cinq premiers est affichée séparément du gain payé. Le suivi originel en simple placé et le programme principal restent distincts.

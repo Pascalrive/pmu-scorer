@@ -35,6 +35,12 @@ def format_messages(s):
  if not shared:summary.append('Aucun outsider cité par au moins deux sources.')
  for x in shared:summary.append(card(race,x['number'])+f' · {x["votes"]} sources')
  if not con['qualified']:summary+=['','PROVISOIRE : moins de cinq sources complètes ; exclu du bilan simulé.']
+ if s.get('analyses'):
+  summary+=['','<b>🧮 NOTRE ANALYSE — TROIS SÉLECTIONS</b>']
+  for profile in s['analyses']['profiles']:
+   nums=' – '.join(str(n) for n in profile['numbers'])
+   summary.append('<b>'+html.escape(profile['label'])+'</b> : '+nums+('' if profile['qualified'] else ' · INCOMPLET'))
+  summary+=['Mixte : trois bases + deux outsiders cités par ≥2 sources.','Comparaison simulée : 2 € par sélection complète, sans Option Max. Mise fixe ; aucune augmentation après une perte.']
  summary+=['','Cotes de simple gagnant, indicatives et évolutives. « réf. » = cote de référence si le direct manque.','Présentation des avis · aucun pari exécuté.']
  detail=[f'📋 QUINTÉ — {day} · 2/3','<b>LES CINQ CHOIX PAR PRONOSTIQUEUR</b>','Ordre publié : ① premier choix → ⑤ cinquième choix.','Chaque ligne : numéro · cheval · cote PMU.']
  by={r['source']:r for r in s['rows']};ranks=['①','②','③','④','⑤']
@@ -92,7 +98,7 @@ def notify(root,now=None,post=requests.post,clock=lambda:datetime.now(timezone.u
   if any(r['delivery']=='SENT' for r in prior):print(f'CONSENSUS_ALREADY_SENT {ident}');continue
   if any(r['delivery'] in ('PENDING','UNCERTAIN') for r in prior):
    print(f'CONSENSUS_DELIVERY_UNCERTAIN {ident} — contrôle manuel nécessaire');failed=True;continue
-  record={'date':s['race']['date'],'course':ident,'snapshot_capture':s['captured_at'],'fingerprint':fingerprint,'text':message,'delivery':'PENDING','receipts':[]};ledger.append(record);persist()
+  record={'date':s['race']['date'],'course':ident,'snapshot_capture':s['captured_at'],'fingerprint':fingerprint,'text':message,'analyses':s.get('analyses'),'delivery':'PENDING','receipts':[]};ledger.append(record);persist()
   parts=[part for section in format_messages(s) for part in chunks(section)]
   for part in parts:
    # Check departure again before each send. Never retry a timeout automatically.

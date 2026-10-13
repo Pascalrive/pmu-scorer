@@ -7,6 +7,7 @@ from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
+from analyses import build_analyses
 
 VERSION = 'consensus-v1-2026-10-12'
 API = 'https://online.turfinfo.api.pmu.fr/rest/client/61/programme/'
@@ -192,7 +193,7 @@ def official(d,f):
    if not any('QUINTE' in p.get('typePari','') for p in c.get('paris',[])):continue
    r=reunion['numOfficiel'];num=c['numOrdre'];ident=f'R{r}C{num}'
    horses=f.json(API+d.strftime('%d%m%Y')+f'/R{r}/C{num}/participants')['participants']
-   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'odds_captured_at':datetime.now(timezone.utc).isoformat(),'horses':{p['numPmu']:{**{k:p.get(k) for k in ('numPmu','nom','statut')},'pmu_odds':pmu_odds(p)} for p in horses}})
+   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'odds_captured_at':datetime.now(timezone.utc).isoformat(),'internet_quinte_available':any(p.get('typePari')=='E_QUINTE_PLUS' and p.get('enVente') is not False and p.get('miseBase')==200 for p in c.get('paris',[])),'horses':{p['numPmu']:{**{k:p.get(k) for k in ('numPmu','nom','statut')},'pmu_odds':pmu_odds(p)} for p in horses}})
  return races
 
 def source_url(key,race,f):
@@ -222,7 +223,7 @@ def collect(d,root):
     statuses.append({'source':key,'status':'OK' if len(row['top3'])==3 else 'PARTIEL','url':url})
    except Exception as e:statuses.append({'source':key,'status':'INDISPONIBLE','reason':str(e)[:180]})
   captured=datetime.now(timezone.utc).isoformat()
-  snap={'version':VERSION,'captured_at':captured,'eligible_before_departure':captured<race['departure'],'race':race,'rows':rows,'consensus':consensus(rows,race),'display_top5':display_top5(rows,race),'statuses':statuses,'http_audit':f.audit}
+  snap={'version':VERSION,'captured_at':captured,'eligible_before_departure':captured<race['departure'],'race':race,'rows':rows,'consensus':consensus(rows,race),'display_top5':display_top5(rows,race),'analyses':build_analyses(rows,race),'statuses':statuses,'http_audit':f.audit}
   folder=root/d.isoformat();folder.mkdir(parents=True,exist_ok=True)
   (folder/f'{race["id"]}-{stamp}.json').write_text(json.dumps(snap,ensure_ascii=False,indent=2))
   snapshots.append(snap)
@@ -247,6 +248,9 @@ def render(snapshots,folder):
    csvrows.append({'date':race['date'],'course':race['id'],'source':SOURCES[key][0],'choix1':choices[0],'choix2':choices[1],'choix3':choices[2],'choix4':choices[3],'choix5':choices[4],'outsiders':extras,'url':row['url'] if row else '', 'capture':s['captured_at'],'mode':row['mode'] if row else 'indisponible'})
   lines+=['','### Les cinq chevaux les plus cités dans les cinq choix publiés','','| Cheval | Sources le citant |','|---|---:|']
   lines += [f'| {label(x["number"])} | {x["votes"]} |' for x in s.get('display_top5',[])]
+  lines+=['','### Notre analyse — trois sélections de cinq chevaux','','| Variante | Sélection | Simulation |','|---|---|---|']
+  for profile in s.get('analyses',{}).get('profiles',[]):
+   lines.append('| '+profile['label']+' | '+' – '.join(str(n) for n in profile['numbers'])+' | '+('2 €' if profile['qualified'] else 'INCOMPLET : pas de simulation')+' |')
   lines+=['','### Cumul des trois premiers choix','', '| Cheval | Points 3–2–1 | Sources le citant |','|---|---:|---:|']
   lines += [f'| {x["number"]} {x["name"]} | {x["points"]} | {x["votes"]} |' for x in con['top3']]
   lines+=['','### Cumul des outsiders explicites','','| Cheval | Sources le citant comme outsider |','|---|---:|']

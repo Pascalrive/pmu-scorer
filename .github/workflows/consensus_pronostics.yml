@@ -13,6 +13,8 @@ on:
     paths:
       - 'consensus_pronostics/collector.py'
       - 'consensus_pronostics/evaluate.py'
+      - 'consensus_pronostics/analyses.py'
+      - 'consensus_pronostics/evaluate_analyses.py'
       - 'consensus_pronostics/notify.py'
       - 'consensus_pronostics/tests/**'
       - '.github/workflows/consensus_pronostics.yml'
@@ -53,7 +55,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python consensus_pronostics/notify.py
       - name: Bilan PMU INTERNET independant
-        run: python consensus_pronostics/evaluate.py
+        run: |
+          python consensus_pronostics/evaluate.py
+          python consensus_pronostics/evaluate_analyses.py
       - name: Archiver uniquement les donnees du consensus
         if: always()
         run: |
