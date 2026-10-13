@@ -24,7 +24,7 @@ class DeliveryTests(unittest.TestCase):
   calls=[]
   def post(*a,**kw):calls.append(kw['json']);return self.ok()
   notify(self.root,post=post,clock=lambda:self.now);notify(self.root,post=post,clock=lambda:self.now)
-  self.assertEqual(len(calls),1);self.assertTrue(calls[0]['text'].startswith('🐎 CONSENSUS'))
+  self.assertEqual(len(calls),3);self.assertTrue(calls[0]['text'].startswith('🏇 QUINTÉ'))
   ledger=json.loads((self.root/'2026-10-13/notifications.json').read_text());self.assertEqual(ledger[0]['delivery'],'SENT');self.assertEqual(ledger[0]['receipts'][0]['message_id'],42)
  def test_uncertain_send_not_retried(self):
   calls=[]
@@ -36,7 +36,7 @@ class DeliveryTests(unittest.TestCase):
   self.assertFalse(admissible(self.s,self.now+timedelta(days=1)))
   calls=[];notify(self.root,post=lambda *a,**k:calls.append(1),clock=lambda:self.now+timedelta(hours=12));self.assertEqual(calls,[])
  def test_outsider_labels_and_partial_status_present(self):
-  t=format_message(self.s);self.assertIn('PROVISOIRE',t);self.assertIn('PUMALIN PARK',t.upper());self.assertIn('tocard',t);self.assertIn('CUMUL DES OUTSIDERS',t)
+  t=format_message(self.s);self.assertIn('PROVISOIRE',t);self.assertIn('PUMALIN PARK',t.upper());self.assertIn('tocard',t);self.assertIn('OUTSIDERS',t)
  def test_split_on_lines_without_losing_outsiders(self):
   t=format_message(self.s);parts=chunks(t,limit=400);self.assertEqual('\n'.join(parts),t);self.assertTrue(all(len(p)<=400 for p in parts))
 if __name__=='__main__':unittest.main()

@@ -119,7 +119,12 @@ def parse(key,body,race):
    if label in ('Le meilleur tocard du Quinté+','L’outsider séduisant'):
     e=h.find_next_sibling('h4');m=re.search(r'(\d+)\s*[–—-]\s*(.+)',text(e))
     if m:extras.append({'number':checked_name(int(m[1]),m[2],race),'label':label})
-  mode='favori, base, tocard, outsider (ordre des rubriques)'
+  h=next((h for h in s.find_all('h3') if text(h)=='Les 4 chevaux incontournables'),None)
+  table=h.find_next('table') if h else None
+  for c in table.select('td') if table else []:
+   m=re.match(r'(\d+)\s*[–—-]\s*(.+)',text(c))
+   if m:ranked.append(checked_name(int(m[1]),m[2],race))
+  mode='favori, base, tocard, outsider, puis compléments (ordre des rubriques)'
  elif key=='prono':
   h=s.find('h2',id='base');e=h.find_next_sibling('p') if h else None
   m=re.search(r'([\w\s\-\’\']+)\s*\((\d+)\)',text(e))
@@ -132,7 +137,7 @@ def parse(key,body,race):
  if not ranked:raise ValueError('aucune sélection explicitement publiée')
  if any(n not in race['horses'] for n in ranked+[e['number'] for e in extras]):raise ValueError('numéro inconnu')
  # Non-runners stay visible but receive no votes; no silent promotion of fourth pick.
- return {'source':key,'publisher':key,'name':SOURCES[key][0],'top3':ranked[:3], 'outsiders':list({(e['number'],e['label']):e for e in extras}.values()),'mode':mode}
+ return {'source':key,'publisher':key,'name':SOURCES[key][0],'top3':ranked[:3], 'top5':ranked[:5], 'outsiders':list({(e['number'],e['label']):e for e in extras}.values()),'mode':mode}
 
 def consensus(rows,race):
  points=Counter();votes=Counter();outs=Counter();seen=set();full=0
@@ -147,6 +152,25 @@ def consensus(rows,race):
    if race['horses'][n].get('statut')=='PARTANT':outs[n]+=1
  top=sorted(points,key=lambda n:(-points[n],-votes[n],n))[:3]
  return {'complete_sources':full,'qualified':full>=5,'top3':[{'number':n,'name':race['horses'][n]['nom'],'points':points[n],'votes':votes[n]} for n in top], 'outsiders':[{'number':n,'name':race['horses'][n]['nom'],'votes':outs[n]} for n in sorted(outs,key=lambda n:(-outs[n],n))], 'tie_break':'points, citations, numéro croissant; égalité sans valeur prédictive'}
+
+def pmu_odds(p):
+ import math
+ for field,kind in [('dernierRapportDirect','direct'),('dernierRapportReference','reference')]:
+  quote=p.get(field) or {}
+  if quote.get('typePari') and 'SIMPLE_GAGNANT' not in quote['typePari']:continue
+  try:value=float(quote.get('rapport',0))
+  except (TypeError,ValueError):continue
+  if math.isfinite(value) and value>0:return {'value':value,'kind':kind,'official_time':quote.get('dateRapport')}
+ return None
+
+def display_top5(rows,race):
+ votes=Counter();points=Counter();seen=set()
+ for row in rows:
+  if row['publisher'] in seen:continue
+  seen.add(row['publisher'])
+  for rank,n in enumerate(unique(row.get('top5',row['top3']))[:5]):
+   if race['horses'][n].get('statut')=='PARTANT':votes[n]+=1;points[n]+=5-rank
+ return [{'number':n,'name':race['horses'][n]['nom'],'votes':votes[n],'points5':points[n]} for n in sorted(votes,key=lambda n:(-votes[n],-points[n],n))[:5]]
 
 class Fetcher:
  def __init__(self):self.cache={};self.audit=[]
@@ -168,7 +192,7 @@ def official(d,f):
    if not any('QUINTE' in p.get('typePari','') for p in c.get('paris',[])):continue
    r=reunion['numOfficiel'];num=c['numOrdre'];ident=f'R{r}C{num}'
    horses=f.json(API+d.strftime('%d%m%Y')+f'/R{r}/C{num}/participants')['participants']
-   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'horses':{p['numPmu']:{k:p.get(k) for k in ('numPmu','nom','statut')} for p in horses}})
+   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'odds_captured_at':datetime.now(timezone.utc).isoformat(),'horses':{p['numPmu']:{**{k:p.get(k) for k in ('numPmu','nom','statut')},'pmu_odds':pmu_odds(p)} for p in horses}})
  return races
 
 def source_url(key,race,f):
@@ -198,7 +222,7 @@ def collect(d,root):
     statuses.append({'source':key,'status':'OK' if len(row['top3'])==3 else 'PARTIEL','url':url})
    except Exception as e:statuses.append({'source':key,'status':'INDISPONIBLE','reason':str(e)[:180]})
   captured=datetime.now(timezone.utc).isoformat()
-  snap={'version':VERSION,'captured_at':captured,'eligible_before_departure':captured<race['departure'],'race':race,'rows':rows,'consensus':consensus(rows,race),'statuses':statuses,'http_audit':f.audit}
+  snap={'version':VERSION,'captured_at':captured,'eligible_before_departure':captured<race['departure'],'race':race,'rows':rows,'consensus':consensus(rows,race),'display_top5':display_top5(rows,race),'statuses':statuses,'http_audit':f.audit}
   folder=root/d.isoformat();folder.mkdir(parents=True,exist_ok=True)
   (folder/f'{race["id"]}-{stamp}.json').write_text(json.dumps(snap,ensure_ascii=False,indent=2))
   snapshots.append(snap)
@@ -211,16 +235,18 @@ def render(snapshots,folder):
  csvrows=[]
  for s in snapshots:
   race=s['race'];con=s['consensus'];horses=race['horses']
-  label=lambda n:f'{n} {horses[n]["nom"]}'+(' (NP)' if horses[n].get('statut')!='PARTANT' else '')
-  lines += [f'## {race["id"]} — {race["title"]}', '',f'Collecte : {s["captured_at"]}. Avant départ : {s["eligible_before_departure"]}. Sources complètes : {con["complete_sources"]}/8.', '', '| Source | Choix 1 | Choix 2 | Choix 3 | Outsider / trouble-fête |','|---|---|---|---|---|']
+  label=lambda n:f'{n} {horses[n]["nom"]} (cote '+(str(horses[n]['pmu_odds']['value']) if horses[n].get('pmu_odds') else 'indisponible')+')'+(' (NP)' if horses[n].get('statut')!='PARTANT' else '')
+  lines += [f'## {race["id"]} — {race["title"]}', '',f'Collecte : {s["captured_at"]}. Avant départ : {s["eligible_before_departure"]}. Sources complètes : {con["complete_sources"]}/8.', '', '| Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |','|---|---|---|---|---|---|---|']
   bysource={r['source']:r for r in s['rows']}
   for key in SOURCES:
-   row=bysource.get(key);choices=[label(n) for n in row['top3']] if row else []
-   choices+=(['—']*(3-len(choices)))
+   row=bysource.get(key);choices=[label(n) for n in row.get('top5',row['top3'])] if row else []
+   choices+=(['—']*(5-len(choices)))
    extras=' ; '.join(label(e['number'])+' — '+e['label'] for e in row['outsiders']) if row else 'Indisponible'
    name=f'[{SOURCES[key][0]}]({row["url"]})' if row else SOURCES[key][0]
    lines.append('| '+' | '.join([name]+choices+[extras or 'Non publié'])+' |')
-   csvrows.append({'date':race['date'],'course':race['id'],'source':SOURCES[key][0],'choix1':choices[0],'choix2':choices[1],'choix3':choices[2],'outsiders':extras,'url':row['url'] if row else '', 'capture':s['captured_at'],'mode':row['mode'] if row else 'indisponible'})
+   csvrows.append({'date':race['date'],'course':race['id'],'source':SOURCES[key][0],'choix1':choices[0],'choix2':choices[1],'choix3':choices[2],'choix4':choices[3],'choix5':choices[4],'outsiders':extras,'url':row['url'] if row else '', 'capture':s['captured_at'],'mode':row['mode'] if row else 'indisponible'})
+  lines+=['','### Les cinq chevaux les plus cités dans les cinq choix publiés','','| Cheval | Sources le citant |','|---|---:|']
+  lines += [f'| {label(x["number"])} | {x["votes"]} |' for x in s.get('display_top5',[])]
   lines+=['','### Cumul des trois premiers choix','', '| Cheval | Points 3–2–1 | Sources le citant |','|---|---:|---:|']
   lines += [f'| {x["number"]} {x["name"]} | {x["points"]} | {x["votes"]} |' for x in con['top3']]
   lines+=['','### Cumul des outsiders explicites','','| Cheval | Sources le citant comme outsider |','|---|---:|']

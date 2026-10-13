@@ -1,5 +1,5 @@
 """Daily Telegram delivery, with separate receipts and no imports from PMU scorer."""
-import argparse,hashlib,json,os
+import argparse,hashlib,json,os,html
 from datetime import datetime,timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -11,23 +11,54 @@ def horse(race,n):
  p=race['horses'].get(str(n),race['horses'].get(n,{}))
  return f'{n} {p.get("nom", "?")}' + (' (NP)' if p.get('statut')!='PARTANT' else '')
 
-def format_message(s):
- race=s['race'];con=s['consensus'];lines=[f'🐎 CONSENSUS — {race["date"]}',f'{race["id"]} — {race["title"]}', 'Départ : '+datetime.fromisoformat(race['departure']).astimezone(TZ).strftime('%Hh%M'), 'Programme indépendant — simulation uniquement.',f'{con["complete_sources"]}/8 sources avec trois choix publiés.','', 'CHOIX PAR SOURCE — 1er / 2e / 3e']
- from collector import SOURCES
- by={r['source']:r for r in s['rows']}
+def quote(race,n):
+ p=race['horses'].get(str(n),race['horses'].get(n,{}));q=p.get('pmu_odds')
+ if not q:return 'cote indisponible'
+ value=f'{q["value"]:g}'.replace('.',',')
+ return value + (' (réf.)' if q['kind']=='reference' else '')
+
+def card(race,n):
+ return html.escape(horse(race,n))+' · <b>'+html.escape(quote(race,n))+'</b>'
+
+def format_messages(s):
+ from collector import SOURCES,display_top5
+ race=s['race'];con=s['consensus'];display=s.get('display_top5')
+ if display is None:
+  r={**race,'horses':{int(n):p for n,p in race['horses'].items()}};display=display_top5(s['rows'],r)
+ day=datetime.fromisoformat(race['departure']).astimezone(TZ).strftime('%d/%m/%Y');start=datetime.fromisoformat(race['departure']).astimezone(TZ).strftime('%Hh%M')
+ stamp=datetime.fromisoformat(race.get('odds_captured_at',s['captured_at'])).astimezone(TZ).strftime('%Hh%M')
+ count=len({r['publisher'] for r in s['rows']});five=sum(len(r.get('top5',r['top3']))==5 for r in s['rows'])
+ summary=[f'🏇 QUINTÉ — {day} · 1/3',f'<b>{race["id"]} · Départ {start}</b>',html.escape(race['title']),f'Cotes PMU relevées à {stamp}',f'{count}/8 avis disponibles · {five} sélections de cinq chevaux','', '<b>⭐ LES CINQ CHEVAUX LES PLUS CITÉS</b>']
+ for rank,x in enumerate(display,1):summary.append(f'{rank}. <b>N°{x["number"]}</b> '+html.escape(x['name'])+f' · cote <b>{html.escape(quote(race,x["number"]))}</b> · {x["votes"]}/{count} avis')
+ summary+=['','<b>⚡ OUTSIDERS CITÉS PAR PLUSIEURS SOURCES</b>']
+ shared=[x for x in con['outsiders'] if x['votes']>=2]
+ if not shared:summary.append('Aucun outsider cité par au moins deux sources.')
+ for x in shared:summary.append(card(race,x['number'])+f' · {x["votes"]} sources')
+ if not con['qualified']:summary+=['','PROVISOIRE : moins de cinq sources complètes ; exclu du bilan simulé.']
+ summary+=['','Cotes de simple gagnant, indicatives et évolutives. « réf. » = cote de référence si le direct manque.','Présentation des avis · aucun pari exécuté.']
+ detail=[f'📋 QUINTÉ — {day} · 2/3','<b>LES CINQ CHOIX PAR PRONOSTIQUEUR</b>','Ordre publié : ① premier choix → ⑤ cinquième choix.','Chaque ligne : numéro · cheval · cote PMU.']
+ by={r['source']:r for r in s['rows']};ranks=['①','②','③','④','⑤']
  for key,(name,url) in SOURCES.items():
-  row=by.get(key);top=[horse(race,n) for n in row['top3']] if row else []
-  top+=['—']*(3-len(top));lines.append(name+' : '+' / '.join(top))
- lines+=['','CONSENSUS PRINCIPAL — points 3–2–1']
- for x in con['top3']:lines.append(f'{x["number"]} {x["name"]} — {x["points"]} points, {x["votes"]} sources')
- lines+=['','OUTSIDERS / TOCARDS / COUPS DE FOLIE']
+  row=by.get(key);detail+=['','<b>'+html.escape(name.replace(' via Canalturf',''))+'</b>']
+  if not row:detail.append('Indisponible à ce relevé.');continue
+  top=row.get('top5',row['top3'])
+  for i,n in enumerate(top):detail.append(ranks[i]+' '+card(race,n))
+  if len(top)<5:detail.append(f'↳ {len(top)}/5 choix publics ; autres choix non publiés.')
+  if key=='frequence':detail.append('↳ Favori, base, tocard, outsider, puis complément.')
+  if key=='turfprono':detail.append('↳ Première chance puis seconde chance, ordre affiché.')
+  if key=='zeturf':detail.append('↳ Sélection ZEturf identifiée sur Canalturf.')
+ extras=[f'⚡ QUINTÉ — {day} · 3/3','<b>OUTSIDERS, TOCARDS ET COUPS DE FOLIE</b>','Conseils supplémentaires explicitement publiés.']
  for row in s['rows']:
-  if row['outsiders']:lines.append(row['name']+' : '+' ; '.join(horse(race,e['number'])+' — '+e['label'] for e in row['outsiders']))
- lines+=['','CUMUL DES OUTSIDERS EXPLICITES']
- for x in con['outsiders']:lines.append(f'{x["number"]} {x["name"]} — {x["votes"]} source(s)')
- if not con['qualified']:lines+=['','PROVISOIRE : moins de cinq sources complètes ; exclu du bilan simulé.']
- lines+=['','Les choix manquants restent vides. Mises simulées : 5 € en simple placé sur le premier du consensus si ≥5 sources complètes ; outsider séparé si ≥2 citations. Aucun pari exécuté.']
- return '\n'.join(lines)
+  if not row['outsiders']:continue
+  extras+=['','<b>'+html.escape(row['name'].replace(' via Canalturf',''))+'</b>']
+  grouped={}
+  for e in row['outsiders']:grouped.setdefault(e['number'],[]).append(e['label'])
+  for n,labels in grouped.items():extras.append(card(race,n)+' — '+html.escape(' / '.join(labels)))
+ extras+=['','Une source compte une seule fois par cheval, même si elle lui donne plusieurs qualificatifs.']
+ return ['\n'.join(summary),'\n'.join(detail),'\n'.join(extras)]
+
+def format_message(s):
+ return '\n\n'.join(format_messages(s))
 
 def admissible(s,now):
  return s['race']['date']==now.astimezone(TZ).date().isoformat() and s.get('eligible_before_departure') and datetime.fromisoformat(s['captured_at'])<datetime.fromisoformat(s['race']['departure']) and now<datetime.fromisoformat(s['race']['departure'])
@@ -62,11 +93,12 @@ def notify(root,now=None,post=requests.post,clock=lambda:datetime.now(timezone.u
   if any(r['delivery'] in ('PENDING','UNCERTAIN') for r in prior):
    print(f'CONSENSUS_DELIVERY_UNCERTAIN {ident} — contrôle manuel nécessaire');failed=True;continue
   record={'date':s['race']['date'],'course':ident,'snapshot_capture':s['captured_at'],'fingerprint':fingerprint,'text':message,'delivery':'PENDING','receipts':[]};ledger.append(record);persist()
-  for part in chunks(message):
+  parts=[part for section in format_messages(s) for part in chunks(section)]
+  for part in parts:
    # Check departure again before each send. Never retry a timeout automatically.
    if clock()>=datetime.fromisoformat(s['race']['departure']):record['delivery']='BLOCKED_AFTER_START';failed=True;break
    try:
-    response=post('https://api.telegram.org/bot'+token+'/sendMessage',json={'chat_id':chat,'text':part,'disable_web_page_preview':True},timeout=25)
+    response=post('https://api.telegram.org/bot'+token+'/sendMessage',json={'chat_id':chat,'text':part,'disable_web_page_preview':True,'parse_mode':'HTML'},timeout=25)
     body=response.json()
    except Exception:
     record['delivery']='UNCERTAIN';failed=True;break

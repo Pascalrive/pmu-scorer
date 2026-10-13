@@ -62,3 +62,11 @@ Un échec de site est affiché et ne bloque pas les autres sources. Une panne PM
 ## Correctif exploitation du 13 octobre 2026
 
 L'envoi Telegram quotidien a été branché au workflow de collecte ; le test ponctuel du 12/10 ne constituait pas un envoi quotidien. Les tableaux complets, les choix manquants et les outsiders sont envoyés séparément des conseils du programme principal. Le programme principal démarre désormais à 06:17 UTC (08:17 Paris en été), avec reprises à 06:47, 07:17 et 07:47 UTC. Ces reprises n'envoient pas une nouvelle collecte si un CSV valide du jour est déjà archivé. Les deux programmes gardent leurs journaux et leurs bilans distincts.
+
+## Présentation du Quinté — 13 octobre 2026
+
+Telegram affiche trois messages numérotés : synthèse des cinq chevaux les plus cités dans les cinq choix publiés, cinq choix par pronostiqueur, puis outsiders/tocards/coups de folie par source. Chaque cheval porte son numéro, son nom et la cote PMU de simple gagnant relevée avec l'heure de collecte. Les cotes manquantes sont signalées ; le repli sur une cote de référence est marqué « réf. ». Les non-partants sont indiqués.
+
+Sept sources publient actuellement cinq choix exploitables ; Prono Turf Gratuit reste partiel lorsqu'une seule base est publique. Fréquence Turf affiche favori, base, tocard, outsider, puis ses compléments ; Turf-Pronostics distingue première puis seconde chance. L'ordre de ces rubriques est précisé.
+
+La synthèse visuelle des cinq chevaux classe par nombre de sources les citant parmi leurs cinq choix, puis points 5–4–3–2–1 en cas d'égalité, puis numéro croissant. Elle est une présentation supplémentaire : le suivi prospectif déjà lancé conserve sa règle initiale sur les trois premiers choix (3–2–1), son budget et son règlement. Les historiques et le programme principal ne changent pas.
