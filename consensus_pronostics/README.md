@@ -33,7 +33,7 @@ Les lectures du 12 octobre ont eu lieu après le départ : elles servent au cont
 
 ## Bilan prospectif
 
-Dernière archive admissible avant le départ, au moins cinq sources complètes. Simulation uniquement, aucun pari exécuté et aucun message Telegram envoyé.
+Dernière archive admissible avant le départ, au moins cinq sources complètes. Simulation uniquement, aucun pari exécuté. Les tableaux sont envoyés sur Telegram à chaque nouvelle sélection avant départ.
 
 Deux stratégies suivies séparément :
 1. **Consensus** : 5 € en simple placé sur son premier cheval.
@@ -46,6 +46,8 @@ Règlement via les rapports définitifs **PMU INTERNET E_SIMPLE_PLACE**. Rapport
 Workflow : `.github/workflows/consensus_pronostics.yml`.
 Collecte à 07:05, 09:05, 11:05 UTC ; bilan à 05:25 UTC. En octobre avant le changement d'heure : 09:05, 11:05, 13:05 et 07:25 à Paris. Les horaires locaux changent avec l'heure d'hiver. Les retards possibles de GitHub Actions sont contrôlés par l'heure réelle de capture avant départ.
 
+Les confirmations Telegram sont enregistrées dans `data/AAAA-MM-JJ/notifications.json`. Un message identique déjà confirmé n'est pas renvoyé ; une réponse incertaine bloque toute relance automatique. Aucun envoi n'est autorisé après le départ.
+
 Le workflow ne modifie que `consensus_pronostics/data`, dispose de son propre verrou et n'importe aucun module de l'algorithme existant. Les réconciliations Git préservent les commits simultanés de l'autre workflow. Les historiques, ROI et budgets des deux expériences ne sont jamais additionnés.
 
 ```sh
@@ -56,3 +58,7 @@ python consensus_pronostics/evaluate.py
 ```
 
 Un échec de site est affiché et ne bloque pas les autres sources. Une panne PMU empêche une collecte valide. L'accès du jour ne garantit pas que le site restera accessible : les statuts sont contrôlés à chaque lecture.
+
+## Correctif exploitation du 13 octobre 2026
+
+L'envoi Telegram quotidien a été branché au workflow de collecte ; le test ponctuel du 12/10 ne constituait pas un envoi quotidien. Les tableaux complets, les choix manquants et les outsiders sont envoyés séparément des conseils du programme principal. Le programme principal démarre désormais à 06:17 UTC (08:17 Paris en été), avec reprises à 06:47, 07:17 et 07:47 UTC. Ces reprises n'envoient pas une nouvelle collecte si un CSV valide du jour est déjà archivé. Les deux programmes gardent leurs journaux et leurs bilans distincts.

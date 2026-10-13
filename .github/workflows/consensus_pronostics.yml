@@ -13,6 +13,7 @@ on:
     paths:
       - 'consensus_pronostics/collector.py'
       - 'consensus_pronostics/evaluate.py'
+      - 'consensus_pronostics/notify.py'
       - 'consensus_pronostics/tests/**'
       - '.github/workflows/consensus_pronostics.yml'
 permissions:
@@ -28,6 +29,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -44,9 +46,16 @@ jobs:
           else
             python consensus_pronostics/collector.py
           fi
+      - name: Envoyer le consensus du jour sur Telegram
+        if: github.event.schedule != '25 5 * * *'
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python consensus_pronostics/notify.py
       - name: Bilan PMU INTERNET independant
         run: python consensus_pronostics/evaluate.py
       - name: Archiver uniquement les donnees du consensus
+        if: always()
         run: |
           git config user.name 'Consensus collector'
           git config user.email 'consensus-collector@users.noreply.github.com'

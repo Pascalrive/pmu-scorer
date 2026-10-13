@@ -10,7 +10,10 @@ on:
       - '*.py'
       - 'tests/**'
       - '.github/workflows/pmu_daily.yml'
+      - 'operations/morning_recovery.json'
   schedule:
+    - cron: '17 6 * * *'
+    - cron: '47 6 * * *'
     - cron: '17 7 * * *'
     - cron: '47 7 * * *'
     - cron: '*/10 8-22 * * *'
@@ -51,7 +54,10 @@ jobs:
     timeout-minutes: 120
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
+      (github.event_name == 'push' && contains(github.event.head_commit.message, '[morning-recovery]')) ||
       (github.event_name == 'schedule' && (
+        github.event.schedule == '17 6 * * *' ||
+        github.event.schedule == '47 6 * * *' ||
         github.event.schedule == '17 7 * * *' ||
         github.event.schedule == '47 7 * * *'
       ))
@@ -62,23 +68,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
 
-      # La seconde tentative ne tourne que si aucun CSV du jour n'existe
+      # Toutes les tentatives relisent main après le verrou pour éviter les doublons.
       - name: Verifier si scorer matin deja execute
         id: check_csv
         run: |
-          if [ "${{ github.event.schedule }}" = "47 7 * * *" ]; then
-            DATE_TODAY=$(TZ=Europe/Paris date +%Y%m%d)
-            RECENT=$(find resultats -name "pmu_${DATE_TODAY}_*.csv" 2>/dev/null | wc -l)
-            if [ "$RECENT" -gt "0" ]; then
-              echo "skip=true" >> $GITHUB_OUTPUT
-              echo "Scorer deja execute dans la derniere heure - retry annule"
-            else
-              echo "skip=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "skip=false" >> $GITHUB_OUTPUT
-          fi
+          python - <<'PYCODE'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          from pmu_runtime import csv_du_jour
+          day = datetime.now(ZoneInfo('Europe/Paris')).strftime('%Y%m%d')
+          skip = csv_du_jour(day) is not None
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('skip=' + str(skip).lower() + '\n')
+          print('Collecte du jour déjà archivée' if skip else 'Collecte du jour à lancer')
+          PYCODE
 
       - uses: actions/setup-python@v5
         if: steps.check_csv.outputs.skip != 'true'
@@ -124,7 +130,8 @@ jobs:
           git config user.email "pmu@github-actions"
           git add resultats/*.csv 2>/dev/null || true
           git diff --staged --quiet || git commit -m "CSV $(date +%Y%m%d_%H%M)"
-          git push || true
+          git pull --rebase origin main
+          git push
       - name: Sauvegarder logs
         if: always() && steps.check_csv.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
@@ -233,7 +240,8 @@ jobs:
           git config user.email "pmu@github-actions"
           git add resultats/audit_*.csv 2>/dev/null || true
           git diff --staged --quiet || git commit -m "Audit $(date +%Y%m%d)"
-          git push || true
+          git pull --rebase origin main
+          git push
       - name: Sauvegarder logs
         if: always()
         uses: actions/upload-artifact@v4
