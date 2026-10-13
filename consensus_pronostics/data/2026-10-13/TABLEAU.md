@@ -4,34 +4,46 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — PRIX DE LA GALERIE DES VARIETES
 
-Collecte : 2026-10-13T07:34:51.917742+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-13T08:29:12.283309+00:00. Avant départ : True. Sources complètes : 7/8.
 
-| Source | Choix 1 | Choix 2 | Choix 3 | Outsider / trouble-fête |
-|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 3 MR FLEURANT | 16 GALORD | 4 AQUITAIN | 12 DUTY — Outsider ; 9 BOLKHOV — Outsider ; 8 MONTGAUDRY — Outsider ; 4 AQUITAIN — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 16 GALORD | 14 MUENCHEN | 10 WOOD MING | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 MUENCHEN | 11 PUMALIN PARK | 12 DUTY | 13 LORD OF WAR — Coup de folie |
-| Stats-Quinté | — | — | — | Indisponible |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 DUTY | 16 GALORD | 14 MUENCHEN | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74643-pronostic-quinte-du-mardi-13-octobre-a-parislongchamp-prix-de-la-galerie-des-varietes-r1c1.html) | 14 MUENCHEN | 12 DUTY | 16 GALORD | Non publié |
-| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-mardi-13-octobre-2026/) | 14 MUENCHEN | 12 DUTY | 11 PUMALIN PARK | 11 PUMALIN PARK — Le meilleur tocard du Quinté+ ; 16 GALORD — L’outsider séduisant |
-| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-13-octobre-2026/) | 16 GALORD | — | — | 4 AQUITAIN — Tocard du jour |
+| Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
+|---|---|---|---|---|---|---|
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 3 MR FLEURANT (cote 14.0) | 16 GALORD (cote 5.1) | 4 AQUITAIN (cote 31.0) | 10 WOOD MING (cote 15.0) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) — Outsider ; 9 BOLKHOV (cote 11.0) — Outsider ; 8 MONTGAUDRY (cote 18.0) — Outsider ; 4 AQUITAIN (cote 31.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 16 GALORD (cote 5.1) | 14 MUENCHEN (cote 6.7) | 10 WOOD MING (cote 15.0) | 12 DUTY (cote 7.0) | 13 LORD OF WAR (cote 22.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 MUENCHEN (cote 6.7) | 11 PUMALIN PARK (cote 19.0) | 12 DUTY (cote 7.0) | 9 BOLKHOV (cote 11.0) | 15 HERMES WOOD (cote 23.0) | 13 LORD OF WAR (cote 22.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.1) | 10 WOOD MING (cote 15.0) | 4 AQUITAIN (cote 31.0) | 4 AQUITAIN (cote 31.0) — Outsider ; 9 BOLKHOV (cote 11.0) — Outsider ; 7 BOTICELLI (cote 12.0) — Outsider ; 6 REVERSO (cote 28.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.1) | 14 MUENCHEN (cote 6.7) | 3 MR FLEURANT (cote 14.0) | 7 BOTICELLI (cote 12.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74643-pronostic-quinte-du-mardi-13-octobre-a-parislongchamp-prix-de-la-galerie-des-varietes-r1c1.html) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.1) | 1 FELIX AUX ORMES (cote 25.0) | 3 MR FLEURANT (cote 14.0) | Non publié |
+| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-mardi-13-octobre-2026/) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 11 PUMALIN PARK (cote 19.0) | 16 GALORD (cote 5.1) | 3 MR FLEURANT (cote 14.0) | 11 PUMALIN PARK (cote 19.0) — Le meilleur tocard du Quinté+ ; 16 GALORD (cote 5.1) — L’outsider séduisant |
+| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-13-octobre-2026/) | 16 GALORD (cote 5.1) | — | — | — | — | 4 AQUITAIN (cote 31.0) — Tocard du jour |
+
+### Les cinq chevaux les plus cités dans les cinq choix publiés
+
+| Cheval | Sources le citant |
+|---|---:|
+| 14 MUENCHEN (cote 6.7) | 7 |
+| 16 GALORD (cote 5.1) | 7 |
+| 12 DUTY (cote 7.0) | 6 |
+| 3 MR FLEURANT (cote 14.0) | 4 |
+| 10 WOOD MING (cote 15.0) | 3 |
 
 ### Cumul des trois premiers choix
 
 | Cheval | Points 3–2–1 | Sources le citant |
 |---|---:|---:|
-| 14 MUENCHEN | 12 | 5 |
-| 16 GALORD | 11 | 5 |
-| 12 DUTY | 8 | 4 |
+| 14 MUENCHEN | 15 | 6 |
+| 16 GALORD | 12 | 6 |
+| 12 DUTY | 10 | 5 |
 
 ### Cumul des outsiders explicites
 
 | Cheval | Sources le citant comme outsider |
 |---|---:|
-| 4 AQUITAIN | 2 |
+| 4 AQUITAIN | 3 |
+| 9 BOLKHOV | 2 |
+| 6 REVERSO | 1 |
+| 7 BOTICELLI | 1 |
 | 8 MONTGAUDRY | 1 |
-| 9 BOLKHOV | 1 |
 | 11 PUMALIN PARK | 1 |
 | 12 DUTY | 1 |
 | 13 LORD OF WAR | 1 |
@@ -44,7 +56,7 @@ Collecte : 2026-10-13T07:34:51.917742+00:00. Avant départ : True. Sources compl
 - Canalturf: OK 
 - ZEturf via Canalturf: OK 
 - Zone-Turf: OK 
-- Stats-Quinté: INDISPONIBLE 403 Client Error: Forbidden for url: https://stats-quinte.com/pronostic-quinte-du-jour/
+- Stats-Quinté: OK 
 - Turf-Pronostics: OK 
 - Rue des Joueurs: OK 
 - Fréquence Turf: OK 
@@ -52,9 +64,10 @@ Collecte : 2026-10-13T07:34:51.917742+00:00. Avant départ : True. Sources compl
 - Canalturf: ordre publié
 - ZEturf via Canalturf: ordre publié
 - Zone-Turf: ordre publié
+- Stats-Quinté: ordre publié
 - Turf-Pronostics: première chance puis seconde chance (ordre affiché)
 - Rue des Joueurs: ordre publié
-- Fréquence Turf: favori, base, tocard, outsider (ordre des rubriques)
+- Fréquence Turf: favori, base, tocard, outsider, puis compléments (ordre des rubriques)
 - Prono Turf Gratuit: base publique uniquement; autres choix non publiés
 
 </details>
