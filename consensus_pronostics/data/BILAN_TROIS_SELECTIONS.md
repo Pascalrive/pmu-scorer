@@ -5,7 +5,7 @@ Simulation à mise fixe : 2 € par variante complète, aucun pari exécuté, au
 | Date | Variante | Numéros | Couverture des cinq premiers | Mise | Retour | Statut |
 |---|---|---|---:|---:|---:|---|
 | 2026-10-13 | statistique | 14 – 16 – 12 – 3 – 10 | — | 2 € | — | AVANT_COURSE |
-| 2026-10-13 | cotes | 16 – 14 – 12 – 9 – 7 | — | 2 € | — | AVANT_COURSE |
+| 2026-10-13 | cotes | 16 – 14 – 12 – 9 – 3 | — | 2 € | — | AVANT_COURSE |
 | 2026-10-13 | mixte | 14 – 16 – 12 – 4 – 9 | — | 2 € | — | AVANT_COURSE |
 
 ## Comparaison cumulée
