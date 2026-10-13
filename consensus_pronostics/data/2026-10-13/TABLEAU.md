@@ -4,26 +4,26 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — PRIX DE LA GALERIE DES VARIETES
 
-Collecte : 2026-10-13T09:04:25.246614+00:00. Avant départ : True. Sources complètes : 7/8.
+Collecte : 2026-10-13T09:29:40.788770+00:00. Avant départ : True. Sources complètes : 7/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 3 MR FLEURANT (cote 14.0) | 16 GALORD (cote 5.3) | 4 AQUITAIN (cote 31.0) | 10 WOOD MING (cote 14.0) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) — Outsider ; 9 BOLKHOV (cote 10.0) — Outsider ; 8 MONTGAUDRY (cote 18.0) — Outsider ; 4 AQUITAIN (cote 31.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 16 GALORD (cote 5.3) | 14 MUENCHEN (cote 6.7) | 10 WOOD MING (cote 14.0) | 12 DUTY (cote 7.0) | 13 LORD OF WAR (cote 22.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 MUENCHEN (cote 6.7) | 11 PUMALIN PARK (cote 19.0) | 12 DUTY (cote 7.0) | 9 BOLKHOV (cote 10.0) | 15 HERMES WOOD (cote 21.0) | 13 LORD OF WAR (cote 22.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.3) | 10 WOOD MING (cote 14.0) | 4 AQUITAIN (cote 31.0) | 4 AQUITAIN (cote 31.0) — Outsider ; 9 BOLKHOV (cote 10.0) — Outsider ; 7 BOTICELLI (cote 12.0) — Outsider ; 6 REVERSO (cote 25.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.3) | 14 MUENCHEN (cote 6.7) | 3 MR FLEURANT (cote 14.0) | 7 BOTICELLI (cote 12.0) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74643-pronostic-quinte-du-mardi-13-octobre-a-parislongchamp-prix-de-la-galerie-des-varietes-r1c1.html) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 16 GALORD (cote 5.3) | 1 FELIX AUX ORMES (cote 25.0) | 3 MR FLEURANT (cote 14.0) | Non publié |
-| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-mardi-13-octobre-2026/) | 14 MUENCHEN (cote 6.7) | 12 DUTY (cote 7.0) | 11 PUMALIN PARK (cote 19.0) | 16 GALORD (cote 5.3) | 3 MR FLEURANT (cote 14.0) | 11 PUMALIN PARK (cote 19.0) — Le meilleur tocard du Quinté+ ; 16 GALORD (cote 5.3) — L’outsider séduisant |
-| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-13-octobre-2026/) | 16 GALORD (cote 5.3) | — | — | — | — | 4 AQUITAIN (cote 31.0) — Tocard du jour |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 3 MR FLEURANT (cote 14.0) | 16 GALORD (cote 5.1) | 4 AQUITAIN (cote 32.0) | 10 WOOD MING (cote 14.0) | 14 MUENCHEN (cote 6.8) | 12 DUTY (cote 7.1) — Outsider ; 9 BOLKHOV (cote 10.0) — Outsider ; 8 MONTGAUDRY (cote 18.0) — Outsider ; 4 AQUITAIN (cote 32.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-13/longchamp/420406_prix-de-la-galerie-des-varietes.html) | 16 GALORD (cote 5.1) | 14 MUENCHEN (cote 6.8) | 10 WOOD MING (cote 14.0) | 12 DUTY (cote 7.1) | 13 LORD OF WAR (cote 22.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 MUENCHEN (cote 6.8) | 11 PUMALIN PARK (cote 19.0) | 12 DUTY (cote 7.1) | 9 BOLKHOV (cote 10.0) | 15 HERMES WOOD (cote 21.0) | 13 LORD OF WAR (cote 22.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 14 MUENCHEN (cote 6.8) | 12 DUTY (cote 7.1) | 16 GALORD (cote 5.1) | 10 WOOD MING (cote 14.0) | 4 AQUITAIN (cote 32.0) | 4 AQUITAIN (cote 32.0) — Outsider ; 9 BOLKHOV (cote 10.0) — Outsider ; 7 BOTICELLI (cote 12.0) — Outsider ; 6 REVERSO (cote 25.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 DUTY (cote 7.1) | 16 GALORD (cote 5.1) | 14 MUENCHEN (cote 6.8) | 3 MR FLEURANT (cote 14.0) | 7 BOTICELLI (cote 12.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74643-pronostic-quinte-du-mardi-13-octobre-a-parislongchamp-prix-de-la-galerie-des-varietes-r1c1.html) | 14 MUENCHEN (cote 6.8) | 12 DUTY (cote 7.1) | 16 GALORD (cote 5.1) | 1 FELIX AUX ORMES (cote 25.0) | 3 MR FLEURANT (cote 14.0) | Non publié |
+| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-mardi-13-octobre-2026/) | 14 MUENCHEN (cote 6.8) | 12 DUTY (cote 7.1) | 11 PUMALIN PARK (cote 19.0) | 16 GALORD (cote 5.1) | 3 MR FLEURANT (cote 14.0) | 11 PUMALIN PARK (cote 19.0) — Le meilleur tocard du Quinté+ ; 16 GALORD (cote 5.1) — L’outsider séduisant |
+| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-13-octobre-2026/) | 16 GALORD (cote 5.1) | — | — | — | — | 4 AQUITAIN (cote 32.0) — Tocard du jour |
 
 ### Les cinq chevaux les plus cités dans les cinq choix publiés
 
 | Cheval | Sources le citant |
 |---|---:|
-| 14 MUENCHEN (cote 6.7) | 7 |
-| 16 GALORD (cote 5.3) | 7 |
-| 12 DUTY (cote 7.0) | 6 |
+| 14 MUENCHEN (cote 6.8) | 7 |
+| 16 GALORD (cote 5.1) | 7 |
+| 12 DUTY (cote 7.1) | 6 |
 | 3 MR FLEURANT (cote 14.0) | 4 |
 | 10 WOOD MING (cote 14.0) | 3 |
 
