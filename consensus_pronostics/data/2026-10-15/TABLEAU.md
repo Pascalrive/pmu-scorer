@@ -4,35 +4,35 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — PRIX DE LA VIERGE DE LORETTE
 
-Collecte : 2026-10-15T07:26:16.486035+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-15T09:25:04.800207+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-15/chantilly/420620_prix-de-la-vierge-de-lorette.html) | 1 SWEET CHOP (cote 9.8) | 9 AWAITING CHRISTMAS (cote 8.2) | 4 GRAND SCOOP (cote 8.8) | 2 LESSLEPASSER (cote 12.0) | 11 SCHUMAN (cote 8.9) | 10 ROYALWOOD (cote 10.0) — Outsider ; 7 SILK ROADSTER (cote 6.8) — Outsider ; 15 ROZARION (cote 14.0) — Outsider ; 2 LESSLEPASSER (cote 12.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-15/chantilly/420620_prix-de-la-vierge-de-lorette.html) | 10 ROYALWOOD (cote 10.0) | 7 SILK ROADSTER (cote 6.8) | 2 LESSLEPASSER (cote 12.0) | 9 AWAITING CHRISTMAS (cote 8.2) | 1 SWEET CHOP (cote 9.8) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 11 SCHUMAN (cote 8.9) | 9 AWAITING CHRISTMAS (cote 8.2) | 10 ROYALWOOD (cote 10.0) | 2 LESSLEPASSER (cote 12.0) | 1 SWEET CHOP (cote 9.8) | 12 HEROISTE (cote 23.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 1 SWEET CHOP (cote 9.8) | 4 GRAND SCOOP (cote 8.8) | 7 SILK ROADSTER (cote 6.8) | 11 SCHUMAN (cote 8.9) | 9 AWAITING CHRISTMAS (cote 8.2) | 9 AWAITING CHRISTMAS (cote 8.2) — Outsider ; 6 MAI DIRE MAI (cote 17.0) — Outsider ; 10 ROYALWOOD (cote 10.0) — Outsider ; 2 LESSLEPASSER (cote 12.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 1 SWEET CHOP (cote 9.8) | 4 GRAND SCOOP (cote 8.8) | 9 AWAITING CHRISTMAS (cote 8.2) | 11 SCHUMAN (cote 8.9) | 7 SILK ROADSTER (cote 6.8) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-15/chantilly/420620_prix-de-la-vierge-de-lorette.html) | 1 SWEET CHOP (cote 8.5) | 9 AWAITING CHRISTMAS (cote 7.8) | 4 GRAND SCOOP (cote 9.3) | 2 LESSLEPASSER (cote 13.0) | 11 SCHUMAN (cote 9.1) | 10 ROYALWOOD (cote 10.0) — Outsider ; 7 SILK ROADSTER (cote 7.3) — Outsider ; 15 ROZARION (cote 14.0) — Outsider ; 2 LESSLEPASSER (cote 13.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-15/chantilly/420620_prix-de-la-vierge-de-lorette.html) | 10 ROYALWOOD (cote 10.0) | 7 SILK ROADSTER (cote 7.3) | 2 LESSLEPASSER (cote 13.0) | 9 AWAITING CHRISTMAS (cote 7.8) | 1 SWEET CHOP (cote 8.5) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 11 SCHUMAN (cote 9.1) | 9 AWAITING CHRISTMAS (cote 7.8) | 10 ROYALWOOD (cote 10.0) | 2 LESSLEPASSER (cote 13.0) | 1 SWEET CHOP (cote 8.5) | 12 HEROISTE (cote 21.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 1 SWEET CHOP (cote 8.5) | 4 GRAND SCOOP (cote 9.3) | 7 SILK ROADSTER (cote 7.3) | 11 SCHUMAN (cote 9.1) | 9 AWAITING CHRISTMAS (cote 7.8) | 9 AWAITING CHRISTMAS (cote 7.8) — Outsider ; 6 MAI DIRE MAI (cote 21.0) — Outsider ; 10 ROYALWOOD (cote 10.0) — Outsider ; 2 LESSLEPASSER (cote 13.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 1 SWEET CHOP (cote 8.5) | 4 GRAND SCOOP (cote 9.3) | 9 AWAITING CHRISTMAS (cote 7.8) | 11 SCHUMAN (cote 9.1) | 7 SILK ROADSTER (cote 7.3) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
-| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-jeudi-15-octobre-2026/) | 11 SCHUMAN (cote 8.9) | 9 AWAITING CHRISTMAS (cote 8.2) | 15 ROZARION (cote 14.0) | 6 MAI DIRE MAI (cote 17.0) | 4 GRAND SCOOP (cote 8.8) | 15 ROZARION (cote 14.0) — Le meilleur tocard du Quinté+ ; 6 MAI DIRE MAI (cote 17.0) — L’outsider séduisant |
-| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-jeudi-15-octobre-2026/) | 11 SCHUMAN (cote 8.9) | — | — | — | — | 3 MISTER CHANG (cote 16.0) — Tocard du jour |
+| [Fréquence Turf](https://frequence-turf.fr/pronostic-quinte-pmu-jeudi-15-octobre-2026/) | 11 SCHUMAN (cote 9.1) | 9 AWAITING CHRISTMAS (cote 7.8) | 15 ROZARION (cote 14.0) | 6 MAI DIRE MAI (cote 21.0) | 4 GRAND SCOOP (cote 9.3) | 15 ROZARION (cote 14.0) — Le meilleur tocard du Quinté+ ; 6 MAI DIRE MAI (cote 21.0) — L’outsider séduisant |
+| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-jeudi-15-octobre-2026/) | 11 SCHUMAN (cote 9.1) | — | — | — | — | 3 MISTER CHANG (cote 16.0) — Tocard du jour |
 
 ### Les cinq chevaux les plus cités dans les cinq choix publiés
 
 | Cheval | Sources le citant |
 |---|---:|
-| 11 SCHUMAN (cote 8.9) | 6 |
-| 9 AWAITING CHRISTMAS (cote 8.2) | 6 |
-| 1 SWEET CHOP (cote 9.8) | 5 |
-| 4 GRAND SCOOP (cote 8.8) | 4 |
-| 7 SILK ROADSTER (cote 6.8) | 3 |
+| 11 SCHUMAN (cote 9.1) | 6 |
+| 9 AWAITING CHRISTMAS (cote 7.8) | 6 |
+| 1 SWEET CHOP (cote 8.5) | 5 |
+| 4 GRAND SCOOP (cote 9.3) | 4 |
+| 7 SILK ROADSTER (cote 7.3) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 11 – 9 – 1 – 4 – 7 | 2 € |
-| Cotes | 7 – 9 – 4 – 11 – 1 | 2 € |
+| Cotes | 7 – 9 – 1 – 11 – 4 | 2 € |
 | Bases + outsiders | 11 – 9 – 1 – 10 – 2 | 2 € |
 
 ### Cumul des trois premiers choix
