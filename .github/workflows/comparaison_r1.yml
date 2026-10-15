@@ -1,0 +1,69 @@
+name: Comparaison R1 quatre sites
+on:
+  schedule:
+    - cron: '*/10 6-22 * * *'
+    - cron: '45 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ['comparaison_r1/*.py', 'comparaison_r1/tests/**', '.github/workflows/comparaison_r1.yml']
+permissions:
+  contents: write
+concurrency:
+  group: comparaison-r1-independant
+  cancel-in-progress: false
+jobs:
+  comparaison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r comparaison_r1/requirements.txt
+      - name: Tests du protocole
+        run: python -m unittest discover -s comparaison_r1/tests -v
+      - name: Collecte et bilan independants
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          TODAY=$(TZ=Europe/Paris date +%F)
+          FLAGS=''
+          if [ "$DRY_RUN" = true ]; then FLAGS='--dry-run'; fi
+          if [[ "$TODAY" < '2026-10-16' ]]; then
+            if [ ! -f comparaison_r1/data/probe/access.json ]; then
+              python -m comparaison_r1.main --probe $FLAGS
+            fi
+          elif [[ "$TODAY" < '2026-12-23' ]]; then
+            python -m comparaison_r1.main $FLAGS
+          fi
+      - name: Persister les preuves et les recus
+        if: always()
+        run: |
+          mkdir -p comparaison_r1/data
+          git config user.name 'Comparaison R1'
+          git config user.email 'comparaison-r1@users.noreply.github.com'
+          git add comparaison_r1/data
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive comparatif R1 quatre sites'
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+            done
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparaison-r1-${{ github.run_id }}
+          path: comparaison_r1/data
+          retention-days: 90
