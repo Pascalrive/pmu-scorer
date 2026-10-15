@@ -2,7 +2,7 @@
 import math
 import re
 
-VERSION = '2026-10-12-v1'
+VERSION = '2026-10-15-v2'
 
 
 def nombre(value, default=0.0):

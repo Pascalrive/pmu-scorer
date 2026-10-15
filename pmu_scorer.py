@@ -24,6 +24,7 @@ import csv
 import logging
 import os
 import time
+import unicodedata
 from datetime import datetime, timedelta, timezone
 try:
     from zoneinfo import ZoneInfo
@@ -427,12 +428,7 @@ def get_pronostics_externes(date_str_iso, nr, nc, libelle, partants_actifs,
 
 
 def get_stats_proprietaire(proprietaire: str, hippodrome: str) -> float:
-    if not proprietaire or len(proprietaire) < 3:
-        return 50.0
-    prop_up = proprietaire.upper()
-    for key, score in GRANDES_ECURIES.items():
-        if key in prop_up:
-            return float(score)
+    # Aucun historique proprietaire verifie : ne pas noter la reputation du nom.
     return 50.0
 
 
@@ -510,7 +506,7 @@ def score_forme_fraiche(performances) -> float:
     maintenant   = datetime.now().timestamp() * 1000
     trente_jours = 30 * 24 * 3600 * 1000
     recentes = [p for p in performances
-                if (maintenant - (p.get("date") or 0)) <= trente_jours
+                if 0 <= (maintenant - (p.get("date") or 0)) <= trente_jours
                 and (p.get("date") or 0) > 0]
     if not recentes:
         return 50.0
@@ -534,11 +530,12 @@ def score_fautes_trot(performances, n=5, musique="") -> float:
             nb_fautes += 1
         elif arrivee in ("D", "G", "T", "A"):
             nb_fautes += 1
-    if nb_analysees < 3 and musique:
-        musique_recente = musique.upper().replace(" ", "")[-20:]
-        for code in ["D", "G", "A", "T"]:
-            nb_fautes += musique_recente.count(code)
-        nb_analysees = max(nb_analysees, min(5, len(musique_recente) // 2))
+    if nb_analysees == 0 and musique:
+        # La plus recente est a GAUCHE. Ne pas compter les marqueurs d'annee,
+        # ni additionner musique et historique (ce seraient les memes sorties).
+        recentes = decoder_musique(musique)[:n]
+        nb_analysees = len(recentes)
+        nb_fautes = sum(p['faute'] for p in recentes)
     if nb_analysees == 0:
         return 0.0
     taux = nb_fautes / nb_analysees
@@ -586,7 +583,7 @@ def score_distance(performances, distance_course, type_course) -> float:
     pertinentes = [p for p in performances
                    if abs((p.get("distance") or 0) - distance_course) <= 200]
     if not pertinentes:
-        return 50.0 if type_course == TYPE_HANDICAP else 40.0
+        return 50.0
     victoires = sum(1 for p in pertinentes
                     if str(p.get("place") or p.get("ordreArrivee") or 99) == "1")
     return (victoires / len(pertinentes)) * 100
@@ -619,7 +616,7 @@ def score_hippodrome_cheval(performances, hippodrome_actuel) -> float:
     v  = sum(1 for p in courses_h if str(p.get("place") or p.get("ordreArrivee") or 99) == "1")
     pl = sum(1 for p in courses_h
              if str(p.get("place") or p.get("ordreArrivee") or 99) in ("1","2","3"))
-    return min(100, (v / len(courses_h) * 60 + pl / len(courses_h) * 40) * 100)
+    return min(100, v / len(courses_h) * 60 + pl / len(courses_h) * 40)
 
 
 def score_jockey_sur_hippodrome(performances, jockey_nom, hippodrome_actuel) -> float:
@@ -628,7 +625,7 @@ def score_jockey_sur_hippodrome(performances, jockey_nom, hippodrome_actuel) -> 
     hippo_up = hippodrome_actuel.upper()
     perfs_hippo = [
         p for p in performances
-        if (jockey_nom.lower() in (p.get("driver") or p.get("nomJockey") or "").lower())
+        if meme_personne(jockey_nom, p.get("driver") or p.get("nomJockey") or "")
         and hippo_up in (p.get("hippodrome") or p.get("lieu") or "").upper()
     ]
     if len(perfs_hippo) >= 3:
@@ -638,11 +635,11 @@ def score_jockey_sur_hippodrome(performances, jockey_nom, hippodrome_actuel) -> 
                  if str(p.get("place") or p.get("ordreArrivee") or 99) in ("1","2","3"))
         taux_v  = v / len(perfs_hippo)
         taux_pl = pl / len(perfs_hippo)
-        return min(100, (taux_v * 60 + taux_pl * 40) * 100)
+        return min(100, taux_v * 60 + taux_pl * 40)
     else:
         perfs_jockey = [
             p for p in performances
-            if jockey_nom.lower() in (p.get("driver") or p.get("nomJockey") or "").lower()
+            if meme_personne(jockey_nom, p.get("driver") or p.get("nomJockey") or "")
         ]
         if not perfs_jockey:
             return 50.0
@@ -652,7 +649,7 @@ def score_jockey_sur_hippodrome(performances, jockey_nom, hippodrome_actuel) -> 
                  if str(p.get("place") or p.get("ordreArrivee") or 99) in ("1","2","3"))
         taux_v  = v / len(perfs_jockey)
         taux_pl = pl / len(perfs_jockey)
-        return min(100, (taux_v * 50 + taux_pl * 30) * 100)
+        return min(100, taux_v * 50 + taux_pl * 30)
 
 
 def score_corde(place_corde, nb_partants, discipline, distance) -> float:
@@ -700,33 +697,27 @@ def score_trio_proprietaire_jockey_entraineur(score_proprio, score_jockey_global
 
 
 def score_jockey_global(jockey_nom, tous_partants) -> float:
-    if not jockey_nom:
-        return 50.0
-    v = c = 0
-    for p in tous_partants:
-        nom_j = p.get("driver") or p.get("nomJockey") or ""
-        if nom_j.lower() == jockey_nom.lower():
-            v += p.get("nombreVictoires") or 0
-            c += p.get("nombreCourses") or 0
-    return (v / c * 100) if c else 50.0
+    # nombreVictoires/nombreCourses de /participants decrivent le CHEVAL.
+    # En attendant un historique de personnes verifie, valeur neutre, pas d'ELO fictif.
+    return 50.0
 
 
 def score_entraineur_global(entraineur_nom, tous_partants) -> float:
-    if not entraineur_nom:
-        return 50.0
-    v = c = 0
-    for p in tous_partants:
-        entr = p.get("entraineur") or {}
-        nom_e = entr.get("nom", "") if isinstance(entr, dict) else str(entr)
-        if nom_e.lower() == entraineur_nom.lower():
-            v += p.get("nombreVictoiresEntraineur") or p.get("nombreVictoires") or 0
-            c += p.get("nombreCoursesEntraineur") or p.get("nombreCourses") or 0
-    if c >= 5:
-        return min(100, (v / c) * 100)
-    for key, bonus in GRANDES_ECURIES.items():
-        if key in entraineur_nom.upper():
-            return float(bonus)
+    # Les compteurs des chevaux ne permettent pas d'estimer ceux de l'entraineur.
     return 50.0
+
+
+def meme_personne(a, b):
+    """Identite textuelle stricte ; une initiale commune ne prouve rien.
+
+    Les alias prenom complet/initiale exigent une source d'identite externe.
+    """
+    def cle(value):
+        text = unicodedata.normalize('NFKD', str(value or '')).upper()
+        return tuple(_re.findall(r'[A-Z0-9]+', ''.join(
+            c for c in text if not unicodedata.combining(c))))
+    x, y = cle(a), cle(b)
+    return bool(x and len(''.join(x)) > 3 and x == y)
 
 
 def score_pronostics_pond(nom, citations_pond, poids_max) -> float:
@@ -1020,11 +1011,8 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         s_rk, rk_best = score_record_kilometrique(partant.get("_meilleur_rk", 0), distance, partants_actifs) if trot else (0.0, 0.0)
         musique_ch = partant.get('musique') or ''
 
-        # RÉPARATION 27/05 : l'endpoint performances-detaillees est mort (perfs vide).
-        # On reconstruit des pseudo-perfs depuis la MUSIQUE (gratuite, déjà là) pour
-        # RÉVEILLER forme_r, forme_f, distance, terrain, progression, hippodrome qui
-        # renvoyaient une constante (0 ou 50) faute de données.
-        # Si l'endpoint redevient vivant un jour, on garde ses perfs (plus riches).
+        # La musique renseigne la forme et la progression, sans date ni parcours.
+        # Les autres aptitudes ne doivent exploiter que l'historique detaille.
         perfs_pour_score = perfs if perfs else musique_vers_perfs(musique_ch)
 
         s_fautes   = score_fautes_trot(perfs, musique=musique_ch) if trot else 0.0
@@ -1033,15 +1021,15 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
             "pronostics":   score_pronostics_pond(nom, citations_pond, poids_max),
             "outsider":     score_outsider(nom, outsiders, cote_jour),
             "forme_r":      score_forme_recente(perfs_pour_score),
-            "forme_f":      score_forme_fraiche(perfs_pour_score),
+            "forme_f":      score_forme_fraiche(perfs),
             "rk":           s_rk,
-            "distance":     score_distance(perfs_pour_score, distance, type_course),
-            "terrain":      score_terrain(perfs_pour_score, terrain),
+            "distance":     score_distance(perfs, distance, type_course),
+            "terrain":      score_terrain(perfs, terrain),
             "mouvement":    score_mouvement_cote(cote_veille, cote_jour),
             "trio_pje":     s_trio,
             "jockey_hippo": s_joc_hippo,
             "progression":  score_progression(perfs_pour_score),
-            "hippodrome":   score_hippodrome_cheval(perfs_pour_score, hippodrome),
+            "hippodrome":   score_hippodrome_cheval(perfs, hippodrome),
             "corde":        score_corde(place_corde, nb_partants, discipline, distance),
             "deferre_pmu":  score_deferre_pmu(partant) if trot else 50.0,
             "fautes":       0.0,
@@ -1055,13 +1043,9 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
         deferrage = deferrage_officiel(partant)
         est_deferre = deferrage['deferre']
 
-        jockey_str = str(jockey).upper().strip()
-        entr_str   = str(entraineur).upper().strip()
-        if (jockey_str and entr_str and len(jockey_str) > 3
-                and (jockey_str in entr_str or entr_str in jockey_str
-                     or jockey_str.split()[0] in entr_str)):
+        if meme_personne(jockey, entraineur):
             s_total = min(100, s_total + 4)
-            log.info(f"  *** DRIVER=ENTRAINEUR: {nom} ({jockey_str}) +4 pts ***")
+            log.info(f"  *** DRIVER=ENTRAINEUR: {nom} ({jockey}) +4 pts ***")
 
         value_bet = (nb_cit >= 3 and pct_cit >= 40
                      and cote_jour >= (100 / max(pct_cit, 1)) * 1.4)
@@ -1086,6 +1070,8 @@ def analyser_course(date_str, date_str_iso, date_veille, date_aff, nr, nc,
             "consensus_fort": len(src_p) >= 3,
             "sources_premium_citees": src_p, "rk_meilleur": round(rk_best, 2),
             "musique": musique_ch,
+            "source_performances": "PMU_DETAILLE" if perfs else "MUSIQUE_SEULE",
+            "nb_performances_detaillees": len(perfs),
             "jockey": jockey, "entraineur": str(entraineur),
             "proprietaire": str(proprietaire),
             "cote_veille": round(cote_veille, 2) if cote_veille else "",
@@ -1251,7 +1237,7 @@ def main():
             "discipline","type_course","type_course_details","distance_m",
             "nb_partants","num_partant","nom_cheval","age","place_corde","poids_porte",
             "deferre","deferrage_code","qualite_version","paris_disponibles","value_bet","est_outsider_surprise","consensus_fort","rk_meilleur",
-            "musique",
+            "musique","source_performances","nb_performances_detaillees",
             "jockey","entraineur","proprietaire","cote_veille","cote_jour","variation_cote_%",
             "nb_pronostics","nb_pronostics_pondere","pct_pronostics","nb_sources_total",
             "score_pronostics","score_outsider","score_forme","score_forme_fraiche",
