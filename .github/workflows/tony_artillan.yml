@@ -1,9 +1,17 @@
 name: Tony Artillan independant
 on:
+  schedule:
+    - cron: '*/10 6-22 * * *'
+    - cron: '35 5 * * *'
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Simulation sans notification Telegram'
+        type: boolean
+        default: false
   push:
     branches: [main]
-    paths: ['tony_artillan/*.py', 'tony_artillan/tests/**', '.github/workflows/tony_artillan.yml']
+    paths: ['tony_artillan/*.py', 'tony_artillan/inputs/**', 'tony_artillan/tests/**', '.github/workflows/tony_artillan.yml']
 permissions:
   contents: write
 concurrency:
@@ -20,16 +28,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install requests beautifulsoup4
-      - run: python tony_artillan/probe.py
-      - name: Archiver le diagnostic Tony Artillan
+      - run: pip install -r tony_artillan/requirements.txt
+      - name: Tests independants de la simulation
+        run: python -m unittest discover -s tony_artillan/tests -v
+      - name: Calculs et rapport Telegram Tony Artillan
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = 'true' ]; then
+            python -m tony_artillan.main --dry-run
+          else
+            python -m tony_artillan.main
+          fi
+      - name: Archiver uniquement les donnees Tony Artillan
         if: always()
         run: |
           git config user.name 'Tony Artillan'
           git config user.email 'tony-artillan@users.noreply.github.com'
           git add tony_artillan/data
           if ! git diff --cached --quiet; then
-            git commit -m 'Archive diagnostic Tony Artillan'
-            git pull --rebase origin main
-            git push origin HEAD:main
+            git commit -m 'Archive simulation Tony Artillan'
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+            done
           fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tony-artillan-${{ github.run_id }}
+          path: tony_artillan/data
+          retention-days: 90
