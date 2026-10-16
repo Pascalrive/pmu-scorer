@@ -24,7 +24,33 @@
       "bets": []
     },
     "majorite_3_ou_4": {
-      "bets": []
+      "bets": [
+        {
+          "race_id": "R1C2",
+          "departure": "2026-10-16T18:58:00+02:00",
+          "number": 9,
+          "name": "OLDHAM",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-16T18:33:59.176324+02:00",
+          "source_captured_at": "2026-10-16T18:18:45.399702+02:00",
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792168408000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": false
+          }
+        }
+      ]
     },
     "groupe_canalturf+turfin": {
       "bets": []
@@ -217,7 +243,8 @@
           "sha256": "cf5dae48af591f9675f15191eb456f1f9ce611f7994c4c1ecda3d32f5ee13227",
           "file": "preuves/cf5dae48af591f9675f15191eb456f1f9ce611f7994c4c1ecda3d32f5ee13227.gz"
         }
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-16",
@@ -410,9 +437,182 @@
       "title": "PRIX SATURNE",
       "departure": "2026-10-16T19:33:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 4,
+          "name": "J'ADORE CELESTE",
+          "source_url": "https://turfin.fr/course/2026-10-16/r1c3-vincennes-prix-saturne",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-16/r1c3-vincennes-prix-saturne",
+            "sha256": "95f82b4187ab81c892d64b6df687d27789f34a52e82f6590ab8a8f5cae2b9582",
+            "file": "preuves/95f82b4187ab81c892d64b6df687d27789f34a52e82f6590ab8a8f5cae2b9582.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/16102026/R1/C3/participants",
+            "sha256": "aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2",
+            "file": "preuves/aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2.gz"
+          },
+          "captured_at": "2026-10-16T18:33:35.877511+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792168223000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "PLAYBOY DE REVE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+            "sha256": "46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a",
+            "file": "preuves/46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/16102026/R1/C3/participants",
+            "sha256": "aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2",
+            "file": "preuves/aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2.gz"
+          },
+          "captured_at": "2026-10-16T18:33:37.397414+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792168223000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 2,
+          "name": "PLAYBOY DE REVE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+            "sha256": "46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a",
+            "file": "preuves/46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/16102026/R1/C3/participants",
+            "sha256": "aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2",
+            "file": "preuves/aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2.gz"
+          },
+          "captured_at": "2026-10-16T18:33:37.432996+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792168223000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 2,
+          "name": "PLAYBOY DE REVE",
+          "source_url": "https://www.geny.com/course/1691679-2026-10-16-vincennes-prix-saturne/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "evidence": {
+            "url": "https://www.geny.com/course/1691679-2026-10-16-vincennes-prix-saturne/partants-pronostics",
+            "sha256": "44ff78ae3b8b23137a68bfff0173e3b36fead2b8711abea684ca953c7568a7c2",
+            "file": "preuves/44ff78ae3b8b23137a68bfff0173e3b36fead2b8711abea684ca953c7568a7c2.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/16102026/R1/C3/participants",
+            "sha256": "aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2",
+            "file": "preuves/aa5519fca77b767a4bc00e8376fcd637ae4efa6ab5bd351586e7966cdefe47d2.gz"
+          },
+          "captured_at": "2026-10-16T18:33:58.390719+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792168223000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 2,
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 2,
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_canalturf+geny+zeturf": {
+          "number": 2,
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-16/r1c3-vincennes-prix-saturne",
+          "sha256": "95f82b4187ab81c892d64b6df687d27789f34a52e82f6590ab8a8f5cae2b9582",
+          "file": "preuves/95f82b4187ab81c892d64b6df687d27789f34a52e82f6590ab8a8f5cae2b9582.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+          "sha256": "46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a",
+          "file": "preuves/46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-16/paris-vincennes/420750_prix-saturne.html",
+          "sha256": "46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a",
+          "file": "preuves/46e2a76aa7040614ec85dc66c416879ee76da61483b2848fa0a2567abf5f207a.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1691679-2026-10-16-vincennes-prix-saturne/partants-pronostics",
+          "sha256": "44ff78ae3b8b23137a68bfff0173e3b36fead2b8711abea684ca953c7568a7c2",
+          "file": "preuves/44ff78ae3b8b23137a68bfff0173e3b36fead2b8711abea684ca953c7568a7c2.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-16T18:33:58.390759+02:00"
     },
     {
       "date": "2026-10-16",
