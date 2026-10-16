@@ -73,8 +73,10 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
         try:
             index=INDEX[site].format(date=race['date'])
             u=locate(site,f.get(index),race);body=f.get(u)
+            evidence=proof(folder,u,body)
+            race.setdefault('source_checks',{})[site]=evidence
             tip=parse(site,body,u,race,horses)
-            tip['evidence']=proof(folder,u,body)
+            tip['evidence']=evidence
             tip['official_evidence']=proof(folder,base+'/participants',f.get(base+'/participants'))
             horse=next(h for h in horses if h['numPmu']==tip['number'])
             if preview and clock()<datetime.fromisoformat(race['departure']):
@@ -95,7 +97,7 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     import copy
     previous=state.get('morning_preview',{})
     if previous.get('complete'):return previous
-    if previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
+    if previous.get('version')==2 and previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
     races=[]
     for original in state['races']:
         if datetime.fromisoformat(original['departure'])<=clock():continue
@@ -103,7 +105,7 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
         try:collect_race(race,f,folder,clock,preview=True)
         except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
         races.append(race)
-    result={'captured_at':clock().isoformat(),'races':races,
+    result={'version':2,'captured_at':clock().isoformat(),'races':races,
             'complete':bool(races) and all(set(r['tips'])==set(SITES) for r in races)}
     state['morning_preview']=result
     return result
