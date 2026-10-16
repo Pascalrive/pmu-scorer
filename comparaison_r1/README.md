@@ -5,9 +5,10 @@ Simulation uniquement : simples gagnants PMU INTERNET, mises progressives.
 
 ## Règle financière confirmée
 
-Dix-neuf scénarios avec comptes séparés : les quatre sites, les accords exacts
-2/4, 3/4, 4/4, la majorité stricte (3 ou 4/4), et les 11 combinaisons exactes de sites
-(6 paires, 4 triplets, 1 groupe de quatre). Pour chaque scénario et jour :
+Un seul compte actif : **majorité 3 ou 4/4**. Un unique simple gagnant par
+course lorsque trois ou quatre sites donnent le même premier choix.
+Les sites individuels, paires et combinaisons n'engagent aucune mise.
+Les quatre choix doivent être disponibles et jouables. Par jour :
 
 - Suite après pertes successives : **100, 200, 150, 150, 200 EUR**, puis arrêt.
 - Après un gain, retour à 100 EUR, même si les pertes précédentes ne sont pas récupérées.
@@ -15,7 +16,7 @@ Dix-neuf scénarios avec comptes séparés : les quatre sites, les accords exact
 - Arrêt dès que le bénéfice NET réglé atteint ou dépasse 500 EUR.
 - Plafond de 800 EUR de mises ENGAGÉES cumulées, pas de recyclage des gains dans ce plafond.
 - Si la prochaine mise dépasse le reste, arrêt sans réduire ni plafonner la mise.
-- Un pari à la fois par solution ; résultat précédent obligatoire.
+- Un pari à la fois sur le compte commun ; résultat précédent obligatoire.
 - Remise à zéro chaque jour, aucun report de pertes ou gains.
 
 Exemple : cinq pertes => 100+200+150+150+200 = **800 EUR**, arrêt.
@@ -61,18 +62,17 @@ Quatre choix valides et jouables exigés. Le groupe est figé avant départ.
 
 | Catégorie exclusive | Répartition | Action virtuelle |
 | --- | --- | --- |
-| Accord 2/4 | 2–1–1 | Mise progressive propre à cette solution |
-| Accord 3/4 | 3–1 | Mise progressive propre à cette solution |
-| Accord 4/4 | 4–0 | Mise progressive propre à cette solution |
+| Accord 2/4 | 2–1–1 | Aucun pari |
+| Accord 3/4 | 3–1 | Un seul pari sur le compte majorité |
+| Accord 4/4 | 4–0 | Un seul pari sur le compte majorité |
 | Égalité | 2–2 | Aucun pari de groupe |
 | Dispersion/manque | 1–1–1–1 ou source absente | Aucun pari de groupe |
 
-La majorité stricte réunit les cas 3/4 et 4/4. Un bilan descriptif des choix par combinaison exacte
-d'éditeurs est également calculé, avec un compte de mises indépendant pour
-chacune des 11 combinaisons exactes. Une paire ne joue que dans le cas 2–1–1
-correspondant, un triplet dans son cas 3–1 ; les égalités 2–2 restent exclues. Une unanimité n'est pas comptée comme six
-paires distinctes. Ces tableaux sont des vues du même test : ne pas additionner
-leurs mises, ni les additionner aux quatre simulations individuelles.
+La majorité stricte réunit les cas 3/4 et 4/4 dans la même progression et le
+même plafond. Les courses exclues ne consomment aucune mise ni palier.
+Les catégories d'accord et combinaisons exactes restent des statistiques
+sans mise, afin de comparer la qualité des choix. Les anciens comptes sont
+conservés pour audit et règlement éventuel mais ne reçoivent plus de paris.
 
 ## Bilans et interprétation
 
@@ -84,7 +84,7 @@ leurs mêmes courses communes réglées, y compris après arrêt des mises.
 Les prévisions observées ont une mise nulle : leurs taux décrivent la qualité
 des choix ; elles ne sont jamais additionnées aux simulations financières.
 Les groupes sont comparés aux choix individuels sur leurs propres courses
-communes (`same_race_baselines`). Les combinaisons exactes ont également leur propre bilan financier.
+communes (`same_race_baselines`). Les combinaisons exactes restent uniquement descriptives.
 
 Chaque bilan fournit mises, retours bruts, net, ROI, gagnants/perdants/remboursés,
 série de pertes observée et intervalle descriptif Wilson à 95 % du taux de
@@ -98,7 +98,7 @@ multiples exigent une analyse au contrôle final.
 `data/DATE/state.json` : captures, accords, états, preuves et erreurs ;
 `rapport.txt` : bilan lisible ; `notifications.json` : reçus Telegram.
 Les Telegram annoncent les choix figés, le suivi des mises et résultats de
-chaque solution dès changement, puis le bilan cumulé le soir, avec
+du compte majorité dès changement, puis le bilan cumulé le soir, avec
 déduplication. Un envoi incertain n'est pas renvoyé automatiquement.
 
 ## Exécution

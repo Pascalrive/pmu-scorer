@@ -126,10 +126,11 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     return result
 
 def preview_report(state,preview):
-    lines=['🌅 COMPARATIF R1 — APERÇU DES PRONOSTICS',state['date']+' · '+state['venue'],
+    lines=['🌅 COMPARATIF R1 — MAJORITÉ 3 OU 4/4',state['date']+' · '+state['venue'],
            'Choix provisoires relevés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
-           'Objectif +500 € NET/jour/scénario ; plafond 800 € de mises. Simulation uniquement.','']
+           'Un seul pari simple gagnant par course : même premier choix chez au moins 3 des 4 sites.',
+           'Un seul compte : objectif +500 € NET/jour ; plafond 800 € de mises. Simulation uniquement.','']
     names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
     for race in preview['races']:
         lines.append(f'{race["id"]} · {datetime.fromisoformat(race["departure"]).strftime("%Hh%M")} — {race["title"]}')
@@ -139,30 +140,33 @@ def preview_report(state,preview):
                 quote=(t.get('odds') or {}).get('rapport','—')
                 lines.append(f'{names[site]} : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
             else:lines.append(names[site]+' : sélection non disponible — nouvelle tentative prévue')
+        g=groups(race['tips']).get('majorite_3_ou_4')
+        if g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]} — un seul pari potentiel')
+        else:lines.append('⏭ AUCUN PARI : accord inférieur à 3/4 ou quatre choix valides indisponibles')
         lines.append('')
+    lines.append('Seules les courses admissibles font avancer la progression, sous réserve du résultat précédent et des limites quotidiennes.')
     lines.append('Aucune mise engagée par cet aperçu. ZEturf : sélection attribuée à ZEturf sur Canalturf. Les choix définitifs et mises seront envoyés avant chaque départ.')
     return '\n'.join(lines)
 
 def race_message(r):
     lines=[f'🔎 COMPARATIF R1 — {r["date"]}',f'{r["id"]} · {datetime.fromisoformat(r["departure"]).strftime("%Hh%M")} · {r["title"]}',
-           'Choix observés — mises progressives annoncées dans le suivi des solutions', '']
+           'Choix observés — une seule simulation majorité 3 ou 4/4', '']
     for site in SITES:
         t=r['tips'].get(site)
         if not t:lines.append(f'{site.upper()} : indisponible');continue
         q=t.get('odds') or {}
         lines.append(f'{site.upper()} : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
-    primary=[(k,g) for k,g in r['groups'].items() if k.startswith('accord_')]
-    if primary:
-        k,g=primary[0];lines+=['',f'🤝 ACCORD {len(g["sites"])}/4 : N°{g["number"]}', ' + '.join(g['sites'])]
-    else:lines+=['','Accord : absent, égalité 2–2 ou quatre sources non disponibles.']
+    g=r['groups'].get('majorite_3_ou_4')
+    if g:lines+=['',f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]}', ' + '.join(g['sites']), 'Un seul pari potentiel, selon budget et résultat précédent.']
+    else:lines+=['','⏭ AUCUN PARI : accord inférieur à 3/4 ou quatre choix valides indisponibles.']
     lines+=['Les choix sont figés avant départ. ZEturf est lu dans sa rubrique sur Canalturf.','Cotes indicatives ; règlement aux rapports définitifs PMU INTERNET.']
     return '\n'.join(lines)
 
 def live_report(state):
     lines=['💶 COMPARATIF R1 — SUIVI DES MISES',state['date']+' · '+state['venue'],
            'Simulation · Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.',
-           'Arrêt à +500 € NET ; plafond 800 € de mises/jour/solution.', '']
+           'Arrêt à +500 € NET ; plafond 800 € de mises/jour, compte unique.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
         lines.append(key.replace('_',' ').upper())
@@ -174,14 +178,14 @@ def live_report(state):
         lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / 800 €')
         lines.append('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise conditionnelle : '+euros(a['next_stake_cents']))
         lines.append('')
-    lines.append('Chaque solution a son budget propre. Remboursements inclus dans le plafond. Aucun pari réel.')
+    lines.append('Un seul compte pour tous les accords 3/4 et 4/4. Remboursements inclus dans le plafond. Aucun pari réel.')
     return '\n'.join(lines)
 
 def report(b):
     lines=['📊 COMPARATIF R1 — BILAN CUMULÉ',f'{START} → {END} · mises progressives virtuelles',
-           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Cible +500 € net/jour ; plafond mises 800 €/jour/solution.',
+           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Cible +500 € net/jour ; plafond mises 800 €/jour, compte unique.',
            f'{b["races"]} courses enregistrées · {b["common_settled_races"]} communes réglées',
-           '', 'CLASSEMENT PAR BÉNÉFICE NET SIMULÉ']
+           '', 'BILAN FINANCIER — MAJORITÉ 3 OU 4/4 UNIQUEMENT']
     def line(name,s):
         return f'{name} : {s["wins"]}/{s["wins"]+s["losses"]} gagnants · ROI {s["roi_percent"] if s["roi_percent"] is not None else "—"} % · net {euros(s["profit_cents"])} · {s["pending"]} en attente'
     for key in b['ranking_by_net_profit']:
@@ -197,7 +201,7 @@ def report(b):
         else:lines.append(key.replace('_',' ')+': aucun accord')
     for key,s in b['agreements'].items():
         if key.startswith('groupe_'):lines.append(f'{key[7:]} : {s["wins"]}/{s["wins"]+s["losses"]} choix gagnants')
-    lines+=['','ROI sur paris réglés uniquement ; résultats manquants signalés. Les catégories se chevauchent : ne pas additionner leurs mises.',
+    lines+=['','ROI sur paris réglés uniquement ; résultats manquants signalés. Les autres catégories sont descriptives, sans mise.',
             'Classement descriptif provisoire, sans preuve automatique de supériorité. Accord 2/4 exclut les égalités 2–2.']
     return '\n'.join(lines)
 
@@ -211,7 +215,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
     if announce:
-        notify_message('🔄 COMPARATIF R1 — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nObjectif : +500 € de bénéfice NET par jour/scénario.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nMême règle pour les quatre sites, les accords 2/4, 3/4, 4/4, la majorité et chacune des 11 combinaisons exactes de sites. Comptes indépendants, simulation uniquement.\nLes égalités 2–2 restent exclues. Bilan final le 16 décembre.')
+        notify_message('🔄 COMPARATIF R1 — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nObjectif : +500 € de bénéfice NET par jour/scénario.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 restent exclues. Bilan final le 16 décembre.')
         return
     if START<=day<=END or probe:
         folder=data/day;path=folder/'state.json'
@@ -227,7 +231,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                     results[site]={'status':'OK','tip':tip,'evidence':proof(data/'probe',u,body)}
                 except (ValueError,KeyError,TypeError,requests.RequestException) as e:results[site]={'status':'INDISPONIBLE','reason':str(e)[:200]}
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
-            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nArrêt à +500 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\n19 scénarios indépendants : 4 sites, 4 règles d’accord et 11 combinaisons exactes de sites.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
+            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nArrêt à +500 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
         preview=morning_preview(state,f,folder)
         write(path,state)
@@ -259,7 +263,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                 race.pop('settlement_error',None)
             except (ValueError,KeyError,requests.RequestException) as e:race['settlement_error']=type(e).__name__
         # After previous results are settled, engage next eligible course.
-        # All solutions progress independently; groups have their own accounts.
+        # Only strict majority advances the single active account.
         if state['date']==day and START<=day<=END:
             for race in state['races']:
                 delta=(datetime.fromisoformat(race['departure'])-datetime.now(TZ)).total_seconds()

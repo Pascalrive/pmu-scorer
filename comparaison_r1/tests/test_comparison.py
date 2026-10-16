@@ -116,7 +116,7 @@ class Progressive(unittest.TestCase):
         self.assertFalse(self.reserve_next(s,8))
     def test_identical_sequence_for_all_scenarios_and_combinations(self):
         from comparaison_r1.model import STRATEGIES, COMBINATIONS
-        self.assertEqual(len(STRATEGIES),19);self.assertEqual(len(set(COMBINATIONS)),11)
+        self.assertEqual(STRATEGIES,('majorite_3_ou_4',));self.assertEqual(len(set(COMBINATIONS)),11)
         for key in STRATEGIES:
             with self.subTest(key=key):
                 s={'bets':[]}
@@ -155,6 +155,11 @@ class Integration(unittest.TestCase):
         for name in ('Turfin','Canalturf','ZEturf','Geny'):self.assertIn(name+' : N°',message)
         self.assertTrue(p['complete']);self.assertEqual(r['tips'],{});self.assertEqual(s['solutions'],{})
         self.assertIn('+500 € NET',message)
+        self.assertIn('AUCUN PARI',message)
+        for pattern,expected in (([1,1,2,2],False),([1,1,2,3],False),([1,1,1,2],True),([1,1,1,1],True)):
+            p['races'][0]['tips']={site:{'number':n,'name':'H'+str(n),'playable':True} for site,n in zip(SITES,pattern)}
+            rendered=runner.preview_report(s,p)
+            self.assertEqual('✅ ADMISSIBLE' in rendered,expected)
 
     def test_previous_settlement_changes_next_real_reserved_stake(self):
         from comparaison_r1.model import STRATEGIES
@@ -171,7 +176,7 @@ class Integration(unittest.TestCase):
             r['groups']=groups(r['tips']);return r
         r1,r2=race(1,-10),race(2,10)
         solutions={k:{'bets':[]} for k in STRATEGIES}
-        reserve(solutions['geny'],r1,r1['tips']['geny'],horse,now-timedelta(minutes=20))
+        reserve(solutions['majorite_3_ou_4'],r1,r1['tips']['geny'],horse,now-timedelta(minutes=20))
         state={'date':'2026-10-16','venue':'TEST','races':[r1,r2],'solutions':solutions}
         class FakeFetch:
             audit=[]
@@ -185,9 +190,9 @@ class Integration(unittest.TestCase):
             root=Path(d);p=root/'data/2026-10-16/state.json';runner.write(p,state)
             with patch.object(runner,'datetime',Clock),patch.object(runner,'Fetcher',FakeFetch):runner.run(notify=False,root=root)
             actual=json.loads(p.read_text())['solutions']
-            self.assertEqual(actual['geny']['bets'][0]['status'],'PERDU')
-            self.assertEqual(actual['geny']['bets'][1]['stake_cents'],20000)
-            self.assertEqual(actual['turfin']['bets'][0]['stake_cents'],10000)
-            self.assertEqual(actual['accord_4_sur_4']['bets'][0]['stake_cents'],10000)
+            self.assertEqual(actual['majorite_3_ou_4']['bets'][0]['status'],'PERDU')
+            self.assertEqual(actual['majorite_3_ou_4']['bets'][1]['stake_cents'],20000)
+            self.assertEqual(set(actual),{'majorite_3_ou_4'})
+            self.assertEqual(sum(len(s['bets']) for s in actual.values()),2)
 
 if __name__=='__main__':unittest.main()

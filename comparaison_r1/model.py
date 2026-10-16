@@ -14,7 +14,8 @@ STAKES=(10000,20000,15000,15000,20000)
 BUDGET=80000
 TARGET=50000
 COMBINATIONS=tuple('groupe_'+'+'.join(sorted(c)) for size in (2,3,4) for c in combinations(SITES,size))
-STRATEGIES=SITES+('accord_2_sur_4','accord_3_sur_4','accord_4_sur_4','majorite_3_ou_4')+COMBINATIONS
+# Only this account can engage stakes; other groups remain descriptive.
+STRATEGIES=('majorite_3_ou_4',)
 SETTLED={'GAGNE','PERDU','REMBOURSE'}
 
 def freeze(race, site, tip, horse, now):
