@@ -134,6 +134,14 @@ class Progressive(unittest.TestCase):
         self.assertEqual(account(s)['stop'],'BUDGET');self.assertFalse(self.reserve_next(s,5))
 
 class Integration(unittest.TestCase):
+    def test_http200_rate_limit_stops_further_geny_requests(self):
+        from unittest.mock import Mock
+        response=Mock(status_code=200,text='<html><title>Trop de requêtes - Geny</title><body>429</body></html>')
+        f=runner.Fetcher()
+        with patch.object(runner.requests,'get',return_value=response) as get:
+            with self.assertRaisesRegex(ValueError,'429'):f.get('https://www.geny.com/a')
+            with self.assertRaisesRegex(ValueError,'Limitation'):f.get('https://www.geny.com/b')
+            self.assertEqual(get.call_count,1)
     def test_morning_preview_displays_all_sites_without_bets_or_frozen_tips(self):
         now=datetime(2026,10,16,8,tzinfo=runner.TZ)
         r={'date':'2026-10-16','id':'R1C1','c':1,'title':'TEST','departure':(now+timedelta(hours=10)).isoformat(),'market':True,'tips':{},'groups':{},'errors':{}}

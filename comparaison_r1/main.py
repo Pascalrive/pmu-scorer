@@ -5,9 +5,12 @@ import gzip
 import hashlib
 import json
 import os
+import time
 from pathlib import Path
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 import requests
+from bs4 import BeautifulSoup
 from .sources import SITES, INDEX, locate, parse, norm
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
@@ -21,12 +24,21 @@ def write(path,data):
     tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2));tmp.replace(path)
 
 class Fetcher:
-    def __init__(self):self.cache={};self.audit=[]
+    def __init__(self):self.cache={};self.audit=[];self.last_geny=None;self.blocked=set()
     def get(self,url):
         if url not in self.cache:
+            host=urlparse(url).netloc
+            if host in self.blocked:raise ValueError('Limitation de requêtes du site : reprise au prochain passage')
             try:
+                if host=='www.geny.com':
+                    if self.last_geny is not None:time.sleep(max(0,20-(time.monotonic()-self.last_geny)))
+                    self.last_geny=time.monotonic()
                 r=requests.get(url,timeout=20,headers={'User-Agent':'Comparaison-R1-Research/1.0'})
                 self.audit.append({'url':url,'status':r.status_code,'at':datetime.now(TZ).isoformat()})
+                title=BeautifulSoup(r.text,'html.parser').title if host=='www.geny.com' else None
+                if r.status_code==429 or (title and 'trop de requ' in title.get_text().lower()):
+                    self.blocked.add(host);self.cache[url]=None
+                    raise ValueError('Site limité (429) : demandes arrêtées pour ce passage')
                 r.raise_for_status()
                 self.cache[url]=r.text
             except requests.RequestException:
@@ -97,15 +109,18 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     import copy
     previous=state.get('morning_preview',{})
     if previous.get('complete'):return previous
-    if previous.get('version')==2 and previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
+    if previous.get('version')==3 and previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
     races=[]
     for original in state['races']:
         if datetime.fromisoformat(original['departure'])<=clock():continue
         race=copy.deepcopy(original);race.update(tips={},groups={},errors={})
-        try:collect_race(race,f,folder,clock,preview=True)
+        old=next((r for r in previous.get('races',[]) if r['id']==race['id'] and r['departure']==race['departure'] and r['title']==race['title']),None)
+        if old:race['tips']=copy.deepcopy(old['tips'])
+        try:
+            if set(race['tips'])!=set(SITES):collect_race(race,f,folder,clock,preview=True)
         except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
         races.append(race)
-    result={'version':2,'captured_at':clock().isoformat(),'races':races,
+    result={'version':3,'captured_at':clock().isoformat(),'races':races,
             'complete':bool(races) and all(set(r['tips'])==set(SITES) for r in races)}
     state['morning_preview']=result
     return result
