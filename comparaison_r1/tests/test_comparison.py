@@ -83,21 +83,21 @@ class Progressive(unittest.TestCase):
         return reserve(sol,race,tip,horse,now)
     def outcome(self,sol,status,returned):
         b=sol['bets'][-1];b.update(status=status,return_cents=returned,profit_cents=returned-b['stake_cents'])
-    def test_three_losses_stop_before_exceeding_budget(self):
+    def test_five_loss_sequence_totals_800_and_stops(self):
         s={'bets':[]}
-        for i,amount in enumerate([10000,20000,30000]):
+        for i,amount in enumerate([10000,20000,15000,15000,20000]):
             self.assertTrue(self.reserve_next(s,i));self.assertEqual(s['bets'][-1]['stake_cents'],amount)
             self.outcome(s,'PERDU',0)
-        self.assertFalse(self.reserve_next(s,3));self.assertEqual(account(s)['stop'],'BUDGET')
-        self.assertEqual(account(s)['committed_cents'],60000)
-        self.assertEqual(account(s)['remaining_cents'],20000)
+        self.assertFalse(self.reserve_next(s,5));self.assertEqual(account(s)['stop'],'SERIE_TERMINEE')
+        self.assertEqual(account(s)['committed_cents'],80000)
+        self.assertEqual(account(s)['remaining_cents'],0)
     def test_target_is_net_and_win_resets(self):
         s={'bets':[]};self.reserve_next(s,0);self.outcome(s,'PERDU',0)
         self.reserve_next(s,1);self.outcome(s,'GAGNE',40000)
         self.assertEqual(account(s)['profit_cents'],10000)
         self.assertEqual(account(s)['next_stake_cents'],10000)
-        self.assertTrue(self.reserve_next(s,2));self.outcome(s,'GAGNE',20000)
-        self.assertEqual(account(s)['profit_cents'],20000)
+        self.assertTrue(self.reserve_next(s,2));self.outcome(s,'GAGNE',50000)
+        self.assertEqual(account(s)['profit_cents'],50000)
         self.assertEqual(account(s)['stop'],'OBJECTIF');self.assertFalse(self.reserve_next(s,3))
     def test_pending_blocks_and_independent_reset(self):
         s={'bets':[]};self.assertTrue(self.reserve_next(s,0));self.assertFalse(self.reserve_next(s,1))
@@ -114,8 +114,40 @@ class Progressive(unittest.TestCase):
         self.assertEqual(account(s)['committed_cents'],80000)
         self.assertEqual(account(s)['profit_cents'],8000)
         self.assertFalse(self.reserve_next(s,8))
+    def test_identical_sequence_for_all_scenarios_and_combinations(self):
+        from comparaison_r1.model import STRATEGIES, COMBINATIONS
+        self.assertEqual(len(STRATEGIES),19);self.assertEqual(len(set(COMBINATIONS)),11)
+        for key in STRATEGIES:
+            with self.subTest(key=key):
+                s={'bets':[]}
+                for i,amount in enumerate((10000,20000,15000,15000,20000)):
+                    self.assertTrue(self.reserve_next(s,i));self.assertEqual(s['bets'][-1]['stake_cents'],amount)
+                    self.outcome(s,'PERDU',0)
+                self.assertFalse(self.reserve_next(s,5))
+    def test_win_reset_does_not_reset_daily_budget(self):
+        s={'bets':[]}
+        for i in range(3):self.reserve_next(s,i);self.outcome(s,'PERDU',0)
+        self.reserve_next(s,3);self.outcome(s,'GAGNE',30000)
+        self.assertEqual(account(s)['next_stake_cents'],10000)
+        self.assertEqual(account(s)['committed_cents'],60000)
+        self.reserve_next(s,4);self.outcome(s,'PERDU',0)
+        self.assertEqual(account(s)['stop'],'BUDGET');self.assertFalse(self.reserve_next(s,5))
 
 class Integration(unittest.TestCase):
+    def test_morning_preview_displays_all_sites_without_bets_or_frozen_tips(self):
+        now=datetime(2026,10,16,8,tzinfo=runner.TZ)
+        r={'date':'2026-10-16','id':'R1C1','c':1,'title':'TEST','departure':(now+timedelta(hours=10)).isoformat(),'market':True,'tips':{},'groups':{},'errors':{}}
+        s={'date':r['date'],'venue':'VINCENNES','races':[r],'solutions':{}}
+        def collect(race,f,folder,clock,preview=False):
+            self.assertTrue(preview)
+            race['tips']={site:{'number':i+1,'name':'CHEVAL '+str(i+1),'playable':True,'odds':{'rapport':3.5}} for i,site in enumerate(SITES)}
+        with patch.object(runner,'collect_race',collect):
+            p=runner.morning_preview(s,None,Path('/tmp'),clock=lambda:now)
+        message=runner.preview_report(s,p)
+        for name in ('Turfin','Canalturf','ZEturf','Geny'):self.assertIn(name+' : N°',message)
+        self.assertTrue(p['complete']);self.assertEqual(r['tips'],{});self.assertEqual(s['solutions'],{})
+        self.assertIn('+500 € NET',message)
+
     def test_previous_settlement_changes_next_real_reserved_stake(self):
         from comparaison_r1.model import STRATEGIES
         now=datetime(2026,10,16,14,tzinfo=runner.TZ)

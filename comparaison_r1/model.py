@@ -10,9 +10,11 @@ from .sources import SITES, norm
 START='2026-10-16'
 END='2026-12-15'
 BASE=10000
+STAKES=(10000,20000,15000,15000,20000)
 BUDGET=80000
-TARGET=20000
-STRATEGIES=SITES+('accord_2_sur_4','accord_3_sur_4','accord_4_sur_4','majorite_3_ou_4')
+TARGET=50000
+COMBINATIONS=tuple('groupe_'+'+'.join(sorted(c)) for size in (2,3,4) for c in combinations(SITES,size))
+STRATEGIES=SITES+('accord_2_sur_4','accord_3_sur_4','accord_4_sur_4','majorite_3_ou_4')+COMBINATIONS
 SETTLED={'GAGNE','PERDU','REMBOURSE'}
 
 def freeze(race, site, tip, horse, now):
@@ -95,20 +97,20 @@ def metrics(tips):
         'win_wilson95_percent':interval,'longest_observed_loss_streak':longest}
 
 def account(solution):
-    bets=solution['bets'];next_stake=BASE
+    bets=solution['bets'];losses=0
     for b in bets:
-        if b['status']=='PERDU':next_stake=b['stake_cents']+BASE
-        elif b['status']=='GAGNE':next_stake=BASE
-        elif b['status']=='REMBOURSE':next_stake=b['stake_cents']
+        if b['status']=='PERDU':losses+=1
+        elif b['status']=='GAGNE':losses=0
+    next_stake=STAKES[losses] if losses<len(STAKES) else None
     committed=sum(b['stake_cents'] for b in bets)
     returned=sum(b.get('return_cents',0) for b in bets)
     settled_stakes=sum(b['stake_cents'] for b in bets if b['status'] in SETTLED)
     profit=returned-settled_stakes
     pending=any(b['status']=='EN_ATTENTE' for b in bets)
-    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if profit>=TARGET else ('BUDGET' if committed+next_stake>BUDGET else None))
+    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if profit>=TARGET else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
     return {'committed_cents':committed,'remaining_cents':BUDGET-committed,
             'return_cents':returned,'profit_cents':profit,'next_stake_cents':next_stake,
-            'pending_stake_cents':committed-settled_stakes,'stop':stop}
+            'pending_stake_cents':committed-settled_stakes,'consecutive_losses':losses,'stop':stop}
 
 def reserve(solution,race,tip,horse,now,voters=None):
     a=account(solution)
@@ -127,7 +129,7 @@ def reserve(solution,race,tip,horse,now,voters=None):
 def summary(states):
     races=sorted([r for s in states for r in s['races']],key=lambda r:(r['departure'],r['id']))
     common=[r for r in races if set(r['tips'])==set(SITES) and all(t['status'] in SETTLED for t in r['tips'].values())]
-    out={'period':[START,END],'base_stake_cents':BASE,'daily_stake_cap_cents':BUDGET,'daily_profit_target_cents':TARGET,'races':len(races),'common_settled_races':len(common),
+    out={'period':[START,END],'loss_sequence_cents':list(STAKES),'base_stake_cents':BASE,'daily_stake_cap_cents':BUDGET,'daily_profit_target_cents':TARGET,'races':len(races),'common_settled_races':len(common),
          'individual':{},'common':{},'agreements':{},'paired_comparisons':{}}
     for site in SITES:
         out['individual'][site]=metrics([r['tips'][site] for r in races if site in r['tips']])
@@ -153,6 +155,7 @@ def summary(states):
         row['days_active']=sum(bool(a['bets']) for a in accounts)
         row['days_target_reached']=sum(account(a)['profit_cents']>=TARGET for a in accounts)
         row['days_budget_stop']=sum(account(a)['stop']=='BUDGET' for a in accounts)
+        row['days_sequence_stop']=sum(account(a)['stop']=='SERIE_TERMINEE' for a in accounts)
         row['max_daily_committed_cents']=max([account(a)['committed_cents'] for a in accounts],default=0)
         row['committed_cents']=sum(account(a)['committed_cents'] for a in accounts)
         out['solutions'][key]=row

@@ -5,20 +5,22 @@ Simulation uniquement : simples gagnants PMU INTERNET, mises progressives.
 
 ## Règle financière confirmée
 
-Huit solutions avec comptes séparés : les quatre sites, les accords exacts
-2/4, 3/4, 4/4, et la majorité stricte (3 ou 4/4). Pour chaque solution et jour :
+Dix-neuf scénarios avec comptes séparés : les quatre sites, les accords exacts
+2/4, 3/4, 4/4, la majorité stricte (3 ou 4/4), et les 11 combinaisons exactes de sites
+(6 paires, 4 triplets, 1 groupe de quatre). Pour chaque scénario et jour :
 
-- Première mise 100 EUR ; après chaque perte, mise précédente +100 EUR.
+- Suite après pertes successives : **100, 200, 150, 150, 200 EUR**, puis arrêt.
 - Après un gain, retour à 100 EUR, même si les pertes précédentes ne sont pas récupérées.
 - Après remboursement, même prochaine mise. Les mises remboursées comptent dans le plafond.
-- Arrêt dès que le bénéfice NET réglé atteint ou dépasse 200 EUR.
+- Arrêt dès que le bénéfice NET réglé atteint ou dépasse 500 EUR.
 - Plafond de 800 EUR de mises ENGAGÉES cumulées, pas de recyclage des gains dans ce plafond.
 - Si la prochaine mise dépasse le reste, arrêt sans réduire ni plafonner la mise.
 - Un pari à la fois par solution ; résultat précédent obligatoire.
 - Remise à zéro chaque jour, aucun report de pertes ou gains.
 
-Exemple : pertes à 100, 200, 300 EUR => 600 EUR engagés ; la prochaine mise
-de 400 EUR dépasserait 800 EUR : arrêt, avec 200 EUR non utilisés.
+Exemple : cinq pertes => 100+200+150+150+200 = **800 EUR**, arrêt.
+Un gain remet la progression à son premier palier, sans remettre le compteur
+des mises quotidiennes à zéro. Un remboursement ne change pas le palier.
 Les paris sont engagés virtuellement au plus tôt 30 minutes avant départ,
 à partir des choix préalablement figés et de l’identité/statut PMU vérifiés.
 Chaque engagement est immuable et horodaté avant départ.
@@ -66,7 +68,9 @@ Quatre choix valides et jouables exigés. Le groupe est figé avant départ.
 | Dispersion/manque | 1–1–1–1 ou source absente | Aucun pari de groupe |
 
 La majorité stricte réunit les cas 3/4 et 4/4. Un bilan descriptif des choix par combinaison exacte
-d'éditeurs est également calculé, sans ajouter de nouveaux comptes de mises. Une unanimité n'est pas comptée comme six
+d'éditeurs est également calculé, avec un compte de mises indépendant pour
+chacune des 11 combinaisons exactes. Une paire ne joue que dans le cas 2–1–1
+correspondant, un triplet dans son cas 3–1 ; les égalités 2–2 restent exclues. Une unanimité n'est pas comptée comme six
 paires distinctes. Ces tableaux sont des vues du même test : ne pas additionner
 leurs mises, ni les additionner aux quatre simulations individuelles.
 
@@ -80,7 +84,7 @@ leurs mêmes courses communes réglées, y compris après arrêt des mises.
 Les prévisions observées ont une mise nulle : leurs taux décrivent la qualité
 des choix ; elles ne sont jamais additionnées aux simulations financières.
 Les groupes sont comparés aux choix individuels sur leurs propres courses
-communes (`same_race_baselines`). Les combinaisons exactes restent descriptives.
+communes (`same_race_baselines`). Les combinaisons exactes ont également leur propre bilan financier.
 
 Chaque bilan fournit mises, retours bruts, net, ROI, gagnants/perdants/remboursés,
 série de pertes observée et intervalle descriptif Wilson à 95 % du taux de
@@ -112,3 +116,13 @@ jusqu'au 22 décembre, sans nouveau pari. La ponctualité GitHub n'est pas
 garantie : toute course manquée est visible dans la couverture.
 Le diagnostic du 15 octobre est hors échantillon. Contrôle final programmé
 le 16 décembre 2026 après-midi dans ChatGPT.
+
+## Aperçu matinal
+
+Dès le passage du matin, un aperçu des courses encore à venir présente
+Turfin, Canalturf, ZEturf et Geny, avec numéro, nom et cote PMU indicative.
+Une source manquante est nommée explicitement ; nouvelle tentative après une
+heure tant que la couverture est incomplète. L’aperçu est archivé séparément
+dans morning_preview et apercu.txt : il ne fige aucune sélection et n’engage
+aucune mise. La capture définitive reste dans la dernière heure, puis les
+mises dans les 30 dernières minutes suivant le règlement précédent.

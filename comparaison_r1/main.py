@@ -58,9 +58,9 @@ def meeting(day,f):
 def base_url(day,c):
     return API+datetime.fromisoformat(day).strftime('%d%m%Y')+f'/R1/C{c}'
 
-def collect_race(race,f,folder,clock=lambda:datetime.now(TZ)):
+def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
     now=clock();delta=(datetime.fromisoformat(race['departure'])-now).total_seconds()
-    if not 0<delta<=3600:return
+    if delta<=0 or (not preview and delta>3600):return
     base=base_url(race['date'],race['c'])
     meta=f.json(base)
     if (meta.get('numReunion')!=1 or meta.get('numOrdre')!=race['c'] or norm(meta.get('libelle'))!=norm(race['title'])
@@ -77,14 +77,54 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ)):
             tip['evidence']=proof(folder,u,body)
             tip['official_evidence']=proof(folder,base+'/participants',f.get(base+'/participants'))
             horse=next(h for h in horses if h['numPmu']==tip['number'])
-            if freeze(race,site,tip,horse,clock()):race['errors'].pop(site,None)
+            if preview and clock()<datetime.fromisoformat(race['departure']):
+                race['tips'][site]={**tip,'captured_at':clock().isoformat(),'stake_cents':0,
+                    'status':'APERÇU','playable':horse.get('statut')=='PARTANT' and race['market'],
+                    'odds':horse.get('dernierRapportDirect') or horse.get('dernierRapportReference')}
+                race['errors'].pop(site,None)
+            elif not preview and freeze(race,site,tip,horse,clock()):race['errors'].pop(site,None)
         except (ValueError,KeyError,TypeError,requests.RequestException) as e:
             race['errors'][site]={'type':type(e).__name__,'reason':str(e).split('\n')[0][:200],'at':clock().isoformat()}
-    if not race['groups'] and clock()<datetime.fromisoformat(race['departure']):
+    if not preview and not race['groups'] and clock()<datetime.fromisoformat(race['departure']):
         race['groups']=groups(race['tips'])
         if race['groups']:race['groups_frozen_at']=clock().isoformat()
 
 def euros(c):return f'{c/100:.2f} €'
+
+def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
+    import copy
+    previous=state.get('morning_preview',{})
+    if previous.get('complete'):return previous
+    if previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
+    races=[]
+    for original in state['races']:
+        if datetime.fromisoformat(original['departure'])<=clock():continue
+        race=copy.deepcopy(original);race.update(tips={},groups={},errors={})
+        try:collect_race(race,f,folder,clock,preview=True)
+        except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
+        races.append(race)
+    result={'captured_at':clock().isoformat(),'races':races,
+            'complete':bool(races) and all(set(r['tips'])==set(SITES) for r in races)}
+    state['morning_preview']=result
+    return result
+
+def preview_report(state,preview):
+    lines=['🌅 COMPARATIF R1 — APERÇU DES PRONOSTICS',state['date']+' · '+state['venue'],
+           'Choix provisoires relevés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
+           'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
+           'Objectif +500 € NET/jour/scénario ; plafond 800 € de mises. Simulation uniquement.','']
+    names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
+    for race in preview['races']:
+        lines.append(f'{race["id"]} · {datetime.fromisoformat(race["departure"]).strftime("%Hh%M")} — {race["title"]}')
+        for site in SITES:
+            t=race['tips'].get(site)
+            if t:
+                quote=(t.get('odds') or {}).get('rapport','—')
+                lines.append(f'{names[site]} : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
+            else:lines.append(names[site]+' : sélection non disponible — nouvelle tentative prévue')
+        lines.append('')
+    lines.append('Aucune mise engagée par cet aperçu. ZEturf : sélection attribuée à ZEturf sur Canalturf. Les choix définitifs et mises seront envoyés avant chaque départ.')
+    return '\n'.join(lines)
 
 def race_message(r):
     lines=[f'🔎 COMPARATIF R1 — {r["date"]}',f'{r["id"]} · {datetime.fromisoformat(r["departure"]).strftime("%Hh%M")} · {r["title"]}',
@@ -104,8 +144,8 @@ def race_message(r):
 
 def live_report(state):
     lines=['💶 COMPARATIF R1 — SUIVI DES MISES',state['date']+' · '+state['venue'],
-           'Simulation · 100 € ; +100 € après perte ; retour 100 € après gain.',
-           'Arrêt à +200 € NET ; plafond 800 € de mises/jour/solution.', '']
+           'Simulation · Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.',
+           'Arrêt à +500 € NET ; plafond 800 € de mises/jour/solution.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
         lines.append(key.replace('_',' ').upper())
@@ -122,7 +162,7 @@ def live_report(state):
 
 def report(b):
     lines=['📊 COMPARATIF R1 — BILAN CUMULÉ',f'{START} → {END} · mises progressives virtuelles',
-           '100 € ; +100 € après perte ; retour 100 € après gain. Cible +200 € net/jour ; plafond mises 800 €/jour/solution.',
+           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Cible +500 € net/jour ; plafond mises 800 €/jour/solution.',
            f'{b["races"]} courses enregistrées · {b["common_settled_races"]} communes réglées',
            '', 'CLASSEMENT PAR BÉNÉFICE NET SIMULÉ']
     def line(name,s):
@@ -144,7 +184,7 @@ def report(b):
             'Classement descriptif provisoire, sans preuve automatique de supériorité. Accord 2/4 exclut les égalités 2–2.']
     return '\n'.join(lines)
 
-def run(notify=True,probe=False,root=ROOT):
+def run(notify=True,probe=False,root=ROOT,announce=False):
     now=datetime.now(TZ);day=now.date().isoformat();f=Fetcher();data=root/'data';data.mkdir(parents=True,exist_ok=True)
     notices_path=data/'notifications.json'
     notices=json.loads(notices_path.read_text()) if notices_path.exists() else {'notifications':[]}
@@ -153,6 +193,9 @@ def run(notify=True,probe=False,root=ROOT):
             token,chat=os.environ.get('TELEGRAM_TOKEN'),os.environ.get('TELEGRAM_CHAT_ID')
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
+    if announce:
+        notify_message('🔄 COMPARATIF R1 — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nObjectif : +500 € de bénéfice NET par jour/scénario.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nMême règle pour les quatre sites, les accords 2/4, 3/4, 4/4, la majorité et chacune des 11 combinaisons exactes de sites. Comptes indépendants, simulation uniquement.\nLes égalités 2–2 restent exclues. Bilan final le 16 décembre.')
+        return
     if START<=day<=END or probe:
         folder=data/day;path=folder/'state.json'
         state=json.loads(path.read_text()) if path.exists() and not probe else meeting(day,f)
@@ -167,8 +210,14 @@ def run(notify=True,probe=False,root=ROOT):
                     results[site]={'status':'OK','tip':tip,'evidence':proof(data/'probe',u,body)}
                 except (ValueError,KeyError,TypeError,requests.RequestException) as e:results[site]={'status':'INDISPONIBLE','reason':str(e)[:200]}
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
-            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\n100 € au départ ; +100 € après perte ; retour 100 € après gain.\nArrêt à +200 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\n8 solutions indépendantes : 4 sites, accords exacts 2/4, 3/4, 4/4 et majorité 3 ou 4/4.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
+            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nArrêt à +500 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\n19 scénarios indépendants : 4 sites, 4 règles d’accord et 11 combinaisons exactes de sites.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
+        preview=morning_preview(state,f,folder)
+        write(path,state)
+        if preview.get('races'):
+            preview_text=preview_report(state,preview)
+            (folder/'apercu.txt').write_text(preview_text)
+            notify_message(preview_text)
         for race in state['races']:
             try:collect_race(race,f,folder)
             except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
@@ -178,6 +227,7 @@ def run(notify=True,probe=False,root=ROOT):
     for path in sorted(data.glob('????-??-??/state.json')):
         state=json.loads(path.read_text())
         if not START<=state['date']<=END:continue
+        for key in STRATEGIES:state.setdefault('solutions',{}).setdefault(key,{'bets':[]})
         for race in state['races']:
             if datetime.now(TZ)<datetime.fromisoformat(race['departure']):continue
             bets=[b for a in state['solutions'].values() for b in a['bets'] if b['race_id']==race['id']]
@@ -225,5 +275,5 @@ def run(notify=True,probe=False,root=ROOT):
     print('COMPARATIF',b['races'],b['common_settled_races'])
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');a=p.parse_args()
-    run(notify=not a.dry_run,probe=a.probe)
+    p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');p.add_argument('--announce',action='store_true');a=p.parse_args()
+    run(notify=not a.dry_run,probe=a.probe,announce=a.announce)

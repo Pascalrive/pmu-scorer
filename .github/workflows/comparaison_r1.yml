@@ -42,6 +42,8 @@ jobs:
           if [[ "$TODAY" < '2026-10-16' ]]; then
             if [ ! -f comparaison_r1/data/probe/access.json ]; then
               python -m comparaison_r1.main --probe $FLAGS
+            else
+              python -m comparaison_r1.main --announce $FLAGS
             fi
           elif [[ "$TODAY" < '2026-12-23' ]]; then
             python -m comparaison_r1.main $FLAGS
