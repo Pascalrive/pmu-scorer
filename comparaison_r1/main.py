@@ -70,18 +70,55 @@ def meeting(day,f):
 def base_url(day,c):
     return API+datetime.fromisoformat(day).strftime('%d%m%Y')+f'/R1/C{c}'
 
+def reconcile_schedule(race, meta, now):
+    if (meta.get('numReunion')!=1 or meta.get('numOrdre')!=race['c']
+            or norm(meta.get('libelle'))!=norm(race['title'])):
+        raise ValueError('Identité officielle modifiée : collecte suspendue')
+    old=datetime.fromisoformat(race['departure'])
+    new=datetime.fromtimestamp(meta['heureDepart']/1000,TZ)
+    if new!=old:
+        # Never reopen an elapsed betting window, even when a delay is announced late.
+        if now>=old or now>=new or new.date()!=old.date():
+            raise ValueError('Horaire modifié après fermeture de la fenêtre : mise suspendue')
+        race.setdefault('schedule_changes',[]).append({'old':old.isoformat(),'new':new.isoformat(),'checked_at':now.isoformat()})
+        race['departure']=new.isoformat()
+    race['errors'].pop('official',None)
+    race['errors'].pop('reservation',None)
+
+def no_bet_reason(state,race):
+    if not race.get('groups',{}).get('majorite_3_ou_4'):
+        return 'Accord 3/4 ou 4/4 absent, ou sources incomplètes'
+    if race.get('no_bet_reason'):return race['no_bet_reason']
+    for key in ('reservation','official'):
+        if key in race.get('errors',{}):return race['errors'][key]['reason']
+    bets=state.get('solutions',{}).get('majorite_3_ou_4',{}).get('bets',[])
+    preceding=[b for b in bets if b['departure']<race['departure']]
+    if preceding:
+        last=preceding[-1]
+        if not last.get('settled_at') or last['settled_at']>=race['departure']:
+            return 'Résultat précédent non enregistré avant départ'
+    reason=account({'bets':preceding})['stop']
+    return {'OBJECTIF':'Objectif net atteint','BUDGET':'Budget restant insuffisant','SERIE_TERMINEE':'Cinq pertes successives'}.get(reason,'Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué')
+
 def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
     now=clock();delta=(datetime.fromisoformat(race['departure'])-now).total_seconds()
     if delta<=0 or (not preview and delta>3600):return
     base=base_url(race['date'],race['c'])
     meta=f.json(base)
-    if (meta.get('numReunion')!=1 or meta.get('numOrdre')!=race['c'] or norm(meta.get('libelle'))!=norm(race['title'])
-        or meta.get('heureDepart')!=int(datetime.fromisoformat(race['departure']).timestamp()*1000)):
-        raise ValueError('Horaire ou identité officielle modifié : collecte suspendue')
+    reconcile_schedule(race,meta,now)
     race['market']=meta.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in meta.get('paris',[]))
     horses=f.json(base+'/participants')['participants']
     for site in SITES:
-        if site in race['tips']:continue
+        if site in race['tips']:
+            if preview:
+                t=race['tips'][site]
+                horse=next((h for h in horses if h['numPmu']==t['number'] and norm(h['nom'])==norm(t['name'])),None)
+                if horse:
+                    t['odds']=horse.get('dernierRapportDirect') or horse.get('dernierRapportReference')
+                    t['playable']=horse.get('statut')=='PARTANT' and race['market']
+                    t['odds_checked_at']=clock().isoformat()
+                else:t['playable']=False
+            continue
         try:
             index=INDEX[site].format(date=race['date'])
             u=locate(site,f.get(index),race);body=f.get(u)
@@ -108,8 +145,7 @@ def euros(c):return f'{c/100:.2f} €'
 def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     import copy
     previous=state.get('morning_preview',{})
-    if previous.get('complete'):return previous
-    if previous.get('version')==3 and previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
+    if previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
     races=[]
     for original in state['races']:
         if datetime.fromisoformat(original['departure'])<=clock():continue
@@ -117,7 +153,7 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
         old=next((r for r in previous.get('races',[]) if r['id']==race['id'] and r['departure']==race['departure'] and r['title']==race['title']),None)
         if old:race['tips']=copy.deepcopy(old['tips'])
         try:
-            if set(race['tips'])!=set(SITES):collect_race(race,f,folder,clock,preview=True)
+            collect_race(race,f,folder,clock,preview=True)
         except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
         races.append(race)
     result={'version':3,'captured_at':clock().isoformat(),'races':races,
@@ -127,7 +163,7 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
 
 def preview_report(state,preview):
     lines=['🌅 COMPARATIF R1 — MAJORITÉ 3 OU 4/4',state['date']+' · '+state['venue'],
-           'Choix provisoires relevés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
+           'Aperçu et cotes contrôlés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
            'Un seul pari simple gagnant par course : même premier choix chez au moins 3 des 4 sites.',
            'Un seul compte : objectif +500 € NET/jour ; plafond 800 € de mises. Simulation uniquement.','']
@@ -176,8 +212,14 @@ def live_report(state):
             if 'return_cents' in b:lines.append('Retour '+euros(b['return_cents'])+' · net du pari '+euros(b['profit_cents']))
         else:lines.append('Aucun pari engagé')
         lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / 800 €')
-        lines.append('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise conditionnelle : '+euros(a['next_stake_cents']))
+        finished=all(datetime.now(TZ)>=datetime.fromisoformat(r['departure']) for r in state['races'])
+        lines.append('Réunion terminée — aucune nouvelle mise.' if finished else ('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise conditionnelle : '+euros(a['next_stake_cents'])))
         lines.append('')
+    played={b['race_id'] for b in state['solutions']['majorite_3_ou_4']['bets']}
+    skipped=[r for r in state['races'] if r['id'] not in played and r.get('no_bet_reason')]
+    if skipped:
+        lines.append('COURSES NON JOUÉES')
+        lines.extend(r['id']+' : '+r['no_bet_reason'] for r in skipped)
     lines.append('Un seul compte pour tous les accords 3/4 et 4/4. Remboursements inclus dans le plafond. Aucun pari réel.')
     return '\n'.join(lines)
 
@@ -233,7 +275,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
             notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nArrêt à +500 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
-        preview=morning_preview(state,f,folder)
+        preview=morning_preview(state,f,folder) if now.hour>=7 else {}
         write(path,state)
         if preview.get('races'):
             preview_text=preview_report(state,preview)
@@ -271,8 +313,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                 base=base_url(day,race['c'])
                 try:
                     meta=f.json(base)
-                    if (meta.get('numReunion')!=1 or meta.get('numOrdre')!=race['c'] or norm(meta.get('libelle'))!=norm(race['title']) or meta.get('heureDepart')!=int(datetime.fromisoformat(race['departure']).timestamp()*1000)):
-                        raise ValueError('Identité/horaire modifié avant engagement')
+                    reconcile_schedule(race,meta,datetime.now(TZ))
                     race['market']=meta.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in meta.get('paris',[]))
                     horses=f.json(base+'/participants')['participants']
                     for key in STRATEGIES:
@@ -280,8 +321,15 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                         if not voters or voters[0] not in race['tips']:continue
                         tip=race['tips'][voters[0]]
                         horse=next((h for h in horses if h['numPmu']==tip['number']),{})
-                        reserve(state['solutions'][key],race,tip,horse,datetime.now(TZ),voters)
+                        if reserve(state['solutions'][key],race,tip,horse,datetime.now(TZ),voters):
+                            race.pop('no_bet_reason',None)
+                        else:
+                            race['last_reservation_check']={'at':datetime.now(TZ).isoformat(),'stop':account(state['solutions'][key])['stop']}
                 except (ValueError,KeyError,requests.RequestException) as e:race['errors']['reservation']={'reason':str(e)[:200]}
+        played={b['race_id'] for b in state['solutions']['majorite_3_ou_4']['bets']}
+        for race in state['races']:
+            if race['id'] not in played and datetime.now(TZ)>=datetime.fromisoformat(race['departure']):
+                race['no_bet_reason']=no_bet_reason(state,race)
         write(path,state);states.append(state)
         if any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
     b=summary(states);b['last_checked_at']=datetime.now(TZ).isoformat()

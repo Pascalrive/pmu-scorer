@@ -43,7 +43,7 @@ ne compte pas huit courses. Aucune autre réunion ne la remplace.
 Première capture valide dans les 60 minutes avant le départ, définitivement
 figée par site. Contrôle de date, réunion, course, titre, numéro et nom du
 cheval avec le programme PMU. Aucun rattrapage de pronostic après départ.
-Si le départ officiel change, collecte suspendue plutôt qu'identité devinée.
+Un changement d'horaire est accepté et journalisé seulement si l'identité reste identique et si ancien et nouveau départs sont encore futurs. Une fenêtre déjà passée n'est jamais rouverte.
 Chaque preuve HTML est conservée compressée et identifiée par SHA256 ; les
 cotes sont indicatives, jamais utilisées comme rapports de paiement.
 Les sources ne sont pas nécessairement capturées à la même seconde. Leurs
@@ -110,7 +110,7 @@ python -m comparaison_r1.main --probe --dry-run
 python -m comparaison_r1.main
 ```
 
-Workflow propre toutes les dix minutes (06h–22h UTC) et reprise le matin,
+Workflow propre toutes les cinq minutes (06h–22h UTC) et reprise le matin,
 arrêt de nouvelles captures après le 15 décembre. Règlements encore repris
 jusqu'au 22 décembre, sans nouveau pari. La ponctualité GitHub n'est pas
 garantie : toute course manquée est visible dans la couverture.
@@ -126,3 +126,5 @@ heure tant que la couverture est incomplète. L’aperçu est archivé séparém
 dans morning_preview et apercu.txt : il ne fige aucune sélection et n’engage
 aucune mise. La capture définitive reste dans la dernière heure, puis les
 mises dans les 30 dernières minutes suivant le règlement précédent.
+
+Les aperçus sont rafraîchis au plus une fois par heure à partir de 7h (Paris), y compris lorsque les quatre sources sont déjà présentes, afin de mettre à jour cotes et statuts PMU. Les sélections provisoires conservées gardent leur horodatage initial. Les courses non jouées sont expliquées dans le suivi. Les horaires GitHub restent indicatifs ; aucun pari rétroactif ne compense un passage tardif.

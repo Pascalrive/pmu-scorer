@@ -11,6 +11,11 @@ def euros(cents):
 
 def report(state):
     s = score(state)
+    if state.get('source_status') != 'VERIFIEE' and not any(r.get('stake_cents') for r in state['races']):
+        return ('⏸ PARIS TURF — ANCIEN PROGRAMME EN ATTENTE\n'+state['date']+
+                '\nAucun pronostic Paris Turf vérifié : aucun pari virtuel engagé ; aucun pari réglé.\n'
+                'Le programme actif COMPARATIF R1 — MAJORITÉ 3 OU 4/4 est distinct.\n'
+                'Pas de nouvel envoi de ce rappel aujourd’hui tant que la source reste indisponible.')
     lines = ['🏇 TONY ARTILLAN — SIMULATION', f"{state['date']} · R{state['r']} · {state['venue']}",
              'Simple gagnant · premier choix Paris Turf uniquement',
              '100 € au départ ; +100 € par perte ; retour à 100 € après un gain.',
