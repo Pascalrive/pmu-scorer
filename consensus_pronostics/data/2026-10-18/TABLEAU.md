@@ -4,16 +4,16 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C3 — PRIX RIEUSSEC
 
-Collecte : 2026-10-18T09:20:28.793171+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-18T11:17:08.344947+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-18/longchamp/420888_prix-rieussec.html) | 4 PRINCESSE D'AMOUR (cote 6.7) | 6 FERDINAND PREMIER (cote 41.0) | 8 MIGHTY BOY (cote 4.9) | 5 A BEAUREGARD (cote 46.0) | 3 BLACK SAXON (cote 14.0) | 2 DON'T SHUT ME DOWN (cote 10.0) — Outsider ; 12 VENDOMYA (cote 12.0) — Outsider ; 13 RECOLETTY (cote 23.0) — Outsider ; 13 RECOLETTY (cote 23.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-18/longchamp/420888_prix-rieussec.html) | 4 PRINCESSE D'AMOUR (cote 6.7) | 8 MIGHTY BOY (cote 4.9) | 2 DON'T SHUT ME DOWN (cote 10.0) | 7 STEP MORNING (cote 9.9) | 10 DEMPY (cote 8.5) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 8 MIGHTY BOY (cote 4.9) | 4 PRINCESSE D'AMOUR (cote 6.7) | 7 STEP MORNING (cote 9.9) | 10 DEMPY (cote 8.5) | 2 DON'T SHUT ME DOWN (cote 10.0) | 14 ZARFLIGHT (cote 18.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 8 MIGHTY BOY (cote 4.9) | 3 BLACK SAXON (cote 14.0) | 2 DON'T SHUT ME DOWN (cote 10.0) | 4 PRINCESSE D'AMOUR (cote 6.7) | 10 DEMPY (cote 8.5) | 10 DEMPY (cote 8.5) — Outsider ; 7 STEP MORNING (cote 9.9) — Outsider ; 12 VENDOMYA (cote 12.0) — Outsider ; 11 IKKO (cote 19.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 DON'T SHUT ME DOWN (cote 10.0) | 4 PRINCESSE D'AMOUR (cote 6.7) | 8 MIGHTY BOY (cote 4.9) | 10 DEMPY (cote 8.5) | 3 BLACK SAXON (cote 14.0) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74710-pronostic-quinte-du-dimanche-18-octobre-a-parislongchamp-prix-rieussec-r1c3.html) | 4 PRINCESSE D'AMOUR (cote 6.7) | 8 MIGHTY BOY (cote 4.9) | 2 DON'T SHUT ME DOWN (cote 10.0) | 12 VENDOMYA (cote 12.0) | 10 DEMPY (cote 8.5) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-18/longchamp/420888_prix-rieussec.html) | 4 PRINCESSE D'AMOUR (cote 6.4) | 6 FERDINAND PREMIER (cote 36.0) | 8 MIGHTY BOY (cote 5.3) | 5 A BEAUREGARD (cote 47.0) | 3 BLACK SAXON (cote 12.0) | 2 DON'T SHUT ME DOWN (cote 10.0) — Outsider ; 12 VENDOMYA (cote 12.0) — Outsider ; 13 RECOLETTY (cote 25.0) — Outsider ; 13 RECOLETTY (cote 25.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-18/longchamp/420888_prix-rieussec.html) | 4 PRINCESSE D'AMOUR (cote 6.4) | 8 MIGHTY BOY (cote 5.3) | 2 DON'T SHUT ME DOWN (cote 10.0) | 7 STEP MORNING (cote 9.4) | 10 DEMPY (cote 8.5) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 8 MIGHTY BOY (cote 5.3) | 4 PRINCESSE D'AMOUR (cote 6.4) | 7 STEP MORNING (cote 9.4) | 10 DEMPY (cote 8.5) | 2 DON'T SHUT ME DOWN (cote 10.0) | 14 ZARFLIGHT (cote 20.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 8 MIGHTY BOY (cote 5.3) | 3 BLACK SAXON (cote 12.0) | 2 DON'T SHUT ME DOWN (cote 10.0) | 4 PRINCESSE D'AMOUR (cote 6.4) | 10 DEMPY (cote 8.5) | 10 DEMPY (cote 8.5) — Outsider ; 7 STEP MORNING (cote 9.4) — Outsider ; 12 VENDOMYA (cote 12.0) — Outsider ; 11 IKKO (cote 19.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 DON'T SHUT ME DOWN (cote 10.0) | 4 PRINCESSE D'AMOUR (cote 6.4) | 8 MIGHTY BOY (cote 5.3) | 10 DEMPY (cote 8.5) | 3 BLACK SAXON (cote 12.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74710-pronostic-quinte-du-dimanche-18-octobre-a-parislongchamp-prix-rieussec-r1c3.html) | 4 PRINCESSE D'AMOUR (cote 6.4) | 8 MIGHTY BOY (cote 5.3) | 2 DON'T SHUT ME DOWN (cote 10.0) | 12 VENDOMYA (cote 12.0) | 10 DEMPY (cote 8.5) | Non publié |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
 
@@ -21,11 +21,11 @@ Collecte : 2026-10-18T09:20:28.793171+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 4 PRINCESSE D'AMOUR (cote 6.7) | 6 |
-| 8 MIGHTY BOY (cote 4.9) | 6 |
+| 4 PRINCESSE D'AMOUR (cote 6.4) | 6 |
+| 8 MIGHTY BOY (cote 5.3) | 6 |
 | 2 DON'T SHUT ME DOWN (cote 10.0) | 5 |
 | 10 DEMPY (cote 8.5) | 5 |
-| 3 BLACK SAXON (cote 14.0) | 3 |
+| 3 BLACK SAXON (cote 12.0) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
