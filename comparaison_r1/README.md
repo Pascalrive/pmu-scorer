@@ -13,7 +13,7 @@ Les quatre choix doivent être disponibles et jouables. Par jour :
 - Suite après pertes successives : **100, 200, 150, 150, 200 EUR**, puis arrêt.
 - Après un gain, retour à 100 EUR, même si les pertes précédentes ne sont pas récupérées.
 - Après remboursement, même prochaine mise. Les mises remboursées comptent dans le plafond.
-- Arrêt dès que le bénéfice NET réglé atteint ou dépasse 500 EUR.
+- Arrêt dès que le bénéfice NET réglé atteint ou dépasse 200 EUR à partir du 18/10/2026 (500 EUR les 16 et 17 octobre).
 - Plafond de 800 EUR de mises ENGAGÉES cumulées, pas de recyclage des gains dans ce plafond.
 - Si la prochaine mise dépasse le reste, arrêt sans réduire ni plafonner la mise.
 - Un pari à la fois sur le compte commun ; résultat précédent obligatoire.

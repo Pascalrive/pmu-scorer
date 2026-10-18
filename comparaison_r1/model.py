@@ -12,7 +12,12 @@ END='2026-12-15'
 BASE=10000
 STAKES=(10000,20000,15000,15000,20000)
 BUDGET=80000
-TARGET=50000
+TARGET=20000
+TARGET_EFFECTIVE_DATE='2026-10-18'
+
+def daily_target(day):
+    return TARGET if day>=TARGET_EFFECTIVE_DATE else 50000
+
 COMBINATIONS=tuple('groupe_'+'+'.join(sorted(c)) for size in (2,3,4) for c in combinations(SITES,size))
 # Only this account can engage stakes; other groups remain descriptive.
 STRATEGIES=('majorite_3_ou_4',)
@@ -108,8 +113,8 @@ def account(solution):
     settled_stakes=sum(b['stake_cents'] for b in bets if b['status'] in SETTLED)
     profit=returned-settled_stakes
     pending=any(b['status']=='EN_ATTENTE' for b in bets)
-    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if profit>=TARGET else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
-    return {'committed_cents':committed,'remaining_cents':BUDGET-committed,
+    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if profit>=solution.get('target_cents',TARGET) else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
+    return {'target_cents':solution.get('target_cents',TARGET),'committed_cents':committed,'remaining_cents':BUDGET-committed,
             'return_cents':returned,'profit_cents':profit,'next_stake_cents':next_stake,
             'pending_stake_cents':committed-settled_stakes,'consecutive_losses':losses,'stop':stop}
 
@@ -130,7 +135,7 @@ def reserve(solution,race,tip,horse,now,voters=None):
 def summary(states):
     races=sorted([r for s in states for r in s['races']],key=lambda r:(r['departure'],r['id']))
     common=[r for r in races if set(r['tips'])==set(SITES) and all(t['status'] in SETTLED for t in r['tips'].values())]
-    out={'period':[START,END],'loss_sequence_cents':list(STAKES),'base_stake_cents':BASE,'daily_stake_cap_cents':BUDGET,'daily_profit_target_cents':TARGET,'races':len(races),'common_settled_races':len(common),
+    out={'period':[START,END],'loss_sequence_cents':list(STAKES),'base_stake_cents':BASE,'daily_stake_cap_cents':BUDGET,'daily_profit_target_cents':daily_target(states[0]['date']) if len(states)==1 else TARGET,'target_effective_date':TARGET_EFFECTIVE_DATE,'races':len(races),'common_settled_races':len(common),
          'individual':{},'common':{},'agreements':{},'paired_comparisons':{}}
     for site in SITES:
         out['individual'][site]=metrics([r['tips'][site] for r in races if site in r['tips']])
@@ -151,15 +156,15 @@ def summary(states):
         out['paired_comparisons'][a+' / '+b]={'a_wins_b_loses':a_only,'b_wins_a_loses':b_only}
     out['solutions']={}
     for key in STRATEGIES:
-        accounts=[s.get('solutions',{}).get(key,{'bets':[]}) for s in states]
+        accounts=[{**s.get('solutions',{}).get(key,{'bets':[]}),'target_cents':daily_target(s['date'])} for s in states]
         row=metrics([b for a in accounts for b in a['bets']])
         row['days_active']=sum(bool(a['bets']) for a in accounts)
-        row['days_target_reached']=sum(account(a)['profit_cents']>=TARGET for a in accounts)
+        row['days_target_reached']=sum(account(a)['profit_cents']>=account(a)['target_cents'] for a in accounts)
         row['days_budget_stop']=sum(account(a)['stop']=='BUDGET' for a in accounts)
         row['days_sequence_stop']=sum(account(a)['stop']=='SERIE_TERMINEE' for a in accounts)
         row['max_daily_committed_cents']=max([account(a)['committed_cents'] for a in accounts],default=0)
         row['committed_cents']=sum(account(a)['committed_cents'] for a in accounts)
         out['solutions'][key]=row
     out['ranking_by_net_profit']=sorted(STRATEGIES,key=lambda k:-out['solutions'][k]['profit_cents'])
-    out['daily_accounts']={s['date']:{k:account(a) for k,a in s.get('solutions',{}).items()} for s in states}
+    out['daily_accounts']={s['date']:{k:account({**a,'target_cents':daily_target(s['date'])}) for k,a in s.get('solutions',{}).items()} for s in states}
     return out

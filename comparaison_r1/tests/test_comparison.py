@@ -99,6 +99,16 @@ class Progressive(unittest.TestCase):
         self.assertTrue(self.reserve_next(s,2));self.outcome(s,'GAGNE',50000)
         self.assertEqual(account(s)['profit_cents'],50000)
         self.assertEqual(account(s)['stop'],'OBJECTIF');self.assertFalse(self.reserve_next(s,3))
+    def test_new_target_exact_boundary_and_old_rule(self):
+        from comparaison_r1.model import daily_target
+        s={'bets':[{'stake_cents':10000,'status':'GAGNE','return_cents':29999}]}
+        self.assertIsNone(account(s)['stop'])
+        s['bets'][0]['return_cents']=30000
+        self.assertEqual(account(s)['stop'],'OBJECTIF')
+        s['target_cents']=daily_target('2026-10-17')
+        self.assertIsNone(account(s)['stop'])
+        self.assertEqual(daily_target('2026-10-18'),20000)
+
     def test_pending_blocks_and_independent_reset(self):
         s={'bets':[]};self.assertTrue(self.reserve_next(s,0));self.assertFalse(self.reserve_next(s,1))
         self.assertEqual(account(s)['stop'],'ATTENTE_RESULTAT')
@@ -154,7 +164,7 @@ class Integration(unittest.TestCase):
         message=runner.preview_report(s,p)
         for name in ('Turfin','Canalturf','ZEturf','Geny'):self.assertIn(name+' : N°',message)
         self.assertTrue(p['complete']);self.assertEqual(r['tips'],{});self.assertEqual(s['solutions'],{})
-        self.assertIn('+500 € NET',message)
+        self.assertIn('+200 € NET',message)
         self.assertIn('AUCUN PARI',message)
         for pattern,expected in (([1,1,2,2],False),([1,1,2,3],False),([1,1,1,2],True),([1,1,1,1],True)):
             p['races'][0]['tips']={site:{'number':n,'name':'H'+str(n),'playable':True} for site,n in zip(SITES,pattern)}
