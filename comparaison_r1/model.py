@@ -66,10 +66,33 @@ def split_pair(tips):
     for site in SITES:by[tips[site]['number']].append(site)
     return [{'number':n,'sites':v} for n,v in sorted(by.items())] if len(by)==2 and all(len(v)==2 for v in by.values()) else []
 
+def place_plan(race):
+    """Fixed place stakes; the explicitly approved exception is date-scoped."""
+    if race['date']<'2026-10-19':return []
+    tips=race['tips']
+    if race['date']=='2026-10-19' and race['id']=='R1C6':
+        if set(tips)!=set(SITES) or any(not t.get('playable') for t in tips.values()):return []
+        picks=[]
+        for number,name in ((7,'VINGT SEPT'),(11,'BRAMANS')):
+            sites=[site for site,t in tips.items() if t['number']==number and norm(t['name'])==norm(name)]
+            if not sites:return []
+            picks.append({'number':number,'sites':sites,'stake_cents':2500,'variant':'exception_2026_10_19_R1C6'})
+        return picks
+    pair=split_pair(tips)
+    if pair:return [{**g,'stake_cents':5000,'variant':'egalite_2_2'} for g in pair]
+    g=groups(tips).get('accord_2_sur_4')
+    return [{**g,'stake_cents':5000,'variant':'accord_2_1_1'}] if g else []
+
+def place_description(race):
+    plan=place_plan(race)
+    if not plan:return ''
+    label={'egalite_2_2':'ÉGALITÉ 2–2','accord_2_1_1':'ACCORD 2–1–1','exception_2026_10_19_R1C6':'EXCEPTION DU 19/10 — R1C6'}[plan[0]['variant']]
+    return '✅ '+label+' : '+' + '.join(f"N°{g['number']} · simple placé {g['stake_cents']/100:.0f} €" for g in plan)
+
 def reserve_split(solution,race,horses,now,place_market):
-    pairs=split_pair(race['tips']);a=account(solution)
-    if race['date']<'2026-10-19' or not START<=race['date']<=END or not place_market or len(pairs)!=2:return False
-    if a['pending_stake_cents'] or a['committed_cents']+10000>a['budget_cents']:return False
+    pairs=place_plan(race);a=account(solution)
+    if race['date']<'2026-10-19' or not START<=race['date']<=END or not place_market or not pairs:return False
+    if a['pending_stake_cents'] or a['committed_cents']+sum(g['stake_cents'] for g in pairs)>a['budget_cents']:return False
     if a['stop'] in ('OBJECTIF','SERIE_TERMINEE') or any(b['race_id']==race['id'] for b in solution['bets']):return False
     if not 0<(datetime.fromisoformat(race['departure'])-now).total_seconds()<=1800:return False
     new=[]
@@ -78,7 +101,7 @@ def reserve_split(solution,race,horses,now,place_market):
         h=next((h for h in horses if h.get('numPmu')==g['number'] and norm(h.get('nom'))==norm(t['name'])),{})
         if h.get('statut')!='PARTANT' or datetime.fromisoformat(t['captured_at'])>now:return False
         new.append({'race_id':race['id'],'departure':race['departure'],'number':g['number'],'name':t['name'],
-                    'stake_cents':5000,'market':'E_SIMPLE_PLACE','variant':'egalite_2_2','status':'EN_ATTENTE',
+                    'stake_cents':g['stake_cents'],'market':'E_SIMPLE_PLACE','variant':g['variant'],'status':'EN_ATTENTE',
                     'reserved_at':now.isoformat(),'source_captured_at':t['captured_at'],'sites':g['sites'],
                     'odds':h.get('dernierRapportDirect') or h.get('dernierRapportReference')})
     solution['bets'].extend(new)

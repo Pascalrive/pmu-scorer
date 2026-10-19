@@ -59,3 +59,32 @@ class SplitTests(unittest.TestCase):
   self.assertEqual(account(s)['remaining_cents'],0)
   s['bets']=s['bets'][:1];s['bets'][0]['stake_cents']=115000;s['bets'][0]['return_cents']=115000
   self.assertFalse(reserve_split(s,self.r,self.horses,self.now,True))
+
+ def test_two_one_one_single_50_and_budget(self):
+  from comparaison_r1.model import place_plan
+  for site,n in zip(SITES,[7,7,8,3]):self.tips[site].update(number=n,name='H'+str(n))
+  self.horses=[{'numPmu':7,'nom':'H7','statut':'PARTANT'}]
+  self.assertEqual([(g['number'],g['stake_cents']) for g in place_plan(self.r)],[(7,5000)])
+  self.s['budget_cents']=5000
+  self.assertTrue(reserve_split(self.s,self.r,self.horses,self.now,True))
+  self.assertEqual(len(self.s['bets']),1)
+  self.assertEqual(self.s['bets'][0]['variant'],'accord_2_1_1')
+  self.s['bets']=[];self.s['budget_cents']=4999
+  self.assertFalse(reserve_split(self.s,self.r,self.horses,self.now,True))
+ def test_exception_is_dated_named_atomic_and_displayed(self):
+  from comparaison_r1.model import place_plan,place_description
+  self.r['id']='R1C6'
+  names={7:'VINGT SEPT',14:'EVER FAST',11:'BRAMANS'}
+  for site,n in zip(SITES,[7,14,11,14]):self.tips[site].update(number=n,name=names[n])
+  self.horses=[{'numPmu':n,'nom':name,'statut':'PARTANT'} for n,name in names.items()]
+  self.assertEqual([(g['number'],g['stake_cents']) for g in place_plan(self.r)],[(7,2500),(11,2500)])
+  self.assertIn('EXCEPTION',place_description(self.r))
+  self.s['budget_cents']=4999
+  self.assertFalse(reserve_split(self.s,self.r,self.horses,self.now,True))
+  self.s['budget_cents']=5000
+  self.assertTrue(reserve_split(self.s,self.r,self.horses,self.now,True))
+  self.assertEqual([b['number'] for b in self.s['bets']],[7,11])
+  self.r['date']='2026-10-20'
+  self.assertEqual([(g['number'],g['stake_cents']) for g in place_plan(self.r)],[(14,5000)])
+  self.r['date']='2026-10-19';self.tips[SITES[0]]['name']='WRONG HORSE'
+  self.assertEqual(place_plan(self.r),[])

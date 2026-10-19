@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 from .sources import SITES, INDEX, locate, parse, norm
-from .model import daily_budget, daily_target, stop_at_target, split_pair, reserve_split
+from .model import daily_budget, daily_target, stop_at_target, split_pair, reserve_split, place_plan, place_description
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
 
@@ -87,8 +87,8 @@ def reconcile_schedule(race, meta, now):
     race['errors'].pop('reservation',None)
 
 def no_bet_reason(state,race):
-    if not race.get('groups',{}).get('majorite_3_ou_4') and not split_pair(race['tips']):
-        return 'Ni majorité 3/4–4/4 ni égalité 2–2 exploitable'
+    if not race.get('groups',{}).get('majorite_3_ou_4') and not place_plan(race):
+        return 'Aucun accord exploitable (majorité, 2–2 ou 2–1–1)'
     if race.get('no_bet_reason'):return race['no_bet_reason']
     for key in ('reservation','official'):
         if key in race.get('errors',{}):return race['errors'][key]['reason']
@@ -163,10 +163,10 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     return result
 
 def preview_report(state,preview):
-    lines=['🌅 TONY ARTILLAN — MAJORITÉ ET ÉGALITÉ 2–2',state['date']+' · '+state['venue'],
+    lines=['🌅 TONY ARTILLAN — MAJORITÉ ET SIMPLES PLACÉS',state['date']+' · '+state['venue'],
            'Aperçu et cotes contrôlés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
-           '3/4 ou 4/4 : simple gagnant progressif. Égalité 2–2 : deux simples placés de 50 €, soit 100 €.',
+           '3/4 ou 4/4 : simple gagnant progressif. Égalité 2–2 : 50 € placés par cheval. Accord 2–1–1 : 50 € placés sur le cheval cité deux fois. Exception R1C6 du 19/10 : 25 € placés sur le 7 et le 11.',
            'Un seul compte : repère +200 € NET, sans arrêt à ce seuil depuis le 19/10 ; plafond 1 200 € de mises. Simulation uniquement.','']
     names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
     for race in preview['races']:
@@ -178,9 +178,9 @@ def preview_report(state,preview):
                 lines.append(f'{names[site]} : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
             else:lines.append(names[site]+' : sélection non disponible — nouvelle tentative prévue')
         g=groups(race['tips']).get('majorite_3_ou_4')
-        if g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]} — un seul pari potentiel')
-        elif split_pair(race['tips']):lines.append('✅ ÉGALITÉ 2–2 : '+' + '.join('N°'+str(g['number']) for g in split_pair(race['tips']))+' · simple placé 50 € chacun')
-        else:lines.append('⏭ AUCUN PARI : ni majorité ni égalité 2–2 exploitable')
+        if place_plan(race):lines.append(place_description(race))
+        elif g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]} — un seul pari potentiel')
+        else:lines.append('⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible')
         lines.append('')
     lines.append('Seules les courses admissibles font avancer la progression, sous réserve du résultat précédent et des limites quotidiennes.')
     lines.append('Aucune mise engagée par cet aperçu. ZEturf : sélection attribuée à ZEturf sur Canalturf. Les choix définitifs et mises seront envoyés avant chaque départ.')
@@ -188,7 +188,7 @@ def preview_report(state,preview):
 
 def race_message(r):
     lines=[f'🔎 TONY ARTILLAN — {r["date"]}',f'{r["id"]} · {datetime.fromisoformat(r["departure"]).strftime("%Hh%M")} · {r["title"]}',
-           'Choix observés — majorité SG ou égalité 2–2 en SP', '']
+           'Choix observés — majorité SG ou accords 2–2 / 2–1–1 en SP', '']
     for site in SITES:
         t=r['tips'].get(site)
         if not t:lines.append(f'{site.upper()} : indisponible');continue
@@ -196,9 +196,9 @@ def race_message(r):
         lines.append(f'{site.upper()} : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
     g=r['groups'].get('majorite_3_ou_4')
-    if g:lines+=['',f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]}', ' + '.join(g['sites']), 'Un seul pari potentiel, selon budget et résultat précédent.']
-    elif split_pair(r['tips']):lines+=['','✅ ÉGALITÉ 2–2 : '+' + '.join('N°'+str(g['number']) for g in split_pair(r['tips']))+' · simples placés 50 € chacun (100 € au total), sous réserve du budget.']
-    else:lines+=['','⏭ AUCUN PARI : ni majorité ni égalité 2–2 exploitable.']
+    if place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
+    elif g:lines+=['',f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]}', ' + '.join(g['sites']), 'Un seul pari potentiel, selon budget et résultat précédent.']
+    else:lines+=['','⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible.']
     lines+=['Les choix sont figés avant départ. ZEturf est lu dans sa rubrique sur Canalturf.','Cotes indicatives ; règlement aux rapports définitifs PMU INTERNET.']
     return '\n'.join(lines)
 
@@ -208,7 +208,7 @@ def live_report(state):
            (f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET' if stop_at_target(state['date']) else 'Repère +200 € NET, sans arrêt au seuil')+f' ; plafond {daily_budget(state["date"])/100:.0f} € de mises/jour, compte unique.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
-        lines.append('COMPTE UNIQUE — MAJORITÉ SG + ÉGALITÉ 2–2 SP')
+        lines.append('COMPTE UNIQUE — MAJORITÉ SG + SIMPLES PLACÉS')
         if sol['bets']:
             latest=sol['bets'][-1]['race_id']
             for b in [b for b in sol['bets'] if b['race_id']==latest]:
@@ -219,21 +219,21 @@ def live_report(state):
         lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / '+euros(a['budget_cents']))
         finished=all(datetime.now(TZ)>=datetime.fromisoformat(r['departure']) for r in state['races'])
         lines.append('Réunion terminée — aucune nouvelle mise.' if finished else ('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise SG conditionnelle : '+euros(a['next_stake_cents'])))
-        if a['stop']=='BUDGET' and a['remaining_cents']>=10000:
-            lines.append('Budget insuffisant pour le prochain SG ; une égalité 2–2 à 100 € reste possible.')
+        if a['stop']=='BUDGET' and a['remaining_cents']>=5000:
+            lines.append('Budget insuffisant pour le prochain SG ; un pari placé fixe reste possible si sa mise totale tient dans le solde disponible.')
         lines.append('')
     played={b['race_id'] for b in state['solutions']['majorite_3_ou_4']['bets']}
     skipped=[r for r in state['races'] if r['id'] not in played and r.get('no_bet_reason')]
     if skipped:
         lines.append('COURSES NON JOUÉES')
         lines.extend(r['id']+' : '+r['no_bet_reason'] for r in skipped)
-    lines.append('Un seul compte : majorité SG et égalité 2–2 SP (50 € chacun). Les SP ne changent pas le palier SG. Remboursements inclus dans le plafond. Aucun pari réel.')
+    lines.append('Un seul compte : majorité SG et SP fixes (2–2, 2–1–1 et exception datée). Les SP ne changent pas le palier SG. Remboursements inclus dans le plafond. Aucun pari réel.')
     return '\n'.join(lines)
 
 def daily_report(state):
     sol=state['solutions']['majorite_3_ou_4'];a=account(sol)
     lines=['📅 TONY ARTILLAN — BILAN DU JOUR',state['date']+' · '+state['venue'],
-           'Simulation majorité SG + égalité 2–2 SP · toutes les courses observées',
+           'Simulation majorité SG + simples placés fixes · toutes les courses observées',
            ('Repère +200 € : les mises continuent après ce seuil.' if not stop_at_target(state['date']) else 'Ancienne règle : arrêt au seuil de la journée.'),
            f'Plafond {daily_budget(state["date"])/100:.0f} € et arrêt après cinq pertes successives conservés.','']
     running=0;peak=0;first=None;max_drawdown=0
@@ -279,7 +279,7 @@ def report(b):
         s=b['solutions'][key]
         lines.append(line('Tony Artillan',s)+f' · objectif atteint {s["days_target_reached"]}/{s["days_active"]} jours actifs')
     for market,stats in b['solutions']['majorite_3_ou_4'].get('by_market',{}).items():
-        lines.append(line('Majorité SG' if market=='E_SIMPLE_GAGNANT' else 'Égalité 2–2 SP',stats))
+        lines.append(line('Majorité SG' if market=='E_SIMPLE_GAGNANT' else 'Simples placés fixes',stats))
     lines+=['','QUALITÉ DES CHOIX — MÊMES COURSES, INDÉPENDAMMENT DES ARRÊTS']
     for site in SITES:
         s=b['common'][site];lines.append(f'{site} : {s["wins"]}/{s["wins"]+s["losses"]} gagnants · {b["individual"][site]["missing_races"]} courses sans choix')
@@ -359,7 +359,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                 race.pop('settlement_error',None)
             except (ValueError,KeyError,requests.RequestException) as e:race['settlement_error']=type(e).__name__
         # After previous results are settled, engage next eligible course.
-        # Only strict majority advances the single active account.
+        # Place stakes share the account but do not advance the SG progression.
         if state['date']==day and START<=day<=END:
             for race in state['races']:
                 delta=(datetime.fromisoformat(race['departure'])-datetime.now(TZ)).total_seconds()
@@ -371,7 +371,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                     race['market']=meta.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in meta.get('paris',[]))
                     horses=f.json(base+'/participants')['participants']
                     place_market=meta.get('hasEParis') is not False and any(p.get('typePari')=='E_SIMPLE_PLACE' and p.get('enVente') is not False for p in meta.get('paris',[]))
-                    if split_pair(race['tips']):
+                    if place_plan(race) or (race['date']=='2026-10-19' and race['id']=='R1C6'):
                         if reserve_split(state['solutions']['majorite_3_ou_4'],race,horses,datetime.now(TZ),place_market):race.pop('no_bet_reason',None)
                         continue
                     for key in STRATEGIES:
