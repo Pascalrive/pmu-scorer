@@ -88,7 +88,7 @@ def reconcile_schedule(race, meta, now):
 
 def no_bet_reason(state,race):
     if not race.get('groups',{}).get('majorite_3_ou_4') and not place_plan(race):
-        return 'Aucun accord exploitable (majorité, 2–2 ou 2–1–1)'
+        return 'Accord inférieur à 3/4 ou sources incomplètes' if race['date']>='2026-10-20' else 'Aucun accord exploitable (majorité, 2–2 ou 2–1–1)'
     if race.get('no_bet_reason'):return race['no_bet_reason']
     for key in ('reservation','official'):
         if key in race.get('errors',{}):return race['errors'][key]['reason']
@@ -163,10 +163,10 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     return result
 
 def preview_report(state,preview):
-    lines=['🌅 TONY ARTILLAN — MAJORITÉ ET SIMPLES PLACÉS',state['date']+' · '+state['venue'],
+    lines=['🌅 TONY ARTILLAN — MAJORITÉ 3 OU 4/4' if state['date']>='2026-10-20' else '🌅 TONY ARTILLAN — MAJORITÉ ET SIMPLES PLACÉS',state['date']+' · '+state['venue'],
            'Aperçu et cotes contrôlés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
-           '3/4 ou 4/4 : simple gagnant progressif. Égalité 2–2 : 50 € placés par cheval. Accord 2–1–1 : 50 € placés sur le cheval cité deux fois. Exception R1C6 du 19/10 : 25 € placés sur le 7 et le 11.',
+           ('3/4 ou 4/4 : un simple gagnant progressif. Aucun pari placé ; accords 2–2 et 2–1–1 exclus.' if state['date']>='2026-10-20' else '3/4 ou 4/4 : simple gagnant progressif. Égalité 2–2 : 50 € placés par cheval. Accord 2–1–1 : 50 € placés sur le cheval cité deux fois. Exception R1C6 du 19/10 : 25 € placés sur le 7 et le 11.'),
            'Un seul compte : repère +200 € NET, sans arrêt à ce seuil depuis le 19/10 ; plafond 1 200 € de mises. Simulation uniquement.','']
     names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
     for race in preview['races']:
@@ -188,7 +188,7 @@ def preview_report(state,preview):
 
 def race_message(r):
     lines=[f'🔎 TONY ARTILLAN — {r["date"]}',f'{r["id"]} · {datetime.fromisoformat(r["departure"]).strftime("%Hh%M")} · {r["title"]}',
-           'Choix observés — majorité SG ou accords 2–2 / 2–1–1 en SP', '']
+           'Choix observés — majorité 3/4 ou 4/4, simple gagnant uniquement' if r['date']>='2026-10-20' else 'Choix observés — majorité SG ou accords 2–2 / 2–1–1 en SP', '']
     for site in SITES:
         t=r['tips'].get(site)
         if not t:lines.append(f'{site.upper()} : indisponible');continue
@@ -208,7 +208,7 @@ def live_report(state):
            (f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET' if stop_at_target(state['date']) else 'Repère +200 € NET, sans arrêt au seuil')+f' ; plafond {daily_budget(state["date"])/100:.0f} € de mises/jour, compte unique.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
-        lines.append('COMPTE UNIQUE — MAJORITÉ SG + SIMPLES PLACÉS')
+        lines.append('COMPTE UNIQUE — MAJORITÉ SG' if state['date']>='2026-10-20' else 'COMPTE UNIQUE — MAJORITÉ SG + SIMPLES PLACÉS')
         if sol['bets']:
             latest=sol['bets'][-1]['race_id']
             for b in [b for b in sol['bets'] if b['race_id']==latest]:
@@ -219,7 +219,7 @@ def live_report(state):
         lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / '+euros(a['budget_cents']))
         finished=all(datetime.now(TZ)>=datetime.fromisoformat(r['departure']) for r in state['races'])
         lines.append('Réunion terminée — aucune nouvelle mise.' if finished else ('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise SG conditionnelle : '+euros(a['next_stake_cents'])))
-        if a['stop']=='BUDGET' and a['remaining_cents']>=5000:
+        if state['date']=='2026-10-19' and a['stop']=='BUDGET' and a['remaining_cents']>=5000:
             lines.append('Budget insuffisant pour le prochain SG ; un pari placé fixe reste possible si sa mise totale tient dans le solde disponible.')
         lines.append('')
     played={b['race_id'] for b in state['solutions']['majorite_3_ou_4']['bets']}
@@ -227,13 +227,13 @@ def live_report(state):
     if skipped:
         lines.append('COURSES NON JOUÉES')
         lines.extend(r['id']+' : '+r['no_bet_reason'] for r in skipped)
-    lines.append('Un seul compte : majorité SG et SP fixes (2–2, 2–1–1 et exception datée). Les SP ne changent pas le palier SG. Remboursements inclus dans le plafond. Aucun pari réel.')
+    lines.append('Un seul compte : majorité 3/4 ou 4/4 en simple gagnant uniquement depuis le 20/10. Les SP du 19/10 restent dans les bilans historiques. Remboursements inclus dans le plafond. Aucun pari réel.')
     return '\n'.join(lines)
 
 def daily_report(state):
     sol=state['solutions']['majorite_3_ou_4'];a=account(sol)
     lines=['📅 TONY ARTILLAN — BILAN DU JOUR',state['date']+' · '+state['venue'],
-           'Simulation majorité SG + simples placés fixes · toutes les courses observées',
+           'Simulation majorité SG uniquement depuis le 20/10 · toutes les courses observées',
            ('Repère +200 € : les mises continuent après ce seuil.' if not stop_at_target(state['date']) else 'Ancienne règle : arrêt au seuil de la journée.'),
            f'Plafond {daily_budget(state["date"])/100:.0f} € et arrêt après cinq pertes successives conservés.','']
     running=0;peak=0;first=None;max_drawdown=0
@@ -303,6 +303,8 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             token,chat=os.environ.get('TELEGRAM_TOKEN'),os.environ.get('TELEGRAM_CHAT_ID')
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
+    if day>='2026-10-19':
+        notify_message('🔄 TONY ARTILLAN — RETOUR À LA MAJORITÉ\nÀ partir du 20/10/2026 : un simple gagnant uniquement si au moins 3 des 4 premiers choix sont identiques en R1.\nAucun nouveau pari placé, ni accord 2–2 ou 2–1–1.\nMises après pertes : 100 → 200 → 150 → 150 → 200 €, puis arrêt ; gain : retour à 100 €.\nPlafond 1 200 €/jour. +200 € reste un repère sans arrêt.\nLes paris du 19/10 restent dans le bilan. Simulation uniquement.')
     if announce:
         notify_message('🔄 TONY ARTILLAN — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nRepère : +200 € NET par jour, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 1 200 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 sont jouées en simples placés : 50 € par cheval. Bilan final le 16 décembre.')
         return

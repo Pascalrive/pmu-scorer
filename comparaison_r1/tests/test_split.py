@@ -84,7 +84,16 @@ class SplitTests(unittest.TestCase):
   self.s['budget_cents']=5000
   self.assertTrue(reserve_split(self.s,self.r,self.horses,self.now,True))
   self.assertEqual([b['number'] for b in self.s['bets']],[7,11])
-  self.r['date']='2026-10-20'
+  self.r['id']='R1C8'
   self.assertEqual([(g['number'],g['stake_cents']) for g in place_plan(self.r)],[(14,5000)])
+  self.r['id']='R1C6'
   self.r['date']='2026-10-19';self.tips[SITES[0]]['name']='WRONG HORSE'
+  self.assertEqual(place_plan(self.r),[])
+
+ def test_no_new_place_bets_from_oct20(self):
+  from comparaison_r1.model import place_plan
+  self.r['date']='2026-10-20'
+  self.assertEqual(place_plan(self.r),[])
+  self.assertFalse(reserve_split(self.s,self.r,self.horses,self.now,True))
+  for site,n in zip(SITES,[1,1,2,3]):self.tips[site]['number']=n
   self.assertEqual(place_plan(self.r),[])

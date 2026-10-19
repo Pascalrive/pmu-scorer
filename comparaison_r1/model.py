@@ -68,7 +68,7 @@ def split_pair(tips):
 
 def place_plan(race):
     """Fixed place stakes; the explicitly approved exception is date-scoped."""
-    if race['date']<'2026-10-19':return []
+    if race['date']!='2026-10-19':return []
     tips=race['tips']
     if race['date']=='2026-10-19' and race['id']=='R1C6':
         if set(tips)!=set(SITES) or any(not t.get('playable') for t in tips.values()):return []

@@ -206,3 +206,14 @@ class Integration(unittest.TestCase):
             self.assertEqual(sum(len(s['bets']) for s in actual.values()),2)
 
 if __name__=='__main__':unittest.main()
+
+class EditorialChoiceAudit(unittest.TestCase):
+    def test_editorial_first_choices_are_distinct_from_market_favorite(self):
+        race={'date':'2026-10-20','c':1,'title':'TEST'}
+        horses=[{'numPmu':n,'nom':'H'+str(n),'dernierRapportDirect':{'rapport':q}} for n,q in ((1,1.2),(7,10),(9,20))]
+        body='<h1>TEST</h1><p>Réunion 1 Course 1</p>'
+        for key,n in (('ct',7),('zt',9)):
+            body+=f'<div id="tab-prono-{key}"><h3>La sélection</h3><table><tr><td>{n}</td><td>H{n}</td></tr><tr><td>1</td><td>H1</td></tr></table></div>'
+        url='https://www.canalturf.com/pronostics-PMU/2026-10-20/test.html'
+        self.assertEqual(parse('canalturf',body,url,race,horses)['number'],7)
+        self.assertEqual(parse('zeturf',body,url,race,horses)['number'],9)

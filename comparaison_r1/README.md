@@ -140,3 +140,31 @@ Nom affiché : Tony Artillan. Le répertoire comparaison_r1 et la clé historiqu
 ## Plafond révisé le 19 octobre
 
 Le plafond commun SG + SP passe à 1 200 EUR de mises engagées par jour dès le 19/10/2026. Les journées antérieures restent à 800 EUR. Aucun recyclage des retours dans ce plafond. La fin de progression après cinq pertes SG reste inchangée.
+
+## Protocole du 20 octobre 2026 : retour à la majorité seule
+
+Les SP fixes ne sont autorisés que pour le 19 octobre 2026. Dès le 20,
+aucun nouvel engagement SP : les accords 2–2 et 2–1–1 sont exclus.
+Un SG par course R1 française si au moins trois des quatre premiers choix
+validés sont identiques. Progression 100/200/150/150/200 EUR conservée,
+plafond 1 200 EUR, seuil +200 EUR observé sans arrêt. Le bilan du 19 reste intact.
+
+Audit du 19 octobre : `meeting` choisit la réunion officielle 1 française et
+énumère toutes ses courses. `sources.parse` lit le cheval principal Turfin,
+le premier de la sélection Canalturf, le premier de la rubrique ZEturf sur
+Canalturf, et le premier `listeBase` éditorial Geny. Les cotes PMU ne choisissent
+pas le cheval. Date/course/titre et numéro/nom sont validés. Le premier relevé
+valide de la dernière heure est figé avant départ : ce n'est pas une promesse
+de suivre les modifications ultérieures de chaque site. Turfin peut conseiller
+l'abstention malgré son cheval principal ; cette particularité est conservée.
+
+Candidats supplémentaires examinés, non intégrés au vote : Turfomania et
+Equidia Rédaction. OutilTurfiste, tableau Gagnant/Plat par position, échantillon
+35 Quintés à 16 partants sans NP du 20/03 au 19/09/2026 : premier choix gagnant
+22,9 % pour Turfomania et 17,1 % pour Equidia Rédaction. Ce relevé tiers limité
+au Quinté ne prouve ni rentabilité ni performance sur toutes les courses R1.
+Source : https://www.outilturfiste.com/statistiques_pronos_presse.php?discipline=Plat&jeu=Gagnant&mode=0
+Les forts pourcentages du tableau général mesurent la présence du gagnant dans
+l'ensemble du pronostic, et non la victoire du premier choix. Pas de passage
+implicite à 3/6 : toute extension doit définir un protocole distinct et vérifier
+l'accessibilité, l'identité éditoriale, l'indépendance et la couverture R1.
