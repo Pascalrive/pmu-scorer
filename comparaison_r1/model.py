@@ -56,11 +56,35 @@ def groups(tips):
     result['groupe_'+'+'.join(sorted(voters))]={'number':n,'sites':voters}
     return result
 
+def split_pair(tips):
+    if set(tips)!=set(SITES) or any(not t.get('playable') for t in tips.values()):return []
+    by=defaultdict(list)
+    for site in SITES:by[tips[site]['number']].append(site)
+    return [{'number':n,'sites':v} for n,v in sorted(by.items())] if len(by)==2 and all(len(v)==2 for v in by.values()) else []
+
+def reserve_split(solution,race,horses,now,place_market):
+    pairs=split_pair(race['tips']);a=account(solution)
+    if race['date']<'2026-10-19' or not START<=race['date']<=END or not place_market or len(pairs)!=2:return False
+    if a['pending_stake_cents'] or a['committed_cents']+10000>BUDGET:return False
+    if a['stop'] in ('OBJECTIF','SERIE_TERMINEE') or any(b['race_id']==race['id'] for b in solution['bets']):return False
+    if not 0<(datetime.fromisoformat(race['departure'])-now).total_seconds()<=1800:return False
+    new=[]
+    for g in pairs:
+        t=race['tips'][g['sites'][0]]
+        h=next((h for h in horses if h.get('numPmu')==g['number'] and norm(h.get('nom'))==norm(t['name'])),{})
+        if h.get('statut')!='PARTANT' or datetime.fromisoformat(t['captured_at'])>now:return False
+        new.append({'race_id':race['id'],'departure':race['departure'],'number':g['number'],'name':t['name'],
+                    'stake_cents':5000,'market':'E_SIMPLE_PLACE','variant':'egalite_2_2','status':'EN_ATTENTE',
+                    'reserved_at':now.isoformat(),'source_captured_at':t['captured_at'],'sites':g['sites'],
+                    'odds':h.get('dernierRapportDirect') or h.get('dernierRapportReference')})
+    solution['bets'].extend(new)
+    return True
+
 def settle(tip, payload, horses):
     if tip['status']!='EN_ATTENTE':return False
     horse=next((h for h in horses if h.get('numPmu')==tip['number']),None)
     if not horse or norm(horse.get('nom'))!=norm(tip['name']):return False
-    tables=[t for t in payload if t.get('typePari')=='E_SIMPLE_GAGNANT'] if isinstance(payload,list) else []
+    tables=[t for t in payload if t.get('typePari')==tip.get('market','E_SIMPLE_GAGNANT')] if isinstance(payload,list) else []
     if len(tables)!=1:return False
     table=tables[0]
     stake=tip['stake_cents']
@@ -110,6 +134,7 @@ def metrics(tips):
 def account(solution):
     bets=solution['bets'];losses=0
     for b in bets:
+        if b.get('market')=='E_SIMPLE_PLACE':continue
         if b['status']=='PERDU':losses+=1
         elif b['status']=='GAGNE':losses=0
     next_stake=STAKES[losses] if losses<len(STAKES) else None
@@ -118,11 +143,13 @@ def account(solution):
     settled_stakes=sum(b['stake_cents'] for b in bets if b['status'] in SETTLED)
     profit=returned-settled_stakes
     balance=0;peak=0;first_target=None;max_drawdown=0
-    for b in bets:
-        if b['status'] not in SETTLED:continue
-        balance+=b.get('return_cents',0)-b['stake_cents'];peak=max(peak,balance);max_drawdown=max(max_drawdown,peak-balance)
-        if first_target is None and balance>=solution.get('target_cents',TARGET):
-            first_target={'race_id':b.get('race_id'),'profit_cents':balance}
+    batches=defaultdict(list)
+    for i,b in enumerate(bets):batches[b.get('race_id',str(i))].append(b)
+    for race_id,batch in batches.items():
+        if any(b['status'] not in SETTLED for b in batch):break
+        balance+=sum(b.get('return_cents',0)-b['stake_cents'] for b in batch)
+        peak=max(peak,balance);max_drawdown=max(max_drawdown,peak-balance)
+        if first_target is None and balance>=solution.get('target_cents',TARGET):first_target={'race_id':race_id,'profit_cents':balance}
     pending=any(b['status']=='EN_ATTENTE' for b in bets)
     stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if solution.get('stop_at_target',True) and profit>=solution.get('target_cents',TARGET) else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
     return {'first_target':first_target,'peak_profit_cents':peak,'max_drawdown_cents':max_drawdown,'stop_at_target':solution.get('stop_at_target',True),'target_cents':solution.get('target_cents',TARGET),'committed_cents':committed,'remaining_cents':BUDGET-committed,
@@ -175,6 +202,7 @@ def summary(states):
         row['days_sequence_stop']=sum(account(a)['stop']=='SERIE_TERMINEE' for a in accounts)
         row['max_daily_committed_cents']=max([account(a)['committed_cents'] for a in accounts],default=0)
         row['committed_cents']=sum(account(a)['committed_cents'] for a in accounts)
+        row['by_market']={market:metrics([b for a in accounts for b in a['bets'] if b.get('market','E_SIMPLE_GAGNANT')==market]) for market in ('E_SIMPLE_GAGNANT','E_SIMPLE_PLACE')}
         out['solutions'][key]=row
     out['ranking_by_net_profit']=sorted(STRATEGIES,key=lambda k:-out['solutions'][k]['profit_cents'])
     out['daily_accounts']={s['date']:{k:account({**a,'target_cents':daily_target(s['date']),'stop_at_target':stop_at_target(s['date'])}) for k,a in s.get('solutions',{}).items()} for s in states}

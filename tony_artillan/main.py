@@ -66,7 +66,7 @@ def run(now=None, root=ROOT, notify=True, fetcher_factory=Fetcher):
                     token, chat = os.environ.get('TELEGRAM_TOKEN'), os.environ.get('TELEGRAM_CHAT_ID')
                     if not token or not chat:
                         raise RuntimeError('Configuration Telegram absente')
-                    send(error, '🏇 TONY ARTILLAN — '+date+'\nSimulation suspendue : aucune réunion française de huit courses identifiable ou programme PMU indisponible.\nAucun pari engagé ; aucun gain calculé.',
+                    send(error, '🏇 PARIS TURF — ANCIEN PROGRAMME — '+date+'\nSimulation suspendue : aucune réunion française de huit courses identifiable ou programme PMU indisponible.\nAucun pari engagé ; aucun gain calculé.',
                          token, chat, save_error, now)
                 print('TONY_MEETING_UNAVAILABLE',type(e).__name__)
                 continue
