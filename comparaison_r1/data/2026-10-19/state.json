@@ -222,7 +222,8 @@
       "last_reservation_check": {
         "at": "2026-10-19T13:46:05.909279+02:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-19",
@@ -492,148 +493,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 3,
-    "captured_at": "2026-10-19T12:49:07.372647+02:00",
+    "captured_at": "2026-10-19T13:56:11.453796+02:00",
     "races": [
-      {
-        "date": "2026-10-19",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX DE LA FORET DE LYONS",
-        "departure": "2026-10-19T13:55:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 2,
-            "name": "ZELORO",
-            "source_url": "https://turfin.fr/course/2026-10-19/r1c1-deauville-prix-de-la-foret-de-lyons",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-19/r1c1-deauville-prix-de-la-foret-de-lyons",
-              "sha256": "59f475db387bba31285026a97fd7572e00f0b14ddcc8e2f0e7f7ba7c20db9ab6",
-              "file": "preuves/59f475db387bba31285026a97fd7572e00f0b14ddcc8e2f0e7f7ba7c20db9ab6.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C1/participants",
-              "sha256": "d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b",
-              "file": "preuves/d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b.gz"
-            },
-            "captured_at": "2026-10-19T07:51:48.960022+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406739000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-19T12:49:03.011099+02:00"
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 2,
-            "name": "ZELORO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html",
-              "sha256": "f59e6ef185f3e2bf9755540d9dae0bb3461f1c57edc0afc205c8270d40097108",
-              "file": "preuves/f59e6ef185f3e2bf9755540d9dae0bb3461f1c57edc0afc205c8270d40097108.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C1/participants",
-              "sha256": "d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b",
-              "file": "preuves/d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b.gz"
-            },
-            "captured_at": "2026-10-19T07:51:50.555987+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406739000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-19T12:49:03.011118+02:00"
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 2,
-            "name": "ZELORO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html",
-              "sha256": "f59e6ef185f3e2bf9755540d9dae0bb3461f1c57edc0afc205c8270d40097108",
-              "file": "preuves/f59e6ef185f3e2bf9755540d9dae0bb3461f1c57edc0afc205c8270d40097108.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C1/participants",
-              "sha256": "d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b",
-              "file": "preuves/d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b.gz"
-            },
-            "captured_at": "2026-10-19T07:51:50.634591+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406739000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-19T12:49:03.011125+02:00"
-          },
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "CELESTIAL",
-            "source_url": "https://www.geny.com/course/1692103-2026-10-19-deauville-prix-de-la-foret-de-lyons/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "evidence": {
-              "url": "https://www.geny.com/course/1692103-2026-10-19-deauville-prix-de-la-foret-de-lyons/partants-pronostics",
-              "sha256": "e7f8841defd61ad849e53a2b7ba46c9f14253775ecba8e88497a2d3939b0d171",
-              "file": "preuves/e7f8841defd61ad849e53a2b7ba46c9f14253775ecba8e88497a2d3939b0d171.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C1/participants",
-              "sha256": "d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b",
-              "file": "preuves/d51cf694c1a549d5d856e6d1f26de9d52bd7a32c56f0bc7b6bab617f00955b8b.gz"
-            },
-            "captured_at": "2026-10-19T07:52:11.178210+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -0.95,
-              "dateRapport": 1792406739000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-19T12:49:03.011130+02:00"
-          }
-        },
-        "groups": {},
-        "errors": {}
-      },
       {
         "date": "2026-10-19",
         "id": "R1C2",
@@ -664,15 +525,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406735000,
+              "dateRapport": 1792410335000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:03.552086+02:00"
+            "odds_checked_at": "2026-10-19T13:56:07.804734+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -696,15 +557,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406735000,
+              "dateRapport": 1792410335000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:03.552099+02:00"
+            "odds_checked_at": "2026-10-19T13:56:07.804746+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -728,15 +589,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406735000,
+              "dateRapport": 1792410335000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:03.552105+02:00"
+            "odds_checked_at": "2026-10-19T13:56:07.804753+02:00"
           },
           "geny": {
             "site": "geny",
@@ -760,19 +621,42 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406735000,
+              "dateRapport": 1792410335000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:03.552110+02:00"
+            "odds_checked_at": "2026-10-19T13:56:07.804757+02:00"
           }
         },
         "groups": {},
-        "errors": {}
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-10-19/r1c2-deauville-prix-equidays-prix-habitat",
+            "sha256": "06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c",
+            "file": "preuves/06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+            "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+            "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+            "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+            "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1692104-2026-10-19-deauville-prix-equidays-prix-habitat/partants-pronostics",
+            "sha256": "21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb",
+            "file": "preuves/21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb.gz"
+          }
+        },
+        "groups_frozen_at": "2026-10-19T13:33:51.606495+02:00"
       },
       {
         "date": "2026-10-19",
@@ -804,15 +688,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.8,
+              "rapport": 7.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.52,
-              "dateRapport": 1792406706000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410306000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.340991+02:00"
+            "odds_checked_at": "2026-10-19T13:56:08.611779+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -838,13 +722,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.25,
-              "dateRapport": 1792406706000,
+              "nombreIndicateurTendance": -5.5,
+              "dateRapport": 1792410306000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.341004+02:00"
+            "odds_checked_at": "2026-10-19T13:56:08.611789+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -870,13 +754,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 5.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.72,
-              "dateRapport": 1792406706000,
+              "nombreIndicateurTendance": -3.38,
+              "dateRapport": 1792410306000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.341011+02:00"
+            "odds_checked_at": "2026-10-19T13:56:08.611796+02:00"
           },
           "geny": {
             "site": "geny",
@@ -902,13 +786,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.25,
-              "dateRapport": 1792406706000,
+              "nombreIndicateurTendance": -5.5,
+              "dateRapport": 1792410306000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.341017+02:00"
+            "odds_checked_at": "2026-10-19T13:56:08.611801+02:00"
           }
         },
         "groups": {},
@@ -946,13 +830,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.98,
-              "dateRapport": 1792406708000,
+              "nombreIndicateurTendance": 0.92,
+              "dateRapport": 1792410308000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.837759+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.051623+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -978,13 +862,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 1.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792406708000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410308000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.837772+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.051634+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1010,13 +894,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 1.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792406708000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410308000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.837778+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.051640+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1042,13 +926,13 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 1.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792406708000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410308000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:04.837783+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.051645+02:00"
           }
         },
         "groups": {},
@@ -1084,15 +968,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406724000,
+              "nombreIndicateurTendance": -4.67,
+              "dateRapport": 1792410324000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:05.595370+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.499953+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -1116,15 +1000,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406724000,
+              "nombreIndicateurTendance": -4.67,
+              "dateRapport": 1792410324000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:05.595385+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.499964+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1148,15 +1032,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.75,
-              "dateRapport": 1792406724000,
+              "nombreIndicateurTendance": 1.66,
+              "dateRapport": 1792410324000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:05.595392+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.499971+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1180,15 +1064,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.42,
-              "dateRapport": 1792406724000,
+              "nombreIndicateurTendance": 1.35,
+              "dateRapport": 1792410324000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:05.595396+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.499976+02:00"
           }
         },
         "groups": {},
@@ -1224,15 +1108,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 14.0,
+              "rapport": 15.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.12,
-              "dateRapport": 1792406732000,
+              "nombreIndicateurTendance": 0.63,
+              "dateRapport": 1792410332000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.067548+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.949751+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -1256,15 +1140,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 5.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.08,
-              "dateRapport": 1792406732000,
+              "nombreIndicateurTendance": 1.92,
+              "dateRapport": 1792410332000,
               "favoris": true,
               "numPmu1": 14,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.067570+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.949763+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1288,15 +1172,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.2,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.58,
-              "dateRapport": 1792406732000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410332000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.067577+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.949770+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1320,15 +1204,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 5.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.08,
-              "dateRapport": 1792406732000,
+              "nombreIndicateurTendance": 1.92,
+              "dateRapport": 1792410332000,
               "favoris": true,
               "numPmu1": 14,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.067583+02:00"
+            "odds_checked_at": "2026-10-19T13:56:09.949776+02:00"
           }
         },
         "groups": {},
@@ -1364,15 +1248,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.7,
+              "rapport": 6.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.47,
-              "dateRapport": 1792406756000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410356000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.503774+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.390463+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -1396,15 +1280,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.7,
+              "rapport": 6.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.47,
-              "dateRapport": 1792406756000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410356000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.503788+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.390480+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1428,15 +1312,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.5,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.59,
-              "dateRapport": 1792406756000,
+              "nombreIndicateurTendance": 1.23,
+              "dateRapport": 1792410356000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.503794+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.390487+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1460,15 +1344,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.5,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.59,
-              "dateRapport": 1792406756000,
+              "nombreIndicateurTendance": 1.23,
+              "dateRapport": 1792410356000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.503799+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.390492+02:00"
           }
         },
         "groups": {},
@@ -1504,15 +1388,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 9.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.92,
-              "dateRapport": 1792406710000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410310000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.927857+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.999934+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -1536,15 +1420,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.44,
-              "dateRapport": 1792406710000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410310000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.927873+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.999949+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1568,15 +1452,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 5.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406710000,
+              "nombreIndicateurTendance": 2.0,
+              "dateRapport": 1792410310000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.927880+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.999956+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1600,15 +1484,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 5.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792406710000,
+              "nombreIndicateurTendance": 2.0,
+              "dateRapport": 1792410310000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:06.927885+02:00"
+            "odds_checked_at": "2026-10-19T13:56:10.999962+02:00"
           }
         },
         "groups": {},
@@ -1644,15 +1528,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.41,
-              "dateRapport": 1792406700000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410300000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:07.372593+02:00"
+            "odds_checked_at": "2026-10-19T13:56:11.453745+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -1676,15 +1560,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.41,
-              "dateRapport": 1792406700000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410300000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:07.372607+02:00"
+            "odds_checked_at": "2026-10-19T13:56:11.453756+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -1708,15 +1592,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.41,
-              "dateRapport": 1792406700000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410300000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:07.372613+02:00"
+            "odds_checked_at": "2026-10-19T13:56:11.453762+02:00"
           },
           "geny": {
             "site": "geny",
@@ -1740,15 +1624,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 8.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.41,
-              "dateRapport": 1792406700000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792410300000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-19T12:49:07.372618+02:00"
+            "odds_checked_at": "2026-10-19T13:56:11.453766+02:00"
           }
         },
         "groups": {},
