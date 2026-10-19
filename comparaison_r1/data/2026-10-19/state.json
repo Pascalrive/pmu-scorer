@@ -3,7 +3,33 @@
   "venue": "DEAUVILLE",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-19T13:55:00+02:00",
+          "number": 2,
+          "name": "ZELORO",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-19T13:33:51.983765+02:00",
+          "source_captured_at": "2026-10-19T12:57:34.169076+02:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792409601000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          }
+        }
+      ],
       "target_cents": 20000,
       "stop_at_target": false,
       "budget_cents": 120000
@@ -201,9 +227,185 @@
       "title": "PRIX EQUIDAYS (PRIX HABITAT)",
       "departure": "2026-10-19T14:30:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 7,
+          "name": "ALIAS",
+          "source_url": "https://turfin.fr/course/2026-10-19/r1c2-deauville-prix-equidays-prix-habitat",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-19/r1c2-deauville-prix-equidays-prix-habitat",
+            "sha256": "06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c",
+            "file": "preuves/06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C2/participants",
+            "sha256": "00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63",
+            "file": "preuves/00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63.gz"
+          },
+          "captured_at": "2026-10-19T13:33:29.322376+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792409435000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "ALIAS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+            "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+            "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C2/participants",
+            "sha256": "00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63",
+            "file": "preuves/00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63.gz"
+          },
+          "captured_at": "2026-10-19T13:33:30.766956+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792409435000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 7,
+          "name": "ALIAS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+            "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+            "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C2/participants",
+            "sha256": "00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63",
+            "file": "preuves/00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63.gz"
+          },
+          "captured_at": "2026-10-19T13:33:30.832591+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792409435000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 7,
+          "name": "ALIAS",
+          "source_url": "https://www.geny.com/course/1692104-2026-10-19-deauville-prix-equidays-prix-habitat/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "evidence": {
+            "url": "https://www.geny.com/course/1692104-2026-10-19-deauville-prix-equidays-prix-habitat/partants-pronostics",
+            "sha256": "21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb",
+            "file": "preuves/21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19102026/R1/C2/participants",
+            "sha256": "00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63",
+            "file": "preuves/00cb0739cb6ac040dad72eba8e2d358a0d89d79f1aac6998286c4d04a6279c63.gz"
+          },
+          "captured_at": "2026-10-19T13:33:51.606444+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792409435000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_4_sur_4": {
+          "number": 7,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 7,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_canalturf+geny+turfin+zeturf": {
+          "number": 7,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-19/r1c2-deauville-prix-equidays-prix-habitat",
+          "sha256": "06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c",
+          "file": "preuves/06986ac803c4240e4b922bb56e5dc201c60710db9050ab913763d78108924f9c.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+          "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+          "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420963_prix-equidays-prix-habitat.html",
+          "sha256": "0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425",
+          "file": "preuves/0bab83fc1f6dfd8f668ea4d328628281708a53dd3d064a307840a30fcc56d425.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1692104-2026-10-19-deauville-prix-equidays-prix-habitat/partants-pronostics",
+          "sha256": "21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb",
+          "file": "preuves/21bd049776cf9fedea7d8857157d22664e5881044157013c6262b75da0f227bb.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-19T13:33:51.606495+02:00"
     },
     {
       "date": "2026-10-19",
