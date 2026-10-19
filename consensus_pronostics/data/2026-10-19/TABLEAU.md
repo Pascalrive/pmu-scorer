@@ -4,28 +4,28 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — PRIX DE LA FORET DE LYONS
 
-Collecte : 2026-10-19T09:32:05.638165+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-19T11:20:35.803376+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.7) | 10 EVERSTAR (cote 11.0) | 14 EAST GREY (cote 16.0) | 4 CELESTIAL (cote 10.0) | 5 AL MAX (cote 23.0) — Outsider ; 3 ROCK BLANC (cote 14.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html) | 2 ZELORO (cote 3.6) | 4 CELESTIAL (cote 10.0) | 14 EAST GREY (cote 16.0) | 1 TIEGO THE FIRST (cote 8.7) | 10 EVERSTAR (cote 11.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 2 ZELORO (cote 3.6) | 4 CELESTIAL (cote 10.0) | 1 TIEGO THE FIRST (cote 8.7) | 14 EAST GREY (cote 16.0) | 3 ROCK BLANC (cote 14.0) | 16 CICCIO BOY (cote 23.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.7) | 14 EAST GREY (cote 16.0) | 13 FEARLESS CHEETAH (cote 7.6) | 15 SENORITO (cote 23.0) | 15 SENORITO (cote 23.0) — Outsider ; 10 EVERSTAR (cote 11.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Outsider ; 12 ALLURRE (cote 23.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.7) | 10 EVERSTAR (cote 11.0) | 13 FEARLESS CHEETAH (cote 7.6) | 3 ROCK BLANC (cote 14.0) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74716-pronostic-quinte-du-lundi-19-octobre-a-deauville-prix-de-la-foret-de-lyons-r1c1.html) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.7) | 5 AL MAX (cote 23.0) | 10 EVERSTAR (cote 11.0) | 4 CELESTIAL (cote 10.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.4) | 10 EVERSTAR (cote 10.0) | 14 EAST GREY (cote 16.0) | 4 CELESTIAL (cote 10.0) | 5 AL MAX (cote 23.0) — Outsider ; 3 ROCK BLANC (cote 14.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-19/deauville/420962_prix-de-la-foret-de-lyons.html) | 2 ZELORO (cote 3.6) | 4 CELESTIAL (cote 10.0) | 14 EAST GREY (cote 16.0) | 1 TIEGO THE FIRST (cote 8.4) | 10 EVERSTAR (cote 10.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 2 ZELORO (cote 3.6) | 4 CELESTIAL (cote 10.0) | 1 TIEGO THE FIRST (cote 8.4) | 14 EAST GREY (cote 16.0) | 3 ROCK BLANC (cote 14.0) | 16 CICCIO BOY (cote 23.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.4) | 14 EAST GREY (cote 16.0) | 13 FEARLESS CHEETAH (cote 7.8) | 15 SENORITO (cote 24.0) | 15 SENORITO (cote 24.0) — Outsider ; 10 EVERSTAR (cote 10.0) — Outsider ; 8 GUILLERETTE (cote 21.0) — Outsider ; 12 ALLURRE (cote 25.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.4) | 10 EVERSTAR (cote 10.0) | 13 FEARLESS CHEETAH (cote 7.8) | 3 ROCK BLANC (cote 14.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74716-pronostic-quinte-du-lundi-19-octobre-a-deauville-prix-de-la-foret-de-lyons-r1c1.html) | 2 ZELORO (cote 3.6) | 1 TIEGO THE FIRST (cote 8.4) | 5 AL MAX (cote 23.0) | 10 EVERSTAR (cote 10.0) | 4 CELESTIAL (cote 10.0) | Non publié |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
-| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-lundi-19-octobre-2026/) | 1 TIEGO THE FIRST (cote 8.7) | — | — | — | — | 5 AL MAX (cote 23.0) — Tocard du jour |
+| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-lundi-19-octobre-2026/) | 1 TIEGO THE FIRST (cote 8.4) | — | — | — | — | 5 AL MAX (cote 23.0) — Tocard du jour |
 
 ### Les cinq chevaux les plus cités dans les cinq choix publiés
 
 | Cheval | Sources le citant |
 |---|---:|
-| 1 TIEGO THE FIRST (cote 8.7) | 7 |
+| 1 TIEGO THE FIRST (cote 8.4) | 7 |
 | 2 ZELORO (cote 3.6) | 6 |
 | 4 CELESTIAL (cote 10.0) | 4 |
 | 14 EAST GREY (cote 16.0) | 4 |
-| 10 EVERSTAR (cote 11.0) | 4 |
+| 10 EVERSTAR (cote 10.0) | 4 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
