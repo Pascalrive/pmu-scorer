@@ -5,7 +5,7 @@
 | Date | Variante | Paire | Mise | Retour | Net | Statut |
 |---|---|---|---:|---:|---:|---|
 | 2026-10-19 | statistique | [1, 2] | 3 € | None | None | AVANT_COURSE |
-| 2026-10-19 | cotes | [2, 10] | 3 € | None | None | AVANT_COURSE |
+| 2026-10-19 | cotes | [2, 13] | 3 € | None | None | AVANT_COURSE |
 | 2026-10-19 | mixte | [1, 2] | 3 € | None | None | AVANT_COURSE |
 
 | Variante | Réglés | Attente | Mises réglées | Retours | Net | ROI réglé |
