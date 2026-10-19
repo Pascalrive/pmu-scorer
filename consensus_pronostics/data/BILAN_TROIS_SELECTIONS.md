@@ -19,11 +19,14 @@ Simulation à mise fixe : 2 € par variante complète, aucun pari exécuté, au
 | 2026-10-17 | statistique | 2 – 6 – 5 – 12 – 3 | 2 | 2 € | 0.00 € | REGLE |
 | 2026-10-17 | cotes | 6 – 2 – 19 – 12 – 11 | 3 | 2 € | 0.00 € | REGLE |
 | 2026-10-17 | mixte | 2 – 6 – 5 – 19 – 11 | 3 | 2 € | 0.00 € | REGLE |
+| 2026-10-19 | statistique | 1 – 2 – 14 – 4 – 10 | — | 2 € | — | AVANT_COURSE |
+| 2026-10-19 | cotes | 2 – 10 – 1 – 13 – 4 | — | 2 € | — | AVANT_COURSE |
+| 2026-10-19 | mixte | 1 – 2 – 14 – 8 – 5 | — | 2 € | — | AVANT_COURSE |
 
 ## Comparaison cumulée
 
 | Variante | Courses | En attente | Mises réglées | Retours réglés | ROI complet |
 |---|---:|---:|---:|---:|---|
-| statistique | 5 | 0 | 10.00 € | 0.00 € | -100.00 % |
-| cotes | 5 | 0 | 10.00 € | 0.00 € | -100.00 % |
-| mixte | 5 | 0 | 10.00 € | 0.00 € | -100.00 % |
+| statistique | 6 | 1 | 10.00 € | 0.00 € | INCOMPLET |
+| cotes | 6 | 1 | 10.00 € | 0.00 € | INCOMPLET |
+| mixte | 6 | 1 | 10.00 € | 0.00 € | INCOMPLET |
