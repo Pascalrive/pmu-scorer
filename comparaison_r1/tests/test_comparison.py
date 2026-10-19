@@ -84,7 +84,7 @@ class Progressive(unittest.TestCase):
     def outcome(self,sol,status,returned):
         b=sol['bets'][-1];b.update(status=status,return_cents=returned,profit_cents=returned-b['stake_cents'])
     def test_five_loss_sequence_totals_800_and_stops(self):
-        s={'bets':[]}
+        s={'budget_cents':80000,'bets':[]}
         for i,amount in enumerate([10000,20000,15000,15000,20000]):
             self.assertTrue(self.reserve_next(s,i));self.assertEqual(s['bets'][-1]['stake_cents'],amount)
             self.outcome(s,'PERDU',0)
@@ -92,7 +92,7 @@ class Progressive(unittest.TestCase):
         self.assertEqual(account(s)['committed_cents'],80000)
         self.assertEqual(account(s)['remaining_cents'],0)
     def test_target_is_net_and_win_resets(self):
-        s={'bets':[]};self.reserve_next(s,0);self.outcome(s,'PERDU',0)
+        s={'budget_cents':80000,'bets':[]};self.reserve_next(s,0);self.outcome(s,'PERDU',0)
         self.reserve_next(s,1);self.outcome(s,'GAGNE',40000)
         self.assertEqual(account(s)['profit_cents'],10000)
         self.assertEqual(account(s)['next_stake_cents'],10000)
@@ -101,7 +101,7 @@ class Progressive(unittest.TestCase):
         self.assertEqual(account(s)['stop'],'OBJECTIF');self.assertFalse(self.reserve_next(s,3))
     def test_new_target_exact_boundary_and_old_rule(self):
         from comparaison_r1.model import daily_target
-        s={'bets':[{'stake_cents':10000,'status':'GAGNE','return_cents':29999}]}
+        s={'budget_cents':80000,'bets':[{'stake_cents':10000,'status':'GAGNE','return_cents':29999}]}
         self.assertIsNone(account(s)['stop'])
         s['bets'][0]['return_cents']=30000
         self.assertEqual(account(s)['stop'],'OBJECTIF')
@@ -110,15 +110,15 @@ class Progressive(unittest.TestCase):
         self.assertEqual(daily_target('2026-10-18'),20000)
 
     def test_pending_blocks_and_independent_reset(self):
-        s={'bets':[]};self.assertTrue(self.reserve_next(s,0));self.assertFalse(self.reserve_next(s,1))
+        s={'budget_cents':80000,'bets':[]};self.assertTrue(self.reserve_next(s,0));self.assertFalse(self.reserve_next(s,1))
         self.assertEqual(account(s)['stop'],'ATTENTE_RESULTAT')
         self.assertTrue(self.reserve_next({'bets':[]},1))
     def test_refund_keeps_next_stake_but_counts_budget(self):
-        s={'bets':[]};self.reserve_next(s,0);self.outcome(s,'PERDU',0)
+        s={'budget_cents':80000,'bets':[]};self.reserve_next(s,0);self.outcome(s,'PERDU',0)
         self.reserve_next(s,1);self.outcome(s,'REMBOURSE',20000)
         self.assertEqual(account(s)['next_stake_cents'],20000);self.assertEqual(account(s)['committed_cents'],30000)
     def test_exact_budget_800_allowed(self):
-        s={'bets':[]}
+        s={'budget_cents':80000,'bets':[]}
         for i in range(8):
             self.assertTrue(self.reserve_next(s,i));self.outcome(s,'GAGNE',11000)
         self.assertEqual(account(s)['committed_cents'],80000)
@@ -129,13 +129,13 @@ class Progressive(unittest.TestCase):
         self.assertEqual(STRATEGIES,('majorite_3_ou_4',));self.assertEqual(len(set(COMBINATIONS)),11)
         for key in STRATEGIES:
             with self.subTest(key=key):
-                s={'bets':[]}
+                s={'budget_cents':80000,'bets':[]}
                 for i,amount in enumerate((10000,20000,15000,15000,20000)):
                     self.assertTrue(self.reserve_next(s,i));self.assertEqual(s['bets'][-1]['stake_cents'],amount)
                     self.outcome(s,'PERDU',0)
                 self.assertFalse(self.reserve_next(s,5))
     def test_win_reset_does_not_reset_daily_budget(self):
-        s={'bets':[]}
+        s={'budget_cents':80000,'bets':[]}
         for i in range(3):self.reserve_next(s,i);self.outcome(s,'PERDU',0)
         self.reserve_next(s,3);self.outcome(s,'GAGNE',30000)
         self.assertEqual(account(s)['next_stake_cents'],10000)

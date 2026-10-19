@@ -136,3 +136,7 @@ Le seuil +200 EUR devient un repère et ne bloque plus les mises. Le filtre 3/4�
 ## Nom et égalité 2–2 (19 octobre 2026)
 
 Nom affiché : Tony Artillan. Le répertoire comparaison_r1 et la clé historique majorite_3_ou_4 sont conservés pour continuité. Deux votes pour chacun de deux chevaux déclenchent deux simples placés de 50 EUR engagés ensemble (100 EUR/course). Ni 2–1–1 ni source absente ne déclenchent ce pari. Budget quotidien 800 EUR commun aux SG et SP, aucun dépassement ni demi-paire. Les SP à mise fixe ne modifient pas la progression SG ; le résultat des deux est attendu avant la course suivante. Les rapports SG et SP sont réglés séparément, leurs ROI aussi. Le seuil et le maximum sont calculés après règlement complet de la paire pour éviter un faux pic entre ses deux composantes. L’ancien programme Paris Turf reste distinct et est identifié comme tel.
+
+## Plafond révisé le 19 octobre
+
+Le plafond commun SG + SP passe à 1 200 EUR de mises engagées par jour dès le 19/10/2026. Les journées antérieures restent à 800 EUR. Aucun recyclage des retours dans ce plafond. La fin de progression après cinq pertes SG reste inchangée.

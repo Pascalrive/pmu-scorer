@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 from .sources import SITES, INDEX, locate, parse, norm
-from .model import daily_target, stop_at_target, split_pair, reserve_split
+from .model import daily_budget, daily_target, stop_at_target, split_pair, reserve_split
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
 
@@ -98,7 +98,7 @@ def no_bet_reason(state,race):
         last=preceding[-1]
         if not last.get('settled_at') or last['settled_at']>=race['departure']:
             return 'Résultat précédent non enregistré avant départ'
-    reason=account({'bets':preceding,'target_cents':daily_target(state['date']),'stop_at_target':stop_at_target(state['date'])})['stop']
+    reason=account({'bets':preceding,'target_cents':daily_target(state['date']),'stop_at_target':stop_at_target(state['date']),'budget_cents':daily_budget(state['date'])})['stop']
     return {'OBJECTIF':'Objectif net atteint','BUDGET':'Budget restant insuffisant','SERIE_TERMINEE':'Cinq pertes successives'}.get(reason,'Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué')
 
 def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
@@ -167,7 +167,7 @@ def preview_report(state,preview):
            'Aperçu et cotes contrôlés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
            '3/4 ou 4/4 : simple gagnant progressif. Égalité 2–2 : deux simples placés de 50 €, soit 100 €.',
-           'Un seul compte : repère +200 € NET, sans arrêt à ce seuil depuis le 19/10 ; plafond 800 € de mises. Simulation uniquement.','']
+           'Un seul compte : repère +200 € NET, sans arrêt à ce seuil depuis le 19/10 ; plafond 1 200 € de mises. Simulation uniquement.','']
     names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
     for race in preview['races']:
         lines.append(f'{race["id"]} · {datetime.fromisoformat(race["departure"]).strftime("%Hh%M")} — {race["title"]}')
@@ -205,7 +205,7 @@ def race_message(r):
 def live_report(state):
     lines=['💶 TONY ARTILLAN — SUIVI DES MISES',state['date']+' · '+state['venue'],
            'Simulation · Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.',
-           (f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET' if stop_at_target(state['date']) else 'Repère +200 € NET, sans arrêt au seuil')+' ; plafond 800 € de mises/jour, compte unique.', '']
+           (f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET' if stop_at_target(state['date']) else 'Repère +200 € NET, sans arrêt au seuil')+f' ; plafond {daily_budget(state["date"])/100:.0f} € de mises/jour, compte unique.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
         lines.append('COMPTE UNIQUE — MAJORITÉ SG + ÉGALITÉ 2–2 SP')
@@ -216,7 +216,7 @@ def live_report(state):
                 lines.append(f'{b["race_id"]} N°{b["number"]} {b["name"]} · {kind} · mise {euros(b["stake_cents"])} · {b["status"]}')
                 if 'return_cents' in b:lines.append('Retour '+euros(b['return_cents'])+' · net du pari '+euros(b['profit_cents']))
         else:lines.append('Aucun pari engagé')
-        lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / 800 €')
+        lines.append('Net réglé du jour '+euros(a['profit_cents'])+' · engagé '+euros(a['committed_cents'])+' / '+euros(a['budget_cents']))
         finished=all(datetime.now(TZ)>=datetime.fromisoformat(r['departure']) for r in state['races'])
         lines.append('Réunion terminée — aucune nouvelle mise.' if finished else ('Statut : '+a['stop'] if a['stop'] else 'Prochaine mise SG conditionnelle : '+euros(a['next_stake_cents'])))
         if a['stop']=='BUDGET' and a['remaining_cents']>=10000:
@@ -235,7 +235,7 @@ def daily_report(state):
     lines=['📅 TONY ARTILLAN — BILAN DU JOUR',state['date']+' · '+state['venue'],
            'Simulation majorité SG + égalité 2–2 SP · toutes les courses observées',
            ('Repère +200 € : les mises continuent après ce seuil.' if not stop_at_target(state['date']) else 'Ancienne règle : arrêt au seuil de la journée.'),
-           'Plafond 800 € et arrêt après cinq pertes successives conservés.','']
+           f'Plafond {daily_budget(state["date"])/100:.0f} € et arrêt après cinq pertes successives conservés.','']
     running=0;peak=0;first=None;max_drawdown=0
     for r in state['races']:
         lines.append(r['id']+' — '+r['title'])
@@ -270,7 +270,7 @@ def daily_report(state):
 
 def report(b):
     lines=['📊 TONY ARTILLAN — BILAN CUMULÉ',f'{START} → {END} · mises progressives virtuelles',
-           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Repère +200 € net/jour : arrêt le 18/10, observation sans arrêt au seuil depuis le 19/10 (500 € avant le 18/10) ; plafond mises 800 €/jour, compte unique.',
+           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Repère +200 € net/jour : arrêt le 18/10, observation sans arrêt au seuil depuis le 19/10 (500 € avant le 18/10) ; plafond mises 1 200 €/jour, compte unique.',
            f'{b["races"]} courses enregistrées · {b["common_settled_races"]} communes réglées',
            '', 'BILAN FINANCIER — TONY ARTILLAN (SG + SP)']
     def line(name,s):
@@ -304,7 +304,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
     if announce:
-        notify_message('🔄 TONY ARTILLAN — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nRepère : +200 € NET par jour, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 sont jouées en simples placés : 50 € par cheval. Bilan final le 16 décembre.')
+        notify_message('🔄 TONY ARTILLAN — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nRepère : +200 € NET par jour, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 1 200 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 sont jouées en simples placés : 50 € par cheval. Bilan final le 16 décembre.')
         return
     if START<=day<=END or probe:
         folder=data/day;path=folder/'state.json'
@@ -320,7 +320,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                     results[site]={'status':'OK','tip':tip,'evidence':proof(data/'probe',u,body)}
                 except (ValueError,KeyError,TypeError,requests.RequestException) as e:results[site]={'status':'INDISPONIBLE','reason':str(e)[:200]}
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
-            notify_message('🔎 TONY ARTILLAN — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nRepère +200 € NET, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
+            notify_message('🔎 TONY ARTILLAN — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nRepère +200 € NET, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 1 200 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
         preview=morning_preview(state,f,folder) if now.hour>=7 else {}
         write(path,state)
@@ -339,6 +339,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
         if not START<=state['date']<=END:continue
         for key in STRATEGIES:
             state.setdefault('solutions',{}).setdefault(key,{'bets':[]})
+            state['solutions'][key]['budget_cents']=daily_budget(state['date'])
             state['solutions'][key]['target_cents']=daily_target(state['date'])
             state['solutions'][key]['stop_at_target']=stop_at_target(state['date'])
         for race in state['races']:

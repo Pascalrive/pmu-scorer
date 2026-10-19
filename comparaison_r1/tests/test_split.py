@@ -9,7 +9,7 @@ class SplitTests(unittest.TestCase):
   self.tips={s:{'number':n,'name':'H'+str(n),'playable':True,'captured_at':self.now.isoformat()} for s,n in zip(SITES,[1,1,2,2])}
   self.r={'id':'R1C1','date':'2026-10-19','title':'TEST','departure':(self.now+timedelta(minutes=10)).isoformat(),'tips':self.tips,'groups':{}}
   self.horses=[{'numPmu':n,'nom':'H'+str(n),'statut':'PARTANT'} for n in (1,2)]
-  self.s={'bets':[],'stop_at_target':False}
+  self.s={'budget_cents':80000,'bets':[],'stop_at_target':False}
  def test_only_exact_2_2(self):
   self.assertEqual(len(split_pair(self.tips)),2)
   for ns in ([1,1,2,3],[1,1,1,2],[1,1,1,1]):
@@ -21,7 +21,7 @@ class SplitTests(unittest.TestCase):
   self.assertTrue(reserve_split(self.s,self.r,self.horses,self.now,True))
   self.assertEqual([b['stake_cents'] for b in self.s['bets']],[5000,5000])
   self.assertFalse(reserve_split(self.s,self.r,self.horses,self.now,True))
-  s={'bets':[{'race_id':'R1C0','stake_cents':75000,'status':'GAGNE','return_cents':75000}]}
+  s={'budget_cents':80000,'bets':[{'race_id':'R1C0','stake_cents':75000,'status':'GAGNE','return_cents':75000}]}
   self.assertFalse(reserve_split(s,self.r,self.horses,self.now,True));self.assertEqual(len(s['bets']),1)
   s['bets'][0]['stake_cents']=70000;s['bets'][0]['return_cents']=70000
   self.assertTrue(reserve_split(s,self.r,self.horses,self.now,True))
@@ -48,3 +48,14 @@ class SplitTests(unittest.TestCase):
   self.assertEqual(account(self.s)['profit_cents'],16000)
   self.assertIsNone(account(self.s)['first_target'])
   self.assertEqual(account(self.s)['peak_profit_cents'],16000)
+
+ def test_new_1200_cap_accepts_last_full_pair_not_half_pair(self):
+  from comparaison_r1.model import daily_budget
+  self.assertEqual(daily_budget('2026-10-18'),80000)
+  self.assertEqual(daily_budget('2026-10-19'),120000)
+  s={'budget_cents':daily_budget('2026-10-19'),'stop_at_target':False,'bets':[{'race_id':'R1C0','stake_cents':110000,'return_cents':110000,'status':'GAGNE'}]}
+  self.assertTrue(reserve_split(s,self.r,self.horses,self.now,True))
+  self.assertEqual(account(s)['committed_cents'],120000)
+  self.assertEqual(account(s)['remaining_cents'],0)
+  s['bets']=s['bets'][:1];s['bets'][0]['stake_cents']=115000;s['bets'][0]['return_cents']=115000
+  self.assertFalse(reserve_split(s,self.r,self.horses,self.now,True))
