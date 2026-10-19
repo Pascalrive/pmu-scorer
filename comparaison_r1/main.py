@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 from .sources import SITES, INDEX, locate, parse, norm
-from .model import daily_target
+from .model import daily_target, stop_at_target
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
 
@@ -98,7 +98,7 @@ def no_bet_reason(state,race):
         last=preceding[-1]
         if not last.get('settled_at') or last['settled_at']>=race['departure']:
             return 'Résultat précédent non enregistré avant départ'
-    reason=account({'bets':preceding,'target_cents':daily_target(state['date'])})['stop']
+    reason=account({'bets':preceding,'target_cents':daily_target(state['date']),'stop_at_target':stop_at_target(state['date'])})['stop']
     return {'OBJECTIF':'Objectif net atteint','BUDGET':'Budget restant insuffisant','SERIE_TERMINEE':'Cinq pertes successives'}.get(reason,'Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué')
 
 def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
@@ -167,7 +167,7 @@ def preview_report(state,preview):
            'Aperçu et cotes contrôlés à '+datetime.fromisoformat(preview['captured_at']).strftime('%Hh%M')+'. Vérification dans la dernière heure avant départ.',
            'Mises : 100 → 200 → 150 → 150 → 200 € après pertes. Gain : retour 100 €.',
            'Un seul pari simple gagnant par course : même premier choix chez au moins 3 des 4 sites.',
-           'Un seul compte : objectif +200 € NET/jour ; plafond 800 € de mises. Simulation uniquement.','']
+           'Un seul compte : repère +200 € NET, sans arrêt à ce seuil depuis le 19/10 ; plafond 800 € de mises. Simulation uniquement.','']
     names={'turfin':'Turfin','canalturf':'Canalturf','zeturf':'ZEturf','geny':'Geny'}
     for race in preview['races']:
         lines.append(f'{race["id"]} · {datetime.fromisoformat(race["departure"]).strftime("%Hh%M")} — {race["title"]}')
@@ -203,7 +203,7 @@ def race_message(r):
 def live_report(state):
     lines=['💶 COMPARATIF R1 — SUIVI DES MISES',state['date']+' · '+state['venue'],
            'Simulation · Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.',
-           f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET ; plafond 800 € de mises/jour, compte unique.', '']
+           (f'Arrêt à +{daily_target(state["date"])/100:.0f} € NET' if stop_at_target(state['date']) else 'Repère +200 € NET, sans arrêt au seuil')+' ; plafond 800 € de mises/jour, compte unique.', '']
     for key in STRATEGIES:
         sol=state['solutions'][key];a=account(sol)
         lines.append(key.replace('_',' ').upper())
@@ -224,9 +224,44 @@ def live_report(state):
     lines.append('Un seul compte pour tous les accords 3/4 et 4/4. Remboursements inclus dans le plafond. Aucun pari réel.')
     return '\n'.join(lines)
 
+def daily_report(state):
+    sol=state['solutions']['majorite_3_ou_4'];a=account(sol)
+    lines=['📅 COMPARATIF R1 — BILAN DU JOUR',state['date']+' · '+state['venue'],
+           'Simulation majorité 3/4–4/4 · toutes les courses observées',
+           ('Repère +200 € : les mises continuent après ce seuil.' if not stop_at_target(state['date']) else 'Ancienne règle : arrêt au seuil de la journée.'),
+           'Plafond 800 € et arrêt après cinq pertes successives conservés.','']
+    by={b['race_id']:b for b in sol['bets']};running=0;peak=0;first=None;max_drawdown=0
+    for r in state['races']:
+        lines.append(r['id']+' — '+r['title'])
+        arrival=r.get('official_arrival',[])
+        lines.append('Arrivée : '+(' · '.join(str(h['rank'])+'e N°'+str(h['number'])+' '+h['name'] for h in arrival) if arrival else 'EN ATTENTE — arrivée non vérifiée'))
+        b=by.get(r['id']);g=r.get('groups',{}).get('majorite_3_ou_4')
+        if b:
+            lines.append(f'N°{b["number"]} {b["name"]} · mise {euros(b["stake_cents"])} · {b["status"]}')
+            if 'return_cents' in b:
+                running+=b['profit_cents'];peak=max(peak,running);max_drawdown=max(max_drawdown,peak-running)
+                if first is None and running>=a['target_cents']:first={'race':r['id'],'profit':running}
+                lines.append('Retour '+euros(b['return_cents'])+' · net '+euros(b['profit_cents'])+' · cumul '+euros(running))
+            else:lines.append('Rapport en attente — net non calculé')
+        else:
+            if g:
+                tip=r['tips'][g['sites'][0]]
+                lines.append(f'Choix majorité : N°{g["number"]} · '+tip['status'])
+            lines.append('Non joué : '+(r.get('no_bet_reason') or 'course à venir / engagement non confirmé'))
+        lines.append('')
+    settled_stake=a['committed_cents']-a['pending_stake_cents']
+    lines+=['TOTAL DU JOUR : mises engagées '+euros(a['committed_cents'])+' · retours réglés '+euros(a['return_cents']),
+            'NET RÉGLÉ : '+euros(a['profit_cents'])+' · ROI '+(f'{100*a["profit_cents"]/settled_stake:+.2f} %' if settled_stake else 'non calculable'),
+            'Mises en attente : '+euros(a['pending_stake_cents']),
+            'Premier seuil atteint : '+(first['race']+' à '+euros(first['profit']) if first else 'non atteint'),
+            'Maximum du solde réglé : '+euros(peak)+' · recul maximal depuis un sommet : '+euros(max_drawdown)]
+    if first:lines.append('Écart final / arrêt au premier seuil : '+euros(a['profit_cents']-first['profit']))
+    lines.append('Les courses sans mise ne sont pas ajoutées rétroactivement au résultat financier.')
+    return '\n'.join(lines)
+
 def report(b):
     lines=['📊 COMPARATIF R1 — BILAN CUMULÉ',f'{START} → {END} · mises progressives virtuelles',
-           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Cible +200 € net/jour depuis le 18/10 (500 € auparavant) ; plafond mises 800 €/jour, compte unique.',
+           'Pertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €. Repère +200 € net/jour : arrêt le 18/10, observation sans arrêt au seuil depuis le 19/10 (500 € avant le 18/10) ; plafond mises 800 €/jour, compte unique.',
            f'{b["races"]} courses enregistrées · {b["common_settled_races"]} communes réglées',
            '', 'BILAN FINANCIER — MAJORITÉ 3 OU 4/4 UNIQUEMENT']
     def line(name,s):
@@ -258,7 +293,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
     if announce:
-        notify_message('🔄 COMPARATIF R1 — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nObjectif : +200 € de bénéfice NET par jour/scénario.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 restent exclues. Bilan final le 16 décembre.')
+        notify_message('🔄 COMPARATIF R1 — RÈGLE CORRIGÉE\n16/10 → 15/12/2026\n\nSuite après pertes successives :\n1. 100 €\n2. 200 €\n3. 150 €\n4. 150 €\n5. 200 € puis arrêt\n\nAprès un gain : retour à 100 €.\nRepère : +200 € NET par jour, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 800 € de mises cumulées par jour/scénario, remboursements inclus. Aucun dépassement ni réduction de mise.\n\nUn seul compte : pari simple gagnant uniquement si au moins 3 des 4 sites donnent le même premier choix. Aucun pari individuel ni doublon par combinaison. Simulation uniquement.\nLes égalités 2–2 restent exclues. Bilan final le 16 décembre.')
         return
     if START<=day<=END or probe:
         folder=data/day;path=folder/'state.json'
@@ -274,7 +309,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                     results[site]={'status':'OK','tip':tip,'evidence':proof(data/'probe',u,body)}
                 except (ValueError,KeyError,TypeError,requests.RequestException) as e:results[site]={'status':'INDISPONIBLE','reason':str(e)[:200]}
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
-            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nArrêt à +200 € NET dans la journée.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
+            notify_message('🔎 COMPARATIF R1 — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nRepère +200 € NET, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 800 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
         preview=morning_preview(state,f,folder) if now.hour>=7 else {}
         write(path,state)
@@ -294,13 +329,17 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
         for key in STRATEGIES:
             state.setdefault('solutions',{}).setdefault(key,{'bets':[]})
             state['solutions'][key]['target_cents']=daily_target(state['date'])
+            state['solutions'][key]['stop_at_target']=stop_at_target(state['date'])
         for race in state['races']:
             if datetime.now(TZ)<datetime.fromisoformat(race['departure']):continue
             bets=[b for a in state['solutions'].values() for b in a['bets'] if b['race_id']==race['id']]
-            if not any(t['status']=='EN_ATTENTE' for t in list(race['tips'].values())+bets):continue
+            if race.get('official_arrival') and not any(t['status']=='EN_ATTENTE' for t in list(race['tips'].values())+bets):continue
             base=base_url(state['date'],race['c']);u=base+'/rapports-definitifs?specialisation=INTERNET'
             try:
                 payload=f.json(u);horses=f.json(base+'/participants')['participants']
+                if isinstance(payload,list) and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('rapports') for x in payload):
+                    race['official_arrival']=[{'number':h['numPmu'],'name':h['nom'],'rank':h['ordreArrivee']} for h in sorted(horses,key=lambda h:h.get('ordreArrivee') or 999) if isinstance(h.get('ordreArrivee'),int) and 1<=h['ordreArrivee']<=5]
+                    race['arrival_evidence']=proof(path.parent,base+'/participants',f.get(base+'/participants'))
                 for tip in list(race['tips'].values())+bets:
                     if settle(tip,payload,horses):
                         tip['settled_at']=datetime.now(TZ).isoformat();tip['result_evidence']=proof(path.parent,u,f.get(u))
@@ -341,6 +380,11 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
     message=report(b);(data/'rapport.txt').write_text(message)
     for s in states:
         (data/s['date']/'rapport.txt').write_text('\n\n'.join(race_message(r) for r in s['races'])+'\n\n'+report(daily[s['date']]))
+    for s in states:
+        text=daily_report(s)
+        (data/s['date']/'bilan_du_jour.txt').write_text(text)
+        if s['date']==day and s['races'] and now>=max(datetime.fromisoformat(r['departure']) for r in s['races']):
+            notify_message(text)
     # One daily cumulative report at evening; retries deduplicated by content.
     if now.hour>=23 or day>END:notify_message(message)
     write(data/'last_run.json',{'at':now.isoformat(),'audit':f.audit})

@@ -15,6 +15,11 @@ BUDGET=80000
 TARGET=20000
 TARGET_EFFECTIVE_DATE='2026-10-18'
 
+FULL_DAY_FROM='2026-10-19'
+
+def stop_at_target(day):
+    return day<FULL_DAY_FROM
+
 def daily_target(day):
     return TARGET if day>=TARGET_EFFECTIVE_DATE else 50000
 
@@ -112,9 +117,15 @@ def account(solution):
     returned=sum(b.get('return_cents',0) for b in bets)
     settled_stakes=sum(b['stake_cents'] for b in bets if b['status'] in SETTLED)
     profit=returned-settled_stakes
+    balance=0;peak=0;first_target=None;max_drawdown=0
+    for b in bets:
+        if b['status'] not in SETTLED:continue
+        balance+=b.get('return_cents',0)-b['stake_cents'];peak=max(peak,balance);max_drawdown=max(max_drawdown,peak-balance)
+        if first_target is None and balance>=solution.get('target_cents',TARGET):
+            first_target={'race_id':b.get('race_id'),'profit_cents':balance}
     pending=any(b['status']=='EN_ATTENTE' for b in bets)
-    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if profit>=solution.get('target_cents',TARGET) else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
-    return {'target_cents':solution.get('target_cents',TARGET),'committed_cents':committed,'remaining_cents':BUDGET-committed,
+    stop='ATTENTE_RESULTAT' if pending else ('OBJECTIF' if solution.get('stop_at_target',True) and profit>=solution.get('target_cents',TARGET) else ('SERIE_TERMINEE' if next_stake is None else ('BUDGET' if committed+next_stake>BUDGET else None)))
+    return {'first_target':first_target,'peak_profit_cents':peak,'max_drawdown_cents':max_drawdown,'stop_at_target':solution.get('stop_at_target',True),'target_cents':solution.get('target_cents',TARGET),'committed_cents':committed,'remaining_cents':BUDGET-committed,
             'return_cents':returned,'profit_cents':profit,'next_stake_cents':next_stake,
             'pending_stake_cents':committed-settled_stakes,'consecutive_losses':losses,'stop':stop}
 
@@ -156,15 +167,15 @@ def summary(states):
         out['paired_comparisons'][a+' / '+b]={'a_wins_b_loses':a_only,'b_wins_a_loses':b_only}
     out['solutions']={}
     for key in STRATEGIES:
-        accounts=[{**s.get('solutions',{}).get(key,{'bets':[]}),'target_cents':daily_target(s['date'])} for s in states]
+        accounts=[{**s.get('solutions',{}).get(key,{'bets':[]}),'target_cents':daily_target(s['date']),'stop_at_target':stop_at_target(s['date'])} for s in states]
         row=metrics([b for a in accounts for b in a['bets']])
         row['days_active']=sum(bool(a['bets']) for a in accounts)
-        row['days_target_reached']=sum(account(a)['profit_cents']>=account(a)['target_cents'] for a in accounts)
+        row['days_target_reached']=sum(account(a)['first_target'] is not None for a in accounts)
         row['days_budget_stop']=sum(account(a)['stop']=='BUDGET' for a in accounts)
         row['days_sequence_stop']=sum(account(a)['stop']=='SERIE_TERMINEE' for a in accounts)
         row['max_daily_committed_cents']=max([account(a)['committed_cents'] for a in accounts],default=0)
         row['committed_cents']=sum(account(a)['committed_cents'] for a in accounts)
         out['solutions'][key]=row
     out['ranking_by_net_profit']=sorted(STRATEGIES,key=lambda k:-out['solutions'][k]['profit_cents'])
-    out['daily_accounts']={s['date']:{k:account({**a,'target_cents':daily_target(s['date'])}) for k,a in s.get('solutions',{}).items()} for s in states}
+    out['daily_accounts']={s['date']:{k:account({**a,'target_cents':daily_target(s['date']),'stop_at_target':stop_at_target(s['date'])}) for k,a in s.get('solutions',{}).items()} for s in states}
     return out

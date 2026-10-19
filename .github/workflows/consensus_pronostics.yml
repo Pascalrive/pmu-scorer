@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: '5 7,9,11 * * *'
     - cron: '25 5 * * *'
+    - cron: '15 21 * * *'
   workflow_dispatch:
     inputs:
       date:
@@ -15,6 +16,7 @@ on:
       - 'consensus_pronostics/evaluate.py'
       - 'consensus_pronostics/analyses.py'
       - 'consensus_pronostics/evaluate_analyses.py'
+      - 'consensus_pronostics/two_of_four.py'
       - 'consensus_pronostics/notify.py'
       - 'consensus_pronostics/tests/**'
       - '.github/workflows/consensus_pronostics.yml'
@@ -39,7 +41,7 @@ jobs:
       - name: Tests des selections et des bilans
         run: python -m unittest discover -s consensus_pronostics/tests -v
       - name: Collecte et controle HTTP depuis GitHub
-        if: github.event.schedule != '25 5 * * *'
+        if: github.event.schedule != '25 5 * * *' && github.event.schedule != '15 21 * * *'
         env:
           REQUESTED_DATE: ${{ inputs.date }}
         run: |
@@ -49,7 +51,7 @@ jobs:
             python consensus_pronostics/collector.py
           fi
       - name: Envoyer le consensus du jour sur Telegram
-        if: github.event.schedule != '25 5 * * *'
+        if: github.event.schedule != '25 5 * * *' && github.event.schedule != '15 21 * * *'
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -58,6 +60,7 @@ jobs:
         run: |
           python consensus_pronostics/evaluate.py
           python consensus_pronostics/evaluate_analyses.py
+          python consensus_pronostics/two_of_four.py
       - name: Archiver uniquement les donnees du consensus
         if: always()
         run: |

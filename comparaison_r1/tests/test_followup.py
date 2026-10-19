@@ -46,3 +46,22 @@ class FollowupTests(TestCase):
         s['races'][0]['status']='NON_JOUE'
         self.assertEqual(before,report(s))
         self.assertLess(len(before),500)
+
+    def test_target_observed_without_stopping_from_oct19(self):
+        from comparaison_r1.model import account,stop_at_target
+        s={'stop_at_target':stop_at_target('2026-10-19'),'bets':[{'race_id':'R1C1','stake_cents':10000,'return_cents':35000,'status':'GAGNE'}]}
+        self.assertIsNone(account(s)['stop'])
+        s['bets'].append({'race_id':'R1C2','stake_cents':10000,'return_cents':0,'status':'PERDU'})
+        a=account(s)
+        self.assertEqual(a['profit_cents'],15000)
+        self.assertEqual(a['first_target']['profit_cents'],25000)
+        self.assertEqual(a['peak_profit_cents'],25000)
+        self.assertEqual(a['max_drawdown_cents'],10000)
+        s['stop_at_target']=stop_at_target('2026-10-18');s['bets'].pop()
+        self.assertEqual(account(s)['stop'],'OBJECTIF')
+
+    def test_daily_report_includes_unplayed_arrival_and_financial_total(self):
+        r=copy.deepcopy(self.r);r['official_arrival']=[{'number':2,'name':'WINNER','rank':1}];r['no_bet_reason']='Pas de majorité'
+        s={'date':'2026-10-19','venue':'TEST','races':[r],'solutions':{'majorite_3_ou_4':{'bets':[],'stop_at_target':False}}}
+        message=m.daily_report(s)
+        self.assertIn('WINNER',message);self.assertIn('Pas de majorité',message);self.assertIn('0.00 €',message)

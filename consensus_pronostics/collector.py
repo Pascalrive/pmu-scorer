@@ -193,7 +193,7 @@ def official(d,f):
    if not any('QUINTE' in p.get('typePari','') for p in c.get('paris',[])):continue
    r=reunion['numOfficiel'];num=c['numOrdre'];ident=f'R{r}C{num}'
    horses=f.json(API+d.strftime('%d%m%Y')+f'/R{r}/C{num}/participants')['participants']
-   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'odds_captured_at':datetime.now(timezone.utc).isoformat(),'internet_quinte_available':any(p.get('typePari')=='E_QUINTE_PLUS' and p.get('enVente') is not False and p.get('miseBase')==200 for p in c.get('paris',[])),'horses':{p['numPmu']:{**{k:p.get(k) for k in ('numPmu','nom','statut')},'pmu_odds':pmu_odds(p)} for p in horses}})
+   races.append({'id':ident,'date':d.isoformat(),'r':r,'c':num,'title':c['libelle'],'departure':datetime.fromtimestamp(c['heureDepart']/1000,timezone.utc).isoformat(),'odds_captured_at':datetime.now(timezone.utc).isoformat(),'internet_2sur4_available':any(p.get('typePari')=='E_DEUX_SUR_QUATRE' and p.get('enVente') is not False and p.get('miseBase')==300 for p in c.get('paris',[])),'internet_quinte_available':any(p.get('typePari')=='E_QUINTE_PLUS' and p.get('enVente') is not False and p.get('miseBase')==200 for p in c.get('paris',[])),'horses':{p['numPmu']:{**{k:p.get(k) for k in ('numPmu','nom','statut')},'pmu_odds':pmu_odds(p)} for p in horses}})
  return races
 
 def source_url(key,race,f):

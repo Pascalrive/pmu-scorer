@@ -128,3 +128,7 @@ aucune mise. La capture définitive reste dans la dernière heure, puis les
 mises dans les 30 dernières minutes suivant le règlement précédent.
 
 Les aperçus sont rafraîchis au plus une fois par heure à partir de 7h (Paris), y compris lorsque les quatre sources sont déjà présentes, afin de mettre à jour cotes et statuts PMU. Les sélections provisoires conservées gardent leur horodatage initial. Les courses non jouées sont expliquées dans le suivi. Les horaires GitHub restent indicatifs ; aucun pari rétroactif ne compense un passage tardif.
+
+## Protocole du 19 octobre 2026
+
+Le seuil +200 EUR devient un repère et ne bloque plus les mises. Le filtre 3/4–4/4, le plafond 800 EUR et la fin de série après cinq pertes restent actifs. Toutes les courses de R1 sont affichées avec leur arrivée officielle, choix, mise ou motif de non-jeu. Le bilan du jour compare le premier seuil atteint au solde final, au maximum et au recul maximal. Les journées précédentes gardent leur règle historique.

@@ -41,6 +41,11 @@ def format_messages(s):
    nums=' – '.join(str(n) for n in profile['numbers'])
    summary.append('<b>'+html.escape(profile['label'])+'</b> : '+nums+('' if profile['qualified'] else ' · INCOMPLET'))
   summary+=['Mixte : trois bases + deux outsiders cités par ≥2 sources.','Comparaison simulée : 2 € par sélection complète, sans Option Max. Mise fixe ; aucune augmentation après une perte.']
+  if s['analyses'].get('two_of_four'):
+   summary+=['','<b>➕ 2 SUR 4 À 100 % — SIMULATION</b>']
+   for t in s['analyses']['two_of_four']:
+    summary.append(html.escape(t['profile'])+' : '+' + '.join('N°'+str(n) for n in t['numbers'])+(' · mise 3 €' if t['qualified'] else ' · NON JOUÉ : sélection ou marché incomplet'))
+   summary.append('3 € par variante ; 9 € si les trois sont admissibles. Sans Flexi ni Jackpot. Comptes distincts même pour une paire identique.')
  summary+=['','Cotes de simple gagnant, indicatives et évolutives. « réf. » = cote de référence si le direct manque.','Présentation des avis · aucun pari exécuté.']
  detail=[f'📋 QUINTÉ — {day} · 2/3','<b>LES CINQ CHOIX PAR PRONOSTIQUEUR</b>','Ordre publié : ① premier choix → ⑤ cinquième choix.','Chaque ligne : numéro · cheval · cote PMU.']
  by={r['source']:r for r in s['rows']};ranks=['①','②','③','④','⑤']

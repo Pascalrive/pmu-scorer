@@ -28,4 +28,8 @@ def build_analyses(rows,race):
   ('mixte','Bases + outsiders',seeds+extras,'Trois bases statistiques + deux outsiders distincts cités par au moins deux sources ; égalités outsiders : cote, puis numéro.')]:
   ready=race.get('internet_quinte_available') is True and complete>=5 and len(numbers)==5 and (key!='mixte' or len(seeds)==3 and len(extras)==2)
   profiles.append({'id':key,'label':label,'horses':[detail(n) for n in numbers], 'numbers':numbers,'qualified':ready,'rule':rule,'stake_eur':STAKE_EUR,'market':'E_QUINTE_PLUS'})
- return {'version':VERSION_ANALYSES,'complete_sources':complete,'available_sources':len(seen),'profiles':profiles,'simulation_only':True,'stake_eur':STAKE_EUR,'option_max':False,'progressive_staking':False}
+ result={'version':VERSION_ANALYSES,'complete_sources':complete,'available_sources':len(seen),'profiles':profiles,'simulation_only':True,'stake_eur':STAKE_EUR,'option_max':False,'progressive_staking':False}
+
+ from two_of_four import tickets
+ result['two_of_four']=tickets(result,race)
+ return result
