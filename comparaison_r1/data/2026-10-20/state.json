@@ -1715,7 +1715,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 14,
+          "settled_at": "2026-10-20T17:47:36.322649+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "607e3c4fcefc64250589e17a0d71213c2e2977c35bd1d2ea1cad82bbcf847626",
+            "file": "preuves/607e3c4fcefc64250589e17a0d71213c2e2977c35bd1d2ea1cad82bbcf847626.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C7/participants",
+            "sha256": "70ef5adecc6bf0a5a6a31f3a25b923d724fa0ee0e215ec3cdccee0139e34ec7f",
+            "file": "preuves/70ef5adecc6bf0a5a6a31f3a25b923d724fa0ee0e215ec3cdccee0139e34ec7f.gz"
+          }
         }
       },
       "groups": {},
@@ -1750,15 +1764,46 @@
           "checked_at": "2026-10-20T17:20:43.201785+02:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 6,
+          "name": "INSEPARABLE",
+          "rank": 1
+        },
+        {
+          "number": 4,
+          "name": "ZARTOP",
+          "rank": 2
+        },
+        {
+          "number": 14,
+          "name": "LE GARDOLOT",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "MISTER POWER",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "EASTERN STAR",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C7/participants",
+        "sha256": "70ef5adecc6bf0a5a6a31f3a25b923d724fa0ee0e215ec3cdccee0139e34ec7f",
+        "file": "preuves/70ef5adecc6bf0a5a6a31f3a25b923d724fa0ee0e215ec3cdccee0139e34ec7f.gz"
+      }
     },
     {
       "date": "2026-10-20",
       "id": "R1C8",
       "c": 8,
       "title": "PX MERC. 21.10.2026-DERN. JOURN. DES ANIM. EQUIDAYS(PX D.L'ET. D.VTES)",
-      "departure": "2026-10-20T18:00:00+02:00",
+      "departure": "2026-10-20T18:03:00+02:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -1798,17 +1843,17 @@
         "canalturf": {
           "type": "ValueError",
           "reason": "Course datée absente ou ambiguë dans l’index",
-          "at": "2026-10-20T17:34:47.604236+02:00"
+          "at": "2026-10-20T17:47:14.580086+02:00"
         },
         "zeturf": {
           "type": "ValueError",
           "reason": "Course datée absente ou ambiguë dans l’index",
-          "at": "2026-10-20T17:34:47.630266+02:00"
+          "at": "2026-10-20T17:47:14.599756+02:00"
         },
         "geny": {
           "type": "ValueError",
           "reason": "Course datée absente ou ambiguë dans l’index",
-          "at": "2026-10-20T17:34:48.775431+02:00"
+          "at": "2026-10-20T17:47:15.186951+02:00"
         }
       },
       "source_checks": {
@@ -1817,7 +1862,14 @@
           "sha256": "57e6f8342b1e2e53f69742d1ca3d9bece8feafd31b1c1cde7b2c0baf26f7c25f",
           "file": "preuves/57e6f8342b1e2e53f69742d1ca3d9bece8feafd31b1c1cde7b2c0baf26f7c25f.gz"
         }
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-10-20T18:00:00+02:00",
+          "new": "2026-10-20T18:03:00+02:00",
+          "checked_at": "2026-10-20T17:47:12.471465+02:00"
+        }
+      ]
     },
     {
       "date": "2026-10-20",
@@ -1826,9 +1878,172 @@
       "title": "PRIX DU MINI MEETING D'OCTOBRE (PRIX DES PANICAUTS)",
       "departure": "2026-10-20T18:35:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 10,
+          "name": "D'ALLURE",
+          "source_url": "https://turfin.fr/course/2026-10-20/r1c9-clairefontaine-prix-du-mini-meeting-d-octobre-prix-des-panicauts",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-20/r1c9-clairefontaine-prix-du-mini-meeting-d-octobre-prix-des-panicauts",
+            "sha256": "7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0",
+            "file": "preuves/7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C9/participants",
+            "sha256": "baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5",
+            "file": "preuves/baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5.gz"
+          },
+          "captured_at": "2026-10-20T17:47:18.012408+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.1,
+            "dateRapport": 1792511130000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "MY DARLING",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+            "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+            "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C9/participants",
+            "sha256": "baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5",
+            "file": "preuves/baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5.gz"
+          },
+          "captured_at": "2026-10-20T17:47:18.550759+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.44,
+            "dateRapport": 1792511130000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 5,
+          "name": "GREASE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+            "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+            "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C9/participants",
+            "sha256": "baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5",
+            "file": "preuves/baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5.gz"
+          },
+          "captured_at": "2026-10-20T17:47:18.582634+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.24,
+            "dateRapport": 1792511130000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 5,
+          "name": "GREASE",
+          "source_url": "https://www.geny.com/course/1692414-2026-10-20-clairefontaine-deauville-prix-du-mini-meeting-d-octobre-prix-des-panicauts/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "evidence": {
+            "url": "https://www.geny.com/course/1692414-2026-10-20-clairefontaine-deauville-prix-du-mini-meeting-d-octobre-prix-des-panicauts/partants-pronostics",
+            "sha256": "4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187",
+            "file": "preuves/4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C9/participants",
+            "sha256": "baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5",
+            "file": "preuves/baa738a062b291f127b921d76f36b835808211a79d1c9638f43591727c77fdd5.gz"
+          },
+          "captured_at": "2026-10-20T17:47:35.440190+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.24,
+            "dateRapport": 1792511130000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_2_sur_4": {
+          "number": 5,
+          "sites": [
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_geny+zeturf": {
+          "number": 5,
+          "sites": [
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-20/r1c9-clairefontaine-prix-du-mini-meeting-d-octobre-prix-des-panicauts",
+          "sha256": "7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0",
+          "file": "preuves/7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+          "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+          "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+          "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+          "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1692414-2026-10-20-clairefontaine-deauville-prix-du-mini-meeting-d-octobre-prix-des-panicauts/partants-pronostics",
+          "sha256": "4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187",
+          "file": "preuves/4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-20T17:47:35.440239+02:00"
     }
   ],
   "notifications": [],
