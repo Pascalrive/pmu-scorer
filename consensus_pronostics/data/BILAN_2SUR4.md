@@ -7,9 +7,11 @@
 | 2026-10-19 | statistique | [1, 2] | 3 € | 9.6 | 6.6 | REGLE |
 | 2026-10-19 | cotes | [2, 13] | 3 € | 0.0 | -3.0 | REGLE |
 | 2026-10-19 | mixte | [1, 2] | 3 € | 9.6 | 6.6 | REGLE |
+| 2026-10-20 | statistique | [2, 3] | 3 € | None | None | AVANT_COURSE |
+| 2026-10-20 | cotes | [2, 9] | 3 € | None | None | AVANT_COURSE |
 
 | Variante | Réglés | Attente | Mises réglées | Retours | Net | ROI réglé |
 |---|---:|---:|---:|---:|---:|---:|
-| statistique | 1 | 0 | 3.00 | 9.60 | 6.60 | +220.00 % |
-| cotes | 1 | 0 | 3.00 | 0.00 | -3.00 | -100.00 % |
+| statistique | 1 | 1 | 3.00 | 9.60 | 6.60 | +220.00 % |
+| cotes | 1 | 1 | 3.00 | 0.00 | -3.00 | -100.00 % |
 | mixte | 1 | 0 | 3.00 | 9.60 | 6.60 | +220.00 % |
