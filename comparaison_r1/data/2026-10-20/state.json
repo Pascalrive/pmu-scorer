@@ -1835,7 +1835,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-20T18:22:25.110372+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C8/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "4edf104f0dc73d3008fb94e7c29b59610e20ec99615af4ea24f7fdc0335433cd",
+            "file": "preuves/4edf104f0dc73d3008fb94e7c29b59610e20ec99615af4ea24f7fdc0335433cd.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C8/participants",
+            "sha256": "4973df5c7e2b6fae23c4b90d0ffbc7c529c5893cdebcb7873a14af32046a84fc",
+            "file": "preuves/4973df5c7e2b6fae23c4b90d0ffbc7c529c5893cdebcb7873a14af32046a84fc.gz"
+          }
         }
       },
       "groups": {},
@@ -1869,14 +1883,47 @@
           "new": "2026-10-20T18:03:00+02:00",
           "checked_at": "2026-10-20T17:47:12.471465+02:00"
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 9,
+          "name": "MISS TECH",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "MAJARA",
+          "rank": 2
+        },
+        {
+          "number": 11,
+          "name": "NELSONN",
+          "rank": 3
+        },
+        {
+          "number": 2,
+          "name": "PACIFIC SKY",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "TROPA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C8/participants",
+        "sha256": "4973df5c7e2b6fae23c4b90d0ffbc7c529c5893cdebcb7873a14af32046a84fc",
+        "file": "preuves/4973df5c7e2b6fae23c4b90d0ffbc7c529c5893cdebcb7873a14af32046a84fc.gz"
+      },
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-10-20",
       "id": "R1C9",
       "c": 9,
       "title": "PRIX DU MINI MEETING D'OCTOBRE (PRIX DES PANICAUTS)",
-      "departure": "2026-10-20T18:35:00+02:00",
+      "departure": "2026-10-20T18:36:00+02:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -2043,147 +2090,27 @@
           "file": "preuves/4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187.gz"
         }
       },
-      "groups_frozen_at": "2026-10-20T17:47:35.440239+02:00"
+      "groups_frozen_at": "2026-10-20T17:47:35.440239+02:00",
+      "schedule_changes": [
+        {
+          "old": "2026-10-20T18:35:00+02:00",
+          "new": "2026-10-20T18:36:00+02:00",
+          "checked_at": "2026-10-20T18:22:24.114089+02:00"
+        }
+      ]
     }
   ],
   "notifications": [],
   "morning_preview": {
     "version": 3,
-    "captured_at": "2026-10-20T16:58:45.842352+02:00",
+    "captured_at": "2026-10-20T18:22:23.586238+02:00",
     "races": [
-      {
-        "date": "2026-10-20",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PX MERCI AUX PRO DES COURSES VENUS A CLAIREFONTAINE (PX DES ASTRANCES)",
-        "departure": "2026-10-20T17:25:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 5,
-            "name": "HISTOIREDEMARS",
-            "source_url": "https://turfin.fr/course/2026-10-20/r1c7-clairefontaine-px-merci-aux-pro-des-courses-venus-a-clairefontaine-px-des-astrances",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-20/r1c7-clairefontaine-px-merci-aux-pro-des-courses-venus-a-clairefontaine-px-des-astrances",
-              "sha256": "4a7b43a60ead0e31ac16b0b708582abda4450d473ad7920d993faccf18d0e8b8",
-              "file": "preuves/4a7b43a60ead0e31ac16b0b708582abda4450d473ad7920d993faccf18d0e8b8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C7/participants",
-              "sha256": "cbb0726f14cc19c44156cc0f2bcede874d5c9ad58154f43143fa3263422210c5",
-              "file": "preuves/cbb0726f14cc19c44156cc0f2bcede874d5c9ad58154f43143fa3263422210c5.gz"
-            },
-            "captured_at": "2026-10-20T07:52:57.700963+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 16.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.62,
-              "dateRapport": 1792508307000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-20T16:58:43.036181+02:00"
-          }
-        },
-        "groups": {},
-        "errors": {
-          "canalturf": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:43.996771+02:00"
-          },
-          "zeturf": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:44.040823+02:00"
-          },
-          "geny": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:44.698712+02:00"
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-20/r1c7-clairefontaine-px-merci-aux-pro-des-courses-venus-a-clairefontaine-px-des-astrances",
-            "sha256": "1179279be78dd081aeccd821ddbf3866abd11a09c854464626fb71ee0e1b256d",
-            "file": "preuves/1179279be78dd081aeccd821ddbf3866abd11a09c854464626fb71ee0e1b256d.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-20",
-        "id": "R1C8",
-        "c": 8,
-        "title": "PX MERC. 21.10.2026-DERN. JOURN. DES ANIM. EQUIDAYS(PX D.L'ET. D.VTES)",
-        "departure": "2026-10-20T18:00:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 1,
-            "name": "DSCHINGIS NECKARA",
-            "source_url": "https://turfin.fr/course/2026-10-20/r1c8-clairefontaine-px-merc-21-10-2026-dern-journ-des-anim-equidays-px-d-l-et-d-vtes",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-20/r1c8-clairefontaine-px-merc-21-10-2026-dern-journ-des-anim-equidays-px-d-l-et-d-vtes",
-              "sha256": "b523f077f5cf73ad5d161a2a19a429aad6d5f2cb364f8824f9d85d4cb468be15",
-              "file": "preuves/b523f077f5cf73ad5d161a2a19a429aad6d5f2cb364f8824f9d85d4cb468be15.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20102026/R1/C8/participants",
-              "sha256": "fed54950695c6ca7103f3251f595e82cf12a56acad02e972a45eb928bd4e0c19",
-              "file": "preuves/fed54950695c6ca7103f3251f595e82cf12a56acad02e972a45eb928bd4e0c19.gz"
-            },
-            "captured_at": "2026-10-20T07:52:59.426372+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.79,
-              "dateRapport": 1792507556000,
-              "favoris": false,
-              "numPmu1": 1,
-              "grossePrise": false
-            },
-            "odds_checked_at": "2026-10-20T16:58:45.147233+02:00"
-          }
-        },
-        "groups": {},
-        "errors": {
-          "canalturf": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:45.190383+02:00"
-          },
-          "zeturf": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:45.232126+02:00"
-          },
-          "geny": {
-            "type": "ValueError",
-            "reason": "Course datée absente ou ambiguë dans l’index",
-            "at": "2026-10-20T16:58:45.331298+02:00"
-          }
-        }
-      },
       {
         "date": "2026-10-20",
         "id": "R1C9",
         "c": 9,
         "title": "PRIX DU MINI MEETING D'OCTOBRE (PRIX DES PANICAUTS)",
-        "departure": "2026-10-20T18:35:00+02:00",
+        "departure": "2026-10-20T18:36:00+02:00",
         "market": true,
         "tips": {
           "turfin": {
@@ -2208,15 +2135,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
+              "rapport": 7.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.05,
-              "dateRapport": 1792507530000,
+              "nombreIndicateurTendance": 1.29,
+              "dateRapport": 1792513337000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-20T16:58:45.842264+02:00"
+            "odds_checked_at": "2026-10-20T18:22:23.586196+02:00"
           },
           "canalturf": {
             "site": "canalturf",
@@ -2240,15 +2167,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 6.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.81,
-              "dateRapport": 1792507530000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792513337000,
+              "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-20T16:58:45.842285+02:00"
+            "odds_checked_at": "2026-10-20T18:22:23.586206+02:00"
           },
           "zeturf": {
             "site": "zeturf",
@@ -2272,15 +2199,15 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1792507530000,
-              "favoris": true,
+              "nombreIndicateurTendance": -1.36,
+              "dateRapport": 1792513337000,
+              "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-20T16:58:45.842294+02:00"
+            "odds_checked_at": "2026-10-20T18:22:23.586211+02:00"
           },
           "geny": {
             "site": "geny",
@@ -2304,21 +2231,51 @@
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1792507530000,
-              "favoris": true,
+              "nombreIndicateurTendance": -1.36,
+              "dateRapport": 1792513337000,
+              "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
             },
-            "odds_checked_at": "2026-10-20T16:58:45.842301+02:00"
+            "odds_checked_at": "2026-10-20T18:22:23.586215+02:00"
           }
         },
         "groups": {},
-        "errors": {}
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-10-20/r1c9-clairefontaine-prix-du-mini-meeting-d-octobre-prix-des-panicauts",
+            "sha256": "7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0",
+            "file": "preuves/7e0f04c451f55e8d5235aa278647cbe5d33d001b9f77b59b4e64a4e431e67bd0.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+            "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+            "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421062_prix-du-mini-meeting-d-octobre-prix-des-panicauts.html",
+            "sha256": "679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac",
+            "file": "preuves/679b4bd39f96b32e5000f7b138ece8a6b0c27ee39876738cc091aa6e7f6791ac.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1692414-2026-10-20-clairefontaine-deauville-prix-du-mini-meeting-d-octobre-prix-des-panicauts/partants-pronostics",
+            "sha256": "4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187",
+            "file": "preuves/4e289b36f34d4a85c15c900ecf48809a2d81ed42f1ce60f194c3a6e9604e5187.gz"
+          }
+        },
+        "groups_frozen_at": "2026-10-20T17:47:35.440239+02:00",
+        "schedule_changes": [
+          {
+            "old": "2026-10-20T18:35:00+02:00",
+            "new": "2026-10-20T18:36:00+02:00",
+            "checked_at": "2026-10-20T18:22:22.735968+02:00"
+          }
+        ]
       }
     ],
-    "complete": false
+    "complete": true
   }
 }
