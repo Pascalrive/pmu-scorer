@@ -4,27 +4,27 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — PRIX DES EQUIDAYS
 
-Collecte : 2026-10-20T09:24:14.370537+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-10-20T11:20:33.084238+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421054_prix-des-equidays.html) | 2 NITY GALESTE (cote 5.7) | 3 MAKAN (cote 9.8) | 9 TAKERYA (cote 9.4) | 4 ZARLAND (cote 9.7) | 11 ENTLEBUCH (cote 11.0) | 8 MARIE LA CROIX (cote 16.0) — Outsider ; 10 BABADOO (cote 14.0) — Outsider ; 6 ARANYANI (cote 18.0) — Outsider ; 4 ZARLAND (cote 9.7) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421054_prix-des-equidays.html) | 2 NITY GALESTE (cote 5.7) | 14 EXELMANS (cote 11.0) | 15 ZARABABY (cote 11.0) | 3 MAKAN (cote 9.8) | 4 ZARLAND (cote 9.7) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 EXELMANS (cote 11.0) | 4 ZARLAND (cote 9.7) | 15 ZARABABY (cote 11.0) | 3 MAKAN (cote 9.8) | 9 TAKERYA (cote 9.4) | 16 MICKAEL D'OO (cote 16.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 2 NITY GALESTE (cote 5.7) | 15 ZARABABY (cote 11.0) | 11 ENTLEBUCH (cote 11.0) | 14 EXELMANS (cote 11.0) | 13 ADICTA (cote 15.0) | 13 ADICTA (cote 15.0) — Outsider ; 5 MY HABITUDE (cote 20.0) — Outsider ; 9 TAKERYA (cote 9.4) — Outsider ; 10 BABADOO (cote 14.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 NITY GALESTE (cote 5.7) | 3 MAKAN (cote 9.8) | 14 EXELMANS (cote 11.0) | 15 ZARABABY (cote 11.0) | 11 ENTLEBUCH (cote 11.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421054_prix-des-equidays.html) | 2 NITY GALESTE (cote 5.2) | 3 MAKAN (cote 10.0) | 9 TAKERYA (cote 9.3) | 4 ZARLAND (cote 9.2) | 11 ENTLEBUCH (cote 11.0) | 8 MARIE LA CROIX (cote 16.0) — Outsider ; 10 BABADOO (cote 14.0) — Outsider ; 6 ARANYANI (cote 19.0) — Outsider ; 4 ZARLAND (cote 9.2) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-20/clairefontaine/421054_prix-des-equidays.html) | 2 NITY GALESTE (cote 5.2) | 14 EXELMANS (cote 11.0) | 15 ZARABABY (cote 11.0) | 3 MAKAN (cote 10.0) | 4 ZARLAND (cote 9.2) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 14 EXELMANS (cote 11.0) | 4 ZARLAND (cote 9.2) | 15 ZARABABY (cote 11.0) | 3 MAKAN (cote 10.0) | 9 TAKERYA (cote 9.3) | 16 MICKAEL D'OO (cote 18.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 2 NITY GALESTE (cote 5.2) | 15 ZARABABY (cote 11.0) | 11 ENTLEBUCH (cote 11.0) | 14 EXELMANS (cote 11.0) | 13 ADICTA (cote 15.0) | 13 ADICTA (cote 15.0) — Outsider ; 5 MY HABITUDE (cote 21.0) — Outsider ; 9 TAKERYA (cote 9.3) — Outsider ; 10 BABADOO (cote 14.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 NITY GALESTE (cote 5.2) | 3 MAKAN (cote 10.0) | 14 EXELMANS (cote 11.0) | 15 ZARABABY (cote 11.0) | 11 ENTLEBUCH (cote 11.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
-| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-20-octobre-2026/) | 4 ZARLAND (cote 9.7) | — | — | — | — | 15 ZARABABY (cote 11.0) — Tocard du jour |
+| [Prono Turf Gratuit](https://prono-turf-gratuit.fr/pronostic-quinte-pmu/base-solide-et-tocard-du-jour-quinte-du-mardi-20-octobre-2026/) | 4 ZARLAND (cote 9.2) | — | — | — | — | 15 ZARABABY (cote 11.0) — Tocard du jour |
 
 ### Les cinq chevaux les plus cités dans les cinq choix publiés
 
 | Cheval | Sources le citant |
 |---|---:|
-| 2 NITY GALESTE (cote 5.7) | 4 |
+| 2 NITY GALESTE (cote 5.2) | 4 |
 | 14 EXELMANS (cote 11.0) | 4 |
-| 3 MAKAN (cote 9.8) | 4 |
-| 4 ZARLAND (cote 9.7) | 4 |
+| 3 MAKAN (cote 10.0) | 4 |
+| 4 ZARLAND (cote 9.2) | 4 |
 | 15 ZARABABY (cote 11.0) | 4 |
 
 ### Notre analyse — trois sélections de cinq chevaux
@@ -32,7 +32,7 @@ Collecte : 2026-10-20T09:24:14.370537+00:00. Avant départ : True. Sources compl
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 2 – 14 – 3 – 4 – 15 | 2 € |
-| Cotes | 2 – 9 – 4 – 3 – 11 | 2 € |
+| Cotes | 2 – 4 – 9 – 3 – 11 | 2 € |
 | Bases + outsiders | 2 – 14 – 3 – 10 | INCOMPLET : pas de simulation |
 
 ### Cumul des trois premiers choix
