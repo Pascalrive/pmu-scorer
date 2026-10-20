@@ -15,15 +15,55 @@
   "daily_profit_target_cents": 20000,
   "target_effective_date": "2026-10-18",
   "races": 42,
-  "common_settled_races": 36,
+  "common_settled_races": 37,
   "individual": {
     "turfin": {
-      "recorded": 39,
+      "recorded": 40,
+      "settled": 38,
+      "wins": 9,
+      "losses": 29,
+      "refunds": 0,
+      "pending": 2,
+      "not_played": 0,
+      "stake_cents": 0,
+      "return_cents": 0,
+      "profit_cents": 0,
+      "roi_percent": null,
+      "win_percent": 23.68,
+      "win_wilson95_percent": [
+        12.99,
+        39.21
+      ],
+      "longest_observed_loss_streak": 11,
+      "missing_races": 2
+    },
+    "canalturf": {
+      "recorded": 38,
+      "settled": 37,
+      "wins": 10,
+      "losses": 27,
+      "refunds": 0,
+      "pending": 1,
+      "not_played": 0,
+      "stake_cents": 0,
+      "return_cents": 0,
+      "profit_cents": 0,
+      "roi_percent": null,
+      "win_percent": 27.03,
+      "win_wilson95_percent": [
+        15.4,
+        42.98
+      ],
+      "longest_observed_loss_streak": 11,
+      "missing_races": 4
+    },
+    "zeturf": {
+      "recorded": 38,
       "settled": 37,
       "wins": 8,
       "losses": 29,
       "refunds": 0,
-      "pending": 2,
+      "pending": 1,
       "not_played": 0,
       "stake_cents": 0,
       "return_cents": 0,
@@ -34,65 +74,25 @@
         11.39,
         37.2
       ],
-      "longest_observed_loss_streak": 11,
-      "missing_races": 3
-    },
-    "canalturf": {
-      "recorded": 38,
-      "settled": 36,
-      "wins": 10,
-      "losses": 26,
-      "refunds": 0,
-      "pending": 2,
-      "not_played": 0,
-      "stake_cents": 0,
-      "return_cents": 0,
-      "profit_cents": 0,
-      "roi_percent": null,
-      "win_percent": 27.78,
-      "win_wilson95_percent": [
-        15.85,
-        43.99
-      ],
-      "longest_observed_loss_streak": 10,
-      "missing_races": 4
-    },
-    "zeturf": {
-      "recorded": 38,
-      "settled": 36,
-      "wins": 7,
-      "losses": 29,
-      "refunds": 0,
-      "pending": 2,
-      "not_played": 0,
-      "stake_cents": 0,
-      "return_cents": 0,
-      "profit_cents": 0,
-      "roi_percent": null,
-      "win_percent": 19.44,
-      "win_wilson95_percent": [
-        9.75,
-        35.03
-      ],
       "longest_observed_loss_streak": 12,
       "missing_races": 4
     },
     "geny": {
       "recorded": 38,
-      "settled": 36,
-      "wins": 11,
+      "settled": 37,
+      "wins": 12,
       "losses": 25,
       "refunds": 0,
-      "pending": 2,
+      "pending": 1,
       "not_played": 0,
       "stake_cents": 0,
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 30.56,
+      "win_percent": 32.43,
       "win_wilson95_percent": [
-        18.0,
-        46.86
+        19.63,
+        48.54
       ],
       "longest_observed_loss_streak": 10,
       "missing_races": 4
@@ -100,9 +100,9 @@
   },
   "common": {
     "turfin": {
-      "recorded": 36,
-      "settled": 36,
-      "wins": 8,
+      "recorded": 37,
+      "settled": 37,
+      "wins": 9,
       "losses": 28,
       "refunds": 0,
       "pending": 0,
@@ -111,18 +111,18 @@
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 22.22,
+      "win_percent": 24.32,
       "win_wilson95_percent": [
-        11.72,
-        38.09
+        13.36,
+        40.12
       ],
       "longest_observed_loss_streak": 10
     },
     "canalturf": {
-      "recorded": 36,
-      "settled": 36,
+      "recorded": 37,
+      "settled": 37,
       "wins": 10,
-      "losses": 26,
+      "losses": 27,
       "refunds": 0,
       "pending": 0,
       "not_played": 0,
@@ -130,17 +130,17 @@
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 27.78,
+      "win_percent": 27.03,
       "win_wilson95_percent": [
-        15.85,
-        43.99
+        15.4,
+        42.98
       ],
-      "longest_observed_loss_streak": 10
+      "longest_observed_loss_streak": 11
     },
     "zeturf": {
-      "recorded": 36,
-      "settled": 36,
-      "wins": 7,
+      "recorded": 37,
+      "settled": 37,
+      "wins": 8,
       "losses": 29,
       "refunds": 0,
       "pending": 0,
@@ -149,17 +149,17 @@
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 19.44,
+      "win_percent": 21.62,
       "win_wilson95_percent": [
-        9.75,
-        35.03
+        11.39,
+        37.2
       ],
       "longest_observed_loss_streak": 12
     },
     "geny": {
-      "recorded": 36,
-      "settled": 36,
-      "wins": 11,
+      "recorded": 37,
+      "settled": 37,
+      "wins": 12,
       "losses": 25,
       "refunds": 0,
       "pending": 0,
@@ -168,10 +168,10 @@
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 30.56,
+      "win_percent": 32.43,
       "win_wilson95_percent": [
-        18.0,
-        46.86
+        19.63,
+        48.54
       ],
       "longest_observed_loss_streak": 10
     }
@@ -179,27 +179,27 @@
   "agreements": {
     "accord_3_sur_4": {
       "recorded": 15,
-      "settled": 13,
-      "wins": 5,
+      "settled": 14,
+      "wins": 6,
       "losses": 8,
       "refunds": 0,
-      "pending": 2,
+      "pending": 1,
       "not_played": 0,
       "stake_cents": 0,
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 38.46,
+      "win_percent": 42.86,
       "win_wilson95_percent": [
-        17.71,
-        64.48
+        21.38,
+        67.41
       ],
       "longest_observed_loss_streak": 4,
       "same_race_baselines": {
         "turfin": {
-          "recorded": 13,
-          "settled": 13,
-          "wins": 2,
+          "recorded": 14,
+          "settled": 14,
+          "wins": 3,
           "losses": 11,
           "refunds": 0,
           "pending": 0,
@@ -208,36 +208,17 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 15.38,
+          "win_percent": 21.43,
           "win_wilson95_percent": [
-            4.33,
-            42.24
+            7.57,
+            47.59
           ],
           "longest_observed_loss_streak": 8
         },
         "canalturf": {
-          "recorded": 13,
-          "settled": 13,
+          "recorded": 14,
+          "settled": 14,
           "wins": 5,
-          "losses": 8,
-          "refunds": 0,
-          "pending": 0,
-          "not_played": 0,
-          "stake_cents": 0,
-          "return_cents": 0,
-          "profit_cents": 0,
-          "roi_percent": null,
-          "win_percent": 38.46,
-          "win_wilson95_percent": [
-            17.71,
-            64.48
-          ],
-          "longest_observed_loss_streak": 4
-        },
-        "zeturf": {
-          "recorded": 13,
-          "settled": 13,
-          "wins": 4,
           "losses": 9,
           "refunds": 0,
           "pending": 0,
@@ -246,17 +227,36 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 30.77,
+          "win_percent": 35.71,
           "win_wilson95_percent": [
-            12.68,
-            57.63
+            16.34,
+            61.24
+          ],
+          "longest_observed_loss_streak": 5
+        },
+        "zeturf": {
+          "recorded": 14,
+          "settled": 14,
+          "wins": 5,
+          "losses": 9,
+          "refunds": 0,
+          "pending": 0,
+          "not_played": 0,
+          "stake_cents": 0,
+          "return_cents": 0,
+          "profit_cents": 0,
+          "roi_percent": null,
+          "win_percent": 35.71,
+          "win_wilson95_percent": [
+            16.34,
+            61.24
           ],
           "longest_observed_loss_streak": 5
         },
         "geny": {
-          "recorded": 13,
-          "settled": 13,
-          "wins": 6,
+          "recorded": 14,
+          "settled": 14,
+          "wins": 7,
           "losses": 7,
           "refunds": 0,
           "pending": 0,
@@ -265,10 +265,10 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 46.15,
+          "win_percent": 50.0,
           "win_wilson95_percent": [
-            23.21,
-            70.86
+            26.8,
+            73.2
           ],
           "longest_observed_loss_streak": 2
         }
@@ -276,27 +276,27 @@
     },
     "majorite_3_ou_4": {
       "recorded": 25,
-      "settled": 23,
-      "wins": 8,
+      "settled": 24,
+      "wins": 9,
       "losses": 15,
       "refunds": 0,
-      "pending": 2,
+      "pending": 1,
       "not_played": 0,
       "stake_cents": 0,
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 34.78,
+      "win_percent": 37.5,
       "win_wilson95_percent": [
-        18.81,
-        55.11
+        21.16,
+        57.29
       ],
       "longest_observed_loss_streak": 5,
       "same_race_baselines": {
         "turfin": {
-          "recorded": 23,
-          "settled": 23,
-          "wins": 5,
+          "recorded": 24,
+          "settled": 24,
+          "wins": 6,
           "losses": 18,
           "refunds": 0,
           "pending": 0,
@@ -305,36 +305,17 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 21.74,
+          "win_percent": 25.0,
           "win_wilson95_percent": [
-            9.66,
-            41.9
+            12.0,
+            44.9
           ],
           "longest_observed_loss_streak": 7
         },
         "canalturf": {
-          "recorded": 23,
-          "settled": 23,
+          "recorded": 24,
+          "settled": 24,
           "wins": 8,
-          "losses": 15,
-          "refunds": 0,
-          "pending": 0,
-          "not_played": 0,
-          "stake_cents": 0,
-          "return_cents": 0,
-          "profit_cents": 0,
-          "roi_percent": null,
-          "win_percent": 34.78,
-          "win_wilson95_percent": [
-            18.81,
-            55.11
-          ],
-          "longest_observed_loss_streak": 5
-        },
-        "zeturf": {
-          "recorded": 23,
-          "settled": 23,
-          "wins": 7,
           "losses": 16,
           "refunds": 0,
           "pending": 0,
@@ -343,17 +324,36 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 30.43,
+          "win_percent": 33.33,
           "win_wilson95_percent": [
-            15.6,
-            50.87
+            17.97,
+            53.29
+          ],
+          "longest_observed_loss_streak": 6
+        },
+        "zeturf": {
+          "recorded": 24,
+          "settled": 24,
+          "wins": 8,
+          "losses": 16,
+          "refunds": 0,
+          "pending": 0,
+          "not_played": 0,
+          "stake_cents": 0,
+          "return_cents": 0,
+          "profit_cents": 0,
+          "roi_percent": null,
+          "win_percent": 33.33,
+          "win_wilson95_percent": [
+            17.97,
+            53.29
           ],
           "longest_observed_loss_streak": 8
         },
         "geny": {
-          "recorded": 23,
-          "settled": 23,
-          "wins": 9,
+          "recorded": 24,
+          "settled": 24,
+          "wins": 10,
           "losses": 14,
           "refunds": 0,
           "pending": 0,
@@ -362,10 +362,10 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 39.13,
+          "win_percent": 41.67,
           "win_wilson95_percent": [
-            22.16,
-            59.21
+            24.47,
+            61.17
           ],
           "longest_observed_loss_streak": 5
         }
@@ -373,27 +373,27 @@
     },
     "groupe_geny+turfin+zeturf": {
       "recorded": 6,
-      "settled": 5,
-      "wins": 1,
+      "settled": 6,
+      "wins": 2,
       "losses": 4,
       "refunds": 0,
-      "pending": 1,
+      "pending": 0,
       "not_played": 0,
       "stake_cents": 0,
       "return_cents": 0,
       "profit_cents": 0,
       "roi_percent": null,
-      "win_percent": 20.0,
+      "win_percent": 33.33,
       "win_wilson95_percent": [
-        3.62,
-        62.45
+        9.68,
+        70.0
       ],
       "longest_observed_loss_streak": 4,
       "same_race_baselines": {
         "turfin": {
-          "recorded": 5,
-          "settled": 5,
-          "wins": 1,
+          "recorded": 6,
+          "settled": 6,
+          "wins": 2,
           "losses": 4,
           "refunds": 0,
           "pending": 0,
@@ -402,18 +402,18 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 20.0,
+          "win_percent": 33.33,
           "win_wilson95_percent": [
-            3.62,
-            62.45
+            9.68,
+            70.0
           ],
           "longest_observed_loss_streak": 4
         },
         "canalturf": {
-          "recorded": 5,
-          "settled": 5,
+          "recorded": 6,
+          "settled": 6,
           "wins": 1,
-          "losses": 4,
+          "losses": 5,
           "refunds": 0,
           "pending": 0,
           "not_played": 0,
@@ -421,17 +421,17 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 20.0,
+          "win_percent": 16.67,
           "win_wilson95_percent": [
-            3.62,
-            62.45
+            3.01,
+            56.35
           ],
-          "longest_observed_loss_streak": 2
+          "longest_observed_loss_streak": 3
         },
         "zeturf": {
-          "recorded": 5,
-          "settled": 5,
-          "wins": 1,
+          "recorded": 6,
+          "settled": 6,
+          "wins": 2,
           "losses": 4,
           "refunds": 0,
           "pending": 0,
@@ -440,17 +440,17 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 20.0,
+          "win_percent": 33.33,
           "win_wilson95_percent": [
-            3.62,
-            62.45
+            9.68,
+            70.0
           ],
           "longest_observed_loss_streak": 4
         },
         "geny": {
-          "recorded": 5,
-          "settled": 5,
-          "wins": 1,
+          "recorded": 6,
+          "settled": 6,
+          "wins": 2,
           "losses": 4,
           "refunds": 0,
           "pending": 0,
@@ -459,10 +459,10 @@
           "return_cents": 0,
           "profit_cents": 0,
           "roi_percent": null,
-          "win_percent": 20.0,
+          "win_percent": 33.33,
           "win_wilson95_percent": [
-            3.62,
-            62.45
+            9.68,
+            70.0
           ],
           "longest_observed_loss_streak": 4
         }
@@ -1344,7 +1344,7 @@
   },
   "paired_comparisons": {
     "turfin / canalturf": {
-      "a_wins_b_loses": 2,
+      "a_wins_b_loses": 3,
       "b_wins_a_loses": 4
     },
     "turfin / zeturf": {
@@ -1357,11 +1357,11 @@
     },
     "canalturf / zeturf": {
       "a_wins_b_loses": 4,
-      "b_wins_a_loses": 1
+      "b_wins_a_loses": 2
     },
     "canalturf / geny": {
       "a_wins_b_loses": 3,
-      "b_wins_a_loses": 4
+      "b_wins_a_loses": 5
     },
     "zeturf / geny": {
       "a_wins_b_loses": 0,
@@ -1370,21 +1370,21 @@
   },
   "solutions": {
     "majorite_3_ou_4": {
-      "recorded": 26,
-      "settled": 25,
-      "wins": 6,
+      "recorded": 27,
+      "settled": 26,
+      "wins": 7,
       "losses": 19,
       "refunds": 0,
       "pending": 1,
       "not_played": 0,
-      "stake_cents": 280000,
-      "return_cents": 261500,
-      "profit_cents": -18500,
-      "roi_percent": -6.61,
-      "win_percent": 24.0,
+      "stake_cents": 295000,
+      "return_cents": 287000,
+      "profit_cents": -8000,
+      "roi_percent": -2.71,
+      "win_percent": 26.92,
       "win_wilson95_percent": [
-        11.5,
-        43.43
+        13.7,
+        46.08
       ],
       "longest_observed_loss_streak": 11,
       "days_active": 5,
@@ -1392,24 +1392,24 @@
       "days_budget_stop": 0,
       "days_sequence_stop": 0,
       "max_daily_committed_cents": 90000,
-      "committed_cents": 295000,
+      "committed_cents": 305000,
       "by_market": {
         "E_SIMPLE_GAGNANT": {
-          "recorded": 19,
-          "settled": 18,
-          "wins": 6,
+          "recorded": 20,
+          "settled": 19,
+          "wins": 7,
           "losses": 12,
           "refunds": 0,
           "pending": 1,
           "not_played": 0,
-          "stake_cents": 250000,
-          "return_cents": 261500,
-          "profit_cents": 11500,
-          "roi_percent": 4.6,
-          "win_percent": 33.33,
+          "stake_cents": 265000,
+          "return_cents": 287000,
+          "profit_cents": 22000,
+          "roi_percent": 8.3,
+          "win_percent": 36.84,
           "win_wilson95_percent": [
-            16.28,
-            56.25
+            19.15,
+            58.96
           ],
           "longest_observed_loss_streak": 4
         },
@@ -1809,17 +1809,17 @@
         "max_drawdown_cents": 30000,
         "stop_at_target": false,
         "target_cents": 20000,
-        "committed_cents": 45000,
+        "committed_cents": 55000,
         "budget_cents": 120000,
-        "remaining_cents": 75000,
-        "return_cents": 0,
-        "profit_cents": -30000,
-        "next_stake_cents": 15000,
-        "pending_stake_cents": 15000,
-        "consecutive_losses": 2,
+        "remaining_cents": 65000,
+        "return_cents": 25500,
+        "profit_cents": -19500,
+        "next_stake_cents": 10000,
+        "pending_stake_cents": 10000,
+        "consecutive_losses": 0,
         "stop": "ATTENTE_RESULTAT"
       }
     }
   },
-  "last_checked_at": "2026-10-20T16:20:35.779165+02:00"
+  "last_checked_at": "2026-10-20T16:35:27.911584+02:00"
 }
