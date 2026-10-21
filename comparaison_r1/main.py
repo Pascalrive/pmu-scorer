@@ -19,6 +19,7 @@ from .telegram import send
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
 API='https://online.turfinfo.api.pmu.fr/rest/client/61/programme/'
+PREVIEW_VERSION=4
 
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -137,27 +138,28 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
             elif not preview and freeze(race,site,tip,horse,clock()):race['errors'].pop(site,None)
         except (ValueError,KeyError,TypeError,requests.RequestException) as e:
             race['errors'][site]={'type':type(e).__name__,'reason':str(e).split('\n')[0][:200],'at':clock().isoformat()}
-    if not preview and not race['groups'] and clock()<datetime.fromisoformat(race['departure']):
-        race['groups']=groups(race['tips'])
-        if race['groups']:race['groups_frozen_at']=clock().isoformat()
+    if not preview and clock()<datetime.fromisoformat(race['departure']):
+        observed=groups(race['tips'])
+        if observed!=race['groups']:
+            race['groups']=observed
+            if observed:race['groups_frozen_at']=clock().isoformat()
 
 def euros(c):return f'{c/100:.2f} €'
 
 def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     import copy
     previous=state.get('morning_preview',{})
-    if previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
+    if previous.get('version')==PREVIEW_VERSION and previous.get('captured_at') and (clock()-datetime.fromisoformat(previous['captured_at'])).total_seconds()<3600:return previous
     races=[]
     for original in state['races']:
         if datetime.fromisoformat(original['departure'])<=clock():continue
         race=copy.deepcopy(original);race.update(tips={},groups={},errors={})
-        old=next((r for r in previous.get('races',[]) if r['id']==race['id'] and r['departure']==race['departure'] and r['title']==race['title']),None)
-        if old:race['tips']=copy.deepcopy(old['tips'])
+        # Refresh editorial choices as well as odds; old previews are not votes.
         try:
             collect_race(race,f,folder,clock,preview=True)
         except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
         races.append(race)
-    result={'version':3,'captured_at':clock().isoformat(),'races':races,
+    result={'version':PREVIEW_VERSION,'captured_at':clock().isoformat(),'races':races,
             'complete':bool(races) and all(set(r['tips'])==set(SITES) for r in races)}
     state['morning_preview']=result
     return result
@@ -180,7 +182,7 @@ def preview_report(state,preview):
         g=groups(race['tips']).get('majorite_3_ou_4')
         if place_plan(race):lines.append(place_description(race))
         elif g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]} — un seul pari potentiel')
-        else:lines.append('⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible')
+        else:lines.append('⏭ AUCUN PARI : moins de trois premiers choix concordants et validés sur les quatre sites' if state['date']>='2026-10-20' else '⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible')
         lines.append('')
     lines.append('Seules les courses admissibles font avancer la progression, sous réserve du résultat précédent et des limites quotidiennes.')
     lines.append('Aucune mise engagée par cet aperçu. ZEturf : sélection attribuée à ZEturf sur Canalturf. Les choix définitifs et mises seront envoyés avant chaque départ.')
@@ -198,7 +200,7 @@ def race_message(r):
     g=r['groups'].get('majorite_3_ou_4')
     if place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
     elif g:lines+=['',f'✅ ADMISSIBLE {len(g["sites"])}/4 : N°{g["number"]}', ' + '.join(g['sites']), 'Un seul pari potentiel, selon budget et résultat précédent.']
-    else:lines+=['','⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible.']
+    else:lines+=['','⏭ AUCUN PARI : moins de trois premiers choix concordants et validés sur les quatre sites.' if r['date']>='2026-10-20' else '⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible.']
     lines+=['Les choix sont figés avant départ. ZEturf est lu dans sa rubrique sur Canalturf.','Cotes indicatives ; règlement aux rapports définitifs PMU INTERNET.']
     return '\n'.join(lines)
 

@@ -8,13 +8,14 @@ Simulation uniquement : simples gagnants PMU INTERNET, mises progressives.
 Un seul compte actif : **majorité 3 ou 4/4**. Un unique simple gagnant par
 course lorsque trois ou quatre sites donnent le même premier choix.
 Les sites individuels, paires et combinaisons n'engagent aucune mise.
-Les quatre choix doivent être disponibles et jouables. Par jour :
+Au moins trois choix concordants doivent être disponibles et jouables ;
+le quatrième peut être indisponible. Le dénominateur reste quatre. Par jour :
 
 - Suite après pertes successives : **100, 200, 150, 150, 200 EUR**, puis arrêt.
 - Après un gain, retour à 100 EUR, même si les pertes précédentes ne sont pas récupérées.
 - Après remboursement, même prochaine mise. Les mises remboursées comptent dans le plafond.
-- Arrêt dès que le bénéfice NET réglé atteint ou dépasse 200 EUR à partir du 18/10/2026 (500 EUR les 16 et 17 octobre).
-- Plafond de 800 EUR de mises ENGAGÉES cumulées, pas de recyclage des gains dans ce plafond.
+- +200 EUR est un repère sans arrêt depuis le 19/10/2026 ; arrêt à +200 EUR le 18/10 et à +500 EUR les 16 et 17 octobre.
+- Plafond de 1 200 EUR de mises ENGAGÉES cumulées depuis le 19/10 (800 EUR auparavant), pas de recyclage des gains dans ce plafond.
 - Si la prochaine mise dépasse le reste, arrêt sans réduire ni plafonner la mise.
 - Un pari à la fois sur le compte commun ; résultat précédent obligatoire.
 - Remise à zéro chaque jour, aucun report de pertes ou gains.
@@ -58,15 +59,17 @@ Mises et retours incluent les remboursements ; taux de victoire les exclut.
 
 ## Accords
 
-Quatre choix valides et jouables exigés. Le groupe est figé avant départ.
+Trois premiers choix valides identiques suffisent même si le quatrième manque.
+Deux avis sur trois disponibles ne suffisent pas. Le groupe est constitué avant départ.
 
 | Catégorie exclusive | Répartition | Action virtuelle |
 | --- | --- | --- |
 | Accord 2/4 | 2–1–1 | Aucun pari |
 | Accord 3/4 | 3–1 | Un seul pari sur le compte majorité |
+| Accord 3/4 avec source absente | 3–absent | Un seul pari sur le compte majorité |
 | Accord 4/4 | 4–0 | Un seul pari sur le compte majorité |
 | Égalité | 2–2 | Aucun pari de groupe |
-| Dispersion/manque | 1–1–1–1 ou source absente | Aucun pari de groupe |
+| Dispersion/manque | Moins de trois choix concordants validés | Aucun pari de groupe |
 
 La majorité stricte réunit les cas 3/4 et 4/4 dans la même progression et le
 même plafond. Les courses exclues ne consomment aucune mise ni palier.
@@ -127,7 +130,19 @@ dans morning_preview et apercu.txt : il ne fige aucune sélection et n’engage
 aucune mise. La capture définitive reste dans la dernière heure, puis les
 mises dans les 30 dernières minutes suivant le règlement précédent.
 
-Les aperçus sont rafraîchis au plus une fois par heure à partir de 7h (Paris), y compris lorsque les quatre sources sont déjà présentes, afin de mettre à jour cotes et statuts PMU. Les sélections provisoires conservées gardent leur horodatage initial. Les courses non jouées sont expliquées dans le suivi. Les horaires GitHub restent indicatifs ; aucun pari rétroactif ne compense un passage tardif.
+Les aperçus sont rafraîchis au plus une fois par heure à partir de 7h (Paris), y compris lorsque les quatre sources sont déjà présentes : nouveaux choix éditoriaux, cotes et statuts PMU sont relus. Une nouvelle version de collecte invalide le cache d'aperçu. Les courses non jouées sont expliquées dans le suivi. Les horaires GitHub restent indicatifs ; aucun pari rétroactif ne compense un passage tardif.
+
+## Correctifs de collecte du 21 octobre 2026
+
+Trois avis validés identiques sur les quatre éditeurs sont désormais acceptés
+sans exiger le quatrième. Aucun engagement ni vote historique n'est reconstitué.
+Les suffixes de pays explicites (par exemple FREEDOM (NOR)) sont reconnus sans
+relâcher la vérification du numéro et du nom du cheval. Les courses sont localisées
+par date et R1/C ; un titre abrégé ou alternatif nécessite aussi la concordance
+de tous les partants numérotés avec PMU (les non-partants explicitement déclarés
+peuvent être omis du tableau du site). Les variantes PX/PRIX et E/ÈME sont
+normalisées. Le choix reste le premier de la rubrique éditoriale, jamais le
+cheval ayant simplement la cote la plus basse.
 
 ## Protocole du 19 octobre 2026
 

@@ -39,8 +39,17 @@ class Rules(unittest.TestCase):
     def test_ties_missing_and_non_runner_do_not_create_majority(self):
         self.assertEqual(groups(self.votes([1,1,2,2])),{})
         self.assertEqual(groups(self.votes([1,2,3,4])),{})
-        self.assertEqual(groups(self.votes([1,1,1])),{})
-        t=self.votes([1,1,1,1]);t['turfin']['playable']=False;self.assertEqual(groups(t),{})
+        self.assertEqual(groups(self.votes([1,1,2])),{})
+        t=self.votes([1,1,1,2]);t['turfin']['playable']=False;self.assertEqual(groups(t),{})
+    def test_three_verified_votes_suffice_without_fourth_source(self):
+        for missing in SITES:
+            t=self.votes([1,1,1,1]);del t[missing]
+            g=groups(t)['majorite_3_ou_4']
+            self.assertEqual(g['number'],1);self.assertEqual(len(g['sites']),3)
+        t=self.votes([1,1,1,2]);t['geny']['playable']=False
+        self.assertEqual(len(groups(t)['majorite_3_ou_4']['sites']),3)
+        t=self.votes([1,1]);t['unknown']={'number':1,'playable':True}
+        self.assertEqual(groups(t),{})
     def test_freeze_time_immutability_and_period(self):
         dep=datetime(2026,10,16,15,tzinfo=timezone.utc)
         r={'date':'2026-10-16','departure':dep.isoformat(),'tips':{},'market':True}

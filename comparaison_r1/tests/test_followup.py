@@ -23,13 +23,15 @@ class FollowupTests(TestCase):
         s={'races':[self.r]}
         old=copy.deepcopy(self.r)
         old['tips']={site:{'number':1,'name':'H','playable':True,'odds':None} for site in SITES}
-        s['morning_preview']={'complete':True,'version':3,'captured_at':(self.now-timedelta(hours=2)).isoformat(),'races':[old]}
+        s['morning_preview']={'complete':True,'version':m.PREVIEW_VERSION,'captured_at':(self.now-timedelta(hours=2)).isoformat(),'races':[old]}
         def collect(r,*args,**kw):
-            for t in r['tips'].values():t['odds']={'rapport':2.5}
+            self.assertEqual(r['tips'],{})
+            r['tips']={site:{'number':2,'name':'NEW CHOICE','playable':True,'odds':{'rapport':2.5}} for site in SITES}
         with patch.object(m,'collect_race',side_effect=collect) as c:
             p=m.morning_preview(s,None,Path('/tmp'),clock=lambda:self.now)
             self.assertEqual(c.call_count,1)
             self.assertEqual(p['races'][0]['tips']['geny']['odds']['rapport'],2.5)
+            self.assertEqual(p['races'][0]['tips']['geny']['number'],2)
             m.morning_preview(s,None,Path('/tmp'),clock=lambda:self.now+timedelta(minutes=10))
             self.assertEqual(c.call_count,1)
         self.assertEqual(self.r['tips'],{})

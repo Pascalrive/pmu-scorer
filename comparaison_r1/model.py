@@ -47,13 +47,18 @@ def freeze(race, site, tip, horse, now):
     return True
 
 def groups(tips):
-    # Denominator always four: missing source is never an abstention vote.
-    if set(tips)!=set(SITES) or any(not t.get('playable') for t in tips.values()):return {}
+    # Three verified votes suffice; the denominator remains the four named sites.
+    # An unavailable source cannot vote, nor turn two votes into a majority.
+    valid={s:t for s,t in tips.items() if s in SITES and t.get('playable')
+           and isinstance(t.get('number'),int) and t['number']>0}
+    if len(valid)<3:return {}
     by=defaultdict(list)
-    for site in SITES:by[tips[site]['number']].append(site)
+    for site in SITES:
+        if site in valid:by[valid[site]['number']].append(site)
     ranked=sorted(by.items(),key=lambda x:-len(x[1]))
     n,voters=ranked[0];count=len(voters)
     if count<2 or (len(ranked)>1 and len(ranked[1][1])==count):return {}
+    if len(valid)<4 and count<3:return {}
     result={f'accord_{count}_sur_4':{'number':n,'sites':voters}}
     if count>=3:result['majorite_3_ou_4']={'number':n,'sites':voters}
     # Exact combination prevents double counting a unanimous race as six pairs.
