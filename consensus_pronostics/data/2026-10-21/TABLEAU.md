@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — GRAND PRIX DE LA VILLE ROSE
 
-Collecte : 2026-10-21T09:24:20.162033+00:00. Avant départ : True. Sources complètes : 3/8.
+Collecte : 2026-10-21T11:20:37.511245+00:00. Avant départ : True. Sources complètes : 3/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
 | Canalturf | — | — | — | — | — | Indisponible |
 | ZEturf via Canalturf | — | — | — | — | — | Indisponible |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 12 GERICAULT (cote 3.3) | 10 FREEDOM (NOR) (cote 4.0) | 13 ICARE DU BERYL (cote 7.0) | 1 ENEA FONT (cote 7.3) | 8 ICARE DE PHYT'S (cote 22.0) | 2 I AM PHYT'S (cote 46.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 13 ICARE DU BERYL (cote 7.0) | 10 FREEDOM (NOR) (cote 4.0) | 12 GERICAULT (cote 3.3) | 1 ENEA FONT (cote 7.3) | 5 GHOST DE BEAULIEU (cote 16.0) | 5 GHOST DE BEAULIEU (cote 16.0) — Outsider ; 4 HARLEM DE L'ITON (cote 15.0) — Outsider ; 7 INCREDIBLE GO (cote 16.0) — Outsider ; 8 ICARE DE PHYT'S (cote 22.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 GERICAULT (cote 3.3) | 10 FREEDOM (NOR) (cote 4.0) | 13 ICARE DU BERYL (cote 7.0) | 1 ENEA FONT (cote 7.3) | 5 GHOST DE BEAULIEU (cote 16.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 12 GERICAULT (cote 3.4) | 10 FREEDOM (NOR) (cote 3.8) | 13 ICARE DU BERYL (cote 6.9) | 1 ENEA FONT (cote 6.8) | 8 ICARE DE PHYT'S (cote 23.0) | 2 I AM PHYT'S (cote 50.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 13 ICARE DU BERYL (cote 6.9) | 10 FREEDOM (NOR) (cote 3.8) | 12 GERICAULT (cote 3.4) | 1 ENEA FONT (cote 6.8) | 5 GHOST DE BEAULIEU (cote 17.0) | 5 GHOST DE BEAULIEU (cote 17.0) — Outsider ; 4 HARLEM DE L'ITON (cote 15.0) — Outsider ; 7 INCREDIBLE GO (cote 16.0) — Outsider ; 8 ICARE DE PHYT'S (cote 23.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 12 GERICAULT (cote 3.4) | 10 FREEDOM (NOR) (cote 3.8) | 13 ICARE DU BERYL (cote 6.9) | 1 ENEA FONT (cote 6.8) | 5 GHOST DE BEAULIEU (cote 17.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,18 +21,18 @@ Collecte : 2026-10-21T09:24:20.162033+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 12 GERICAULT (cote 3.3) | 3 |
-| 10 FREEDOM (NOR) (cote 4.0) | 3 |
-| 13 ICARE DU BERYL (cote 7.0) | 3 |
-| 1 ENEA FONT (cote 7.3) | 3 |
-| 5 GHOST DE BEAULIEU (cote 16.0) | 2 |
+| 12 GERICAULT (cote 3.4) | 3 |
+| 10 FREEDOM (NOR) (cote 3.8) | 3 |
+| 13 ICARE DU BERYL (cote 6.9) | 3 |
+| 1 ENEA FONT (cote 6.8) | 3 |
+| 5 GHOST DE BEAULIEU (cote 17.0) | 2 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 12 – 10 – 13 – 1 – 5 | INCOMPLET : pas de simulation |
-| Cotes | 12 – 10 – 13 – 1 – 4 | INCOMPLET : pas de simulation |
+| Cotes | 12 – 10 – 1 – 13 – 4 | INCOMPLET : pas de simulation |
 | Bases + outsiders | 12 – 10 – 13 | INCOMPLET : pas de simulation |
 
 ### Cumul des trois premiers choix
