@@ -3,7 +3,33 @@
   "venue": "LA CEPIERE",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-21T13:55:00+02:00",
+          "number": 12,
+          "name": "GERICAULT",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-21T13:35:11.240804+02:00",
+          "source_captured_at": "2026-10-21T12:59:41.756939+02:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792582474000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -208,10 +234,194 @@
       "c": 2,
       "title": "PRIX DE L'UNAT",
       "departure": "2026-10-21T14:30:00+02:00",
-      "market": false,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "market": true,
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 4,
+          "name": "KEEPER DREAM",
+          "source_url": "https://turfin.fr/course/2026-10-21/r1c2-la-cepiere-prix-de-l-unat",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix De L'unat",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-21/r1c2-la-cepiere-prix-de-l-unat",
+            "sha256": "7469730905b601888bd0b92dda8146fed888377f90d91c0f83fc3d530e5cf75f",
+            "file": "preuves/7469730905b601888bd0b92dda8146fed888377f90d91c0f83fc3d530e5cf75f.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21102026/R1/C2/participants",
+            "sha256": "80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9",
+            "file": "preuves/80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9.gz"
+          },
+          "captured_at": "2026-10-21T13:34:48.487637+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1792582205000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 4,
+          "name": "KEEPER DREAM",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE L'UNAT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+            "sha256": "5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d",
+            "file": "preuves/5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21102026/R1/C2/participants",
+            "sha256": "80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9",
+            "file": "preuves/80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9.gz"
+          },
+          "captured_at": "2026-10-21T13:34:50.077627+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1792582205000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 4,
+          "name": "KEEPER DREAM",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE L'UNAT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+            "sha256": "5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d",
+            "file": "preuves/5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21102026/R1/C2/participants",
+            "sha256": "80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9",
+            "file": "preuves/80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9.gz"
+          },
+          "captured_at": "2026-10-21T13:34:50.122147+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1792582205000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 4,
+          "name": "KEEPER DREAM",
+          "source_url": "https://www.geny.com/course/1692777-2026-10-21-toulouse-prix-de-l-unat/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de l'UNAT",
+          "evidence": {
+            "url": "https://www.geny.com/course/1692777-2026-10-21-toulouse-prix-de-l-unat/partants-pronostics",
+            "sha256": "bc761328cdd98ce008e8ebfdc3e6022da6ad78405eb5ff8449aa0a9f20300621",
+            "file": "preuves/bc761328cdd98ce008e8ebfdc3e6022da6ad78405eb5ff8449aa0a9f20300621.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21102026/R1/C2/participants",
+            "sha256": "80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9",
+            "file": "preuves/80a99d6ddbfebb1d8627ea3624d19a3c783accd638c93f05970d88816e98d4e9.gz"
+          },
+          "captured_at": "2026-10-21T13:35:10.765690+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1792582205000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_4_sur_4": {
+          "number": 4,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 4,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_canalturf+geny+turfin+zeturf": {
+          "number": 4,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-21/r1c2-la-cepiere-prix-de-l-unat",
+          "sha256": "7469730905b601888bd0b92dda8146fed888377f90d91c0f83fc3d530e5cf75f",
+          "file": "preuves/7469730905b601888bd0b92dda8146fed888377f90d91c0f83fc3d530e5cf75f.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+          "sha256": "5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d",
+          "file": "preuves/5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-21/toulouse/421180_prix-de-l-unat.html",
+          "sha256": "5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d",
+          "file": "preuves/5df678c5c62428b366eed97b2ebc0aad4cb952523e6f6389d2a206cf1f355e5d.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1692777-2026-10-21-toulouse-prix-de-l-unat/partants-pronostics",
+          "sha256": "bc761328cdd98ce008e8ebfdc3e6022da6ad78405eb5ff8449aa0a9f20300621",
+          "file": "preuves/bc761328cdd98ce008e8ebfdc3e6022da6ad78405eb5ff8449aa0a9f20300621.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-21T13:35:10.765740+02:00"
     },
     {
       "date": "2026-10-21",
