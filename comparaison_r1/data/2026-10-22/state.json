@@ -3,7 +3,33 @@
   "venue": "AUTEUIL",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C3",
+          "departure": "2026-10-22T15:06:00+02:00",
+          "number": 1,
+          "name": "MACALO DE GREZ",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-22T14:54:42.738656+02:00",
+          "source_captured_at": "2026-10-22T14:30:18.124988+02:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792673649000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -304,7 +330,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-22T14:54:42.738222+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f",
+            "file": "preuves/bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
+            "sha256": "e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4",
+            "file": "preuves/e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -337,7 +377,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-22T14:54:42.738379+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f",
+            "file": "preuves/bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
+            "sha256": "e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4",
+            "file": "preuves/e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -370,7 +424,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-22T14:54:42.738438+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f",
+            "file": "preuves/bdd1a48069c6794ad816b735878896926e387ff0f6fc624e65f8fa45a047fc1f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
+            "sha256": "e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4",
+            "file": "preuves/e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4.gz"
+          }
         }
       },
       "groups": {
@@ -429,15 +497,46 @@
         }
       },
       "groups_frozen_at": "2026-10-22T13:36:43.946827+02:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué"
+      "no_bet_reason": "Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué",
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "INSTANT FRAGILE",
+          "rank": 1
+        },
+        {
+          "number": 4,
+          "name": "RIVERSIDE DAVIER",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "MARTIN",
+          "rank": 3
+        },
+        {
+          "number": 6,
+          "name": "SILENCE ON TOURNE",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "LION BLUE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
+        "sha256": "e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4",
+        "file": "preuves/e84c5c639ada821e43e6be369728b50dfd49c5c2312c739b9548b8ee9bbf80e4.gz"
+      }
     },
     {
       "date": "2026-10-22",
       "id": "R1C3",
       "c": 3,
       "title": "PRIX AL CAPONE II",
-      "departure": "2026-10-22T15:05:00+02:00",
+      "departure": "2026-10-22T15:06:00+02:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -622,7 +721,14 @@
           "file": "preuves/fcc33abb1c7020f0ebb02b6de05f7b77abc81091cd9d67dec1b22e51f04a03e0.gz"
         }
       },
-      "groups_frozen_at": "2026-10-22T14:30:40.490688+02:00"
+      "groups_frozen_at": "2026-10-22T14:30:40.490688+02:00",
+      "schedule_changes": [
+        {
+          "old": "2026-10-22T15:05:00+02:00",
+          "new": "2026-10-22T15:06:00+02:00",
+          "checked_at": "2026-10-22T14:54:15.651376+02:00"
+        }
+      ]
     },
     {
       "date": "2026-10-22",
@@ -631,9 +737,180 @@
       "title": "PRIX EMILIUS",
       "departure": "2026-10-22T15:40:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 4,
+          "name": "NONPAREILS",
+          "source_url": "https://turfin.fr/course/2026-10-22/r1c4-auteuil-prix-emilius",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Emilius",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-22/r1c4-auteuil-prix-emilius",
+            "sha256": "8e2b573d3e2a5977dcd4c59d86bb5a15a1b6598e00625cf42a2029b21761eb8d",
+            "file": "preuves/8e2b573d3e2a5977dcd4c59d86bb5a15a1b6598e00625cf42a2029b21761eb8d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
+            "sha256": "159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e",
+            "file": "preuves/159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e.gz"
+          },
+          "captured_at": "2026-10-22T14:54:19.229982+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 11.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -0.83,
+            "dateRapport": 1792673151000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 10,
+          "name": "IRONHORSE HAS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX EMILIUS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+            "sha256": "1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75",
+            "file": "preuves/1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
+            "sha256": "159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e",
+            "file": "preuves/159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e.gz"
+          },
+          "captured_at": "2026-10-22T14:54:20.971251+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -9.34,
+            "dateRapport": 1792673151000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 10,
+          "name": "IRONHORSE HAS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX EMILIUS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+            "sha256": "1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75",
+            "file": "preuves/1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
+            "sha256": "159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e",
+            "file": "preuves/159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e.gz"
+          },
+          "captured_at": "2026-10-22T14:54:21.010341+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -9.34,
+            "dateRapport": 1792673151000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 8,
+          "name": "IRRESITIBLEMENT",
+          "source_url": "https://www.geny.com/course/1693048-2026-10-22-auteuil-prix-emilius/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Emilius",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693048-2026-10-22-auteuil-prix-emilius/partants-pronostics",
+            "sha256": "d758c65ee7281aef9bb502eff127fcb96e087b0833509ddb2a9f9ac366ac894a",
+            "file": "preuves/d758c65ee7281aef9bb502eff127fcb96e087b0833509ddb2a9f9ac366ac894a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
+            "sha256": "159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e",
+            "file": "preuves/159e4af96a633e249261a972970c3fc44cb7eb9332e3e8b9e02ca3ebe946735e.gz"
+          },
+          "captured_at": "2026-10-22T14:54:41.875922+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 10.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.93,
+            "dateRapport": 1792673151000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_2_sur_4": {
+          "number": 10,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+zeturf": {
+          "number": 10,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-22/r1c4-auteuil-prix-emilius",
+          "sha256": "8e2b573d3e2a5977dcd4c59d86bb5a15a1b6598e00625cf42a2029b21761eb8d",
+          "file": "preuves/8e2b573d3e2a5977dcd4c59d86bb5a15a1b6598e00625cf42a2029b21761eb8d.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+          "sha256": "1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75",
+          "file": "preuves/1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
+          "sha256": "1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75",
+          "file": "preuves/1da80b2048c0e6f603ce4cf3fefb217a6efb2231f0c9aa4dd25a8451c7fcda75.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693048-2026-10-22-auteuil-prix-emilius/partants-pronostics",
+          "sha256": "d758c65ee7281aef9bb502eff127fcb96e087b0833509ddb2a9f9ac366ac894a",
+          "file": "preuves/d758c65ee7281aef9bb502eff127fcb96e087b0833509ddb2a9f9ac366ac894a.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-22T14:54:41.875968+02:00"
     },
     {
       "date": "2026-10-22",
