@@ -42,6 +42,31 @@
             "sha256": "f5fd8982bdaecd9a0d832d1aac74d4e25aa4833354825917f909f3f615229da9",
             "file": "preuves/f5fd8982bdaecd9a0d832d1aac74d4e25aa4833354825917f909f3f615229da9.gz"
           }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-10-22T16:50:00+02:00",
+          "number": 4,
+          "name": "TONKAWA",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-22T16:34:37.050371+02:00",
+          "source_captured_at": "2026-10-22T15:56:08.206472+02:00",
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.56,
+            "dateRapport": 1792679638000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": false
+          }
         }
       ],
       "budget_cents": 120000,
@@ -1450,9 +1475,190 @@
       "title": "PRIX PELAT",
       "departure": "2026-10-22T17:25:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 3,
+          "name": "GORSTELLA",
+          "source_url": "https://turfin.fr/course/2026-10-22/r1c7-auteuil-prix-pelat",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Pelat",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-22/r1c7-auteuil-prix-pelat",
+            "sha256": "d022c7dea4b1ea4d112d58dfaef426b54a4df18190b6b47d777099a43905b84e",
+            "file": "preuves/d022c7dea4b1ea4d112d58dfaef426b54a4df18190b6b47d777099a43905b84e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
+            "sha256": "bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f",
+            "file": "preuves/bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f.gz"
+          },
+          "captured_at": "2026-10-22T16:34:14.296147+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.34,
+            "dateRapport": 1792679412000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "GOOD GIRL DE FAUST",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX PELAT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+            "sha256": "e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77",
+            "file": "preuves/e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
+            "sha256": "bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f",
+            "file": "preuves/bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f.gz"
+          },
+          "captured_at": "2026-10-22T16:34:15.905655+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -12.0,
+            "dateRapport": 1792679412000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 3,
+          "name": "GORSTELLA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX PELAT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+            "sha256": "e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77",
+            "file": "preuves/e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
+            "sha256": "bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f",
+            "file": "preuves/bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f.gz"
+          },
+          "captured_at": "2026-10-22T16:34:15.969746+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.34,
+            "dateRapport": 1792679412000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "GORSTELLA",
+          "source_url": "https://www.geny.com/course/1693051-2026-10-22-auteuil-prix-pelat/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Pelat",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693051-2026-10-22-auteuil-prix-pelat/partants-pronostics",
+            "sha256": "04ea2e584e3bce537a981c855f3c8048bd3b94ec512037ae1ed4fe6d1d23a44f",
+            "file": "preuves/04ea2e584e3bce537a981c855f3c8048bd3b94ec512037ae1ed4fe6d1d23a44f.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
+            "sha256": "bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f",
+            "file": "preuves/bd6540533757f760f18ff05c2f0a09049fce3e938966ce6da2174f663c74452f.gz"
+          },
+          "captured_at": "2026-10-22T16:34:36.441907+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.34,
+            "dateRapport": 1792679412000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_geny+turfin+zeturf": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-22/r1c7-auteuil-prix-pelat",
+          "sha256": "d022c7dea4b1ea4d112d58dfaef426b54a4df18190b6b47d777099a43905b84e",
+          "file": "preuves/d022c7dea4b1ea4d112d58dfaef426b54a4df18190b6b47d777099a43905b84e.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+          "sha256": "e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77",
+          "file": "preuves/e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
+          "sha256": "e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77",
+          "file": "preuves/e60e66fac92f36166e8cb69848d79f4d6997d8bfdb6a8e0025ca55b4f3f0af77.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693051-2026-10-22-auteuil-prix-pelat/partants-pronostics",
+          "sha256": "04ea2e584e3bce537a981c855f3c8048bd3b94ec512037ae1ed4fe6d1d23a44f",
+          "file": "preuves/04ea2e584e3bce537a981c855f3c8048bd3b94ec512037ae1ed4fe6d1d23a44f.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-22T16:34:36.441970+02:00"
     },
     {
       "date": "2026-10-22",
