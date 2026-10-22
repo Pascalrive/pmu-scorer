@@ -174,7 +174,9 @@
           "sha256": "f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442",
           "file": "preuves/f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442.gz"
         }
-      }
+      },
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-10-22",
@@ -314,7 +316,7 @@
         "geny": {
           "type": "ValueError",
           "reason": "Premier choix absent ou ambigu",
-          "at": "2026-10-22T13:48:46.729163+02:00"
+          "at": "2026-10-22T13:59:54.400211+02:00"
         }
       },
       "source_checks": {
@@ -335,8 +337,8 @@
         },
         "geny": {
           "url": "https://www.geny.com/course/1693046-2026-10-22-auteuil-prix-petit-fontaine/partants-pronostics",
-          "sha256": "5f6eacf61fa0e3762d5a096105d5d8e8c894b1743235991e47f2e1762fc6fb73",
-          "file": "preuves/5f6eacf61fa0e3762d5a096105d5d8e8c894b1743235991e47f2e1762fc6fb73.gz"
+          "sha256": "ebc391a750d19d6f104aaabeb395956bc26e3a5393924aa78d85834bc7ee2b83",
+          "file": "preuves/ebc391a750d19d6f104aaabeb395956bc26e3a5393924aa78d85834bc7ee2b83.gz"
         }
       },
       "groups_frozen_at": "2026-10-22T13:36:43.946827+02:00"
@@ -411,174 +413,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 4,
-    "captured_at": "2026-10-22T12:55:55.059613+02:00",
+    "captured_at": "2026-10-22T13:59:53.647879+02:00",
     "races": [
-      {
-        "date": "2026-10-22",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX ANDRE ADELE",
-        "departure": "2026-10-22T13:55:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 15,
-            "name": "HOKUSAI VALLIS",
-            "source_url": "https://turfin.fr/course/2026-10-22/r1c1-auteuil-prix-andre-adele",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Andre Adele",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-22/r1c1-auteuil-prix-andre-adele",
-              "sha256": "54d18bc3138273b6bc7ea63e73183f3fd2ba73d6f88d60e31135d983b4db3968",
-              "file": "preuves/54d18bc3138273b6bc7ea63e73183f3fd2ba73d6f88d60e31135d983b4db3968.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C1/participants",
-              "sha256": "553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee",
-              "file": "preuves/553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee.gz"
-            },
-            "captured_at": "2026-10-22T12:53:12.710583+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.13,
-              "dateRapport": 1792665954000,
-              "favoris": false,
-              "numPmu1": 15,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "L'ARRABIATO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX ANDRE ADELE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-              "sha256": "dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517",
-              "file": "preuves/dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C1/participants",
-              "sha256": "553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee",
-              "file": "preuves/553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee.gz"
-            },
-            "captured_at": "2026-10-22T12:53:14.216728+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665954000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 15,
-            "name": "HOKUSAI VALLIS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX ANDRE ADELE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-              "sha256": "dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517",
-              "file": "preuves/dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C1/participants",
-              "sha256": "553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee",
-              "file": "preuves/553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee.gz"
-            },
-            "captured_at": "2026-10-22T12:53:14.305962+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.13,
-              "dateRapport": 1792665954000,
-              "favoris": false,
-              "numPmu1": 15,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "L'ARRABIATO",
-            "source_url": "https://www.geny.com/course/1693045-2026-10-22-auteuil-prix-andre-adele/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix André Adèle",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693045-2026-10-22-auteuil-prix-andre-adele/partants-pronostics",
-              "sha256": "f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442",
-              "file": "preuves/f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C1/participants",
-              "sha256": "553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee",
-              "file": "preuves/553c2b3ab3eb9549513e1afd315e9dbc7967de62fa544b622267add53635c9ee.gz"
-            },
-            "captured_at": "2026-10-22T12:53:35.795270+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665954000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-22/r1c1-auteuil-prix-andre-adele",
-            "sha256": "54d18bc3138273b6bc7ea63e73183f3fd2ba73d6f88d60e31135d983b4db3968",
-            "file": "preuves/54d18bc3138273b6bc7ea63e73183f3fd2ba73d6f88d60e31135d983b4db3968.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-            "sha256": "dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517",
-            "file": "preuves/dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421272_prix-andre-adele.html",
-            "sha256": "dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517",
-            "file": "preuves/dc53f30cf49da35072a4e0f866a09874262f5338125358992c1f1c618ae97517.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693045-2026-10-22-auteuil-prix-andre-adele/partants-pronostics",
-            "sha256": "f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442",
-            "file": "preuves/f9685ea841db73c3d06842883ad08e48e249574b53a4f9bc1193f0d313d7b442.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-22",
         "id": "R1C2",
@@ -597,15 +433,15 @@
             "source_title": "Prix Petit Fontaine",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c2-auteuil-prix-petit-fontaine",
-              "sha256": "c00e2bda743e48193dd34368065f892dee013c885b3ff5dd149071bc180a7d3b",
-              "file": "preuves/c00e2bda743e48193dd34368065f892dee013c885b3ff5dd149071bc180a7d3b.gz"
+              "sha256": "f9fc72132c3be6f40a9afb07d7e0850f1ad3a685e5ba287cf209431addc65ba8",
+              "file": "preuves/f9fc72132c3be6f40a9afb07d7e0850f1ad3a685e5ba287cf209431addc65ba8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
-              "sha256": "c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964",
-              "file": "preuves/c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964.gz"
+              "sha256": "56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c",
+              "file": "preuves/56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c.gz"
             },
-            "captured_at": "2026-10-22T12:53:37.518454+02:00",
+            "captured_at": "2026-10-22T13:57:31.183299+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -614,7 +450,7 @@
               "rapport": 1.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665905000,
+              "dateRapport": 1792669505000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -630,15 +466,15 @@
             "source_title": "Le pronostic du PRIX PETIT FONTAINE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421273_prix-petit-fontaine.html",
-              "sha256": "e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06",
-              "file": "preuves/e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06.gz"
+              "sha256": "4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092",
+              "file": "preuves/4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
-              "sha256": "c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964",
-              "file": "preuves/c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964.gz"
+              "sha256": "56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c",
+              "file": "preuves/56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c.gz"
             },
-            "captured_at": "2026-10-22T12:53:38.106737+02:00",
+            "captured_at": "2026-10-22T13:57:33.023433+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -647,7 +483,7 @@
               "rapport": 1.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665905000,
+              "dateRapport": 1792669505000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -663,15 +499,15 @@
             "source_title": "Le pronostic du PRIX PETIT FONTAINE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421273_prix-petit-fontaine.html",
-              "sha256": "e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06",
-              "file": "preuves/e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06.gz"
+              "sha256": "4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092",
+              "file": "preuves/4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C2/participants",
-              "sha256": "c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964",
-              "file": "preuves/c46e61d2d82c9d24ddf87a3cc8695e88e12eedad2fe3dc3f6576dab65d2e7964.gz"
+              "sha256": "56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c",
+              "file": "preuves/56c7ebfb3e9f25fd5bd9054db7eac8206f12a13e4c13c79fcb9cae69fbe9a45c.gz"
             },
-            "captured_at": "2026-10-22T12:53:38.189283+02:00",
+            "captured_at": "2026-10-22T13:57:33.110547+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -680,7 +516,7 @@
               "rapport": 1.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665905000,
+              "dateRapport": 1792669505000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -692,31 +528,32 @@
           "geny": {
             "type": "ValueError",
             "reason": "Premier choix absent ou ambigu",
-            "at": "2026-10-22T12:53:55.229101+02:00"
+            "at": "2026-10-22T13:57:53.477703+02:00"
           }
         },
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c2-auteuil-prix-petit-fontaine",
-            "sha256": "c00e2bda743e48193dd34368065f892dee013c885b3ff5dd149071bc180a7d3b",
-            "file": "preuves/c00e2bda743e48193dd34368065f892dee013c885b3ff5dd149071bc180a7d3b.gz"
+            "sha256": "f9fc72132c3be6f40a9afb07d7e0850f1ad3a685e5ba287cf209431addc65ba8",
+            "file": "preuves/f9fc72132c3be6f40a9afb07d7e0850f1ad3a685e5ba287cf209431addc65ba8.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421273_prix-petit-fontaine.html",
-            "sha256": "e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06",
-            "file": "preuves/e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06.gz"
+            "sha256": "4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092",
+            "file": "preuves/4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421273_prix-petit-fontaine.html",
-            "sha256": "e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06",
-            "file": "preuves/e76ce3e25a11595b2cad1098dac216fd69faea1d1b09081bfeb941c2600a8f06.gz"
+            "sha256": "4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092",
+            "file": "preuves/4e4656f436bfa06bd75a3a013b1f8db34e69d5618cb683bfea96662a47b97092.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693046-2026-10-22-auteuil-prix-petit-fontaine/partants-pronostics",
-            "sha256": "fd17cb50732d5ddc233bf17dff7741bb2f2232ce7243f10c2de7d494e575e037",
-            "file": "preuves/fd17cb50732d5ddc233bf17dff7741bb2f2232ce7243f10c2de7d494e575e037.gz"
+            "sha256": "ebc391a750d19d6f104aaabeb395956bc26e3a5393924aa78d85834bc7ee2b83",
+            "file": "preuves/ebc391a750d19d6f104aaabeb395956bc26e3a5393924aa78d85834bc7ee2b83.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-22T13:36:43.946827+02:00"
       },
       {
         "date": "2026-10-22",
@@ -736,15 +573,15 @@
             "source_title": "Prix Al Capone Ii",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c3-auteuil-prix-al-capone-ii",
-              "sha256": "6286f811961bff98e47838db97dc0a2f03573fc4aec2abb1468d5f3ab71e3c5e",
-              "file": "preuves/6286f811961bff98e47838db97dc0a2f03573fc4aec2abb1468d5f3ab71e3c5e.gz"
+              "sha256": "3dc2bce7b06ab187a5b4ba239bd09719cbd5dc3c88bffd1bf2867c280400218c",
+              "file": "preuves/3dc2bce7b06ab187a5b4ba239bd09719cbd5dc3c88bffd1bf2867c280400218c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C3/participants",
-              "sha256": "6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6",
-              "file": "preuves/6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6.gz"
+              "sha256": "735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82",
+              "file": "preuves/735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82.gz"
             },
-            "captured_at": "2026-10-22T12:53:56.827325+02:00",
+            "captured_at": "2026-10-22T13:57:54.970467+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -752,8 +589,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.42,
-              "dateRapport": 1792665930000,
+              "nombreIndicateurTendance": -6.06,
+              "dateRapport": 1792669530000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -769,15 +606,15 @@
             "source_title": "Le pronostic du PRIX AL CAPONE II",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421274_prix-al-capone-ii.html",
-              "sha256": "a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b",
-              "file": "preuves/a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b.gz"
+              "sha256": "b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2",
+              "file": "preuves/b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C3/participants",
-              "sha256": "6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6",
-              "file": "preuves/6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6.gz"
+              "sha256": "735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82",
+              "file": "preuves/735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82.gz"
             },
-            "captured_at": "2026-10-22T12:53:57.454961+02:00",
+            "captured_at": "2026-10-22T13:57:55.671503+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -785,8 +622,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.42,
-              "dateRapport": 1792665930000,
+              "nombreIndicateurTendance": -6.06,
+              "dateRapport": 1792669530000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -802,15 +639,15 @@
             "source_title": "Le pronostic du PRIX AL CAPONE II",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421274_prix-al-capone-ii.html",
-              "sha256": "a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b",
-              "file": "preuves/a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b.gz"
+              "sha256": "b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2",
+              "file": "preuves/b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C3/participants",
-              "sha256": "6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6",
-              "file": "preuves/6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6.gz"
+              "sha256": "735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82",
+              "file": "preuves/735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82.gz"
             },
-            "captured_at": "2026-10-22T12:53:57.533140+02:00",
+            "captured_at": "2026-10-22T13:57:55.750565+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -818,8 +655,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.89,
-              "dateRapport": 1792665930000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792669530000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -835,15 +672,15 @@
             "source_title": "Prix Al Capone II",
             "evidence": {
               "url": "https://www.geny.com/course/1693047-2026-10-22-auteuil-prix-al-capone-ii/partants-pronostics",
-              "sha256": "c78e946302c249f97d93a3cba5f23eacff988ec34fe5e1ec838bad23f91eee3d",
-              "file": "preuves/c78e946302c249f97d93a3cba5f23eacff988ec34fe5e1ec838bad23f91eee3d.gz"
+              "sha256": "f81a9a5643493783a5bf63173d6542927db4ff382c7d6e078ccae3c0175d1a41",
+              "file": "preuves/f81a9a5643493783a5bf63173d6542927db4ff382c7d6e078ccae3c0175d1a41.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C3/participants",
-              "sha256": "6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6",
-              "file": "preuves/6ebc7b8a6d126276e7183fa43890aec583086cd0c4b98814d04698bd34cabce6.gz"
+              "sha256": "735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82",
+              "file": "preuves/735ba20c708c3d6c77b0f30803a8fc2e550b94ff2083f0aeab047d86a243ed82.gz"
             },
-            "captured_at": "2026-10-22T12:54:15.745595+02:00",
+            "captured_at": "2026-10-22T13:58:13.997243+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -851,8 +688,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.42,
-              "dateRapport": 1792665930000,
+              "nombreIndicateurTendance": -6.06,
+              "dateRapport": 1792669530000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -864,23 +701,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c3-auteuil-prix-al-capone-ii",
-            "sha256": "6286f811961bff98e47838db97dc0a2f03573fc4aec2abb1468d5f3ab71e3c5e",
-            "file": "preuves/6286f811961bff98e47838db97dc0a2f03573fc4aec2abb1468d5f3ab71e3c5e.gz"
+            "sha256": "3dc2bce7b06ab187a5b4ba239bd09719cbd5dc3c88bffd1bf2867c280400218c",
+            "file": "preuves/3dc2bce7b06ab187a5b4ba239bd09719cbd5dc3c88bffd1bf2867c280400218c.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421274_prix-al-capone-ii.html",
-            "sha256": "a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b",
-            "file": "preuves/a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b.gz"
+            "sha256": "b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2",
+            "file": "preuves/b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421274_prix-al-capone-ii.html",
-            "sha256": "a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b",
-            "file": "preuves/a417ec58f7790240855e28cf78f0881df7cffecc482e78eee033b4371b588b7b.gz"
+            "sha256": "b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2",
+            "file": "preuves/b4eea8552fcfe942d71b0bcdc4e7d4150cccdb94b5565d0f1e9391a4de3efbf2.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693047-2026-10-22-auteuil-prix-al-capone-ii/partants-pronostics",
-            "sha256": "c78e946302c249f97d93a3cba5f23eacff988ec34fe5e1ec838bad23f91eee3d",
-            "file": "preuves/c78e946302c249f97d93a3cba5f23eacff988ec34fe5e1ec838bad23f91eee3d.gz"
+            "sha256": "f81a9a5643493783a5bf63173d6542927db4ff382c7d6e078ccae3c0175d1a41",
+            "file": "preuves/f81a9a5643493783a5bf63173d6542927db4ff382c7d6e078ccae3c0175d1a41.gz"
           }
         }
       },
@@ -902,15 +739,15 @@
             "source_title": "Prix Emilius",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c4-auteuil-prix-emilius",
-              "sha256": "bdf65d5c416372b8a39e759714420eacdb38be6c114f1e1bda5edd4151829e03",
-              "file": "preuves/bdf65d5c416372b8a39e759714420eacdb38be6c114f1e1bda5edd4151829e03.gz"
+              "sha256": "7a7f76d5d48bb3607a83140dde4906baa9de011214a2df679b517dccbd1fa433",
+              "file": "preuves/7a7f76d5d48bb3607a83140dde4906baa9de011214a2df679b517dccbd1fa433.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
-              "sha256": "5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d",
-              "file": "preuves/5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d.gz"
+              "sha256": "e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5",
+              "file": "preuves/e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5.gz"
             },
-            "captured_at": "2026-10-22T12:54:17.488678+02:00",
+            "captured_at": "2026-10-22T13:58:15.647005+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -918,8 +755,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -10.6,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": -6.29,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -935,15 +772,15 @@
             "source_title": "Le pronostic du PRIX EMILIUS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
-              "sha256": "3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97",
-              "file": "preuves/3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97.gz"
+              "sha256": "2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1",
+              "file": "preuves/2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
-              "sha256": "5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d",
-              "file": "preuves/5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d.gz"
+              "sha256": "e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5",
+              "file": "preuves/e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5.gz"
             },
-            "captured_at": "2026-10-22T12:54:18.074857+02:00",
+            "captured_at": "2026-10-22T13:58:16.323857+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -951,8 +788,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.0,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": 3.06,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -968,15 +805,15 @@
             "source_title": "Le pronostic du PRIX EMILIUS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
-              "sha256": "3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97",
-              "file": "preuves/3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97.gz"
+              "sha256": "2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1",
+              "file": "preuves/2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
-              "sha256": "5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d",
-              "file": "preuves/5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d.gz"
+              "sha256": "e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5",
+              "file": "preuves/e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5.gz"
             },
-            "captured_at": "2026-10-22T12:54:18.183817+02:00",
+            "captured_at": "2026-10-22T13:58:16.440001+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -984,8 +821,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.0,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": 3.06,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -1001,24 +838,24 @@
             "source_title": "Prix Emilius",
             "evidence": {
               "url": "https://www.geny.com/course/1693048-2026-10-22-auteuil-prix-emilius/partants-pronostics",
-              "sha256": "6aa6b118bebe9b9b261c010e07d8dd13bd844b5d3e08362d5846d652ba9bdad7",
-              "file": "preuves/6aa6b118bebe9b9b261c010e07d8dd13bd844b5d3e08362d5846d652ba9bdad7.gz"
+              "sha256": "c21b6a6a2e7773379a15c2d1b33a71c99bed64499a73422bd3f2a11ab79bf999",
+              "file": "preuves/c21b6a6a2e7773379a15c2d1b33a71c99bed64499a73422bd3f2a11ab79bf999.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C4/participants",
-              "sha256": "5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d",
-              "file": "preuves/5bde1d48c077bdbe84f8500c3e9611e819208c3871cf49c60b5979524ccbf70d.gz"
+              "sha256": "e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5",
+              "file": "preuves/e42c0c45b86695398d2761b3f033406273f1929e1efec6c310364e6e33ad6ac5.gz"
             },
-            "captured_at": "2026-10-22T12:54:35.468441+02:00",
+            "captured_at": "2026-10-22T13:58:34.063524+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 12.0,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.89,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": -1.72,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -1030,23 +867,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c4-auteuil-prix-emilius",
-            "sha256": "bdf65d5c416372b8a39e759714420eacdb38be6c114f1e1bda5edd4151829e03",
-            "file": "preuves/bdf65d5c416372b8a39e759714420eacdb38be6c114f1e1bda5edd4151829e03.gz"
+            "sha256": "7a7f76d5d48bb3607a83140dde4906baa9de011214a2df679b517dccbd1fa433",
+            "file": "preuves/7a7f76d5d48bb3607a83140dde4906baa9de011214a2df679b517dccbd1fa433.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
-            "sha256": "3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97",
-            "file": "preuves/3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97.gz"
+            "sha256": "2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1",
+            "file": "preuves/2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421275_prix-emilius.html",
-            "sha256": "3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97",
-            "file": "preuves/3b2f41c7bd71c0e723ad5831c6323e7e99ec4655a978f1278d4ff507555d5d97.gz"
+            "sha256": "2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1",
+            "file": "preuves/2919125f45818d18213a6dcf43121821491be83cc85e00490ce1b945c75f01a1.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693048-2026-10-22-auteuil-prix-emilius/partants-pronostics",
-            "sha256": "6aa6b118bebe9b9b261c010e07d8dd13bd844b5d3e08362d5846d652ba9bdad7",
-            "file": "preuves/6aa6b118bebe9b9b261c010e07d8dd13bd844b5d3e08362d5846d652ba9bdad7.gz"
+            "sha256": "c21b6a6a2e7773379a15c2d1b33a71c99bed64499a73422bd3f2a11ab79bf999",
+            "file": "preuves/c21b6a6a2e7773379a15c2d1b33a71c99bed64499a73422bd3f2a11ab79bf999.gz"
           }
         }
       },
@@ -1068,24 +905,24 @@
             "source_title": "Prix General Donnio",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c5-auteuil-prix-general-donnio",
-              "sha256": "b4b7b9e3690dbb4f3a96b11e343706c02af0825525c40452999ec2a81d03c517",
-              "file": "preuves/b4b7b9e3690dbb4f3a96b11e343706c02af0825525c40452999ec2a81d03c517.gz"
+              "sha256": "ed063ab22c92a5383f9184703d1ddf168ff5a4bb544611d65c034e0bd3152c20",
+              "file": "preuves/ed063ab22c92a5383f9184703d1ddf168ff5a4bb544611d65c034e0bd3152c20.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C5/participants",
-              "sha256": "f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e",
-              "file": "preuves/f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e.gz"
+              "sha256": "a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5",
+              "file": "preuves/a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5.gz"
             },
-            "captured_at": "2026-10-22T12:54:37.063235+02:00",
+            "captured_at": "2026-10-22T13:58:35.865386+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665950000,
+              "nombreIndicateurTendance": 2.94,
+              "dateRapport": 1792669550000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1101,24 +938,24 @@
             "source_title": "Le pronostic du PRIX GENERAL DONNIO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421276_prix-general-donnio.html",
-              "sha256": "05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51",
-              "file": "preuves/05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51.gz"
+              "sha256": "36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411",
+              "file": "preuves/36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C5/participants",
-              "sha256": "f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e",
-              "file": "preuves/f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e.gz"
+              "sha256": "a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5",
+              "file": "preuves/a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5.gz"
             },
-            "captured_at": "2026-10-22T12:54:37.670420+02:00",
+            "captured_at": "2026-10-22T13:58:36.517310+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 4.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665950000,
+              "dateRapport": 1792669550000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -1134,24 +971,24 @@
             "source_title": "Le pronostic du PRIX GENERAL DONNIO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421276_prix-general-donnio.html",
-              "sha256": "05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51",
-              "file": "preuves/05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51.gz"
+              "sha256": "36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411",
+              "file": "preuves/36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C5/participants",
-              "sha256": "f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e",
-              "file": "preuves/f3e44ed07ce3aea642d8cb2fda00cb5b05f07751c7f5ef4b56ba2024eae6a86e.gz"
+              "sha256": "a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5",
+              "file": "preuves/a64f860a406f18413e7e3f2fc12d11e5fd41f516b1ace927256234aeb4c236e5.gz"
             },
-            "captured_at": "2026-10-22T12:54:37.749893+02:00",
+            "captured_at": "2026-10-22T13:58:36.597071+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792665950000,
+              "nombreIndicateurTendance": 2.94,
+              "dateRapport": 1792669550000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1163,29 +1000,29 @@
           "geny": {
             "type": "ValueError",
             "reason": "Premier choix absent ou ambigu",
-            "at": "2026-10-22T12:54:54.953272+02:00"
+            "at": "2026-10-22T13:58:54.085416+02:00"
           }
         },
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c5-auteuil-prix-general-donnio",
-            "sha256": "b4b7b9e3690dbb4f3a96b11e343706c02af0825525c40452999ec2a81d03c517",
-            "file": "preuves/b4b7b9e3690dbb4f3a96b11e343706c02af0825525c40452999ec2a81d03c517.gz"
+            "sha256": "ed063ab22c92a5383f9184703d1ddf168ff5a4bb544611d65c034e0bd3152c20",
+            "file": "preuves/ed063ab22c92a5383f9184703d1ddf168ff5a4bb544611d65c034e0bd3152c20.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421276_prix-general-donnio.html",
-            "sha256": "05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51",
-            "file": "preuves/05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51.gz"
+            "sha256": "36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411",
+            "file": "preuves/36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421276_prix-general-donnio.html",
-            "sha256": "05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51",
-            "file": "preuves/05af7c39b36d05f4f2353039d3369cb4232deec8a4b80cb8e283c4d8b5bfcb51.gz"
+            "sha256": "36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411",
+            "file": "preuves/36e60ca03f6bc27cd9d465d6b77f243cc5b7389dffbecb124c0c6779e62e1411.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693049-2026-10-22-auteuil-prix-general-donnio/partants-pronostics",
-            "sha256": "fdd387ae5e7cb19e83469b28898ba9de4444532905a4dfe69df973eb2c6b3646",
-            "file": "preuves/fdd387ae5e7cb19e83469b28898ba9de4444532905a4dfe69df973eb2c6b3646.gz"
+            "sha256": "ceff5c7e7012a1f243ed95c29a0eb24fd1feb11d51600d4a4f880b7fe5ba0bd2",
+            "file": "preuves/ceff5c7e7012a1f243ed95c29a0eb24fd1feb11d51600d4a4f880b7fe5ba0bd2.gz"
           }
         }
       },
@@ -1207,24 +1044,24 @@
             "source_title": "Prix Paul's Cray",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c6-auteuil-prix-paul-s-cray",
-              "sha256": "973e244192c3d0eafc04735aeafefdf5741b4e2e7958192a78e74ecd71cef012",
-              "file": "preuves/973e244192c3d0eafc04735aeafefdf5741b4e2e7958192a78e74ecd71cef012.gz"
+              "sha256": "922ad6edac08107ef4ec43327ffc27f59db8ac6c86470a2c395c67a16c759249",
+              "file": "preuves/922ad6edac08107ef4ec43327ffc27f59db8ac6c86470a2c395c67a16c759249.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C6/participants",
-              "sha256": "130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641",
-              "file": "preuves/130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641.gz"
+              "sha256": "2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9",
+              "file": "preuves/2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9.gz"
             },
-            "captured_at": "2026-10-22T12:54:56.549531+02:00",
+            "captured_at": "2026-10-22T13:58:55.605171+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.9,
-              "dateRapport": 1792665902000,
+              "nombreIndicateurTendance": -3.57,
+              "dateRapport": 1792669502000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -1240,24 +1077,24 @@
             "source_title": "Le pronostic du PRIX PAUL'S CRAY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421277_prix-paul-s-cray.html",
-              "sha256": "993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c",
-              "file": "preuves/993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c.gz"
+              "sha256": "aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1",
+              "file": "preuves/aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C6/participants",
-              "sha256": "130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641",
-              "file": "preuves/130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641.gz"
+              "sha256": "2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9",
+              "file": "preuves/2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9.gz"
             },
-            "captured_at": "2026-10-22T12:54:58.126624+02:00",
+            "captured_at": "2026-10-22T13:58:56.259615+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.7,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.06,
-              "dateRapport": 1792665902000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792669502000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1273,24 +1110,24 @@
             "source_title": "Le pronostic du PRIX PAUL'S CRAY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421277_prix-paul-s-cray.html",
-              "sha256": "993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c",
-              "file": "preuves/993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c.gz"
+              "sha256": "aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1",
+              "file": "preuves/aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C6/participants",
-              "sha256": "130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641",
-              "file": "preuves/130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641.gz"
+              "sha256": "2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9",
+              "file": "preuves/2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9.gz"
             },
-            "captured_at": "2026-10-22T12:54:58.208116+02:00",
+            "captured_at": "2026-10-22T13:58:56.340772+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.7,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.06,
-              "dateRapport": 1792665902000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792669502000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1306,24 +1143,24 @@
             "source_title": "Prix Paul's Cray",
             "evidence": {
               "url": "https://www.geny.com/course/1693050-2026-10-22-auteuil-prix-paul-s-cray/partants-pronostics",
-              "sha256": "d77f39b5b5588faa4a868962ffe3a4326264392a0a2896fab10d475abf2ce361",
-              "file": "preuves/d77f39b5b5588faa4a868962ffe3a4326264392a0a2896fab10d475abf2ce361.gz"
+              "sha256": "2c17cadb158b35f7990d58ffb129eece3e6ecb0a7b4ce3429eefaf3b1a79ed4a",
+              "file": "preuves/2c17cadb158b35f7990d58ffb129eece3e6ecb0a7b4ce3429eefaf3b1a79ed4a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C6/participants",
-              "sha256": "130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641",
-              "file": "preuves/130ab586821bcaff9c6bb62cc7f6910ed7c9f5da3b4af89494124f9ad903e641.gz"
+              "sha256": "2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9",
+              "file": "preuves/2cb76d32be92ac774f8c5bc350d735db0abe42f46665ad4531c26b6e7f12d5d9.gz"
             },
-            "captured_at": "2026-10-22T12:55:14.979116+02:00",
+            "captured_at": "2026-10-22T13:59:14.017775+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.7,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.06,
-              "dateRapport": 1792665902000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792669502000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1335,23 +1172,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c6-auteuil-prix-paul-s-cray",
-            "sha256": "973e244192c3d0eafc04735aeafefdf5741b4e2e7958192a78e74ecd71cef012",
-            "file": "preuves/973e244192c3d0eafc04735aeafefdf5741b4e2e7958192a78e74ecd71cef012.gz"
+            "sha256": "922ad6edac08107ef4ec43327ffc27f59db8ac6c86470a2c395c67a16c759249",
+            "file": "preuves/922ad6edac08107ef4ec43327ffc27f59db8ac6c86470a2c395c67a16c759249.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421277_prix-paul-s-cray.html",
-            "sha256": "993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c",
-            "file": "preuves/993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c.gz"
+            "sha256": "aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1",
+            "file": "preuves/aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421277_prix-paul-s-cray.html",
-            "sha256": "993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c",
-            "file": "preuves/993d6839e07d4128841753ac75b76698817c4940553d16e850b1291e97810a2c.gz"
+            "sha256": "aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1",
+            "file": "preuves/aa88d85a598a76f67512ebac77ace036c8b854f3ccb7566eefbac5a905544aa1.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693050-2026-10-22-auteuil-prix-paul-s-cray/partants-pronostics",
-            "sha256": "d77f39b5b5588faa4a868962ffe3a4326264392a0a2896fab10d475abf2ce361",
-            "file": "preuves/d77f39b5b5588faa4a868962ffe3a4326264392a0a2896fab10d475abf2ce361.gz"
+            "sha256": "2c17cadb158b35f7990d58ffb129eece3e6ecb0a7b4ce3429eefaf3b1a79ed4a",
+            "file": "preuves/2c17cadb158b35f7990d58ffb129eece3e6ecb0a7b4ce3429eefaf3b1a79ed4a.gz"
           }
         }
       },
@@ -1373,15 +1210,15 @@
             "source_title": "Prix Pelat",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c7-auteuil-prix-pelat",
-              "sha256": "b5681a2247d42e12e8c47419c42144e49680445dedfc6ebb60f412bce78e88c7",
-              "file": "preuves/b5681a2247d42e12e8c47419c42144e49680445dedfc6ebb60f412bce78e88c7.gz"
+              "sha256": "937e0726daed928d74dc1abd004973b1351cea864fcca798da2875523bbd8929",
+              "file": "preuves/937e0726daed928d74dc1abd004973b1351cea864fcca798da2875523bbd8929.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
-              "sha256": "9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf",
-              "file": "preuves/9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf.gz"
+              "sha256": "65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48",
+              "file": "preuves/65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48.gz"
             },
-            "captured_at": "2026-10-22T12:55:16.590992+02:00",
+            "captured_at": "2026-10-22T13:59:15.658716+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1389,8 +1226,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 4.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.52,
-              "dateRapport": 1792665912000,
+              "nombreIndicateurTendance": 4.25,
+              "dateRapport": 1792669512000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -1406,24 +1243,24 @@
             "source_title": "Le pronostic du PRIX PELAT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
-              "sha256": "34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4",
-              "file": "preuves/34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4.gz"
+              "sha256": "c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf",
+              "file": "preuves/c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
-              "sha256": "9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf",
-              "file": "preuves/9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf.gz"
+              "sha256": "65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48",
+              "file": "preuves/65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48.gz"
             },
-            "captured_at": "2026-10-22T12:55:17.184084+02:00",
+            "captured_at": "2026-10-22T13:59:16.335035+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.82,
-              "dateRapport": 1792665912000,
+              "nombreIndicateurTendance": -1.73,
+              "dateRapport": 1792669512000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1439,15 +1276,15 @@
             "source_title": "Le pronostic du PRIX PELAT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
-              "sha256": "34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4",
-              "file": "preuves/34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4.gz"
+              "sha256": "c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf",
+              "file": "preuves/c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
-              "sha256": "9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf",
-              "file": "preuves/9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf.gz"
+              "sha256": "65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48",
+              "file": "preuves/65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48.gz"
             },
-            "captured_at": "2026-10-22T12:55:17.262029+02:00",
+            "captured_at": "2026-10-22T13:59:16.415714+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1455,8 +1292,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 4.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.52,
-              "dateRapport": 1792665912000,
+              "nombreIndicateurTendance": 4.25,
+              "dateRapport": 1792669512000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -1472,15 +1309,15 @@
             "source_title": "Prix Pelat",
             "evidence": {
               "url": "https://www.geny.com/course/1693051-2026-10-22-auteuil-prix-pelat/partants-pronostics",
-              "sha256": "1860665c747afc116a14ce101b561c506be04ca05e4a5b75a4f2b3dedd1fd339",
-              "file": "preuves/1860665c747afc116a14ce101b561c506be04ca05e4a5b75a4f2b3dedd1fd339.gz"
+              "sha256": "d5f710b66054f4be947d0da40836e3043a26f1b2dcbb7f5799154ff0da235933",
+              "file": "preuves/d5f710b66054f4be947d0da40836e3043a26f1b2dcbb7f5799154ff0da235933.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C7/participants",
-              "sha256": "9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf",
-              "file": "preuves/9969a6ed3017c96b5166beee6590d8d2183a6406838b62a226c58e7e54eef5bf.gz"
+              "sha256": "65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48",
+              "file": "preuves/65bd89b00f6dfbeaa095597c2be94708f6b9733e83cc0ad815c32372b2ca3e48.gz"
             },
-            "captured_at": "2026-10-22T12:55:35.026833+02:00",
+            "captured_at": "2026-10-22T13:59:33.544217+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1488,8 +1325,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 4.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.52,
-              "dateRapport": 1792665912000,
+              "nombreIndicateurTendance": 4.25,
+              "dateRapport": 1792669512000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -1501,23 +1338,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c7-auteuil-prix-pelat",
-            "sha256": "b5681a2247d42e12e8c47419c42144e49680445dedfc6ebb60f412bce78e88c7",
-            "file": "preuves/b5681a2247d42e12e8c47419c42144e49680445dedfc6ebb60f412bce78e88c7.gz"
+            "sha256": "937e0726daed928d74dc1abd004973b1351cea864fcca798da2875523bbd8929",
+            "file": "preuves/937e0726daed928d74dc1abd004973b1351cea864fcca798da2875523bbd8929.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
-            "sha256": "34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4",
-            "file": "preuves/34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4.gz"
+            "sha256": "c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf",
+            "file": "preuves/c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421278_prix-pelat.html",
-            "sha256": "34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4",
-            "file": "preuves/34f0486081b677df9b0e77d28885b497fa92fe126baaaaf1ad98c9b91cf81ec4.gz"
+            "sha256": "c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf",
+            "file": "preuves/c2860ff317d7805041c8b1032c318af7cc796bff90dac6c75137f65b578f8fbf.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693051-2026-10-22-auteuil-prix-pelat/partants-pronostics",
-            "sha256": "1860665c747afc116a14ce101b561c506be04ca05e4a5b75a4f2b3dedd1fd339",
-            "file": "preuves/1860665c747afc116a14ce101b561c506be04ca05e4a5b75a4f2b3dedd1fd339.gz"
+            "sha256": "d5f710b66054f4be947d0da40836e3043a26f1b2dcbb7f5799154ff0da235933",
+            "file": "preuves/d5f710b66054f4be947d0da40836e3043a26f1b2dcbb7f5799154ff0da235933.gz"
           }
         }
       },
@@ -1539,24 +1376,24 @@
             "source_title": "Prix Marly River",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-22/r1c8-auteuil-prix-marly-river",
-              "sha256": "70c34addbb8a06bece38060a171096ace39bb73d794532a185b28bb8e0ce7acc",
-              "file": "preuves/70c34addbb8a06bece38060a171096ace39bb73d794532a185b28bb8e0ce7acc.gz"
+              "sha256": "10228a106a2f03dbc7fa1c737b136d2458c2c444237feddb27f7268766ca223d",
+              "file": "preuves/10228a106a2f03dbc7fa1c737b136d2458c2c444237feddb27f7268766ca223d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C8/participants",
-              "sha256": "650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23",
-              "file": "preuves/650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23.gz"
+              "sha256": "34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9",
+              "file": "preuves/34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9.gz"
             },
-            "captured_at": "2026-10-22T12:55:37.185274+02:00",
+            "captured_at": "2026-10-22T13:59:35.702993+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.51,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792669551000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -1572,24 +1409,24 @@
             "source_title": "Le pronostic du PRIX MARLY RIVER",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421279_prix-marly-river.html",
-              "sha256": "eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8",
-              "file": "preuves/eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8.gz"
+              "sha256": "b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6",
+              "file": "preuves/b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C8/participants",
-              "sha256": "650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23",
-              "file": "preuves/650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23.gz"
+              "sha256": "34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9",
+              "file": "preuves/34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9.gz"
             },
-            "captured_at": "2026-10-22T12:55:37.793467+02:00",
+            "captured_at": "2026-10-22T13:59:36.392120+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.6,
+              "rapport": 6.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.33,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1605,24 +1442,24 @@
             "source_title": "Le pronostic du PRIX MARLY RIVER",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421279_prix-marly-river.html",
-              "sha256": "eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8",
-              "file": "preuves/eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8.gz"
+              "sha256": "b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6",
+              "file": "preuves/b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C8/participants",
-              "sha256": "650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23",
-              "file": "preuves/650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23.gz"
+              "sha256": "34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9",
+              "file": "preuves/34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9.gz"
             },
-            "captured_at": "2026-10-22T12:55:37.878710+02:00",
+            "captured_at": "2026-10-22T13:59:36.477233+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.5,
+              "rapport": 9.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.26,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": 2.1,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1638,24 +1475,24 @@
             "source_title": "Prix Marly River",
             "evidence": {
               "url": "https://www.geny.com/course/1693052-2026-10-22-auteuil-prix-marly-river/partants-pronostics",
-              "sha256": "198fc2312edbc74c929b939b9eb6901273f6d6d47aa82338b4298cc20f7b28c7",
-              "file": "preuves/198fc2312edbc74c929b939b9eb6901273f6d6d47aa82338b4298cc20f7b28c7.gz"
+              "sha256": "9c15b61098dd944098e31bab278f81b19cff47dfdc24d11cc16afedb373c0015",
+              "file": "preuves/9c15b61098dd944098e31bab278f81b19cff47dfdc24d11cc16afedb373c0015.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22102026/R1/C8/participants",
-              "sha256": "650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23",
-              "file": "preuves/650307d24fb3ba540cfb659b9fdb3e1edf71adf8432ad233fb66f000fb2e4b23.gz"
+              "sha256": "34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9",
+              "file": "preuves/34c2e7754f3caef380c430a4f483d07cabd4e8e227047eb4fc631ec4a04772e9.gz"
             },
-            "captured_at": "2026-10-22T12:55:55.059547+02:00",
+            "captured_at": "2026-10-22T13:59:53.647803+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.6,
+              "rapport": 6.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.33,
-              "dateRapport": 1792665951000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1792669551000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1667,23 +1504,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-22/r1c8-auteuil-prix-marly-river",
-            "sha256": "70c34addbb8a06bece38060a171096ace39bb73d794532a185b28bb8e0ce7acc",
-            "file": "preuves/70c34addbb8a06bece38060a171096ace39bb73d794532a185b28bb8e0ce7acc.gz"
+            "sha256": "10228a106a2f03dbc7fa1c737b136d2458c2c444237feddb27f7268766ca223d",
+            "file": "preuves/10228a106a2f03dbc7fa1c737b136d2458c2c444237feddb27f7268766ca223d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421279_prix-marly-river.html",
-            "sha256": "eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8",
-            "file": "preuves/eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8.gz"
+            "sha256": "b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6",
+            "file": "preuves/b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-22/auteuil/421279_prix-marly-river.html",
-            "sha256": "eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8",
-            "file": "preuves/eee3bf50a40a9fdedf2b8e4c707467dfeca4058831f4664d045c2cfc6da59ff8.gz"
+            "sha256": "b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6",
+            "file": "preuves/b71508ea10c1da686ecabd6174cc37aa8ba87c508d92c22cd9dc454ab8b142e6.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693052-2026-10-22-auteuil-prix-marly-river/partants-pronostics",
-            "sha256": "198fc2312edbc74c929b939b9eb6901273f6d6d47aa82338b4298cc20f7b28c7",
-            "file": "preuves/198fc2312edbc74c929b939b9eb6901273f6d6d47aa82338b4298cc20f7b28c7.gz"
+            "sha256": "9c15b61098dd944098e31bab278f81b19cff47dfdc24d11cc16afedb373c0015",
+            "file": "preuves/9c15b61098dd944098e31bab278f81b19cff47dfdc24d11cc16afedb373c0015.gz"
           }
         }
       }
