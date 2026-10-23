@@ -3,7 +3,33 @@
   "venue": "VINCENNES",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-23T18:23:00+02:00",
+          "number": 9,
+          "name": "LAROZE DU GERS",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-23T18:00:20.684059+02:00",
+          "source_captured_at": "2026-10-23T17:40:27.736254+02:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792771175000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -209,9 +235,190 @@
       "title": "PRIX JUNO",
       "departure": "2026-10-23T18:58:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 3,
+          "name": "JAZZ D'OURVILLE",
+          "source_url": "https://turfin.fr/course/2026-10-23/r1c2-vincennes-prix-juno",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Juno",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-23/r1c2-vincennes-prix-juno",
+            "sha256": "a342fde0769e4c3cf2380b5fc64af537b36d2d51284fce004ee34c9c7455f878",
+            "file": "preuves/a342fde0769e4c3cf2380b5fc64af537b36d2d51284fce004ee34c9c7455f878.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C2/participants",
+            "sha256": "06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97",
+            "file": "preuves/06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97.gz"
+          },
+          "captured_at": "2026-10-23T17:59:58.021122+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -15.62,
+            "dateRapport": 1792770326000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "JAZZ D'OURVILLE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JUNO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+            "sha256": "3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564",
+            "file": "preuves/3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C2/participants",
+            "sha256": "06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97",
+            "file": "preuves/06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97.gz"
+          },
+          "captured_at": "2026-10-23T17:59:59.554678+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -15.62,
+            "dateRapport": 1792770326000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 3,
+          "name": "JAZZ D'OURVILLE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JUNO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+            "sha256": "3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564",
+            "file": "preuves/3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C2/participants",
+            "sha256": "06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97",
+            "file": "preuves/06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97.gz"
+          },
+          "captured_at": "2026-10-23T17:59:59.621806+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -15.62,
+            "dateRapport": 1792770326000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 13,
+          "name": "JOHORE",
+          "source_url": "https://www.geny.com/course/1693318-2026-10-23-vincennes-prix-juno/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Juno",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693318-2026-10-23-vincennes-prix-juno/partants-pronostics",
+            "sha256": "1535ddbfadd38b110f302f7269a245e739e0f5c0e973ccdc6f7c547de0796d13",
+            "file": "preuves/1535ddbfadd38b110f302f7269a245e739e0f5c0e973ccdc6f7c547de0796d13.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C2/participants",
+            "sha256": "06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97",
+            "file": "preuves/06425cfc41b9898ccf7d408349f0341bbf790bc4a01fedc253a08cd77656ca97.gz"
+          },
+          "captured_at": "2026-10-23T18:00:20.170758+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.34,
+            "dateRapport": 1792770326000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+turfin+zeturf": {
+          "number": 3,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-23/r1c2-vincennes-prix-juno",
+          "sha256": "a342fde0769e4c3cf2380b5fc64af537b36d2d51284fce004ee34c9c7455f878",
+          "file": "preuves/a342fde0769e4c3cf2380b5fc64af537b36d2d51284fce004ee34c9c7455f878.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+          "sha256": "3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564",
+          "file": "preuves/3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421361_prix-juno.html",
+          "sha256": "3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564",
+          "file": "preuves/3fbae10c86b133ddfc91f257ea1fefbfa5ea5465626c0e6e526d84e8c34b2564.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693318-2026-10-23-vincennes-prix-juno/partants-pronostics",
+          "sha256": "1535ddbfadd38b110f302f7269a245e739e0f5c0e973ccdc6f7c547de0796d13",
+          "file": "preuves/1535ddbfadd38b110f302f7269a245e739e0f5c0e973ccdc6f7c547de0796d13.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-23T18:00:20.170816+02:00"
     },
     {
       "date": "2026-10-23",
