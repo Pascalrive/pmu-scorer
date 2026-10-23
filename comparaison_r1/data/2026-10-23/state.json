@@ -1480,7 +1480,8 @@
           "file": "preuves/cc5185d53e7340b2f4f6153a69560a34c647766dd29bd26827970d78be4c65d5.gz"
         }
       },
-      "groups_frozen_at": "2026-10-23T19:47:21.887891+02:00"
+      "groups_frozen_at": "2026-10-23T19:47:21.887891+02:00",
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-23",
@@ -1555,21 +1556,76 @@
           "stake_cents": 0,
           "playable": true,
           "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 14,
+          "name": "NOCIVE DU CHOQUEL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX URANIE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+            "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+            "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
+            "sha256": "cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f",
+            "file": "preuves/cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f.gz"
+          },
+          "captured_at": "2026-10-23T20:51:04.640705+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792781376000,
+            "favoris": false,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 14,
+          "name": "NOCIVE DU CHOQUEL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX URANIE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+            "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+            "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
+            "sha256": "cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f",
+            "file": "preuves/cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f.gz"
+          },
+          "captured_at": "2026-10-23T20:51:04.727758+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792781376000,
+            "favoris": false,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
         }
       },
       "groups": {},
-      "errors": {
-        "canalturf": {
-          "type": "ConnectionError",
-          "reason": "HTTPSConnectionPool(host='www.canalturf.com', port=443): Max retries exceeded with url: /courses_liste_pronostics.php (Caused by NameResolutionError(\"HTTPSConnection(host='www.canalturf.com', port=443",
-          "at": "2026-10-23T20:32:55.129383+02:00"
-        },
-        "zeturf": {
-          "type": "ValueError",
-          "reason": "Source inaccessible lors de ce passage",
-          "at": "2026-10-23T20:32:55.129417+02:00"
-        }
-      },
+      "errors": {},
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-10-23/r1c6-vincennes-prix-uranie",
@@ -1580,6 +1636,16 @@
           "url": "https://www.geny.com/course/1693322-2026-10-23-vincennes-prix-uranie/partants-pronostics",
           "sha256": "08d83b59d7755b4883000bcab93e6983d8e4b4a1c4ad4920e0ebe4451d406040",
           "file": "preuves/08d83b59d7755b4883000bcab93e6983d8e4b4a1c4ad4920e0ebe4451d406040.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+          "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+          "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+          "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+          "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
         }
       }
     },
@@ -1590,9 +1656,132 @@
       "title": "PRIX BELLONA",
       "departure": "2026-10-23T21:45:00+02:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "MONTEQUILLO",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX BELLONA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+            "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+            "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
+            "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+            "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
+          },
+          "captured_at": "2026-10-23T20:51:05.186355+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -8.69,
+            "dateRapport": 1792781121000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 5,
+          "name": "SLIPSTREAM ZON",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX BELLONA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+            "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+            "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
+            "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+            "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
+          },
+          "captured_at": "2026-10-23T20:51:05.296470+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 10.34,
+            "dateRapport": 1792781121000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 8,
+          "name": "BROWNIE DIAMANT",
+          "source_url": "https://www.geny.com/course/1693323-2026-10-23-vincennes-prix-bellona/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Bellona",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693323-2026-10-23-vincennes-prix-bellona/partants-pronostics",
+            "sha256": "221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3",
+            "file": "preuves/221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
+            "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+            "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
+          },
+          "captured_at": "2026-10-23T20:51:05.415503+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -23.28,
+            "dateRapport": 1792781121000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {
+        "turfin": {
+          "type": "ValueError",
+          "reason": "Source inaccessible lors de ce passage",
+          "at": "2026-10-23T20:51:05.099884+02:00"
+        }
+      },
+      "source_checks": {
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+          "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+          "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
+          "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+          "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693323-2026-10-23-vincennes-prix-bellona/partants-pronostics",
+          "sha256": "221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3",
+          "file": "preuves/221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3.gz"
+        }
+      }
     },
     {
       "date": "2026-10-23",
@@ -1609,341 +1798,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 4,
-    "captured_at": "2026-10-23T19:47:21.149470+02:00",
+    "captured_at": "2026-10-23T20:51:04.017790+02:00",
     "races": [
-      {
-        "date": "2026-10-23",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX ORIONIS",
-        "departure": "2026-10-23T20:15:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 10,
-            "name": "JADOU DU LUPIN",
-            "source_url": "https://turfin.fr/course/2026-10-23/r1c4-vincennes-prix-orionis",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Orionis",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-23/r1c4-vincennes-prix-orionis",
-              "sha256": "7180b2a432831f22a813e4629307567e7ac30f14618d7c2b84b6867bfd0d53c4",
-              "file": "preuves/7180b2a432831f22a813e4629307567e7ac30f14618d7c2b84b6867bfd0d53c4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C4/participants",
-              "sha256": "642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d",
-              "file": "preuves/642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d.gz"
-            },
-            "captured_at": "2026-10-23T19:45:38.946760+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.38,
-              "dateRapport": 1792776632000,
-              "favoris": false,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 15,
-            "name": "JUST DU CHATELET",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX ORIONIS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-              "sha256": "aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90",
-              "file": "preuves/aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C4/participants",
-              "sha256": "642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d",
-              "file": "preuves/642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d.gz"
-            },
-            "captured_at": "2026-10-23T19:45:40.500056+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.27,
-              "dateRapport": 1792776632000,
-              "favoris": true,
-              "numPmu1": 15,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 15,
-            "name": "JUST DU CHATELET",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX ORIONIS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-              "sha256": "aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90",
-              "file": "preuves/aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C4/participants",
-              "sha256": "642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d",
-              "file": "preuves/642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d.gz"
-            },
-            "captured_at": "2026-10-23T19:45:40.566751+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.27,
-              "dateRapport": 1792776632000,
-              "favoris": true,
-              "numPmu1": 15,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 15,
-            "name": "JUST DU CHATELET",
-            "source_url": "https://www.geny.com/course/1693324-2026-10-23-vincennes-prix-orionis/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Orionis",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693324-2026-10-23-vincennes-prix-orionis/partants-pronostics",
-              "sha256": "102391375df0c557af5632b7e8beeaa27ae0b04f23d198987b3b414a6587618b",
-              "file": "preuves/102391375df0c557af5632b7e8beeaa27ae0b04f23d198987b3b414a6587618b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C4/participants",
-              "sha256": "642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d",
-              "file": "preuves/642179165781d1a26f8a8515877f7d56d9f5eb5105c49f70df15dac29004fd5d.gz"
-            },
-            "captured_at": "2026-10-23T19:46:01.602809+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.27,
-              "dateRapport": 1792776632000,
-              "favoris": true,
-              "numPmu1": 15,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-23/r1c4-vincennes-prix-orionis",
-            "sha256": "7180b2a432831f22a813e4629307567e7ac30f14618d7c2b84b6867bfd0d53c4",
-            "file": "preuves/7180b2a432831f22a813e4629307567e7ac30f14618d7c2b84b6867bfd0d53c4.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-            "sha256": "aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90",
-            "file": "preuves/aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html",
-            "sha256": "aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90",
-            "file": "preuves/aab1351c349446b9be4153d33e1fdf45628b47601a263bee826e9de87ea8ea90.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693324-2026-10-23-vincennes-prix-orionis/partants-pronostics",
-            "sha256": "102391375df0c557af5632b7e8beeaa27ae0b04f23d198987b3b414a6587618b",
-            "file": "preuves/102391375df0c557af5632b7e8beeaa27ae0b04f23d198987b3b414a6587618b.gz"
-          }
-        },
-        "groups_frozen_at": "2026-10-23T19:21:44.598498+02:00"
-      },
-      {
-        "date": "2026-10-23",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX VICTOR REGIS",
-        "departure": "2026-10-23T20:45:00+02:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 7,
-            "name": "NOBEL DU RIB",
-            "source_url": "https://turfin.fr/course/2026-10-23/r1c5-vincennes-prix-victor-regis",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Victor Regis",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-23/r1c5-vincennes-prix-victor-regis",
-              "sha256": "2002d3141775104997a6576296f12990313e26f0152696d4949c64a3e7eda700",
-              "file": "preuves/2002d3141775104997a6576296f12990313e26f0152696d4949c64a3e7eda700.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C5/participants",
-              "sha256": "7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29",
-              "file": "preuves/7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29.gz"
-            },
-            "captured_at": "2026-10-23T19:46:03.090558+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792777513000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 7,
-            "name": "NOBEL DU RIB",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX VICTOR REGIS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-              "sha256": "ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662",
-              "file": "preuves/ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C5/participants",
-              "sha256": "7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29",
-              "file": "preuves/7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29.gz"
-            },
-            "captured_at": "2026-10-23T19:46:03.630367+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792777513000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 7,
-            "name": "NOBEL DU RIB",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX VICTOR REGIS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-              "sha256": "ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662",
-              "file": "preuves/ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C5/participants",
-              "sha256": "7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29",
-              "file": "preuves/7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29.gz"
-            },
-            "captured_at": "2026-10-23T19:46:03.683685+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792777513000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 7,
-            "name": "NOBEL DU RIB",
-            "source_url": "https://www.geny.com/course/1693320-2026-10-23-vincennes-prix-victor-regis/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Victor Regis",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693320-2026-10-23-vincennes-prix-victor-regis/partants-pronostics",
-              "sha256": "cc5185d53e7340b2f4f6153a69560a34c647766dd29bd26827970d78be4c65d5",
-              "file": "preuves/cc5185d53e7340b2f4f6153a69560a34c647766dd29bd26827970d78be4c65d5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C5/participants",
-              "sha256": "7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29",
-              "file": "preuves/7ee396db06bd57cd99be08d997ac3291b5b43646abb086b2e782d6274b8f7f29.gz"
-            },
-            "captured_at": "2026-10-23T19:46:21.096994+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1792777513000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-23/r1c5-vincennes-prix-victor-regis",
-            "sha256": "2002d3141775104997a6576296f12990313e26f0152696d4949c64a3e7eda700",
-            "file": "preuves/2002d3141775104997a6576296f12990313e26f0152696d4949c64a3e7eda700.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-            "sha256": "ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662",
-            "file": "preuves/ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421364_prix-victor-regis.html",
-            "sha256": "ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662",
-            "file": "preuves/ae6acb487d4f30ff0a86aef43ab7c3429ab6df7a19d6cfab1af59fdc577a6662.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693320-2026-10-23-vincennes-prix-victor-regis/partants-pronostics",
-            "sha256": "cc5185d53e7340b2f4f6153a69560a34c647766dd29bd26827970d78be4c65d5",
-            "file": "preuves/cc5185d53e7340b2f4f6153a69560a34c647766dd29bd26827970d78be4c65d5.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-23",
         "id": "R1C6",
@@ -1952,39 +1808,6 @@
         "departure": "2026-10-23T21:15:00+02:00",
         "market": true,
         "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 12,
-            "name": "NAYA D'ERONVILLE",
-            "source_url": "https://turfin.fr/course/2026-10-23/r1c6-vincennes-prix-uranie",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Uranie",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-23/r1c6-vincennes-prix-uranie",
-              "sha256": "de0c57efdb776776ccbb14d8fc8017d267d253cbb52ce06987b2ac0d6eb03546",
-              "file": "preuves/de0c57efdb776776ccbb14d8fc8017d267d253cbb52ce06987b2ac0d6eb03546.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
-              "sha256": "73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89",
-              "file": "preuves/73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89.gz"
-            },
-            "captured_at": "2026-10-23T19:46:23.028180+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777556000,
-              "favoris": true,
-              "numPmu1": 12,
-              "grossePrise": false
-            }
-          },
           "canalturf": {
             "site": "canalturf",
             "number": 14,
@@ -1995,24 +1818,24 @@
             "source_title": "Le pronostic du PRIX URANIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
-              "sha256": "799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c",
-              "file": "preuves/799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c.gz"
+              "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+              "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
-              "sha256": "73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89",
-              "file": "preuves/73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89.gz"
+              "sha256": "cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f",
+              "file": "preuves/cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f.gz"
             },
-            "captured_at": "2026-10-23T19:46:23.565808+02:00",
+            "captured_at": "2026-10-23T20:50:03.521623+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.5,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777556000,
+              "dateRapport": 1792781376000,
               "favoris": false,
               "numPmu1": 14,
               "grossePrise": false
@@ -2028,24 +1851,24 @@
             "source_title": "Le pronostic du PRIX URANIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
-              "sha256": "799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c",
-              "file": "preuves/799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c.gz"
+              "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+              "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
-              "sha256": "73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89",
-              "file": "preuves/73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89.gz"
+              "sha256": "cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f",
+              "file": "preuves/cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f.gz"
             },
-            "captured_at": "2026-10-23T19:46:23.648979+02:00",
+            "captured_at": "2026-10-23T20:50:03.611226+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.5,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777556000,
+              "dateRapport": 1792781376000,
               "favoris": false,
               "numPmu1": 14,
               "grossePrise": false
@@ -2061,24 +1884,24 @@
             "source_title": "Prix Uranie",
             "evidence": {
               "url": "https://www.geny.com/course/1693322-2026-10-23-vincennes-prix-uranie/partants-pronostics",
-              "sha256": "69cb636dbcdd2c9b88dbcb682f1084ea1fe3cc813d4164da8303d8403f397b3e",
-              "file": "preuves/69cb636dbcdd2c9b88dbcb682f1084ea1fe3cc813d4164da8303d8403f397b3e.gz"
+              "sha256": "dc9ee47704bbd567107a056606fc0ebfaa73d4bde5451d4eab4b0d8b5fcd24a5",
+              "file": "preuves/dc9ee47704bbd567107a056606fc0ebfaa73d4bde5451d4eab4b0d8b5fcd24a5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C6/participants",
-              "sha256": "73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89",
-              "file": "preuves/73ddb5d5c8cce7e0f71702337ef534489a1904c748e756f45bd10ac770266f89.gz"
+              "sha256": "cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f",
+              "file": "preuves/cbd58b100e587beadb7939b3a01cbcbbe1da3f4dbc3ec7b995dd3e4e3594d61f.gz"
             },
-            "captured_at": "2026-10-23T19:46:41.329350+02:00",
+            "captured_at": "2026-10-23T20:50:24.144084+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
+              "rapport": 2.8,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777556000,
+              "dateRapport": 1792781376000,
               "favoris": true,
               "numPmu1": 12,
               "grossePrise": false
@@ -2086,27 +1909,33 @@
           }
         },
         "groups": {},
-        "errors": {},
+        "errors": {
+          "turfin": {
+            "type": "ReadTimeout",
+            "reason": "HTTPSConnectionPool(host='turfin.fr', port=443): Read timed out. (read timeout=20)",
+            "at": "2026-10-23T20:50:01.891294+02:00"
+          }
+        },
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-23/r1c6-vincennes-prix-uranie",
-            "sha256": "de0c57efdb776776ccbb14d8fc8017d267d253cbb52ce06987b2ac0d6eb03546",
-            "file": "preuves/de0c57efdb776776ccbb14d8fc8017d267d253cbb52ce06987b2ac0d6eb03546.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
-            "sha256": "799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c",
-            "file": "preuves/799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
-            "sha256": "799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c",
-            "file": "preuves/799ea49346655c0becead20c5de76a1b35e9705448b3ac201ad94e2d514d809c.gz"
+            "sha256": "276fe88adbe2667d28844e89c96ba78f0f5d6b087f0e4cdc0d1dad8b71fe8f94",
+            "file": "preuves/276fe88adbe2667d28844e89c96ba78f0f5d6b087f0e4cdc0d1dad8b71fe8f94.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693322-2026-10-23-vincennes-prix-uranie/partants-pronostics",
-            "sha256": "69cb636dbcdd2c9b88dbcb682f1084ea1fe3cc813d4164da8303d8403f397b3e",
-            "file": "preuves/69cb636dbcdd2c9b88dbcb682f1084ea1fe3cc813d4164da8303d8403f397b3e.gz"
+            "sha256": "dc9ee47704bbd567107a056606fc0ebfaa73d4bde5451d4eab4b0d8b5fcd24a5",
+            "file": "preuves/dc9ee47704bbd567107a056606fc0ebfaa73d4bde5451d4eab4b0d8b5fcd24a5.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+            "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+            "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421365_prix-uranie.html",
+            "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
+            "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
           }
         }
       },
@@ -2118,39 +1947,6 @@
         "departure": "2026-10-23T21:45:00+02:00",
         "market": true,
         "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 1,
-            "name": "MAMACITA",
-            "source_url": "https://turfin.fr/course/2026-10-23/r1c7-vincennes-prix-bellona",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Bellona",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-23/r1c7-vincennes-prix-bellona",
-              "sha256": "367f88bf50f6e2f8435021c065e146dbd2e56bd85531e4eee611bff35594ba83",
-              "file": "preuves/367f88bf50f6e2f8435021c065e146dbd2e56bd85531e4eee611bff35594ba83.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
-              "sha256": "0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f",
-              "file": "preuves/0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f.gz"
-            },
-            "captured_at": "2026-10-23T19:46:43.018319+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777521000,
-              "favoris": false,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
           "canalturf": {
             "site": "canalturf",
             "number": 2,
@@ -2161,24 +1957,24 @@
             "source_title": "Le pronostic du PRIX BELLONA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
-              "sha256": "da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc",
-              "file": "preuves/da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc.gz"
+              "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+              "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
-              "sha256": "0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f",
-              "file": "preuves/0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f.gz"
+              "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+              "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
             },
-            "captured_at": "2026-10-23T19:46:43.563507+02:00",
+            "captured_at": "2026-10-23T20:50:24.939546+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.2,
+              "rapport": 6.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.23,
-              "dateRapport": 1792777521000,
+              "nombreIndicateurTendance": -8.69,
+              "dateRapport": 1792781121000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -2194,24 +1990,24 @@
             "source_title": "Le pronostic du PRIX BELLONA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
-              "sha256": "da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc",
-              "file": "preuves/da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc.gz"
+              "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+              "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
-              "sha256": "0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f",
-              "file": "preuves/0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f.gz"
+              "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+              "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
             },
-            "captured_at": "2026-10-23T19:46:43.619505+02:00",
+            "captured_at": "2026-10-23T20:50:25.028827+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.5,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777521000,
+              "nombreIndicateurTendance": 10.34,
+              "dateRapport": 1792781121000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -2227,52 +2023,53 @@
             "source_title": "Prix Bellona",
             "evidence": {
               "url": "https://www.geny.com/course/1693323-2026-10-23-vincennes-prix-bellona/partants-pronostics",
-              "sha256": "b074e51963ea119ac47cf70ecb237cd9cb3fad4760585d21fd3df3d3596033af",
-              "file": "preuves/b074e51963ea119ac47cf70ecb237cd9cb3fad4760585d21fd3df3d3596033af.gz"
+              "sha256": "221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3",
+              "file": "preuves/221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C7/participants",
-              "sha256": "0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f",
-              "file": "preuves/0cfe62e1cf7dfaeea90baccd997caebccb5ebf329fefa5555a6e47ed4d04623f.gz"
+              "sha256": "0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e",
+              "file": "preuves/0b3dd3d721e2f6022ab3d7451b6ccf41c4b787b0d7b8db7223d6dd6ca6548b5e.gz"
             },
-            "captured_at": "2026-10-23T19:47:01.136457+02:00",
+            "captured_at": "2026-10-23T20:50:44.145613+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.38,
-              "dateRapport": 1792777521000,
-              "favoris": false,
+              "nombreIndicateurTendance": -23.28,
+              "dateRapport": 1792781121000,
+              "favoris": true,
               "numPmu1": 8,
-              "grossePrise": false
+              "grossePrise": true
             }
           }
         },
         "groups": {},
-        "errors": {},
-        "source_checks": {
+        "errors": {
           "turfin": {
-            "url": "https://turfin.fr/course/2026-10-23/r1c7-vincennes-prix-bellona",
-            "sha256": "367f88bf50f6e2f8435021c065e146dbd2e56bd85531e4eee611bff35594ba83",
-            "file": "preuves/367f88bf50f6e2f8435021c065e146dbd2e56bd85531e4eee611bff35594ba83.gz"
-          },
+            "type": "ValueError",
+            "reason": "Source inaccessible lors de ce passage",
+            "at": "2026-10-23T20:50:24.442431+02:00"
+          }
+        },
+        "source_checks": {
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
-            "sha256": "da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc",
-            "file": "preuves/da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc.gz"
+            "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+            "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421366_prix-bellona.html",
-            "sha256": "da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc",
-            "file": "preuves/da827c2841222fed9f3cabd65609adb12fdee9e4855c79400bdb0a63e82ef2cc.gz"
+            "sha256": "44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2",
+            "file": "preuves/44238ce0610e8e982584e81aff5b7d0896e8b6d161960e1d74eedfad6d90f4c2.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693323-2026-10-23-vincennes-prix-bellona/partants-pronostics",
-            "sha256": "b074e51963ea119ac47cf70ecb237cd9cb3fad4760585d21fd3df3d3596033af",
-            "file": "preuves/b074e51963ea119ac47cf70ecb237cd9cb3fad4760585d21fd3df3d3596033af.gz"
+            "sha256": "221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3",
+            "file": "preuves/221c5bb67b1f922c3cc1b1c7da5c29bd18c776a4d04380024a7c2f0852cf33a3.gz"
           }
         }
       },
@@ -2284,39 +2081,6 @@
         "departure": "2026-10-23T22:10:00+02:00",
         "market": true,
         "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 5,
-            "name": "LARGINO BRAVOURE",
-            "source_url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Leto",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
-              "sha256": "7f13d34f601f9a3f0f27a88105f16d98456f8565a0904df1bea7da9461beb9c7",
-              "file": "preuves/7f13d34f601f9a3f0f27a88105f16d98456f8565a0904df1bea7da9461beb9c7.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
-              "sha256": "b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f",
-              "file": "preuves/b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f.gz"
-            },
-            "captured_at": "2026-10-23T19:47:02.743335+02:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777524000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
           "canalturf": {
             "site": "canalturf",
             "number": 7,
@@ -2327,24 +2091,24 @@
             "source_title": "Le pronostic du PRIX LETO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
-              "sha256": "67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36",
-              "file": "preuves/67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36.gz"
+              "sha256": "99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142",
+              "file": "preuves/99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
-              "sha256": "b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f",
-              "file": "preuves/b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f.gz"
+              "sha256": "6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011",
+              "file": "preuves/6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011.gz"
             },
-            "captured_at": "2026-10-23T19:47:03.301340+02:00",
+            "captured_at": "2026-10-23T20:50:45.163499+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1792777524000,
+              "nombreIndicateurTendance": 5.17,
+              "dateRapport": 1792781124000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -2360,24 +2124,24 @@
             "source_title": "Le pronostic du PRIX LETO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
-              "sha256": "67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36",
-              "file": "preuves/67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36.gz"
+              "sha256": "99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142",
+              "file": "preuves/99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
-              "sha256": "b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f",
-              "file": "preuves/b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f.gz"
+              "sha256": "6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011",
+              "file": "preuves/6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011.gz"
             },
-            "captured_at": "2026-10-23T19:47:03.354803+02:00",
+            "captured_at": "2026-10-23T20:50:45.248208+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1792777524000,
+              "nombreIndicateurTendance": 5.17,
+              "dateRapport": 1792781124000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -2393,15 +2157,15 @@
             "source_title": "Prix Leto",
             "evidence": {
               "url": "https://www.geny.com/course/1693321-2026-10-23-vincennes-prix-leto/partants-pronostics",
-              "sha256": "517aa757911d3aa155faba6f04184dde3e5ee4a731edd287603ce871148b8cde",
-              "file": "preuves/517aa757911d3aa155faba6f04184dde3e5ee4a731edd287603ce871148b8cde.gz"
+              "sha256": "8dd6be6cc886e0199cb0dc484e45b24ff07f486eb8fbcc4971f1d66187916f96",
+              "file": "preuves/8dd6be6cc886e0199cb0dc484e45b24ff07f486eb8fbcc4971f1d66187916f96.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
-              "sha256": "b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f",
-              "file": "preuves/b336b84c7fe8ce58930ef306dfc9370ad22a809914eb54f8781ee83bf48c002f.gz"
+              "sha256": "6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011",
+              "file": "preuves/6cd0b658ebf9f610b4e12c3f505e7ea419d54b2343f5b0e958e83861b53c4011.gz"
             },
-            "captured_at": "2026-10-23T19:47:21.149411+02:00",
+            "captured_at": "2026-10-23T20:51:04.017739+02:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2409,8 +2173,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 8.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792777524000,
+              "nombreIndicateurTendance": 1.21,
+              "dateRapport": 1792781124000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -2418,31 +2182,32 @@
           }
         },
         "groups": {},
-        "errors": {},
-        "source_checks": {
+        "errors": {
           "turfin": {
-            "url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
-            "sha256": "7f13d34f601f9a3f0f27a88105f16d98456f8565a0904df1bea7da9461beb9c7",
-            "file": "preuves/7f13d34f601f9a3f0f27a88105f16d98456f8565a0904df1bea7da9461beb9c7.gz"
-          },
+            "type": "ValueError",
+            "reason": "Source inaccessible lors de ce passage",
+            "at": "2026-10-23T20:50:44.622821+02:00"
+          }
+        },
+        "source_checks": {
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
-            "sha256": "67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36",
-            "file": "preuves/67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36.gz"
+            "sha256": "99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142",
+            "file": "preuves/99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
-            "sha256": "67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36",
-            "file": "preuves/67fd9466dc9bbbc7fdb091fc3772fee7277bd3952e82033f02567b227b40bb36.gz"
+            "sha256": "99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142",
+            "file": "preuves/99d4603367fbda8fa89f52e59fe02e286822c618c67907091c60c60a4521f142.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693321-2026-10-23-vincennes-prix-leto/partants-pronostics",
-            "sha256": "517aa757911d3aa155faba6f04184dde3e5ee4a731edd287603ce871148b8cde",
-            "file": "preuves/517aa757911d3aa155faba6f04184dde3e5ee4a731edd287603ce871148b8cde.gz"
+            "sha256": "8dd6be6cc886e0199cb0dc484e45b24ff07f486eb8fbcc4971f1d66187916f96",
+            "file": "preuves/8dd6be6cc886e0199cb0dc484e45b24ff07f486eb8fbcc4971f1d66187916f96.gz"
           }
         }
       }
     ],
-    "complete": true
+    "complete": false
   }
 }
