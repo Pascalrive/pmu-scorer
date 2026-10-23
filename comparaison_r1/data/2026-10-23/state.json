@@ -1743,7 +1743,9 @@
           "sha256": "e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38",
           "file": "preuves/e66f2782ae74d2e7558b6c98d8d76195292d20eab0271bb5aae9c57c95c70c38.gz"
         }
-      }
+      },
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-10-23",
@@ -1918,9 +1920,180 @@
       "title": "PRIX LETO",
       "departure": "2026-10-23T22:10:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 5,
+          "name": "LARGINO BRAVOURE",
+          "source_url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Leto",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
+            "sha256": "2fd33710c9ce8d71b9053c3fa98644f6a071cdf4af8cbf859fc46b82a5d893c1",
+            "file": "preuves/2fd33710c9ce8d71b9053c3fa98644f6a071cdf4af8cbf859fc46b82a5d893c1.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
+            "sha256": "cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900",
+            "file": "preuves/cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900.gz"
+          },
+          "captured_at": "2026-10-23T21:17:50.933169+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.68,
+            "dateRapport": 1792782924000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "LOUSTIC DE DALINE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LETO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+            "sha256": "6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb",
+            "file": "preuves/6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
+            "sha256": "cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900",
+            "file": "preuves/cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900.gz"
+          },
+          "captured_at": "2026-10-23T21:17:52.506346+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792782924000,
+            "favoris": false,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 7,
+          "name": "LOUSTIC DE DALINE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LETO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+            "sha256": "6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb",
+            "file": "preuves/6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
+            "sha256": "cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900",
+            "file": "preuves/cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900.gz"
+          },
+          "captured_at": "2026-10-23T21:17:52.591299+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792782924000,
+            "favoris": false,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 10,
+          "name": "L'ONCLE SAM",
+          "source_url": "https://www.geny.com/course/1693321-2026-10-23-vincennes-prix-leto/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Leto",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693321-2026-10-23-vincennes-prix-leto/partants-pronostics",
+            "sha256": "6fb56de3879e479f9f59cdeca4e15a0173470c2b08a1e7f355583d30e57913ea",
+            "file": "preuves/6fb56de3879e479f9f59cdeca4e15a0173470c2b08a1e7f355583d30e57913ea.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/23102026/R1/C8/participants",
+            "sha256": "cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900",
+            "file": "preuves/cd82d76248357eaa7c70520d830a4759eedfcd3d03c2fb21051977948f785900.gz"
+          },
+          "captured_at": "2026-10-23T21:18:13.130102+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 3.61,
+            "dateRapport": 1792782924000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_2_sur_4": {
+          "number": 7,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+zeturf": {
+          "number": 7,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-23/r1c8-vincennes-prix-leto",
+          "sha256": "2fd33710c9ce8d71b9053c3fa98644f6a071cdf4af8cbf859fc46b82a5d893c1",
+          "file": "preuves/2fd33710c9ce8d71b9053c3fa98644f6a071cdf4af8cbf859fc46b82a5d893c1.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+          "sha256": "6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb",
+          "file": "preuves/6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421367_prix-leto.html",
+          "sha256": "6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb",
+          "file": "preuves/6609fdc2e66177f786b6d4343bd5f36f89279dc0fb88ca24b2695138162bbebb.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693321-2026-10-23-vincennes-prix-leto/partants-pronostics",
+          "sha256": "6fb56de3879e479f9f59cdeca4e15a0173470c2b08a1e7f355583d30e57913ea",
+          "file": "preuves/6fb56de3879e479f9f59cdeca4e15a0173470c2b08a1e7f355583d30e57913ea.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-23T21:18:13.130154+02:00"
     }
   ],
   "notifications": [],
