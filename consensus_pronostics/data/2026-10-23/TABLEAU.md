@@ -4,16 +4,16 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX ORIONIS
 
-Collecte : 2026-10-23T07:27:46.784412+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-23T09:24:38.936800+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html) | 15 JUST DU CHATELET (cote 4.4) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 7.0) | 17 IVOIRE DAIRPET (cote 20.0) | 12 IN LOVE REGLISSE (cote 24.0) | 9 JEWEL DE LA COTE (cote 18.0) — Outsider ; 13 JIBI DU FRUITIER (cote 16.0) — Outsider ; 8 HALFAN SPEED (cote 13.0) — Outsider ; 12 IN LOVE REGLISSE (cote 24.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html) | 15 JUST DU CHATELET (cote 4.4) | 10 JADOU DU LUPIN (cote 7.0) | 11 JAZZ DE PADD (cote 6.1) | 7 IENISSE DE BARBRAY (cote 8.4) | 8 HALFAN SPEED (cote 13.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 7.0) | 8 HALFAN SPEED (cote 13.0) | 15 JUST DU CHATELET (cote 4.4) | 7 IENISSE DE BARBRAY (cote 8.4) | 3 IROISE DE MADKER (cote 31.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 15 JUST DU CHATELET (cote 4.4) | 10 JADOU DU LUPIN (cote 7.0) | 11 JAZZ DE PADD (cote 6.1) | 12 IN LOVE REGLISSE (cote 24.0) | 17 IVOIRE DAIRPET (cote 20.0) | 17 IVOIRE DAIRPET (cote 20.0) — Outsider ; 7 IENISSE DE BARBRAY (cote 8.4) — Outsider ; 6 JOKER GEMA (cote 16.0) — Outsider ; 8 HALFAN SPEED (cote 13.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 JADOU DU LUPIN (cote 7.0) | 15 JUST DU CHATELET (cote 4.4) | 11 JAZZ DE PADD (cote 6.1) | 8 HALFAN SPEED (cote 13.0) | 7 IENISSE DE BARBRAY (cote 8.4) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74763-pronostic-quinte-du-vendredi-23-octobre-a-vincennes-prix-orionis-r1c4.html) | 15 JUST DU CHATELET (cote 4.4) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 7.0) | 8 HALFAN SPEED (cote 13.0) | 7 IENISSE DE BARBRAY (cote 8.4) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html) | 15 JUST DU CHATELET (cote 4.5) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 6.7) | 17 IVOIRE DAIRPET (cote 22.0) | 12 IN LOVE REGLISSE (cote 22.0) | 9 JEWEL DE LA COTE (cote 19.0) — Outsider ; 13 JIBI DU FRUITIER (cote 18.0) — Outsider ; 8 HALFAN SPEED (cote 12.0) — Outsider ; 12 IN LOVE REGLISSE (cote 22.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-23/paris-vincennes/421363_prix-orionis.html) | 15 JUST DU CHATELET (cote 4.5) | 10 JADOU DU LUPIN (cote 6.7) | 11 JAZZ DE PADD (cote 6.1) | 7 IENISSE DE BARBRAY (cote 8.4) | 8 HALFAN SPEED (cote 12.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 6.7) | 8 HALFAN SPEED (cote 12.0) | 15 JUST DU CHATELET (cote 4.5) | 7 IENISSE DE BARBRAY (cote 8.4) | 3 IROISE DE MADKER (cote 30.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 15 JUST DU CHATELET (cote 4.5) | 10 JADOU DU LUPIN (cote 6.7) | 11 JAZZ DE PADD (cote 6.1) | 12 IN LOVE REGLISSE (cote 22.0) | 17 IVOIRE DAIRPET (cote 22.0) | 17 IVOIRE DAIRPET (cote 22.0) — Outsider ; 7 IENISSE DE BARBRAY (cote 8.4) — Outsider ; 6 JOKER GEMA (cote 16.0) — Outsider ; 8 HALFAN SPEED (cote 12.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 JADOU DU LUPIN (cote 6.7) | 15 JUST DU CHATELET (cote 4.5) | 11 JAZZ DE PADD (cote 6.1) | 8 HALFAN SPEED (cote 12.0) | 7 IENISSE DE BARBRAY (cote 8.4) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74763-pronostic-quinte-du-vendredi-23-octobre-a-vincennes-prix-orionis-r1c4.html) | 15 JUST DU CHATELET (cote 4.5) | 11 JAZZ DE PADD (cote 6.1) | 10 JADOU DU LUPIN (cote 6.7) | 8 HALFAN SPEED (cote 12.0) | 7 IENISSE DE BARBRAY (cote 8.4) | Non publié |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
 
@@ -21,10 +21,10 @@ Collecte : 2026-10-23T07:27:46.784412+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 15 JUST DU CHATELET (cote 4.4) | 6 |
-| 10 JADOU DU LUPIN (cote 7.0) | 6 |
+| 15 JUST DU CHATELET (cote 4.5) | 6 |
+| 10 JADOU DU LUPIN (cote 6.7) | 6 |
 | 11 JAZZ DE PADD (cote 6.1) | 6 |
-| 8 HALFAN SPEED (cote 13.0) | 4 |
+| 8 HALFAN SPEED (cote 12.0) | 4 |
 | 7 IENISSE DE BARBRAY (cote 8.4) | 4 |
 
 ### Notre analyse — trois sélections de cinq chevaux
