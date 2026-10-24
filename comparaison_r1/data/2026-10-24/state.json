@@ -986,7 +986,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-24T16:17:11.162349+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f",
+            "file": "preuves/263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/participants",
+            "sha256": "21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96",
+            "file": "preuves/21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1019,7 +1033,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 6,
+          "settled_at": "2026-10-24T16:17:11.162570+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f",
+            "file": "preuves/263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/participants",
+            "sha256": "21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96",
+            "file": "preuves/21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -1052,7 +1080,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 6,
+          "settled_at": "2026-10-24T16:17:11.162658+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f",
+            "file": "preuves/263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/participants",
+            "sha256": "21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96",
+            "file": "preuves/21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96.gz"
+          }
         },
         "geny": {
           "site": "geny",
@@ -1085,7 +1127,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-10-24T16:17:11.162735+02:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f",
+            "file": "preuves/263ee002b2a11c7b13f0f9a04459efaa891467dc13f7ad80b03b5f0b1882143f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/participants",
+            "sha256": "21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96",
+            "file": "preuves/21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96.gz"
+          }
         }
       },
       "groups": {
@@ -1135,15 +1191,46 @@
           "checked_at": "2026-10-24T15:39:32.511656+02:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 6,
+          "name": "DOUBLE BE",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "SOMMERKONIG",
+          "rank": 2
+        },
+        {
+          "number": 4,
+          "name": "VANEADI",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "NEVER GIVE UP THOM",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "NOVALLY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C4/participants",
+        "sha256": "21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96",
+        "file": "preuves/21a7688d0ab64e984543cc149cfba43e688e6bab1ab477417b3cea00f278bf96.gz"
+      }
     },
     {
       "date": "2026-10-24",
       "id": "R1C5",
       "c": 5,
       "title": "PRIX DOMINIQUE SARTINI",
-      "departure": "2026-10-24T16:25:00+02:00",
+      "departure": "2026-10-24T16:28:00+02:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -1328,7 +1415,18 @@
           "file": "preuves/4c239ee8fa06a77d3ff827da05397cffb91f5a6cc55cd872f2ede6a2f98b1007.gz"
         }
       },
-      "groups_frozen_at": "2026-10-24T15:28:11.818826+02:00"
+      "groups_frozen_at": "2026-10-24T15:28:11.818826+02:00",
+      "schedule_changes": [
+        {
+          "old": "2026-10-24T16:25:00+02:00",
+          "new": "2026-10-24T16:28:00+02:00",
+          "checked_at": "2026-10-24T16:16:43.250850+02:00"
+        }
+      ],
+      "last_reservation_check": {
+        "at": "2026-10-24T16:17:11.163025+02:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-24",
@@ -1337,9 +1435,190 @@
       "title": "GRAND STEEPLE-CHASE DE COMPIEGNE",
       "departure": "2026-10-24T17:00:00+02:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 1,
+          "name": "GAME OF STORM",
+          "source_url": "https://turfin.fr/course/2026-10-24/r1c6-compiegne-grand-steeple-chase-de-compiegne",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Grand Steeple-Chase De Compiegne",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-24/r1c6-compiegne-grand-steeple-chase-de-compiegne",
+            "sha256": "3710af90edfbe80560f542342fc1ac2b19872473ca21d7221cb5cd96fa72c452",
+            "file": "preuves/3710af90edfbe80560f542342fc1ac2b19872473ca21d7221cb5cd96fa72c452.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C6/participants",
+            "sha256": "8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309",
+            "file": "preuves/8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309.gz"
+          },
+          "captured_at": "2026-10-24T16:16:47.821419+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.0,
+            "dateRapport": 1792851324000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "GAME OF STORM",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du GRAND STEEPLE-CHASE DE COMPIEGNE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+            "sha256": "c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73",
+            "file": "preuves/c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C6/participants",
+            "sha256": "8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309",
+            "file": "preuves/8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309.gz"
+          },
+          "captured_at": "2026-10-24T16:16:49.524731+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.0,
+            "dateRapport": 1792851324000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 1,
+          "name": "GAME OF STORM",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du GRAND STEEPLE-CHASE DE COMPIEGNE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+            "sha256": "c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73",
+            "file": "preuves/c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C6/participants",
+            "sha256": "8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309",
+            "file": "preuves/8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309.gz"
+          },
+          "captured_at": "2026-10-24T16:16:49.577941+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.0,
+            "dateRapport": 1792851324000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 2,
+          "name": "LE PHILOSOPHE",
+          "source_url": "https://www.geny.com/course/1693545-2026-10-24-compiegne-grand-steeple-chase-de-compiegne/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Grand Steeple-Chase de Compiègne",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693545-2026-10-24-compiegne-grand-steeple-chase-de-compiegne/partants-pronostics",
+            "sha256": "d4d298ddfbc630aaafe7ccbf61f84b9b8238da9e0dec28b8b1b1f99b2854a194",
+            "file": "preuves/d4d298ddfbc630aaafe7ccbf61f84b9b8238da9e0dec28b8b1b1f99b2854a194.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24102026/R1/C6/participants",
+            "sha256": "8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309",
+            "file": "preuves/8a2716325c5e5832f65d4117befe632d61b050c519872b4351773b587f2d3309.gz"
+          },
+          "captured_at": "2026-10-24T16:17:10.216829+02:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.12,
+            "dateRapport": 1792851324000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+turfin+zeturf": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-24/r1c6-compiegne-grand-steeple-chase-de-compiegne",
+          "sha256": "3710af90edfbe80560f542342fc1ac2b19872473ca21d7221cb5cd96fa72c452",
+          "file": "preuves/3710af90edfbe80560f542342fc1ac2b19872473ca21d7221cb5cd96fa72c452.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+          "sha256": "c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73",
+          "file": "preuves/c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-24/compiegne/421489_grand-steeple-chase-de-compiegne.html",
+          "sha256": "c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73",
+          "file": "preuves/c7a3dfaa7e0eff6d356e48228eee04a9e54c3ca83de8c9500b5b2ac7c3b89e73.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693545-2026-10-24-compiegne-grand-steeple-chase-de-compiegne/partants-pronostics",
+          "sha256": "d4d298ddfbc630aaafe7ccbf61f84b9b8238da9e0dec28b8b1b1f99b2854a194",
+          "file": "preuves/d4d298ddfbc630aaafe7ccbf61f84b9b8238da9e0dec28b8b1b1f99b2854a194.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-24T16:17:10.216879+02:00"
     },
     {
       "date": "2026-10-24",
