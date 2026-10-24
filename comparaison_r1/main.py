@@ -15,6 +15,7 @@ from .sources import SITES, INDEX, locate, parse, norm
 from .model import daily_budget, daily_target, stop_at_target, split_pair, reserve_split, place_plan, place_description
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
+from comparaison_r1.geny_fallback import read_tip
 
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
@@ -122,11 +123,9 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
                 else:t['playable']=False
             continue
         try:
-            index=INDEX[site].format(date=race['date'])
-            u=locate(site,f.get(index),race);body=f.get(u)
+            u,body,tip=read_tip(site,f,race,horses)
             evidence=proof(folder,u,body)
             race.setdefault('source_checks',{})[site]=evidence
-            tip=parse(site,body,u,race,horses)
             tip['evidence']=evidence
             tip['official_evidence']=proof(folder,base+'/participants',f.get(base+'/participants'))
             horse=next(h for h in horses if h['numPmu']==tip['number'])
@@ -177,7 +176,7 @@ def preview_report(state,preview):
             t=race['tips'].get(site)
             if t:
                 quote=(t.get('odds') or {}).get('rapport','—')
-                lines.append(f'{names[site]} : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
+                lines.append(f'{names[site]}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
             else:lines.append(names[site]+' : sélection non disponible — nouvelle tentative prévue')
         g=groups(race['tips']).get('majorite_3_ou_4')
         if place_plan(race):lines.append(place_description(race))
@@ -193,9 +192,9 @@ def race_message(r):
            'Choix observés — majorité 3/4 ou 4/4, simple gagnant uniquement' if r['date']>='2026-10-20' else 'Choix observés — majorité SG ou accords 2–2 / 2–1–1 en SP', '']
     for site in SITES:
         t=r['tips'].get(site)
-        if not t:lines.append(f'{site.upper()} : indisponible');continue
+        if not t:lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : indisponible');continue
         q=t.get('odds') or {}
-        lines.append(f'{site.upper()} : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
+        lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
     g=r['groups'].get('majorite_3_ou_4')
     if place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
@@ -413,3 +412,4 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');p.add_argument('--announce',action='store_true');a=p.parse_args()
     run(notify=not a.dry_run,probe=a.probe,announce=a.announce)
+
