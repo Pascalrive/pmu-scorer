@@ -30,3 +30,7 @@ n'est pas le résultat attendu de cette progression.
 
 Tests : `python -m unittest discover -s tony_artillan_2/tests -v`.
 Exécution : `python -m tony_artillan_2.main`.
+
+
+## Secours Genybet
+Geny reste prioritaire. En cas d'échec de lecture ou de validation, lire exclusivement le premier « Préféré » de la rubrique « Pronostic de Geny » sur Genybet. Vérifier date, R1, numéro et titre de course, numéro et nom PMU du cheval. Conserver un seul vote sous la clé geny, archiver l'URL et la cause du secours, afficher « secours Genybet » sur Telegram. Les contrôles pré-départ, non-partants, gel des choix et budget restent inchangés. Aucun changement des paris historiques.
