@@ -1,0 +1,68 @@
+name: Tony Artillan 2 Geny Canalturf
+on:
+  schedule:
+    - cron: '*/5 6-22 * * *'
+    - cron: '45 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ['tony_artillan_2/*.py', 'tony_artillan_2/tests/**', '.github/workflows/tony_artillan_2.yml']
+permissions:
+  contents: write
+concurrency:
+  group: tony-artillan-2-independant
+  cancel-in-progress: false
+jobs:
+  comparaison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r tony_artillan_2/requirements.txt
+      - name: Tests du protocole
+        run: python -m unittest discover -s tony_artillan_2/tests -v
+      - name: Collecte et bilan independants
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          TODAY=$(TZ=Europe/Paris date +%F)
+          FLAGS=''
+          if [ "$DRY_RUN" = true ]; then FLAGS='--dry-run'; fi
+          if [[ "$TODAY" < '2026-10-25' ]]; then
+            python -m tony_artillan_2.main --announce $FLAGS
+          elif [[ "$TODAY" < '2026-12-02' ]]; then
+            python -m tony_artillan_2.main $FLAGS
+          fi
+
+      - name: Persister les preuves et les recus
+        if: always()
+        run: |
+          mkdir -p tony_artillan_2/data
+          git config user.name 'Tony Artillan 2'
+          git config user.email 'tony-artillan-2@users.noreply.github.com'
+          git add tony_artillan_2/data
+          if ! git diff --cached --quiet; then
+            git commit -m 'Archive Tony Artillan 2'
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+            done
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tony-artillan-2-${{ github.run_id }}
+          path: tony_artillan_2/data
+          retention-days: 90
