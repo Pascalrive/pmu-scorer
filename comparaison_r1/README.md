@@ -183,3 +183,7 @@ Les forts pourcentages du tableau général mesurent la présence du gagnant dan
 l'ensemble du pronostic, et non la victoire du premier choix. Pas de passage
 implicite à 3/6 : toute extension doit définir un protocole distinct et vérifier
 l'accessibilité, l'identité éditoriale, l'indépendance et la couverture R1.
+
+
+## Secours Genybet
+Geny reste prioritaire. En cas d'échec de lecture ou de validation, lire exclusivement le premier « Préféré » de la rubrique « Pronostic de Geny » sur Genybet. Vérifier date, R1, numéro et titre de course, numéro et nom PMU du cheval. Conserver un seul vote sous la clé geny, archiver l'URL et la cause du secours, afficher « secours Genybet » sur Telegram. Les contrôles pré-départ, non-partants, gel des choix et budget restent inchangés. Aucun changement des paris historiques.
