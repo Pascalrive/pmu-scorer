@@ -30,6 +30,21 @@ def parse_genybet(body,url,race,horses):
             'fallback':True,'definition':'Premier Préféré du Pronostic de Geny sur Genybet (secours)',
             'identity_check':'date_rc_title_number_name','source_title':m[2]}
 
+class GenyFallbackError(ValueError):
+    """Keep both failures visible when the backup cannot provide a verified vote."""
+    def __init__(self, primary, backup):
+        self.source_status = {'fallback_attempted': True, 'primary_failure': primary,
+                              'fallback_failure': type(backup).__name__ + ': ' + str(backup).split('\n')[0][:160]}
+        super().__init__('Secours Genybet tenté : ' + self.source_status['fallback_failure'])
+
+
+def unavailable_label(race, site):
+    status = race.get('errors', {}).get(site, {}).get('source_status', {})
+    if site == 'geny' and status.get('fallback_attempted'):
+        return 'Geny indisponible ; secours Genybet tenté, aucun choix validé — nouvelle tentative prévue'
+    return 'sélection non disponible — nouvelle tentative prévue'
+
+
 def read_tip(site,f,race,horses):
     try:
         u=locate(site,f.get(INDEX[site].format(date=race['date'])),race)
@@ -38,14 +53,18 @@ def read_tip(site,f,race,horses):
     except (ValueError,KeyError,TypeError,requests.RequestException) as error:
         if site!='geny':raise
         failure=type(error).__name__+': '+str(error).split('\n')[0][:160]
-    day=datetime.fromisoformat(race['date']).strftime('%d-%m-%Y')
-    index='https://www.genybet.fr/reunions/'+day
-    soup=BeautifulSoup(f.get(index),'html.parser');ids=set()
-    for a in soup.find_all('a',href=True):
-        m=re.fullmatch(r'/courses/(?:resultats|partants-pronostics)/(\d+)',a['href'])
-        if m and title_key(text(a))==title_key(race['title']):ids.add(m[1])
-    if len(ids)!=1:raise ValueError('Course Genybet absente ou ambiguë')
-    u='https://www.genybet.fr/courses/partants-pronostics/'+ids.pop()
-    body=f.get(u);tip=parse_genybet(body,u,race,horses)
-    tip['primary_failure']=failure
-    return u,body,tip
+    try:
+        day=datetime.fromisoformat(race['date']).strftime('%d-%m-%Y')
+        index='https://www.genybet.fr/reunions/'+day
+        soup=BeautifulSoup(f.get(index),'html.parser');ids=set()
+        for a in soup.find_all('a',href=True):
+            m=re.fullmatch(r'/courses/(?:resultats|partants-pronostics)/(\d+)',a['href'])
+            if m and title_key(text(a))==title_key(race['title']):ids.add(m[1])
+        if len(ids)!=1:raise ValueError('Course Genybet absente ou ambiguë')
+        u='https://www.genybet.fr/courses/partants-pronostics/'+ids.pop()
+        body=f.get(u);tip=parse_genybet(body,u,race,horses)
+        tip['primary_failure']=failure
+        return u,body,tip
+
+    except (ValueError, KeyError, TypeError, requests.RequestException) as error:
+        raise GenyFallbackError(failure, error) from error
