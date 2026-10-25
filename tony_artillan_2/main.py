@@ -15,12 +15,12 @@ from .sources import SITES, INDEX, locate, parse, norm
 from .model import daily_budget, daily_target, stop_at_target, split_pair, reserve_split, place_plan, place_description
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
-from comparaison_r1.geny_fallback import read_tip
+from comparaison_r1.geny_fallback import read_tip, unavailable_label
 
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
 API='https://online.turfinfo.api.pmu.fr/rest/client/61/programme/'
-PREVIEW_VERSION=4
+PREVIEW_VERSION=5
 
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -137,6 +137,7 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
             elif not preview and freeze(race,site,tip,horse,clock()):race['errors'].pop(site,None)
         except (ValueError,KeyError,TypeError,requests.RequestException) as e:
             race['errors'][site]={'type':type(e).__name__,'reason':str(e).split('\n')[0][:200],'at':clock().isoformat()}
+            if hasattr(e,'source_status'):race['errors'][site]['source_status']=e.source_status
     if not preview and clock()<datetime.fromisoformat(race['departure']):
         observed=groups(race['tips'])
         if observed!=race['groups']:
@@ -177,7 +178,7 @@ def preview_report(state,preview):
             if t:
                 quote=(t.get('odds') or {}).get('rapport','—')
                 lines.append(f'{names[site]}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
-            else:lines.append(names[site]+' : sélection non disponible — nouvelle tentative prévue')
+            else:lines.append(names[site]+' : '+unavailable_label(race,site))
         g=groups(race['tips']).get('accord_geny_canalturf')
         if place_plan(race):lines.append(place_description(race))
         elif g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/2 : N°{g["number"]} — un seul pari potentiel')
@@ -192,7 +193,7 @@ def race_message(r):
            'Choix observés — accord Geny + Canalturf 2/2, simple gagnant uniquement' if r['date']>='2026-10-20' else 'Choix observés — accord Geny + Canalturf SG ou accords 2–2 / 2–1–1 en SP', '']
     for site in SITES:
         t=r['tips'].get(site)
-        if not t:lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : indisponible');continue
+        if not t:lines.append(site.upper()+' : '+unavailable_label(r,site));continue
         q=t.get('odds') or {}
         lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
@@ -395,5 +396,6 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');p.add_argument('--announce',action='store_true');a=p.parse_args()
     run(notify=not a.dry_run,probe=a.probe,announce=a.announce)
+
 
 
