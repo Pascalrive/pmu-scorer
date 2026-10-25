@@ -49,6 +49,39 @@
             "sha256": "cf9c7cad9c1beb0acd667a23e1fb2f8e4c4d7cee0e306e67efe599e1dbfb1fba",
             "file": "preuves/cf9c7cad9c1beb0acd667a23e1fb2f8e4c4d7cee0e306e67efe599e1dbfb1fba.gz"
           }
+        },
+        {
+          "race_id": "R1C3",
+          "departure": "2026-10-25T13:58:00+01:00",
+          "number": 4,
+          "name": "HALF HALF",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-25T13:35:02.707086+01:00",
+          "source_captured_at": "2026-10-25T13:08:53.862155+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny",
+            "zone_turf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.94,
+            "dateRapport": 1792931682000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "8c07defb58795f51990d623e0e4aa7de620c79c4d25bbde0f337186fd276d87d",
+          "telegram_receipts": [
+            {
+              "message_id": 5864,
+              "date": 1792931703
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -607,7 +640,9 @@
       "last_reservation_check": {
         "at": "2026-10-25T13:09:19.511677+01:00",
         "stop": null
-      }
+      },
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué"
     },
     {
       "date": "2026-10-25",
@@ -831,9 +866,212 @@
       "title": "CRITERIUM DE SAINT-CLOUD",
       "departure": "2026-10-25T14:33:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 3,
+          "name": "ROYAL ACCLAMATION",
+          "source_url": "https://turfin.fr/course/2026-10-25/r1c4-saint-cloud-criterium-de-saint-cloud",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Criterium De Saint-Cloud",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-25/r1c4-saint-cloud-criterium-de-saint-cloud",
+            "sha256": "55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8",
+            "file": "preuves/55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:35:00.699749+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 14.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.68,
+            "dateRapport": 1792931439000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "JESUS GREEN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du CRITERIUM DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+            "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+            "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:35:00.840557+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.16,
+            "dateRapport": 1792931439000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 6,
+          "name": "DRUMBEAT",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du CRITERIUM DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+            "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+            "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:35:00.935235+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792931439000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 6,
+          "name": "DRUMBEAT",
+          "source_url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Critérium de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+            "sha256": "7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373",
+            "file": "preuves/7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:35:01.134626+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792931439000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 6,
+          "name": "DRUMBEAT",
+          "source_url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°4 : C4 - Criterium de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
+            "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+            "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:35:01.717326+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792931439000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "majorite_3_sur_5": {
+          "number": 6,
+          "sites": [
+            "zeturf",
+            "geny",
+            "zone_turf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-25/r1c4-saint-cloud-criterium-de-saint-cloud",
+          "sha256": "55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8",
+          "file": "preuves/55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+          "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+          "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+          "sha256": "7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373",
+          "file": "preuves/7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
+          "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+          "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-25T13:35:01.717380+01:00"
     },
     {
       "date": "2026-10-25",
@@ -883,417 +1121,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-25T12:23:17.226945+01:00",
+    "captured_at": "2026-10-25T13:35:00.074880+01:00",
     "races": [
-      {
-        "date": "2026-10-25",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX DE FLORE",
-        "departure": "2026-10-25T12:48:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 6,
-            "name": "TEMAPICA",
-            "source_url": "https://turfin.fr/course/2026-10-25/r1c1-saint-cloud-prix-de-flore",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Flore",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-25/r1c1-saint-cloud-prix-de-flore",
-              "sha256": "8c3a5f658bf1aef24291c8d8050e86c8601f00e9a8b3f81938491b8d076bd844",
-              "file": "preuves/8c3a5f658bf1aef24291c8d8050e86c8601f00e9a8b3f81938491b8d076bd844.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C1/participants",
-              "sha256": "c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023",
-              "file": "preuves/c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023.gz"
-            },
-            "captured_at": "2026-10-25T12:20:32.787816+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.7,
-              "dateRapport": 1792927218000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 4,
-            "name": "MISS JUSTICE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE FLORE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-              "sha256": "f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed",
-              "file": "preuves/f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C1/participants",
-              "sha256": "c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023",
-              "file": "preuves/c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023.gz"
-            },
-            "captured_at": "2026-10-25T12:20:35.337511+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792927218000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "MISS JUSTICE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE FLORE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-              "sha256": "f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed",
-              "file": "preuves/f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C1/participants",
-              "sha256": "c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023",
-              "file": "preuves/c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023.gz"
-            },
-            "captured_at": "2026-10-25T12:20:35.379486+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792927218000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 6,
-            "name": "TEMAPICA",
-            "source_url": "https://www.geny.com/course/1693858-2026-10-25-saint-cloud-prix-de-flore/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Flore",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693858-2026-10-25-saint-cloud-prix-de-flore/partants-pronostics",
-              "sha256": "b690518ae4194d1439656525035b06af0b71b447a11bde5cae380b40ce1b86d0",
-              "file": "preuves/b690518ae4194d1439656525035b06af0b71b447a11bde5cae380b40ce1b86d0.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C1/participants",
-              "sha256": "c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023",
-              "file": "preuves/c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023.gz"
-            },
-            "captured_at": "2026-10-25T12:20:55.820486+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.7,
-              "dateRapport": 1792927218000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 6,
-            "name": "TEMAPICA",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°1 : C1 - Prix de Flore",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-              "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-              "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C1/participants",
-              "sha256": "c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023",
-              "file": "preuves/c9ecc637e611db0615d68c2c9d70edd28f65867fd7ee1194d62236ea6865e023.gz"
-            },
-            "captured_at": "2026-10-25T12:20:57.038365+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.7,
-              "dateRapport": 1792927218000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-25/r1c1-saint-cloud-prix-de-flore",
-            "sha256": "8c3a5f658bf1aef24291c8d8050e86c8601f00e9a8b3f81938491b8d076bd844",
-            "file": "preuves/8c3a5f658bf1aef24291c8d8050e86c8601f00e9a8b3f81938491b8d076bd844.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-            "sha256": "f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed",
-            "file": "preuves/f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421578_prix-de-flore.html",
-            "sha256": "f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed",
-            "file": "preuves/f21591d77429c9d8cbd37c612cf2920fc712118d5c4f03827592c95150c02aed.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693858-2026-10-25-saint-cloud-prix-de-flore/partants-pronostics",
-            "sha256": "b690518ae4194d1439656525035b06af0b71b447a11bde5cae380b40ce1b86d0",
-            "file": "preuves/b690518ae4194d1439656525035b06af0b71b447a11bde5cae380b40ce1b86d0.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-            "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
-          }
-        },
-        "groups_frozen_at": "2026-10-25T11:53:30.506675+01:00"
-      },
-      {
-        "date": "2026-10-25",
-        "id": "R1C2",
-        "c": 2,
-        "title": "CRITERIUM INTERNATIONAL",
-        "departure": "2026-10-25T13:23:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 7,
-            "name": "MASTER MAN",
-            "source_url": "https://turfin.fr/course/2026-10-25/r1c2-saint-cloud-criterium-international",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Criterium International",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-25/r1c2-saint-cloud-criterium-international",
-              "sha256": "eab72b5e7712e0a2ea15752d75471f95eebd9ccb509c44a470b183f252fb1643",
-              "file": "preuves/eab72b5e7712e0a2ea15752d75471f95eebd9ccb509c44a470b183f252fb1643.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C2/participants",
-              "sha256": "5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197",
-              "file": "preuves/5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197.gz"
-            },
-            "captured_at": "2026-10-25T12:20:58.602203+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.44,
-              "dateRapport": 1792926923000,
-              "favoris": false,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 7,
-            "name": "MASTER MAN",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du CRITERIUM INTERNATIONAL",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-              "sha256": "b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5",
-              "file": "preuves/b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C2/participants",
-              "sha256": "5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197",
-              "file": "preuves/5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197.gz"
-            },
-            "captured_at": "2026-10-25T12:20:59.263013+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.44,
-              "dateRapport": 1792926923000,
-              "favoris": false,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "CAPABILITY BROWN",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du CRITERIUM INTERNATIONAL",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-              "sha256": "b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5",
-              "file": "preuves/b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C2/participants",
-              "sha256": "5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197",
-              "file": "preuves/5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197.gz"
-            },
-            "captured_at": "2026-10-25T12:20:59.306510+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.69,
-              "dateRapport": 1792926923000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "CAPABILITY BROWN",
-            "source_url": "https://www.geny.com/course/1693859-2026-10-25-saint-cloud-criterium-international/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Critérium International",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693859-2026-10-25-saint-cloud-criterium-international/partants-pronostics",
-              "sha256": "d2284565a87c296ffeaa572a57e8a3315f181492b9736cbf35629604ca6ea4a6",
-              "file": "preuves/d2284565a87c296ffeaa572a57e8a3315f181492b9736cbf35629604ca6ea4a6.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C2/participants",
-              "sha256": "5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197",
-              "file": "preuves/5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197.gz"
-            },
-            "captured_at": "2026-10-25T12:21:16.121265+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.69,
-              "dateRapport": 1792926923000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 4,
-            "name": "CAPABILITY BROWN",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°2 : C2 - Criterium International",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-              "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-              "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C2/participants",
-              "sha256": "5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197",
-              "file": "preuves/5719c963ce9c5c675d190d42b7e21bc596474ee61a66bf19821734d1e8be8197.gz"
-            },
-            "captured_at": "2026-10-25T12:21:16.381896+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.69,
-              "dateRapport": 1792926923000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-25/r1c2-saint-cloud-criterium-international",
-            "sha256": "eab72b5e7712e0a2ea15752d75471f95eebd9ccb509c44a470b183f252fb1643",
-            "file": "preuves/eab72b5e7712e0a2ea15752d75471f95eebd9ccb509c44a470b183f252fb1643.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-            "sha256": "b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5",
-            "file": "preuves/b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421579_criterium-international.html",
-            "sha256": "b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5",
-            "file": "preuves/b66324af260c47b28caea84c9d13e709f1276ece374d2a695dbd30b26f54b9c5.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693859-2026-10-25-saint-cloud-criterium-international/partants-pronostics",
-            "sha256": "d2284565a87c296ffeaa572a57e8a3315f181492b9736cbf35629604ca6ea4a6",
-            "file": "preuves/d2284565a87c296ffeaa572a57e8a3315f181492b9736cbf35629604ca6ea4a6.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-            "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-25",
         "id": "R1C3",
@@ -1312,24 +1141,24 @@
             "source_title": "Prix Perth",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c3-saint-cloud-prix-perth",
-              "sha256": "aa15ff934a9150f7bfb963dc829d2fdb8a7e0ac2fe0f685af25bc7e349e8c0fa",
-              "file": "preuves/aa15ff934a9150f7bfb963dc829d2fdb8a7e0ac2fe0f685af25bc7e349e8c0fa.gz"
+              "sha256": "9ace77a3e59eb97b136f4e0cada74cb499f9068868a74f10471182b308c65f9f",
+              "file": "preuves/9ace77a3e59eb97b136f4e0cada74cb499f9068868a74f10471182b308c65f9f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C3/participants",
-              "sha256": "d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6",
-              "file": "preuves/d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6.gz"
+              "sha256": "e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b",
+              "file": "preuves/e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b.gz"
             },
-            "captured_at": "2026-10-25T12:21:17.736704+01:00",
+            "captured_at": "2026-10-25T13:32:56.065229+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1792926906000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931572000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -1345,24 +1174,24 @@
             "source_title": "Le pronostic du PRIX PERTH",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421580_prix-perth.html",
-              "sha256": "14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a",
-              "file": "preuves/14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a.gz"
+              "sha256": "cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b",
+              "file": "preuves/cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C3/participants",
-              "sha256": "d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6",
-              "file": "preuves/d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6.gz"
+              "sha256": "e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b",
+              "file": "preuves/e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b.gz"
             },
-            "captured_at": "2026-10-25T12:21:18.443139+01:00",
+            "captured_at": "2026-10-25T13:32:57.476945+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1792926906000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931572000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -1378,26 +1207,59 @@
             "source_title": "Le pronostic du PRIX PERTH",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421580_prix-perth.html",
-              "sha256": "14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a",
-              "file": "preuves/14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a.gz"
+              "sha256": "cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b",
+              "file": "preuves/cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C3/participants",
-              "sha256": "d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6",
-              "file": "preuves/d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6.gz"
+              "sha256": "e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b",
+              "file": "preuves/e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b.gz"
             },
-            "captured_at": "2026-10-25T12:21:18.528181+01:00",
+            "captured_at": "2026-10-25T13:32:57.582247+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.92,
-              "dateRapport": 1792926906000,
+              "nombreIndicateurTendance": -3.7,
+              "dateRapport": 1792931572000,
               "favoris": false,
               "numPmu1": 1,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 4,
+            "name": "HALF HALF",
+            "source_url": "https://www.geny.com/course/1693860-2026-10-25-saint-cloud-prix-perth/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Perth",
+            "evidence": {
+              "url": "https://www.geny.com/course/1693860-2026-10-25-saint-cloud-prix-perth/partants-pronostics",
+              "sha256": "974657fe2d2dd99933f457d6bf768d77d12d55004a2157bcbf4317a1b2dd1b15",
+              "file": "preuves/974657fe2d2dd99933f457d6bf768d77d12d55004a2157bcbf4317a1b2dd1b15.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C3/participants",
+              "sha256": "e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b",
+              "file": "preuves/e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b.gz"
+            },
+            "captured_at": "2026-10-25T13:33:18.264676+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 3.3,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931572000,
+              "favoris": true,
+              "numPmu1": 4,
               "grossePrise": false
             }
           },
@@ -1411,24 +1273,24 @@
             "source_title": "R1 Course N°3 : C3 - Prix Perth",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-              "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-              "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+              "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+              "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C3/participants",
-              "sha256": "d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6",
-              "file": "preuves/d325c03aec97a37ea61bf0ed86b9fd1b5f1534691825035db24b9503217c99d6.gz"
+              "sha256": "e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b",
+              "file": "preuves/e80d566cdf92aaffe84eba6eb1eea0b853e0a8ad0c2d5cada3b8d4f1783ceb5b.gz"
             },
-            "captured_at": "2026-10-25T12:21:41.807329+01:00",
+            "captured_at": "2026-10-25T13:33:19.298736+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1792926906000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931572000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -1436,40 +1298,35 @@
           }
         },
         "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-10-25T12:21:41.543676+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "HTTPError: 500 Server Error: Internal Server Error for url: https://www.geny.com/course/1693860-2026-10-25-saint-cloud-prix-perth/partants-pronostics",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
+        "errors": {},
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c3-saint-cloud-prix-perth",
-            "sha256": "aa15ff934a9150f7bfb963dc829d2fdb8a7e0ac2fe0f685af25bc7e349e8c0fa",
-            "file": "preuves/aa15ff934a9150f7bfb963dc829d2fdb8a7e0ac2fe0f685af25bc7e349e8c0fa.gz"
+            "sha256": "9ace77a3e59eb97b136f4e0cada74cb499f9068868a74f10471182b308c65f9f",
+            "file": "preuves/9ace77a3e59eb97b136f4e0cada74cb499f9068868a74f10471182b308c65f9f.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421580_prix-perth.html",
-            "sha256": "14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a",
-            "file": "preuves/14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a.gz"
+            "sha256": "cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b",
+            "file": "preuves/cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421580_prix-perth.html",
-            "sha256": "14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a",
-            "file": "preuves/14812fa2a50e869ca6a81b43ec332efc464b46c1cd5c86906da0b46354d4769a.gz"
+            "sha256": "cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b",
+            "file": "preuves/cbcc8b546b93e72889d58337d31669b031050dc1ccc619e7fdd31d89e3c0384b.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1693860-2026-10-25-saint-cloud-prix-perth/partants-pronostics",
+            "sha256": "974657fe2d2dd99933f457d6bf768d77d12d55004a2157bcbf4317a1b2dd1b15",
+            "file": "preuves/974657fe2d2dd99933f457d6bf768d77d12d55004a2157bcbf4317a1b2dd1b15.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-            "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+            "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+            "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-25T13:09:17.572962+01:00"
       },
       {
         "date": "2026-10-25",
@@ -1489,24 +1346,24 @@
             "source_title": "Criterium De Saint-Cloud",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c4-saint-cloud-criterium-de-saint-cloud",
-              "sha256": "25ba9fb5be53fb6838e089a84219f006250d9591412aeb2e49638c444dc29e52",
-              "file": "preuves/25ba9fb5be53fb6838e089a84219f006250d9591412aeb2e49638c444dc29e52.gz"
+              "sha256": "55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8",
+              "file": "preuves/55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
-              "sha256": "1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24",
-              "file": "preuves/1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24.gz"
+              "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+              "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
             },
-            "captured_at": "2026-10-25T12:21:43.436133+01:00",
+            "captured_at": "2026-10-25T13:33:20.727280+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 15.0,
+              "rapport": 14.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -0.64,
-              "dateRapport": 1792926939000,
+              "nombreIndicateurTendance": 0.68,
+              "dateRapport": 1792931439000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -1522,24 +1379,24 @@
             "source_title": "Le pronostic du CRITERIUM DE SAINT-CLOUD",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
-              "sha256": "d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c",
-              "file": "preuves/d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c.gz"
+              "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+              "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
-              "sha256": "1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24",
-              "file": "preuves/1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24.gz"
+              "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+              "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
             },
-            "captured_at": "2026-10-25T12:21:44.125518+01:00",
+            "captured_at": "2026-10-25T13:33:21.211719+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.92,
-              "dateRapport": 1792926939000,
+              "nombreIndicateurTendance": -4.16,
+              "dateRapport": 1792931439000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -1555,24 +1412,24 @@
             "source_title": "Le pronostic du CRITERIUM DE SAINT-CLOUD",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
-              "sha256": "d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c",
-              "file": "preuves/d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c.gz"
+              "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+              "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
-              "sha256": "1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24",
-              "file": "preuves/1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24.gz"
+              "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+              "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
             },
-            "captured_at": "2026-10-25T12:21:44.167228+01:00",
+            "captured_at": "2026-10-25T13:33:21.305308+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 2.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.26,
-              "dateRapport": 1792926939000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931439000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -1588,24 +1445,24 @@
             "source_title": "Critérium de Saint-Cloud",
             "evidence": {
               "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
-              "sha256": "6d0d96f8bf4af418158a80ee057126d6aa775873ee62cc30c2957410a1281026",
-              "file": "preuves/6d0d96f8bf4af418158a80ee057126d6aa775873ee62cc30c2957410a1281026.gz"
+              "sha256": "7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373",
+              "file": "preuves/7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
-              "sha256": "1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24",
-              "file": "preuves/1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24.gz"
+              "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+              "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
             },
-            "captured_at": "2026-10-25T12:21:56.833886+01:00",
+            "captured_at": "2026-10-25T13:33:38.207801+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 2.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.26,
-              "dateRapport": 1792926939000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931439000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -1621,24 +1478,24 @@
             "source_title": "R1 Course N°4 : C4 - Criterium de Saint-Cloud",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-              "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-              "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+              "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+              "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
-              "sha256": "1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24",
-              "file": "preuves/1899b13bf744176e7d49933cc251789710619b59b20d93f5c1d3c1630e1eaa24.gz"
+              "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+              "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
             },
-            "captured_at": "2026-10-25T12:21:57.096842+01:00",
+            "captured_at": "2026-10-25T13:33:38.765844+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 2.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.26,
-              "dateRapport": 1792926939000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931439000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -1650,28 +1507,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c4-saint-cloud-criterium-de-saint-cloud",
-            "sha256": "25ba9fb5be53fb6838e089a84219f006250d9591412aeb2e49638c444dc29e52",
-            "file": "preuves/25ba9fb5be53fb6838e089a84219f006250d9591412aeb2e49638c444dc29e52.gz"
+            "sha256": "55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8",
+            "file": "preuves/55678d2c051739da3d45985a6cf6a183f1a81bfe378d78a27e7965762f32d3e8.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
-            "sha256": "d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c",
-            "file": "preuves/d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c.gz"
+            "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+            "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
-            "sha256": "d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c",
-            "file": "preuves/d154f0a391ccc68e9f9f0551aa82690a599136592167e6c19052b24849ae004c.gz"
+            "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+            "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
-            "sha256": "6d0d96f8bf4af418158a80ee057126d6aa775873ee62cc30c2957410a1281026",
-            "file": "preuves/6d0d96f8bf4af418158a80ee057126d6aa775873ee62cc30c2957410a1281026.gz"
+            "sha256": "7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373",
+            "file": "preuves/7f9e8112073edac2cb00bb904ed48a642b70186da6ba4406ccc132d05f5f1373.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-            "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+            "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+            "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
           }
         }
       },
@@ -1693,15 +1550,15 @@
             "source_title": "Prix De L'elevage",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c5-saint-cloud-prix-de-l-elevage",
-              "sha256": "fd745a921eb358d69e3760e7b311b8c433cffc7a086fef0f9d00cbfcd76b43d9",
-              "file": "preuves/fd745a921eb358d69e3760e7b311b8c433cffc7a086fef0f9d00cbfcd76b43d9.gz"
+              "sha256": "f8e128276b282c6b898cdf448f3a07d2255973bc039093ae02909c72671f5624",
+              "file": "preuves/f8e128276b282c6b898cdf448f3a07d2255973bc039093ae02909c72671f5624.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C5/participants",
-              "sha256": "74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57",
-              "file": "preuves/74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57.gz"
+              "sha256": "66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac",
+              "file": "preuves/66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac.gz"
             },
-            "captured_at": "2026-10-25T12:21:58.528405+01:00",
+            "captured_at": "2026-10-25T13:33:40.696087+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1709,8 +1566,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.87,
-              "dateRapport": 1792926957000,
+              "nombreIndicateurTendance": 0.84,
+              "dateRapport": 1792931457000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -1726,24 +1583,24 @@
             "source_title": "Le pronostic du Quinté PRIX DE L'ELEVAGE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421582_prix-de-l-elevage.html",
-              "sha256": "b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426",
-              "file": "preuves/b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426.gz"
+              "sha256": "0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46",
+              "file": "preuves/0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C5/participants",
-              "sha256": "74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57",
-              "file": "preuves/74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57.gz"
+              "sha256": "66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac",
+              "file": "preuves/66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac.gz"
             },
-            "captured_at": "2026-10-25T12:21:59.191855+01:00",
+            "captured_at": "2026-10-25T13:33:41.274351+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.7,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.51,
-              "dateRapport": 1792926957000,
+              "nombreIndicateurTendance": -1.51,
+              "dateRapport": 1792931457000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1759,15 +1616,15 @@
             "source_title": "Le pronostic du Quinté PRIX DE L'ELEVAGE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421582_prix-de-l-elevage.html",
-              "sha256": "b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426",
-              "file": "preuves/b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426.gz"
+              "sha256": "0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46",
+              "file": "preuves/0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C5/participants",
-              "sha256": "74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57",
-              "file": "preuves/74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57.gz"
+              "sha256": "66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac",
+              "file": "preuves/66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac.gz"
             },
-            "captured_at": "2026-10-25T12:21:59.239475+01:00",
+            "captured_at": "2026-10-25T13:33:41.380162+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1775,8 +1632,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.87,
-              "dateRapport": 1792926957000,
+              "nombreIndicateurTendance": 0.84,
+              "dateRapport": 1792931457000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -1792,24 +1649,24 @@
             "source_title": "Prix de l'Elevage",
             "evidence": {
               "url": "https://www.geny.com/course/1693862-2026-10-25-saint-cloud-prix-de-l-elevage/partants-pronostics",
-              "sha256": "fbc006b6655ffa7b21946f7751d679e90605288b7ef02cc9d0a4edd82e6d37fd",
-              "file": "preuves/fbc006b6655ffa7b21946f7751d679e90605288b7ef02cc9d0a4edd82e6d37fd.gz"
+              "sha256": "2c688e26947f7efbd2ff7eb30102a57652b2e51dab88ce8636caebc98d53a1ae",
+              "file": "preuves/2c688e26947f7efbd2ff7eb30102a57652b2e51dab88ce8636caebc98d53a1ae.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C5/participants",
-              "sha256": "74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57",
-              "file": "preuves/74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57.gz"
+              "sha256": "66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac",
+              "file": "preuves/66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac.gz"
             },
-            "captured_at": "2026-10-25T12:22:19.495719+01:00",
+            "captured_at": "2026-10-25T13:33:58.113728+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.9,
+              "rapport": 9.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.0,
-              "dateRapport": 1792926957000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931457000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1825,24 +1682,24 @@
             "source_title": "R1 Course N°5 : C5 - Prix de l'Elevage",
             "evidence": {
               "url": "https://www.zone-turf.fr/quinte/dimanche-25-octobre-2026/",
-              "sha256": "23b2976e26089472d0f2ba1f07057fee0523c3ec3732c0a99b90a09e1bf1ada8",
-              "file": "preuves/23b2976e26089472d0f2ba1f07057fee0523c3ec3732c0a99b90a09e1bf1ada8.gz"
+              "sha256": "042399db6de776ddb0ef2441d24ae9c9da2ac86aefaadabc3597121cf22f2518",
+              "file": "preuves/042399db6de776ddb0ef2441d24ae9c9da2ac86aefaadabc3597121cf22f2518.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C5/participants",
-              "sha256": "74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57",
-              "file": "preuves/74dcfaad77901dae8500fb99d0b6cbdc488e9c18657b31d9e4610e827fe96b57.gz"
+              "sha256": "66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac",
+              "file": "preuves/66b34e57c059d3e7252e2e48b3f7906fc2906fdacab6b1ee85bfcc251ed414ac.gz"
             },
-            "captured_at": "2026-10-25T12:22:20.218017+01:00",
+            "captured_at": "2026-10-25T13:33:58.593048+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.7,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.51,
-              "dateRapport": 1792926957000,
+              "nombreIndicateurTendance": -1.51,
+              "dateRapport": 1792931457000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1854,28 +1711,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c5-saint-cloud-prix-de-l-elevage",
-            "sha256": "fd745a921eb358d69e3760e7b311b8c433cffc7a086fef0f9d00cbfcd76b43d9",
-            "file": "preuves/fd745a921eb358d69e3760e7b311b8c433cffc7a086fef0f9d00cbfcd76b43d9.gz"
+            "sha256": "f8e128276b282c6b898cdf448f3a07d2255973bc039093ae02909c72671f5624",
+            "file": "preuves/f8e128276b282c6b898cdf448f3a07d2255973bc039093ae02909c72671f5624.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421582_prix-de-l-elevage.html",
-            "sha256": "b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426",
-            "file": "preuves/b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426.gz"
+            "sha256": "0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46",
+            "file": "preuves/0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421582_prix-de-l-elevage.html",
-            "sha256": "b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426",
-            "file": "preuves/b19219ee17626115b2886aa8ba05a0e444d611e764c2b2d47665d48cfc472426.gz"
+            "sha256": "0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46",
+            "file": "preuves/0524e53be98bc76956b972d83564b78ae5f18feace9985a75f174f703b452c46.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693862-2026-10-25-saint-cloud-prix-de-l-elevage/partants-pronostics",
-            "sha256": "fbc006b6655ffa7b21946f7751d679e90605288b7ef02cc9d0a4edd82e6d37fd",
-            "file": "preuves/fbc006b6655ffa7b21946f7751d679e90605288b7ef02cc9d0a4edd82e6d37fd.gz"
+            "sha256": "2c688e26947f7efbd2ff7eb30102a57652b2e51dab88ce8636caebc98d53a1ae",
+            "file": "preuves/2c688e26947f7efbd2ff7eb30102a57652b2e51dab88ce8636caebc98d53a1ae.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/quinte/dimanche-25-octobre-2026/",
-            "sha256": "23b2976e26089472d0f2ba1f07057fee0523c3ec3732c0a99b90a09e1bf1ada8",
-            "file": "preuves/23b2976e26089472d0f2ba1f07057fee0523c3ec3732c0a99b90a09e1bf1ada8.gz"
+            "sha256": "042399db6de776ddb0ef2441d24ae9c9da2ac86aefaadabc3597121cf22f2518",
+            "file": "preuves/042399db6de776ddb0ef2441d24ae9c9da2ac86aefaadabc3597121cf22f2518.gz"
           }
         }
       },
@@ -1897,24 +1754,24 @@
             "source_title": "Prix Royal-Oak",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c6-saint-cloud-prix-royal-oak",
-              "sha256": "aa3869067e69f752b4fc0ff2bb0fbdc45ec3b80eff8ffe48ef70ebf94467b903",
-              "file": "preuves/aa3869067e69f752b4fc0ff2bb0fbdc45ec3b80eff8ffe48ef70ebf94467b903.gz"
+              "sha256": "55d551f7c68f6e3a90a57f999a8426d0ca5187a0d204bdcb3b8019121bb75d80",
+              "file": "preuves/55d551f7c68f6e3a90a57f999a8426d0ca5187a0d204bdcb3b8019121bb75d80.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
-              "sha256": "e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b",
-              "file": "preuves/e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b.gz"
+              "sha256": "9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba",
+              "file": "preuves/9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba.gz"
             },
-            "captured_at": "2026-10-25T12:22:22.109902+01:00",
+            "captured_at": "2026-10-25T13:33:59.881730+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
+              "rapport": 5.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792926940000,
+              "nombreIndicateurTendance": 3.63,
+              "dateRapport": 1792931440000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -1930,24 +1787,24 @@
             "source_title": "Le pronostic du PRIX ROYAL-OAK",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421583_prix-royal-oak.html",
-              "sha256": "0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a",
-              "file": "preuves/0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a.gz"
+              "sha256": "3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2",
+              "file": "preuves/3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
-              "sha256": "e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b",
-              "file": "preuves/e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b.gz"
+              "sha256": "9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba",
+              "file": "preuves/9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba.gz"
             },
-            "captured_at": "2026-10-25T12:22:22.794528+01:00",
+            "captured_at": "2026-10-25T13:34:00.397167+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792926940000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1792931440000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1963,24 +1820,24 @@
             "source_title": "Le pronostic du PRIX ROYAL-OAK",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421583_prix-royal-oak.html",
-              "sha256": "0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a",
-              "file": "preuves/0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a.gz"
+              "sha256": "3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2",
+              "file": "preuves/3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
-              "sha256": "e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b",
-              "file": "preuves/e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b.gz"
+              "sha256": "9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba",
+              "file": "preuves/9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba.gz"
             },
-            "captured_at": "2026-10-25T12:22:22.836772+01:00",
+            "captured_at": "2026-10-25T13:34:00.531513+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792926940000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1792931440000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -1996,24 +1853,24 @@
             "source_title": "Prix Royal-Oak",
             "evidence": {
               "url": "https://www.geny.com/course/1693863-2026-10-25-saint-cloud-prix-royal-oak/partants-pronostics",
-              "sha256": "11460f670a3429ebfe2bb3d42ab02a9c4bd74325f2725e3f525b9fddeffa2612",
-              "file": "preuves/11460f670a3429ebfe2bb3d42ab02a9c4bd74325f2725e3f525b9fddeffa2612.gz"
+              "sha256": "823e7b337cc8021cf9aa07b12268a04d991c6690772e96e76d01c97e6deaff3f",
+              "file": "preuves/823e7b337cc8021cf9aa07b12268a04d991c6690772e96e76d01c97e6deaff3f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
-              "sha256": "e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b",
-              "file": "preuves/e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b.gz"
+              "sha256": "9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba",
+              "file": "preuves/9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba.gz"
             },
-            "captured_at": "2026-10-25T12:22:36.631096+01:00",
+            "captured_at": "2026-10-25T13:34:18.111323+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
+              "rapport": 5.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792926940000,
+              "nombreIndicateurTendance": 3.63,
+              "dateRapport": 1792931440000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -2029,24 +1886,24 @@
             "source_title": "R1 Course N°6 : C6 - Prix Royal-Oak",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-              "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-              "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+              "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+              "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
-              "sha256": "e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b",
-              "file": "preuves/e49f3e89f9f3df5f139511ff1a546175d5ac8aadf7d70caedb86b3186b01ce5b.gz"
+              "sha256": "9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba",
+              "file": "preuves/9a668f90099cc148ef4331e999f3f7675bf0419c37d6f09adcfb4222bae814ba.gz"
             },
-            "captured_at": "2026-10-25T12:22:36.907916+01:00",
+            "captured_at": "2026-10-25T13:34:18.672807+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1792926940000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1792931440000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -2058,28 +1915,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c6-saint-cloud-prix-royal-oak",
-            "sha256": "aa3869067e69f752b4fc0ff2bb0fbdc45ec3b80eff8ffe48ef70ebf94467b903",
-            "file": "preuves/aa3869067e69f752b4fc0ff2bb0fbdc45ec3b80eff8ffe48ef70ebf94467b903.gz"
+            "sha256": "55d551f7c68f6e3a90a57f999a8426d0ca5187a0d204bdcb3b8019121bb75d80",
+            "file": "preuves/55d551f7c68f6e3a90a57f999a8426d0ca5187a0d204bdcb3b8019121bb75d80.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421583_prix-royal-oak.html",
-            "sha256": "0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a",
-            "file": "preuves/0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a.gz"
+            "sha256": "3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2",
+            "file": "preuves/3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421583_prix-royal-oak.html",
-            "sha256": "0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a",
-            "file": "preuves/0cd057aaf78dd1a97b646458ac7901614cf05eabc125d0c56edb81708e49742a.gz"
+            "sha256": "3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2",
+            "file": "preuves/3a12f17b8d696d4ef6d109b0dcd9fc3cc5dabc222ab66a94c93f2d4c5f6d09d2.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693863-2026-10-25-saint-cloud-prix-royal-oak/partants-pronostics",
-            "sha256": "11460f670a3429ebfe2bb3d42ab02a9c4bd74325f2725e3f525b9fddeffa2612",
-            "file": "preuves/11460f670a3429ebfe2bb3d42ab02a9c4bd74325f2725e3f525b9fddeffa2612.gz"
+            "sha256": "823e7b337cc8021cf9aa07b12268a04d991c6690772e96e76d01c97e6deaff3f",
+            "file": "preuves/823e7b337cc8021cf9aa07b12268a04d991c6690772e96e76d01c97e6deaff3f.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-saint-cloud-199649.html",
-            "sha256": "3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3",
-            "file": "preuves/3d5d4fdd39d2888daad7f2f7f259816059a1c5b465127a43d3891e9d49b258b3.gz"
+            "sha256": "a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7",
+            "file": "preuves/a000f42ed6bc1d42686adf756b68aa9c901abda8888fcc03b7e9bf53322bf7e7.gz"
           }
         }
       },
@@ -2101,15 +1958,15 @@
             "source_title": "Prix Belle De Nuit",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c7-saint-cloud-prix-belle-de-nuit",
-              "sha256": "b3f88057d1ba745e02bd2af318e5123d7226f73d41b24e43c704b5ec3e55a7aa",
-              "file": "preuves/b3f88057d1ba745e02bd2af318e5123d7226f73d41b24e43c704b5ec3e55a7aa.gz"
+              "sha256": "c2f19bcbc0e1e2305e47ec83e41ee25401ab821a93996c843014d50e4897bfb1",
+              "file": "preuves/c2f19bcbc0e1e2305e47ec83e41ee25401ab821a93996c843014d50e4897bfb1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
-              "sha256": "d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b",
-              "file": "preuves/d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b.gz"
+              "sha256": "3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b",
+              "file": "preuves/3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b.gz"
             },
-            "captured_at": "2026-10-25T12:22:38.831308+01:00",
+            "captured_at": "2026-10-25T13:34:20.451554+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2117,8 +1974,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -7.14,
-              "dateRapport": 1792926901000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931401000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -2134,24 +1991,24 @@
             "source_title": "Le pronostic du PRIX BELLE DE NUIT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421584_prix-belle-de-nuit.html",
-              "sha256": "17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c",
-              "file": "preuves/17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c.gz"
+              "sha256": "5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e",
+              "file": "preuves/5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
-              "sha256": "d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b",
-              "file": "preuves/d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b.gz"
+              "sha256": "3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b",
+              "file": "preuves/3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b.gz"
             },
-            "captured_at": "2026-10-25T12:22:39.497827+01:00",
+            "captured_at": "2026-10-25T13:34:21.005186+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.8,
+              "rapport": 8.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.33,
-              "dateRapport": 1792926901000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931401000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -2167,15 +2024,15 @@
             "source_title": "Le pronostic du PRIX BELLE DE NUIT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421584_prix-belle-de-nuit.html",
-              "sha256": "17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c",
-              "file": "preuves/17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c.gz"
+              "sha256": "5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e",
+              "file": "preuves/5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
-              "sha256": "d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b",
-              "file": "preuves/d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b.gz"
+              "sha256": "3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b",
+              "file": "preuves/3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b.gz"
             },
-            "captured_at": "2026-10-25T12:22:39.588288+01:00",
+            "captured_at": "2026-10-25T13:34:21.104626+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2183,8 +2040,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -7.14,
-              "dateRapport": 1792926901000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931401000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -2200,15 +2057,15 @@
             "source_title": "Prix Belle de Nuit",
             "evidence": {
               "url": "https://www.geny.com/course/1693864-2026-10-25-saint-cloud-prix-belle-de-nuit/partants-pronostics",
-              "sha256": "3f8334dd6f5c7dc2b35805a38463edd3b5f0b33f92be72dc22788e6397e7934b",
-              "file": "preuves/3f8334dd6f5c7dc2b35805a38463edd3b5f0b33f92be72dc22788e6397e7934b.gz"
+              "sha256": "bd097d288eedc4028f65ce904b27018aca7ce819014cf21e980e60ed81021cc7",
+              "file": "preuves/bd097d288eedc4028f65ce904b27018aca7ce819014cf21e980e60ed81021cc7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
-              "sha256": "d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b",
-              "file": "preuves/d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b.gz"
+              "sha256": "3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b",
+              "file": "preuves/3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b.gz"
             },
-            "captured_at": "2026-10-25T12:22:56.104090+01:00",
+            "captured_at": "2026-10-25T13:34:38.262934+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2216,8 +2073,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 15.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.63,
-              "dateRapport": 1792926901000,
+              "nombreIndicateurTendance": 1.35,
+              "dateRapport": 1792931401000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -2233,15 +2090,15 @@
             "source_title": "R1 Course N°7 : C7 - Prix Belle de Nuit",
             "evidence": {
               "url": "https://www.zone-turf.fr/pick5/dimanche-25-octobre-2026/R1C7/",
-              "sha256": "072fcd24429aad95252e4864efc8d32de270a91d14e173bf1d6a801330443309",
-              "file": "preuves/072fcd24429aad95252e4864efc8d32de270a91d14e173bf1d6a801330443309.gz"
+              "sha256": "31edc4f90734aa9c1fc693a40057e6ed6eb7754d9b2f8611c3029ed5632654f9",
+              "file": "preuves/31edc4f90734aa9c1fc693a40057e6ed6eb7754d9b2f8611c3029ed5632654f9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
-              "sha256": "d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b",
-              "file": "preuves/d29c334d56824b95b0238a6f3faa82264c9c42eacfa3db090c933e55c0b2943b.gz"
+              "sha256": "3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b",
+              "file": "preuves/3aa89d6b50c9d3a410c18080d1b6af1a815a70f53cadaeeaaf41ae1e6210d49b.gz"
             },
-            "captured_at": "2026-10-25T12:22:56.597259+01:00",
+            "captured_at": "2026-10-25T13:34:38.990318+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2249,8 +2106,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -7.14,
-              "dateRapport": 1792926901000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931401000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -2262,28 +2119,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c7-saint-cloud-prix-belle-de-nuit",
-            "sha256": "b3f88057d1ba745e02bd2af318e5123d7226f73d41b24e43c704b5ec3e55a7aa",
-            "file": "preuves/b3f88057d1ba745e02bd2af318e5123d7226f73d41b24e43c704b5ec3e55a7aa.gz"
+            "sha256": "c2f19bcbc0e1e2305e47ec83e41ee25401ab821a93996c843014d50e4897bfb1",
+            "file": "preuves/c2f19bcbc0e1e2305e47ec83e41ee25401ab821a93996c843014d50e4897bfb1.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421584_prix-belle-de-nuit.html",
-            "sha256": "17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c",
-            "file": "preuves/17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c.gz"
+            "sha256": "5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e",
+            "file": "preuves/5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421584_prix-belle-de-nuit.html",
-            "sha256": "17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c",
-            "file": "preuves/17bc7927e81f1e64b43d462a9bbb51a2405488fabc3769a682d111916dd11e1c.gz"
+            "sha256": "5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e",
+            "file": "preuves/5f682343e1926be67bf1b554327b0bb09971d23e7b9f2bd677ebcb956099248e.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693864-2026-10-25-saint-cloud-prix-belle-de-nuit/partants-pronostics",
-            "sha256": "3f8334dd6f5c7dc2b35805a38463edd3b5f0b33f92be72dc22788e6397e7934b",
-            "file": "preuves/3f8334dd6f5c7dc2b35805a38463edd3b5f0b33f92be72dc22788e6397e7934b.gz"
+            "sha256": "bd097d288eedc4028f65ce904b27018aca7ce819014cf21e980e60ed81021cc7",
+            "file": "preuves/bd097d288eedc4028f65ce904b27018aca7ce819014cf21e980e60ed81021cc7.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/pick5/dimanche-25-octobre-2026/R1C7/",
-            "sha256": "072fcd24429aad95252e4864efc8d32de270a91d14e173bf1d6a801330443309",
-            "file": "preuves/072fcd24429aad95252e4864efc8d32de270a91d14e173bf1d6a801330443309.gz"
+            "sha256": "31edc4f90734aa9c1fc693a40057e6ed6eb7754d9b2f8611c3029ed5632654f9",
+            "file": "preuves/31edc4f90734aa9c1fc693a40057e6ed6eb7754d9b2f8611c3029ed5632654f9.gz"
           }
         }
       },
@@ -2305,15 +2162,15 @@
             "source_title": "Prix Des Haras",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-25/r1c8-saint-cloud-prix-des-haras",
-              "sha256": "706331a14a6cf40fd2369847787101e8aaac2eaf646c5d68dcd8c8fec1c45694",
-              "file": "preuves/706331a14a6cf40fd2369847787101e8aaac2eaf646c5d68dcd8c8fec1c45694.gz"
+              "sha256": "242f6b85acd3318cc0f88851f6d4cd44c8c683a78418ccde7d91b512004652f2",
+              "file": "preuves/242f6b85acd3318cc0f88851f6d4cd44c8c683a78418ccde7d91b512004652f2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
-              "sha256": "a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd",
-              "file": "preuves/a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd.gz"
+              "sha256": "6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034",
+              "file": "preuves/6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034.gz"
             },
-            "captured_at": "2026-10-25T12:22:58.371876+01:00",
+            "captured_at": "2026-10-25T13:34:40.625083+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2321,8 +2178,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.7,
-              "dateRapport": 1792926948000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931448000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -2338,15 +2195,15 @@
             "source_title": "Le pronostic du PRIX DES HARAS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
-              "sha256": "e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf",
-              "file": "preuves/e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf.gz"
+              "sha256": "52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164",
+              "file": "preuves/52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
-              "sha256": "a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd",
-              "file": "preuves/a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd.gz"
+              "sha256": "6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034",
+              "file": "preuves/6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034.gz"
             },
-            "captured_at": "2026-10-25T12:22:59.053949+01:00",
+            "captured_at": "2026-10-25T13:34:41.175548+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2354,8 +2211,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.4,
-              "dateRapport": 1792926948000,
+              "nombreIndicateurTendance": 0.94,
+              "dateRapport": 1792931448000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -2371,24 +2228,24 @@
             "source_title": "Le pronostic du PRIX DES HARAS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
-              "sha256": "e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf",
-              "file": "preuves/e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf.gz"
+              "sha256": "52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164",
+              "file": "preuves/52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
-              "sha256": "a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd",
-              "file": "preuves/a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd.gz"
+              "sha256": "6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034",
+              "file": "preuves/6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034.gz"
             },
-            "captured_at": "2026-10-25T12:22:59.139425+01:00",
+            "captured_at": "2026-10-25T13:34:41.278130+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
+              "rapport": 14.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.78,
-              "dateRapport": 1792926948000,
+              "nombreIndicateurTendance": 1.43,
+              "dateRapport": 1792931448000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -2404,15 +2261,15 @@
             "source_title": "Prix des Haras",
             "evidence": {
               "url": "https://www.geny.com/course/1693865-2026-10-25-saint-cloud-prix-des-haras/partants-pronostics",
-              "sha256": "f9925e298df60ecc3558f72b92d0a9072c4d930858fe645282213a0d7e50d706",
-              "file": "preuves/f9925e298df60ecc3558f72b92d0a9072c4d930858fe645282213a0d7e50d706.gz"
+              "sha256": "c434b4a3c2391971ce0f025249294c3bbe8e7e9514ad3c809400ebf6c7ca4854",
+              "file": "preuves/c434b4a3c2391971ce0f025249294c3bbe8e7e9514ad3c809400ebf6c7ca4854.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
-              "sha256": "a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd",
-              "file": "preuves/a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd.gz"
+              "sha256": "6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034",
+              "file": "preuves/6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034.gz"
             },
-            "captured_at": "2026-10-25T12:23:16.563813+01:00",
+            "captured_at": "2026-10-25T13:34:59.190458+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2420,8 +2277,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.4,
-              "dateRapport": 1792926948000,
+              "nombreIndicateurTendance": 0.94,
+              "dateRapport": 1792931448000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -2437,15 +2294,15 @@
             "source_title": "R1 Course N°8 : C8 - Prix des Haras",
             "evidence": {
               "url": "https://www.zone-turf.fr/pick5/dimanche-25-octobre-2026/R1C8/",
-              "sha256": "bd8fc6fcfc0b0d1758055d7125c8502d8e7256baa563ce316093b03f3843ec21",
-              "file": "preuves/bd8fc6fcfc0b0d1758055d7125c8502d8e7256baa563ce316093b03f3843ec21.gz"
+              "sha256": "96d74bb6be4661260f0c0692d8e332e94231de4845c2e72b545ccd1975b3f2e1",
+              "file": "preuves/96d74bb6be4661260f0c0692d8e332e94231de4845c2e72b545ccd1975b3f2e1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
-              "sha256": "a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd",
-              "file": "preuves/a1561565c7f9d166dda248ef53eeb10121cfffa347bf14d0e11b37f4c04efebd.gz"
+              "sha256": "6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034",
+              "file": "preuves/6c6cdf7264f3f1774594bf5d7580c96c3938a37c02dbc4734fd0920965ce8034.gz"
             },
-            "captured_at": "2026-10-25T12:23:17.226886+01:00",
+            "captured_at": "2026-10-25T13:35:00.074804+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2453,8 +2310,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.7,
-              "dateRapport": 1792926948000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1792931448000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -2466,32 +2323,32 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-25/r1c8-saint-cloud-prix-des-haras",
-            "sha256": "706331a14a6cf40fd2369847787101e8aaac2eaf646c5d68dcd8c8fec1c45694",
-            "file": "preuves/706331a14a6cf40fd2369847787101e8aaac2eaf646c5d68dcd8c8fec1c45694.gz"
+            "sha256": "242f6b85acd3318cc0f88851f6d4cd44c8c683a78418ccde7d91b512004652f2",
+            "file": "preuves/242f6b85acd3318cc0f88851f6d4cd44c8c683a78418ccde7d91b512004652f2.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
-            "sha256": "e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf",
-            "file": "preuves/e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf.gz"
+            "sha256": "52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164",
+            "file": "preuves/52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
-            "sha256": "e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf",
-            "file": "preuves/e3699699e06aeeb88774b4eb4b3e9d0a29c277f23fdc983d3c7054ca132c38bf.gz"
+            "sha256": "52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164",
+            "file": "preuves/52a9e86b6a42c4525eb59161064859d17aa713fd2f364ca9d3e6cd7443db2164.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693865-2026-10-25-saint-cloud-prix-des-haras/partants-pronostics",
-            "sha256": "f9925e298df60ecc3558f72b92d0a9072c4d930858fe645282213a0d7e50d706",
-            "file": "preuves/f9925e298df60ecc3558f72b92d0a9072c4d930858fe645282213a0d7e50d706.gz"
+            "sha256": "c434b4a3c2391971ce0f025249294c3bbe8e7e9514ad3c809400ebf6c7ca4854",
+            "file": "preuves/c434b4a3c2391971ce0f025249294c3bbe8e7e9514ad3c809400ebf6c7ca4854.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/pick5/dimanche-25-octobre-2026/R1C8/",
-            "sha256": "bd8fc6fcfc0b0d1758055d7125c8502d8e7256baa563ce316093b03f3843ec21",
-            "file": "preuves/bd8fc6fcfc0b0d1758055d7125c8502d8e7256baa563ce316093b03f3843ec21.gz"
+            "sha256": "96d74bb6be4661260f0c0692d8e332e94231de4845c2e72b545ccd1975b3f2e1",
+            "file": "preuves/96d74bb6be4661260f0c0692d8e332e94231de4845c2e72b545ccd1975b3f2e1.gz"
           }
         }
       }
     ],
-    "complete": false
+    "complete": true
   }
 }
