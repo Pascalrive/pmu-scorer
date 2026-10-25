@@ -16,11 +16,12 @@ from .model import daily_budget, daily_target, stop_at_target, split_pair, reser
 from .model import START, END, STRATEGIES, account, reserve, freeze, groups, settle, summary
 from .telegram import send
 from comparaison_r1.geny_fallback import read_tip, unavailable_label
+from comparaison_r1.odds import odds_label
 
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
 API='https://online.turfinfo.api.pmu.fr/rest/client/61/programme/'
-PREVIEW_VERSION=6
+PREVIEW_VERSION=7
 
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -177,7 +178,7 @@ def preview_report(state,preview):
             t=race['tips'].get(site)
             if t:
                 quote=(t.get('odds') or {}).get('rapport','—')
-                lines.append(f'{names[site]}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {quote}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
+                lines.append(f'{names[site]}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · {odds_label(t)}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
             else:lines.append(names[site]+' : '+unavailable_label(race,site))
         g=groups(race['tips']).get('majorite_3_ou_4')
         if place_plan(race):lines.append(place_description(race))
@@ -195,7 +196,7 @@ def race_message(r):
         t=r['tips'].get(site)
         if not t:lines.append(site.upper()+' : '+unavailable_label(r,site));continue
         q=t.get('odds') or {}
-        lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · cote {q.get("rapport","—")}'+(' · non jouable' if not t['playable'] else ''))
+        lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · {odds_label(t)}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
     g=r['groups'].get('majorite_3_ou_4')
     if place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
