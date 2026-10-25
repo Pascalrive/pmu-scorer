@@ -35,3 +35,14 @@ class Fallback(unittest.TestCase):
   f=Fake();f.get=lambda u:'<a href="/courses/partants-pronostics/123">Prix de Beaune</a><a href="/courses/partants-pronostics/124">Prix de Beaune</a>'
   with patch('comparaison_r1.geny_fallback.locate',side_effect=ValueError('failed')):
    with self.assertRaises(ValueError):read_tip('geny',f,R,H)
+
+
+ def test_failed_backup_keeps_both_errors(self):
+  from comparaison_r1.geny_fallback import GenyFallbackError
+  f=Fake();original=f.get
+  f.get=lambda u: HTML.split('<div class="page-separator">')[0] + '<div class="post-extra pronostic"><span class="horse">8</span></div>' if '/courses/' in u else original(u)
+  with self.assertRaises(GenyFallbackError) as caught:read_tip('geny',f,R,H)
+  self.assertTrue(caught.exception.source_status['fallback_attempted'])
+  self.assertIn('ConnectionError',caught.exception.source_status['primary_failure'])
+  self.assertIn('Rubrique éditoriale',caught.exception.source_status['fallback_failure'])
+  self.assertTrue(any('genybet.fr/courses/' in u for u in f.urls) or any('genybet.fr/reunions/' in u for u in f.urls))
