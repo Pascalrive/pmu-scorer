@@ -1058,7 +1058,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 11,
+          "settled_at": "2026-10-25T16:42:21.501185+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9e10cae66e85b999475d8f88a54fb74d2d4a92706032e1694bfeb42014197967",
+            "file": "preuves/9e10cae66e85b999475d8f88a54fb74d2d4a92706032e1694bfeb42014197967.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
+            "sha256": "683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0",
+            "file": "preuves/683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1091,7 +1105,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-25T16:42:21.501605+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9e10cae66e85b999475d8f88a54fb74d2d4a92706032e1694bfeb42014197967",
+            "file": "preuves/9e10cae66e85b999475d8f88a54fb74d2d4a92706032e1694bfeb42014197967.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
+            "sha256": "683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0",
+            "file": "preuves/683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0.gz"
+          }
         }
       },
       "groups": {},
@@ -1108,7 +1136,39 @@
           "file": "preuves/9b918d02ff8232b7be5cfca2720b0a1d854bf84bc9d74a2f093a35b8aacc5910.gz"
         }
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "ELEGANZ",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "FRANCES ETHEL",
+          "rank": 2
+        },
+        {
+          "number": 11,
+          "name": "BRILLIANT STAR",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "LITTLE DORRIT",
+          "rank": 4
+        },
+        {
+          "number": 5,
+          "name": "MAHIYA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C7/participants",
+        "sha256": "683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0",
+        "file": "preuves/683e31feb7ab2ede0700b241cd318fc297d589e36a86065a9da74146864a02d0.gz"
+      }
     },
     {
       "date": "2026-10-25",
@@ -1207,7 +1267,11 @@
           "file": "preuves/9dcdc478f9ba82fcdd6bb08452deae886d650962e53e29ab2f7f3154251f34d0.gz"
         }
       },
-      "groups_frozen_at": "2026-10-25T16:10:23.620889+01:00"
+      "groups_frozen_at": "2026-10-25T16:10:23.620889+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-25T16:42:21.502146+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     }
   ],
   "notifications": [],
