@@ -101,10 +101,12 @@ def parse(site, body, url, race, horses):
         # separate from individual journalists and the press consensus.
         decoder=json.JSONDecoder()
         for script in s.find_all('script'):
-            for match in re.finditer(r'self\.__next_f\.push\((\[.*?\])\)',script.text):
-                try:payload=json.loads(match[1])
+            # Comments can contain "])" inside JSON strings. Let the JSON
+            # decoder find the array boundary instead of a non-greedy regex.
+            for match in re.finditer(r'self\.__next_f\.push\(\s*',script.text):
+                try:payload,_=decoder.raw_decode(script.text[match.end():])
                 except ValueError:continue
-                if len(payload)<2 or not isinstance(payload[1],str):continue
+                if not isinstance(payload,list) or len(payload)<2 or not isinstance(payload[1],str):continue
                 for m in re.finditer(r'"geny"\s*:\s*',payload[1]):
                     obj,_=decoder.raw_decode(payload[1][m.end():])
                     if not isinstance(obj,dict):continue
@@ -125,3 +127,4 @@ def parse(site, body, url, race, horses):
     return {'site':site,'number':n,'name':horse['nom'],'source_url':url,'definition':note,
             'identity_check':'date_rc_title_number_name' if title_matches else 'date_rc_full_numbered_field',
             'source_title':text(s.h1)}
+
