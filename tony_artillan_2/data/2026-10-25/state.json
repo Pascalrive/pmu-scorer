@@ -3,7 +3,32 @@
   "venue": "SAINT-CLOUD",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C3",
+          "departure": "2026-10-25T13:58:00+01:00",
+          "number": 4,
+          "name": "HALF HALF",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-25T13:34:01.141136+01:00",
+          "source_captured_at": "2026-10-25T13:14:22.231221+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792931594000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -263,7 +288,9 @@
           "new": "2026-10-25T13:25:00+01:00",
           "checked_at": "2026-10-25T13:14:21.638227+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-25",
@@ -371,9 +398,88 @@
       "title": "CRITERIUM DE SAINT-CLOUD",
       "departure": "2026-10-25T14:33:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 6,
+          "name": "DRUMBEAT",
+          "source_url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Critérium de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+            "sha256": "2535d16e0c744ff765b7aeff4f179aeaaf67e8c93e2afc0802ceadc19c6c7a31",
+            "file": "preuves/2535d16e0c744ff765b7aeff4f179aeaaf67e8c93e2afc0802ceadc19c6c7a31.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:33:58.871820+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1792931439000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "JESUS GREEN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du CRITERIUM DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+            "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+            "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C4/participants",
+            "sha256": "b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8",
+            "file": "preuves/b2edec2f19cf8173c9ec39b4c125a80b705db61f2796ab9ab0f9f97a3c824bb8.gz"
+          },
+          "captured_at": "2026-10-25T13:34:00.477468+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.16,
+            "dateRapport": 1792931439000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1693861-2026-10-25-saint-cloud-criterium-de-saint-cloud/partants-pronostics",
+          "sha256": "2535d16e0c744ff765b7aeff4f179aeaaf67e8c93e2afc0802ceadc19c6c7a31",
+          "file": "preuves/2535d16e0c744ff765b7aeff4f179aeaaf67e8c93e2afc0802ceadc19c6c7a31.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421581_criterium-de-saint-cloud.html",
+          "sha256": "9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7",
+          "file": "preuves/9981e672de85cd549559d2bb3c54e95f311cc0d80688894ce14c1b9c484e27d7.gz"
+        }
+      }
     },
     {
       "date": "2026-10-25",
