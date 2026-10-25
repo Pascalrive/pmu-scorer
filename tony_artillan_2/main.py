@@ -20,7 +20,7 @@ from comparaison_r1.geny_fallback import read_tip, unavailable_label
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
 API='https://online.turfinfo.api.pmu.fr/rest/client/61/programme/'
-PREVIEW_VERSION=5
+PREVIEW_VERSION=6
 
 def write(path,data):
     path.parent.mkdir(parents=True,exist_ok=True)
