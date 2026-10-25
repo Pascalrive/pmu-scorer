@@ -883,7 +883,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 8,
+          "settled_at": "2026-10-25T16:10:24.483001+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9429943d741e61bae3612a935a9bef3d6989f8983478e7355776379cd4799e52",
+            "file": "preuves/9429943d741e61bae3612a935a9bef3d6989f8983478e7355776379cd4799e52.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
+            "sha256": "4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a",
+            "file": "preuves/4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -916,7 +930,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-25T16:10:24.483323+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9429943d741e61bae3612a935a9bef3d6989f8983478e7355776379cd4799e52",
+            "file": "preuves/9429943d741e61bae3612a935a9bef3d6989f8983478e7355776379cd4799e52.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
+            "sha256": "4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a",
+            "file": "preuves/4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a.gz"
+          }
         }
       },
       "groups": {},
@@ -933,7 +961,39 @@
           "file": "preuves/3a96288a2bb8bf7cda837ecb290fa3fb9b86ef0096b16536d88c625cf44a51d9.gz"
         }
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "QUEENSTOWN",
+          "rank": 1
+        },
+        {
+          "number": 5,
+          "name": "CONSENT",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "HIGHARA",
+          "rank": 3
+        },
+        {
+          "number": 8,
+          "name": "AMELIA EARHART",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "JABRACADABRA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C6/participants",
+        "sha256": "4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a",
+        "file": "preuves/4506986f84cf446086a1c64b894f987894e09c30f4d40951052bf32804b8657a.gz"
+      }
     },
     {
       "date": "2026-10-25",
@@ -1032,9 +1092,97 @@
       "title": "PRIX DES HARAS",
       "departure": "2026-10-25T17:00:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 2,
+          "name": "SEVENNA'S BAY",
+          "source_url": "https://www.geny.com/course/1693865-2026-10-25-saint-cloud-prix-des-haras/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix des Haras",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693865-2026-10-25-saint-cloud-prix-des-haras/partants-pronostics",
+            "sha256": "7a539480f84ca03dc01e0557751104e8c946f6691290907d3fd99bbf0b094fad",
+            "file": "preuves/7a539480f84ca03dc01e0557751104e8c946f6691290907d3fd99bbf0b094fad.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
+            "sha256": "02d125e1767fc11d060cc3c966c04a69b93854e2c7145451bc9510f29e301a05",
+            "file": "preuves/02d125e1767fc11d060cc3c966c04a69b93854e2c7145451bc9510f29e301a05.gz"
+          },
+          "captured_at": "2026-10-25T16:10:21.644562+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 10.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.88,
+            "dateRapport": 1792940448000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "SEVENNA'S BAY",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DES HARAS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
+            "sha256": "9dcdc478f9ba82fcdd6bb08452deae886d650962e53e29ab2f7f3154251f34d0",
+            "file": "preuves/9dcdc478f9ba82fcdd6bb08452deae886d650962e53e29ab2f7f3154251f34d0.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/25102026/R1/C8/participants",
+            "sha256": "02d125e1767fc11d060cc3c966c04a69b93854e2c7145451bc9510f29e301a05",
+            "file": "preuves/02d125e1767fc11d060cc3c966c04a69b93854e2c7145451bc9510f29e301a05.gz"
+          },
+          "captured_at": "2026-10-25T16:10:23.620834+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 10.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.88,
+            "dateRapport": 1792940448000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 2,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1693865-2026-10-25-saint-cloud-prix-des-haras/partants-pronostics",
+          "sha256": "7a539480f84ca03dc01e0557751104e8c946f6691290907d3fd99bbf0b094fad",
+          "file": "preuves/7a539480f84ca03dc01e0557751104e8c946f6691290907d3fd99bbf0b094fad.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-25/saint-cloud/421585_prix-des-haras.html",
+          "sha256": "9dcdc478f9ba82fcdd6bb08452deae886d650962e53e29ab2f7f3154251f34d0",
+          "file": "preuves/9dcdc478f9ba82fcdd6bb08452deae886d650962e53e29ab2f7f3154251f34d0.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-25T16:10:23.620889+01:00"
     }
   ],
   "notifications": [],
