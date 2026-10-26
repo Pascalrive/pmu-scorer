@@ -41,6 +41,30 @@
             "sha256": "f0e9db190eb2f77976ed0b5927f67b7b68d5ad58b48b7a0168a84ae7ab34ad43",
             "file": "preuves/f0e9db190eb2f77976ed0b5927f67b7b68d5ad58b48b7a0168a84ae7ab34ad43.gz"
           }
+        },
+        {
+          "race_id": "R1C3",
+          "departure": "2026-10-26T13:10:00+01:00",
+          "number": 1,
+          "name": "SHANDIYANA",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-26T12:49:33.953312+01:00",
+          "source_captured_at": "2026-10-26T12:14:43.308614+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793015362000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          }
         }
       ],
       "budget_cents": 120000,
@@ -251,7 +275,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-26T12:49:33.952748+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "749bf43ce864b5e3eee03c45eece34b88e87d59b4bf6f976fe08444ff61d2ff5",
+            "file": "preuves/749bf43ce864b5e3eee03c45eece34b88e87d59b4bf6f976fe08444ff61d2ff5.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29",
+            "file": "preuves/d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -284,7 +322,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-26T12:49:33.953004+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "749bf43ce864b5e3eee03c45eece34b88e87d59b4bf6f976fe08444ff61d2ff5",
+            "file": "preuves/749bf43ce864b5e3eee03c45eece34b88e87d59b4bf6f976fe08444ff61d2ff5.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29",
+            "file": "preuves/d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29.gz"
+          }
         }
       },
       "groups": {},
@@ -300,7 +352,40 @@
           "sha256": "e7e0b7e2627547143748c8cab14c925e95e3ef801b9bcc8cec74b4444fd431ab",
           "file": "preuves/e7e0b7e2627547143748c8cab14c925e95e3ef801b9bcc8cec74b4444fd431ab.gz"
         }
-      }
+      },
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "JULIAN SCHNABEL",
+          "rank": 1
+        },
+        {
+          "number": 6,
+          "name": "CORAL COVE",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "AROK ATAO",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "BARRAMUNDI",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "LA CARMEN",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+        "sha256": "d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29",
+        "file": "preuves/d834f130852413e9addb5ae23147a1f8b55ac0f7ab51c576d72e96d371c9af29.gz"
+      },
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-26",
