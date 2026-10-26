@@ -1,9 +1,11 @@
-import copy,json,sys,unittest
+import copy,json,sys,unittest,tempfile
+from datetime import datetime
+from unittest.mock import patch
 from decimal import Decimal
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from analyses import build_analyses,VERSION_ANALYSES
-from evaluate_analyses import quinte_return,select_sent
+from evaluate_analyses import quinte_return,select_sent,evaluate
 from notify import format_messages
 from collector import consensus
 class ThreeRulesTests(unittest.TestCase):
@@ -53,6 +55,56 @@ class QuintéSettlementTests(unittest.TestCase):
   rows,race=ThreeRulesTests().sample();race.update(departure='2026-10-13T11:55:00+00:00');a=build_analyses(rows,race)
   s={'race':race,'captured_at':'2026-10-13T09:00:00+00:00','eligible_before_departure':True,'analyses':a}
   receipt={'delivery':'SENT','sent_at':'2026-10-13T09:01:00+00:00','snapshot_capture':s['captured_at'],'analyses':a}
-  self.assertIsNone(select_sent([s],[]));self.assertEqual(select_sent([s],[receipt]),s)
-  receipt['sent_at']='2026-10-13T12:00:00+00:00';self.assertIsNone(select_sent([s],[receipt]))
+  receipt['receipts']=[{'message_id':1,'date':int(datetime.fromisoformat(receipt['sent_at']).timestamp())}]
+  self.assertIsNone(select_sent([s],[],'statistique'));self.assertEqual(select_sent([s],[receipt],'statistique'),s)
+  receipt['sent_at']='2026-10-13T12:00:00+00:00';self.assertIsNone(select_sent([s],[receipt],'statistique'))
+
+class IndependentProfilesTests(unittest.TestCase):
+ def sample(self):
+  rows,race=ThreeRulesTests().sample()
+  for r in rows:r['outsiders']=[{'number':6,'label':'tocard'}]
+  race.update(date='2026-10-13',id='R1C1',r=1,c=1,departure='2026-10-13T11:55:00+00:00')
+  a=build_analyses(rows,race)
+  s={'race':race,'captured_at':'2026-10-13T09:00:00+00:00','eligible_before_departure':True,'analyses':a}
+  r={'delivery':'SENT','sent_at':'2026-10-13T09:01:00+00:00','snapshot_capture':s['captured_at'],'analyses':copy.deepcopy(a),'receipts':[{'message_id':1,'date':int(datetime.fromisoformat('2026-10-13T09:01:00+00:00').timestamp())}]}
+  return s,r
+ def test_partial_mixte_does_not_block_complete_profiles(self):
+  s,r=self.sample()
+  for k in ('statistique','cotes'):self.assertEqual(select_sent([s],[r],k),s)
+  self.assertIsNone(select_sent([s],[r],'mixte'))
+ def test_missing_late_or_uncertain_receipts_cannot_create_ticket(self):
+  s,r=self.sample()
+  for mode in ('absent','late','uncertain','mismatch'):
+   bad=copy.deepcopy(r)
+   if mode=='absent':bad['receipts']=[]
+   elif mode=='late':bad['receipts'][0]['date']=int(datetime.fromisoformat(s['race']['departure']).timestamp())
+   elif mode=='uncertain':bad['delivery']='UNCERTAIN'
+   else:bad['analyses']['profiles'][0]['numbers'][0]=8
+   self.assertIsNone(select_sent([s],[bad],'statistique'),mode)
+ def test_selects_latest_sent_ticket_per_profile_with_timezone_offsets(self):
+  s,r=self.sample();new=copy.deepcopy(s)
+  new['captured_at']='2026-10-13T12:00:00+02:00'
+  new['analyses']['profiles'][0]['numbers']=[2,3,4,5,6]
+  new['analyses']['profiles'][1]['qualified']=False
+  receipt=copy.deepcopy(r);receipt.update(snapshot_capture=new['captured_at'],sent_at='2026-10-13T12:01:00+02:00',analyses=copy.deepcopy(new['analyses']))
+  receipt['receipts'][0]['date']=int(datetime.fromisoformat(receipt['sent_at']).timestamp())
+  self.assertEqual(select_sent([s,new],[r,receipt],'statistique'),new)
+  self.assertEqual(select_sent([s,new],[r,receipt],'cotes'),s)
+ def test_invalid_five_horse_ticket_is_not_counted_even_if_marked_qualified(self):
+  s,r=self.sample();s['analyses']['profiles'][0]['numbers']=[1,1,2,3,4];r['analyses']=copy.deepcopy(s['analyses'])
+  self.assertIsNone(select_sent([s],[r],'statistique'))
+ def test_evaluator_books_two_tickets_and_separates_common_course_comparison(self):
+  s,r=self.sample()
+  ps=[{'numPmu':n,'nom':str(n),'statut':'PARTANT','ordreArrivee':n} for n in range(1,9)]
+  def fetch(url):return {'participants':ps} if url.endswith('/participants') else QuintéSettlementTests().reports()
+  with tempfile.TemporaryDirectory() as tmp,patch('evaluate_analyses.Fetcher') as client:
+   root=Path(tmp);day=root/'2026-10-13';day.mkdir()
+   (day/'R1C1-test.json').write_text(json.dumps(s));(day/'notifications.json').write_text(json.dumps([r]))
+   client.return_value.json.side_effect=fetch;evaluate(root)
+   result=json.loads((root/'BILAN_TROIS_SELECTIONS.json').read_text())
+   self.assertEqual([x['strategie'] for x in result],['statistique','cotes'])
+   self.assertTrue(all(x['mise']==2 and x['retour']==2000 for x in result))
+   report=(root/'BILAN_TROIS_SELECTIONS.md').read_text()
+   self.assertIn('| statistique | 0 | 0.00 € | 0.00 € | 0.00 € | — |',report)
 if __name__=='__main__':unittest.main()
+

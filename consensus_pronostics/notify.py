@@ -40,7 +40,7 @@ def format_messages(s):
   for profile in s['analyses']['profiles']:
    nums=' – '.join(str(n) for n in profile['numbers'])
    summary.append('<b>'+html.escape(profile['label'])+'</b> : '+nums+('' if profile['qualified'] else ' · INCOMPLET'))
-  summary+=['Mixte : trois bases + deux outsiders cités par ≥2 sources.','Comparaison simulée : 2 € par sélection complète, sans Option Max. Mise fixe ; aucune augmentation après une perte.']
+  summary+=['Mixte : trois bases + deux outsiders cités par ≥2 sources.','Comparaison simulée : 2 € par sélection complète, sans Option Max. Chaque variante est suivie séparément ; une variante incomplète est non jouée. Mise fixe ; aucune augmentation après une perte.']
   if s['analyses'].get('two_of_four'):
    summary+=['','<b>➕ 2 SUR 4 À 100 % — SIMULATION</b>']
    for t in s['analyses']['two_of_four']:
@@ -121,3 +121,4 @@ def notify(root,now=None,post=requests.post,clock=lambda:datetime.now(timezone.u
  if failed:raise RuntimeError('Envoi consensus non confirmé ; consulter les reçus indépendants')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');args=p.parse_args();notify(Path(args.output))
+

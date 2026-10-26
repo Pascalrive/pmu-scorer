@@ -16,6 +16,16 @@ class Protocol(unittest.TestCase):
   self.assertFalse(confirmed_before(dict(receipt,receipts=[]),departure))
   receipt['receipts'].append(dict(date=end,message_id=13))
   self.assertFalse(confirmed_before(receipt,departure))
+ def test_delayed_departure_preserves_original_capture_window(self):
+  race=dict(departure=m.START+'T13:25:00+01:00',schedule_changes=[dict(old=m.START+'T13:23:00+01:00',new=m.START+'T13:25:00+01:00',checked_at=m.START+'T13:08:49+01:00')])
+  now=datetime.fromisoformat(m.START+'T13:09:19+01:00')
+  tip=dict(captured_at=m.START+'T12:23:19+01:00')
+  self.assertTrue(m.valid_capture_window(race,tip,now))
+  self.assertFalse(m.valid_capture_window(race,dict(tip,captured_at=m.START+'T12:22:59+01:00'),now))
+  self.assertTrue(m.valid_capture_window(race,dict(tip,departure_at_capture=m.START+'T13:23:00+01:00'),now))
+  later=dict(captured_at=m.START+'T13:10:00+01:00')
+  self.assertTrue(m.valid_capture_window(race,later,datetime.fromisoformat(m.START+'T13:11:00+01:00')))
+  self.assertFalse(m.valid_capture_window(race,later,now))
  def test_vote_partitions(self):
   for nums in product(range(1,5),repeat=5):
    g=m.groups(self.tips(nums));n,votes=Counter(nums).most_common(1)[0]
