@@ -631,7 +631,8 @@
           "file": "preuves/88fbfecef91b19839ac0089ebaf0703574f49f73a90369c2bc7667c583bd896d.gz"
         }
       },
-      "groups_frozen_at": "2026-10-26T11:43:55.052628+01:00"
+      "groups_frozen_at": "2026-10-26T11:43:55.052628+01:00",
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-26",
@@ -852,7 +853,11 @@
           "file": "preuves/74f13ec25674ca2da4e58628dc0d791ef6abec2704773e06a186c106fa4c3fcf.gz"
         }
       },
-      "groups_frozen_at": "2026-10-26T12:22:47.160618+01:00"
+      "groups_frozen_at": "2026-10-26T12:22:47.160618+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-26T12:43:22.498249+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-26",
@@ -913,416 +918,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-26T11:27:01.305290+01:00",
+    "captured_at": "2026-10-26T12:43:20.541691+01:00",
     "races": [
-      {
-        "date": "2026-10-26",
-        "id": "R1C1",
-        "c": 1,
-        "title": "GRAND PRIX DU NORD",
-        "departure": "2026-10-26T12:00:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 8,
-            "name": "LEFTEYE",
-            "source_url": "https://turfin.fr/course/2026-10-26/r1c1-chantilly-grand-prix-du-nord",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Grand Prix Du Nord",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-26/r1c1-chantilly-grand-prix-du-nord",
-              "sha256": "135c34ed1499f008bdf973655971a7181d3c2d2378129143fdacd549e448442e",
-              "file": "preuves/135c34ed1499f008bdf973655971a7181d3c2d2378129143fdacd549e448442e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C1/participants",
-              "sha256": "cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8",
-              "file": "preuves/cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8.gz"
-            },
-            "captured_at": "2026-10-26T11:24:18.034265+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009727000,
-              "favoris": false,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 8,
-            "name": "LEFTEYE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du GRAND PRIX DU NORD",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-              "sha256": "1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67",
-              "file": "preuves/1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C1/participants",
-              "sha256": "cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8",
-              "file": "preuves/cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8.gz"
-            },
-            "captured_at": "2026-10-26T11:24:19.840074+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009727000,
-              "favoris": false,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 1,
-            "name": "DARZAKIR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du GRAND PRIX DU NORD",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-              "sha256": "1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67",
-              "file": "preuves/1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C1/participants",
-              "sha256": "cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8",
-              "file": "preuves/cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8.gz"
-            },
-            "captured_at": "2026-10-26T11:24:19.899993+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.34,
-              "dateRapport": 1793009727000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 8,
-            "name": "LEFTEYE",
-            "source_url": "https://www.geny.com/course/1693866-2026-10-26-chantilly-grand-prix-du-nord/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Grand Prix du Nord",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693866-2026-10-26-chantilly-grand-prix-du-nord/partants-pronostics",
-              "sha256": "12c1817f63118c0598e8cee3b9bc0fe9553732faedb68938f58a3cf479b19ef8",
-              "file": "preuves/12c1817f63118c0598e8cee3b9bc0fe9553732faedb68938f58a3cf479b19ef8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C1/participants",
-              "sha256": "cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8",
-              "file": "preuves/cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8.gz"
-            },
-            "captured_at": "2026-10-26T11:24:40.995045+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009727000,
-              "favoris": false,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 1,
-            "name": "DARZAKIR",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°1 : C1 - Grand Prix du Nord",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-              "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-              "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C1/participants",
-              "sha256": "cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8",
-              "file": "preuves/cbc9528b90c9a9a989b07f27c53a5e69869f13db9c99fed99c8cfc5fd4feb8f8.gz"
-            },
-            "captured_at": "2026-10-26T11:24:42.491975+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.34,
-              "dateRapport": 1793009727000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-26/r1c1-chantilly-grand-prix-du-nord",
-            "sha256": "135c34ed1499f008bdf973655971a7181d3c2d2378129143fdacd549e448442e",
-            "file": "preuves/135c34ed1499f008bdf973655971a7181d3c2d2378129143fdacd549e448442e.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-            "sha256": "1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67",
-            "file": "preuves/1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421636_grand-prix-du-nord.html",
-            "sha256": "1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67",
-            "file": "preuves/1b7372e5c8647f9e554f62f5691b44e1e141c00fdc43e491d033687114858a67.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693866-2026-10-26-chantilly-grand-prix-du-nord/partants-pronostics",
-            "sha256": "12c1817f63118c0598e8cee3b9bc0fe9553732faedb68938f58a3cf479b19ef8",
-            "file": "preuves/12c1817f63118c0598e8cee3b9bc0fe9553732faedb68938f58a3cf479b19ef8.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-            "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-26",
-        "id": "R1C2",
-        "c": 2,
-        "title": "PRIX ISONOMY",
-        "departure": "2026-10-26T12:35:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 5,
-            "name": "JULIAN SCHNABEL",
-            "source_url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Isonomy",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
-              "sha256": "084057b8fcc819916432726ac88f637a3c48417bb314539087c04f17c8c1caf1",
-              "file": "preuves/084057b8fcc819916432726ac88f637a3c48417bb314539087c04f17c8c1caf1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
-              "sha256": "2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d",
-              "file": "preuves/2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d.gz"
-            },
-            "captured_at": "2026-10-26T11:24:43.822348+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009720000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 1,
-            "name": "SYDNEY MOON",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ISONOMY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-              "sha256": "41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f",
-              "file": "preuves/41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
-              "sha256": "2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d",
-              "file": "preuves/2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d.gz"
-            },
-            "captured_at": "2026-10-26T11:24:44.480582+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.08,
-              "dateRapport": 1793009720000,
-              "favoris": false,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 5,
-            "name": "JULIAN SCHNABEL",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ISONOMY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-              "sha256": "41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f",
-              "file": "preuves/41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
-              "sha256": "2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d",
-              "file": "preuves/2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d.gz"
-            },
-            "captured_at": "2026-10-26T11:24:44.528574+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009720000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "JULIAN SCHNABEL",
-            "source_url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Isonomy",
-            "evidence": {
-              "url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
-              "sha256": "1fe38a0780175a533d204db314787aab16cfa6d59d49ae59644322d9ffc231e4",
-              "file": "preuves/1fe38a0780175a533d204db314787aab16cfa6d59d49ae59644322d9ffc231e4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
-              "sha256": "2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d",
-              "file": "preuves/2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d.gz"
-            },
-            "captured_at": "2026-10-26T11:25:00.924171+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009720000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 4,
-            "name": "BARRAMUNDI",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°2 : C2 - Prix Isonomy",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-              "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-              "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
-              "sha256": "2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d",
-              "file": "preuves/2e39c5b50e16825ddf8d6552f917e16de3d99b42b8a4c90e43ebd5835902597d.gz"
-            },
-            "captured_at": "2026-10-26T11:25:01.321211+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.0,
-              "dateRapport": 1793009720000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
-            "sha256": "084057b8fcc819916432726ac88f637a3c48417bb314539087c04f17c8c1caf1",
-            "file": "preuves/084057b8fcc819916432726ac88f637a3c48417bb314539087c04f17c8c1caf1.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-            "sha256": "41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f",
-            "file": "preuves/41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
-            "sha256": "41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f",
-            "file": "preuves/41dde86f4b06cc01526c8cb92dcd839e7816e2d090f77df029115069a15b677f.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
-            "sha256": "1fe38a0780175a533d204db314787aab16cfa6d59d49ae59644322d9ffc231e4",
-            "file": "preuves/1fe38a0780175a533d204db314787aab16cfa6d59d49ae59644322d9ffc231e4.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-            "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-26",
         "id": "R1C3",
@@ -1341,24 +938,24 @@
             "source_title": "Darley Prix Des Reservoirs",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c3-chantilly-darley-prix-des-reservoirs",
-              "sha256": "83d8f2db394821b263af5bbc2abee307d3c48ddf0556a894452521962e3f7b96",
-              "file": "preuves/83d8f2db394821b263af5bbc2abee307d3c48ddf0556a894452521962e3f7b96.gz"
+              "sha256": "13cfa665952e9271e4538a69b34a4234ad342f762591c0354a73f3905570cb38",
+              "file": "preuves/13cfa665952e9271e4538a69b34a4234ad342f762591c0354a73f3905570cb38.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C3/participants",
-              "sha256": "d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968",
-              "file": "preuves/d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968.gz"
+              "sha256": "aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c",
+              "file": "preuves/aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c.gz"
             },
-            "captured_at": "2026-10-26T11:25:02.601343+01:00",
+            "captured_at": "2026-10-26T12:41:17.456607+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1793009734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793014856000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1374,24 +971,24 @@
             "source_title": "Le pronostic du DARLEY PRIX DES RESERVOIRS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421638_darley-prix-des-reservoirs.html",
-              "sha256": "eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60",
-              "file": "preuves/eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60.gz"
+              "sha256": "dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68",
+              "file": "preuves/dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C3/participants",
-              "sha256": "d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968",
-              "file": "preuves/d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968.gz"
+              "sha256": "aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c",
+              "file": "preuves/aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c.gz"
             },
-            "captured_at": "2026-10-26T11:25:03.226538+01:00",
+            "captured_at": "2026-10-26T12:41:18.998994+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1793009734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793014856000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1407,24 +1004,24 @@
             "source_title": "Le pronostic du DARLEY PRIX DES RESERVOIRS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421638_darley-prix-des-reservoirs.html",
-              "sha256": "eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60",
-              "file": "preuves/eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60.gz"
+              "sha256": "dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68",
+              "file": "preuves/dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C3/participants",
-              "sha256": "d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968",
-              "file": "preuves/d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968.gz"
+              "sha256": "aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c",
+              "file": "preuves/aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c.gz"
             },
-            "captured_at": "2026-10-26T11:25:03.272871+01:00",
+            "captured_at": "2026-10-26T12:41:19.069051+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1793009734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793014856000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1440,24 +1037,24 @@
             "source_title": "Darley Prix des Reservoirs",
             "evidence": {
               "url": "https://www.geny.com/course/1693868-2026-10-26-chantilly-darley-prix-des-reservoirs/partants-pronostics",
-              "sha256": "d13f231f9434d25f7ba62a5bd031eaf5294a929c1db52f6857e153bc42bcb135",
-              "file": "preuves/d13f231f9434d25f7ba62a5bd031eaf5294a929c1db52f6857e153bc42bcb135.gz"
+              "sha256": "87dd548d3b4349d9750a3ff2885e7774b56cb115ee4ee5f9a25beb8c0aa6844c",
+              "file": "preuves/87dd548d3b4349d9750a3ff2885e7774b56cb115ee4ee5f9a25beb8c0aa6844c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C3/participants",
-              "sha256": "d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968",
-              "file": "preuves/d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968.gz"
+              "sha256": "aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c",
+              "file": "preuves/aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c.gz"
             },
-            "captured_at": "2026-10-26T11:25:20.593078+01:00",
+            "captured_at": "2026-10-26T12:41:39.737772+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1793009734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793014856000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1473,24 +1070,24 @@
             "source_title": "R1 Course N°3 : C3 - Darley Prix des Reservoirs",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-              "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-              "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+              "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+              "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C3/participants",
-              "sha256": "d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968",
-              "file": "preuves/d08706752f3d34078033776e5124a7ae697efb660b0ded25db1a437242d6c968.gz"
+              "sha256": "aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c",
+              "file": "preuves/aaa7a714deefe493779c6da96ae5663307d4b531807e9f78d6dfe22cea706d8c.gz"
             },
-            "captured_at": "2026-10-26T11:25:20.987430+01:00",
+            "captured_at": "2026-10-26T12:41:40.801899+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 1.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1793009734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793014856000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1502,30 +1099,31 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c3-chantilly-darley-prix-des-reservoirs",
-            "sha256": "83d8f2db394821b263af5bbc2abee307d3c48ddf0556a894452521962e3f7b96",
-            "file": "preuves/83d8f2db394821b263af5bbc2abee307d3c48ddf0556a894452521962e3f7b96.gz"
+            "sha256": "13cfa665952e9271e4538a69b34a4234ad342f762591c0354a73f3905570cb38",
+            "file": "preuves/13cfa665952e9271e4538a69b34a4234ad342f762591c0354a73f3905570cb38.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421638_darley-prix-des-reservoirs.html",
-            "sha256": "eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60",
-            "file": "preuves/eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60.gz"
+            "sha256": "dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68",
+            "file": "preuves/dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421638_darley-prix-des-reservoirs.html",
-            "sha256": "eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60",
-            "file": "preuves/eff0d644e28ffd51e6e0e1af1533017c3366a95c01dae28b8a6ba5099f3a3e60.gz"
+            "sha256": "dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68",
+            "file": "preuves/dd34830ab116dd6340a4eb87d7462000c868c648eaaab1672ca55c13ebfa2c68.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693868-2026-10-26-chantilly-darley-prix-des-reservoirs/partants-pronostics",
-            "sha256": "d13f231f9434d25f7ba62a5bd031eaf5294a929c1db52f6857e153bc42bcb135",
-            "file": "preuves/d13f231f9434d25f7ba62a5bd031eaf5294a929c1db52f6857e153bc42bcb135.gz"
+            "sha256": "87dd548d3b4349d9750a3ff2885e7774b56cb115ee4ee5f9a25beb8c0aa6844c",
+            "file": "preuves/87dd548d3b4349d9750a3ff2885e7774b56cb115ee4ee5f9a25beb8c0aa6844c.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-            "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+            "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+            "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-26T12:22:47.160618+01:00"
       },
       {
         "date": "2026-10-26",
@@ -1545,24 +1143,24 @@
             "source_title": "Prix De La Route Des Princes",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c4-chantilly-prix-de-la-route-des-princes",
-              "sha256": "1e35a36138a30bb3c0243d327ebb2f0d9e2c06655ac37a661b00e8bc40a5efeb",
-              "file": "preuves/1e35a36138a30bb3c0243d327ebb2f0d9e2c06655ac37a661b00e8bc40a5efeb.gz"
+              "sha256": "68e919b6b79913774d0b43179815d26ca25cd858f02aafd927b03b1b2e1705b2",
+              "file": "preuves/68e919b6b79913774d0b43179815d26ca25cd858f02aafd927b03b1b2e1705b2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C4/participants",
-              "sha256": "df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a",
-              "file": "preuves/df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a.gz"
+              "sha256": "db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814",
+              "file": "preuves/db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814.gz"
             },
-            "captured_at": "2026-10-26T11:25:22.809386+01:00",
+            "captured_at": "2026-10-26T12:41:42.931623+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.5,
+              "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009733000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1793014233000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -1578,24 +1176,24 @@
             "source_title": "Le pronostic du Quinté PRIX DE LA ROUTE DES PRINCES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421639_prix-de-la-route-des-princes.html",
-              "sha256": "a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365",
-              "file": "preuves/a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365.gz"
+              "sha256": "4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc",
+              "file": "preuves/4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C4/participants",
-              "sha256": "df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a",
-              "file": "preuves/df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a.gz"
+              "sha256": "db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814",
+              "file": "preuves/db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814.gz"
             },
-            "captured_at": "2026-10-26T11:25:23.436975+01:00",
+            "captured_at": "2026-10-26T12:41:43.576415+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.5,
+              "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009733000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1793014233000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -1611,24 +1209,24 @@
             "source_title": "Le pronostic du Quinté PRIX DE LA ROUTE DES PRINCES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421639_prix-de-la-route-des-princes.html",
-              "sha256": "a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365",
-              "file": "preuves/a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365.gz"
+              "sha256": "4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc",
+              "file": "preuves/4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C4/participants",
-              "sha256": "df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a",
-              "file": "preuves/df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a.gz"
+              "sha256": "db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814",
+              "file": "preuves/db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814.gz"
             },
-            "captured_at": "2026-10-26T11:25:23.491547+01:00",
+            "captured_at": "2026-10-26T12:41:43.640212+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.0,
+              "rapport": 9.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009733000,
+              "nombreIndicateurTendance": 3.15,
+              "dateRapport": 1793014233000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1644,15 +1242,15 @@
             "source_title": "Prix de la Route des Princes",
             "evidence": {
               "url": "https://www.geny.com/course/1693869-2026-10-26-chantilly-prix-de-la-route-des-princes/partants-pronostics",
-              "sha256": "da21bd5c22b0008d3bd832731d1f378c1f4ef2a73c215668ec171ed848fc79d5",
-              "file": "preuves/da21bd5c22b0008d3bd832731d1f378c1f4ef2a73c215668ec171ed848fc79d5.gz"
+              "sha256": "4ea0e424cd5bc02c1e22d1bc25a1b54b7a245fd14af61278dda5716d586ac417",
+              "file": "preuves/4ea0e424cd5bc02c1e22d1bc25a1b54b7a245fd14af61278dda5716d586ac417.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C4/participants",
-              "sha256": "df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a",
-              "file": "preuves/df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a.gz"
+              "sha256": "db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814",
+              "file": "preuves/db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814.gz"
             },
-            "captured_at": "2026-10-26T11:25:40.358354+01:00",
+            "captured_at": "2026-10-26T12:41:59.487673+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1660,8 +1258,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.8,
-              "dateRapport": 1793009733000,
+              "nombreIndicateurTendance": 1.92,
+              "dateRapport": 1793014233000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -1677,24 +1275,24 @@
             "source_title": "R1 Course N°4 : C4 - Prix de la Route des Princes",
             "evidence": {
               "url": "https://www.zone-turf.fr/quinte/lundi-26-octobre-2026/",
-              "sha256": "9b07e121784f2b06d5fbdfa4e7698a76dfc72a41548fa9c7cc1f2c04a9d713f8",
-              "file": "preuves/9b07e121784f2b06d5fbdfa4e7698a76dfc72a41548fa9c7cc1f2c04a9d713f8.gz"
+              "sha256": "952e5d1e568c71d5a989dc78b3c28ff786c682ce124d09210cef867c31f58d97",
+              "file": "preuves/952e5d1e568c71d5a989dc78b3c28ff786c682ce124d09210cef867c31f58d97.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C4/participants",
-              "sha256": "df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a",
-              "file": "preuves/df721814eeff846b32a83612c02360b8ea9b8f2858aee5f9ccd6afd838c2e34a.gz"
+              "sha256": "db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814",
+              "file": "preuves/db3ba90f999a5258c28fd38100199e829ba5bac7b518b8c5071757369276e814.gz"
             },
-            "captured_at": "2026-10-26T11:25:40.932161+01:00",
+            "captured_at": "2026-10-26T12:41:59.888875+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.0,
+              "rapport": 9.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009733000,
+              "nombreIndicateurTendance": 3.15,
+              "dateRapport": 1793014233000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1706,28 +1304,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c4-chantilly-prix-de-la-route-des-princes",
-            "sha256": "1e35a36138a30bb3c0243d327ebb2f0d9e2c06655ac37a661b00e8bc40a5efeb",
-            "file": "preuves/1e35a36138a30bb3c0243d327ebb2f0d9e2c06655ac37a661b00e8bc40a5efeb.gz"
+            "sha256": "68e919b6b79913774d0b43179815d26ca25cd858f02aafd927b03b1b2e1705b2",
+            "file": "preuves/68e919b6b79913774d0b43179815d26ca25cd858f02aafd927b03b1b2e1705b2.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421639_prix-de-la-route-des-princes.html",
-            "sha256": "a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365",
-            "file": "preuves/a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365.gz"
+            "sha256": "4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc",
+            "file": "preuves/4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421639_prix-de-la-route-des-princes.html",
-            "sha256": "a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365",
-            "file": "preuves/a3ebaf93e0ae2f1fcbfb3d5abde47f501e1a0dbc74713ca38368ae087206e365.gz"
+            "sha256": "4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc",
+            "file": "preuves/4c8cebfb7970c5d0967a5419eab5677d0ab7ade1227587f229f16ea2cd9cfbbc.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693869-2026-10-26-chantilly-prix-de-la-route-des-princes/partants-pronostics",
-            "sha256": "da21bd5c22b0008d3bd832731d1f378c1f4ef2a73c215668ec171ed848fc79d5",
-            "file": "preuves/da21bd5c22b0008d3bd832731d1f378c1f4ef2a73c215668ec171ed848fc79d5.gz"
+            "sha256": "4ea0e424cd5bc02c1e22d1bc25a1b54b7a245fd14af61278dda5716d586ac417",
+            "file": "preuves/4ea0e424cd5bc02c1e22d1bc25a1b54b7a245fd14af61278dda5716d586ac417.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/quinte/lundi-26-octobre-2026/",
-            "sha256": "9b07e121784f2b06d5fbdfa4e7698a76dfc72a41548fa9c7cc1f2c04a9d713f8",
-            "file": "preuves/9b07e121784f2b06d5fbdfa4e7698a76dfc72a41548fa9c7cc1f2c04a9d713f8.gz"
+            "sha256": "952e5d1e568c71d5a989dc78b3c28ff786c682ce124d09210cef867c31f58d97",
+            "file": "preuves/952e5d1e568c71d5a989dc78b3c28ff786c682ce124d09210cef867c31f58d97.gz"
           }
         }
       },
@@ -1749,24 +1347,24 @@
             "source_title": "Criterium De Vitesse",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c5-chantilly-criterium-de-vitesse",
-              "sha256": "2fe4ed7b41b98246c856b5ec9e73d1e7d024237f5ad3a184b986df5d5701a0fa",
-              "file": "preuves/2fe4ed7b41b98246c856b5ec9e73d1e7d024237f5ad3a184b986df5d5701a0fa.gz"
+              "sha256": "fcef521fd1e8f14c6ff5b14f80e4b72446c1898ab2af28c545d652ef4d1e2e60",
+              "file": "preuves/fcef521fd1e8f14c6ff5b14f80e4b72446c1898ab2af28c545d652ef4d1e2e60.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C5/participants",
-              "sha256": "886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225",
-              "file": "preuves/886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225.gz"
+              "sha256": "171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92",
+              "file": "preuves/171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92.gz"
             },
-            "captured_at": "2026-10-26T11:25:42.365416+01:00",
+            "captured_at": "2026-10-26T12:42:01.716234+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 4.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 8.57,
-              "dateRapport": 1793009757000,
+              "nombreIndicateurTendance": 5.0,
+              "dateRapport": 1793014257000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -1782,24 +1380,24 @@
             "source_title": "Le pronostic du CRITERIUM DE VITESSE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421640_criterium-de-vitesse.html",
-              "sha256": "5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a",
-              "file": "preuves/5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a.gz"
+              "sha256": "18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1",
+              "file": "preuves/18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C5/participants",
-              "sha256": "886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225",
-              "file": "preuves/886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225.gz"
+              "sha256": "171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92",
+              "file": "preuves/171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92.gz"
             },
-            "captured_at": "2026-10-26T11:25:42.970301+01:00",
+            "captured_at": "2026-10-26T12:42:02.262173+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 4.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 8.57,
-              "dateRapport": 1793009757000,
+              "nombreIndicateurTendance": 5.0,
+              "dateRapport": 1793014257000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -1815,24 +1413,24 @@
             "source_title": "Le pronostic du CRITERIUM DE VITESSE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421640_criterium-de-vitesse.html",
-              "sha256": "5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a",
-              "file": "preuves/5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a.gz"
+              "sha256": "18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1",
+              "file": "preuves/18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C5/participants",
-              "sha256": "886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225",
-              "file": "preuves/886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225.gz"
+              "sha256": "171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92",
+              "file": "preuves/171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92.gz"
             },
-            "captured_at": "2026-10-26T11:25:43.022247+01:00",
+            "captured_at": "2026-10-26T12:42:02.320623+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 4.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 8.57,
-              "dateRapport": 1793009757000,
+              "nombreIndicateurTendance": 5.0,
+              "dateRapport": 1793014257000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -1848,15 +1446,15 @@
             "source_title": "Critérium de Vitesse",
             "evidence": {
               "url": "https://www.geny.com/course/1693870-2026-10-26-chantilly-criterium-de-vitesse/partants-pronostics",
-              "sha256": "bfb75cf397e5535604e915d6af443cb5bf50decbd110e995fd26a4510e0aa861",
-              "file": "preuves/bfb75cf397e5535604e915d6af443cb5bf50decbd110e995fd26a4510e0aa861.gz"
+              "sha256": "3e00c059e0b7af94b03f4c6727db0728b53d640fad4d82027f999158e9d39ff3",
+              "file": "preuves/3e00c059e0b7af94b03f4c6727db0728b53d640fad4d82027f999158e9d39ff3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C5/participants",
-              "sha256": "886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225",
-              "file": "preuves/886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225.gz"
+              "sha256": "171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92",
+              "file": "preuves/171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92.gz"
             },
-            "captured_at": "2026-10-26T11:26:00.319743+01:00",
+            "captured_at": "2026-10-26T12:42:19.574969+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1864,8 +1462,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.73,
-              "dateRapport": 1793009757000,
+              "nombreIndicateurTendance": 0.84,
+              "dateRapport": 1793014257000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -1881,24 +1479,24 @@
             "source_title": "R1 Course N°5 : C5 - Criterium de Vitesse",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-              "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-              "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+              "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+              "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C5/participants",
-              "sha256": "886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225",
-              "file": "preuves/886c7771272b7dcf6bfe066e010aba0f0a8bff950aa83a5d19eaaa79687f6225.gz"
+              "sha256": "171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92",
+              "file": "preuves/171245b80e404f683d773f96033fcf4afe9c7a79d533fa4fcec9e4ba01367e92.gz"
             },
-            "captured_at": "2026-10-26T11:26:00.736736+01:00",
+            "captured_at": "2026-10-26T12:42:20.042744+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.5,
-              "dateRapport": 1793009757000,
+              "nombreIndicateurTendance": -2.6,
+              "dateRapport": 1793014257000,
               "favoris": false,
               "numPmu1": 12,
               "grossePrise": false
@@ -1910,28 +1508,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c5-chantilly-criterium-de-vitesse",
-            "sha256": "2fe4ed7b41b98246c856b5ec9e73d1e7d024237f5ad3a184b986df5d5701a0fa",
-            "file": "preuves/2fe4ed7b41b98246c856b5ec9e73d1e7d024237f5ad3a184b986df5d5701a0fa.gz"
+            "sha256": "fcef521fd1e8f14c6ff5b14f80e4b72446c1898ab2af28c545d652ef4d1e2e60",
+            "file": "preuves/fcef521fd1e8f14c6ff5b14f80e4b72446c1898ab2af28c545d652ef4d1e2e60.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421640_criterium-de-vitesse.html",
-            "sha256": "5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a",
-            "file": "preuves/5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a.gz"
+            "sha256": "18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1",
+            "file": "preuves/18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421640_criterium-de-vitesse.html",
-            "sha256": "5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a",
-            "file": "preuves/5ed615e8617b1aea468e3e0ff127295e9397071fdc7f6ad0ad41e12c4574276a.gz"
+            "sha256": "18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1",
+            "file": "preuves/18ac444c7359d3c5a7f64907ef853da8917b4c4e4b3cf0fb98ffa14e6a00b9b1.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693870-2026-10-26-chantilly-criterium-de-vitesse/partants-pronostics",
-            "sha256": "bfb75cf397e5535604e915d6af443cb5bf50decbd110e995fd26a4510e0aa861",
-            "file": "preuves/bfb75cf397e5535604e915d6af443cb5bf50decbd110e995fd26a4510e0aa861.gz"
+            "sha256": "3e00c059e0b7af94b03f4c6727db0728b53d640fad4d82027f999158e9d39ff3",
+            "file": "preuves/3e00c059e0b7af94b03f4c6727db0728b53d640fad4d82027f999158e9d39ff3.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-            "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+            "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+            "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
           }
         }
       },
@@ -1953,24 +1551,24 @@
             "source_title": "Prix De La Route Des Blanchisseurs",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c6-chantilly-prix-de-la-route-des-blanchisseurs",
-              "sha256": "21b8e6fcdb9be47670e5ef4e5b6924d9472745d7602e1bcefe41bc93e368a773",
-              "file": "preuves/21b8e6fcdb9be47670e5ef4e5b6924d9472745d7602e1bcefe41bc93e368a773.gz"
+              "sha256": "2a9fd87d423ec82eb0e9905debbc20f456c66155b9b2e573a7315d1d2ce23636",
+              "file": "preuves/2a9fd87d423ec82eb0e9905debbc20f456c66155b9b2e573a7315d1d2ce23636.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C6/participants",
-              "sha256": "6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e",
-              "file": "preuves/6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e.gz"
+              "sha256": "131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51",
+              "file": "preuves/131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51.gz"
             },
-            "captured_at": "2026-10-26T11:26:02.732867+01:00",
+            "captured_at": "2026-10-26T12:42:21.357849+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793009756000,
+              "nombreIndicateurTendance": 4.65,
+              "dateRapport": 1793014256000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -1986,24 +1584,24 @@
             "source_title": "Le pronostic du PRIX DE LA ROUTE DES BLANCHISSEURS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421641_prix-de-la-route-des-blanchisseurs.html",
-              "sha256": "a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c",
-              "file": "preuves/a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c.gz"
+              "sha256": "3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07",
+              "file": "preuves/3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C6/participants",
-              "sha256": "6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e",
-              "file": "preuves/6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e.gz"
+              "sha256": "131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51",
+              "file": "preuves/131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51.gz"
             },
-            "captured_at": "2026-10-26T11:26:03.401660+01:00",
+            "captured_at": "2026-10-26T12:42:21.910348+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.5,
+              "rapport": 7.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.16,
-              "dateRapport": 1793009756000,
+              "nombreIndicateurTendance": 4.47,
+              "dateRapport": 1793014256000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -2019,24 +1617,24 @@
             "source_title": "Le pronostic du PRIX DE LA ROUTE DES BLANCHISSEURS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421641_prix-de-la-route-des-blanchisseurs.html",
-              "sha256": "a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c",
-              "file": "preuves/a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c.gz"
+              "sha256": "3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07",
+              "file": "preuves/3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C6/participants",
-              "sha256": "6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e",
-              "file": "preuves/6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e.gz"
+              "sha256": "131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51",
+              "file": "preuves/131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51.gz"
             },
-            "captured_at": "2026-10-26T11:26:03.449755+01:00",
+            "captured_at": "2026-10-26T12:42:21.968103+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.5,
+              "rapport": 7.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.16,
-              "dateRapport": 1793009756000,
+              "nombreIndicateurTendance": 4.47,
+              "dateRapport": 1793014256000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -2052,24 +1650,24 @@
             "source_title": "Prix de la Route des Blanchisseurs",
             "evidence": {
               "url": "https://www.geny.com/course/1693871-2026-10-26-chantilly-prix-de-la-route-des-blanchisseurs/partants-pronostics",
-              "sha256": "8531c7d9b0cb04619cc7f24ec0afb1167c36502b9ad2c692f49baf231c236432",
-              "file": "preuves/8531c7d9b0cb04619cc7f24ec0afb1167c36502b9ad2c692f49baf231c236432.gz"
+              "sha256": "bdcfe174845e0e8a54ef3055a6545d43f939b149a1e2179f227ba9928167acb1",
+              "file": "preuves/bdcfe174845e0e8a54ef3055a6545d43f939b149a1e2179f227ba9928167acb1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C6/participants",
-              "sha256": "6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e",
-              "file": "preuves/6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e.gz"
+              "sha256": "131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51",
+              "file": "preuves/131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51.gz"
             },
-            "captured_at": "2026-10-26T11:26:20.721409+01:00",
+            "captured_at": "2026-10-26T12:42:39.827980+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -7.59,
-              "dateRapport": 1793009756000,
+              "nombreIndicateurTendance": -13.51,
+              "dateRapport": 1793014256000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -2085,24 +1683,24 @@
             "source_title": "R1 Course N°6 : C6 - Prix de la Route des Blanchisseurs",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-              "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-              "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+              "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+              "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C6/participants",
-              "sha256": "6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e",
-              "file": "preuves/6ddb8d2a2a912eecc6885e4cda948821a252c8990b89ffdeec5488e9abf6826e.gz"
+              "sha256": "131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51",
+              "file": "preuves/131dbc9383d2754870903a28b3e80a8b15e585458d7b8d56f11da2bdeb0c8a51.gz"
             },
-            "captured_at": "2026-10-26T11:26:21.122912+01:00",
+            "captured_at": "2026-10-26T12:42:40.342725+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -7.59,
-              "dateRapport": 1793009756000,
+              "nombreIndicateurTendance": -13.51,
+              "dateRapport": 1793014256000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -2114,28 +1712,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c6-chantilly-prix-de-la-route-des-blanchisseurs",
-            "sha256": "21b8e6fcdb9be47670e5ef4e5b6924d9472745d7602e1bcefe41bc93e368a773",
-            "file": "preuves/21b8e6fcdb9be47670e5ef4e5b6924d9472745d7602e1bcefe41bc93e368a773.gz"
+            "sha256": "2a9fd87d423ec82eb0e9905debbc20f456c66155b9b2e573a7315d1d2ce23636",
+            "file": "preuves/2a9fd87d423ec82eb0e9905debbc20f456c66155b9b2e573a7315d1d2ce23636.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421641_prix-de-la-route-des-blanchisseurs.html",
-            "sha256": "a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c",
-            "file": "preuves/a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c.gz"
+            "sha256": "3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07",
+            "file": "preuves/3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421641_prix-de-la-route-des-blanchisseurs.html",
-            "sha256": "a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c",
-            "file": "preuves/a7ad96e31f9a4a7df97afe97d359bdc45e1d82c5019ce5497edff335343a403c.gz"
+            "sha256": "3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07",
+            "file": "preuves/3197f712268953563b889bcf23e7de1f379e8aba248cb7683949f2cf5c2ddf07.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693871-2026-10-26-chantilly-prix-de-la-route-des-blanchisseurs/partants-pronostics",
-            "sha256": "8531c7d9b0cb04619cc7f24ec0afb1167c36502b9ad2c692f49baf231c236432",
-            "file": "preuves/8531c7d9b0cb04619cc7f24ec0afb1167c36502b9ad2c692f49baf231c236432.gz"
+            "sha256": "bdcfe174845e0e8a54ef3055a6545d43f939b149a1e2179f227ba9928167acb1",
+            "file": "preuves/bdcfe174845e0e8a54ef3055a6545d43f939b149a1e2179f227ba9928167acb1.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-chantilly-199647.html",
-            "sha256": "6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b",
-            "file": "preuves/6c2d7f49e34c06ec33df068e893e728b4d45c9b85bd567a8178af3c42edbf29b.gz"
+            "sha256": "32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5",
+            "file": "preuves/32eebabcac395a8005206ba6114c80125c9e91c54342b7da179816185677efe5.gz"
           }
         }
       },
@@ -2157,25 +1755,25 @@
             "source_title": "Prix De La Route Belleval",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c7-chantilly-prix-de-la-route-belleval",
-              "sha256": "75049ad009c4a8b485b5e0acbe70727c0929da4008220258667636a35ced5d35",
-              "file": "preuves/75049ad009c4a8b485b5e0acbe70727c0929da4008220258667636a35ced5d35.gz"
+              "sha256": "d138e926f521b2240d36898ee17001884e9138deba3395bec154c91da3a562d0",
+              "file": "preuves/d138e926f521b2240d36898ee17001884e9138deba3395bec154c91da3a562d0.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C7/participants",
-              "sha256": "00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c",
-              "file": "preuves/00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c.gz"
+              "sha256": "a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15",
+              "file": "preuves/a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15.gz"
             },
-            "captured_at": "2026-10-26T11:26:23.172115+01:00",
+            "captured_at": "2026-10-26T12:42:42.107421+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.8,
+              "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -14.7,
-              "dateRapport": 1793009710000,
-              "favoris": false,
+              "nombreIndicateurTendance": -1.81,
+              "dateRapport": 1793014210000,
+              "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -2190,25 +1788,25 @@
             "source_title": "Le pronostic du PRIX DE LA ROUTE BELLEVAL",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421642_prix-de-la-route-belleval.html",
-              "sha256": "0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe",
-              "file": "preuves/0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe.gz"
+              "sha256": "f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c",
+              "file": "preuves/f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C7/participants",
-              "sha256": "00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c",
-              "file": "preuves/00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c.gz"
+              "sha256": "a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15",
+              "file": "preuves/a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15.gz"
             },
-            "captured_at": "2026-10-26T11:26:23.815621+01:00",
+            "captured_at": "2026-10-26T12:42:42.682989+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.8,
+              "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -14.7,
-              "dateRapport": 1793009710000,
-              "favoris": false,
+              "nombreIndicateurTendance": -1.81,
+              "dateRapport": 1793014210000,
+              "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -2223,24 +1821,24 @@
             "source_title": "Le pronostic du PRIX DE LA ROUTE BELLEVAL",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421642_prix-de-la-route-belleval.html",
-              "sha256": "0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe",
-              "file": "preuves/0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe.gz"
+              "sha256": "f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c",
+              "file": "preuves/f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C7/participants",
-              "sha256": "00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c",
-              "file": "preuves/00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c.gz"
+              "sha256": "a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15",
+              "file": "preuves/a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15.gz"
             },
-            "captured_at": "2026-10-26T11:26:23.866262+01:00",
+            "captured_at": "2026-10-26T12:42:42.740878+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 6.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.98,
-              "dateRapport": 1793009710000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1793014210000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -2256,25 +1854,25 @@
             "source_title": "Prix de la Route Belleval",
             "evidence": {
               "url": "https://www.geny.com/course/1693872-2026-10-26-chantilly-prix-de-la-route-belleval/partants-pronostics",
-              "sha256": "e2386a2fec434e02d611e5142087e0e68b75c1aef26fc7cc8ed5c0314f20aa6a",
-              "file": "preuves/e2386a2fec434e02d611e5142087e0e68b75c1aef26fc7cc8ed5c0314f20aa6a.gz"
+              "sha256": "19f7fd978dba92413107bd984d3ab902b7ec7a79e0d95f230c4ac0a513a2ad2a",
+              "file": "preuves/19f7fd978dba92413107bd984d3ab902b7ec7a79e0d95f230c4ac0a513a2ad2a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C7/participants",
-              "sha256": "00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c",
-              "file": "preuves/00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c.gz"
+              "sha256": "a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15",
+              "file": "preuves/a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15.gz"
             },
-            "captured_at": "2026-10-26T11:26:40.595998+01:00",
+            "captured_at": "2026-10-26T12:42:59.842690+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.8,
+              "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -14.7,
-              "dateRapport": 1793009710000,
-              "favoris": false,
+              "nombreIndicateurTendance": -1.81,
+              "dateRapport": 1793014210000,
+              "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -2289,24 +1887,24 @@
             "source_title": "R1 Course N°7 : C7 - Prix de la Route Belleval",
             "evidence": {
               "url": "https://www.zone-turf.fr/pick5/lundi-26-octobre-2026/R1C7/",
-              "sha256": "5596f54426cc5261a734fba318abbd20315d68a63d7325be96103f9b9eaa1510",
-              "file": "preuves/5596f54426cc5261a734fba318abbd20315d68a63d7325be96103f9b9eaa1510.gz"
+              "sha256": "f751631b3c59d3875380172600d2c29fa1689860efec73cc60042914b5404dd4",
+              "file": "preuves/f751631b3c59d3875380172600d2c29fa1689860efec73cc60042914b5404dd4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C7/participants",
-              "sha256": "00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c",
-              "file": "preuves/00dbee104e657d429f98aaf6fddb31d6e8a64d12aec143e21e499ef924ed569c.gz"
+              "sha256": "a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15",
+              "file": "preuves/a68bf6226c385ab202653de2293c8aee9a5baa5caabcfa10e425e5109ea7ec15.gz"
             },
-            "captured_at": "2026-10-26T11:26:41.213900+01:00",
+            "captured_at": "2026-10-26T12:43:00.593789+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.6,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.12,
-              "dateRapport": 1793009710000,
+              "nombreIndicateurTendance": 0.94,
+              "dateRapport": 1793014210000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -2318,28 +1916,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c7-chantilly-prix-de-la-route-belleval",
-            "sha256": "75049ad009c4a8b485b5e0acbe70727c0929da4008220258667636a35ced5d35",
-            "file": "preuves/75049ad009c4a8b485b5e0acbe70727c0929da4008220258667636a35ced5d35.gz"
+            "sha256": "d138e926f521b2240d36898ee17001884e9138deba3395bec154c91da3a562d0",
+            "file": "preuves/d138e926f521b2240d36898ee17001884e9138deba3395bec154c91da3a562d0.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421642_prix-de-la-route-belleval.html",
-            "sha256": "0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe",
-            "file": "preuves/0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe.gz"
+            "sha256": "f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c",
+            "file": "preuves/f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421642_prix-de-la-route-belleval.html",
-            "sha256": "0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe",
-            "file": "preuves/0b3fae1a05651254cc40febde7626f2e4a96190ecb292138dcc5878a2cae9bbe.gz"
+            "sha256": "f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c",
+            "file": "preuves/f69bddacde433b5083258c7cd427ddeae2415d2241e4c49781e09850deb8923c.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693872-2026-10-26-chantilly-prix-de-la-route-belleval/partants-pronostics",
-            "sha256": "e2386a2fec434e02d611e5142087e0e68b75c1aef26fc7cc8ed5c0314f20aa6a",
-            "file": "preuves/e2386a2fec434e02d611e5142087e0e68b75c1aef26fc7cc8ed5c0314f20aa6a.gz"
+            "sha256": "19f7fd978dba92413107bd984d3ab902b7ec7a79e0d95f230c4ac0a513a2ad2a",
+            "file": "preuves/19f7fd978dba92413107bd984d3ab902b7ec7a79e0d95f230c4ac0a513a2ad2a.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/pick5/lundi-26-octobre-2026/R1C7/",
-            "sha256": "5596f54426cc5261a734fba318abbd20315d68a63d7325be96103f9b9eaa1510",
-            "file": "preuves/5596f54426cc5261a734fba318abbd20315d68a63d7325be96103f9b9eaa1510.gz"
+            "sha256": "f751631b3c59d3875380172600d2c29fa1689860efec73cc60042914b5404dd4",
+            "file": "preuves/f751631b3c59d3875380172600d2c29fa1689860efec73cc60042914b5404dd4.gz"
           }
         }
       },
@@ -2361,24 +1959,24 @@
             "source_title": "Prix De Seine-Et-Oise",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-26/r1c8-chantilly-prix-de-seine-et-oise",
-              "sha256": "3f217be92f283d7c1626b0a1965a72d2c0d99c957ff0aaae4f6cd8bb85de6002",
-              "file": "preuves/3f217be92f283d7c1626b0a1965a72d2c0d99c957ff0aaae4f6cd8bb85de6002.gz"
+              "sha256": "28321aa318f43a3c23b931a9f00f9b800d00442c74f5fd7350a28742879b64ba",
+              "file": "preuves/28321aa318f43a3c23b931a9f00f9b800d00442c74f5fd7350a28742879b64ba.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C8/participants",
-              "sha256": "d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400",
-              "file": "preuves/d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400.gz"
+              "sha256": "fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2",
+              "file": "preuves/fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2.gz"
             },
-            "captured_at": "2026-10-26T11:26:43.095267+01:00",
+            "captured_at": "2026-10-26T12:43:02.158486+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.42,
-              "dateRapport": 1793009740000,
+              "nombreIndicateurTendance": 4.16,
+              "dateRapport": 1793014240000,
               "favoris": true,
               "numPmu1": 17,
               "grossePrise": false
@@ -2394,24 +1992,24 @@
             "source_title": "Le pronostic du PRIX DE SEINE-ET-OISE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421643_prix-de-seine-et-oise.html",
-              "sha256": "14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca",
-              "file": "preuves/14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca.gz"
+              "sha256": "f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e",
+              "file": "preuves/f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C8/participants",
-              "sha256": "d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400",
-              "file": "preuves/d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400.gz"
+              "sha256": "fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2",
+              "file": "preuves/fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2.gz"
             },
-            "captured_at": "2026-10-26T11:26:43.735713+01:00",
+            "captured_at": "2026-10-26T12:43:02.763549+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.9,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.22,
-              "dateRapport": 1793009740000,
+              "nombreIndicateurTendance": 1.98,
+              "dateRapport": 1793014240000,
               "favoris": false,
               "numPmu1": 19,
               "grossePrise": false
@@ -2427,24 +2025,24 @@
             "source_title": "Le pronostic du PRIX DE SEINE-ET-OISE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421643_prix-de-seine-et-oise.html",
-              "sha256": "14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca",
-              "file": "preuves/14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca.gz"
+              "sha256": "f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e",
+              "file": "preuves/f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C8/participants",
-              "sha256": "d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400",
-              "file": "preuves/d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400.gz"
+              "sha256": "fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2",
+              "file": "preuves/fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2.gz"
             },
-            "captured_at": "2026-10-26T11:26:43.791013+01:00",
+            "captured_at": "2026-10-26T12:43:02.827135+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 14.0,
+              "rapport": 15.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.0,
-              "dateRapport": 1793009740000,
+              "nombreIndicateurTendance": -2.58,
+              "dateRapport": 1793014240000,
               "favoris": false,
               "numPmu1": 16,
               "grossePrise": false
@@ -2460,15 +2058,15 @@
             "source_title": "Prix de Seine-et-Oise",
             "evidence": {
               "url": "https://www.geny.com/course/1693873-2026-10-26-chantilly-prix-de-seine-et-oise/partants-pronostics",
-              "sha256": "ac84f46c14034d42993a1e5aed15d4bebed99da5198c7dd3040663add882e108",
-              "file": "preuves/ac84f46c14034d42993a1e5aed15d4bebed99da5198c7dd3040663add882e108.gz"
+              "sha256": "86cbf1f1c2a4aae61c195a8bafad0d0150704c88eea1214955d071b37c1113bb",
+              "file": "preuves/86cbf1f1c2a4aae61c195a8bafad0d0150704c88eea1214955d071b37c1113bb.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C8/participants",
-              "sha256": "d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400",
-              "file": "preuves/d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400.gz"
+              "sha256": "fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2",
+              "file": "preuves/fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2.gz"
             },
-            "captured_at": "2026-10-26T11:27:00.628961+01:00",
+            "captured_at": "2026-10-26T12:43:19.767412+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2476,8 +2074,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.35,
-              "dateRapport": 1793009740000,
+              "nombreIndicateurTendance": -4.31,
+              "dateRapport": 1793014240000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -2493,24 +2091,24 @@
             "source_title": "R1 Course N°8 : C8 - Prix de Seine-Et-Oise",
             "evidence": {
               "url": "https://www.zone-turf.fr/pick5/lundi-26-octobre-2026/R1C8/",
-              "sha256": "77dcd2340dfe9fff563da8848433c8d089b8290003af03ba16423733c2034887",
-              "file": "preuves/77dcd2340dfe9fff563da8848433c8d089b8290003af03ba16423733c2034887.gz"
+              "sha256": "0734c0b5ae3d2287b236231ec3840e625c118ca2a1cb680ec7ecc2f6eecc837b",
+              "file": "preuves/0734c0b5ae3d2287b236231ec3840e625c118ca2a1cb680ec7ecc2f6eecc837b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C8/participants",
-              "sha256": "d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400",
-              "file": "preuves/d907a596818163ca75a1233e44edf34a8bfcc28d2ceae9e3f7a6110d476ba400.gz"
+              "sha256": "fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2",
+              "file": "preuves/fb98a112987232773125be2a223bda86ca5190983ff5aaa8b6e2e7bc427085b2.gz"
             },
-            "captured_at": "2026-10-26T11:27:01.305206+01:00",
+            "captured_at": "2026-10-26T12:43:20.541586+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 14.0,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.14,
-              "dateRapport": 1793009740000,
+              "nombreIndicateurTendance": -2.54,
+              "dateRapport": 1793014240000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -2522,28 +2120,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-26/r1c8-chantilly-prix-de-seine-et-oise",
-            "sha256": "3f217be92f283d7c1626b0a1965a72d2c0d99c957ff0aaae4f6cd8bb85de6002",
-            "file": "preuves/3f217be92f283d7c1626b0a1965a72d2c0d99c957ff0aaae4f6cd8bb85de6002.gz"
+            "sha256": "28321aa318f43a3c23b931a9f00f9b800d00442c74f5fd7350a28742879b64ba",
+            "file": "preuves/28321aa318f43a3c23b931a9f00f9b800d00442c74f5fd7350a28742879b64ba.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421643_prix-de-seine-et-oise.html",
-            "sha256": "14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca",
-            "file": "preuves/14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca.gz"
+            "sha256": "f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e",
+            "file": "preuves/f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421643_prix-de-seine-et-oise.html",
-            "sha256": "14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca",
-            "file": "preuves/14dc74e7d8d1bb6d076a5b90b8a311ea2363dd3f1a2b9135a6b648d381e25bca.gz"
+            "sha256": "f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e",
+            "file": "preuves/f302802608e67a2d3bbf813b334153865a774128ee4c5a407d18c9163244f73e.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1693873-2026-10-26-chantilly-prix-de-seine-et-oise/partants-pronostics",
-            "sha256": "ac84f46c14034d42993a1e5aed15d4bebed99da5198c7dd3040663add882e108",
-            "file": "preuves/ac84f46c14034d42993a1e5aed15d4bebed99da5198c7dd3040663add882e108.gz"
+            "sha256": "86cbf1f1c2a4aae61c195a8bafad0d0150704c88eea1214955d071b37c1113bb",
+            "file": "preuves/86cbf1f1c2a4aae61c195a8bafad0d0150704c88eea1214955d071b37c1113bb.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/pick5/lundi-26-octobre-2026/R1C8/",
-            "sha256": "77dcd2340dfe9fff563da8848433c8d089b8290003af03ba16423733c2034887",
-            "file": "preuves/77dcd2340dfe9fff563da8848433c8d089b8290003af03ba16423733c2034887.gz"
+            "sha256": "0734c0b5ae3d2287b236231ec3840e625c118ca2a1cb680ec7ecc2f6eecc837b",
+            "file": "preuves/0734c0b5ae3d2287b236231ec3840e625c118ca2a1cb680ec7ecc2f6eecc837b.gz"
           }
         }
       }
