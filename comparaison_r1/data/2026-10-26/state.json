@@ -3,7 +3,33 @@
   "venue": "CHANTILLY",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-26T12:00:00+01:00",
+          "number": 8,
+          "name": "LEFTEYE",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-26T11:37:22.314324+01:00",
+          "source_captured_at": "2026-10-26T11:21:53.364488+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.12,
+            "dateRapport": 1793011001000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -209,9 +235,190 @@
       "title": "PRIX ISONOMY",
       "departure": "2026-10-26T12:35:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 5,
+          "name": "JULIAN SCHNABEL",
+          "source_url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Isonomy",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
+            "sha256": "dff6f07e20cfa07951d80a9db574c07f8c6705e11ec34db4230c8befa65bbc78",
+            "file": "preuves/dff6f07e20cfa07951d80a9db574c07f8c6705e11ec34db4230c8befa65bbc78.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168",
+            "file": "preuves/a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168.gz"
+          },
+          "captured_at": "2026-10-26T11:36:59.658684+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.34,
+            "dateRapport": 1793010620000,
+            "favoris": true,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "SYDNEY MOON",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ISONOMY",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+            "sha256": "e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37",
+            "file": "preuves/e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168",
+            "file": "preuves/a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168.gz"
+          },
+          "captured_at": "2026-10-26T11:37:01.207206+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -9.89,
+            "dateRapport": 1793010620000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 5,
+          "name": "JULIAN SCHNABEL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ISONOMY",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+            "sha256": "e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37",
+            "file": "preuves/e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168",
+            "file": "preuves/a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168.gz"
+          },
+          "captured_at": "2026-10-26T11:37:01.251251+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.34,
+            "dateRapport": 1793010620000,
+            "favoris": true,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 5,
+          "name": "JULIAN SCHNABEL",
+          "source_url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Isonomy",
+          "evidence": {
+            "url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
+            "sha256": "845f3a6f6b6a3e49fc4dc565772b28ff9b017885751b7ccd06ea6d6b9be6df64",
+            "file": "preuves/845f3a6f6b6a3e49fc4dc565772b28ff9b017885751b7ccd06ea6d6b9be6df64.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26102026/R1/C2/participants",
+            "sha256": "a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168",
+            "file": "preuves/a5e62d202559082c8ba75f8df216594d0ca31ec7689444ed767d1ad16e306168.gz"
+          },
+          "captured_at": "2026-10-26T11:37:21.839995+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.34,
+            "dateRapport": 1793010620000,
+            "favoris": true,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 5,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 5,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_geny+turfin+zeturf": {
+          "number": 5,
+          "sites": [
+            "turfin",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-26/r1c2-chantilly-prix-isonomy",
+          "sha256": "dff6f07e20cfa07951d80a9db574c07f8c6705e11ec34db4230c8befa65bbc78",
+          "file": "preuves/dff6f07e20cfa07951d80a9db574c07f8c6705e11ec34db4230c8befa65bbc78.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+          "sha256": "e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37",
+          "file": "preuves/e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-26/chantilly/421637_prix-isonomy.html",
+          "sha256": "e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37",
+          "file": "preuves/e377ca9757cf4db249eb785da9b0fca330bc76f7383927b4cb9b3dad83068d37.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1693867-2026-10-26-chantilly-prix-isonomy/partants-pronostics",
+          "sha256": "845f3a6f6b6a3e49fc4dc565772b28ff9b017885751b7ccd06ea6d6b9be6df64",
+          "file": "preuves/845f3a6f6b6a3e49fc4dc565772b28ff9b017885751b7ccd06ea6d6b9be6df64.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-26T11:37:21.840052+01:00"
     },
     {
       "date": "2026-10-26",
