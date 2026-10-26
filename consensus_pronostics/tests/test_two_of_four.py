@@ -24,6 +24,18 @@ class TwoOfFourTests(unittest.TestCase):
   race['date']='2026-10-18';self.assertEqual(tickets(a,race),[])
   race['date']='2026-10-19';race['internet_2sur4_available']=False
   self.assertFalse(any(t['qualified'] for t in tickets(a,race)))
+ def test_nonrunner_zero_placeholders_do_not_block_two_partant_settlement(self):
+  r=self.reports()
+  r[0]['rapports'] += [{'combinaison':f'{n}-NP','libelle':'e-2sur4 1 NP','dividendePourUnEuro':0} for n in (4,5,9,10)]
+  self.assertEqual(payout([4,5],self.people(),r),Decimal('45.60'))
+  self.assertEqual(payout([1,4],self.people(),r),0)
+  r[0]['rapports']=r[0]['rapports'][6:]
+  self.assertIsNone(payout([1,4],self.people(),r))
+ def test_zero_normal_dividend_and_conflicting_reports_stay_pending(self):
+  r=self.reports();r[0]['rapports'][0]['dividendePourUnEuro']=0
+  self.assertIsNone(payout([1,4],self.people(),r))
+  r=self.reports();r[0]['rapports'].append(dict(r[0]['rapports'][0]))
+  self.assertIsNone(payout([4,5],self.people(),r))
  def test_requires_explicit_new_ticket_confirmed_before_departure(self):
   race={'date':'2026-10-19','departure':'2026-10-19T12:00:00+00:00','internet_2sur4_available':True}
   a={'profiles':[{'id':'statistique','numbers':[1,2,3,4,5],'qualified':True}]};a['two_of_four']=tickets(a,race)
@@ -33,3 +45,4 @@ class TwoOfFourTests(unittest.TestCase):
   self.assertIsNotNone(select_ticket([s],ledger,'statistique'))
   ledger[0]['sent_at']='2026-10-19T12:01:00+00:00'
   self.assertIsNone(select_ticket([s],ledger,'statistique'))
+

@@ -44,7 +44,7 @@ def freeze(race, site, tip, horse, now):
     if horse.get('statut') not in ('PARTANT','NON_PARTANT'):return False
     race['tips'][site]={**tip,'captured_at':now.isoformat(),
         'odds':horse.get('dernierRapportDirect') or horse.get('dernierRapportReference'),
-        'stake_cents':0,
+        'stake_cents':0,'departure_at_capture':race['departure'],
         'playable':horse['statut']=='PARTANT' and race['market'],
         'status':'EN_ATTENTE' if horse['statut']=='PARTANT' and race['market'] else 'NON_JOUE'}
     return True
@@ -142,6 +142,22 @@ def account(solution):
             'return_cents':returned,'profit_cents':profit,'next_stake_cents':next_stake,
             'pending_stake_cents':committed-settled_stakes,'consecutive_losses':losses,'stop':stop}
 
+def valid_capture_window(race,tip,now):
+    """A later pre-departure delay does not invalidate an already valid capture."""
+    try:
+        captured=datetime.fromisoformat(tip['captured_at'])
+        announced=tip.get('departure_at_capture')
+        if not announced:
+            changes=sorted(race.get('schedule_changes',[]),key=lambda x:datetime.fromisoformat(x['checked_at']))
+            announced=changes[0]['old'] if changes else race['departure']
+            for change in changes:
+                if datetime.fromisoformat(change['checked_at'])<=captured:
+                    announced=change['new']
+        return (0<(datetime.fromisoformat(announced)-captured).total_seconds()<=3600
+                and captured<=now and captured<datetime.fromisoformat(race['departure']))
+    except (KeyError,ValueError,TypeError):
+        return False
+
 def reserve(solution,race,tip,horse,now,voters=None):
     selected=groups(race.get('tips',{})).get('majorite_3_sur_5')
     if not selected or selected['number']!=tip['number'] or set(voters or [])!=set(selected['sites']):return False
@@ -149,7 +165,7 @@ def reserve(solution,race,tip,horse,now,voters=None):
         t=race['tips'][site]
         try:
             captured=datetime.fromisoformat(t['captured_at'])
-            if not 0<(datetime.fromisoformat(race['departure'])-captured).total_seconds()<=3600 or captured>now:return False
+            if not valid_capture_window(race,t,now):return False
         except (KeyError,ValueError,TypeError):return False
         if norm(t.get('name'))!=norm(horse.get('nom')):return False
     a=account(solution)

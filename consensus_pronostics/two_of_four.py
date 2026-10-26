@@ -35,6 +35,9 @@ def payout(ns,participants,reports):
     # Partial non-runner dividends need a specific official report: keep unresolved.
     if any(people[n].get('statut') in ('NON_PARTANT','NONPARTANT') for n in ns):return None
     rows=m.get('rapports',[])
+    # PMU also publishes zero-valued "5-NP" placeholders. They belong to
+    # non-runner tickets, not to the ordinary two-partant market evaluated here.
+    rows=[r for r in rows if not re.fullmatch(r'(?:\d+-NP|NP-\d+)',str(r.get('combinaison','')).strip(),re.IGNORECASE)]
     if not rows:return None
     try:
         rates=[Decimal(str(r['dividendePourUnEuro'])) for r in rows]
@@ -96,3 +99,4 @@ def evaluate(root):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');a=p.parse_args();evaluate(Path(a.output))
+
