@@ -1062,7 +1062,9 @@
           "new": "2026-10-27T17:27:00+01:00",
           "checked_at": "2026-10-27T17:13:47.843812+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-27",
@@ -1158,278 +1160,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-27T16:14:30.629337+01:00",
+    "captured_at": "2026-10-27T17:27:45.093603+01:00",
     "races": [
-      {
-        "date": "2026-10-27",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX DU VERGALY",
-        "departure": "2026-10-27T16:15:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "STEP MORNING",
-            "source_url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix du Vergaly",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
-              "sha256": "c30b71d2c942b8e7812fb440c4ba2086fbc78fc15d631ceba31fb474f93b2e76",
-              "file": "preuves/c30b71d2c942b8e7812fb440c4ba2086fbc78fc15d631ceba31fb474f93b2e76.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C5/participants",
-              "sha256": "bcb8080fa81e4eb8cb6063e85dd0c3a26f7aeae50c4f096afb1082a9991a76a7",
-              "file": "preuves/bcb8080fa81e4eb8cb6063e85dd0c3a26f7aeae50c4f096afb1082a9991a76a7.gz"
-            },
-            "captured_at": "2026-10-27T16:13:29.767129+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793113978000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "GUINESS STAR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DU VERGALY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
-              "sha256": "8efcb2c5a71992cd0883061eccdcba8bcbd0e9f971bb5ab3a21dab5b696e9984",
-              "file": "preuves/8efcb2c5a71992cd0883061eccdcba8bcbd0e9f971bb5ab3a21dab5b696e9984.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C5/participants",
-              "sha256": "bcb8080fa81e4eb8cb6063e85dd0c3a26f7aeae50c4f096afb1082a9991a76a7",
-              "file": "preuves/bcb8080fa81e4eb8cb6063e85dd0c3a26f7aeae50c4f096afb1082a9991a76a7.gz"
-            },
-            "captured_at": "2026-10-27T16:13:31.477007+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793113978000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
-            "sha256": "c30b71d2c942b8e7812fb440c4ba2086fbc78fc15d631ceba31fb474f93b2e76",
-            "file": "preuves/c30b71d2c942b8e7812fb440c4ba2086fbc78fc15d631ceba31fb474f93b2e76.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
-            "sha256": "8efcb2c5a71992cd0883061eccdcba8bcbd0e9f971bb5ab3a21dab5b696e9984",
-            "file": "preuves/8efcb2c5a71992cd0883061eccdcba8bcbd0e9f971bb5ab3a21dab5b696e9984.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-27",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX GOLD BEACH",
-        "departure": "2026-10-27T16:50:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 14,
-            "name": "WILD MOOR",
-            "source_url": "https://www.geny.com/course/1694079-2026-10-27-deauville-prix-gold-beach/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Gold Beach",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694079-2026-10-27-deauville-prix-gold-beach/partants-pronostics",
-              "sha256": "a79e6bf43887e7cd987dace5d17a9a6687ee4f4098a0467c2237e1c4b2259986",
-              "file": "preuves/a79e6bf43887e7cd987dace5d17a9a6687ee4f4098a0467c2237e1c4b2259986.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/participants",
-              "sha256": "8ea59fe5ed4d2e625b53b4ae5f274e6117eac4a60bf38b287414e17382c3aa2b",
-              "file": "preuves/8ea59fe5ed4d2e625b53b4ae5f274e6117eac4a60bf38b287414e17382c3aa2b.gz"
-            },
-            "captured_at": "2026-10-27T16:13:49.977903+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.89,
-              "dateRapport": 1793113238000,
-              "favoris": false,
-              "numPmu1": 14,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 1,
-            "name": "KODIACOLOR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421730_prix-gold-beach.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX GOLD BEACH",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421730_prix-gold-beach.html",
-              "sha256": "c3e2c500e7268e8d65cd4fbd524d7a3e5dea912d38af4194a504a9ba04471d48",
-              "file": "preuves/c3e2c500e7268e8d65cd4fbd524d7a3e5dea912d38af4194a504a9ba04471d48.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/participants",
-              "sha256": "8ea59fe5ed4d2e625b53b4ae5f274e6117eac4a60bf38b287414e17382c3aa2b",
-              "file": "preuves/8ea59fe5ed4d2e625b53b4ae5f274e6117eac4a60bf38b287414e17382c3aa2b.gz"
-            },
-            "captured_at": "2026-10-27T16:13:50.509555+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.83,
-              "dateRapport": 1793113238000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694079-2026-10-27-deauville-prix-gold-beach/partants-pronostics",
-            "sha256": "a79e6bf43887e7cd987dace5d17a9a6687ee4f4098a0467c2237e1c4b2259986",
-            "file": "preuves/a79e6bf43887e7cd987dace5d17a9a6687ee4f4098a0467c2237e1c4b2259986.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421730_prix-gold-beach.html",
-            "sha256": "c3e2c500e7268e8d65cd4fbd524d7a3e5dea912d38af4194a504a9ba04471d48",
-            "file": "preuves/c3e2c500e7268e8d65cd4fbd524d7a3e5dea912d38af4194a504a9ba04471d48.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-27",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PRIX JUNO BEACH",
-        "departure": "2026-10-27T17:25:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 9,
-            "name": "CRACK CITY",
-            "source_url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Juno Beach",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
-              "sha256": "f1bfb0112a2a1e76449d99069bc960324e957d5da29d5d04b745f7d5d53909a0",
-              "file": "preuves/f1bfb0112a2a1e76449d99069bc960324e957d5da29d5d04b745f7d5d53909a0.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
-              "sha256": "8a3a4d7a996972adf6f0c314d8da8eb22f50be88690351b924c44625e6482d15",
-              "file": "preuves/8a3a4d7a996972adf6f0c314d8da8eb22f50be88690351b924c44625e6482d15.gz"
-            },
-            "captured_at": "2026-10-27T16:14:09.802678+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 14.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.44,
-              "dateRapport": 1793113239000,
-              "favoris": false,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 3,
-            "name": "THE CAT'S",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX JUNO BEACH",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
-              "sha256": "2cc2b538c1689cca95acba83b580a4714473bae38fb26efc53e04d8493c9f251",
-              "file": "preuves/2cc2b538c1689cca95acba83b580a4714473bae38fb26efc53e04d8493c9f251.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
-              "sha256": "8a3a4d7a996972adf6f0c314d8da8eb22f50be88690351b924c44625e6482d15",
-              "file": "preuves/8a3a4d7a996972adf6f0c314d8da8eb22f50be88690351b924c44625e6482d15.gz"
-            },
-            "captured_at": "2026-10-27T16:14:10.321645+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.85,
-              "dateRapport": 1793113239000,
-              "favoris": true,
-              "numPmu1": 3,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
-            "sha256": "f1bfb0112a2a1e76449d99069bc960324e957d5da29d5d04b745f7d5d53909a0",
-            "file": "preuves/f1bfb0112a2a1e76449d99069bc960324e957d5da29d5d04b745f7d5d53909a0.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
-            "sha256": "2cc2b538c1689cca95acba83b580a4714473bae38fb26efc53e04d8493c9f251",
-            "file": "preuves/2cc2b538c1689cca95acba83b580a4714473bae38fb26efc53e04d8493c9f251.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-27",
         "id": "R1C8",
@@ -1448,24 +1180,24 @@
             "source_title": "Prix Omaha Beach",
             "evidence": {
               "url": "https://www.geny.com/course/1694081-2026-10-27-deauville-prix-omaha-beach/partants-pronostics",
-              "sha256": "8d58a28131aaab0ea97e5fef9def45217991c375c515ba1c5c989c8b1eef8f99",
-              "file": "preuves/8d58a28131aaab0ea97e5fef9def45217991c375c515ba1c5c989c8b1eef8f99.gz"
+              "sha256": "477adc3b547cf73afbec16f46ecf20350d129f6d3161fe9c910bbfabaeaadad2",
+              "file": "preuves/477adc3b547cf73afbec16f46ecf20350d129f6d3161fe9c910bbfabaeaadad2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C8/participants",
-              "sha256": "14068b12cb3096881646c9d80559d2ad46ff0fed5686c61a1af37a82d15e9db8",
-              "file": "preuves/14068b12cb3096881646c9d80559d2ad46ff0fed5686c61a1af37a82d15e9db8.gz"
+              "sha256": "dfb5db18cf7d66d0f5a86e184c633f10639c4505e7fcdb851f4dffcdce0bf813",
+              "file": "preuves/dfb5db18cf7d66d0f5a86e184c633f10639c4505e7fcdb851f4dffcdce0bf813.gz"
             },
-            "captured_at": "2026-10-27T16:14:30.114114+01:00",
+            "captured_at": "2026-10-27T17:27:43.363469+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.2,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793113244000,
+              "nombreIndicateurTendance": -2.98,
+              "dateRapport": 1793117744000,
               "favoris": true,
               "numPmu1": 12,
               "grossePrise": false
@@ -1481,24 +1213,24 @@
             "source_title": "Le pronostic du PRIX OMAHA BEACH",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421732_prix-omaha-beach.html",
-              "sha256": "022f5fca9afa9bc00abc87597925d6dfbfc4331bc415a922ee84142a30c81b7d",
-              "file": "preuves/022f5fca9afa9bc00abc87597925d6dfbfc4331bc415a922ee84142a30c81b7d.gz"
+              "sha256": "41aed45f56980da1a7fed202964c04299e82b4f5d59b949fe7b231e40deed5b3",
+              "file": "preuves/41aed45f56980da1a7fed202964c04299e82b4f5d59b949fe7b231e40deed5b3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C8/participants",
-              "sha256": "14068b12cb3096881646c9d80559d2ad46ff0fed5686c61a1af37a82d15e9db8",
-              "file": "preuves/14068b12cb3096881646c9d80559d2ad46ff0fed5686c61a1af37a82d15e9db8.gz"
+              "sha256": "dfb5db18cf7d66d0f5a86e184c633f10639c4505e7fcdb851f4dffcdce0bf813",
+              "file": "preuves/dfb5db18cf7d66d0f5a86e184c633f10639c4505e7fcdb851f4dffcdce0bf813.gz"
             },
-            "captured_at": "2026-10-27T16:14:30.629262+01:00",
+            "captured_at": "2026-10-27T17:27:45.093534+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 20.0,
+              "rapport": 19.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.49,
-              "dateRapport": 1793113244000,
+              "nombreIndicateurTendance": -4.52,
+              "dateRapport": 1793117744000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1510,13 +1242,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694081-2026-10-27-deauville-prix-omaha-beach/partants-pronostics",
-            "sha256": "8d58a28131aaab0ea97e5fef9def45217991c375c515ba1c5c989c8b1eef8f99",
-            "file": "preuves/8d58a28131aaab0ea97e5fef9def45217991c375c515ba1c5c989c8b1eef8f99.gz"
+            "sha256": "477adc3b547cf73afbec16f46ecf20350d129f6d3161fe9c910bbfabaeaadad2",
+            "file": "preuves/477adc3b547cf73afbec16f46ecf20350d129f6d3161fe9c910bbfabaeaadad2.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421732_prix-omaha-beach.html",
-            "sha256": "022f5fca9afa9bc00abc87597925d6dfbfc4331bc415a922ee84142a30c81b7d",
-            "file": "preuves/022f5fca9afa9bc00abc87597925d6dfbfc4331bc415a922ee84142a30c81b7d.gz"
+            "sha256": "41aed45f56980da1a7fed202964c04299e82b4f5d59b949fe7b231e40deed5b3",
+            "file": "preuves/41aed45f56980da1a7fed202964c04299e82b4f5d59b949fe7b231e40deed5b3.gz"
           }
         }
       }
