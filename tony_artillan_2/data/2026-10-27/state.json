@@ -3,7 +3,32 @@
   "venue": "DEAUVILLE",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C2",
+          "departure": "2026-10-27T14:30:00+01:00",
+          "number": 5,
+          "name": "STORMY DONALD",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-27T14:04:51.024881+01:00",
+          "source_captured_at": "2026-10-27T13:49:07.443877+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 16.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.62,
+            "dateRapport": 1793106268000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -98,7 +123,9 @@
           "sha256": "772b086e1b5dbdf15002c432072e8264c50527346b9e264157cf2386656ea90c",
           "file": "preuves/772b086e1b5dbdf15002c432072e8264c50527346b9e264157cf2386656ea90c.gz"
         }
-      }
+      },
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-27",
