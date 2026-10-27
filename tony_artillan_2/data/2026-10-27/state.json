@@ -10,7 +10,7 @@
           "number": 5,
           "name": "STORMY DONALD",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-10-27T14:04:51.024881+01:00",
           "source_captured_at": "2026-10-27T13:49:07.443877+01:00",
           "sites": [
@@ -26,6 +26,20 @@
             "favoris": false,
             "numPmu1": 5,
             "grossePrise": false
+          },
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 3,
+          "settled_at": "2026-10-27T14:49:25.339065+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440",
+            "file": "preuves/ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/participants",
+            "sha256": "c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496",
+            "file": "preuves/c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496.gz"
           }
         }
       ],
@@ -225,7 +239,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 3,
+          "settled_at": "2026-10-27T14:49:25.338524+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440",
+            "file": "preuves/ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/participants",
+            "sha256": "c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496",
+            "file": "preuves/c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -258,7 +286,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 3,
+          "settled_at": "2026-10-27T14:49:25.338904+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440",
+            "file": "preuves/ab53c2ea54f191e7fe51846cca70351cf4d31b250162d7991424a60c53844440.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/participants",
+            "sha256": "c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496",
+            "file": "preuves/c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496.gz"
+          }
         }
       },
       "groups": {
@@ -287,6 +329,38 @@
       "last_reservation_check": {
         "at": "2026-10-27T14:29:51.957270+01:00",
         "stop": "ATTENTE_RESULTAT"
+      },
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "HERMES WOOD",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "RAQEEBB",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "STORMY DONALD",
+          "rank": 3
+        },
+        {
+          "number": 12,
+          "name": "DARI RIVER",
+          "rank": 4
+        },
+        {
+          "number": 9,
+          "name": "MADAM SECRETARY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C2/participants",
+        "sha256": "c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496",
+        "file": "preuves/c18613ccaa0ddf277287525724cc55d56301200221d177d7a16cd1be21f2b496.gz"
       }
     },
     {
@@ -386,9 +460,88 @@
       "title": "PRIX D'AUDRIEU",
       "departure": "2026-10-27T15:40:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 9,
+          "name": "MON COMEDIEN",
+          "source_url": "https://www.geny.com/course/1694077-2026-10-27-deauville-prix-d-audrieu/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix d'Audrieu",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694077-2026-10-27-deauville-prix-d-audrieu/partants-pronostics",
+            "sha256": "5d13b5167e0cc6f46e8735710f5b7a90b2b68dfd59ab541693d1eb053e933b65",
+            "file": "preuves/5d13b5167e0cc6f46e8735710f5b7a90b2b68dfd59ab541693d1eb053e933b65.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C4/participants",
+            "sha256": "1d7b4db973a89e62cba7bc1e05bf1b1e3e4fb0facf1a70ff7148320e7df5c9c1",
+            "file": "preuves/1d7b4db973a89e62cba7bc1e05bf1b1e3e4fb0facf1a70ff7148320e7df5c9c1.gz"
+          },
+          "captured_at": "2026-10-27T14:49:22.220064+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -15.78,
+            "dateRapport": 1793108739000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "BE TRUE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421728_prix-d-audrieu.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX D'AUDRIEU",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421728_prix-d-audrieu.html",
+            "sha256": "43b917f89133308c172190b0120fbcac5c6cdef607a66a4909c16b5001329b73",
+            "file": "preuves/43b917f89133308c172190b0120fbcac5c6cdef607a66a4909c16b5001329b73.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C4/participants",
+            "sha256": "1d7b4db973a89e62cba7bc1e05bf1b1e3e4fb0facf1a70ff7148320e7df5c9c1",
+            "file": "preuves/1d7b4db973a89e62cba7bc1e05bf1b1e3e4fb0facf1a70ff7148320e7df5c9c1.gz"
+          },
+          "captured_at": "2026-10-27T14:49:24.290616+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 10.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -16.92,
+            "dateRapport": 1793108739000,
+            "favoris": false,
+            "numPmu1": 7,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694077-2026-10-27-deauville-prix-d-audrieu/partants-pronostics",
+          "sha256": "5d13b5167e0cc6f46e8735710f5b7a90b2b68dfd59ab541693d1eb053e933b65",
+          "file": "preuves/5d13b5167e0cc6f46e8735710f5b7a90b2b68dfd59ab541693d1eb053e933b65.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421728_prix-d-audrieu.html",
+          "sha256": "43b917f89133308c172190b0120fbcac5c6cdef607a66a4909c16b5001329b73",
+          "file": "preuves/43b917f89133308c172190b0120fbcac5c6cdef607a66a4909c16b5001329b73.gz"
+        }
+      }
     },
     {
       "date": "2026-10-27",
