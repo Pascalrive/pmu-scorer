@@ -855,7 +855,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 12,
+          "settled_at": "2026-10-27T17:14:14.089763+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "286a6be09376f8ea403493438953308ead2747c8836bd9d157d03907db2c3553",
+            "file": "preuves/286a6be09376f8ea403493438953308ead2747c8836bd9d157d03907db2c3553.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/participants",
+            "sha256": "18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec",
+            "file": "preuves/18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -888,7 +902,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-10-27T17:14:14.090149+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "286a6be09376f8ea403493438953308ead2747c8836bd9d157d03907db2c3553",
+            "file": "preuves/286a6be09376f8ea403493438953308ead2747c8836bd9d157d03907db2c3553.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/participants",
+            "sha256": "18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec",
+            "file": "preuves/18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec.gz"
+          }
         }
       },
       "groups": {},
@@ -905,15 +933,46 @@
           "file": "preuves/540e07e37b2625aae5acf24a13d9dd9fa59394f92bd9a64b69aeec2e4a23923f.gz"
         }
       },
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "CITY BABE",
+          "rank": 1
+        },
+        {
+          "number": 12,
+          "name": "DREAM OP FAL",
+          "rank": 2
+        },
+        {
+          "number": 9,
+          "name": "GOLDFIELD",
+          "rank": 3
+        },
+        {
+          "number": 11,
+          "name": "LE ROCKEUR",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "KODIACOLOR",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C6/participants",
+        "sha256": "18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec",
+        "file": "preuves/18f875ca1b6d605a5f9f88a326dff42d3fbb9373513502b90c07fdce5aea51ec.gz"
+      }
     },
     {
       "date": "2026-10-27",
       "id": "R1C7",
       "c": 7,
       "title": "PRIX JUNO BEACH",
-      "departure": "2026-10-27T17:25:00+01:00",
+      "departure": "2026-10-27T17:27:00+01:00",
       "market": true,
       "tips": {
         "geny": {
@@ -996,7 +1055,14 @@
           "sha256": "abc085147c5be0081a11c795b44d95615d419ca0bd6a71028a599f31d3421c42",
           "file": "preuves/abc085147c5be0081a11c795b44d95615d419ca0bd6a71028a599f31d3421c42.gz"
         }
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-10-27T17:25:00+01:00",
+          "new": "2026-10-27T17:27:00+01:00",
+          "checked_at": "2026-10-27T17:13:47.843812+01:00"
+        }
+      ]
     },
     {
       "date": "2026-10-27",
@@ -1005,9 +1071,88 @@
       "title": "PRIX OMAHA BEACH",
       "departure": "2026-10-27T18:00:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 12,
+          "name": "QUARTZ DU HOULEY",
+          "source_url": "https://www.geny.com/course/1694081-2026-10-27-deauville-prix-omaha-beach/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Omaha Beach",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694081-2026-10-27-deauville-prix-omaha-beach/partants-pronostics",
+            "sha256": "d4818e1165207a5264f645014e4a23ca976c76cbbe6e0c4eea9bbfbe11ab8b35",
+            "file": "preuves/d4818e1165207a5264f645014e4a23ca976c76cbbe6e0c4eea9bbfbe11ab8b35.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C8/participants",
+            "sha256": "db0c9a6455d082a80b631494a4acd10a5d48d45cdd803efb90d37a04c558faf3",
+            "file": "preuves/db0c9a6455d082a80b631494a4acd10a5d48d45cdd803efb90d37a04c558faf3.gz"
+          },
+          "captured_at": "2026-10-27T17:14:10.877255+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.68,
+            "dateRapport": 1793116844000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "VILLA MONCEAU",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421732_prix-omaha-beach.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX OMAHA BEACH",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421732_prix-omaha-beach.html",
+            "sha256": "6dc572611a565a30fdf113ee271e7f11d3914fca05b534f17ee794e06eab1b56",
+            "file": "preuves/6dc572611a565a30fdf113ee271e7f11d3914fca05b534f17ee794e06eab1b56.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C8/participants",
+            "sha256": "db0c9a6455d082a80b631494a4acd10a5d48d45cdd803efb90d37a04c558faf3",
+            "file": "preuves/db0c9a6455d082a80b631494a4acd10a5d48d45cdd803efb90d37a04c558faf3.gz"
+          },
+          "captured_at": "2026-10-27T17:14:13.126523+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 19.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793116844000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694081-2026-10-27-deauville-prix-omaha-beach/partants-pronostics",
+          "sha256": "d4818e1165207a5264f645014e4a23ca976c76cbbe6e0c4eea9bbfbe11ab8b35",
+          "file": "preuves/d4818e1165207a5264f645014e4a23ca976c76cbbe6e0c4eea9bbfbe11ab8b35.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421732_prix-omaha-beach.html",
+          "sha256": "6dc572611a565a30fdf113ee271e7f11d3914fca05b534f17ee794e06eab1b56",
+          "file": "preuves/6dc572611a565a30fdf113ee271e7f11d3914fca05b534f17ee794e06eab1b56.gz"
+        }
+      }
     }
   ],
   "notifications": [],
