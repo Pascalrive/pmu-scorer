@@ -74,7 +74,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 3,
+          "settled_at": "2026-10-27T14:29:51.956531+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f7ed8bc2ca77dc6e7c4fa9364bfcf0426ab789e4437a7ba42934d831df08e2d9",
+            "file": "preuves/f7ed8bc2ca77dc6e7c4fa9364bfcf0426ab789e4437a7ba42934d831df08e2d9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C1/participants",
+            "sha256": "f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051",
+            "file": "preuves/f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -107,7 +121,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 13,
+          "settled_at": "2026-10-27T14:29:51.956816+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f7ed8bc2ca77dc6e7c4fa9364bfcf0426ab789e4437a7ba42934d831df08e2d9",
+            "file": "preuves/f7ed8bc2ca77dc6e7c4fa9364bfcf0426ab789e4437a7ba42934d831df08e2d9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C1/participants",
+            "sha256": "f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051",
+            "file": "preuves/f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051.gz"
+          }
         }
       },
       "groups": {},
@@ -124,8 +152,39 @@
           "file": "preuves/772b086e1b5dbdf15002c432072e8264c50527346b9e264157cf2386656ea90c.gz"
         }
       },
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 10,
+          "name": "BREAK DANCE",
+          "rank": 1
+        },
+        {
+          "number": 6,
+          "name": "AGIOTA",
+          "rank": 2
+        },
+        {
+          "number": 9,
+          "name": "FIRE REBEL",
+          "rank": 3
+        },
+        {
+          "number": 15,
+          "name": "SALALAH",
+          "rank": 4
+        },
+        {
+          "number": 3,
+          "name": "ZEROSTRESS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C1/participants",
+        "sha256": "f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051",
+        "file": "preuves/f5a0baf93ac57eb8a43fc537ce69ac7c37d6bff0e6d6452058f7bbb1a57bf051.gz"
+      }
     },
     {
       "date": "2026-10-27",
@@ -224,7 +283,11 @@
           "file": "preuves/b67d2afbf9f46ac2957af15083ea8038f874fe7de7886491b2c9e11b998fb6d9.gz"
         }
       },
-      "groups_frozen_at": "2026-10-27T13:49:07.517900+01:00"
+      "groups_frozen_at": "2026-10-27T13:49:07.517900+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-27T14:29:51.957270+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-27",
@@ -233,9 +296,88 @@
       "title": "PRIX D'AUBIGNY",
       "departure": "2026-10-27T15:05:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "MEMORY",
+          "source_url": "https://www.geny.com/course/1694076-2026-10-27-deauville-prix-d-aubigny/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix d'Aubigny",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694076-2026-10-27-deauville-prix-d-aubigny/partants-pronostics",
+            "sha256": "cc8f9cfec1809d8c8f7f0ce67e597f056c4042fb4d06eb15b1fb71a5e0eb2a8b",
+            "file": "preuves/cc8f9cfec1809d8c8f7f0ce67e597f056c4042fb4d06eb15b1fb71a5e0eb2a8b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/participants",
+            "sha256": "43d21a9aa65c9c42a09b31ecb9b24087bd77dca184d1ca1ca94530d0a82a7922",
+            "file": "preuves/43d21a9aa65c9c42a09b31ecb9b24087bd77dca184d1ca1ca94530d0a82a7922.gz"
+          },
+          "captured_at": "2026-10-27T14:29:49.331845+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.7,
+            "dateRapport": 1793106922000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "LEDESMA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421727_prix-d-aubigny.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX D'AUBIGNY",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421727_prix-d-aubigny.html",
+            "sha256": "74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd",
+            "file": "preuves/74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/participants",
+            "sha256": "43d21a9aa65c9c42a09b31ecb9b24087bd77dca184d1ca1ca94530d0a82a7922",
+            "file": "preuves/43d21a9aa65c9c42a09b31ecb9b24087bd77dca184d1ca1ca94530d0a82a7922.gz"
+          },
+          "captured_at": "2026-10-27T14:29:50.904484+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793106922000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694076-2026-10-27-deauville-prix-d-aubigny/partants-pronostics",
+          "sha256": "cc8f9cfec1809d8c8f7f0ce67e597f056c4042fb4d06eb15b1fb71a5e0eb2a8b",
+          "file": "preuves/cc8f9cfec1809d8c8f7f0ce67e597f056c4042fb4d06eb15b1fb71a5e0eb2a8b.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421727_prix-d-aubigny.html",
+          "sha256": "74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd",
+          "file": "preuves/74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd.gz"
+        }
+      }
     },
     {
       "date": "2026-10-27",
