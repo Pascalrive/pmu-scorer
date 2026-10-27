@@ -1745,7 +1745,8 @@
       "last_reservation_check": {
         "at": "2026-10-27T15:49:45.948115+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-27",
@@ -1964,7 +1965,11 @@
           "file": "preuves/454937ae6a5ab96f58fbb9d93f4c327f03ebdaa1b6c9d59cb4e75a6e81bad5fb.gz"
         }
       },
-      "groups_frozen_at": "2026-10-27T16:03:04.858423+01:00"
+      "groups_frozen_at": "2026-10-27T16:03:04.858423+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-27T16:26:18.866966+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-27",
@@ -1973,9 +1978,207 @@
       "title": "PRIX JUNO BEACH",
       "departure": "2026-10-27T17:25:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 6,
+          "name": "L'ELU DE SADDLE",
+          "source_url": "https://turfin.fr/course/2026-10-27/r1c7-deauville-prix-juno-beach",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Juno Beach",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-27/r1c7-deauville-prix-juno-beach",
+            "sha256": "fe98c4d67d1278a9e43c99357c854ff241120640ceb7441235b6f51a4aa1942e",
+            "file": "preuves/fe98c4d67d1278a9e43c99357c854ff241120640ceb7441235b6f51a4aa1942e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
+            "sha256": "bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970",
+            "file": "preuves/bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970.gz"
+          },
+          "captured_at": "2026-10-27T16:25:51.851085+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 26.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.14,
+            "dateRapport": 1793114139000,
+            "favoris": false,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-27T17:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "THE CAT'S",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JUNO BEACH",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+            "sha256": "01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84",
+            "file": "preuves/01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
+            "sha256": "bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970",
+            "file": "preuves/bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970.gz"
+          },
+          "captured_at": "2026-10-27T16:25:53.861692+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.66,
+            "dateRapport": 1793114139000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-27T17:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 1,
+          "name": "HAPPY AGAIN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JUNO BEACH",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+            "sha256": "01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84",
+            "file": "preuves/01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
+            "sha256": "bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970",
+            "file": "preuves/bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970.gz"
+          },
+          "captured_at": "2026-10-27T16:25:53.939063+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793114139000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-27T17:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 9,
+          "name": "CRACK CITY",
+          "source_url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Juno Beach",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
+            "sha256": "984ab0d2c1e21c7ab18becbcb525b11dada773d179f02198d0341080ad9569b4",
+            "file": "preuves/984ab0d2c1e21c7ab18becbcb525b11dada773d179f02198d0341080ad9569b4.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
+            "sha256": "bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970",
+            "file": "preuves/bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970.gz"
+          },
+          "captured_at": "2026-10-27T16:26:14.442123+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 13.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.42,
+            "dateRapport": 1793114139000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-27T17:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 3,
+          "name": "THE CAT'S",
+          "source_url": "https://www.zone-turf.fr/programmes/r1-deauville-199692.html",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°7 : C7 - Prix Juno Beach",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/programmes/r1-deauville-199692.html",
+            "sha256": "2ca501f315c8330e90e5cdf72cf6a80173d0061ece73721dfd328519356ef87f",
+            "file": "preuves/2ca501f315c8330e90e5cdf72cf6a80173d0061ece73721dfd328519356ef87f.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C7/participants",
+            "sha256": "bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970",
+            "file": "preuves/bd008bf2b91468a6f64f23c3933ec3caedadfbeb870e1165f7c3607e3ff5b970.gz"
+          },
+          "captured_at": "2026-10-27T16:26:16.258539+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.66,
+            "dateRapport": 1793114139000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-27T17:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-27/r1c7-deauville-prix-juno-beach",
+          "sha256": "fe98c4d67d1278a9e43c99357c854ff241120640ceb7441235b6f51a4aa1942e",
+          "file": "preuves/fe98c4d67d1278a9e43c99357c854ff241120640ceb7441235b6f51a4aa1942e.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+          "sha256": "01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84",
+          "file": "preuves/01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421731_prix-juno-beach.html",
+          "sha256": "01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84",
+          "file": "preuves/01aacd981b9f686d56e8f67f0f265705d74f59c89fe349d38d756eab0bcd2d84.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1694080-2026-10-27-deauville-prix-juno-beach/partants-pronostics",
+          "sha256": "984ab0d2c1e21c7ab18becbcb525b11dada773d179f02198d0341080ad9569b4",
+          "file": "preuves/984ab0d2c1e21c7ab18becbcb525b11dada773d179f02198d0341080ad9569b4.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/programmes/r1-deauville-199692.html",
+          "sha256": "2ca501f315c8330e90e5cdf72cf6a80173d0061ece73721dfd328519356ef87f",
+          "file": "preuves/2ca501f315c8330e90e5cdf72cf6a80173d0061ece73721dfd328519356ef87f.gz"
+        }
+      }
     },
     {
       "date": "2026-10-27",
