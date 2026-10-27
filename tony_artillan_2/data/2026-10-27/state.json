@@ -402,7 +402,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-10-27T15:24:36.887543+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "aba536af07ae183aa35915d155ee044a5d62a661f5bf020d4c613835d71fa18e",
+            "file": "preuves/aba536af07ae183aa35915d155ee044a5d62a661f5bf020d4c613835d71fa18e.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/participants",
+            "sha256": "5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759",
+            "file": "preuves/5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -435,7 +449,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-27T15:24:36.887763+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "aba536af07ae183aa35915d155ee044a5d62a661f5bf020d4c613835d71fa18e",
+            "file": "preuves/aba536af07ae183aa35915d155ee044a5d62a661f5bf020d4c613835d71fa18e.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/participants",
+            "sha256": "5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759",
+            "file": "preuves/5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759.gz"
+          }
         }
       },
       "groups": {},
@@ -451,7 +479,40 @@
           "sha256": "74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd",
           "file": "preuves/74ceb08e6e49fa22cc972901c34ca0f53467ef009dd551fb76101ba3417229dd.gz"
         }
-      }
+      },
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "LEDESMA",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "MEMORY",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "EQUULEUS",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "FAMILY SECRET",
+          "rank": 4
+        },
+        {
+          "number": 6,
+          "name": "SUNDARA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C3/participants",
+        "sha256": "5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759",
+        "file": "preuves/5b1343daf782d927592449e293bea2f0667e4cf7da85f617730b4c2a161f0759.gz"
+      },
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-27",
@@ -550,9 +611,88 @@
       "title": "PRIX DU VERGALY",
       "departure": "2026-10-27T16:15:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 4,
+          "name": "STEP MORNING",
+          "source_url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Vergaly",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
+            "sha256": "b982bcbd8cfce853c53d779ac638869e4d40a9ea192478cf9831c88d989dc76e",
+            "file": "preuves/b982bcbd8cfce853c53d779ac638869e4d40a9ea192478cf9831c88d989dc76e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C5/participants",
+            "sha256": "d0cafd7d03e8bfc8c342528ca5ace41b50a417de4af69e9b9ae5091a82a67a4b",
+            "file": "preuves/d0cafd7d03e8bfc8c342528ca5ace41b50a417de4af69e9b9ae5091a82a67a4b.gz"
+          },
+          "captured_at": "2026-10-27T15:24:34.201939+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.41,
+            "dateRapport": 1793110548000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "GUINESS STAR",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU VERGALY",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
+            "sha256": "67c6f2ddad82f3ca171e50f68d4d1c3fd622ee586ca33ae82a161c10325bce69",
+            "file": "preuves/67c6f2ddad82f3ca171e50f68d4d1c3fd622ee586ca33ae82a161c10325bce69.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27102026/R1/C5/participants",
+            "sha256": "d0cafd7d03e8bfc8c342528ca5ace41b50a417de4af69e9b9ae5091a82a67a4b",
+            "file": "preuves/d0cafd7d03e8bfc8c342528ca5ace41b50a417de4af69e9b9ae5091a82a67a4b.gz"
+          },
+          "captured_at": "2026-10-27T15:24:36.002299+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -15.27,
+            "dateRapport": 1793110548000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694078-2026-10-27-deauville-prix-du-vergaly/partants-pronostics",
+          "sha256": "b982bcbd8cfce853c53d779ac638869e4d40a9ea192478cf9831c88d989dc76e",
+          "file": "preuves/b982bcbd8cfce853c53d779ac638869e4d40a9ea192478cf9831c88d989dc76e.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-27/deauville/421729_prix-du-vergaly.html",
+          "sha256": "67c6f2ddad82f3ca171e50f68d4d1c3fd622ee586ca33ae82a161c10325bce69",
+          "file": "preuves/67c6f2ddad82f3ca171e50f68d4d1c3fd622ee586ca33ae82a161c10325bce69.gz"
+        }
+      }
     },
     {
       "date": "2026-10-27",
