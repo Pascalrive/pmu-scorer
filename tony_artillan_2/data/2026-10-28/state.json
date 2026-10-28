@@ -41,6 +41,30 @@
             "sha256": "8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5",
             "file": "preuves/8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5.gz"
           }
+        },
+        {
+          "race_id": "R1C4",
+          "departure": "2026-10-28T13:55:00+01:00",
+          "number": 3,
+          "name": "FALCON JET",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-28T13:36:40.294576+01:00",
+          "source_captured_at": "2026-10-28T13:00:30.577324+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793190953000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          }
         }
       ],
       "budget_cents": 120000,
@@ -416,7 +440,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-10-28T13:36:40.293764+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c0db23fdedcc1f719b731fe0dcc06549cc23401ae9748e1944dde2da6d30b54b",
+            "file": "preuves/c0db23fdedcc1f719b731fe0dcc06549cc23401ae9748e1944dde2da6d30b54b.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
+            "sha256": "5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96",
+            "file": "preuves/5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -449,7 +487,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-28T13:36:40.294084+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c0db23fdedcc1f719b731fe0dcc06549cc23401ae9748e1944dde2da6d30b54b",
+            "file": "preuves/c0db23fdedcc1f719b731fe0dcc06549cc23401ae9748e1944dde2da6d30b54b.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
+            "sha256": "5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96",
+            "file": "preuves/5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96.gz"
+          }
         }
       },
       "groups": {},
@@ -473,8 +525,34 @@
           "checked_at": "2026-10-28T13:00:07.864873+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "MOI SACHA",
+          "rank": 1
+        },
+        {
+          "number": 4,
+          "name": "LA PAGAILLE",
+          "rank": 2
+        },
+        {
+          "number": 1,
+          "name": "LUA MATER",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "MISSTIME D'ANJOU",
+          "rank": 4
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
+        "sha256": "5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96",
+        "file": "preuves/5d5c75eb4fc219395870af516d56445ba42b3219caf526dbee7fe4fdc8672f96.gz"
+      }
     },
     {
       "date": "2026-10-28",
@@ -582,9 +660,97 @@
       "title": "PRIX LUSIGNAN",
       "departure": "2026-10-28T14:30:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "FLONIS",
+          "source_url": "https://www.geny.com/course/1694220-2026-10-28-auteuil-prix-lusignan/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Lusignan",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694220-2026-10-28-auteuil-prix-lusignan/partants-pronostics",
+            "sha256": "b3e89cae332e46d9a89ad0ccd7dc37b775cf4dc699e32608c307d787fe7d8642",
+            "file": "preuves/b3e89cae332e46d9a89ad0ccd7dc37b775cf4dc699e32608c307d787fe7d8642.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C5/participants",
+            "sha256": "1984205a6c8f355d20556dd51f478301cd6064511bd8461f8598e9567e3d5326",
+            "file": "preuves/1984205a6c8f355d20556dd51f478301cd6064511bd8461f8598e9567e3d5326.gz"
+          },
+          "captured_at": "2026-10-28T13:36:34.578398+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793190649000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "FLONIS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421839_prix-lusignan.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LUSIGNAN",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421839_prix-lusignan.html",
+            "sha256": "d87bb08a8486f585bae846b1efb8952b0a40ec28b228b13f1d00c985b7d415c2",
+            "file": "preuves/d87bb08a8486f585bae846b1efb8952b0a40ec28b228b13f1d00c985b7d415c2.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C5/participants",
+            "sha256": "1984205a6c8f355d20556dd51f478301cd6064511bd8461f8598e9567e3d5326",
+            "file": "preuves/1984205a6c8f355d20556dd51f478301cd6064511bd8461f8598e9567e3d5326.gz"
+          },
+          "captured_at": "2026-10-28T13:36:39.154827+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793190649000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 1,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694220-2026-10-28-auteuil-prix-lusignan/partants-pronostics",
+          "sha256": "b3e89cae332e46d9a89ad0ccd7dc37b775cf4dc699e32608c307d787fe7d8642",
+          "file": "preuves/b3e89cae332e46d9a89ad0ccd7dc37b775cf4dc699e32608c307d787fe7d8642.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421839_prix-lusignan.html",
+          "sha256": "d87bb08a8486f585bae846b1efb8952b0a40ec28b228b13f1d00c985b7d415c2",
+          "file": "preuves/d87bb08a8486f585bae846b1efb8952b0a40ec28b228b13f1d00c985b7d415c2.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-28T13:36:39.154876+01:00"
     },
     {
       "date": "2026-10-28",
