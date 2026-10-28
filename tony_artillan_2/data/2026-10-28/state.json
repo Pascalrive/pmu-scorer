@@ -48,7 +48,7 @@
           "number": 3,
           "name": "FALCON JET",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-10-28T13:36:40.294576+01:00",
           "source_captured_at": "2026-10-28T13:00:30.577324+01:00",
           "sites": [
@@ -63,6 +63,44 @@
             "dateRapport": 1793190953000,
             "favoris": false,
             "numPmu1": 3,
+            "grossePrise": false
+          },
+          "return_cents": 0,
+          "profit_cents": -20000,
+          "rank": null,
+          "settled_at": "2026-10-28T14:17:03.988418+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff",
+            "file": "preuves/44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+            "sha256": "8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc",
+            "file": "preuves/8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc.gz"
+          }
+        },
+        {
+          "race_id": "R1C5",
+          "departure": "2026-10-28T14:30:00+01:00",
+          "number": 1,
+          "name": "FLONIS",
+          "stake_cents": 15000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-28T14:17:03.988722+01:00",
+          "source_captured_at": "2026-10-28T13:36:34.578398+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793193373000,
+            "favoris": true,
+            "numPmu1": 1,
             "grossePrise": false
           }
         }
@@ -593,7 +631,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-10-28T14:17:03.988080+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff",
+            "file": "preuves/44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+            "sha256": "8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc",
+            "file": "preuves/8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -626,7 +678,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-10-28T14:17:03.988336+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff",
+            "file": "preuves/44177b749d344e16efd8b63aeaa50b28992aafca153b8c1a04140f7a0d561cff.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+            "sha256": "8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc",
+            "file": "preuves/8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc.gz"
+          }
         }
       },
       "groups": {
@@ -656,7 +722,38 @@
         "at": "2026-10-28T13:53:37.226989+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 14,
+          "name": "PAREIL PAREIL",
+          "rank": 1
+        },
+        {
+          "number": 12,
+          "name": "ALHUNTER",
+          "rank": 2
+        },
+        {
+          "number": 11,
+          "name": "EH MAN",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "RAFFLES PRINCESS",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "NORMANDY MAN",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+        "sha256": "8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc",
+        "file": "preuves/8a4bd1d57c52c909b2c7fbe3d2352b74dbfa69681de824eaff5eea12da6688bc.gz"
+      }
     },
     {
       "date": "2026-10-28",
@@ -768,9 +865,97 @@
       "title": "PRIX CAP",
       "departure": "2026-10-28T15:05:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "BLIDA",
+          "source_url": "https://www.geny.com/course/1694221-2026-10-28-auteuil-prix-cap/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Cap",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694221-2026-10-28-auteuil-prix-cap/partants-pronostics",
+            "sha256": "c86f2dad322972e7551b0906d6964b0028f4ab2c2dfed922bf09b7c2a08db06a",
+            "file": "preuves/c86f2dad322972e7551b0906d6964b0028f4ab2c2dfed922bf09b7c2a08db06a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+            "sha256": "85d72fc9ff662fe434f43a20a233a91a902f90c00116b29bd6f685de515fc121",
+            "file": "preuves/85d72fc9ff662fe434f43a20a233a91a902f90c00116b29bd6f685de515fc121.gz"
+          },
+          "captured_at": "2026-10-28T14:16:58.437795+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.54,
+            "dateRapport": 1793193319000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "BLIDA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421840_prix-cap.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX CAP",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421840_prix-cap.html",
+            "sha256": "42a4cb82335017ce5cbd0e9a6f4c37a8833569a6d0742bd100976cf40379c674",
+            "file": "preuves/42a4cb82335017ce5cbd0e9a6f4c37a8833569a6d0742bd100976cf40379c674.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+            "sha256": "85d72fc9ff662fe434f43a20a233a91a902f90c00116b29bd6f685de515fc121",
+            "file": "preuves/85d72fc9ff662fe434f43a20a233a91a902f90c00116b29bd6f685de515fc121.gz"
+          },
+          "captured_at": "2026-10-28T14:17:02.978356+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.54,
+            "dateRapport": 1793193319000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 3,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694221-2026-10-28-auteuil-prix-cap/partants-pronostics",
+          "sha256": "c86f2dad322972e7551b0906d6964b0028f4ab2c2dfed922bf09b7c2a08db06a",
+          "file": "preuves/c86f2dad322972e7551b0906d6964b0028f4ab2c2dfed922bf09b7c2a08db06a.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421840_prix-cap.html",
+          "sha256": "42a4cb82335017ce5cbd0e9a6f4c37a8833569a6d0742bd100976cf40379c674",
+          "file": "preuves/42a4cb82335017ce5cbd0e9a6f4c37a8833569a6d0742bd100976cf40379c674.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-28T14:17:02.978403+01:00"
     },
     {
       "date": "2026-10-28",
