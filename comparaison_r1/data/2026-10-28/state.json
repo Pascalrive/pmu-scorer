@@ -3,7 +3,33 @@
   "venue": "AUTEUIL",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C2",
+          "departure": "2026-10-28T12:35:00+01:00",
+          "number": 1,
+          "name": "KANDY PARK",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-28T12:05:46.190468+01:00",
+          "source_captured_at": "2026-10-28T11:36:08.084255+01:00",
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.26,
+            "dateRapport": 1793185520000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -181,7 +207,9 @@
           "new": "2026-10-28T12:01:00+01:00",
           "checked_at": "2026-10-28T11:53:48.238803+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-10-28",
