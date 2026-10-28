@@ -10,7 +10,7 @@
           "number": 1,
           "name": "KANDY PARK",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-10-28T12:09:24.576965+01:00",
           "source_captured_at": "2026-10-28T11:36:48.850716+01:00",
           "sites": [
@@ -26,6 +26,20 @@
             "favoris": true,
             "numPmu1": 1,
             "grossePrise": false
+          },
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 5,
+          "settled_at": "2026-10-28T13:00:33.476094+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92",
+            "file": "preuves/6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
+            "sha256": "8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5",
+            "file": "preuves/8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5.gz"
           }
         }
       ],
@@ -232,7 +246,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-10-28T13:00:33.475843+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92",
+            "file": "preuves/6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
+            "sha256": "8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5",
+            "file": "preuves/8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -265,7 +293,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-10-28T13:00:33.476031+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92",
+            "file": "preuves/6712ae73df7425a8cac6826e50933b1fd9fb1e619b78d241ed1add889267fc92.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
+            "sha256": "8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5",
+            "file": "preuves/8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5.gz"
+          }
         }
       },
       "groups": {
@@ -302,14 +344,45 @@
           "checked_at": "2026-10-28T12:27:22.300123+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "DO IT AGAIN",
+          "rank": 1
+        },
+        {
+          "number": 3,
+          "name": "LIBECCIO",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "MOTY MARC",
+          "rank": 3
+        },
+        {
+          "number": 2,
+          "name": "JOST",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "KANDY PARK",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
+        "sha256": "8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5",
+        "file": "preuves/8d2855a792fb67b91862c26bc682685628b54da2d389838fedacb3ce04564ff5.gz"
+      }
     },
     {
       "date": "2026-10-28",
       "id": "R1C3",
       "c": 3,
       "title": "PRIX ELISA",
-      "departure": "2026-10-28T13:10:00+01:00",
+      "departure": "2026-10-28T13:12:00+01:00",
       "market": true,
       "tips": {
         "geny": {
@@ -392,7 +465,14 @@
           "sha256": "8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685",
           "file": "preuves/8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685.gz"
         }
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-10-28T13:10:00+01:00",
+          "new": "2026-10-28T13:12:00+01:00",
+          "checked_at": "2026-10-28T13:00:07.864873+01:00"
+        }
+      ]
     },
     {
       "date": "2026-10-28",
@@ -401,9 +481,97 @@
       "title": "PRIX SANTO PIETRO",
       "departure": "2026-10-28T13:55:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "FALCON JET",
+          "source_url": "https://www.geny.com/course/1694219-2026-10-28-auteuil-prix-santo-pietro/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Santo Pietro",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694219-2026-10-28-auteuil-prix-santo-pietro/partants-pronostics",
+            "sha256": "4c97c38510da64a5e37f0bdff0c95bc3f0b87ffb47c5bfb9726753584bf3b094",
+            "file": "preuves/4c97c38510da64a5e37f0bdff0c95bc3f0b87ffb47c5bfb9726753584bf3b094.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+            "sha256": "ab25bb3699d3a46c5e0d5aee442b4dd380d09d0b8b077fd6edf277ccbb202575",
+            "file": "preuves/ab25bb3699d3a46c5e0d5aee442b4dd380d09d0b8b077fd6edf277ccbb202575.gz"
+          },
+          "captured_at": "2026-10-28T13:00:30.577324+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.49,
+            "dateRapport": 1793187915000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "FALCON JET",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du Quinté PRIX SANTO PIETRO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html",
+            "sha256": "6fc7b596981165b817d77be08f84d57046af768217ca59d6bbebb734e6f359f4",
+            "file": "preuves/6fc7b596981165b817d77be08f84d57046af768217ca59d6bbebb734e6f359f4.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
+            "sha256": "ab25bb3699d3a46c5e0d5aee442b4dd380d09d0b8b077fd6edf277ccbb202575",
+            "file": "preuves/ab25bb3699d3a46c5e0d5aee442b4dd380d09d0b8b077fd6edf277ccbb202575.gz"
+          },
+          "captured_at": "2026-10-28T13:00:32.516298+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.49,
+            "dateRapport": 1793187915000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 3,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694219-2026-10-28-auteuil-prix-santo-pietro/partants-pronostics",
+          "sha256": "4c97c38510da64a5e37f0bdff0c95bc3f0b87ffb47c5bfb9726753584bf3b094",
+          "file": "preuves/4c97c38510da64a5e37f0bdff0c95bc3f0b87ffb47c5bfb9726753584bf3b094.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html",
+          "sha256": "6fc7b596981165b817d77be08f84d57046af768217ca59d6bbebb734e6f359f4",
+          "file": "preuves/6fc7b596981165b817d77be08f84d57046af768217ca59d6bbebb734e6f359f4.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-28T13:00:32.516347+01:00"
     },
     {
       "date": "2026-10-28",
