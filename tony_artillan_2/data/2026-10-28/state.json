@@ -74,7 +74,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-10-28T12:19:35.948242+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "4930085cca1af0caaf9eb4779f0ca26a2fbf96c229ddb54c5bccac1bcfcb7607",
+            "file": "preuves/4930085cca1af0caaf9eb4779f0ca26a2fbf96c229ddb54c5bccac1bcfcb7607.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/participants",
+            "sha256": "27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c",
+            "file": "preuves/27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -107,7 +121,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-10-28T12:19:35.948457+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "4930085cca1af0caaf9eb4779f0ca26a2fbf96c229ddb54c5bccac1bcfcb7607",
+            "file": "preuves/4930085cca1af0caaf9eb4779f0ca26a2fbf96c229ddb54c5bccac1bcfcb7607.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/participants",
+            "sha256": "27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c",
+            "file": "preuves/27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c.gz"
+          }
         }
       },
       "groups": {},
@@ -131,8 +159,39 @@
           "checked_at": "2026-10-28T11:48:48.770025+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 8,
+          "name": "LA DUCASSE",
+          "rank": 1
+        },
+        {
+          "number": 7,
+          "name": "PEPS NOLIMIT",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "UPANISHAD",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "VOLT DU BERLAIS",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "ASCENCIA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/participants",
+        "sha256": "27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c",
+        "file": "preuves/27b5b19d212ddccb975b785c3c9ba68e4c040fe8f215c2cbea4f70a7ec8e1e7c.gz"
+      }
     },
     {
       "date": "2026-10-28",
@@ -231,7 +290,11 @@
           "file": "preuves/f8e5eda6420f70920181fb2f2baa8fa021a66be5e50145ad9b7fa23d2ef1cf33.gz"
         }
       },
-      "groups_frozen_at": "2026-10-28T11:36:48.933441+01:00"
+      "groups_frozen_at": "2026-10-28T11:36:48.933441+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-28T12:19:35.948759+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-28",
@@ -240,9 +303,88 @@
       "title": "PRIX ELISA",
       "departure": "2026-10-28T13:10:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "MIRAVAL DE GRUGY",
+          "source_url": "https://www.geny.com/course/1694218-2026-10-28-auteuil-prix-elisa/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Elisa",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694218-2026-10-28-auteuil-prix-elisa/partants-pronostics",
+            "sha256": "43fdd18ee5b3f3d900f5636a934469bb2fba362bb56734eaf92b7180d172a7b0",
+            "file": "preuves/43fdd18ee5b3f3d900f5636a934469bb2fba362bb56734eaf92b7180d172a7b0.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
+            "sha256": "a1bf5263095bca4165431e1b51316e1dd29fc0348b89eee3c6165b40a60e8b0b",
+            "file": "preuves/a1bf5263095bca4165431e1b51316e1dd29fc0348b89eee3c6165b40a60e8b0b.gz"
+          },
+          "captured_at": "2026-10-28T12:19:32.374834+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -10.0,
+            "dateRapport": 1793186113000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "MOI SACHA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421837_prix-elisa.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ELISA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421837_prix-elisa.html",
+            "sha256": "8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685",
+            "file": "preuves/8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
+            "sha256": "a1bf5263095bca4165431e1b51316e1dd29fc0348b89eee3c6165b40a60e8b0b",
+            "file": "preuves/a1bf5263095bca4165431e1b51316e1dd29fc0348b89eee3c6165b40a60e8b0b.gz"
+          },
+          "captured_at": "2026-10-28T12:19:34.276538+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 8.88,
+            "dateRapport": 1793186113000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694218-2026-10-28-auteuil-prix-elisa/partants-pronostics",
+          "sha256": "43fdd18ee5b3f3d900f5636a934469bb2fba362bb56734eaf92b7180d172a7b0",
+          "file": "preuves/43fdd18ee5b3f3d900f5636a934469bb2fba362bb56734eaf92b7180d172a7b0.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421837_prix-elisa.html",
+          "sha256": "8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685",
+          "file": "preuves/8553f6151264d3fa459981c6019e6d946a966587682ae8a9eab2339d5eccd685.gz"
+        }
+      }
     },
     {
       "date": "2026-10-28",
