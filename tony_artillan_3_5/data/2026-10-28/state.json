@@ -2109,7 +2109,9 @@
       "last_reservation_check": {
         "at": "2026-10-28T14:59:07.636238+01:00",
         "stop": "SERIE_TERMINEE"
-      }
+      },
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Cinq pertes successives"
     },
     {
       "date": "2026-10-28",
@@ -2261,7 +2263,7 @@
         "zone_turf": {
           "type": "ValueError",
           "reason": "Liste complète des partants Zone-Turf non concordante",
-          "at": "2026-10-28T14:59:07.544005+01:00"
+          "at": "2026-10-28T15:17:03.842947+01:00"
         }
       },
       "source_checks": {
@@ -2294,9 +2296,217 @@
       "title": "PRIX ROBERT BATES",
       "departure": "2026-10-28T16:15:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 1,
+          "name": "KELLE KIFF",
+          "source_url": "https://turfin.fr/course/2026-10-28/r1c8-auteuil-prix-robert-bates",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Robert Bates",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-28/r1c8-auteuil-prix-robert-bates",
+            "sha256": "88e6957fdfd98cfca0248a688940bdabc3aa859c2e2866f421c251ea1e7b9961",
+            "file": "preuves/88e6957fdfd98cfca0248a688940bdabc3aa859c2e2866f421c251ea1e7b9961.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
+            "sha256": "acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c",
+            "file": "preuves/acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c.gz"
+          },
+          "captured_at": "2026-10-28T15:17:06.800829+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1793196938000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-28T16:15:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "BEL ENJEU",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ROBERT BATES",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+            "sha256": "1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c",
+            "file": "preuves/1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
+            "sha256": "acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c",
+            "file": "preuves/acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c.gz"
+          },
+          "captured_at": "2026-10-28T15:17:08.662296+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -8.45,
+            "dateRapport": 1793196938000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-28T16:15:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 12,
+          "name": "CHEZ DOUCET",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ROBERT BATES",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+            "sha256": "1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c",
+            "file": "preuves/1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
+            "sha256": "acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c",
+            "file": "preuves/acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c.gz"
+          },
+          "captured_at": "2026-10-28T15:17:08.705801+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 3.22,
+            "dateRapport": 1793196938000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-28T16:15:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "KELLE KIFF",
+          "source_url": "https://www.geny.com/course/1694223-2026-10-28-auteuil-prix-robert-bates/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Robert Bates",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694223-2026-10-28-auteuil-prix-robert-bates/partants-pronostics",
+            "sha256": "2a75ae5d44ec1ebea7f0c885bc92989c05415d1a3d6810f141b99e17c44a270b",
+            "file": "preuves/2a75ae5d44ec1ebea7f0c885bc92989c05415d1a3d6810f141b99e17c44a270b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
+            "sha256": "acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c",
+            "file": "preuves/acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c.gz"
+          },
+          "captured_at": "2026-10-28T15:17:29.456445+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1793196938000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-28T16:15:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 1,
+          "name": "KELLE KIFF",
+          "source_url": "https://www.zone-turf.fr/pick5/mercredi-28-octobre-2026/R1C8/",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°8 : C8 - Prix Robert Bates",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/pick5/mercredi-28-octobre-2026/R1C8/",
+            "sha256": "489ba998d17a5aa1c977b031df4d6827399c1e6007d92ff7e4615e9b7b281ebf",
+            "file": "preuves/489ba998d17a5aa1c977b031df4d6827399c1e6007d92ff7e4615e9b7b281ebf.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
+            "sha256": "acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c",
+            "file": "preuves/acefaafe2a219951f41817a13369991b913d023cb37a8a7d78c39c1078f1545c.gz"
+          },
+          "captured_at": "2026-10-28T15:17:30.369060+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -5.55,
+            "dateRapport": 1793196938000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-28T16:15:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "majorite_3_sur_5": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "geny",
+            "zone_turf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-28/r1c8-auteuil-prix-robert-bates",
+          "sha256": "88e6957fdfd98cfca0248a688940bdabc3aa859c2e2866f421c251ea1e7b9961",
+          "file": "preuves/88e6957fdfd98cfca0248a688940bdabc3aa859c2e2866f421c251ea1e7b9961.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+          "sha256": "1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c",
+          "file": "preuves/1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
+          "sha256": "1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c",
+          "file": "preuves/1049a61729bb44a95779d6602a513ae9cba55cc97224c134d3f002e7ea23a26c.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1694223-2026-10-28-auteuil-prix-robert-bates/partants-pronostics",
+          "sha256": "2a75ae5d44ec1ebea7f0c885bc92989c05415d1a3d6810f141b99e17c44a270b",
+          "file": "preuves/2a75ae5d44ec1ebea7f0c885bc92989c05415d1a3d6810f141b99e17c44a270b.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/pick5/mercredi-28-octobre-2026/R1C8/",
+          "sha256": "489ba998d17a5aa1c977b031df4d6827399c1e6007d92ff7e4615e9b7b281ebf",
+          "file": "preuves/489ba998d17a5aa1c977b031df4d6827399c1e6007d92ff7e4615e9b7b281ebf.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-28T15:17:30.369108+01:00"
     }
   ],
   "notifications": [],
