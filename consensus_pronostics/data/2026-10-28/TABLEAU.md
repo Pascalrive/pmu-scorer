@@ -4,16 +4,16 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX SANTO PIETRO
 
-Collecte : 2026-10-28T09:18:20.988380+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-28T11:15:25.810838+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html) | 3 FALCON JET (cote 6.4) | 8 ROMAN SKIES (cote 5.6) | 1 LOUMINOS (cote 18.0) | 6 GABISON (cote 10.0) | 10 EMSILORD (cote 10.0) | 7 RAFFLES PRINCESS (cote 26.0) — Outsider ; 11 EH MAN (cote 14.0) — Outsider ; 9 LADY DU BRIZAIS (cote 12.0) — Outsider ; 1 LOUMINOS (cote 18.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html) | 14 PAREIL PAREIL (cote 10.0) | 8 ROMAN SKIES (cote 5.6) | 11 EH MAN (cote 14.0) | 3 FALCON JET (cote 6.4) | 6 GABISON (cote 10.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 3 FALCON JET (cote 6.4) | 8 ROMAN SKIES (cote 5.6) | 10 EMSILORD (cote 10.0) | 11 EH MAN (cote 14.0) | 7 RAFFLES PRINCESS (cote 26.0) | 4 NORMANDY MAN (cote 19.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 3 FALCON JET (cote 6.4) | 8 ROMAN SKIES (cote 5.6) | 6 GABISON (cote 10.0) | 10 EMSILORD (cote 10.0) | 14 PAREIL PAREIL (cote 10.0) | 14 PAREIL PAREIL (cote 10.0) — Outsider ; 2 HELL STORM (cote 14.0) — Outsider ; 12 ALHUNTER (cote 13.0) — Outsider ; 1 LOUMINOS (cote 18.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 3 FALCON JET (cote 6.4) | 8 ROMAN SKIES (cote 5.6) | 9 LADY DU BRIZAIS (cote 12.0) | 2 HELL STORM (cote 14.0) | 10 EMSILORD (cote 10.0) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74814-pronostic-quinte-du-mercredi-28-octobre-a-auteuil-prix-santo-pietro-r1c4.html) | 3 FALCON JET (cote 6.4) | 6 GABISON (cote 10.0) | 8 ROMAN SKIES (cote 5.6) | 10 EMSILORD (cote 10.0) | 11 EH MAN (cote 14.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html) | 3 FALCON JET (cote 6.7) | 8 ROMAN SKIES (cote 5.4) | 1 LOUMINOS (cote 19.0) | 6 GABISON (cote 10.0) | 10 EMSILORD (cote 10.0) | 7 RAFFLES PRINCESS (cote 27.0) — Outsider ; 11 EH MAN (cote 15.0) — Outsider ; 9 LADY DU BRIZAIS (cote 12.0) — Outsider ; 1 LOUMINOS (cote 19.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html) | 14 PAREIL PAREIL (cote 9.7) | 8 ROMAN SKIES (cote 5.4) | 11 EH MAN (cote 15.0) | 3 FALCON JET (cote 6.7) | 6 GABISON (cote 10.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 3 FALCON JET (cote 6.7) | 8 ROMAN SKIES (cote 5.4) | 10 EMSILORD (cote 10.0) | 11 EH MAN (cote 15.0) | 7 RAFFLES PRINCESS (cote 27.0) | 4 NORMANDY MAN (cote 18.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 3 FALCON JET (cote 6.7) | 8 ROMAN SKIES (cote 5.4) | 6 GABISON (cote 10.0) | 10 EMSILORD (cote 10.0) | 14 PAREIL PAREIL (cote 9.7) | 14 PAREIL PAREIL (cote 9.7) — Outsider ; 2 HELL STORM (cote 14.0) — Outsider ; 12 ALHUNTER (cote 15.0) — Outsider ; 1 LOUMINOS (cote 19.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 3 FALCON JET (cote 6.7) | 8 ROMAN SKIES (cote 5.4) | 9 LADY DU BRIZAIS (cote 12.0) | 2 HELL STORM (cote 14.0) | 10 EMSILORD (cote 10.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74814-pronostic-quinte-du-mercredi-28-octobre-a-auteuil-prix-santo-pietro-r1c4.html) | 3 FALCON JET (cote 6.7) | 6 GABISON (cote 10.0) | 8 ROMAN SKIES (cote 5.4) | 10 EMSILORD (cote 10.0) | 11 EH MAN (cote 15.0) | Non publié |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
 
@@ -21,18 +21,18 @@ Collecte : 2026-10-28T09:18:20.988380+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 3 FALCON JET (cote 6.4) | 6 |
-| 8 ROMAN SKIES (cote 5.6) | 6 |
+| 3 FALCON JET (cote 6.7) | 6 |
+| 8 ROMAN SKIES (cote 5.4) | 6 |
 | 10 EMSILORD (cote 10.0) | 5 |
 | 6 GABISON (cote 10.0) | 4 |
-| 11 EH MAN (cote 14.0) | 3 |
+| 11 EH MAN (cote 15.0) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 3 – 8 – 10 – 6 – 11 | 2 € |
-| Cotes | 8 – 3 – 6 – 10 – 14 | 2 € |
+| Cotes | 8 – 3 – 14 – 6 – 10 | 2 € |
 | Bases + outsiders | 3 – 8 – 10 – 1 | INCOMPLET : pas de simulation |
 
 ### Cumul des trois premiers choix
