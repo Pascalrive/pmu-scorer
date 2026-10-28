@@ -301,7 +301,8 @@
           "new": "2026-10-28T12:38:00+01:00",
           "checked_at": "2026-10-28T12:27:22.300123+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-10-28",
@@ -452,104 +453,14 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-28T11:36:48.096575+01:00",
+    "captured_at": "2026-10-28T12:39:41.660388+01:00",
     "races": [
-      {
-        "date": "2026-10-28",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX MAURICE D'OKHUYSEN",
-        "departure": "2026-10-28T12:00:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 6,
-            "name": "DEDEL",
-            "source_url": "https://www.geny.com/course/1694216-2026-10-28-auteuil-prix-maurice-d-okhuysen/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Maurice d'Okhuysen",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694216-2026-10-28-auteuil-prix-maurice-d-okhuysen/partants-pronostics",
-              "sha256": "df31bddb02e0841c8061b5fde4625a96f5058794bd4a773c219da1d79013a546",
-              "file": "preuves/df31bddb02e0841c8061b5fde4625a96f5058794bd4a773c219da1d79013a546.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/participants",
-              "sha256": "82869127f587301b9f925ae7f0c8d43b39612662a57062918e0528229e242fbe",
-              "file": "preuves/82869127f587301b9f925ae7f0c8d43b39612662a57062918e0528229e242fbe.gz"
-            },
-            "captured_at": "2026-10-28T11:34:27.349412+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793183629000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 1,
-            "name": "ASCENCIA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421835_prix-maurice-d-okhuysen.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX MAURICE D'OKHUYSEN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421835_prix-maurice-d-okhuysen.html",
-              "sha256": "d4909863c7e32a6d0e5a9094d9bf1bb85a23790310512518087d4ca66cf2c2e0",
-              "file": "preuves/d4909863c7e32a6d0e5a9094d9bf1bb85a23790310512518087d4ca66cf2c2e0.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C1/participants",
-              "sha256": "82869127f587301b9f925ae7f0c8d43b39612662a57062918e0528229e242fbe",
-              "file": "preuves/82869127f587301b9f925ae7f0c8d43b39612662a57062918e0528229e242fbe.gz"
-            },
-            "captured_at": "2026-10-28T11:34:30.294877+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793183629000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694216-2026-10-28-auteuil-prix-maurice-d-okhuysen/partants-pronostics",
-            "sha256": "df31bddb02e0841c8061b5fde4625a96f5058794bd4a773c219da1d79013a546",
-            "file": "preuves/df31bddb02e0841c8061b5fde4625a96f5058794bd4a773c219da1d79013a546.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421835_prix-maurice-d-okhuysen.html",
-            "sha256": "d4909863c7e32a6d0e5a9094d9bf1bb85a23790310512518087d4ca66cf2c2e0",
-            "file": "preuves/d4909863c7e32a6d0e5a9094d9bf1bb85a23790310512518087d4ca66cf2c2e0.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-28",
         "id": "R1C2",
         "c": 2,
         "title": "PRIX HUNORISK",
-        "departure": "2026-10-28T12:35:00+01:00",
+        "departure": "2026-10-28T12:38:00+01:00",
         "market": true,
         "tips": {
           "geny": {
@@ -562,25 +473,25 @@
             "source_title": "Prix Hunorisk",
             "evidence": {
               "url": "https://www.geny.com/course/1694217-2026-10-28-auteuil-prix-hunorisk/partants-pronostics",
-              "sha256": "2a776cc5c4d2bf3e7cea17572945c61ade8b1d529143109d0c0c65f63dfaf41a",
-              "file": "preuves/2a776cc5c4d2bf3e7cea17572945c61ade8b1d529143109d0c0c65f63dfaf41a.gz"
+              "sha256": "51d9aa8dd68bddb3f9a8c0d891f109dbc37409f0716d3277b99ea05d3e7d4636",
+              "file": "preuves/51d9aa8dd68bddb3f9a8c0d891f109dbc37409f0716d3277b99ea05d3e7d4636.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
-              "sha256": "874b3ffc19f0e24ae2b73bac821dce4ff0b544a97c945a939c5e62fc5ff96e50",
-              "file": "preuves/874b3ffc19f0e24ae2b73bac821dce4ff0b544a97c945a939c5e62fc5ff96e50.gz"
+              "sha256": "ed2b1fea179372a0c14df729ae04e4c65b7b5853aa3d61d398cab93555ec20b9",
+              "file": "preuves/ed2b1fea179372a0c14df729ae04e4c65b7b5853aa3d61d398cab93555ec20b9.gz"
             },
-            "captured_at": "2026-10-28T11:34:47.470516+01:00",
+            "captured_at": "2026-10-28T12:37:41.153809+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 2.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.26,
-              "dateRapport": 1793183420000,
-              "favoris": true,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793187433000,
+              "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -595,25 +506,25 @@
             "source_title": "Le pronostic du PRIX HUNORISK",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421836_prix-hunorisk.html",
-              "sha256": "f8e5eda6420f70920181fb2f2baa8fa021a66be5e50145ad9b7fa23d2ef1cf33",
-              "file": "preuves/f8e5eda6420f70920181fb2f2baa8fa021a66be5e50145ad9b7fa23d2ef1cf33.gz"
+              "sha256": "38ba870b4a7959aa1fe56679ca7d52d9b562399f5ec0a2ad0ce63a00654b4b60",
+              "file": "preuves/38ba870b4a7959aa1fe56679ca7d52d9b562399f5ec0a2ad0ce63a00654b4b60.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C2/participants",
-              "sha256": "874b3ffc19f0e24ae2b73bac821dce4ff0b544a97c945a939c5e62fc5ff96e50",
-              "file": "preuves/874b3ffc19f0e24ae2b73bac821dce4ff0b544a97c945a939c5e62fc5ff96e50.gz"
+              "sha256": "ed2b1fea179372a0c14df729ae04e4c65b7b5853aa3d61d398cab93555ec20b9",
+              "file": "preuves/ed2b1fea179372a0c14df729ae04e4c65b7b5853aa3d61d398cab93555ec20b9.gz"
             },
-            "captured_at": "2026-10-28T11:34:48.188584+01:00",
+            "captured_at": "2026-10-28T12:37:42.776522+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 2.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.26,
-              "dateRapport": 1793183420000,
-              "favoris": true,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793187433000,
+              "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -624,15 +535,27 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694217-2026-10-28-auteuil-prix-hunorisk/partants-pronostics",
-            "sha256": "2a776cc5c4d2bf3e7cea17572945c61ade8b1d529143109d0c0c65f63dfaf41a",
-            "file": "preuves/2a776cc5c4d2bf3e7cea17572945c61ade8b1d529143109d0c0c65f63dfaf41a.gz"
+            "sha256": "51d9aa8dd68bddb3f9a8c0d891f109dbc37409f0716d3277b99ea05d3e7d4636",
+            "file": "preuves/51d9aa8dd68bddb3f9a8c0d891f109dbc37409f0716d3277b99ea05d3e7d4636.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421836_prix-hunorisk.html",
-            "sha256": "f8e5eda6420f70920181fb2f2baa8fa021a66be5e50145ad9b7fa23d2ef1cf33",
-            "file": "preuves/f8e5eda6420f70920181fb2f2baa8fa021a66be5e50145ad9b7fa23d2ef1cf33.gz"
+            "sha256": "38ba870b4a7959aa1fe56679ca7d52d9b562399f5ec0a2ad0ce63a00654b4b60",
+            "file": "preuves/38ba870b4a7959aa1fe56679ca7d52d9b562399f5ec0a2ad0ce63a00654b4b60.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-28T11:36:48.933441+01:00",
+        "last_reservation_check": {
+          "at": "2026-10-28T12:27:23.827943+01:00",
+          "stop": "ATTENTE_RESULTAT"
+        },
+        "schedule_changes": [
+          {
+            "old": "2026-10-28T12:35:00+01:00",
+            "new": "2026-10-28T12:38:00+01:00",
+            "checked_at": "2026-10-28T12:27:22.300123+01:00"
+          }
+        ]
       },
       {
         "date": "2026-10-28",
@@ -652,24 +575,24 @@
             "source_title": "Prix Elisa",
             "evidence": {
               "url": "https://www.geny.com/course/1694218-2026-10-28-auteuil-prix-elisa/partants-pronostics",
-              "sha256": "25097bbb0ced1ca9b547426dfefd4cc1aa958bba197346241a34503067f8e621",
-              "file": "preuves/25097bbb0ced1ca9b547426dfefd4cc1aa958bba197346241a34503067f8e621.gz"
+              "sha256": "8bf24d58cc9cc9835fa6f85448be8debeab02c0e389204e01ac6b9da98d736e3",
+              "file": "preuves/8bf24d58cc9cc9835fa6f85448be8debeab02c0e389204e01ac6b9da98d736e3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
-              "sha256": "ac915e0b9baf3093d82febadeac64d8a1bea2677be252b3c21562d89258c2b02",
-              "file": "preuves/ac915e0b9baf3093d82febadeac64d8a1bea2677be252b3c21562d89258c2b02.gz"
+              "sha256": "99107e4b7f7c9c27ba370fed4dab798e74f117974c02e8fa4f13f72196f1bfc1",
+              "file": "preuves/99107e4b7f7c9c27ba370fed4dab798e74f117974c02e8fa4f13f72196f1bfc1.gz"
             },
-            "captured_at": "2026-10-28T11:35:07.508329+01:00",
+            "captured_at": "2026-10-28T12:38:01.266364+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
+              "rapport": 1.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793183413000,
+              "nombreIndicateurTendance": 5.55,
+              "dateRapport": 1793187013000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -685,24 +608,24 @@
             "source_title": "Le pronostic du PRIX ELISA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421837_prix-elisa.html",
-              "sha256": "5e7356fb521e5258c80c7c8520da20fd33cebb86484d8971f41287d84b042d2d",
-              "file": "preuves/5e7356fb521e5258c80c7c8520da20fd33cebb86484d8971f41287d84b042d2d.gz"
+              "sha256": "bcc584f3bff1fbb61c54ae0f586706c407952e50b10aa621c26569926c7e7543",
+              "file": "preuves/bcc584f3bff1fbb61c54ae0f586706c407952e50b10aa621c26569926c7e7543.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C3/participants",
-              "sha256": "ac915e0b9baf3093d82febadeac64d8a1bea2677be252b3c21562d89258c2b02",
-              "file": "preuves/ac915e0b9baf3093d82febadeac64d8a1bea2677be252b3c21562d89258c2b02.gz"
+              "sha256": "99107e4b7f7c9c27ba370fed4dab798e74f117974c02e8fa4f13f72196f1bfc1",
+              "file": "preuves/99107e4b7f7c9c27ba370fed4dab798e74f117974c02e8fa4f13f72196f1bfc1.gz"
             },
-            "captured_at": "2026-10-28T11:35:08.241110+01:00",
+            "captured_at": "2026-10-28T12:38:01.818518+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.08,
-              "dateRapport": 1793183413000,
+              "nombreIndicateurTendance": -8.16,
+              "dateRapport": 1793187013000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -714,13 +637,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694218-2026-10-28-auteuil-prix-elisa/partants-pronostics",
-            "sha256": "25097bbb0ced1ca9b547426dfefd4cc1aa958bba197346241a34503067f8e621",
-            "file": "preuves/25097bbb0ced1ca9b547426dfefd4cc1aa958bba197346241a34503067f8e621.gz"
+            "sha256": "8bf24d58cc9cc9835fa6f85448be8debeab02c0e389204e01ac6b9da98d736e3",
+            "file": "preuves/8bf24d58cc9cc9835fa6f85448be8debeab02c0e389204e01ac6b9da98d736e3.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421837_prix-elisa.html",
-            "sha256": "5e7356fb521e5258c80c7c8520da20fd33cebb86484d8971f41287d84b042d2d",
-            "file": "preuves/5e7356fb521e5258c80c7c8520da20fd33cebb86484d8971f41287d84b042d2d.gz"
+            "sha256": "bcc584f3bff1fbb61c54ae0f586706c407952e50b10aa621c26569926c7e7543",
+            "file": "preuves/bcc584f3bff1fbb61c54ae0f586706c407952e50b10aa621c26569926c7e7543.gz"
           }
         }
       },
@@ -742,15 +665,15 @@
             "source_title": "Prix Santo Pietro",
             "evidence": {
               "url": "https://www.geny.com/course/1694219-2026-10-28-auteuil-prix-santo-pietro/partants-pronostics",
-              "sha256": "3102dd9f0cc3ed65e83540d1aa59cd3ec80f19f88d4203a9a5ce641f7fafa340",
-              "file": "preuves/3102dd9f0cc3ed65e83540d1aa59cd3ec80f19f88d4203a9a5ce641f7fafa340.gz"
+              "sha256": "b950ec171b4a46c2bb1884acb3dc9f11ae9825495406742d5d7d87026cf40e02",
+              "file": "preuves/b950ec171b4a46c2bb1884acb3dc9f11ae9825495406742d5d7d87026cf40e02.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
-              "sha256": "2551d479e4fdc133ce897e983efff784bbf0179fd48ec32adfb09c5d4e36dd13",
-              "file": "preuves/2551d479e4fdc133ce897e983efff784bbf0179fd48ec32adfb09c5d4e36dd13.gz"
+              "sha256": "d09b620e3d73ea1119557622fdd482b6fab166afcd4e86d027391b48d4fafeda",
+              "file": "preuves/d09b620e3d73ea1119557622fdd482b6fab166afcd4e86d027391b48d4fafeda.gz"
             },
-            "captured_at": "2026-10-28T11:35:27.606739+01:00",
+            "captured_at": "2026-10-28T12:38:21.314468+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -758,8 +681,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 6.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793183415000,
+              "nombreIndicateurTendance": -1.47,
+              "dateRapport": 1793187015000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -775,15 +698,15 @@
             "source_title": "Le pronostic du Quinté PRIX SANTO PIETRO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html",
-              "sha256": "24d7587597cc72787b5df2e8a35a3b063864287aa8353c3dcc84d9e34d42d6c7",
-              "file": "preuves/24d7587597cc72787b5df2e8a35a3b063864287aa8353c3dcc84d9e34d42d6c7.gz"
+              "sha256": "af84b3c7268333a508cde38b055fc14f90178e8567087424468f52588a671a70",
+              "file": "preuves/af84b3c7268333a508cde38b055fc14f90178e8567087424468f52588a671a70.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C4/participants",
-              "sha256": "2551d479e4fdc133ce897e983efff784bbf0179fd48ec32adfb09c5d4e36dd13",
-              "file": "preuves/2551d479e4fdc133ce897e983efff784bbf0179fd48ec32adfb09c5d4e36dd13.gz"
+              "sha256": "d09b620e3d73ea1119557622fdd482b6fab166afcd4e86d027391b48d4fafeda",
+              "file": "preuves/d09b620e3d73ea1119557622fdd482b6fab166afcd4e86d027391b48d4fafeda.gz"
             },
-            "captured_at": "2026-10-28T11:35:28.341786+01:00",
+            "captured_at": "2026-10-28T12:38:21.897973+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -791,8 +714,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 6.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793183415000,
+              "nombreIndicateurTendance": -1.47,
+              "dateRapport": 1793187015000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -804,13 +727,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694219-2026-10-28-auteuil-prix-santo-pietro/partants-pronostics",
-            "sha256": "3102dd9f0cc3ed65e83540d1aa59cd3ec80f19f88d4203a9a5ce641f7fafa340",
-            "file": "preuves/3102dd9f0cc3ed65e83540d1aa59cd3ec80f19f88d4203a9a5ce641f7fafa340.gz"
+            "sha256": "b950ec171b4a46c2bb1884acb3dc9f11ae9825495406742d5d7d87026cf40e02",
+            "file": "preuves/b950ec171b4a46c2bb1884acb3dc9f11ae9825495406742d5d7d87026cf40e02.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421838_prix-santo-pietro.html",
-            "sha256": "24d7587597cc72787b5df2e8a35a3b063864287aa8353c3dcc84d9e34d42d6c7",
-            "file": "preuves/24d7587597cc72787b5df2e8a35a3b063864287aa8353c3dcc84d9e34d42d6c7.gz"
+            "sha256": "af84b3c7268333a508cde38b055fc14f90178e8567087424468f52588a671a70",
+            "file": "preuves/af84b3c7268333a508cde38b055fc14f90178e8567087424468f52588a671a70.gz"
           }
         }
       },
@@ -832,24 +755,24 @@
             "source_title": "Prix Lusignan",
             "evidence": {
               "url": "https://www.geny.com/course/1694220-2026-10-28-auteuil-prix-lusignan/partants-pronostics",
-              "sha256": "63b5b0b206df5baba35afe92d66ff99b0754631974ad1a1c37474568ac847b9b",
-              "file": "preuves/63b5b0b206df5baba35afe92d66ff99b0754631974ad1a1c37474568ac847b9b.gz"
+              "sha256": "4fd911f499d2f735112c59e49cc2e35bd814c61d8b0757e4f2fd9438e9b3feb6",
+              "file": "preuves/4fd911f499d2f735112c59e49cc2e35bd814c61d8b0757e4f2fd9438e9b3feb6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C5/participants",
-              "sha256": "f023c55b83698af3b0401fdb4185311928d68d071627f4439354feec46edb603",
-              "file": "preuves/f023c55b83698af3b0401fdb4185311928d68d071627f4439354feec46edb603.gz"
+              "sha256": "c49da409372fd4726e8cb4ad1522bb0a507eefbc1a833661a91396061edff3ee",
+              "file": "preuves/c49da409372fd4726e8cb4ad1522bb0a507eefbc1a833661a91396061edff3ee.gz"
             },
-            "captured_at": "2026-10-28T11:35:47.042146+01:00",
+            "captured_at": "2026-10-28T12:38:40.980681+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.5,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.4,
-              "dateRapport": 1793183449000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1793187049000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -865,24 +788,24 @@
             "source_title": "Le pronostic du PRIX LUSIGNAN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421839_prix-lusignan.html",
-              "sha256": "7ddd66953b992e3c930f2b8e3c541c85f4f2c87fc8f856ea9d4d913688d0a5a2",
-              "file": "preuves/7ddd66953b992e3c930f2b8e3c541c85f4f2c87fc8f856ea9d4d913688d0a5a2.gz"
+              "sha256": "85cec2c60f3ed0b3983c09c76a1ad98d0d316c122b0f61eb39e9494a9d16df7b",
+              "file": "preuves/85cec2c60f3ed0b3983c09c76a1ad98d0d316c122b0f61eb39e9494a9d16df7b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C5/participants",
-              "sha256": "f023c55b83698af3b0401fdb4185311928d68d071627f4439354feec46edb603",
-              "file": "preuves/f023c55b83698af3b0401fdb4185311928d68d071627f4439354feec46edb603.gz"
+              "sha256": "c49da409372fd4726e8cb4ad1522bb0a507eefbc1a833661a91396061edff3ee",
+              "file": "preuves/c49da409372fd4726e8cb4ad1522bb0a507eefbc1a833661a91396061edff3ee.gz"
             },
-            "captured_at": "2026-10-28T11:35:47.756639+01:00",
+            "captured_at": "2026-10-28T12:38:41.546742+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.5,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.4,
-              "dateRapport": 1793183449000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1793187049000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -894,13 +817,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694220-2026-10-28-auteuil-prix-lusignan/partants-pronostics",
-            "sha256": "63b5b0b206df5baba35afe92d66ff99b0754631974ad1a1c37474568ac847b9b",
-            "file": "preuves/63b5b0b206df5baba35afe92d66ff99b0754631974ad1a1c37474568ac847b9b.gz"
+            "sha256": "4fd911f499d2f735112c59e49cc2e35bd814c61d8b0757e4f2fd9438e9b3feb6",
+            "file": "preuves/4fd911f499d2f735112c59e49cc2e35bd814c61d8b0757e4f2fd9438e9b3feb6.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421839_prix-lusignan.html",
-            "sha256": "7ddd66953b992e3c930f2b8e3c541c85f4f2c87fc8f856ea9d4d913688d0a5a2",
-            "file": "preuves/7ddd66953b992e3c930f2b8e3c541c85f4f2c87fc8f856ea9d4d913688d0a5a2.gz"
+            "sha256": "85cec2c60f3ed0b3983c09c76a1ad98d0d316c122b0f61eb39e9494a9d16df7b",
+            "file": "preuves/85cec2c60f3ed0b3983c09c76a1ad98d0d316c122b0f61eb39e9494a9d16df7b.gz"
           }
         }
       },
@@ -922,15 +845,15 @@
             "source_title": "Prix Cap",
             "evidence": {
               "url": "https://www.geny.com/course/1694221-2026-10-28-auteuil-prix-cap/partants-pronostics",
-              "sha256": "51ac74796cd7a1fd4c556ffca5cf89272b7e520098d5406e85efbc8486a88586",
-              "file": "preuves/51ac74796cd7a1fd4c556ffca5cf89272b7e520098d5406e85efbc8486a88586.gz"
+              "sha256": "c2fbb3aed4cfa94877efe8e9f2553eb15977809ed5a86c2cb08213b07f41af59",
+              "file": "preuves/c2fbb3aed4cfa94877efe8e9f2553eb15977809ed5a86c2cb08213b07f41af59.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
-              "sha256": "10f8e39fee6ef3ec40ee64c546a4badd6b33592d9e1a695b928049a943bba2e6",
-              "file": "preuves/10f8e39fee6ef3ec40ee64c546a4badd6b33592d9e1a695b928049a943bba2e6.gz"
+              "sha256": "8b75f190f23cf49bbea1355f28e40e4f5a1889796811ee2da3ef3da481dd5ff3",
+              "file": "preuves/8b75f190f23cf49bbea1355f28e40e4f5a1889796811ee2da3ef3da481dd5ff3.gz"
             },
-            "captured_at": "2026-10-28T11:36:07.623369+01:00",
+            "captured_at": "2026-10-28T12:39:01.375452+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -938,8 +861,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 14.81,
-              "dateRapport": 1793183419000,
+              "nombreIndicateurTendance": 3.33,
+              "dateRapport": 1793187019000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -955,15 +878,15 @@
             "source_title": "Le pronostic du PRIX CAP",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421840_prix-cap.html",
-              "sha256": "fdbe9534d54f964e5c8177ca2b4e0447057409ba1b7b3f32d7e6917e169e70e5",
-              "file": "preuves/fdbe9534d54f964e5c8177ca2b4e0447057409ba1b7b3f32d7e6917e169e70e5.gz"
+              "sha256": "2c4f5c19afab2ec55e23efd732e6162187b529eee1be78650cdd7a7aa2aef517",
+              "file": "preuves/2c4f5c19afab2ec55e23efd732e6162187b529eee1be78650cdd7a7aa2aef517.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
-              "sha256": "10f8e39fee6ef3ec40ee64c546a4badd6b33592d9e1a695b928049a943bba2e6",
-              "file": "preuves/10f8e39fee6ef3ec40ee64c546a4badd6b33592d9e1a695b928049a943bba2e6.gz"
+              "sha256": "8b75f190f23cf49bbea1355f28e40e4f5a1889796811ee2da3ef3da481dd5ff3",
+              "file": "preuves/8b75f190f23cf49bbea1355f28e40e4f5a1889796811ee2da3ef3da481dd5ff3.gz"
             },
-            "captured_at": "2026-10-28T11:36:08.333898+01:00",
+            "captured_at": "2026-10-28T12:39:01.964857+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -971,8 +894,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 14.81,
-              "dateRapport": 1793183419000,
+              "nombreIndicateurTendance": 3.33,
+              "dateRapport": 1793187019000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -984,13 +907,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694221-2026-10-28-auteuil-prix-cap/partants-pronostics",
-            "sha256": "51ac74796cd7a1fd4c556ffca5cf89272b7e520098d5406e85efbc8486a88586",
-            "file": "preuves/51ac74796cd7a1fd4c556ffca5cf89272b7e520098d5406e85efbc8486a88586.gz"
+            "sha256": "c2fbb3aed4cfa94877efe8e9f2553eb15977809ed5a86c2cb08213b07f41af59",
+            "file": "preuves/c2fbb3aed4cfa94877efe8e9f2553eb15977809ed5a86c2cb08213b07f41af59.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421840_prix-cap.html",
-            "sha256": "fdbe9534d54f964e5c8177ca2b4e0447057409ba1b7b3f32d7e6917e169e70e5",
-            "file": "preuves/fdbe9534d54f964e5c8177ca2b4e0447057409ba1b7b3f32d7e6917e169e70e5.gz"
+            "sha256": "2c4f5c19afab2ec55e23efd732e6162187b529eee1be78650cdd7a7aa2aef517",
+            "file": "preuves/2c4f5c19afab2ec55e23efd732e6162187b529eee1be78650cdd7a7aa2aef517.gz"
           }
         }
       },
@@ -1012,25 +935,25 @@
             "source_title": "Prix Frascati",
             "evidence": {
               "url": "https://www.geny.com/course/1694222-2026-10-28-auteuil-prix-frascati/partants-pronostics",
-              "sha256": "d98bb2894ca4e08f1b74ddf88ad06cb0f1dc724cfe6fbaac8b08534020934573",
-              "file": "preuves/d98bb2894ca4e08f1b74ddf88ad06cb0f1dc724cfe6fbaac8b08534020934573.gz"
+              "sha256": "8fb5d72b866ac93cd1721814ec6ce572ff5b8676644f9eab66bb426d770dc49f",
+              "file": "preuves/8fb5d72b866ac93cd1721814ec6ce572ff5b8676644f9eab66bb426d770dc49f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C7/participants",
-              "sha256": "598de67f2ee830dcecba852a1bb6adabd3d98fce6d529fde358ee40841fd47ca",
-              "file": "preuves/598de67f2ee830dcecba852a1bb6adabd3d98fce6d529fde358ee40841fd47ca.gz"
+              "sha256": "a78ab555ce5f49112987114019bf94882e45c4fa70f08b7671e9941f332b7280",
+              "file": "preuves/a78ab555ce5f49112987114019bf94882e45c4fa70f08b7671e9941f332b7280.gz"
             },
-            "captured_at": "2026-10-28T11:36:27.139228+01:00",
+            "captured_at": "2026-10-28T12:39:21.048210+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.4,
+              "rapport": 4.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.76,
-              "dateRapport": 1793183435000,
-              "favoris": true,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793187035000,
+              "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
             }
@@ -1045,25 +968,25 @@
             "source_title": "Le pronostic du PRIX FRASCATI",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421841_prix-frascati.html",
-              "sha256": "2e713f063914ac832cb5da8cbb2a5e9a27d52d3683a2fb8c383e0af73b80adc2",
-              "file": "preuves/2e713f063914ac832cb5da8cbb2a5e9a27d52d3683a2fb8c383e0af73b80adc2.gz"
+              "sha256": "4697b058e20f9735a971e252d53a2d40b7ba6bb9584c19f822737de23d8f482a",
+              "file": "preuves/4697b058e20f9735a971e252d53a2d40b7ba6bb9584c19f822737de23d8f482a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C7/participants",
-              "sha256": "598de67f2ee830dcecba852a1bb6adabd3d98fce6d529fde358ee40841fd47ca",
-              "file": "preuves/598de67f2ee830dcecba852a1bb6adabd3d98fce6d529fde358ee40841fd47ca.gz"
+              "sha256": "a78ab555ce5f49112987114019bf94882e45c4fa70f08b7671e9941f332b7280",
+              "file": "preuves/a78ab555ce5f49112987114019bf94882e45c4fa70f08b7671e9941f332b7280.gz"
             },
-            "captured_at": "2026-10-28T11:36:27.853930+01:00",
+            "captured_at": "2026-10-28T12:39:21.629661+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.4,
+              "rapport": 4.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.76,
-              "dateRapport": 1793183435000,
-              "favoris": true,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793187035000,
+              "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
             }
@@ -1074,13 +997,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694222-2026-10-28-auteuil-prix-frascati/partants-pronostics",
-            "sha256": "d98bb2894ca4e08f1b74ddf88ad06cb0f1dc724cfe6fbaac8b08534020934573",
-            "file": "preuves/d98bb2894ca4e08f1b74ddf88ad06cb0f1dc724cfe6fbaac8b08534020934573.gz"
+            "sha256": "8fb5d72b866ac93cd1721814ec6ce572ff5b8676644f9eab66bb426d770dc49f",
+            "file": "preuves/8fb5d72b866ac93cd1721814ec6ce572ff5b8676644f9eab66bb426d770dc49f.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421841_prix-frascati.html",
-            "sha256": "2e713f063914ac832cb5da8cbb2a5e9a27d52d3683a2fb8c383e0af73b80adc2",
-            "file": "preuves/2e713f063914ac832cb5da8cbb2a5e9a27d52d3683a2fb8c383e0af73b80adc2.gz"
+            "sha256": "4697b058e20f9735a971e252d53a2d40b7ba6bb9584c19f822737de23d8f482a",
+            "file": "preuves/4697b058e20f9735a971e252d53a2d40b7ba6bb9584c19f822737de23d8f482a.gz"
           }
         }
       },
@@ -1102,15 +1025,15 @@
             "source_title": "Prix Robert Bates",
             "evidence": {
               "url": "https://www.geny.com/course/1694223-2026-10-28-auteuil-prix-robert-bates/partants-pronostics",
-              "sha256": "c4d24f1ccc6d54c0ac3a2c84e2aa125315a8bc7f3c54144e7433b0d99ee301ff",
-              "file": "preuves/c4d24f1ccc6d54c0ac3a2c84e2aa125315a8bc7f3c54144e7433b0d99ee301ff.gz"
+              "sha256": "87b1b8c293fffb6bbe21eec5b5dec4370e6a1051cfb862e62c172413f41b25c7",
+              "file": "preuves/87b1b8c293fffb6bbe21eec5b5dec4370e6a1051cfb862e62c172413f41b25c7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
-              "sha256": "804939eea4e6fb04b1953d6790995e883df64d8cc0f3ea6b1cdf9f257027644b",
-              "file": "preuves/804939eea4e6fb04b1953d6790995e883df64d8cc0f3ea6b1cdf9f257027644b.gz"
+              "sha256": "a98cf0d64ad31763120a66ed6d7b404c5184663c1f0c33e429688ff33bbd9904",
+              "file": "preuves/a98cf0d64ad31763120a66ed6d7b404c5184663c1f0c33e429688ff33bbd9904.gz"
             },
-            "captured_at": "2026-10-28T11:36:47.337287+01:00",
+            "captured_at": "2026-10-28T12:39:41.095354+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1118,8 +1041,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.05,
-              "dateRapport": 1793183438000,
+              "nombreIndicateurTendance": 5.1,
+              "dateRapport": 1793187038000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -1135,24 +1058,24 @@
             "source_title": "Le pronostic du PRIX ROBERT BATES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
-              "sha256": "794b10e2abef35211ec0376a09a81da70283d5cff73c1e26c18d6244e30b628e",
-              "file": "preuves/794b10e2abef35211ec0376a09a81da70283d5cff73c1e26c18d6244e30b628e.gz"
+              "sha256": "50c1124f94598256242a878f6c720b3d604939627cd836733aefc257fa6cd433",
+              "file": "preuves/50c1124f94598256242a878f6c720b3d604939627cd836733aefc257fa6cd433.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C8/participants",
-              "sha256": "804939eea4e6fb04b1953d6790995e883df64d8cc0f3ea6b1cdf9f257027644b",
-              "file": "preuves/804939eea4e6fb04b1953d6790995e883df64d8cc0f3ea6b1cdf9f257027644b.gz"
+              "sha256": "a98cf0d64ad31763120a66ed6d7b404c5184663c1f0c33e429688ff33bbd9904",
+              "file": "preuves/a98cf0d64ad31763120a66ed6d7b404c5184663c1f0c33e429688ff33bbd9904.gz"
             },
-            "captured_at": "2026-10-28T11:36:48.096505+01:00",
+            "captured_at": "2026-10-28T12:39:41.660321+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.7,
+              "rapport": 7.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.47,
-              "dateRapport": 1793183438000,
+              "nombreIndicateurTendance": 1.28,
+              "dateRapport": 1793187038000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1164,13 +1087,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694223-2026-10-28-auteuil-prix-robert-bates/partants-pronostics",
-            "sha256": "c4d24f1ccc6d54c0ac3a2c84e2aa125315a8bc7f3c54144e7433b0d99ee301ff",
-            "file": "preuves/c4d24f1ccc6d54c0ac3a2c84e2aa125315a8bc7f3c54144e7433b0d99ee301ff.gz"
+            "sha256": "87b1b8c293fffb6bbe21eec5b5dec4370e6a1051cfb862e62c172413f41b25c7",
+            "file": "preuves/87b1b8c293fffb6bbe21eec5b5dec4370e6a1051cfb862e62c172413f41b25c7.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421842_prix-robert-bates.html",
-            "sha256": "794b10e2abef35211ec0376a09a81da70283d5cff73c1e26c18d6244e30b628e",
-            "file": "preuves/794b10e2abef35211ec0376a09a81da70283d5cff73c1e26c18d6244e30b628e.gz"
+            "sha256": "50c1124f94598256242a878f6c720b3d604939627cd836733aefc257fa6cd433",
+            "file": "preuves/50c1124f94598256242a878f6c720b3d604939627cd836733aefc257fa6cd433.gz"
           }
         }
       }
