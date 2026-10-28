@@ -956,7 +956,11 @@
           "file": "preuves/42a4cb82335017ce5cbd0e9a6f4c37a8833569a6d0742bd100976cf40379c674.gz"
         }
       },
-      "groups_frozen_at": "2026-10-28T14:17:02.978403+01:00"
+      "groups_frozen_at": "2026-10-28T14:17:02.978403+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-28T14:43:19.646685+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-28",
@@ -965,9 +969,97 @@
       "title": "PRIX FRASCATI",
       "departure": "2026-10-28T15:40:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "ROSA GALLICA",
+          "source_url": "https://www.geny.com/course/1694222-2026-10-28-auteuil-prix-frascati/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Frascati",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694222-2026-10-28-auteuil-prix-frascati/partants-pronostics",
+            "sha256": "5f1a78e20ae553c2f40e846f182e2bf9c283356f145956b5a0858de6d4fe2611",
+            "file": "preuves/5f1a78e20ae553c2f40e846f182e2bf9c283356f145956b5a0858de6d4fe2611.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C7/participants",
+            "sha256": "c737a1c778c9eb12b2625906a25078ba8ecd2df5b34c08654e4b12600826e9c7",
+            "file": "preuves/c737a1c778c9eb12b2625906a25078ba8ecd2df5b34c08654e4b12600826e9c7.gz"
+          },
+          "captured_at": "2026-10-28T14:43:16.723794+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.12,
+            "dateRapport": 1793194235000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "ROSA GALLICA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421841_prix-frascati.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX FRASCATI",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421841_prix-frascati.html",
+            "sha256": "b72534b5f0c5a3860fa5f7b17b4a03f6feca93700fde5afc46901cf565db1965",
+            "file": "preuves/b72534b5f0c5a3860fa5f7b17b4a03f6feca93700fde5afc46901cf565db1965.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C7/participants",
+            "sha256": "c737a1c778c9eb12b2625906a25078ba8ecd2df5b34c08654e4b12600826e9c7",
+            "file": "preuves/c737a1c778c9eb12b2625906a25078ba8ecd2df5b34c08654e4b12600826e9c7.gz"
+          },
+          "captured_at": "2026-10-28T14:43:18.887922+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.12,
+            "dateRapport": 1793194235000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 3,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694222-2026-10-28-auteuil-prix-frascati/partants-pronostics",
+          "sha256": "5f1a78e20ae553c2f40e846f182e2bf9c283356f145956b5a0858de6d4fe2611",
+          "file": "preuves/5f1a78e20ae553c2f40e846f182e2bf9c283356f145956b5a0858de6d4fe2611.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-28/auteuil/421841_prix-frascati.html",
+          "sha256": "b72534b5f0c5a3860fa5f7b17b4a03f6feca93700fde5afc46901cf565db1965",
+          "file": "preuves/b72534b5f0c5a3860fa5f7b17b4a03f6feca93700fde5afc46901cf565db1965.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-28T14:43:18.887975+01:00"
     },
     {
       "date": "2026-10-28",
