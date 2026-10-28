@@ -124,7 +124,7 @@
           "number": 3,
           "name": "BLIDA",
           "stake_cents": 15000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-10-28T14:51:58.296271+01:00",
           "source_captured_at": "2026-10-28T14:16:58.437795+01:00",
           "sites": [
@@ -138,6 +138,44 @@
             "nombreIndicateurTendance": -4.76,
             "dateRapport": 1793195443000,
             "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "return_cents": 42000,
+          "profit_cents": 27000,
+          "rank": 1,
+          "settled_at": "2026-10-28T15:26:19.344908+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06",
+            "file": "preuves/8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+            "sha256": "82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948",
+            "file": "preuves/82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948.gz"
+          }
+        },
+        {
+          "race_id": "R1C7",
+          "departure": "2026-10-28T15:41:00+01:00",
+          "number": 3,
+          "name": "ROSA GALLICA",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-28T15:26:19.345171+01:00",
+          "source_captured_at": "2026-10-28T14:43:16.723794+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.65,
+            "dateRapport": 1793197561000,
+            "favoris": false,
             "numPmu1": 3,
             "grossePrise": false
           }
@@ -995,7 +1033,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-28T15:26:19.344654+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06",
+            "file": "preuves/8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+            "sha256": "82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948",
+            "file": "preuves/82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1028,7 +1080,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-28T15:26:19.344838+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06",
+            "file": "preuves/8f63b7fb7445902d823f2ff862a727f1f8b7b96ab9c15e1a6f534e0f4312fd06.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+            "sha256": "82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948",
+            "file": "preuves/82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948.gz"
+          }
         }
       },
       "groups": {
@@ -1058,14 +1124,45 @@
         "at": "2026-10-28T14:57:59.255801+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "BLIDA",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "MAGIE DU CHENET",
+          "rank": 2
+        },
+        {
+          "number": 8,
+          "name": "HALTREE DES OBEAUX",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "MAURA MAGUIRE",
+          "rank": 4
+        },
+        {
+          "number": 10,
+          "name": "MATELINE DE GUYE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28102026/R1/C6/participants",
+        "sha256": "82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948",
+        "file": "preuves/82b805d8305f8fbc6ee72fb38301ea20f6bc418772a580dadc35b0a0d84eb948.gz"
+      }
     },
     {
       "date": "2026-10-28",
       "id": "R1C7",
       "c": 7,
       "title": "PRIX FRASCATI",
-      "departure": "2026-10-28T15:40:00+01:00",
+      "departure": "2026-10-28T15:41:00+01:00",
       "market": true,
       "tips": {
         "geny": {
@@ -1161,7 +1258,14 @@
       "last_reservation_check": {
         "at": "2026-10-28T15:15:32.786208+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-10-28T15:40:00+01:00",
+          "new": "2026-10-28T15:41:00+01:00",
+          "checked_at": "2026-10-28T15:26:17.376365+01:00"
+        }
+      ]
     },
     {
       "date": "2026-10-28",
