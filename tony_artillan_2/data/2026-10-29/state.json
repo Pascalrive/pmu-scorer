@@ -19,7 +19,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 14,
+          "name": "INMAROSA",
+          "rank": 1
+        },
+        {
+          "number": 10,
+          "name": "HARLEY GEMA",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "HULYSSE DIGEO",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "JINGLE DU PONT",
+          "rank": 4
+        },
+        {
+          "number": 12,
+          "name": "KRACK TIME ATOUT",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C1/participants",
+        "sha256": "7e4e12cef0dff2b3c39fc1949a7b936b3c261c265310781fcd5f26c5c5a68935",
+        "file": "preuves/7e4e12cef0dff2b3c39fc1949a7b936b3c261c265310781fcd5f26c5c5a68935.gz"
+      },
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-29",
@@ -30,7 +63,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 7,
+          "name": "NEW FAIRY",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "NEWMARKET",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "NOVA JOSSELYN",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "NAOMI DE LA VALLEE",
+          "rank": 4
+        },
+        {
+          "number": 13,
+          "name": "NACRE GLAM",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C2/participants",
+        "sha256": "70ab76835d98b49efa7ba766eb1659d8299c72dece423895b7c5aaad599b976a",
+        "file": "preuves/70ab76835d98b49efa7ba766eb1659d8299c72dece423895b7c5aaad599b976a.gz"
+      },
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-29",
@@ -41,7 +107,9 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-10-29",
@@ -50,9 +118,97 @@
       "title": "PRIX D'AUBAGNE",
       "departure": "2026-10-29T15:40:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 2,
+          "name": "NEW DOLLAR",
+          "source_url": "https://www.geny.com/course/1694585-2026-10-29-vincennes-prix-d-aubagne/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix d'Aubagne",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694585-2026-10-29-vincennes-prix-d-aubagne/partants-pronostics",
+            "sha256": "07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799",
+            "file": "preuves/07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C4/participants",
+            "sha256": "b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44",
+            "file": "preuves/b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44.gz"
+          },
+          "captured_at": "2026-10-29T15:09:38.976722+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.69,
+            "dateRapport": 1793282441000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "NEW DOLLAR",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421913_prix-d-aubagne.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX D'AUBAGNE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421913_prix-d-aubagne.html",
+            "sha256": "8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363",
+            "file": "preuves/8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C4/participants",
+            "sha256": "b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44",
+            "file": "preuves/b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44.gz"
+          },
+          "captured_at": "2026-10-29T15:09:39.056544+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.69,
+            "dateRapport": 1793282441000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 2,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694585-2026-10-29-vincennes-prix-d-aubagne/partants-pronostics",
+          "sha256": "07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799",
+          "file": "preuves/07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421913_prix-d-aubagne.html",
+          "sha256": "8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363",
+          "file": "preuves/8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-29T15:09:39.056583+01:00"
     },
     {
       "date": "2026-10-29",
@@ -102,278 +258,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-29T11:47:44.400089+01:00",
+    "captured_at": "2026-10-29T15:09:38.352808+01:00",
     "races": [
-      {
-        "date": "2026-10-29",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX DES CEVENNES",
-        "departure": "2026-10-29T13:55:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 12,
-            "name": "KRACK TIME ATOUT",
-            "source_url": "https://www.geny.com/course/1694578-2026-10-29-vincennes-prix-des-cevennes/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix des Cévennes",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694578-2026-10-29-vincennes-prix-des-cevennes/partants-pronostics",
-              "sha256": "ed0aae8f3abfa6b4f95816e5832c4a159d2bda27df5b5d006d7af2ac079709ca",
-              "file": "preuves/ed0aae8f3abfa6b4f95816e5832c4a159d2bda27df5b5d006d7af2ac079709ca.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C1/participants",
-              "sha256": "4dfc5e53caebc9a21a2da0f8eb08581bb238ba4083a9ad9eb064f6b51545a25f",
-              "file": "preuves/4dfc5e53caebc9a21a2da0f8eb08581bb238ba4083a9ad9eb064f6b51545a25f.gz"
-            },
-            "captured_at": "2026-10-29T11:45:23.249663+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.38,
-              "dateRapport": 1793269849000,
-              "favoris": true,
-              "numPmu1": 12,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 12,
-            "name": "KRACK TIME ATOUT",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421910_prix-des-cevennes.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX DES CEVENNES",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421910_prix-des-cevennes.html",
-              "sha256": "30940b42c25739c47a9e1ec76d4bbcf46de493b65704e96825e5e02eef00a0bf",
-              "file": "preuves/30940b42c25739c47a9e1ec76d4bbcf46de493b65704e96825e5e02eef00a0bf.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C1/participants",
-              "sha256": "4dfc5e53caebc9a21a2da0f8eb08581bb238ba4083a9ad9eb064f6b51545a25f",
-              "file": "preuves/4dfc5e53caebc9a21a2da0f8eb08581bb238ba4083a9ad9eb064f6b51545a25f.gz"
-            },
-            "captured_at": "2026-10-29T11:45:25.196546+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.38,
-              "dateRapport": 1793269849000,
-              "favoris": true,
-              "numPmu1": 12,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694578-2026-10-29-vincennes-prix-des-cevennes/partants-pronostics",
-            "sha256": "ed0aae8f3abfa6b4f95816e5832c4a159d2bda27df5b5d006d7af2ac079709ca",
-            "file": "preuves/ed0aae8f3abfa6b4f95816e5832c4a159d2bda27df5b5d006d7af2ac079709ca.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421910_prix-des-cevennes.html",
-            "sha256": "30940b42c25739c47a9e1ec76d4bbcf46de493b65704e96825e5e02eef00a0bf",
-            "file": "preuves/30940b42c25739c47a9e1ec76d4bbcf46de493b65704e96825e5e02eef00a0bf.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-29",
-        "id": "R1C2",
-        "c": 2,
-        "title": "PRIX DE FOUILLOY",
-        "departure": "2026-10-29T14:30:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 7,
-            "name": "NEW FAIRY",
-            "source_url": "https://www.geny.com/course/1694584-2026-10-29-vincennes-prix-de-fouilloy/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Fouilloy",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694584-2026-10-29-vincennes-prix-de-fouilloy/partants-pronostics",
-              "sha256": "6897fc46c16c31332bc3cad77f61163d38deee7f42995edf6b7a6c6068c06f35",
-              "file": "preuves/6897fc46c16c31332bc3cad77f61163d38deee7f42995edf6b7a6c6068c06f35.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C2/participants",
-              "sha256": "fca094b544533793382cde5f7fef42a58069b70533f3ef90e44adc012ccd526e",
-              "file": "preuves/fca094b544533793382cde5f7fef42a58069b70533f3ef90e44adc012ccd526e.gz"
-            },
-            "captured_at": "2026-10-29T11:45:43.357928+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270709000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 7,
-            "name": "NEW FAIRY",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421911_prix-de-fouilloy.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE FOUILLOY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421911_prix-de-fouilloy.html",
-              "sha256": "8a8aa6effd237d8bd0f79daf6862b26515c2cf9a29bfa0ba02252afba7e3f234",
-              "file": "preuves/8a8aa6effd237d8bd0f79daf6862b26515c2cf9a29bfa0ba02252afba7e3f234.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C2/participants",
-              "sha256": "fca094b544533793382cde5f7fef42a58069b70533f3ef90e44adc012ccd526e",
-              "file": "preuves/fca094b544533793382cde5f7fef42a58069b70533f3ef90e44adc012ccd526e.gz"
-            },
-            "captured_at": "2026-10-29T11:45:43.957457+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270709000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694584-2026-10-29-vincennes-prix-de-fouilloy/partants-pronostics",
-            "sha256": "6897fc46c16c31332bc3cad77f61163d38deee7f42995edf6b7a6c6068c06f35",
-            "file": "preuves/6897fc46c16c31332bc3cad77f61163d38deee7f42995edf6b7a6c6068c06f35.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421911_prix-de-fouilloy.html",
-            "sha256": "8a8aa6effd237d8bd0f79daf6862b26515c2cf9a29bfa0ba02252afba7e3f234",
-            "file": "preuves/8a8aa6effd237d8bd0f79daf6862b26515c2cf9a29bfa0ba02252afba7e3f234.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-29",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX D'EMBRUN",
-        "departure": "2026-10-29T15:05:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "MADISON SEVEN",
-            "source_url": "https://www.geny.com/course/1694579-2026-10-29-vincennes-prix-d-embrun/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix d'Embrun",
-            "evidence": {
-              "url": "https://www.geny.com/course/1694579-2026-10-29-vincennes-prix-d-embrun/partants-pronostics",
-              "sha256": "4146ab1cd2d877198a226e11696a49dc2dc5546639398d1c056182dcefdfd83a",
-              "file": "preuves/4146ab1cd2d877198a226e11696a49dc2dc5546639398d1c056182dcefdfd83a.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C3/participants",
-              "sha256": "d96f32d59fbdd4ff7484c26ad6d9d3c6c137e44446b3b4a502dbac06e8134037",
-              "file": "preuves/d96f32d59fbdd4ff7484c26ad6d9d3c6c137e44446b3b4a502dbac06e8134037.gz"
-            },
-            "captured_at": "2026-10-29T11:46:03.735293+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270726000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "MADISON SEVEN",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421912_prix-d-embrun.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX D'EMBRUN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421912_prix-d-embrun.html",
-              "sha256": "ada0d7457575ef78f280f0d888cabe03e70a341f2ae6f57ca7597ca3f81be69e",
-              "file": "preuves/ada0d7457575ef78f280f0d888cabe03e70a341f2ae6f57ca7597ca3f81be69e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C3/participants",
-              "sha256": "d96f32d59fbdd4ff7484c26ad6d9d3c6c137e44446b3b4a502dbac06e8134037",
-              "file": "preuves/d96f32d59fbdd4ff7484c26ad6d9d3c6c137e44446b3b4a502dbac06e8134037.gz"
-            },
-            "captured_at": "2026-10-29T11:46:04.331426+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270726000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1694579-2026-10-29-vincennes-prix-d-embrun/partants-pronostics",
-            "sha256": "4146ab1cd2d877198a226e11696a49dc2dc5546639398d1c056182dcefdfd83a",
-            "file": "preuves/4146ab1cd2d877198a226e11696a49dc2dc5546639398d1c056182dcefdfd83a.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421912_prix-d-embrun.html",
-            "sha256": "ada0d7457575ef78f280f0d888cabe03e70a341f2ae6f57ca7597ca3f81be69e",
-            "file": "preuves/ada0d7457575ef78f280f0d888cabe03e70a341f2ae6f57ca7597ca3f81be69e.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-29",
         "id": "R1C4",
@@ -392,24 +278,24 @@
             "source_title": "Prix d'Aubagne",
             "evidence": {
               "url": "https://www.geny.com/course/1694585-2026-10-29-vincennes-prix-d-aubagne/partants-pronostics",
-              "sha256": "5e17b034f126a8a6b15919f564b38bcf99645098c59a11482b66cec326aa7dd8",
-              "file": "preuves/5e17b034f126a8a6b15919f564b38bcf99645098c59a11482b66cec326aa7dd8.gz"
+              "sha256": "07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799",
+              "file": "preuves/07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C4/participants",
-              "sha256": "6868061f2a3a08c8f33670fd6fe30fe6e4e702cf233d9e1ae059b2a0a5205014",
-              "file": "preuves/6868061f2a3a08c8f33670fd6fe30fe6e4e702cf233d9e1ae059b2a0a5205014.gz"
+              "sha256": "b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44",
+              "file": "preuves/b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44.gz"
             },
-            "captured_at": "2026-10-29T11:46:23.731712+01:00",
+            "captured_at": "2026-10-29T15:08:17.693290+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.5,
+              "rapport": 2.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270741000,
+              "nombreIndicateurTendance": 7.69,
+              "dateRapport": 1793282441000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -425,24 +311,24 @@
             "source_title": "Le pronostic du PRIX D'AUBAGNE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421913_prix-d-aubagne.html",
-              "sha256": "011edc4af0d4e923a51768d48be1d66143722299fcb64b44dcab7ecb0033b6e7",
-              "file": "preuves/011edc4af0d4e923a51768d48be1d66143722299fcb64b44dcab7ecb0033b6e7.gz"
+              "sha256": "8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363",
+              "file": "preuves/8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C4/participants",
-              "sha256": "6868061f2a3a08c8f33670fd6fe30fe6e4e702cf233d9e1ae059b2a0a5205014",
-              "file": "preuves/6868061f2a3a08c8f33670fd6fe30fe6e4e702cf233d9e1ae059b2a0a5205014.gz"
+              "sha256": "b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44",
+              "file": "preuves/b76c67ad345460e220fcd271f982fe69367cddd3cd64cdc915b975d1f7899d44.gz"
             },
-            "captured_at": "2026-10-29T11:46:24.324775+01:00",
+            "captured_at": "2026-10-29T15:08:19.571351+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.5,
+              "rapport": 2.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270741000,
+              "nombreIndicateurTendance": 7.69,
+              "dateRapport": 1793282441000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -454,13 +340,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694585-2026-10-29-vincennes-prix-d-aubagne/partants-pronostics",
-            "sha256": "5e17b034f126a8a6b15919f564b38bcf99645098c59a11482b66cec326aa7dd8",
-            "file": "preuves/5e17b034f126a8a6b15919f564b38bcf99645098c59a11482b66cec326aa7dd8.gz"
+            "sha256": "07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799",
+            "file": "preuves/07ee975c96bdafdac4e62423ea906202a961687e45cc1999067a704e30124799.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421913_prix-d-aubagne.html",
-            "sha256": "011edc4af0d4e923a51768d48be1d66143722299fcb64b44dcab7ecb0033b6e7",
-            "file": "preuves/011edc4af0d4e923a51768d48be1d66143722299fcb64b44dcab7ecb0033b6e7.gz"
+            "sha256": "8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363",
+            "file": "preuves/8b3dddcd8fc9463fdd38a20da49b364cde8f85bde7490f00ba9ca4d755d8e363.gz"
           }
         }
       },
@@ -482,24 +368,24 @@
             "source_title": "Prix d'Avesnes",
             "evidence": {
               "url": "https://www.geny.com/course/1694581-2026-10-29-vincennes-prix-d-avesnes/partants-pronostics",
-              "sha256": "1b7220dae63740e46eeba6fdb60e8e38129f1d257706095cb738f73043468606",
-              "file": "preuves/1b7220dae63740e46eeba6fdb60e8e38129f1d257706095cb738f73043468606.gz"
+              "sha256": "ccf760e9f8e6c431e6b4d8b5fff07b0d5c36b5ba5de6d4250b28b19f9d45d0d0",
+              "file": "preuves/ccf760e9f8e6c431e6b4d8b5fff07b0d5c36b5ba5de6d4250b28b19f9d45d0d0.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
-              "sha256": "8c74d92197ff839cf398909d1f047be843dfefd59c524c9ae455d2a46e03ccc2",
-              "file": "preuves/8c74d92197ff839cf398909d1f047be843dfefd59c524c9ae455d2a46e03ccc2.gz"
+              "sha256": "368e9f8da465478e67c90c481e1de5bf20e8523df26232638ef1295030833b5c",
+              "file": "preuves/368e9f8da465478e67c90c481e1de5bf20e8523df26232638ef1295030833b5c.gz"
             },
-            "captured_at": "2026-10-29T11:46:43.503233+01:00",
+            "captured_at": "2026-10-29T15:08:37.622827+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
+              "rapport": 2.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270715000,
+              "nombreIndicateurTendance": 3.7,
+              "dateRapport": 1793282415000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -515,24 +401,24 @@
             "source_title": "Le pronostic du PRIX D'AVESNES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421914_prix-d-avesnes.html",
-              "sha256": "c98ed596c93d6a3be3c2c0fea3014d4e94c80383fad44b541762a89124d7c267",
-              "file": "preuves/c98ed596c93d6a3be3c2c0fea3014d4e94c80383fad44b541762a89124d7c267.gz"
+              "sha256": "bc41fbbcbf56714ea3778bd52a2c374518d899a5410e9a151078bb3d69cb352f",
+              "file": "preuves/bc41fbbcbf56714ea3778bd52a2c374518d899a5410e9a151078bb3d69cb352f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
-              "sha256": "8c74d92197ff839cf398909d1f047be843dfefd59c524c9ae455d2a46e03ccc2",
-              "file": "preuves/8c74d92197ff839cf398909d1f047be843dfefd59c524c9ae455d2a46e03ccc2.gz"
+              "sha256": "368e9f8da465478e67c90c481e1de5bf20e8523df26232638ef1295030833b5c",
+              "file": "preuves/368e9f8da465478e67c90c481e1de5bf20e8523df26232638ef1295030833b5c.gz"
             },
-            "captured_at": "2026-10-29T11:46:44.103430+01:00",
+            "captured_at": "2026-10-29T15:08:38.224754+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
+              "rapport": 2.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270715000,
+              "nombreIndicateurTendance": 3.7,
+              "dateRapport": 1793282415000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -544,13 +430,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694581-2026-10-29-vincennes-prix-d-avesnes/partants-pronostics",
-            "sha256": "1b7220dae63740e46eeba6fdb60e8e38129f1d257706095cb738f73043468606",
-            "file": "preuves/1b7220dae63740e46eeba6fdb60e8e38129f1d257706095cb738f73043468606.gz"
+            "sha256": "ccf760e9f8e6c431e6b4d8b5fff07b0d5c36b5ba5de6d4250b28b19f9d45d0d0",
+            "file": "preuves/ccf760e9f8e6c431e6b4d8b5fff07b0d5c36b5ba5de6d4250b28b19f9d45d0d0.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421914_prix-d-avesnes.html",
-            "sha256": "c98ed596c93d6a3be3c2c0fea3014d4e94c80383fad44b541762a89124d7c267",
-            "file": "preuves/c98ed596c93d6a3be3c2c0fea3014d4e94c80383fad44b541762a89124d7c267.gz"
+            "sha256": "bc41fbbcbf56714ea3778bd52a2c374518d899a5410e9a151078bb3d69cb352f",
+            "file": "preuves/bc41fbbcbf56714ea3778bd52a2c374518d899a5410e9a151078bb3d69cb352f.gz"
           }
         }
       },
@@ -572,24 +458,24 @@
             "source_title": "Prix du Dorat",
             "evidence": {
               "url": "https://www.geny.com/course/1694580-2026-10-29-vincennes-prix-du-dorat/partants-pronostics",
-              "sha256": "9303d568a78b4224b6f8b6e2fb67a6de4a81385927e1d36906e6e08272053920",
-              "file": "preuves/9303d568a78b4224b6f8b6e2fb67a6de4a81385927e1d36906e6e08272053920.gz"
+              "sha256": "ced3e12b150d3bc8206d4549e9fe3f9358f99ffd64d52778cc36332d8f6dbb04",
+              "file": "preuves/ced3e12b150d3bc8206d4549e9fe3f9358f99ffd64d52778cc36332d8f6dbb04.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C6/participants",
-              "sha256": "9c193a44d62c29beedd14ad22bbd26e1f550ce486f7d42cdbbe131678f682680",
-              "file": "preuves/9c193a44d62c29beedd14ad22bbd26e1f550ce486f7d42cdbbe131678f682680.gz"
+              "sha256": "0b33b767faa3a60d7898c816145922d7dd0a2841680058a6d9e6ee66deb2c9b3",
+              "file": "preuves/0b33b767faa3a60d7898c816145922d7dd0a2841680058a6d9e6ee66deb2c9b3.gz"
             },
-            "captured_at": "2026-10-29T11:47:03.794007+01:00",
+            "captured_at": "2026-10-29T15:08:57.942517+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.2,
-              "dateRapport": 1793270734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793282434000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -605,24 +491,24 @@
             "source_title": "Le pronostic du PRIX DU DORAT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421915_prix-du-dorat.html",
-              "sha256": "6ec7ce55b48e9ff60ce4dc9b6410c5992fab30db56d4d02433e9c5e9afa70537",
-              "file": "preuves/6ec7ce55b48e9ff60ce4dc9b6410c5992fab30db56d4d02433e9c5e9afa70537.gz"
+              "sha256": "336f555d08aeee6ac90c87b2a690747e579e6336a37a132c98613cba3427d738",
+              "file": "preuves/336f555d08aeee6ac90c87b2a690747e579e6336a37a132c98613cba3427d738.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C6/participants",
-              "sha256": "9c193a44d62c29beedd14ad22bbd26e1f550ce486f7d42cdbbe131678f682680",
-              "file": "preuves/9c193a44d62c29beedd14ad22bbd26e1f550ce486f7d42cdbbe131678f682680.gz"
+              "sha256": "0b33b767faa3a60d7898c816145922d7dd0a2841680058a6d9e6ee66deb2c9b3",
+              "file": "preuves/0b33b767faa3a60d7898c816145922d7dd0a2841680058a6d9e6ee66deb2c9b3.gz"
             },
-            "captured_at": "2026-10-29T11:47:04.418466+01:00",
+            "captured_at": "2026-10-29T15:08:58.547155+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.2,
-              "dateRapport": 1793270734000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793282434000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -634,13 +520,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694580-2026-10-29-vincennes-prix-du-dorat/partants-pronostics",
-            "sha256": "9303d568a78b4224b6f8b6e2fb67a6de4a81385927e1d36906e6e08272053920",
-            "file": "preuves/9303d568a78b4224b6f8b6e2fb67a6de4a81385927e1d36906e6e08272053920.gz"
+            "sha256": "ced3e12b150d3bc8206d4549e9fe3f9358f99ffd64d52778cc36332d8f6dbb04",
+            "file": "preuves/ced3e12b150d3bc8206d4549e9fe3f9358f99ffd64d52778cc36332d8f6dbb04.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421915_prix-du-dorat.html",
-            "sha256": "6ec7ce55b48e9ff60ce4dc9b6410c5992fab30db56d4d02433e9c5e9afa70537",
-            "file": "preuves/6ec7ce55b48e9ff60ce4dc9b6410c5992fab30db56d4d02433e9c5e9afa70537.gz"
+            "sha256": "336f555d08aeee6ac90c87b2a690747e579e6336a37a132c98613cba3427d738",
+            "file": "preuves/336f555d08aeee6ac90c87b2a690747e579e6336a37a132c98613cba3427d738.gz"
           }
         }
       },
@@ -662,24 +548,24 @@
             "source_title": "Prix d'Amiens",
             "evidence": {
               "url": "https://www.geny.com/course/1694582-2026-10-29-vincennes-prix-d-amiens/partants-pronostics",
-              "sha256": "96c9f29a1b71f839279b628dac1d5301ddb8b75690bb74560943b2df3d750128",
-              "file": "preuves/96c9f29a1b71f839279b628dac1d5301ddb8b75690bb74560943b2df3d750128.gz"
+              "sha256": "4044eb1744c88bc655e49b77d0f02a50e86d7b8006072bd79ba8bdaae573ba0d",
+              "file": "preuves/4044eb1744c88bc655e49b77d0f02a50e86d7b8006072bd79ba8bdaae573ba0d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C7/participants",
-              "sha256": "440394c53b6184b9f64af8ac692b6c2aee4c14737ad806cdf54c8216d0a0cab7",
-              "file": "preuves/440394c53b6184b9f64af8ac692b6c2aee4c14737ad806cdf54c8216d0a0cab7.gz"
+              "sha256": "41df21b3ebd2023aae287cfe976f89984d53d44b2d09cb05086323819dd02eaa",
+              "file": "preuves/41df21b3ebd2023aae287cfe976f89984d53d44b2d09cb05086323819dd02eaa.gz"
             },
-            "captured_at": "2026-10-29T11:47:23.686546+01:00",
+            "captured_at": "2026-10-29T15:09:17.682538+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.49,
-              "dateRapport": 1793270756000,
+              "nombreIndicateurTendance": 3.06,
+              "dateRapport": 1793282456000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -695,24 +581,24 @@
             "source_title": "Le pronostic du PRIX D'AMIENS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421916_prix-d-amiens.html",
-              "sha256": "6b1e85aad7c1d2ebe2db253985234b81b052cb17e6693dcaf0f4cd31ecf70659",
-              "file": "preuves/6b1e85aad7c1d2ebe2db253985234b81b052cb17e6693dcaf0f4cd31ecf70659.gz"
+              "sha256": "b7b9a440f20660ddd6dc2db32ca990a274387d1d49d9f07045a788726b930e8c",
+              "file": "preuves/b7b9a440f20660ddd6dc2db32ca990a274387d1d49d9f07045a788726b930e8c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C7/participants",
-              "sha256": "440394c53b6184b9f64af8ac692b6c2aee4c14737ad806cdf54c8216d0a0cab7",
-              "file": "preuves/440394c53b6184b9f64af8ac692b6c2aee4c14737ad806cdf54c8216d0a0cab7.gz"
+              "sha256": "41df21b3ebd2023aae287cfe976f89984d53d44b2d09cb05086323819dd02eaa",
+              "file": "preuves/41df21b3ebd2023aae287cfe976f89984d53d44b2d09cb05086323819dd02eaa.gz"
             },
-            "captured_at": "2026-10-29T11:47:24.320610+01:00",
+            "captured_at": "2026-10-29T15:09:18.319670+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.0,
+              "rapport": 6.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.26,
-              "dateRapport": 1793270756000,
+              "nombreIndicateurTendance": -8.0,
+              "dateRapport": 1793282456000,
               "favoris": false,
               "numPmu1": 17,
               "grossePrise": false
@@ -724,13 +610,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694582-2026-10-29-vincennes-prix-d-amiens/partants-pronostics",
-            "sha256": "96c9f29a1b71f839279b628dac1d5301ddb8b75690bb74560943b2df3d750128",
-            "file": "preuves/96c9f29a1b71f839279b628dac1d5301ddb8b75690bb74560943b2df3d750128.gz"
+            "sha256": "4044eb1744c88bc655e49b77d0f02a50e86d7b8006072bd79ba8bdaae573ba0d",
+            "file": "preuves/4044eb1744c88bc655e49b77d0f02a50e86d7b8006072bd79ba8bdaae573ba0d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421916_prix-d-amiens.html",
-            "sha256": "6b1e85aad7c1d2ebe2db253985234b81b052cb17e6693dcaf0f4cd31ecf70659",
-            "file": "preuves/6b1e85aad7c1d2ebe2db253985234b81b052cb17e6693dcaf0f4cd31ecf70659.gz"
+            "sha256": "b7b9a440f20660ddd6dc2db32ca990a274387d1d49d9f07045a788726b930e8c",
+            "file": "preuves/b7b9a440f20660ddd6dc2db32ca990a274387d1d49d9f07045a788726b930e8c.gz"
           }
         }
       },
@@ -752,25 +638,25 @@
             "source_title": "Prix de Soulac",
             "evidence": {
               "url": "https://www.geny.com/course/1694583-2026-10-29-vincennes-prix-de-soulac/partants-pronostics",
-              "sha256": "2e6c3e651eb9828a9f69d0523d8e0d67d212c66e4f467e8c32f94174e80df070",
-              "file": "preuves/2e6c3e651eb9828a9f69d0523d8e0d67d212c66e4f467e8c32f94174e80df070.gz"
+              "sha256": "3fe3781bdbb6cac0ff500a44aa432b319db926fea2f8bf7c5b14c39e940acec1",
+              "file": "preuves/3fe3781bdbb6cac0ff500a44aa432b319db926fea2f8bf7c5b14c39e940acec1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C8/participants",
-              "sha256": "148adffb6e9ac2e9c8bd45a2cd9e98b89f1f9b8494d9f21a470442e845d5fff6",
-              "file": "preuves/148adffb6e9ac2e9c8bd45a2cd9e98b89f1f9b8494d9f21a470442e845d5fff6.gz"
+              "sha256": "a9cac58b44ad37a6963843f87722b2c21470ae468570770302dffc675fc87333",
+              "file": "preuves/a9cac58b44ad37a6963843f87722b2c21470ae468570770302dffc675fc87333.gz"
             },
-            "captured_at": "2026-10-29T11:47:43.793285+01:00",
+            "captured_at": "2026-10-29T15:09:37.759045+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.43,
-              "dateRapport": 1793270729000,
-              "favoris": true,
+              "nombreIndicateurTendance": 2.27,
+              "dateRapport": 1793282429000,
+              "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
             }
@@ -785,25 +671,25 @@
             "source_title": "Le pronostic du PRIX DE SOULAC",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421917_prix-de-soulac.html",
-              "sha256": "33fe9072ba917ac262a23a2ff97b2c02f5eff8de101ef5752ba62b35ecc0d124",
-              "file": "preuves/33fe9072ba917ac262a23a2ff97b2c02f5eff8de101ef5752ba62b35ecc0d124.gz"
+              "sha256": "7e15aed37d4b6c14e6482a17ca010cb2bcc29339d6b281b319e0ddff3387129d",
+              "file": "preuves/7e15aed37d4b6c14e6482a17ca010cb2bcc29339d6b281b319e0ddff3387129d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C8/participants",
-              "sha256": "148adffb6e9ac2e9c8bd45a2cd9e98b89f1f9b8494d9f21a470442e845d5fff6",
-              "file": "preuves/148adffb6e9ac2e9c8bd45a2cd9e98b89f1f9b8494d9f21a470442e845d5fff6.gz"
+              "sha256": "a9cac58b44ad37a6963843f87722b2c21470ae468570770302dffc675fc87333",
+              "file": "preuves/a9cac58b44ad37a6963843f87722b2c21470ae468570770302dffc675fc87333.gz"
             },
-            "captured_at": "2026-10-29T11:47:44.400032+01:00",
+            "captured_at": "2026-10-29T15:09:38.352755+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 4.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793270729000,
-              "favoris": false,
+              "nombreIndicateurTendance": 2.5,
+              "dateRapport": 1793282429000,
+              "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
             }
@@ -814,13 +700,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1694583-2026-10-29-vincennes-prix-de-soulac/partants-pronostics",
-            "sha256": "2e6c3e651eb9828a9f69d0523d8e0d67d212c66e4f467e8c32f94174e80df070",
-            "file": "preuves/2e6c3e651eb9828a9f69d0523d8e0d67d212c66e4f467e8c32f94174e80df070.gz"
+            "sha256": "3fe3781bdbb6cac0ff500a44aa432b319db926fea2f8bf7c5b14c39e940acec1",
+            "file": "preuves/3fe3781bdbb6cac0ff500a44aa432b319db926fea2f8bf7c5b14c39e940acec1.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421917_prix-de-soulac.html",
-            "sha256": "33fe9072ba917ac262a23a2ff97b2c02f5eff8de101ef5752ba62b35ecc0d124",
-            "file": "preuves/33fe9072ba917ac262a23a2ff97b2c02f5eff8de101ef5752ba62b35ecc0d124.gz"
+            "sha256": "7e15aed37d4b6c14e6482a17ca010cb2bcc29339d6b281b319e0ddff3387129d",
+            "file": "preuves/7e15aed37d4b6c14e6482a17ca010cb2bcc29339d6b281b319e0ddff3387129d.gz"
           }
         }
       }
