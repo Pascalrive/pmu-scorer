@@ -564,7 +564,11 @@
           "file": "preuves/474d6f6b5246e41199016e4ad219af2f01e025625ea1c11f394e9ad5a68a3352.gz"
         }
       },
-      "groups_frozen_at": "2026-10-29T15:53:59.473005+01:00"
+      "groups_frozen_at": "2026-10-29T15:53:59.473005+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-29T16:26:48.022862+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-29",
@@ -573,9 +577,88 @@
       "title": "PRIX D'AMIENS",
       "departure": "2026-10-29T17:25:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 11,
+          "name": "LIQUIDATEUR",
+          "source_url": "https://www.geny.com/course/1694582-2026-10-29-vincennes-prix-d-amiens/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix d'Amiens",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694582-2026-10-29-vincennes-prix-d-amiens/partants-pronostics",
+            "sha256": "bd04b592b75396c514a85284d87e72d42ac953b6142b175b6af6da5c40af575b",
+            "file": "preuves/bd04b592b75396c514a85284d87e72d42ac953b6142b175b6af6da5c40af575b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C7/participants",
+            "sha256": "9da3fce7176c63f8682d9235e15fc8225571cf92b9115632856afef06d6534c8",
+            "file": "preuves/9da3fce7176c63f8682d9235e15fc8225571cf92b9115632856afef06d6534c8.gz"
+          },
+          "captured_at": "2026-10-29T16:26:45.325905+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.25,
+            "dateRapport": 1793286956000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 17,
+          "name": "LIKE MESLOIS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421916_prix-d-amiens.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX D'AMIENS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421916_prix-d-amiens.html",
+            "sha256": "7ae7accbef106d14408008ae5ed45114419fda66eaf5f24e8e5eced32e93fb78",
+            "file": "preuves/7ae7accbef106d14408008ae5ed45114419fda66eaf5f24e8e5eced32e93fb78.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C7/participants",
+            "sha256": "9da3fce7176c63f8682d9235e15fc8225571cf92b9115632856afef06d6534c8",
+            "file": "preuves/9da3fce7176c63f8682d9235e15fc8225571cf92b9115632856afef06d6534c8.gz"
+          },
+          "captured_at": "2026-10-29T16:26:47.048247+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.05,
+            "dateRapport": 1793286956000,
+            "favoris": false,
+            "numPmu1": 17,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694582-2026-10-29-vincennes-prix-d-amiens/partants-pronostics",
+          "sha256": "bd04b592b75396c514a85284d87e72d42ac953b6142b175b6af6da5c40af575b",
+          "file": "preuves/bd04b592b75396c514a85284d87e72d42ac953b6142b175b6af6da5c40af575b.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-29/paris-vincennes/421916_prix-d-amiens.html",
+          "sha256": "7ae7accbef106d14408008ae5ed45114419fda66eaf5f24e8e5eced32e93fb78",
+          "file": "preuves/7ae7accbef106d14408008ae5ed45114419fda66eaf5f24e8e5eced32e93fb78.gz"
+        }
+      }
     },
     {
       "date": "2026-10-29",
