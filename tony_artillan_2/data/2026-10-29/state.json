@@ -48,7 +48,7 @@
           "number": 8,
           "name": "LOOKING D'AURCY",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-10-29T15:54:00.404722+01:00",
           "source_captured_at": "2026-10-29T15:18:29.219390+01:00",
           "sites": [
@@ -63,6 +63,44 @@
             "dateRapport": 1793285599000,
             "favoris": true,
             "numPmu1": 8,
+            "grossePrise": false
+          },
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 7,
+          "settled_at": "2026-10-29T16:35:25.095436+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3",
+            "file": "preuves/68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
+            "sha256": "23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791",
+            "file": "preuves/23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791.gz"
+          }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-10-29T16:50:00+01:00",
+          "number": 6,
+          "name": "KOMPANY VINCENT",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-29T16:35:25.095949+01:00",
+          "source_captured_at": "2026-10-29T15:53:57.766638+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 11.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793288114000,
+            "favoris": false,
+            "numPmu1": 6,
             "grossePrise": false
           }
         }
@@ -402,7 +440,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-29T16:35:25.094831+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3",
+            "file": "preuves/68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
+            "sha256": "23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791",
+            "file": "preuves/23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -435,7 +487,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-29T16:35:25.095255+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3",
+            "file": "preuves/68db9aae2d0121b1e3837cfeeb571f77a4f2b433c4fe8386553a7538c9eff8b3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
+            "sha256": "23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791",
+            "file": "preuves/23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791.gz"
+          }
         }
       },
       "groups": {
@@ -465,7 +531,38 @@
         "at": "2026-10-29T16:00:54.084949+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "LEDETROIT CHENOU",
+          "rank": 1
+        },
+        {
+          "number": 5,
+          "name": "KINGSTON (DEN)",
+          "rank": 2
+        },
+        {
+          "number": 11,
+          "name": "LUKAS D'OLIVERIE",
+          "rank": 3
+        },
+        {
+          "number": 9,
+          "name": "LUNGA DES BROUSSES",
+          "rank": 4
+        },
+        {
+          "number": 10,
+          "name": "LILOU D'ATOUT",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/29102026/R1/C5/participants",
+        "sha256": "23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791",
+        "file": "preuves/23344458b102b108665c7e978dae2dec4f1409224ce457bea3a67474d2bff791.gz"
+      }
     },
     {
       "date": "2026-10-29",
