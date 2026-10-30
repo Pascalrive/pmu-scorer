@@ -36,3 +36,5 @@ Simulation : 5 € en simple placé sur le premier du consensus (≥5 sources co
 | 2026-10-28 | outsider | 1 | 0 | 5.00 € | 0.00 € | -100.00 % |
 | 2026-10-29 | consensus | 1 | 0 | 5.00 € | 0.00 € | -100.00 % |
 | 2026-10-29 | outsider | 1 | 0 | 5.00 € | 0.00 € | -100.00 % |
+| 2026-10-30 | consensus | 1 | 0 | 5.00 € | 0.00 € | -100.00 % |
+| 2026-10-30 | outsider | 1 | 0 | 5.00 € | 25.50 € | +410.00 % |
