@@ -10,7 +10,7 @@
           "number": 10,
           "name": "OBLADI OBLADA",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-10-30T17:18:29.312687+01:00",
           "source_captured_at": "2026-10-30T16:50:45.840087+01:00",
           "sites": [
@@ -25,6 +25,44 @@
             "dateRapport": 1793376053000,
             "favoris": false,
             "numPmu1": 10,
+            "grossePrise": false
+          },
+          "return_cents": 19000,
+          "profit_cents": 9000,
+          "rank": 1,
+          "settled_at": "2026-10-30T18:09:58.685421+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972",
+            "file": "preuves/20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
+            "sha256": "566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e",
+            "file": "preuves/566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e.gz"
+          }
+        },
+        {
+          "race_id": "R1C2",
+          "departure": "2026-10-30T18:24:00+01:00",
+          "number": 14,
+          "name": "KASSIOPEIA",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-30T18:09:58.685888+01:00",
+          "source_captured_at": "2026-10-30T17:26:39.651271+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793380155000,
+            "favoris": true,
+            "numPmu1": 14,
             "grossePrise": false
           }
         }
@@ -74,7 +112,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-30T18:09:58.684910+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972",
+            "file": "preuves/20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
+            "sha256": "566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e",
+            "file": "preuves/566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -107,7 +159,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-30T18:09:58.685267+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972",
+            "file": "preuves/20277343a1cd4731c11052b3b92f75992a719424da3744f07511f4af371fc972.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
+            "sha256": "566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e",
+            "file": "preuves/566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e.gz"
+          }
         }
       },
       "groups": {
@@ -137,14 +203,45 @@
         "at": "2026-10-30T17:42:29.567426+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 10,
+          "name": "OBLADI OBLADA",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "OURAGANE JENILOU",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "OLYMPE DELO",
+          "rank": 3
+        },
+        {
+          "number": 8,
+          "name": "ON THE BEACH",
+          "rank": 4
+        },
+        {
+          "number": 11,
+          "name": "OLIVE D'ANSY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
+        "sha256": "566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e",
+        "file": "preuves/566b600062609b169775191bdbdcc7d33b5e59ed939cce0da063c4d1d54f027e.gz"
+      }
     },
     {
       "date": "2026-10-30",
       "id": "R1C2",
       "c": 2,
       "title": "PRIX MERCATOR",
-      "departure": "2026-10-30T18:23:00+01:00",
+      "departure": "2026-10-30T18:24:00+01:00",
       "market": true,
       "tips": {
         "geny": {
@@ -240,7 +337,14 @@
       "last_reservation_check": {
         "at": "2026-10-30T17:57:04.996048+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-10-30T18:23:00+01:00",
+          "new": "2026-10-30T18:24:00+01:00",
+          "checked_at": "2026-10-30T18:09:31.934274+01:00"
+        }
+      ]
     },
     {
       "date": "2026-10-30",
@@ -249,9 +353,97 @@
       "title": "PRIX BARBARA",
       "departure": "2026-10-30T18:58:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 7,
+          "name": "JAZZ D'OURVILLE",
+          "source_url": "https://www.geny.com/course/1694817-2026-10-30-vincennes-prix-barbara/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Barbara",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694817-2026-10-30-vincennes-prix-barbara/partants-pronostics",
+            "sha256": "0be1feb6b4c0903d20509669067d1ba5ad67db5f60ff4d709a5662f9de5eedce",
+            "file": "preuves/0be1feb6b4c0903d20509669067d1ba5ad67db5f60ff4d709a5662f9de5eedce.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
+            "sha256": "b6a0ede9dd6cd07c7ef71ffec590fb8f1aded1d635d1367c175f395ab5b7685e",
+            "file": "preuves/b6a0ede9dd6cd07c7ef71ffec590fb8f1aded1d635d1367c175f395ab5b7685e.gz"
+          },
+          "captured_at": "2026-10-30T18:09:54.949899+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -12.9,
+            "dateRapport": 1793379601000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "JAZZ D'OURVILLE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX BARBARA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
+            "sha256": "3abe2fbd0af189b0bbcfcab02593acd65cf988e6de20727f434ae27c2da37305",
+            "file": "preuves/3abe2fbd0af189b0bbcfcab02593acd65cf988e6de20727f434ae27c2da37305.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
+            "sha256": "b6a0ede9dd6cd07c7ef71ffec590fb8f1aded1d635d1367c175f395ab5b7685e",
+            "file": "preuves/b6a0ede9dd6cd07c7ef71ffec590fb8f1aded1d635d1367c175f395ab5b7685e.gz"
+          },
+          "captured_at": "2026-10-30T18:09:57.521369+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -12.9,
+            "dateRapport": 1793379601000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 7,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694817-2026-10-30-vincennes-prix-barbara/partants-pronostics",
+          "sha256": "0be1feb6b4c0903d20509669067d1ba5ad67db5f60ff4d709a5662f9de5eedce",
+          "file": "preuves/0be1feb6b4c0903d20509669067d1ba5ad67db5f60ff4d709a5662f9de5eedce.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
+          "sha256": "3abe2fbd0af189b0bbcfcab02593acd65cf988e6de20727f434ae27c2da37305",
+          "file": "preuves/3abe2fbd0af189b0bbcfcab02593acd65cf988e6de20727f434ae27c2da37305.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-30T18:09:57.521414+01:00"
     },
     {
       "date": "2026-10-30",
