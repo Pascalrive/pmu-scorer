@@ -3,7 +3,42 @@
   "venue": "VINCENNES",
   "solutions": {
     "majorite_3_sur_5": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-30T17:48:00+01:00",
+          "number": 10,
+          "name": "OBLADI OBLADA",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-30T17:32:00.987618+01:00",
+          "source_captured_at": "2026-10-30T16:49:00.868016+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny",
+            "zone_turf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.16,
+            "dateRapport": 1793377903000,
+            "favoris": true,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "463db29e4faee0808f84178ba8c5de582d540bf31f60b765265e8f05da23f214",
+          "telegram_receipts": [
+            {
+              "message_id": 6558,
+              "date": 1793377921
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -238,9 +273,207 @@
       "title": "PRIX MERCATOR",
       "departure": "2026-10-30T18:23:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 13,
+          "name": "KYRIA BELLA",
+          "source_url": "https://turfin.fr/course/2026-10-30/r1c2-vincennes-prix-mercator",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Mercator",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-30/r1c2-vincennes-prix-mercator",
+            "sha256": "7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e",
+            "file": "preuves/7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:31:59.336622+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-30T18:23:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 14,
+          "name": "KASSIOPEIA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX MERCATOR",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+            "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+            "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:31:59.391211+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": true,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-30T18:23:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 13,
+          "name": "KYRIA BELLA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX MERCATOR",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+            "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+            "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:31:59.535119+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-30T18:23:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 14,
+          "name": "KASSIOPEIA",
+          "source_url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Mercator",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+            "sha256": "d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6",
+            "file": "preuves/d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:31:59.615281+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": true,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-30T18:23:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 11,
+          "name": "KUNAMATATA",
+          "source_url": "https://www.zone-turf.fr/pick5/vendredi-30-octobre-2026/R1C2/",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°2 : C2 - Prix Mercator",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/pick5/vendredi-30-octobre-2026/R1C2/",
+            "sha256": "662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa",
+            "file": "preuves/662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:31:59.910282+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 10.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-10-30T18:23:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-30/r1c2-vincennes-prix-mercator",
+          "sha256": "7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e",
+          "file": "preuves/7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+          "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+          "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+          "sha256": "d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6",
+          "file": "preuves/d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/pick5/vendredi-30-octobre-2026/R1C2/",
+          "sha256": "662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa",
+          "file": "preuves/662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa.gz"
+        }
+      }
     },
     {
       "date": "2026-10-30",
@@ -312,7 +545,7 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-30T16:29:10.709100+01:00",
+    "captured_at": "2026-10-30T17:31:58.271479+01:00",
     "races": [
       {
         "date": "2026-10-30",
@@ -332,25 +565,25 @@
             "source_title": "Prix Polyxo",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c1-vincennes-prix-polyxo",
-              "sha256": "b590ae054d288c5403285ef564526f56d6d41482c6a7b281c97cd63eabcc73ec",
-              "file": "preuves/b590ae054d288c5403285ef564526f56d6d41482c6a7b281c97cd63eabcc73ec.gz"
+              "sha256": "722f1266df12ef7942d621ebeea8a387b2d332f9fe72e7f0831f259a42d29ad6",
+              "file": "preuves/722f1266df12ef7942d621ebeea8a387b2d332f9fe72e7f0831f259a42d29ad6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
-              "sha256": "8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64",
-              "file": "preuves/8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64.gz"
+              "sha256": "58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa",
+              "file": "preuves/58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa.gz"
             },
-            "captured_at": "2026-10-30T16:26:28.355366+01:00",
+            "captured_at": "2026-10-30T17:29:15.550224+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793373353000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377749000,
+              "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -365,25 +598,25 @@
             "source_title": "Le pronostic du PRIX POLYXO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421987_prix-polyxo.html",
-              "sha256": "90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6",
-              "file": "preuves/90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6.gz"
+              "sha256": "2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4",
+              "file": "preuves/2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
-              "sha256": "8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64",
-              "file": "preuves/8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64.gz"
+              "sha256": "58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa",
+              "file": "preuves/58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa.gz"
             },
-            "captured_at": "2026-10-30T16:26:29.925215+01:00",
+            "captured_at": "2026-10-30T17:29:17.281327+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793373353000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377749000,
+              "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -398,25 +631,25 @@
             "source_title": "Le pronostic du PRIX POLYXO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421987_prix-polyxo.html",
-              "sha256": "90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6",
-              "file": "preuves/90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6.gz"
+              "sha256": "2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4",
+              "file": "preuves/2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
-              "sha256": "8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64",
-              "file": "preuves/8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64.gz"
+              "sha256": "58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa",
+              "file": "preuves/58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa.gz"
             },
-            "captured_at": "2026-10-30T16:26:29.966058+01:00",
+            "captured_at": "2026-10-30T17:29:17.335729+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793373353000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377749000,
+              "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -431,25 +664,25 @@
             "source_title": "Prix Polyxo",
             "evidence": {
               "url": "https://www.geny.com/course/1694813-2026-10-30-vincennes-prix-polyxo/partants-pronostics",
-              "sha256": "f9c8af9104ee09061243e23a293fddd87e3affd8a03eee1022837c440a0ced7b",
-              "file": "preuves/f9c8af9104ee09061243e23a293fddd87e3affd8a03eee1022837c440a0ced7b.gz"
+              "sha256": "9d40d1fe1815e665c80bdf294749691092b7caab76a4b377fef64688ee3e346a",
+              "file": "preuves/9d40d1fe1815e665c80bdf294749691092b7caab76a4b377fef64688ee3e346a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
-              "sha256": "8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64",
-              "file": "preuves/8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64.gz"
+              "sha256": "58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa",
+              "file": "preuves/58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa.gz"
             },
-            "captured_at": "2026-10-30T16:26:50.718379+01:00",
+            "captured_at": "2026-10-30T17:29:38.029218+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793373353000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377749000,
+              "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -464,25 +697,25 @@
             "source_title": "R1 Course N°1 : C1 - Prix Polyxo",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C1/participants",
-              "sha256": "8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64",
-              "file": "preuves/8f4cc69b6fa03c03c870cc2d582bab27d6c5643675cc8706bda6e10178c2ae64.gz"
+              "sha256": "58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa",
+              "file": "preuves/58ae71d7501e98ac1a407d09c27467883920ff18a04d2c001c948a7440b852aa.gz"
             },
-            "captured_at": "2026-10-30T16:26:51.422019+01:00",
+            "captured_at": "2026-10-30T17:29:39.453280+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793373353000,
-              "favoris": false,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377749000,
+              "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -493,30 +726,31 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c1-vincennes-prix-polyxo",
-            "sha256": "b590ae054d288c5403285ef564526f56d6d41482c6a7b281c97cd63eabcc73ec",
-            "file": "preuves/b590ae054d288c5403285ef564526f56d6d41482c6a7b281c97cd63eabcc73ec.gz"
+            "sha256": "722f1266df12ef7942d621ebeea8a387b2d332f9fe72e7f0831f259a42d29ad6",
+            "file": "preuves/722f1266df12ef7942d621ebeea8a387b2d332f9fe72e7f0831f259a42d29ad6.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421987_prix-polyxo.html",
-            "sha256": "90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6",
-            "file": "preuves/90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6.gz"
+            "sha256": "2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4",
+            "file": "preuves/2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421987_prix-polyxo.html",
-            "sha256": "90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6",
-            "file": "preuves/90c46220e5a8c0174c1e10e14e01327b0179813fe70b0d9ce033e51261a61fb6.gz"
+            "sha256": "2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4",
+            "file": "preuves/2d854566336a50f6332b78f539382d65b09314139f30bf0d86e8a6c54cda1ee4.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694813-2026-10-30-vincennes-prix-polyxo/partants-pronostics",
-            "sha256": "f9c8af9104ee09061243e23a293fddd87e3affd8a03eee1022837c440a0ced7b",
-            "file": "preuves/f9c8af9104ee09061243e23a293fddd87e3affd8a03eee1022837c440a0ced7b.gz"
+            "sha256": "9d40d1fe1815e665c80bdf294749691092b7caab76a4b377fef64688ee3e346a",
+            "file": "preuves/9d40d1fe1815e665c80bdf294749691092b7caab76a4b377fef64688ee3e346a.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-30T16:49:24.037568+01:00"
       },
       {
         "date": "2026-10-30",
@@ -536,24 +770,24 @@
             "source_title": "Prix Mercator",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c2-vincennes-prix-mercator",
-              "sha256": "84e6e3c53aaa8e4d56241622777d3e022247f7bd17e48d377a143005a09338ac",
-              "file": "preuves/84e6e3c53aaa8e4d56241622777d3e022247f7bd17e48d377a143005a09338ac.gz"
+              "sha256": "7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e",
+              "file": "preuves/7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
-              "sha256": "fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742",
-              "file": "preuves/fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742.gz"
+              "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+              "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
             },
-            "captured_at": "2026-10-30T16:26:52.795879+01:00",
+            "captured_at": "2026-10-30T17:29:41.255202+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.56,
-              "dateRapport": 1793373325000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793376925000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -569,24 +803,24 @@
             "source_title": "Le pronostic du PRIX MERCATOR",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
-              "sha256": "2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307",
-              "file": "preuves/2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307.gz"
+              "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+              "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
-              "sha256": "fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742",
-              "file": "preuves/fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742.gz"
+              "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+              "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
             },
-            "captured_at": "2026-10-30T16:26:53.375148+01:00",
+            "captured_at": "2026-10-30T17:29:41.860230+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373325000,
+              "dateRapport": 1793376925000,
               "favoris": true,
               "numPmu1": 14,
               "grossePrise": false
@@ -602,24 +836,24 @@
             "source_title": "Le pronostic du PRIX MERCATOR",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
-              "sha256": "2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307",
-              "file": "preuves/2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307.gz"
+              "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+              "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
-              "sha256": "fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742",
-              "file": "preuves/fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742.gz"
+              "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+              "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
             },
-            "captured_at": "2026-10-30T16:26:53.417949+01:00",
+            "captured_at": "2026-10-30T17:29:41.917787+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.56,
-              "dateRapport": 1793373325000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793376925000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -635,24 +869,24 @@
             "source_title": "Prix Mercator",
             "evidence": {
               "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
-              "sha256": "d9f53e2fc5c4475a8b3333384d836322410bb1c3799709ec301b04dca4e860e5",
-              "file": "preuves/d9f53e2fc5c4475a8b3333384d836322410bb1c3799709ec301b04dca4e860e5.gz"
+              "sha256": "d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6",
+              "file": "preuves/d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
-              "sha256": "fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742",
-              "file": "preuves/fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742.gz"
+              "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+              "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
             },
-            "captured_at": "2026-10-30T16:27:11.658197+01:00",
+            "captured_at": "2026-10-30T17:29:58.478298+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373325000,
+              "dateRapport": 1793376925000,
               "favoris": true,
               "numPmu1": 14,
               "grossePrise": false
@@ -668,24 +902,24 @@
             "source_title": "R1 Course N°2 : C2 - Prix Mercator",
             "evidence": {
               "url": "https://www.zone-turf.fr/pick5/vendredi-30-octobre-2026/R1C2/",
-              "sha256": "cc77cdd2b3f04733d25622adc814c7c2a81df15d5691f8d763652686f339acb0",
-              "file": "preuves/cc77cdd2b3f04733d25622adc814c7c2a81df15d5691f8d763652686f339acb0.gz"
+              "sha256": "662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa",
+              "file": "preuves/662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
-              "sha256": "fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742",
-              "file": "preuves/fbf03fc1107a482a2ed2b2af6129c44e177b0512f30d0e955a8b60e791165742.gz"
+              "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+              "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
             },
-            "captured_at": "2026-10-30T16:27:12.180698+01:00",
+            "captured_at": "2026-10-30T17:29:59.130134+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.9,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.88,
-              "dateRapport": 1793373325000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793376925000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -697,28 +931,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c2-vincennes-prix-mercator",
-            "sha256": "84e6e3c53aaa8e4d56241622777d3e022247f7bd17e48d377a143005a09338ac",
-            "file": "preuves/84e6e3c53aaa8e4d56241622777d3e022247f7bd17e48d377a143005a09338ac.gz"
+            "sha256": "7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e",
+            "file": "preuves/7807cb3bb4029e610b42476c65530f21d658b136a383dff3b28f5cf6da371c0e.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
-            "sha256": "2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307",
-            "file": "preuves/2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307.gz"
+            "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+            "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
-            "sha256": "2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307",
-            "file": "preuves/2e1a43daadbf339f1ce01dbcb460d1b27071a43649949fcf442afc191fa55307.gz"
+            "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+            "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
-            "sha256": "d9f53e2fc5c4475a8b3333384d836322410bb1c3799709ec301b04dca4e860e5",
-            "file": "preuves/d9f53e2fc5c4475a8b3333384d836322410bb1c3799709ec301b04dca4e860e5.gz"
+            "sha256": "d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6",
+            "file": "preuves/d1f9d7a1ad1b7c6e18cfa7d4f90fea426b1a30cd3181f5da2c628628a85584b6.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/pick5/vendredi-30-octobre-2026/R1C2/",
-            "sha256": "cc77cdd2b3f04733d25622adc814c7c2a81df15d5691f8d763652686f339acb0",
-            "file": "preuves/cc77cdd2b3f04733d25622adc814c7c2a81df15d5691f8d763652686f339acb0.gz"
+            "sha256": "662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa",
+            "file": "preuves/662aa62fb6aaa6a155a79a60a544f8d11e21f64e48275d894885f2283adbe9aa.gz"
           }
         }
       },
@@ -740,24 +974,24 @@
             "source_title": "Prix Barbara",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c3-vincennes-prix-barbara",
-              "sha256": "29c87db194d64d3120ae6971fa544e566f3fb26a7175b7b86f711b37533b2165",
-              "file": "preuves/29c87db194d64d3120ae6971fa544e566f3fb26a7175b7b86f711b37533b2165.gz"
+              "sha256": "7af7960f748e10d45994f02a8db1044f74362b34dd55c2cbbf8ffc65febc51a1",
+              "file": "preuves/7af7960f748e10d45994f02a8db1044f74362b34dd55c2cbbf8ffc65febc51a1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
-              "sha256": "1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b",
-              "file": "preuves/1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b.gz"
+              "sha256": "67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8",
+              "file": "preuves/67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8.gz"
             },
-            "captured_at": "2026-10-30T16:27:13.562332+01:00",
+            "captured_at": "2026-10-30T17:30:00.736131+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1793373301000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1793376901000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -773,24 +1007,24 @@
             "source_title": "Le pronostic du PRIX BARBARA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
-              "sha256": "115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63",
-              "file": "preuves/115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63.gz"
+              "sha256": "81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5",
+              "file": "preuves/81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
-              "sha256": "1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b",
-              "file": "preuves/1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b.gz"
+              "sha256": "67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8",
+              "file": "preuves/67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8.gz"
             },
-            "captured_at": "2026-10-30T16:27:15.110698+01:00",
+            "captured_at": "2026-10-30T17:30:01.348703+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1793373301000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1793376901000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -806,24 +1040,24 @@
             "source_title": "Le pronostic du PRIX BARBARA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
-              "sha256": "115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63",
-              "file": "preuves/115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63.gz"
+              "sha256": "81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5",
+              "file": "preuves/81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
-              "sha256": "1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b",
-              "file": "preuves/1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b.gz"
+              "sha256": "67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8",
+              "file": "preuves/67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8.gz"
             },
-            "captured_at": "2026-10-30T16:27:15.185207+01:00",
+            "captured_at": "2026-10-30T17:30:01.473058+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.6,
+              "rapport": 6.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.7,
-              "dateRapport": 1793373301000,
+              "nombreIndicateurTendance": 1.53,
+              "dateRapport": 1793376901000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -839,24 +1073,24 @@
             "source_title": "Prix Barbara",
             "evidence": {
               "url": "https://www.geny.com/course/1694817-2026-10-30-vincennes-prix-barbara/partants-pronostics",
-              "sha256": "8064b3210d29a66487a95de664e1e12e1ae4af3ee913ac9b847eab0965e29c95",
-              "file": "preuves/8064b3210d29a66487a95de664e1e12e1ae4af3ee913ac9b847eab0965e29c95.gz"
+              "sha256": "50d85346e19fb015a9eff761d92c2169153ef03c68011db5dca847067fb8f7a0",
+              "file": "preuves/50d85346e19fb015a9eff761d92c2169153ef03c68011db5dca847067fb8f7a0.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
-              "sha256": "1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b",
-              "file": "preuves/1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b.gz"
+              "sha256": "67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8",
+              "file": "preuves/67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8.gz"
             },
-            "captured_at": "2026-10-30T16:27:30.570013+01:00",
+            "captured_at": "2026-10-30T17:30:17.864345+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1793373301000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1793376901000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -872,24 +1106,24 @@
             "source_title": "R1 Course N°3 : C3 - Prix Barbara",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C3/participants",
-              "sha256": "1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b",
-              "file": "preuves/1e399ca4cc58c7ba69611e935930eb93a93f106b25f7033b21113989615ddc6b.gz"
+              "sha256": "67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8",
+              "file": "preuves/67d845c827eb5ea210f5353039a1e83a3e3b5f60ef37e839deb8cf4a752caef8.gz"
             },
-            "captured_at": "2026-10-30T16:27:30.890739+01:00",
+            "captured_at": "2026-10-30T17:30:18.311773+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1793373301000,
+              "nombreIndicateurTendance": -3.33,
+              "dateRapport": 1793376901000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -901,28 +1135,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c3-vincennes-prix-barbara",
-            "sha256": "29c87db194d64d3120ae6971fa544e566f3fb26a7175b7b86f711b37533b2165",
-            "file": "preuves/29c87db194d64d3120ae6971fa544e566f3fb26a7175b7b86f711b37533b2165.gz"
+            "sha256": "7af7960f748e10d45994f02a8db1044f74362b34dd55c2cbbf8ffc65febc51a1",
+            "file": "preuves/7af7960f748e10d45994f02a8db1044f74362b34dd55c2cbbf8ffc65febc51a1.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
-            "sha256": "115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63",
-            "file": "preuves/115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63.gz"
+            "sha256": "81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5",
+            "file": "preuves/81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421989_prix-barbara.html",
-            "sha256": "115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63",
-            "file": "preuves/115f590fc60cd5a0ea58e93fa64000d4b80922bb27df210a55ffee4153804f63.gz"
+            "sha256": "81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5",
+            "file": "preuves/81a8a89fe62701f89fb28d7a2e840ab02fabdb51ebf35b387d814ee8e14f56a5.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694817-2026-10-30-vincennes-prix-barbara/partants-pronostics",
-            "sha256": "8064b3210d29a66487a95de664e1e12e1ae4af3ee913ac9b847eab0965e29c95",
-            "file": "preuves/8064b3210d29a66487a95de664e1e12e1ae4af3ee913ac9b847eab0965e29c95.gz"
+            "sha256": "50d85346e19fb015a9eff761d92c2169153ef03c68011db5dca847067fb8f7a0",
+            "file": "preuves/50d85346e19fb015a9eff761d92c2169153ef03c68011db5dca847067fb8f7a0.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
         }
       },
@@ -944,24 +1178,24 @@
             "source_title": "Prix Merak",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c4-vincennes-prix-merak",
-              "sha256": "f0f8316e7d93c500c6031d2f318147805fd519aa87be153818d01ca2ee8feee8",
-              "file": "preuves/f0f8316e7d93c500c6031d2f318147805fd519aa87be153818d01ca2ee8feee8.gz"
+              "sha256": "11a87827234e5e5993038ef36b28b98bc0552c764c27750189fc3775f2da7fbc",
+              "file": "preuves/11a87827234e5e5993038ef36b28b98bc0552c764c27750189fc3775f2da7fbc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
-              "sha256": "cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94",
-              "file": "preuves/cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94.gz"
+              "sha256": "52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba",
+              "file": "preuves/52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba.gz"
             },
-            "captured_at": "2026-10-30T16:27:32.622808+01:00",
+            "captured_at": "2026-10-30T17:30:20.118427+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
+              "rapport": 4.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -4.44,
+              "dateRapport": 1793376920000,
               "favoris": true,
               "numPmu1": 18,
               "grossePrise": false
@@ -977,15 +1211,15 @@
             "source_title": "Le pronostic du PRIX MERAK",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
-              "sha256": "f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6",
-              "file": "preuves/f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6.gz"
+              "sha256": "0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf",
+              "file": "preuves/0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
-              "sha256": "cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94",
-              "file": "preuves/cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94.gz"
+              "sha256": "52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba",
+              "file": "preuves/52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba.gz"
             },
-            "captured_at": "2026-10-30T16:27:33.203246+01:00",
+            "captured_at": "2026-10-30T17:30:20.840484+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -993,8 +1227,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 16.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.21,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -2.39,
+              "dateRapport": 1793376920000,
               "favoris": false,
               "numPmu1": 17,
               "grossePrise": false
@@ -1010,24 +1244,24 @@
             "source_title": "Le pronostic du PRIX MERAK",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
-              "sha256": "f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6",
-              "file": "preuves/f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6.gz"
+              "sha256": "0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf",
+              "file": "preuves/0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
-              "sha256": "cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94",
-              "file": "preuves/cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94.gz"
+              "sha256": "52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba",
+              "file": "preuves/52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba.gz"
             },
-            "captured_at": "2026-10-30T16:27:33.248621+01:00",
+            "captured_at": "2026-10-30T17:30:20.901228+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.2,
+              "rapport": 9.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.09,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": 1.06,
+              "dateRapport": 1793376920000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -1043,24 +1277,24 @@
             "source_title": "Prix Merak",
             "evidence": {
               "url": "https://www.geny.com/course/1694814-2026-10-30-vincennes-prix-merak/partants-pronostics",
-              "sha256": "7e50756ee091c0014be1d82c9e8420158d8ee84da53723a23bd88e039f5f3ab5",
-              "file": "preuves/7e50756ee091c0014be1d82c9e8420158d8ee84da53723a23bd88e039f5f3ab5.gz"
+              "sha256": "25ae3f2f337c45370ab1adb4c5b9bcd887695014dcb53b466b57062d53d429dc",
+              "file": "preuves/25ae3f2f337c45370ab1adb4c5b9bcd887695014dcb53b466b57062d53d429dc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
-              "sha256": "cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94",
-              "file": "preuves/cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94.gz"
+              "sha256": "52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba",
+              "file": "preuves/52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba.gz"
             },
-            "captured_at": "2026-10-30T16:27:50.720241+01:00",
+            "captured_at": "2026-10-30T17:30:38.109537+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.3,
+              "rapport": 8.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -1.14,
+              "dateRapport": 1793376920000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
@@ -1076,24 +1310,24 @@
             "source_title": "R1 Course N°4 : C4 - Prix Merak",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
-              "sha256": "cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94",
-              "file": "preuves/cb63d3d877bb6492cc7c42916b89f47f6d9cd0203c9abdf32c38a684ff64be94.gz"
+              "sha256": "52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba",
+              "file": "preuves/52bd87df9c60d2901b162a3d815b23e279f4bbdf021534d3aeaa86e8f14410ba.gz"
             },
-            "captured_at": "2026-10-30T16:27:51.057577+01:00",
+            "captured_at": "2026-10-30T17:30:38.532696+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
+              "rapport": 4.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -4.44,
+              "dateRapport": 1793376920000,
               "favoris": true,
               "numPmu1": 18,
               "grossePrise": false
@@ -1105,28 +1339,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c4-vincennes-prix-merak",
-            "sha256": "f0f8316e7d93c500c6031d2f318147805fd519aa87be153818d01ca2ee8feee8",
-            "file": "preuves/f0f8316e7d93c500c6031d2f318147805fd519aa87be153818d01ca2ee8feee8.gz"
+            "sha256": "11a87827234e5e5993038ef36b28b98bc0552c764c27750189fc3775f2da7fbc",
+            "file": "preuves/11a87827234e5e5993038ef36b28b98bc0552c764c27750189fc3775f2da7fbc.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
-            "sha256": "f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6",
-            "file": "preuves/f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6.gz"
+            "sha256": "0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf",
+            "file": "preuves/0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
-            "sha256": "f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6",
-            "file": "preuves/f1b0f08d698b43a315c9dd1569e632444a7cda0d23e7d9de5dacb42e5e9c34c6.gz"
+            "sha256": "0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf",
+            "file": "preuves/0bd92a196fadb0197bb3f0c005bd78e834c4e0981bac64f9ebd95b1a714104bf.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694814-2026-10-30-vincennes-prix-merak/partants-pronostics",
-            "sha256": "7e50756ee091c0014be1d82c9e8420158d8ee84da53723a23bd88e039f5f3ab5",
-            "file": "preuves/7e50756ee091c0014be1d82c9e8420158d8ee84da53723a23bd88e039f5f3ab5.gz"
+            "sha256": "25ae3f2f337c45370ab1adb4c5b9bcd887695014dcb53b466b57062d53d429dc",
+            "file": "preuves/25ae3f2f337c45370ab1adb4c5b9bcd887695014dcb53b466b57062d53d429dc.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
         }
       },
@@ -1148,15 +1382,15 @@
             "source_title": "Prix Mebsuta",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c5-vincennes-prix-mebsuta",
-              "sha256": "6ac0c1a519a4bf7a79f787ee219f0917a61521b91ca80beb2dca87ab3e09f901",
-              "file": "preuves/6ac0c1a519a4bf7a79f787ee219f0917a61521b91ca80beb2dca87ab3e09f901.gz"
+              "sha256": "9a247e5a0f99d6e25425b39eac356df032df1784987404c6b3935d12404c53c4",
+              "file": "preuves/9a247e5a0f99d6e25425b39eac356df032df1784987404c6b3935d12404c53c4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C5/participants",
-              "sha256": "5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c",
-              "file": "preuves/5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c.gz"
+              "sha256": "989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99",
+              "file": "preuves/989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99.gz"
             },
-            "captured_at": "2026-10-30T16:27:52.692624+01:00",
+            "captured_at": "2026-10-30T17:30:39.967928+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1164,8 +1398,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.88,
-              "dateRapport": 1793373308000,
+              "nombreIndicateurTendance": -1.81,
+              "dateRapport": 1793377808000,
               "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
@@ -1181,24 +1415,24 @@
             "source_title": "Le pronostic du Quinté PRIX MEBSUTA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html",
-              "sha256": "8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5",
-              "file": "preuves/8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5.gz"
+              "sha256": "2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea",
+              "file": "preuves/2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C5/participants",
-              "sha256": "5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c",
-              "file": "preuves/5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c.gz"
+              "sha256": "989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99",
+              "file": "preuves/989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99.gz"
             },
-            "captured_at": "2026-10-30T16:27:53.297865+01:00",
+            "captured_at": "2026-10-30T17:30:40.671902+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 6.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793373308000,
+              "nombreIndicateurTendance": -1.58,
+              "dateRapport": 1793377808000,
               "favoris": false,
               "numPmu1": 17,
               "grossePrise": false
@@ -1214,15 +1448,15 @@
             "source_title": "Le pronostic du Quinté PRIX MEBSUTA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html",
-              "sha256": "8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5",
-              "file": "preuves/8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5.gz"
+              "sha256": "2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea",
+              "file": "preuves/2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C5/participants",
-              "sha256": "5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c",
-              "file": "preuves/5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c.gz"
+              "sha256": "989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99",
+              "file": "preuves/989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99.gz"
             },
-            "captured_at": "2026-10-30T16:27:53.343842+01:00",
+            "captured_at": "2026-10-30T17:30:40.732199+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1230,8 +1464,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 5.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.88,
-              "dateRapport": 1793373308000,
+              "nombreIndicateurTendance": -1.81,
+              "dateRapport": 1793377808000,
               "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
@@ -1247,24 +1481,24 @@
             "source_title": "Prix Mebsuta",
             "evidence": {
               "url": "https://www.geny.com/course/1694816-2026-10-30-vincennes-prix-mebsuta/partants-pronostics",
-              "sha256": "5538f34f7fe351f3c46596d668ba2df1c9af0e096a4cab48028abecf75b34f01",
-              "file": "preuves/5538f34f7fe351f3c46596d668ba2df1c9af0e096a4cab48028abecf75b34f01.gz"
+              "sha256": "7052ff5b2d10a6f236cbc93daae49525245798ac6bd055e707479b4c7dd7a8d8",
+              "file": "preuves/7052ff5b2d10a6f236cbc93daae49525245798ac6bd055e707479b4c7dd7a8d8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C5/participants",
-              "sha256": "5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c",
-              "file": "preuves/5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c.gz"
+              "sha256": "989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99",
+              "file": "preuves/989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99.gz"
             },
-            "captured_at": "2026-10-30T16:28:10.559831+01:00",
+            "captured_at": "2026-10-30T17:30:57.865731+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.42,
-              "dateRapport": 1793373308000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377808000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1280,24 +1514,24 @@
             "source_title": "R1 Course N°5 : C5 - Prix Mebsuta",
             "evidence": {
               "url": "https://www.zone-turf.fr/quinte/vendredi-30-octobre-2026/",
-              "sha256": "c07abba2cc0ced74a6e3c521cdf9c4f6d41fb8d3d8034770bfe136b76ab61592",
-              "file": "preuves/c07abba2cc0ced74a6e3c521cdf9c4f6d41fb8d3d8034770bfe136b76ab61592.gz"
+              "sha256": "f6d1dff011de4a59b9332074096f1baea617ebc4fe4d6551e44e513c2d28e78c",
+              "file": "preuves/f6d1dff011de4a59b9332074096f1baea617ebc4fe4d6551e44e513c2d28e78c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C5/participants",
-              "sha256": "5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c",
-              "file": "preuves/5cb8ada8ede1499f5295ce9513a0678f49564b283721660c152e462c7a9fcb7c.gz"
+              "sha256": "989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99",
+              "file": "preuves/989618d167c127930cd3a1cee0ca8c1e43d0a3f5f2f71cf932a8b920e85caa99.gz"
             },
-            "captured_at": "2026-10-30T16:28:11.061927+01:00",
+            "captured_at": "2026-10-30T17:30:58.547150+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.42,
-              "dateRapport": 1793373308000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377808000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1309,28 +1543,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c5-vincennes-prix-mebsuta",
-            "sha256": "6ac0c1a519a4bf7a79f787ee219f0917a61521b91ca80beb2dca87ab3e09f901",
-            "file": "preuves/6ac0c1a519a4bf7a79f787ee219f0917a61521b91ca80beb2dca87ab3e09f901.gz"
+            "sha256": "9a247e5a0f99d6e25425b39eac356df032df1784987404c6b3935d12404c53c4",
+            "file": "preuves/9a247e5a0f99d6e25425b39eac356df032df1784987404c6b3935d12404c53c4.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html",
-            "sha256": "8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5",
-            "file": "preuves/8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5.gz"
+            "sha256": "2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea",
+            "file": "preuves/2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html",
-            "sha256": "8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5",
-            "file": "preuves/8ecebebbb8366cde4725d2bdeddb5a4fd271a61bee24d2a6d0e1289572f733a5.gz"
+            "sha256": "2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea",
+            "file": "preuves/2b8549725e0ba26c1c340392110e517ed87e254d3244676f1747da937142cbea.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694816-2026-10-30-vincennes-prix-mebsuta/partants-pronostics",
-            "sha256": "5538f34f7fe351f3c46596d668ba2df1c9af0e096a4cab48028abecf75b34f01",
-            "file": "preuves/5538f34f7fe351f3c46596d668ba2df1c9af0e096a4cab48028abecf75b34f01.gz"
+            "sha256": "7052ff5b2d10a6f236cbc93daae49525245798ac6bd055e707479b4c7dd7a8d8",
+            "file": "preuves/7052ff5b2d10a6f236cbc93daae49525245798ac6bd055e707479b4c7dd7a8d8.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/quinte/vendredi-30-octobre-2026/",
-            "sha256": "c07abba2cc0ced74a6e3c521cdf9c4f6d41fb8d3d8034770bfe136b76ab61592",
-            "file": "preuves/c07abba2cc0ced74a6e3c521cdf9c4f6d41fb8d3d8034770bfe136b76ab61592.gz"
+            "sha256": "f6d1dff011de4a59b9332074096f1baea617ebc4fe4d6551e44e513c2d28e78c",
+            "file": "preuves/f6d1dff011de4a59b9332074096f1baea617ebc4fe4d6551e44e513c2d28e78c.gz"
           }
         }
       },
@@ -1352,24 +1586,24 @@
             "source_title": "Prix Toucan",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c6-vincennes-prix-toucan",
-              "sha256": "da3190f6d2b297dceb5bbb91d7f0a9d5049139e2884f349757f893f305ef0e3c",
-              "file": "preuves/da3190f6d2b297dceb5bbb91d7f0a9d5049139e2884f349757f893f305ef0e3c.gz"
+              "sha256": "246f5590a8b2c4ea136b2692e02236a8179e32efc9bc979ef891692148f8d132",
+              "file": "preuves/246f5590a8b2c4ea136b2692e02236a8179e32efc9bc979ef891692148f8d132.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C6/participants",
-              "sha256": "e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b",
-              "file": "preuves/e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b.gz"
+              "sha256": "e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc",
+              "file": "preuves/e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc.gz"
             },
-            "captured_at": "2026-10-30T16:28:12.330160+01:00",
+            "captured_at": "2026-10-30T17:30:59.643608+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.97,
-              "dateRapport": 1793373311000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1793377811000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1385,24 +1619,24 @@
             "source_title": "Le pronostic du PRIX TOUCAN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421992_prix-toucan.html",
-              "sha256": "ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484",
-              "file": "preuves/ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484.gz"
+              "sha256": "078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964",
+              "file": "preuves/078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C6/participants",
-              "sha256": "e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b",
-              "file": "preuves/e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b.gz"
+              "sha256": "e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc",
+              "file": "preuves/e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc.gz"
             },
-            "captured_at": "2026-10-30T16:28:12.893815+01:00",
+            "captured_at": "2026-10-30T17:31:00.256803+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.0,
+              "rapport": 5.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.04,
-              "dateRapport": 1793373311000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377811000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -1418,24 +1652,24 @@
             "source_title": "Le pronostic du PRIX TOUCAN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421992_prix-toucan.html",
-              "sha256": "ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484",
-              "file": "preuves/ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484.gz"
+              "sha256": "078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964",
+              "file": "preuves/078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C6/participants",
-              "sha256": "e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b",
-              "file": "preuves/e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b.gz"
+              "sha256": "e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc",
+              "file": "preuves/e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc.gz"
             },
-            "captured_at": "2026-10-30T16:28:12.937150+01:00",
+            "captured_at": "2026-10-30T17:31:00.310553+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.97,
-              "dateRapport": 1793373311000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1793377811000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1451,24 +1685,24 @@
             "source_title": "Prix Toucan",
             "evidence": {
               "url": "https://www.geny.com/course/1694815-2026-10-30-vincennes-prix-toucan/partants-pronostics",
-              "sha256": "e643ec9c24e65196fa57ac769a473126aafcd46d12b765d7c8117a55911b364e",
-              "file": "preuves/e643ec9c24e65196fa57ac769a473126aafcd46d12b765d7c8117a55911b364e.gz"
+              "sha256": "35173ffed0c2585bfdf72825a04afb40319ea2feee9929f66b0a60fbb34b6e57",
+              "file": "preuves/35173ffed0c2585bfdf72825a04afb40319ea2feee9929f66b0a60fbb34b6e57.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C6/participants",
-              "sha256": "e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b",
-              "file": "preuves/e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b.gz"
+              "sha256": "e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc",
+              "file": "preuves/e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc.gz"
             },
-            "captured_at": "2026-10-30T16:28:30.605626+01:00",
+            "captured_at": "2026-10-30T17:31:18.394103+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.97,
-              "dateRapport": 1793373311000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1793377811000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1484,24 +1718,24 @@
             "source_title": "R1 Course N°6 : C6 - Prix Toucan",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C6/participants",
-              "sha256": "e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b",
-              "file": "preuves/e6307d43d5865bc9d62877e681668cb22aa68b70e2b6a1bc37c6c8503eb4747b.gz"
+              "sha256": "e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc",
+              "file": "preuves/e5dfb79fd7e6cabaca36be536e832eca450bed74919e824e1efc9aeb06f03ebc.gz"
             },
-            "captured_at": "2026-10-30T16:28:30.935512+01:00",
+            "captured_at": "2026-10-30T17:31:18.819137+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.97,
-              "dateRapport": 1793373311000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1793377811000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1513,28 +1747,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c6-vincennes-prix-toucan",
-            "sha256": "da3190f6d2b297dceb5bbb91d7f0a9d5049139e2884f349757f893f305ef0e3c",
-            "file": "preuves/da3190f6d2b297dceb5bbb91d7f0a9d5049139e2884f349757f893f305ef0e3c.gz"
+            "sha256": "246f5590a8b2c4ea136b2692e02236a8179e32efc9bc979ef891692148f8d132",
+            "file": "preuves/246f5590a8b2c4ea136b2692e02236a8179e32efc9bc979ef891692148f8d132.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421992_prix-toucan.html",
-            "sha256": "ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484",
-            "file": "preuves/ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484.gz"
+            "sha256": "078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964",
+            "file": "preuves/078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421992_prix-toucan.html",
-            "sha256": "ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484",
-            "file": "preuves/ff7dd3307bd408c62a23f8272c2535c58a1640df4e0b2ec090a5e3f1135a3484.gz"
+            "sha256": "078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964",
+            "file": "preuves/078d70d704e56bfa9e66f4ee0a28a925979b144b3e88467e0902591b5c992964.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694815-2026-10-30-vincennes-prix-toucan/partants-pronostics",
-            "sha256": "e643ec9c24e65196fa57ac769a473126aafcd46d12b765d7c8117a55911b364e",
-            "file": "preuves/e643ec9c24e65196fa57ac769a473126aafcd46d12b765d7c8117a55911b364e.gz"
+            "sha256": "35173ffed0c2585bfdf72825a04afb40319ea2feee9929f66b0a60fbb34b6e57",
+            "file": "preuves/35173ffed0c2585bfdf72825a04afb40319ea2feee9929f66b0a60fbb34b6e57.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
         }
       },
@@ -1556,24 +1790,24 @@
             "source_title": "Prix Livadie",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c7-vincennes-prix-livadie",
-              "sha256": "96eca7eb6321343df213dd1c89bcb681f948d3a26a892e59fbf0282d89b8ca32",
-              "file": "preuves/96eca7eb6321343df213dd1c89bcb681f948d3a26a892e59fbf0282d89b8ca32.gz"
+              "sha256": "cfcb5f0fa4a529abf20f290ee454daa09fb30fdbdc8cc0cf4272237eef83969c",
+              "file": "preuves/cfcb5f0fa4a529abf20f290ee454daa09fb30fdbdc8cc0cf4272237eef83969c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C7/participants",
-              "sha256": "ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3",
-              "file": "preuves/ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3.gz"
+              "sha256": "1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d",
+              "file": "preuves/1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d.gz"
             },
-            "captured_at": "2026-10-30T16:28:32.521148+01:00",
+            "captured_at": "2026-10-30T17:31:20.150744+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
+              "rapport": 5.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.0,
-              "dateRapport": 1793373322000,
+              "nombreIndicateurTendance": -1.96,
+              "dateRapport": 1793377822000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -1589,24 +1823,24 @@
             "source_title": "Le pronostic du PRIX LIVADIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421993_prix-livadie.html",
-              "sha256": "429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b",
-              "file": "preuves/429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b.gz"
+              "sha256": "bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581",
+              "file": "preuves/bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C7/participants",
-              "sha256": "ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3",
-              "file": "preuves/ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3.gz"
+              "sha256": "1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d",
+              "file": "preuves/1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d.gz"
             },
-            "captured_at": "2026-10-30T16:28:33.084940+01:00",
+            "captured_at": "2026-10-30T17:31:20.781616+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.7,
+              "rapport": 8.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.82,
-              "dateRapport": 1793373322000,
+              "nombreIndicateurTendance": -3.44,
+              "dateRapport": 1793377822000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1622,24 +1856,24 @@
             "source_title": "Le pronostic du PRIX LIVADIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421993_prix-livadie.html",
-              "sha256": "429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b",
-              "file": "preuves/429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b.gz"
+              "sha256": "bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581",
+              "file": "preuves/bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C7/participants",
-              "sha256": "ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3",
-              "file": "preuves/ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3.gz"
+              "sha256": "1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d",
+              "file": "preuves/1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d.gz"
             },
-            "captured_at": "2026-10-30T16:28:33.126787+01:00",
+            "captured_at": "2026-10-30T17:31:20.836021+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
+              "rapport": 5.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.0,
-              "dateRapport": 1793373322000,
+              "nombreIndicateurTendance": -1.96,
+              "dateRapport": 1793377822000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -1655,24 +1889,24 @@
             "source_title": "Prix Livadie",
             "evidence": {
               "url": "https://www.geny.com/course/1694819-2026-10-30-vincennes-prix-livadie/partants-pronostics",
-              "sha256": "1f71da707c796639cbd09b0a1cac855435b5dbfdff91ff1a9d0f79ac13f9a548",
-              "file": "preuves/1f71da707c796639cbd09b0a1cac855435b5dbfdff91ff1a9d0f79ac13f9a548.gz"
+              "sha256": "2c24ca772f1e6c1fabeb32a0b2ee917a32141f000b4599683dc86cfa0e7620b4",
+              "file": "preuves/2c24ca772f1e6c1fabeb32a0b2ee917a32141f000b4599683dc86cfa0e7620b4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C7/participants",
-              "sha256": "ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3",
-              "file": "preuves/ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3.gz"
+              "sha256": "1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d",
+              "file": "preuves/1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d.gz"
             },
-            "captured_at": "2026-10-30T16:28:50.518202+01:00",
+            "captured_at": "2026-10-30T17:31:37.762023+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 9.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.88,
-              "dateRapport": 1793373322000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1793377822000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -1688,24 +1922,24 @@
             "source_title": "R1 Course N°7 : C7 - Prix Livadie",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C7/participants",
-              "sha256": "ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3",
-              "file": "preuves/ac2c0b1bf32139a8caf274c0f6d451e6dd2973c40543be74d4beffff385ed5e3.gz"
+              "sha256": "1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d",
+              "file": "preuves/1e7b8fb18a8c10a28976fb91e03f6f1b7211d9c28dc9543195d7ab5e230e568d.gz"
             },
-            "captured_at": "2026-10-30T16:28:50.857158+01:00",
+            "captured_at": "2026-10-30T17:31:38.181423+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
+              "rapport": 5.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.0,
-              "dateRapport": 1793373322000,
+              "nombreIndicateurTendance": -1.96,
+              "dateRapport": 1793377822000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -1717,28 +1951,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c7-vincennes-prix-livadie",
-            "sha256": "96eca7eb6321343df213dd1c89bcb681f948d3a26a892e59fbf0282d89b8ca32",
-            "file": "preuves/96eca7eb6321343df213dd1c89bcb681f948d3a26a892e59fbf0282d89b8ca32.gz"
+            "sha256": "cfcb5f0fa4a529abf20f290ee454daa09fb30fdbdc8cc0cf4272237eef83969c",
+            "file": "preuves/cfcb5f0fa4a529abf20f290ee454daa09fb30fdbdc8cc0cf4272237eef83969c.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421993_prix-livadie.html",
-            "sha256": "429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b",
-            "file": "preuves/429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b.gz"
+            "sha256": "bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581",
+            "file": "preuves/bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421993_prix-livadie.html",
-            "sha256": "429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b",
-            "file": "preuves/429bc041159319c157815f70ea6357f639f073ffa1237d7201b31a010e5e3f8b.gz"
+            "sha256": "bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581",
+            "file": "preuves/bedac39ee91dcb0ead4a011345b4b6aa22d82dedc072bd55222fc579b9d64581.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694819-2026-10-30-vincennes-prix-livadie/partants-pronostics",
-            "sha256": "1f71da707c796639cbd09b0a1cac855435b5dbfdff91ff1a9d0f79ac13f9a548",
-            "file": "preuves/1f71da707c796639cbd09b0a1cac855435b5dbfdff91ff1a9d0f79ac13f9a548.gz"
+            "sha256": "2c24ca772f1e6c1fabeb32a0b2ee917a32141f000b4599683dc86cfa0e7620b4",
+            "file": "preuves/2c24ca772f1e6c1fabeb32a0b2ee917a32141f000b4599683dc86cfa0e7620b4.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
         }
       },
@@ -1760,24 +1994,24 @@
             "source_title": "Prix Ohio",
             "evidence": {
               "url": "https://turfin.fr/course/2026-10-30/r1c8-vincennes-prix-ohio",
-              "sha256": "00e1e1bed239125d054741721a9fe9a47e64a49e5bb50b5a37b820ec4c2aa768",
-              "file": "preuves/00e1e1bed239125d054741721a9fe9a47e64a49e5bb50b5a37b820ec4c2aa768.gz"
+              "sha256": "acbe9dc07cc0cc8de47dd3d007728a2fe1595a3613584905738baaca710b8922",
+              "file": "preuves/acbe9dc07cc0cc8de47dd3d007728a2fe1595a3613584905738baaca710b8922.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C8/participants",
-              "sha256": "7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995",
-              "file": "preuves/7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995.gz"
+              "sha256": "6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491",
+              "file": "preuves/6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491.gz"
             },
-            "captured_at": "2026-10-30T16:28:52.532071+01:00",
+            "captured_at": "2026-10-30T17:31:40.209716+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 5.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.08,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": 6.0,
+              "dateRapport": 1793377820000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -1793,24 +2027,24 @@
             "source_title": "Le pronostic du PRIX OHIO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421994_prix-ohio.html",
-              "sha256": "bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2",
-              "file": "preuves/bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2.gz"
+              "sha256": "bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5",
+              "file": "preuves/bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C8/participants",
-              "sha256": "7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995",
-              "file": "preuves/7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995.gz"
+              "sha256": "6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491",
+              "file": "preuves/6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491.gz"
             },
-            "captured_at": "2026-10-30T16:28:54.083065+01:00",
+            "captured_at": "2026-10-30T17:31:42.106473+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
+              "rapport": 5.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.08,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": 6.0,
+              "dateRapport": 1793377820000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -1826,24 +2060,24 @@
             "source_title": "Le pronostic du PRIX OHIO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421994_prix-ohio.html",
-              "sha256": "bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2",
-              "file": "preuves/bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2.gz"
+              "sha256": "bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5",
+              "file": "preuves/bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C8/participants",
-              "sha256": "7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995",
-              "file": "preuves/7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995.gz"
+              "sha256": "6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491",
+              "file": "preuves/6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491.gz"
             },
-            "captured_at": "2026-10-30T16:28:54.207226+01:00",
+            "captured_at": "2026-10-30T17:31:42.280253+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.22,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -5.88,
+              "dateRapport": 1793377820000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1859,24 +2093,24 @@
             "source_title": "Prix Ohio",
             "evidence": {
               "url": "https://www.geny.com/course/1694820-2026-10-30-vincennes-prix-ohio/partants-pronostics",
-              "sha256": "3146f78e6c926499b2110d91efb301d336bee0cf4345dc62a87d8e565a99f889",
-              "file": "preuves/3146f78e6c926499b2110d91efb301d336bee0cf4345dc62a87d8e565a99f889.gz"
+              "sha256": "48a63cfc461b081178303d721eb96c125175aedd1c5106d5743f31df2da98ba5",
+              "file": "preuves/48a63cfc461b081178303d721eb96c125175aedd1c5106d5743f31df2da98ba5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C8/participants",
-              "sha256": "7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995",
-              "file": "preuves/7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995.gz"
+              "sha256": "6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491",
+              "file": "preuves/6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491.gz"
             },
-            "captured_at": "2026-10-30T16:29:10.374514+01:00",
+            "captured_at": "2026-10-30T17:31:57.852712+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.22,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -5.88,
+              "dateRapport": 1793377820000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1892,24 +2126,24 @@
             "source_title": "R1 Course N°8 : C8 - Prix Ohio",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-              "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-              "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+              "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+              "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C8/participants",
-              "sha256": "7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995",
-              "file": "preuves/7bfb791858b06dc4fd5a9e8379cecc6f73536dbdd2a6247f6d2ef084030fb995.gz"
+              "sha256": "6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491",
+              "file": "preuves/6bd8ddb4f73b56a37987a04ca1bf56f5b0fe96d92f2304deb591ed2ac0f9a491.gz"
             },
-            "captured_at": "2026-10-30T16:29:10.709020+01:00",
+            "captured_at": "2026-10-30T17:31:58.271398+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.22,
-              "dateRapport": 1793373320000,
+              "nombreIndicateurTendance": -5.88,
+              "dateRapport": 1793377820000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -1921,28 +2155,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-10-30/r1c8-vincennes-prix-ohio",
-            "sha256": "00e1e1bed239125d054741721a9fe9a47e64a49e5bb50b5a37b820ec4c2aa768",
-            "file": "preuves/00e1e1bed239125d054741721a9fe9a47e64a49e5bb50b5a37b820ec4c2aa768.gz"
+            "sha256": "acbe9dc07cc0cc8de47dd3d007728a2fe1595a3613584905738baaca710b8922",
+            "file": "preuves/acbe9dc07cc0cc8de47dd3d007728a2fe1595a3613584905738baaca710b8922.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421994_prix-ohio.html",
-            "sha256": "bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2",
-            "file": "preuves/bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2.gz"
+            "sha256": "bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5",
+            "file": "preuves/bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421994_prix-ohio.html",
-            "sha256": "bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2",
-            "file": "preuves/bf7ee9b826dc36535a887d32cebd19bc3596f850986626aaa6f2646a90edeec2.gz"
+            "sha256": "bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5",
+            "file": "preuves/bea76dd7c8d2b9f729934a31292fbc51c93e3858757a445ea3daaaa73bd99db5.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1694820-2026-10-30-vincennes-prix-ohio/partants-pronostics",
-            "sha256": "3146f78e6c926499b2110d91efb301d336bee0cf4345dc62a87d8e565a99f889",
-            "file": "preuves/3146f78e6c926499b2110d91efb301d336bee0cf4345dc62a87d8e565a99f889.gz"
+            "sha256": "48a63cfc461b081178303d721eb96c125175aedd1c5106d5743f31df2da98ba5",
+            "file": "preuves/48a63cfc461b081178303d721eb96c125175aedd1c5106d5743f31df2da98ba5.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-vincennes-199770.html",
-            "sha256": "0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d",
-            "file": "preuves/0551b8b9c9b9131dd805cc76584a66bc9c165d9b15f9ef60c1ccf28795eeb58d.gz"
+            "sha256": "f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037",
+            "file": "preuves/f813b8f7d141df12d32e24ef159aaf47d298494a5ef82ec6ff2e65be89f92037.gz"
           }
         }
       }
