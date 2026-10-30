@@ -4,16 +4,16 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C5 — PRIX MEBSUTA
 
-Collecte : 2026-10-30T09:17:58.909502+00:00. Avant départ : True. Sources complètes : 6/8.
+Collecte : 2026-10-30T11:13:40.374198+00:00. Avant départ : True. Sources complètes : 6/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html) | 17 MOUNTAIN (cote 6.2) | 16 MOONLIGHT STAR (cote 7.5) | 13 MOUSKIE DE GUEZ (cote 7.1) | 5 MORNING NEWS (cote 34.0) | 10 MELODICA BELLA (cote 4.9) | 12 MIA DE SIMM (cote 14.0) — Outsider ; 8 MISSLADY DU VICLAU (cote 14.0) — Outsider ; 7 MI FA SOL (cote 14.0) — Outsider ; 5 MORNING NEWS (cote 34.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html) | 10 MELODICA BELLA (cote 4.9) | 17 MOUNTAIN (cote 6.2) | 16 MOONLIGHT STAR (cote 7.5) | 12 MIA DE SIMM (cote 14.0) | 7 MI FA SOL (cote 14.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 13 MOUSKIE DE GUEZ (cote 7.1) | 15 MARIE DI LEONE (cote 15.0) | 16 MOONLIGHT STAR (cote 7.5) | 10 MELODICA BELLA (cote 4.9) | 17 MOUNTAIN (cote 6.2) | 7 MI FA SOL (cote 14.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 17 MOUNTAIN (cote 6.2) | 10 MELODICA BELLA (cote 4.9) | 16 MOONLIGHT STAR (cote 7.5) | 15 MARIE DI LEONE (cote 15.0) | 4 MILANTERA (cote 24.0) | 4 MILANTERA (cote 24.0) — Outsider ; 13 MOUSKIE DE GUEZ (cote 7.1) — Outsider ; 8 MISSLADY DU VICLAU (cote 14.0) — Outsider ; 14 MERRY RIVER (cote 19.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 MELODICA BELLA (cote 4.9) | 13 MOUSKIE DE GUEZ (cote 7.1) | 16 MOONLIGHT STAR (cote 7.5) | 17 MOUNTAIN (cote 6.2) | 7 MI FA SOL (cote 14.0) | Non publié |
-| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74831-pronostic-quinte-du-vendredi-30-octobre-a-vincennes-prix-mebsuta-r1c5.html) | 10 MELODICA BELLA (cote 4.9) | 17 MOUNTAIN (cote 6.2) | 16 MOONLIGHT STAR (cote 7.5) | 15 MARIE DI LEONE (cote 15.0) | 13 MOUSKIE DE GUEZ (cote 7.1) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html) | 17 MOUNTAIN (cote 6.8) | 16 MOONLIGHT STAR (cote 7.4) | 13 MOUSKIE DE GUEZ (cote 6.5) | 5 MORNING NEWS (cote 34.0) | 10 MELODICA BELLA (cote 5.1) | 12 MIA DE SIMM (cote 15.0) — Outsider ; 8 MISSLADY DU VICLAU (cote 14.0) — Outsider ; 7 MI FA SOL (cote 13.0) — Outsider ; 5 MORNING NEWS (cote 34.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421991_prix-mebsuta.html) | 10 MELODICA BELLA (cote 5.1) | 17 MOUNTAIN (cote 6.8) | 16 MOONLIGHT STAR (cote 7.4) | 12 MIA DE SIMM (cote 15.0) | 7 MI FA SOL (cote 13.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 13 MOUSKIE DE GUEZ (cote 6.5) | 15 MARIE DI LEONE (cote 13.0) | 16 MOONLIGHT STAR (cote 7.4) | 10 MELODICA BELLA (cote 5.1) | 17 MOUNTAIN (cote 6.8) | 7 MI FA SOL (cote 13.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 17 MOUNTAIN (cote 6.8) | 10 MELODICA BELLA (cote 5.1) | 16 MOONLIGHT STAR (cote 7.4) | 15 MARIE DI LEONE (cote 13.0) | 4 MILANTERA (cote 22.0) | 4 MILANTERA (cote 22.0) — Outsider ; 13 MOUSKIE DE GUEZ (cote 6.5) — Outsider ; 8 MISSLADY DU VICLAU (cote 14.0) — Outsider ; 14 MERRY RIVER (cote 19.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 MELODICA BELLA (cote 5.1) | 13 MOUSKIE DE GUEZ (cote 6.5) | 16 MOONLIGHT STAR (cote 7.4) | 17 MOUNTAIN (cote 6.8) | 7 MI FA SOL (cote 13.0) | Non publié |
+| [Rue des Joueurs](https://www.ruedesjoueurs.com/turf/pronostic-turf/pronostics-quinte/74831-pronostic-quinte-du-vendredi-30-octobre-a-vincennes-prix-mebsuta-r1c5.html) | 10 MELODICA BELLA (cote 5.1) | 17 MOUNTAIN (cote 6.8) | 16 MOONLIGHT STAR (cote 7.4) | 15 MARIE DI LEONE (cote 13.0) | 13 MOUSKIE DE GUEZ (cote 6.5) | Non publié |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
 
@@ -21,18 +21,18 @@ Collecte : 2026-10-30T09:17:58.909502+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 10 MELODICA BELLA (cote 4.9) | 6 |
-| 17 MOUNTAIN (cote 6.2) | 6 |
-| 16 MOONLIGHT STAR (cote 7.5) | 6 |
-| 13 MOUSKIE DE GUEZ (cote 7.1) | 4 |
-| 15 MARIE DI LEONE (cote 15.0) | 3 |
+| 10 MELODICA BELLA (cote 5.1) | 6 |
+| 17 MOUNTAIN (cote 6.8) | 6 |
+| 16 MOONLIGHT STAR (cote 7.4) | 6 |
+| 13 MOUSKIE DE GUEZ (cote 6.5) | 4 |
+| 15 MARIE DI LEONE (cote 13.0) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 10 – 17 – 16 – 13 – 15 | 2 € |
-| Cotes | 10 – 17 – 13 – 16 – 7 | 2 € |
+| Cotes | 10 – 13 – 17 – 16 – 7 | 2 € |
 | Bases + outsiders | 10 – 17 – 16 – 7 – 8 | 2 € |
 
 ### Cumul des trois premiers choix
