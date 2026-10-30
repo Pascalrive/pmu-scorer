@@ -132,7 +132,11 @@
           "file": "preuves/e5f750839334c7775078fd83f388252faa065be3f0de4230f946fc73594c67a9.gz"
         }
       },
-      "groups_frozen_at": "2026-10-30T16:50:47.539007+01:00"
+      "groups_frozen_at": "2026-10-30T16:50:47.539007+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-30T17:26:42.495032+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-30",
@@ -141,9 +145,97 @@
       "title": "PRIX MERCATOR",
       "departure": "2026-10-30T18:23:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 14,
+          "name": "KASSIOPEIA",
+          "source_url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Mercator",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+            "sha256": "8c05a6d0edcdbca1a6a093329929d02875d892decd5193617bf50e1d0355d549",
+            "file": "preuves/8c05a6d0edcdbca1a6a093329929d02875d892decd5193617bf50e1d0355d549.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:26:39.651271+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": true,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 14,
+          "name": "KASSIOPEIA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX MERCATOR",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+            "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+            "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df",
+            "file": "preuves/5bfa77dd3e31516605a932a32fcb80e489429da04b88f939ac650472e29864df.gz"
+          },
+          "captured_at": "2026-10-30T17:26:41.886633+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793376925000,
+            "favoris": true,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 14,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694818-2026-10-30-vincennes-prix-mercator/partants-pronostics",
+          "sha256": "8c05a6d0edcdbca1a6a093329929d02875d892decd5193617bf50e1d0355d549",
+          "file": "preuves/8c05a6d0edcdbca1a6a093329929d02875d892decd5193617bf50e1d0355d549.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421988_prix-mercator.html",
+          "sha256": "807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185",
+          "file": "preuves/807df5649b9772475fb11e0081fcf5cb6e66bd11ce9c075e520fff2ba2c3b185.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-30T17:26:41.886675+01:00"
     },
     {
       "date": "2026-10-30",
