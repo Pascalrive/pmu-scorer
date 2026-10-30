@@ -48,7 +48,7 @@
           "number": 14,
           "name": "KASSIOPEIA",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-10-30T18:09:58.685888+01:00",
           "source_captured_at": "2026-10-30T17:26:39.651271+01:00",
           "sites": [
@@ -63,6 +63,44 @@
             "dateRapport": 1793380155000,
             "favoris": true,
             "numPmu1": 14,
+            "grossePrise": false
+          },
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 7,
+          "settled_at": "2026-10-30T18:40:56.630981+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011",
+            "file": "preuves/f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4",
+            "file": "preuves/3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4.gz"
+          }
+        },
+        {
+          "race_id": "R1C3",
+          "departure": "2026-10-30T18:58:00+01:00",
+          "number": 7,
+          "name": "JAZZ D'OURVILLE",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-30T18:40:56.631418+01:00",
+          "source_captured_at": "2026-10-30T18:09:54.949899+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793382007000,
+            "favoris": true,
+            "numPmu1": 7,
             "grossePrise": false
           }
         }
@@ -275,7 +313,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-30T18:40:56.630515+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011",
+            "file": "preuves/f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4",
+            "file": "preuves/3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -308,7 +360,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-10-30T18:40:56.630836+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011",
+            "file": "preuves/f6bc792d33318aeda8552038f0fd7009575a0eb1787f6194384cf2d093b06011.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+            "sha256": "3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4",
+            "file": "preuves/3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4.gz"
+          }
         }
       },
       "groups": {
@@ -345,7 +411,38 @@
           "checked_at": "2026-10-30T18:09:31.934274+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 8,
+          "name": "KISS ME DU LIVET",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "KETTY ANGOT",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "KACEY BELL",
+          "rank": 3
+        },
+        {
+          "number": 12,
+          "name": "KALIAKIE PHEDO",
+          "rank": 4
+        },
+        {
+          "number": 6,
+          "name": "KALINE DE COSSE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C2/participants",
+        "sha256": "3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4",
+        "file": "preuves/3b556e320ae326e0ff18aa9bd5a17b519139b75c19becf45e16dd62bbc5a6ce4.gz"
+      }
     },
     {
       "date": "2026-10-30",
@@ -457,9 +554,88 @@
       "title": "PRIX MERAK",
       "departure": "2026-10-30T19:33:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 9,
+          "name": "MONTROSE VERGNIER",
+          "source_url": "https://www.geny.com/course/1694814-2026-10-30-vincennes-prix-merak/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Merak",
+          "evidence": {
+            "url": "https://www.geny.com/course/1694814-2026-10-30-vincennes-prix-merak/partants-pronostics",
+            "sha256": "67ab82e9c2bbf30eba2530cd46db3811812148d2a11a48b1e51fe2026101585b",
+            "file": "preuves/67ab82e9c2bbf30eba2530cd46db3811812148d2a11a48b1e51fe2026101585b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
+            "sha256": "2747a4bbd355847d8ccf36bd4df128da5643a7a1896081217c19574a8aef8a3c",
+            "file": "preuves/2747a4bbd355847d8ccf36bd4df128da5643a7a1896081217c19574a8aef8a3c.gz"
+          },
+          "captured_at": "2026-10-30T18:40:54.000956+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.29,
+            "dateRapport": 1793381420000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 17,
+          "name": "MADIBA MARBEN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX MERAK",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
+            "sha256": "e5ac444b8f1b985d1b98e50c05c4ad717c40e705bb79dd76e8279e673ae97dd3",
+            "file": "preuves/e5ac444b8f1b985d1b98e50c05c4ad717c40e705bb79dd76e8279e673ae97dd3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/30102026/R1/C4/participants",
+            "sha256": "2747a4bbd355847d8ccf36bd4df128da5643a7a1896081217c19574a8aef8a3c",
+            "file": "preuves/2747a4bbd355847d8ccf36bd4df128da5643a7a1896081217c19574a8aef8a3c.gz"
+          },
+          "captured_at": "2026-10-30T18:40:55.767469+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 18.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.06,
+            "dateRapport": 1793381420000,
+            "favoris": false,
+            "numPmu1": 17,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1694814-2026-10-30-vincennes-prix-merak/partants-pronostics",
+          "sha256": "67ab82e9c2bbf30eba2530cd46db3811812148d2a11a48b1e51fe2026101585b",
+          "file": "preuves/67ab82e9c2bbf30eba2530cd46db3811812148d2a11a48b1e51fe2026101585b.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-30/paris-vincennes/421990_prix-merak.html",
+          "sha256": "e5ac444b8f1b985d1b98e50c05c4ad717c40e705bb79dd76e8279e673ae97dd3",
+          "file": "preuves/e5ac444b8f1b985d1b98e50c05c4ad717c40e705bb79dd76e8279e673ae97dd3.gz"
+        }
+      }
     },
     {
       "date": "2026-10-30",
