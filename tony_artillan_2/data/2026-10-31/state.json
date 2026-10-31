@@ -48,7 +48,7 @@
           "number": 11,
           "name": "DIVINA FE",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-10-31T14:15:36.566418+01:00",
           "source_captured_at": "2026-10-31T13:34:51.792726+01:00",
           "sites": [
@@ -64,6 +64,20 @@
             "favoris": true,
             "numPmu1": 11,
             "grossePrise": false
+          },
+          "return_cents": 54000,
+          "profit_cents": 34000,
+          "rank": 1,
+          "settled_at": "2026-10-31T14:51:06.238511+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704",
+            "file": "preuves/c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+            "sha256": "ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381",
+            "file": "preuves/ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381.gz"
           }
         }
       ],
@@ -287,7 +301,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T14:51:06.238045+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704",
+            "file": "preuves/c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+            "sha256": "ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381",
+            "file": "preuves/ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -320,7 +348,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T14:51:06.238359+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704",
+            "file": "preuves/c73e30c60cdd3bc85b6463e2249495ca5634c5a163d86602fae36c848defe704.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+            "sha256": "ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381",
+            "file": "preuves/ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381.gz"
+          }
         }
       },
       "groups": {
@@ -350,7 +392,38 @@
         "at": "2026-10-31T14:29:22.018521+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 11,
+          "name": "DIVINA FE",
+          "rank": 1
+        },
+        {
+          "number": 5,
+          "name": "ASIAH",
+          "rank": 2
+        },
+        {
+          "number": 4,
+          "name": "WONDER BAILEYS",
+          "rank": 3
+        },
+        {
+          "number": 1,
+          "name": "ALFIYA",
+          "rank": 4
+        },
+        {
+          "number": 3,
+          "name": "GONAFOOT",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+        "sha256": "ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381",
+        "file": "preuves/ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381.gz"
+      }
     },
     {
       "date": "2026-10-31",
@@ -449,9 +522,88 @@
       "title": "PRIX ZEDDAAN",
       "departure": "2026-10-31T15:50:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "VIGNELLI",
+          "source_url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Zeddaan",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
+            "sha256": "963b859c460b614a65130a44dd480e84f1f66fb5d89aed166e7f05540213bda8",
+            "file": "preuves/963b859c460b614a65130a44dd480e84f1f66fb5d89aed166e7f05540213bda8.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
+            "sha256": "46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47",
+            "file": "preuves/46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47.gz"
+          },
+          "captured_at": "2026-10-31T14:51:03.107346+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -13.04,
+            "dateRapport": 1793454335000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "MOONDANCE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX ZEDDAAN",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
+            "sha256": "f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833",
+            "file": "preuves/f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
+            "sha256": "46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47",
+            "file": "preuves/46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47.gz"
+          },
+          "captured_at": "2026-10-31T14:51:05.053599+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.72,
+            "dateRapport": 1793454335000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
+          "sha256": "963b859c460b614a65130a44dd480e84f1f66fb5d89aed166e7f05540213bda8",
+          "file": "preuves/963b859c460b614a65130a44dd480e84f1f66fb5d89aed166e7f05540213bda8.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
+          "sha256": "f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833",
+          "file": "preuves/f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833.gz"
+        }
+      }
     },
     {
       "date": "2026-10-31",
