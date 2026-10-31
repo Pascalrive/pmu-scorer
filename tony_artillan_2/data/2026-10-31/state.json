@@ -79,6 +79,30 @@
             "sha256": "ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381",
             "file": "preuves/ca8db8e044ccbb742b66ab350f07f35c2a5caf88ea25362b73d6932cb24f7381.gz"
           }
+        },
+        {
+          "race_id": "R1C5",
+          "departure": "2026-10-31T16:25:00+01:00",
+          "number": 2,
+          "name": "COSMO BEAU",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-31T16:05:05.360129+01:00",
+          "source_captured_at": "2026-10-31T15:25:43.753918+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.22,
+            "dateRapport": 1793458983000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          }
         }
       ],
       "budget_cents": 120000,
@@ -615,7 +639,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T16:05:05.359651+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "1a0862c65a00ec7604c7373d62c549a7904568d444bf50eae8daa58622e78373",
+            "file": "preuves/1a0862c65a00ec7604c7373d62c549a7904568d444bf50eae8daa58622e78373.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
+            "sha256": "d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286",
+            "file": "preuves/d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -648,7 +686,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-10-31T16:05:05.359840+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "1a0862c65a00ec7604c7373d62c549a7904568d444bf50eae8daa58622e78373",
+            "file": "preuves/1a0862c65a00ec7604c7373d62c549a7904568d444bf50eae8daa58622e78373.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
+            "sha256": "d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286",
+            "file": "preuves/d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286.gz"
+          }
         }
       },
       "groups": {},
@@ -665,7 +717,39 @@
           "file": "preuves/f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833.gz"
         }
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 1,
+          "name": "VIGNELLI",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "ROSZAL",
+          "rank": 2
+        },
+        {
+          "number": 4,
+          "name": "ASKAM CHOPE",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "MOONDANCE",
+          "rank": 4
+        },
+        {
+          "number": 3,
+          "name": "MISS CHOCO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
+        "sha256": "d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286",
+        "file": "preuves/d02a1503717e4ed45f30ae73f3c10d995a54760c3dff34a7d59c67a63e07e286.gz"
+      }
     },
     {
       "date": "2026-10-31",
@@ -773,9 +857,97 @@
       "title": "PRIX IRISH RIVER",
       "departure": "2026-10-31T17:00:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "NO LUNCH",
+          "source_url": "https://www.geny.com/course/1695246-2026-10-31-deauville-prix-irish-river/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Irish River",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695246-2026-10-31-deauville-prix-irish-river/partants-pronostics",
+            "sha256": "fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb",
+            "file": "preuves/fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C6/participants",
+            "sha256": "e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc",
+            "file": "preuves/e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc.gz"
+          },
+          "captured_at": "2026-10-31T16:05:04.477125+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793458858000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "NO LUNCH",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422117_prix-irish-river.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX IRISH RIVER",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422117_prix-irish-river.html",
+            "sha256": "fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d",
+            "file": "preuves/fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C6/participants",
+            "sha256": "e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc",
+            "file": "preuves/e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc.gz"
+          },
+          "captured_at": "2026-10-31T16:05:04.528351+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793458858000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 1,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1695246-2026-10-31-deauville-prix-irish-river/partants-pronostics",
+          "sha256": "fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb",
+          "file": "preuves/fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422117_prix-irish-river.html",
+          "sha256": "fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d",
+          "file": "preuves/fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-31T16:05:04.528396+01:00"
     },
     {
       "date": "2026-10-31",
@@ -814,188 +986,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-10-31T15:00:09.075164+01:00",
+    "captured_at": "2026-10-31T16:05:03.862519+01:00",
     "races": [
-      {
-        "date": "2026-10-31",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX DU PAYS DE BRAY",
-        "departure": "2026-10-31T15:15:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 1,
-            "name": "ZELZARA",
-            "source_url": "https://www.geny.com/course/1695243-2026-10-31-deauville-prix-du-pays-de-bray/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix du Pays de Bray",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695243-2026-10-31-deauville-prix-du-pays-de-bray/partants-pronostics",
-              "sha256": "d2f223b9cdba4b0e92a93d90b4f0e429ea00a8134d45daf22d08e3d8888e7333",
-              "file": "preuves/d2f223b9cdba4b0e92a93d90b4f0e429ea00a8134d45daf22d08e3d8888e7333.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C3/participants",
-              "sha256": "47c5dceeb1bed2d4e0c7d3f3521821bdffe0e1ba8047a9d7effed3ba8566c55a",
-              "file": "preuves/47c5dceeb1bed2d4e0c7d3f3521821bdffe0e1ba8047a9d7effed3ba8566c55a.gz"
-            },
-            "captured_at": "2026-10-31T14:58:08.559233+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 12.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.78,
-              "dateRapport": 1793455053000,
-              "favoris": false,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "VICTORY PACE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422114_prix-du-pays-de-bray.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX DU PAYS DE BRAY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422114_prix-du-pays-de-bray.html",
-              "sha256": "bb45a0e3fc302b1eecfbda56cfac570d65d2ac131236da9b2b668d7c618fa589",
-              "file": "preuves/bb45a0e3fc302b1eecfbda56cfac570d65d2ac131236da9b2b668d7c618fa589.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C3/participants",
-              "sha256": "47c5dceeb1bed2d4e0c7d3f3521821bdffe0e1ba8047a9d7effed3ba8566c55a",
-              "file": "preuves/47c5dceeb1bed2d4e0c7d3f3521821bdffe0e1ba8047a9d7effed3ba8566c55a.gz"
-            },
-            "captured_at": "2026-10-31T14:58:10.162058+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793455053000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1695243-2026-10-31-deauville-prix-du-pays-de-bray/partants-pronostics",
-            "sha256": "d2f223b9cdba4b0e92a93d90b4f0e429ea00a8134d45daf22d08e3d8888e7333",
-            "file": "preuves/d2f223b9cdba4b0e92a93d90b4f0e429ea00a8134d45daf22d08e3d8888e7333.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422114_prix-du-pays-de-bray.html",
-            "sha256": "bb45a0e3fc302b1eecfbda56cfac570d65d2ac131236da9b2b668d7c618fa589",
-            "file": "preuves/bb45a0e3fc302b1eecfbda56cfac570d65d2ac131236da9b2b668d7c618fa589.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-10-31",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX ZEDDAAN",
-        "departure": "2026-10-31T15:50:00+01:00",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 1,
-            "name": "VIGNELLI",
-            "source_url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Zeddaan",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
-              "sha256": "bb8224b21fb53db7150c853d154d55a46266ba97f30c90bd61810130bfbedaa3",
-              "file": "preuves/bb8224b21fb53db7150c853d154d55a46266ba97f30c90bd61810130bfbedaa3.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
-              "sha256": "46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47",
-              "file": "preuves/46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47.gz"
-            },
-            "captured_at": "2026-10-31T14:58:28.896795+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -13.04,
-              "dateRapport": 1793454335000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "MOONDANCE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ZEDDAAN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
-              "sha256": "f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833",
-              "file": "preuves/f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C4/participants",
-              "sha256": "46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47",
-              "file": "preuves/46209a223b597ae10f4db440d8d617459e613b107869301c71bcbb9b2f855b47.gz"
-            },
-            "captured_at": "2026-10-31T14:58:29.460009+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.72,
-              "dateRapport": 1793454335000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1695244-2026-10-31-deauville-prix-zeddaan/partants-pronostics",
-            "sha256": "bb8224b21fb53db7150c853d154d55a46266ba97f30c90bd61810130bfbedaa3",
-            "file": "preuves/bb8224b21fb53db7150c853d154d55a46266ba97f30c90bd61810130bfbedaa3.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422115_prix-zeddaan.html",
-            "sha256": "f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833",
-            "file": "preuves/f519e5ac8f212584e31f2d680329fabc645c84ff4c7470dc64aea7f5fa609833.gz"
-          }
-        }
-      },
       {
         "date": "2026-10-31",
         "id": "R1C5",
@@ -1014,25 +1006,25 @@
             "source_title": "Prix Lodd By Chloe (Prix Little Manjo)",
             "evidence": {
               "url": "https://www.geny.com/course/1695245-2026-10-31-deauville-prix-lodd-by-chloe-prix-little-manjo/partants-pronostics",
-              "sha256": "44e1f85122697de2628f866c401a8167a226830f1865d479f3d95cbdb66b0f76",
-              "file": "preuves/44e1f85122697de2628f866c401a8167a226830f1865d479f3d95cbdb66b0f76.gz"
+              "sha256": "e65933808c964ed7fe271fdc6ef23ffb568666e46ce4d258abfe1364e2d7004f",
+              "file": "preuves/e65933808c964ed7fe271fdc6ef23ffb568666e46ce4d258abfe1364e2d7004f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
-              "sha256": "10572655610beef2d15c462d61e213bf48d22278326d06311c734af128ecfc78",
-              "file": "preuves/10572655610beef2d15c462d61e213bf48d22278326d06311c734af128ecfc78.gz"
+              "sha256": "bb2df0e343878187bc4577d6bb2e1a97616a9f6a118764704b616b0dbe432c11",
+              "file": "preuves/bb2df0e343878187bc4577d6bb2e1a97616a9f6a118764704b616b0dbe432c11.gz"
             },
-            "captured_at": "2026-10-31T14:58:48.626878+01:00",
+            "captured_at": "2026-10-31T16:03:43.329919+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.75,
-              "dateRapport": 1793454343000,
-              "favoris": false,
+              "nombreIndicateurTendance": 2.22,
+              "dateRapport": 1793458983000,
+              "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
             }
@@ -1047,25 +1039,25 @@
             "source_title": "Le pronostic du PRIX LODD BY CHLOE (PRIX LITTLE MANJO)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422116_prix-lodd-by-chloe-prix-little-manjo.html",
-              "sha256": "3a21e1af9f85d6713d072473c1354a938b2626d01419b9658a2e344e089d67a3",
-              "file": "preuves/3a21e1af9f85d6713d072473c1354a938b2626d01419b9658a2e344e089d67a3.gz"
+              "sha256": "1d5e98235e65d46593407d5f76d63b3d1aae1bac0e22d8064f54cebfe6ef699a",
+              "file": "preuves/1d5e98235e65d46593407d5f76d63b3d1aae1bac0e22d8064f54cebfe6ef699a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
-              "sha256": "10572655610beef2d15c462d61e213bf48d22278326d06311c734af128ecfc78",
-              "file": "preuves/10572655610beef2d15c462d61e213bf48d22278326d06311c734af128ecfc78.gz"
+              "sha256": "bb2df0e343878187bc4577d6bb2e1a97616a9f6a118764704b616b0dbe432c11",
+              "file": "preuves/bb2df0e343878187bc4577d6bb2e1a97616a9f6a118764704b616b0dbe432c11.gz"
             },
-            "captured_at": "2026-10-31T14:58:49.130269+01:00",
+            "captured_at": "2026-10-31T16:03:45.011816+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.75,
-              "dateRapport": 1793454343000,
-              "favoris": false,
+              "nombreIndicateurTendance": 2.22,
+              "dateRapport": 1793458983000,
+              "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
             }
@@ -1076,15 +1068,16 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1695245-2026-10-31-deauville-prix-lodd-by-chloe-prix-little-manjo/partants-pronostics",
-            "sha256": "44e1f85122697de2628f866c401a8167a226830f1865d479f3d95cbdb66b0f76",
-            "file": "preuves/44e1f85122697de2628f866c401a8167a226830f1865d479f3d95cbdb66b0f76.gz"
+            "sha256": "e65933808c964ed7fe271fdc6ef23ffb568666e46ce4d258abfe1364e2d7004f",
+            "file": "preuves/e65933808c964ed7fe271fdc6ef23ffb568666e46ce4d258abfe1364e2d7004f.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422116_prix-lodd-by-chloe-prix-little-manjo.html",
-            "sha256": "3a21e1af9f85d6713d072473c1354a938b2626d01419b9658a2e344e089d67a3",
-            "file": "preuves/3a21e1af9f85d6713d072473c1354a938b2626d01419b9658a2e344e089d67a3.gz"
+            "sha256": "1d5e98235e65d46593407d5f76d63b3d1aae1bac0e22d8064f54cebfe6ef699a",
+            "file": "preuves/1d5e98235e65d46593407d5f76d63b3d1aae1bac0e22d8064f54cebfe6ef699a.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-10-31T15:25:45.319946+01:00"
       },
       {
         "date": "2026-10-31",
@@ -1104,24 +1097,24 @@
             "source_title": "Prix Irish River",
             "evidence": {
               "url": "https://www.geny.com/course/1695246-2026-10-31-deauville-prix-irish-river/partants-pronostics",
-              "sha256": "985a8e7bc3f5d4026ebe9a40e8f63b8f0ca3c899aee76e7fb6daa6582538c35d",
-              "file": "preuves/985a8e7bc3f5d4026ebe9a40e8f63b8f0ca3c899aee76e7fb6daa6582538c35d.gz"
+              "sha256": "fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb",
+              "file": "preuves/fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C6/participants",
-              "sha256": "7a60bcb36f5966094527af65ca910613f52d72418abfac4376270ca03e2e0309",
-              "file": "preuves/7a60bcb36f5966094527af65ca910613f52d72418abfac4376270ca03e2e0309.gz"
+              "sha256": "e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc",
+              "file": "preuves/e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc.gz"
             },
-            "captured_at": "2026-10-31T14:59:08.609879+01:00",
+            "captured_at": "2026-10-31T16:04:03.466824+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
+              "rapport": 1.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.66,
-              "dateRapport": 1793454358000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793458858000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1137,24 +1130,24 @@
             "source_title": "Le pronostic du PRIX IRISH RIVER",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422117_prix-irish-river.html",
-              "sha256": "9f29c42179145a41c6c95057ad3cacfabce5b64877eb9f62cfc15866192236a3",
-              "file": "preuves/9f29c42179145a41c6c95057ad3cacfabce5b64877eb9f62cfc15866192236a3.gz"
+              "sha256": "fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d",
+              "file": "preuves/fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C6/participants",
-              "sha256": "7a60bcb36f5966094527af65ca910613f52d72418abfac4376270ca03e2e0309",
-              "file": "preuves/7a60bcb36f5966094527af65ca910613f52d72418abfac4376270ca03e2e0309.gz"
+              "sha256": "e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc",
+              "file": "preuves/e247d4c439b6e0a0eba70c3d514a83ac5da1ee39e0d75ec93934c99bf0d5addc.gz"
             },
-            "captured_at": "2026-10-31T14:59:09.104625+01:00",
+            "captured_at": "2026-10-31T16:04:04.079791+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
+              "rapport": 1.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.66,
-              "dateRapport": 1793454358000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793458858000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -1166,13 +1159,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1695246-2026-10-31-deauville-prix-irish-river/partants-pronostics",
-            "sha256": "985a8e7bc3f5d4026ebe9a40e8f63b8f0ca3c899aee76e7fb6daa6582538c35d",
-            "file": "preuves/985a8e7bc3f5d4026ebe9a40e8f63b8f0ca3c899aee76e7fb6daa6582538c35d.gz"
+            "sha256": "fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb",
+            "file": "preuves/fbf37c30b52cb2f5d45c3a6345d4a74b17be1349fa03a1b5bab1642b762119bb.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422117_prix-irish-river.html",
-            "sha256": "9f29c42179145a41c6c95057ad3cacfabce5b64877eb9f62cfc15866192236a3",
-            "file": "preuves/9f29c42179145a41c6c95057ad3cacfabce5b64877eb9f62cfc15866192236a3.gz"
+            "sha256": "fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d",
+            "file": "preuves/fdfac6cc8ed4748dc16f519a9cb204786d4b5dab4c4dec7f9c8156705ba26e7d.gz"
           }
         }
       },
@@ -1194,27 +1187,27 @@
             "source_title": "Prix du Pays de Caux",
             "evidence": {
               "url": "https://www.geny.com/course/1695247-2026-10-31-deauville-prix-du-pays-de-caux/partants-pronostics",
-              "sha256": "de9868cab23c80d115579b5d51bc981f94230741254685fbef7b3067886addb8",
-              "file": "preuves/de9868cab23c80d115579b5d51bc981f94230741254685fbef7b3067886addb8.gz"
+              "sha256": "3b8905faa65dc24bc831c9630e78588813e308f34cbea168a8f817bc47b9169d",
+              "file": "preuves/3b8905faa65dc24bc831c9630e78588813e308f34cbea168a8f817bc47b9169d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
-              "sha256": "b838b60d9bee14019601263deae8b42be01975ce0a8e2d020cb3514330aff2f9",
-              "file": "preuves/b838b60d9bee14019601263deae8b42be01975ce0a8e2d020cb3514330aff2f9.gz"
+              "sha256": "bca6914a914db9fe39eb1f08dcfc8cb24df97e3a52e5b2ef7465d081d905fa60",
+              "file": "preuves/bca6914a914db9fe39eb1f08dcfc8cb24df97e3a52e5b2ef7465d081d905fa60.gz"
             },
-            "captured_at": "2026-10-31T14:59:28.833691+01:00",
+            "captured_at": "2026-10-31T16:04:23.139473+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.6,
+              "rapport": 7.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -16.45,
-              "dateRapport": 1793454336000,
+              "nombreIndicateurTendance": 4.34,
+              "dateRapport": 1793458836000,
               "favoris": false,
               "numPmu1": 1,
-              "grossePrise": true
+              "grossePrise": false
             }
           },
           "canalturf": {
@@ -1227,24 +1220,24 @@
             "source_title": "Le pronostic du PRIX DU PAYS DE CAUX",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
-              "sha256": "e6a7f52beba974abb31326721f7193fbe9991758a3937148a0f7acd47ac2a238",
-              "file": "preuves/e6a7f52beba974abb31326721f7193fbe9991758a3937148a0f7acd47ac2a238.gz"
+              "sha256": "81d3ff66b6e3ff3d10a62310fd437a3491243e7dfea0db2db3aa6a4e3e270057",
+              "file": "preuves/81d3ff66b6e3ff3d10a62310fd437a3491243e7dfea0db2db3aa6a4e3e270057.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
-              "sha256": "b838b60d9bee14019601263deae8b42be01975ce0a8e2d020cb3514330aff2f9",
-              "file": "preuves/b838b60d9bee14019601263deae8b42be01975ce0a8e2d020cb3514330aff2f9.gz"
+              "sha256": "bca6914a914db9fe39eb1f08dcfc8cb24df97e3a52e5b2ef7465d081d905fa60",
+              "file": "preuves/bca6914a914db9fe39eb1f08dcfc8cb24df97e3a52e5b2ef7465d081d905fa60.gz"
             },
-            "captured_at": "2026-10-31T14:59:29.325059+01:00",
+            "captured_at": "2026-10-31T16:04:23.691905+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 6.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793454336000,
+              "nombreIndicateurTendance": -1.58,
+              "dateRapport": 1793458836000,
               "favoris": true,
               "numPmu1": 13,
               "grossePrise": false
@@ -1256,13 +1249,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1695247-2026-10-31-deauville-prix-du-pays-de-caux/partants-pronostics",
-            "sha256": "de9868cab23c80d115579b5d51bc981f94230741254685fbef7b3067886addb8",
-            "file": "preuves/de9868cab23c80d115579b5d51bc981f94230741254685fbef7b3067886addb8.gz"
+            "sha256": "3b8905faa65dc24bc831c9630e78588813e308f34cbea168a8f817bc47b9169d",
+            "file": "preuves/3b8905faa65dc24bc831c9630e78588813e308f34cbea168a8f817bc47b9169d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
-            "sha256": "e6a7f52beba974abb31326721f7193fbe9991758a3937148a0f7acd47ac2a238",
-            "file": "preuves/e6a7f52beba974abb31326721f7193fbe9991758a3937148a0f7acd47ac2a238.gz"
+            "sha256": "81d3ff66b6e3ff3d10a62310fd437a3491243e7dfea0db2db3aa6a4e3e270057",
+            "file": "preuves/81d3ff66b6e3ff3d10a62310fd437a3491243e7dfea0db2db3aa6a4e3e270057.gz"
           }
         }
       },
@@ -1284,24 +1277,24 @@
             "source_title": "Prix du Plateau de la Madrie",
             "evidence": {
               "url": "https://www.geny.com/course/1695248-2026-10-31-deauville-prix-du-plateau-de-la-madrie/partants-pronostics",
-              "sha256": "cbb757959894a0c490e3d6009ac5f4df371f4069e0c893e7662de25293f8c648",
-              "file": "preuves/cbb757959894a0c490e3d6009ac5f4df371f4069e0c893e7662de25293f8c648.gz"
+              "sha256": "27a7402ca3ac5225a3c1b150a8a2dd6b88c97e340ec68818527d44c897646684",
+              "file": "preuves/27a7402ca3ac5225a3c1b150a8a2dd6b88c97e340ec68818527d44c897646684.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C8/participants",
-              "sha256": "2a51621439ffc017a4db6d2af03883dc937654c1826d34952c6fe6b9bc1927bb",
-              "file": "preuves/2a51621439ffc017a4db6d2af03883dc937654c1826d34952c6fe6b9bc1927bb.gz"
+              "sha256": "931a67321f1b7edbc75b3c0f1e2d081f738d9b95646edc01e4939a2af1c380cd",
+              "file": "preuves/931a67321f1b7edbc75b3c0f1e2d081f738d9b95646edc01e4939a2af1c380cd.gz"
             },
-            "captured_at": "2026-10-31T14:59:48.844554+01:00",
+            "captured_at": "2026-10-31T16:04:43.231246+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.1,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.38,
-              "dateRapport": 1793454333000,
+              "nombreIndicateurTendance": -7.31,
+              "dateRapport": 1793458878000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -1317,24 +1310,24 @@
             "source_title": "Le pronostic du PRIX DU PLATEAU DE LA MADRIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422119_prix-du-plateau-de-la-madrie.html",
-              "sha256": "a1ddf3fc9d736ba37b719031a216100d5fe89b25e235063c33f3d2c5512fe58c",
-              "file": "preuves/a1ddf3fc9d736ba37b719031a216100d5fe89b25e235063c33f3d2c5512fe58c.gz"
+              "sha256": "3b670cc6f93da7c732fd3a122e239dd7376b0ba63524041526e86e1891753a6c",
+              "file": "preuves/3b670cc6f93da7c732fd3a122e239dd7376b0ba63524041526e86e1891753a6c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C8/participants",
-              "sha256": "2a51621439ffc017a4db6d2af03883dc937654c1826d34952c6fe6b9bc1927bb",
-              "file": "preuves/2a51621439ffc017a4db6d2af03883dc937654c1826d34952c6fe6b9bc1927bb.gz"
+              "sha256": "931a67321f1b7edbc75b3c0f1e2d081f738d9b95646edc01e4939a2af1c380cd",
+              "file": "preuves/931a67321f1b7edbc75b3c0f1e2d081f738d9b95646edc01e4939a2af1c380cd.gz"
             },
-            "captured_at": "2026-10-31T14:59:49.345192+01:00",
+            "captured_at": "2026-10-31T16:04:43.806628+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.1,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.38,
-              "dateRapport": 1793454333000,
+              "nombreIndicateurTendance": -7.31,
+              "dateRapport": 1793458878000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -1346,13 +1339,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1695248-2026-10-31-deauville-prix-du-plateau-de-la-madrie/partants-pronostics",
-            "sha256": "cbb757959894a0c490e3d6009ac5f4df371f4069e0c893e7662de25293f8c648",
-            "file": "preuves/cbb757959894a0c490e3d6009ac5f4df371f4069e0c893e7662de25293f8c648.gz"
+            "sha256": "27a7402ca3ac5225a3c1b150a8a2dd6b88c97e340ec68818527d44c897646684",
+            "file": "preuves/27a7402ca3ac5225a3c1b150a8a2dd6b88c97e340ec68818527d44c897646684.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422119_prix-du-plateau-de-la-madrie.html",
-            "sha256": "a1ddf3fc9d736ba37b719031a216100d5fe89b25e235063c33f3d2c5512fe58c",
-            "file": "preuves/a1ddf3fc9d736ba37b719031a216100d5fe89b25e235063c33f3d2c5512fe58c.gz"
+            "sha256": "3b670cc6f93da7c732fd3a122e239dd7376b0ba63524041526e86e1891753a6c",
+            "file": "preuves/3b670cc6f93da7c732fd3a122e239dd7376b0ba63524041526e86e1891753a6c.gz"
           }
         }
       },
@@ -1374,15 +1367,15 @@
             "source_title": "Prix du Bray Normand",
             "evidence": {
               "url": "https://www.geny.com/course/1695249-2026-10-31-deauville-prix-du-bray-normand/partants-pronostics",
-              "sha256": "c3cc96181e56f006f9e65ef426b83ed1098942bc0a114b451daf66da59ab2e85",
-              "file": "preuves/c3cc96181e56f006f9e65ef426b83ed1098942bc0a114b451daf66da59ab2e85.gz"
+              "sha256": "742dffb9265bd24c8ef839644d35c41d5a0bb106dcd8246513a5856377ad4fb6",
+              "file": "preuves/742dffb9265bd24c8ef839644d35c41d5a0bb106dcd8246513a5856377ad4fb6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C9/participants",
-              "sha256": "f6db3d458700cd559cfd04764611545d58c43efab67297b58fff05e843c0c71d",
-              "file": "preuves/f6db3d458700cd559cfd04764611545d58c43efab67297b58fff05e843c0c71d.gz"
+              "sha256": "f5d04eebfd2ad9515dd7b3c7b35a77dfc7c2fe543059b2087fbb287ab4218024",
+              "file": "preuves/f5d04eebfd2ad9515dd7b3c7b35a77dfc7c2fe543059b2087fbb287ab4218024.gz"
             },
-            "captured_at": "2026-10-31T15:00:08.591956+01:00",
+            "captured_at": "2026-10-31T16:05:03.325843+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1390,8 +1383,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 9.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.4,
-              "dateRapport": 1793454331000,
+              "nombreIndicateurTendance": -1.08,
+              "dateRapport": 1793458831000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -1407,24 +1400,24 @@
             "source_title": "Le pronostic du PRIX DU BRAY NORMAND",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422120_prix-du-bray-normand.html",
-              "sha256": "fe71c168a82aef17b8eeb61f9de850e268f5882dbd2f6762e78d3a0417475ec3",
-              "file": "preuves/fe71c168a82aef17b8eeb61f9de850e268f5882dbd2f6762e78d3a0417475ec3.gz"
+              "sha256": "008e84c8dc4cbadabb4e8e3a8a240655d33f0a24fe20f62c09e46560049dee16",
+              "file": "preuves/008e84c8dc4cbadabb4e8e3a8a240655d33f0a24fe20f62c09e46560049dee16.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C9/participants",
-              "sha256": "f6db3d458700cd559cfd04764611545d58c43efab67297b58fff05e843c0c71d",
-              "file": "preuves/f6db3d458700cd559cfd04764611545d58c43efab67297b58fff05e843c0c71d.gz"
+              "sha256": "f5d04eebfd2ad9515dd7b3c7b35a77dfc7c2fe543059b2087fbb287ab4218024",
+              "file": "preuves/f5d04eebfd2ad9515dd7b3c7b35a77dfc7c2fe543059b2087fbb287ab4218024.gz"
             },
-            "captured_at": "2026-10-31T15:00:09.075096+01:00",
+            "captured_at": "2026-10-31T16:05:03.862450+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.8,
+              "rapport": 8.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.03,
-              "dateRapport": 1793454331000,
+              "nombreIndicateurTendance": -13.97,
+              "dateRapport": 1793458831000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -1436,13 +1429,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1695249-2026-10-31-deauville-prix-du-bray-normand/partants-pronostics",
-            "sha256": "c3cc96181e56f006f9e65ef426b83ed1098942bc0a114b451daf66da59ab2e85",
-            "file": "preuves/c3cc96181e56f006f9e65ef426b83ed1098942bc0a114b451daf66da59ab2e85.gz"
+            "sha256": "742dffb9265bd24c8ef839644d35c41d5a0bb106dcd8246513a5856377ad4fb6",
+            "file": "preuves/742dffb9265bd24c8ef839644d35c41d5a0bb106dcd8246513a5856377ad4fb6.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422120_prix-du-bray-normand.html",
-            "sha256": "fe71c168a82aef17b8eeb61f9de850e268f5882dbd2f6762e78d3a0417475ec3",
-            "file": "preuves/fe71c168a82aef17b8eeb61f9de850e268f5882dbd2f6762e78d3a0417475ec3.gz"
+            "sha256": "008e84c8dc4cbadabb4e8e3a8a240655d33f0a24fe20f62c09e46560049dee16",
+            "file": "preuves/008e84c8dc4cbadabb4e8e3a8a240655d33f0a24fe20f62c09e46560049dee16.gz"
           }
         }
       }
