@@ -3,7 +3,32 @@
   "venue": "DEAUVILLE",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-10-31T13:58:00+01:00",
+          "number": 5,
+          "name": "CALYX EXPRESS",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-31T13:34:53.983762+01:00",
+          "source_captured_at": "2026-10-31T12:58:47.894270+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793450059000,
+            "favoris": true,
+            "numPmu1": 5,
+            "grossePrise": false
+          }
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -116,9 +141,97 @@
       "title": "PRIX LA BAMBA",
       "departure": "2026-10-31T14:33:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 11,
+          "name": "DIVINA FE",
+          "source_url": "https://www.geny.com/course/1695242-2026-10-31-deauville-prix-la-bamba/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix la Bamba",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695242-2026-10-31-deauville-prix-la-bamba/partants-pronostics",
+            "sha256": "f0b39d0678f6d659814d3729b892b06071f74136a9059d0c41d13d9d3ee8d41f",
+            "file": "preuves/f0b39d0678f6d659814d3729b892b06071f74136a9059d0c41d13d9d3ee8d41f.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+            "sha256": "a10f476c988c0a1284ebf258d60d8763293ed5a5c153e5eed5113db517928264",
+            "file": "preuves/a10f476c988c0a1284ebf258d60d8763293ed5a5c153e5eed5113db517928264.gz"
+          },
+          "captured_at": "2026-10-31T13:34:51.792726+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793449821000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "DIVINA FE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422113_prix-la-bamba.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LA BAMBA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422113_prix-la-bamba.html",
+            "sha256": "80dcedfcb0df7efa586ef413bee185c507ffcce9c9f7d4b14f02fb6cdff087d7",
+            "file": "preuves/80dcedfcb0df7efa586ef413bee185c507ffcce9c9f7d4b14f02fb6cdff087d7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C2/participants",
+            "sha256": "a10f476c988c0a1284ebf258d60d8763293ed5a5c153e5eed5113db517928264",
+            "file": "preuves/a10f476c988c0a1284ebf258d60d8763293ed5a5c153e5eed5113db517928264.gz"
+          },
+          "captured_at": "2026-10-31T13:34:53.572801+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793449821000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 11,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1695242-2026-10-31-deauville-prix-la-bamba/partants-pronostics",
+          "sha256": "f0b39d0678f6d659814d3729b892b06071f74136a9059d0c41d13d9d3ee8d41f",
+          "file": "preuves/f0b39d0678f6d659814d3729b892b06071f74136a9059d0c41d13d9d3ee8d41f.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422113_prix-la-bamba.html",
+          "sha256": "80dcedfcb0df7efa586ef413bee185c507ffcce9c9f7d4b14f02fb6cdff087d7",
+          "file": "preuves/80dcedfcb0df7efa586ef413bee185c507ffcce9c9f7d4b14f02fb6cdff087d7.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-31T13:34:53.572850+01:00"
     },
     {
       "date": "2026-10-31",
