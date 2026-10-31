@@ -1211,7 +1211,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-10-31T17:51:43.594755+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "7502957d7fc3d7bc9d70efee5cb6fafa967b76c5599577ff869f279652f3ef4a",
+            "file": "preuves/7502957d7fc3d7bc9d70efee5cb6fafa967b76c5599577ff869f279652f3ef4a.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9",
+            "file": "preuves/a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1244,7 +1258,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T17:51:43.594985+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "7502957d7fc3d7bc9d70efee5cb6fafa967b76c5599577ff869f279652f3ef4a",
+            "file": "preuves/7502957d7fc3d7bc9d70efee5cb6fafa967b76c5599577ff869f279652f3ef4a.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9",
+            "file": "preuves/a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9.gz"
+          }
         }
       },
       "groups": {},
@@ -1273,14 +1301,46 @@
           "checked_at": "2026-10-31T17:28:28.393795+01:00"
         }
       ],
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 13,
+          "name": "BACHEROVKA",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "TOCOA",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "ELUSIVE WAY",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "INVENTER",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "STRATOVULCANO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+        "sha256": "a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9",
+        "file": "preuves/a8cae42c8e76b6a6e87e6f29ced97989341d5dd16c41df371c7085cebd601ef9.gz"
+      }
     },
     {
       "date": "2026-10-31",
       "id": "R1C8",
       "c": 8,
       "title": "PRIX DU PLATEAU DE LA MADRIE",
-      "departure": "2026-10-31T18:10:00+01:00",
+      "departure": "2026-10-31T18:12:00+01:00",
       "market": true,
       "tips": {
         "geny": {
@@ -1372,7 +1432,18 @@
           "file": "preuves/d4c5eceaec95a3253cd619e78db09d7820c22f33eae911c69b4015a65e6bf9d2.gz"
         }
       },
-      "groups_frozen_at": "2026-10-31T17:13:32.506120+01:00"
+      "groups_frozen_at": "2026-10-31T17:13:32.506120+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-10-31T18:10:00+01:00",
+          "new": "2026-10-31T18:12:00+01:00",
+          "checked_at": "2026-10-31T17:51:18.211766+01:00"
+        }
+      ],
+      "last_reservation_check": {
+        "at": "2026-10-31T17:51:43.595314+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-31",
@@ -1381,9 +1452,88 @@
       "title": "PRIX DU BRAY NORMAND",
       "departure": "2026-10-31T18:48:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "PETITE ABEILLE",
+          "source_url": "https://www.geny.com/course/1695249-2026-10-31-deauville-prix-du-bray-normand/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Bray Normand",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695249-2026-10-31-deauville-prix-du-bray-normand/partants-pronostics",
+            "sha256": "86adc013a89134b4f7ce4b636c6a9e88a846e3bb84650273736170d7a5d4b583",
+            "file": "preuves/86adc013a89134b4f7ce4b636c6a9e88a846e3bb84650273736170d7a5d4b583.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C9/participants",
+            "sha256": "e842ee7d7ab48dd53b759bb58214a0c6b0a3fc7a337faf8791e52321c22e6a80",
+            "file": "preuves/e842ee7d7ab48dd53b759bb58214a0c6b0a3fc7a337faf8791e52321c22e6a80.gz"
+          },
+          "captured_at": "2026-10-31T17:51:40.805446+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 12.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.03,
+            "dateRapport": 1793465131000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "TOMOE GOZEN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422120_prix-du-bray-normand.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU BRAY NORMAND",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422120_prix-du-bray-normand.html",
+            "sha256": "3c0b5df32d784ed1101d364eb42c195d7662432fdd9e4d350f1e97ce7d09fdae",
+            "file": "preuves/3c0b5df32d784ed1101d364eb42c195d7662432fdd9e4d350f1e97ce7d09fdae.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C9/participants",
+            "sha256": "e842ee7d7ab48dd53b759bb58214a0c6b0a3fc7a337faf8791e52321c22e6a80",
+            "file": "preuves/e842ee7d7ab48dd53b759bb58214a0c6b0a3fc7a337faf8791e52321c22e6a80.gz"
+          },
+          "captured_at": "2026-10-31T17:51:42.621053+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.29,
+            "dateRapport": 1793465131000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1695249-2026-10-31-deauville-prix-du-bray-normand/partants-pronostics",
+          "sha256": "86adc013a89134b4f7ce4b636c6a9e88a846e3bb84650273736170d7a5d4b583",
+          "file": "preuves/86adc013a89134b4f7ce4b636c6a9e88a846e3bb84650273736170d7a5d4b583.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422120_prix-du-bray-normand.html",
+          "sha256": "3c0b5df32d784ed1101d364eb42c195d7662432fdd9e4d350f1e97ce7d09fdae",
+          "file": "preuves/3c0b5df32d784ed1101d364eb42c195d7662432fdd9e4d350f1e97ce7d09fdae.gz"
+        }
+      }
     }
   ],
   "notifications": [],
