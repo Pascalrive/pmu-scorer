@@ -1743,7 +1743,11 @@
           "file": "preuves/225b9f68034f3e3ee2d49a3865786907c79a8f00651f738748d35f2f041cec15.gz"
         }
       },
-      "groups_frozen_at": "2026-10-31T16:11:13.243616+01:00"
+      "groups_frozen_at": "2026-10-31T16:11:13.243616+01:00",
+      "last_reservation_check": {
+        "at": "2026-10-31T16:36:47.986629+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-10-31",
@@ -1752,9 +1756,180 @@
       "title": "PRIX DU PAYS DE CAUX",
       "departure": "2026-10-31T17:35:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 3,
+          "name": "LAMIYA",
+          "source_url": "https://turfin.fr/course/2026-10-31/r1c7-deauville-prix-du-pays-de-caux",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Du Pays De Caux",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-10-31/r1c7-deauville-prix-du-pays-de-caux",
+            "sha256": "b001aa4263641c667a858a72fcaa43654c9b1f0730c8e01905991dc17a188bd1",
+            "file": "preuves/b001aa4263641c667a858a72fcaa43654c9b1f0730c8e01905991dc17a188bd1.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d",
+            "file": "preuves/a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d.gz"
+          },
+          "captured_at": "2026-10-31T16:36:23.891582+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 12.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.16,
+            "dateRapport": 1793460636000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 13,
+          "name": "BACHEROVKA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU PAYS DE CAUX",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+            "sha256": "571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d",
+            "file": "preuves/571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d",
+            "file": "preuves/a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d.gz"
+          },
+          "captured_at": "2026-10-31T16:36:25.632775+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793460636000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 13,
+          "name": "BACHEROVKA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU PAYS DE CAUX",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+            "sha256": "571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d",
+            "file": "preuves/571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d",
+            "file": "preuves/a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d.gz"
+          },
+          "captured_at": "2026-10-31T16:36:25.682630+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793460636000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "TOCOA",
+          "source_url": "https://www.geny.com/course/1695247-2026-10-31-deauville-prix-du-pays-de-caux/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Pays de Caux",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695247-2026-10-31-deauville-prix-du-pays-de-caux/partants-pronostics",
+            "sha256": "b525e7ea4a1604e4f809614239c13c9b5f0bc588094bc26dca8913666c7df478",
+            "file": "preuves/b525e7ea4a1604e4f809614239c13c9b5f0bc588094bc26dca8913666c7df478.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C7/participants",
+            "sha256": "a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d",
+            "file": "preuves/a14a3cc0a1465e8daa02b650f95f05bcd9e48ad1e7e664bbbaf4da1036b4a33d.gz"
+          },
+          "captured_at": "2026-10-31T16:36:46.787601+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -18.91,
+            "dateRapport": 1793460636000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_2_sur_4": {
+          "number": 13,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+zeturf": {
+          "number": 13,
+          "sites": [
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-10-31/r1c7-deauville-prix-du-pays-de-caux",
+          "sha256": "b001aa4263641c667a858a72fcaa43654c9b1f0730c8e01905991dc17a188bd1",
+          "file": "preuves/b001aa4263641c667a858a72fcaa43654c9b1f0730c8e01905991dc17a188bd1.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+          "sha256": "571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d",
+          "file": "preuves/571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-10-31/deauville/422118_prix-du-pays-de-caux.html",
+          "sha256": "571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d",
+          "file": "preuves/571095af0c18a5336054ba6a1efd6d5db3f57f66860479b5a39b76bc23c6c80d.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1695247-2026-10-31-deauville-prix-du-pays-de-caux/partants-pronostics",
+          "sha256": "b525e7ea4a1604e4f809614239c13c9b5f0bc588094bc26dca8913666c7df478",
+          "file": "preuves/b525e7ea4a1604e4f809614239c13c9b5f0bc588094bc26dca8913666c7df478.gz"
+        }
+      },
+      "groups_frozen_at": "2026-10-31T16:36:46.787666+01:00"
     },
     {
       "date": "2026-10-31",
