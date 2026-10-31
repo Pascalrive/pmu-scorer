@@ -86,7 +86,7 @@
           "number": 2,
           "name": "COSMO BEAU",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-10-31T16:05:05.360129+01:00",
           "source_captured_at": "2026-10-31T15:25:43.753918+01:00",
           "sites": [
@@ -101,6 +101,44 @@
             "dateRapport": 1793458983000,
             "favoris": true,
             "numPmu1": 2,
+            "grossePrise": false
+          },
+          "return_cents": 37000,
+          "profit_cents": 27000,
+          "rank": 1,
+          "settled_at": "2026-10-31T16:44:05.266501+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1",
+            "file": "preuves/9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
+            "sha256": "87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8",
+            "file": "preuves/87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8.gz"
+          }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-10-31T17:00:00+01:00",
+          "number": 1,
+          "name": "NO LUNCH",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-10-31T16:44:05.267060+01:00",
+          "source_captured_at": "2026-10-31T16:05:04.477125+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793461428000,
+            "favoris": true,
+            "numPmu1": 1,
             "grossePrise": false
           }
         }
@@ -790,7 +828,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T16:44:05.265985+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1",
+            "file": "preuves/9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
+            "sha256": "87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8",
+            "file": "preuves/87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -823,7 +875,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-10-31T16:44:05.266340+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1",
+            "file": "preuves/9e55f13a0b97926c7d8fd7de83bdfa58ae23c6d7ce0d5b1448908166599060b1.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
+            "sha256": "87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8",
+            "file": "preuves/87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8.gz"
+          }
         }
       },
       "groups": {
@@ -864,6 +930,38 @@
       "last_reservation_check": {
         "at": "2026-10-31T16:28:40.452775+01:00",
         "stop": "ATTENTE_RESULTAT"
+      },
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "COSMO BEAU",
+          "rank": 1
+        },
+        {
+          "number": 10,
+          "name": "SEPTIMUS",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "SCREEN SHOT",
+          "rank": 3
+        },
+        {
+          "number": 11,
+          "name": "ORLHENA",
+          "rank": 4
+        },
+        {
+          "number": 5,
+          "name": "LINTERPRETE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/31102026/R1/C5/participants",
+        "sha256": "87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8",
+        "file": "preuves/87cde1e6bb0707005da5abcb5ea2743dbabd8a66bbaba48b507c2045754835d8.gz"
       }
     },
     {
