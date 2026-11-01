@@ -3,7 +3,40 @@
   "venue": "LAVAL",
   "solutions": {
     "majorite_3_sur_5": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C8",
+          "departure": "2026-11-01T17:49:00+01:00",
+          "number": 8,
+          "name": "MISTRAL EXPRESS",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-01T17:47:03.886256+01:00",
+          "source_captured_at": "2026-11-01T17:46:58.832456+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zone_turf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551617000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "cc7c6803f59205629ac04fdf7823f4a11732824f7c14828bf1a6ff3ead7f47d7",
+          "telegram_receipts": [
+            {
+              "message_id": 6903,
+              "date": 1793551624
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -108,8 +141,39 @@
       "tips": {},
       "groups": {},
       "errors": {},
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Moins de trois premiers choix identiques validés"
+      "no_bet_reason": "Moins de trois premiers choix identiques validés",
+      "official_arrival": [
+        {
+          "number": 11,
+          "name": "MIMI DE VAL",
+          "rank": 1
+        },
+        {
+          "number": 13,
+          "name": "MIL'S DE BAILLE",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "MIKADO",
+          "rank": 3
+        },
+        {
+          "number": 2,
+          "name": "MILZANO DU BOSSU",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "MIRACLE D'ALEXIANE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C3/participants",
+        "sha256": "e586f644070b05cb665484e1be2286ba2d776fc9e11de28ced75bc73dc6e759e",
+        "file": "preuves/e586f644070b05cb665484e1be2286ba2d776fc9e11de28ced75bc73dc6e759e.gz"
+      }
     },
     {
       "date": "2026-11-01",
@@ -151,7 +215,21 @@
           "stake_cents": 0,
           "departure_at_capture": "2026-11-01T15:15:00+01:00",
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-01T17:47:02.653394+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c",
+            "file": "preuves/f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+            "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+            "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -185,7 +263,21 @@
           "stake_cents": 0,
           "departure_at_capture": "2026-11-01T15:15:00+01:00",
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-01T17:47:02.653717+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c",
+            "file": "preuves/f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+            "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+            "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -219,7 +311,21 @@
           "stake_cents": 0,
           "departure_at_capture": "2026-11-01T15:15:00+01:00",
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-01T17:47:02.653836+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c",
+            "file": "preuves/f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+            "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+            "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+          }
         },
         "geny": {
           "site": "geny",
@@ -253,7 +359,21 @@
           "stake_cents": 0,
           "departure_at_capture": "2026-11-01T15:15:00+01:00",
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-01T17:47:02.653940+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c",
+            "file": "preuves/f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+            "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+            "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+          }
         },
         "zone_turf": {
           "site": "zone_turf",
@@ -287,7 +407,21 @@
           "stake_cents": 0,
           "departure_at_capture": "2026-11-01T15:15:00+01:00",
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-01T17:47:02.654040+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c",
+            "file": "preuves/f10035c2423f4031473f193bdaf139e8a462873c751eff77636b13fc068b950c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+            "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+            "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+          }
         }
       },
       "groups": {
@@ -330,7 +464,40 @@
           "file": "preuves/844f5b89b66df90aaae08fcf877695687a55c2438a27f4ecce038189f481ffee.gz"
         }
       },
-      "groups_frozen_at": "2026-11-01T14:42:28.998388+01:00"
+      "groups_frozen_at": "2026-11-01T14:42:28.998388+01:00",
+      "official_arrival": [
+        {
+          "number": 17,
+          "name": "KANTO AVIS",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "JIBI DU FRUITIER",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "FAR WEST BI",
+          "rank": 3
+        },
+        {
+          "number": 12,
+          "name": "IBIZA BELLA",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "JANKO HAUFOR",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
+        "sha256": "4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a",
+        "file": "preuves/4db1eaa43a3780b3bd4f3086d71692480a44b8935e7aeb68e44dce655fb7326a.gz"
+      },
+      "no_bet_reason": "Aucun engagement enregistré avant départ ; passage manqué ou contrôle bloqué"
     },
     {
       "date": "2026-11-01",
@@ -341,7 +508,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 6,
+          "name": "KISS ME",
+          "rank": 1
+        },
+        {
+          "number": 10,
+          "name": "KINDY DU VIVIER",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "KOH LANTA",
+          "rank": 3
+        },
+        {
+          "number": 9,
+          "name": "KASSIOPEE DREAM",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "JELENIA BELLA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
+        "sha256": "aca8fdc76a48206583e0d7858464d2fa9b87d14e7e3fe6098c3f6d156dfaa7cc",
+        "file": "preuves/aca8fdc76a48206583e0d7858464d2fa9b87d14e7e3fe6098c3f6d156dfaa7cc.gz"
+      },
+      "no_bet_reason": "Moins de trois premiers choix identiques validés"
     },
     {
       "date": "2026-11-01",
@@ -352,7 +552,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "LAMBADA DU GOUTIER",
+          "rank": 1
+        },
+        {
+          "number": 4,
+          "name": "IDEAL DU NOYER",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "JINGLE DELO",
+          "rank": 3
+        },
+        {
+          "number": 9,
+          "name": "HIS DREAM DE CAHOT",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "LASKA DU LEVANT",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
+        "sha256": "cfc74cdf98826a29f2e0e440d3faf41592f99954c2c7cd4292a350c72bd227ee",
+        "file": "preuves/cfc74cdf98826a29f2e0e440d3faf41592f99954c2c7cd4292a350c72bd227ee.gz"
+      },
+      "no_bet_reason": "Moins de trois premiers choix identiques validés"
     },
     {
       "date": "2026-11-01",
@@ -363,7 +596,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 7,
+          "name": "LITCHI CASTELETS",
+          "rank": 1
+        },
+        {
+          "number": 14,
+          "name": "LORD TURGOT",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "LET'S GO VAL",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "LOUBIANA DU BOURG",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "LILYROSE WIND",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
+        "sha256": "667102d07b77945e788abcb09e61f60a393043602f8272290b6f8dcf6cfa0406",
+        "file": "preuves/667102d07b77945e788abcb09e61f60a393043602f8272290b6f8dcf6cfa0406.gz"
+      },
+      "no_bet_reason": "Moins de trois premiers choix identiques validés"
     },
     {
       "date": "2026-11-01",
@@ -372,9 +638,217 @@
       "title": "GRAND PRIX ANDRE DE LA VAISSIERE",
       "departure": "2026-11-01T17:49:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 8,
+          "name": "MISTRAL EXPRESS",
+          "source_url": "https://turfin.fr/course/2026-11-01/r1c8-laval-grand-prix-andre-de-la-vaissiere",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Grand Prix Andre De La Vaissiere",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-01/r1c8-laval-grand-prix-andre-de-la-vaissiere",
+            "sha256": "a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834",
+            "file": "preuves/a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+            "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
+          },
+          "captured_at": "2026-11-01T17:46:58.832456+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551567000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T17:49:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 8,
+          "name": "MISTRAL EXPRESS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du GRAND PRIX ANDRE DE LA VAISSIERE (GRAND PRIX DES 4 ANS)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+            "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+            "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+            "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
+          },
+          "captured_at": "2026-11-01T17:46:58.984014+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551567000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T17:49:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 4,
+          "name": "MEGA D'UZE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du GRAND PRIX ANDRE DE LA VAISSIERE (GRAND PRIX DES 4 ANS)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+            "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+            "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+            "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
+          },
+          "captured_at": "2026-11-01T17:46:59.051933+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551567000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T17:49:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 4,
+          "name": "MEGA D'UZE",
+          "source_url": "https://www.geny.com/course/1695531-2026-11-01-laval-grand-prix-andre-de-la-vaissiere-grand-prix-des-quatre-ans/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Grand Prix André de la Vaissière - Grand Prix des Quatre ans",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695531-2026-11-01-laval-grand-prix-andre-de-la-vaissiere-grand-prix-des-quatre-ans/partants-pronostics",
+            "sha256": "4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a",
+            "file": "preuves/4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+            "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
+          },
+          "captured_at": "2026-11-01T17:46:59.186759+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551567000,
+            "favoris": true,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T17:49:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 8,
+          "name": "MISTRAL EXPRESS",
+          "source_url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°8 : C8 - Grand Prix Andre de la Vaissiere",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+            "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+            "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+            "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
+          },
+          "captured_at": "2026-11-01T17:46:59.741788+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793551567000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T17:49:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "majorite_3_sur_5": {
+          "number": 8,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zone_turf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-01/r1c8-laval-grand-prix-andre-de-la-vaissiere",
+          "sha256": "a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834",
+          "file": "preuves/a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+          "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+          "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
+          "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+          "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1695531-2026-11-01-laval-grand-prix-andre-de-la-vaissiere-grand-prix-des-quatre-ans/partants-pronostics",
+          "sha256": "4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a",
+          "file": "preuves/4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+          "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+          "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-01T17:46:59.741843+01:00"
     },
     {
       "date": "2026-11-01",
@@ -383,832 +857,225 @@
       "title": "PRIX GEORGES PORCHER",
       "departure": "2026-11-01T18:25:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 11,
+          "name": "JIM DU PALAIS",
+          "source_url": "https://turfin.fr/course/2026-11-01/r1c9-laval-prix-georges-porcher",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Georges Porcher",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-01/r1c9-laval-prix-georges-porcher",
+            "sha256": "7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba",
+            "file": "preuves/7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
+            "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+            "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
+          },
+          "captured_at": "2026-11-01T17:47:00.349847+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1793551502000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T18:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 16,
+          "name": "IMAGINE GIRL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX GEORGES PORCHER",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+            "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+            "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
+            "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+            "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
+          },
+          "captured_at": "2026-11-01T17:47:00.414982+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793551502000,
+            "favoris": true,
+            "numPmu1": 16,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T18:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 16,
+          "name": "IMAGINE GIRL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX GEORGES PORCHER",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+            "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+            "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
+            "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+            "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
+          },
+          "captured_at": "2026-11-01T17:47:00.610408+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793551502000,
+            "favoris": true,
+            "numPmu1": 16,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T18:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 16,
+          "name": "IMAGINE GIRL",
+          "source_url": "https://www.geny.com/course/1695538-2026-11-01-laval-prix-georges-porcher/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Georges Porcher",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695538-2026-11-01-laval-prix-georges-porcher/partants-pronostics",
+            "sha256": "ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8",
+            "file": "preuves/ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
+            "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+            "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
+          },
+          "captured_at": "2026-11-01T17:47:00.749856+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793551502000,
+            "favoris": true,
+            "numPmu1": 16,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T18:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 16,
+          "name": "IMAGINE GIRL",
+          "source_url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°9 : C9 - Prix Georges Porcher",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+            "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+            "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
+            "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+            "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
+          },
+          "captured_at": "2026-11-01T17:47:01.271744+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 6.66,
+            "dateRapport": 1793551502000,
+            "favoris": true,
+            "numPmu1": 16,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-01T18:25:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "majorite_3_sur_5": {
+          "number": 16,
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny",
+            "zone_turf"
+          ]
+        }
+      },
+      "errors": {},
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-01/r1c9-laval-prix-georges-porcher",
+          "sha256": "7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba",
+          "file": "preuves/7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+          "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+          "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
+          "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+          "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1695538-2026-11-01-laval-prix-georges-porcher/partants-pronostics",
+          "sha256": "ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8",
+          "file": "preuves/ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
+          "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+          "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-01T17:47:01.271795+01:00"
     }
   ],
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-01T14:42:27.391912+01:00",
+    "captured_at": "2026-11-01T17:46:58.162334+01:00",
     "races": [
-      {
-        "date": "2026-11-01",
-        "id": "R1C4",
-        "c": 4,
-        "title": "GRAND PRIX DE LA VILLE DE LAVAL",
-        "departure": "2026-11-01T15:15:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 4,
-            "name": "LAROZE DU GERS",
-            "source_url": "https://turfin.fr/course/2026-11-01/r1c4-laval-grand-prix-de-la-ville-de-laval",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Grand Prix De La Ville De Laval",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-01/r1c4-laval-grand-prix-de-la-ville-de-laval",
-              "sha256": "74080cf2fb19587bd7e2ceb1fac21737c17f3ac9ed9c501d3f04de55728bf93c",
-              "file": "preuves/74080cf2fb19587bd7e2ceb1fac21737c17f3ac9ed9c501d3f04de55728bf93c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
-              "sha256": "aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09",
-              "file": "preuves/aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09.gz"
-            },
-            "captured_at": "2026-11-01T14:40:24.208959+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539803000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 4,
-            "name": "LAROZE DU GERS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté GRAND PRIX DE LA VILLE DE LAVAL",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-              "sha256": "d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569",
-              "file": "preuves/d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
-              "sha256": "aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09",
-              "file": "preuves/aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09.gz"
-            },
-            "captured_at": "2026-11-01T14:40:25.748980+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539803000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "LAROZE DU GERS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté GRAND PRIX DE LA VILLE DE LAVAL",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-              "sha256": "d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569",
-              "file": "preuves/d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
-              "sha256": "aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09",
-              "file": "preuves/aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09.gz"
-            },
-            "captured_at": "2026-11-01T14:40:25.880368+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539803000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "LAROZE DU GERS",
-            "source_url": "https://www.geny.com/course/1695535-2026-11-01-laval-grand-prix-de-la-ville-de-laval/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Grand Prix de la Ville de Laval",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695535-2026-11-01-laval-grand-prix-de-la-ville-de-laval/partants-pronostics",
-              "sha256": "e2fd4b85c213efaaeb54a99eaa14516578f68b5b9dedecca153f9df97e1ca1df",
-              "file": "preuves/e2fd4b85c213efaaeb54a99eaa14516578f68b5b9dedecca153f9df97e1ca1df.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
-              "sha256": "aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09",
-              "file": "preuves/aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09.gz"
-            },
-            "captured_at": "2026-11-01T14:40:46.389296+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539803000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 4,
-            "name": "LAROZE DU GERS",
-            "source_url": "https://www.zone-turf.fr/quinte/dimanche-1-novembre-2026/",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°4 : C4 - Grand Prix de la Ville de Laval",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/quinte/dimanche-1-novembre-2026/",
-              "sha256": "844f5b89b66df90aaae08fcf877695687a55c2438a27f4ecce038189f481ffee",
-              "file": "preuves/844f5b89b66df90aaae08fcf877695687a55c2438a27f4ecce038189f481ffee.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C4/participants",
-              "sha256": "aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09",
-              "file": "preuves/aee9a4c9a3f1e3d679984456fa2bea1b58b5b1a8647674adee18309a8af03c09.gz"
-            },
-            "captured_at": "2026-11-01T14:40:47.417804+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539803000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-01/r1c4-laval-grand-prix-de-la-ville-de-laval",
-            "sha256": "74080cf2fb19587bd7e2ceb1fac21737c17f3ac9ed9c501d3f04de55728bf93c",
-            "file": "preuves/74080cf2fb19587bd7e2ceb1fac21737c17f3ac9ed9c501d3f04de55728bf93c.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-            "sha256": "d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569",
-            "file": "preuves/d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422240_grand-prix-de-la-ville-de-laval.html",
-            "sha256": "d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569",
-            "file": "preuves/d2236b57280b72502ca0d3e20d7afc7c9070f584a633f4915a92ee0d3b38c569.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1695535-2026-11-01-laval-grand-prix-de-la-ville-de-laval/partants-pronostics",
-            "sha256": "e2fd4b85c213efaaeb54a99eaa14516578f68b5b9dedecca153f9df97e1ca1df",
-            "file": "preuves/e2fd4b85c213efaaeb54a99eaa14516578f68b5b9dedecca153f9df97e1ca1df.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/quinte/dimanche-1-novembre-2026/",
-            "sha256": "844f5b89b66df90aaae08fcf877695687a55c2438a27f4ecce038189f481ffee",
-            "file": "preuves/844f5b89b66df90aaae08fcf877695687a55c2438a27f4ecce038189f481ffee.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-01",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX CREDIT AGRICOLE - ANJOU MAINE",
-        "departure": "2026-11-01T15:52:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 7,
-            "name": "KOH LANTA",
-            "source_url": "https://turfin.fr/course/2026-11-01/r1c5-laval-prix-credit-agricole-anjou-maine",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Credit Agricole - Anjou Maine",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-01/r1c5-laval-prix-credit-agricole-anjou-maine",
-              "sha256": "5466cdfec3a96e48adfa761e11874732303201dd4b61aa08508db6e3a9f7675b",
-              "file": "preuves/5466cdfec3a96e48adfa761e11874732303201dd4b61aa08508db6e3a9f7675b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
-              "sha256": "2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11",
-              "file": "preuves/2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11.gz"
-            },
-            "captured_at": "2026-11-01T14:40:48.645120+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.22,
-              "dateRapport": 1793539801000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "KISS ME",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX CREDIT AGRICOLE - ANJOU MAINE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-              "sha256": "6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094",
-              "file": "preuves/6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
-              "sha256": "2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11",
-              "file": "preuves/2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11.gz"
-            },
-            "captured_at": "2026-11-01T14:40:49.172153+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539801000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 7,
-            "name": "KOH LANTA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX CREDIT AGRICOLE - ANJOU MAINE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-              "sha256": "6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094",
-              "file": "preuves/6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
-              "sha256": "2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11",
-              "file": "preuves/2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11.gz"
-            },
-            "captured_at": "2026-11-01T14:40:49.274445+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.22,
-              "dateRapport": 1793539801000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "KAZAN BEACH",
-            "source_url": "https://www.geny.com/course/1695534-2026-11-01-laval-prix-credit-agricole-anjou-maine/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Crédit Agricole - Anjou Maine",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695534-2026-11-01-laval-prix-credit-agricole-anjou-maine/partants-pronostics",
-              "sha256": "b147b3ddc52205fb311dd11cb17a7c6718a63e6c8e59fec7bf0191c25632e2dd",
-              "file": "preuves/b147b3ddc52205fb311dd11cb17a7c6718a63e6c8e59fec7bf0191c25632e2dd.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
-              "sha256": "2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11",
-              "file": "preuves/2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11.gz"
-            },
-            "captured_at": "2026-11-01T14:41:07.062343+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539801000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 7,
-            "name": "KOH LANTA",
-            "source_url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C5/",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°5 : C5 - Prix Credit Agricole - Anjou Maine",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C5/",
-              "sha256": "ef4d6bcb847204569dfcbbb3f0ad55c4c0e8ed3feca0c7e955df970cf923d6c0",
-              "file": "preuves/ef4d6bcb847204569dfcbbb3f0ad55c4c0e8ed3feca0c7e955df970cf923d6c0.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C5/participants",
-              "sha256": "2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11",
-              "file": "preuves/2c2d53ded6d1c5efde1400d492a35a5880a208e9ac56f3317306820be158af11.gz"
-            },
-            "captured_at": "2026-11-01T14:41:07.877720+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.22,
-              "dateRapport": 1793539801000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-01/r1c5-laval-prix-credit-agricole-anjou-maine",
-            "sha256": "5466cdfec3a96e48adfa761e11874732303201dd4b61aa08508db6e3a9f7675b",
-            "file": "preuves/5466cdfec3a96e48adfa761e11874732303201dd4b61aa08508db6e3a9f7675b.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-            "sha256": "6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094",
-            "file": "preuves/6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422241_prix-credit-agricole-anjou-maine.html",
-            "sha256": "6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094",
-            "file": "preuves/6c8cd6033832258af856c25d89632eba16ab341ad276770bf2aef803830e2094.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1695534-2026-11-01-laval-prix-credit-agricole-anjou-maine/partants-pronostics",
-            "sha256": "b147b3ddc52205fb311dd11cb17a7c6718a63e6c8e59fec7bf0191c25632e2dd",
-            "file": "preuves/b147b3ddc52205fb311dd11cb17a7c6718a63e6c8e59fec7bf0191c25632e2dd.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C5/",
-            "sha256": "ef4d6bcb847204569dfcbbb3f0ad55c4c0e8ed3feca0c7e955df970cf923d6c0",
-            "file": "preuves/ef4d6bcb847204569dfcbbb3f0ad55c4c0e8ed3feca0c7e955df970cf923d6c0.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-01",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX ANNICK ET GEORGES DREUX",
-        "departure": "2026-11-01T16:28:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 10,
-            "name": "LASKO DES BROUSSES",
-            "source_url": "https://turfin.fr/course/2026-11-01/r1c6-laval-prix-annick-et-georges-dreux",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Annick Et Georges Dreux",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-01/r1c6-laval-prix-annick-et-georges-dreux",
-              "sha256": "f3e31633207b3c750a91c61e6626e75dbe1dbea17b8ab6547e5a72a1d7c887af",
-              "file": "preuves/f3e31633207b3c750a91c61e6626e75dbe1dbea17b8ab6547e5a72a1d7c887af.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
-              "sha256": "dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70",
-              "file": "preuves/dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70.gz"
-            },
-            "captured_at": "2026-11-01T14:41:08.956516+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539818000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 10,
-            "name": "LASKO DES BROUSSES",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ANNICK ET GEORGES DREUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-              "sha256": "1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb",
-              "file": "preuves/1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
-              "sha256": "dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70",
-              "file": "preuves/dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70.gz"
-            },
-            "captured_at": "2026-11-01T14:41:09.450289+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539818000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 10,
-            "name": "LASKO DES BROUSSES",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ANNICK ET GEORGES DREUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-              "sha256": "1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb",
-              "file": "preuves/1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
-              "sha256": "dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70",
-              "file": "preuves/dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70.gz"
-            },
-            "captured_at": "2026-11-01T14:41:09.587661+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539818000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 10,
-            "name": "LASKO DES BROUSSES",
-            "source_url": "https://www.geny.com/course/1695537-2026-11-01-laval-prix-annick-et-georges-dreux/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Annick et Georges Dreux",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695537-2026-11-01-laval-prix-annick-et-georges-dreux/partants-pronostics",
-              "sha256": "5e7f29c465984feb88ec8e3ad68242a779b29b41f1821254d8e3662a8a0a7684",
-              "file": "preuves/5e7f29c465984feb88ec8e3ad68242a779b29b41f1821254d8e3662a8a0a7684.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
-              "sha256": "dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70",
-              "file": "preuves/dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70.gz"
-            },
-            "captured_at": "2026-11-01T14:41:26.360878+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539818000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 10,
-            "name": "LASKO DES BROUSSES",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°6 : C6 - Prix Annick Et Georges Dreux",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-              "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-              "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C6/participants",
-              "sha256": "dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70",
-              "file": "preuves/dd71128ec3d36f21c47a4d4c0eab0aa08aae3f77c1e85f2d529f6b8ee7d31e70.gz"
-            },
-            "captured_at": "2026-11-01T14:41:27.153899+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539818000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-01/r1c6-laval-prix-annick-et-georges-dreux",
-            "sha256": "f3e31633207b3c750a91c61e6626e75dbe1dbea17b8ab6547e5a72a1d7c887af",
-            "file": "preuves/f3e31633207b3c750a91c61e6626e75dbe1dbea17b8ab6547e5a72a1d7c887af.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-            "sha256": "1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb",
-            "file": "preuves/1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422242_prix-annick-et-georges-dreux.html",
-            "sha256": "1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb",
-            "file": "preuves/1028b502c43a25ec9c8327b4e267ad7c6cfb778864e3b084f5fa5d8b3603aefb.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1695537-2026-11-01-laval-prix-annick-et-georges-dreux/partants-pronostics",
-            "sha256": "5e7f29c465984feb88ec8e3ad68242a779b29b41f1821254d8e3662a8a0a7684",
-            "file": "preuves/5e7f29c465984feb88ec8e3ad68242a779b29b41f1821254d8e3662a8a0a7684.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-            "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-            "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-01",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PRIX ANDRE-LOUIS DREUX",
-        "departure": "2026-11-01T17:03:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 16,
-            "name": "LINNA DE VANDEL",
-            "source_url": "https://turfin.fr/course/2026-11-01/r1c7-laval-prix-andre-louis-dreux",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Andre-Louis Dreux",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-01/r1c7-laval-prix-andre-louis-dreux",
-              "sha256": "85b5de3243e709686a193c00fa393a8f6a7ae536f4feadf01b23d395c4f4d041",
-              "file": "preuves/85b5de3243e709686a193c00fa393a8f6a7ae536f4feadf01b23d395c4f4d041.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
-              "sha256": "781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151",
-              "file": "preuves/781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151.gz"
-            },
-            "captured_at": "2026-11-01T14:41:28.223883+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.77,
-              "dateRapport": 1793539855000,
-              "favoris": false,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 16,
-            "name": "LINNA DE VANDEL",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ANDRE-LOUIS DREUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-              "sha256": "6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8",
-              "file": "preuves/6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
-              "sha256": "781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151",
-              "file": "preuves/781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151.gz"
-            },
-            "captured_at": "2026-11-01T14:41:28.733396+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.77,
-              "dateRapport": 1793539855000,
-              "favoris": false,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 16,
-            "name": "LINNA DE VANDEL",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX ANDRE-LOUIS DREUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-              "sha256": "6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8",
-              "file": "preuves/6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
-              "sha256": "781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151",
-              "file": "preuves/781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151.gz"
-            },
-            "captured_at": "2026-11-01T14:41:28.841431+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.77,
-              "dateRapport": 1793539855000,
-              "favoris": false,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 16,
-            "name": "LINNA DE VANDEL",
-            "source_url": "https://www.geny.com/course/1695533-2026-11-01-laval-prix-andre-louis-dreux/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix André-Louis Dreux",
-            "evidence": {
-              "url": "https://www.geny.com/course/1695533-2026-11-01-laval-prix-andre-louis-dreux/partants-pronostics",
-              "sha256": "fa0d5682162657708ad614481674883c38b0f23540588894057b9c2a31d81ad6",
-              "file": "preuves/fa0d5682162657708ad614481674883c38b0f23540588894057b9c2a31d81ad6.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
-              "sha256": "781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151",
-              "file": "preuves/781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151.gz"
-            },
-            "captured_at": "2026-11-01T14:41:46.378298+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.77,
-              "dateRapport": 1793539855000,
-              "favoris": false,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 7,
-            "name": "LITCHI CASTELETS",
-            "source_url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C7/",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°7 : C7 - Prix Andre-Louis Dreux",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C7/",
-              "sha256": "e686f4606cfb74e920b32ecff8f927f6ef92db3f1bbe651b0e8c74fdc7e01e5d",
-              "file": "preuves/e686f4606cfb74e920b32ecff8f927f6ef92db3f1bbe651b0e8c74fdc7e01e5d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C7/participants",
-              "sha256": "781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151",
-              "file": "preuves/781df0543ebceb5efda4739cb757333fc3a6632afc25fd46fcf3cafd5dc37151.gz"
-            },
-            "captured_at": "2026-11-01T14:41:47.231497+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539855000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-01/r1c7-laval-prix-andre-louis-dreux",
-            "sha256": "85b5de3243e709686a193c00fa393a8f6a7ae536f4feadf01b23d395c4f4d041",
-            "file": "preuves/85b5de3243e709686a193c00fa393a8f6a7ae536f4feadf01b23d395c4f4d041.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-            "sha256": "6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8",
-            "file": "preuves/6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422243_prix-andre-louis-dreux.html",
-            "sha256": "6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8",
-            "file": "preuves/6d41694ab9335bb90dc8ce12b95b2475619f23604d814863ff70c1239708d8e8.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1695533-2026-11-01-laval-prix-andre-louis-dreux/partants-pronostics",
-            "sha256": "fa0d5682162657708ad614481674883c38b0f23540588894057b9c2a31d81ad6",
-            "file": "preuves/fa0d5682162657708ad614481674883c38b0f23540588894057b9c2a31d81ad6.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/pick5/dimanche-1-novembre-2026/R1C7/",
-            "sha256": "e686f4606cfb74e920b32ecff8f927f6ef92db3f1bbe651b0e8c74fdc7e01e5d",
-            "file": "preuves/e686f4606cfb74e920b32ecff8f927f6ef92db3f1bbe651b0e8c74fdc7e01e5d.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-01",
         "id": "R1C8",
@@ -1227,24 +1094,24 @@
             "source_title": "Grand Prix Andre De La Vaissiere",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-01/r1c8-laval-grand-prix-andre-de-la-vaissiere",
-              "sha256": "d95c200b6cee698cdc91a211946dd2fde8a3aed9f3752bc59d747537f548791e",
-              "file": "preuves/d95c200b6cee698cdc91a211946dd2fde8a3aed9f3752bc59d747537f548791e.gz"
+              "sha256": "a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834",
+              "file": "preuves/a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
-              "sha256": "42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1",
-              "file": "preuves/42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1.gz"
+              "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+              "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
             },
-            "captured_at": "2026-11-01T14:41:48.391520+01:00",
+            "captured_at": "2026-11-01T17:46:14.728777+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539807000,
+              "dateRapport": 1793551567000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -1260,24 +1127,24 @@
             "source_title": "Le pronostic du GRAND PRIX ANDRE DE LA VAISSIERE (GRAND PRIX DES 4 ANS)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
-              "sha256": "ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b",
-              "file": "preuves/ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b.gz"
+              "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+              "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
-              "sha256": "42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1",
-              "file": "preuves/42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1.gz"
+              "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+              "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
             },
-            "captured_at": "2026-11-01T14:41:48.903481+01:00",
+            "captured_at": "2026-11-01T17:46:16.519376+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539807000,
+              "dateRapport": 1793551567000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -1293,15 +1160,15 @@
             "source_title": "Le pronostic du GRAND PRIX ANDRE DE LA VAISSIERE (GRAND PRIX DES 4 ANS)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
-              "sha256": "ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b",
-              "file": "preuves/ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b.gz"
+              "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+              "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
-              "sha256": "42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1",
-              "file": "preuves/42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1.gz"
+              "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+              "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
             },
-            "captured_at": "2026-11-01T14:41:49.058900+01:00",
+            "captured_at": "2026-11-01T17:46:16.586256+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1310,7 +1177,7 @@
               "rapport": 2.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539807000,
+              "dateRapport": 1793551567000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -1326,15 +1193,15 @@
             "source_title": "Grand Prix André de la Vaissière - Grand Prix des Quatre ans",
             "evidence": {
               "url": "https://www.geny.com/course/1695531-2026-11-01-laval-grand-prix-andre-de-la-vaissiere-grand-prix-des-quatre-ans/partants-pronostics",
-              "sha256": "63bc68e051678f8a62f702b71fe68e8e922cf9851cb134246332e92951a5d11d",
-              "file": "preuves/63bc68e051678f8a62f702b71fe68e8e922cf9851cb134246332e92951a5d11d.gz"
+              "sha256": "4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a",
+              "file": "preuves/4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
-              "sha256": "42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1",
-              "file": "preuves/42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1.gz"
+              "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+              "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
             },
-            "captured_at": "2026-11-01T14:42:06.229547+01:00",
+            "captured_at": "2026-11-01T17:46:37.907908+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -1343,7 +1210,7 @@
               "rapport": 2.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539807000,
+              "dateRapport": 1793551567000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -1359,24 +1226,24 @@
             "source_title": "R1 Course N°8 : C8 - Grand Prix Andre de la Vaissiere",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-              "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-              "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
+              "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+              "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
-              "sha256": "42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1",
-              "file": "preuves/42c2eecfe219c0c91ef136da52df8ec6275e2e5869d32ed8f7e3cf042afe56c1.gz"
+              "sha256": "980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5",
+              "file": "preuves/980c79fe8d06e3569d3b6d6285232f2b6701e62fb8802124bb72cc9d3741ecf5.gz"
             },
-            "captured_at": "2026-11-01T14:42:07.038356+01:00",
+            "captured_at": "2026-11-01T17:46:39.051438+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539807000,
+              "dateRapport": 1793551567000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -1388,28 +1255,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-01/r1c8-laval-grand-prix-andre-de-la-vaissiere",
-            "sha256": "d95c200b6cee698cdc91a211946dd2fde8a3aed9f3752bc59d747537f548791e",
-            "file": "preuves/d95c200b6cee698cdc91a211946dd2fde8a3aed9f3752bc59d747537f548791e.gz"
+            "sha256": "a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834",
+            "file": "preuves/a9dbe718fad27ed0d00d7cfafa60d665a6e899304b6f4e879679756bd4f8c834.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
-            "sha256": "ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b",
-            "file": "preuves/ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b.gz"
+            "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+            "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422244_grand-prix-andre-de-la-vaissiere-grand-prix-des-4-ans.html",
-            "sha256": "ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b",
-            "file": "preuves/ce343fadc1201a20872e49924ab503aa96ba03570685784e7f3a2ae9228cdc8b.gz"
+            "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
+            "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1695531-2026-11-01-laval-grand-prix-andre-de-la-vaissiere-grand-prix-des-quatre-ans/partants-pronostics",
-            "sha256": "63bc68e051678f8a62f702b71fe68e8e922cf9851cb134246332e92951a5d11d",
-            "file": "preuves/63bc68e051678f8a62f702b71fe68e8e922cf9851cb134246332e92951a5d11d.gz"
+            "sha256": "4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a",
+            "file": "preuves/4bcbe098a9be504cad2dab63e8a10576c1ac3ae9e9dd525dea3ca787869e809a.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-            "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-            "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
+            "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+            "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
           }
         }
       },
@@ -1431,24 +1298,24 @@
             "source_title": "Prix Georges Porcher",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-01/r1c9-laval-prix-georges-porcher",
-              "sha256": "7050e684c4274ad019da88ceaa026131301bb925f7f5a2e43756c1544af2a0cd",
-              "file": "preuves/7050e684c4274ad019da88ceaa026131301bb925f7f5a2e43756c1544af2a0cd.gz"
+              "sha256": "7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba",
+              "file": "preuves/7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
-              "sha256": "54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c",
-              "file": "preuves/54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c.gz"
+              "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+              "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
             },
-            "captured_at": "2026-11-01T14:42:08.154020+01:00",
+            "captured_at": "2026-11-01T17:46:40.807071+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 7.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.22,
-              "dateRapport": 1793539802000,
+              "nombreIndicateurTendance": -1.4,
+              "dateRapport": 1793551502000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -1464,24 +1331,24 @@
             "source_title": "Le pronostic du PRIX GEORGES PORCHER",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
-              "sha256": "e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f",
-              "file": "preuves/e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f.gz"
+              "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+              "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
-              "sha256": "54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c",
-              "file": "preuves/54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c.gz"
+              "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+              "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
             },
-            "captured_at": "2026-11-01T14:42:08.686547+01:00",
+            "captured_at": "2026-11-01T17:46:41.457422+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539802000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793551502000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -1497,24 +1364,24 @@
             "source_title": "Le pronostic du PRIX GEORGES PORCHER",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
-              "sha256": "e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f",
-              "file": "preuves/e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f.gz"
+              "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+              "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
-              "sha256": "54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c",
-              "file": "preuves/54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c.gz"
+              "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+              "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
             },
-            "captured_at": "2026-11-01T14:42:08.791937+01:00",
+            "captured_at": "2026-11-01T17:46:41.519790+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539802000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793551502000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -1530,24 +1397,24 @@
             "source_title": "Prix Georges Porcher",
             "evidence": {
               "url": "https://www.geny.com/course/1695538-2026-11-01-laval-prix-georges-porcher/partants-pronostics",
-              "sha256": "f2eaa5d6bca4e2533a179be25aede1bfa706bf60dc256158c520b9b3e6746b52",
-              "file": "preuves/f2eaa5d6bca4e2533a179be25aede1bfa706bf60dc256158c520b9b3e6746b52.gz"
+              "sha256": "ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8",
+              "file": "preuves/ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
-              "sha256": "54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c",
-              "file": "preuves/54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c.gz"
+              "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+              "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
             },
-            "captured_at": "2026-11-01T14:42:26.591983+01:00",
+            "captured_at": "2026-11-01T17:46:57.661539+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539802000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793551502000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -1563,24 +1430,24 @@
             "source_title": "R1 Course N°9 : C9 - Prix Georges Porcher",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-              "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-              "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
+              "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+              "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C9/participants",
-              "sha256": "54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c",
-              "file": "preuves/54e51edc50979197860febd5f362a203ec0aca2c081912b2f111c67c311cb36c.gz"
+              "sha256": "b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439",
+              "file": "preuves/b8c9321edb79923ba71ff4351e6befea98416b7194ff331a8f860598fdc4d439.gz"
             },
-            "captured_at": "2026-11-01T14:42:27.391833+01:00",
+            "captured_at": "2026-11-01T17:46:58.162265+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793539802000,
+              "nombreIndicateurTendance": 6.66,
+              "dateRapport": 1793551502000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -1592,28 +1459,28 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-01/r1c9-laval-prix-georges-porcher",
-            "sha256": "7050e684c4274ad019da88ceaa026131301bb925f7f5a2e43756c1544af2a0cd",
-            "file": "preuves/7050e684c4274ad019da88ceaa026131301bb925f7f5a2e43756c1544af2a0cd.gz"
+            "sha256": "7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba",
+            "file": "preuves/7d2a5a8f43ccaba77ba80d55f29ecc7b4e890a06bfe96cb37f639b0042eabdba.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
-            "sha256": "e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f",
-            "file": "preuves/e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f.gz"
+            "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+            "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-01/laval/422245_prix-georges-porcher.html",
-            "sha256": "e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f",
-            "file": "preuves/e64783e2cc9f6a6aeddcf675e4602e84b3f676d41555a081622097118d53d79f.gz"
+            "sha256": "527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9",
+            "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1695538-2026-11-01-laval-prix-georges-porcher/partants-pronostics",
-            "sha256": "f2eaa5d6bca4e2533a179be25aede1bfa706bf60dc256158c520b9b3e6746b52",
-            "file": "preuves/f2eaa5d6bca4e2533a179be25aede1bfa706bf60dc256158c520b9b3e6746b52.gz"
+            "sha256": "ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8",
+            "file": "preuves/ba618cc35022afdf7ca784df321eea75777890ab4d9519a8a57edca2671049a8.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-laval-199827.html",
-            "sha256": "b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e",
-            "file": "preuves/b3ba7e4048f2cca2701c9d9f44c1cf8bfe02ed8039dd8ac178dac854c38aff9e.gz"
+            "sha256": "783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3",
+            "file": "preuves/783eed9cd4dbd31f2807fcd39be21be4a6e5c212bbe45057a879dea474c6edd3.gz"
           }
         }
       }
