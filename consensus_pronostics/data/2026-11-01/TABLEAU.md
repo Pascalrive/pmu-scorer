@@ -4,7 +4,7 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — GRAND PRIX DE LA VILLE DE LAVAL
 
-Collecte : 2026-11-01T15:57:51.206418+00:00. Avant départ : False. Sources complètes : 5/8.
+Collecte : 2026-11-01T16:45:22.432674+00:00. Avant départ : False. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
