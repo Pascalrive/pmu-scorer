@@ -17,6 +17,7 @@ from .model import START, END, STRATEGIES, account, reserve, freeze, groups, set
 from .telegram import send
 from comparaison_r1.geny_fallback import read_tip, unavailable_label
 from comparaison_r1.odds import odds_label
+from comparaison_r1.run_health import missing_control_reason, remember_preview
 
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
@@ -90,11 +91,14 @@ def reconcile_schedule(race, meta, now):
     race['errors'].pop('reservation',None)
 
 def no_bet_reason(state,race):
-    if not race.get('groups',{}).get('accord_geny_canalturf') and not place_plan(race):
-        return 'Geny et Canalturf différents ou source indisponible' if race['date']>='2026-10-20' else 'Aucun accord exploitable (accord Geny + Canalturf, 2–2 ou 2–1–1)'
-    if race.get('no_bet_reason'):return race['no_bet_reason']
+    if race.get('delivery_attempt') and race.get('no_bet_reason'):
+        return race['no_bet_reason']
     for key in ('reservation','official'):
         if key in race.get('errors',{}):return race['errors'][key]['reason']
+    missing=missing_control_reason(race)
+    if missing:return missing
+    if not race.get('groups',{}).get('accord_geny_canalturf') and not place_plan(race):
+        return 'Geny et Canalturf différents ou source indisponible' if race['date']>='2026-10-20' else 'Aucun accord exploitable (accord Geny + Canalturf, 2–2 ou 2–1–1)'
     bets=state.get('solutions',{}).get('accord_geny_canalturf',{}).get('bets',[])
     preceding=[b for b in bets if b['departure']<race['departure']]
     if preceding:
@@ -107,6 +111,7 @@ def no_bet_reason(state,race):
 def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
     now=clock();delta=(datetime.fromisoformat(race['departure'])-now).total_seconds()
     if delta<=0 or (not preview and delta>3600):return
+    if not preview:race['final_check_started_at']=now.isoformat()
     base=base_url(race['date'],race['c'])
     meta=f.json(base)
     reconcile_schedule(race,meta,now)
@@ -140,6 +145,7 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
             race['errors'][site]={'type':type(e).__name__,'reason':str(e).split('\n')[0][:200],'at':clock().isoformat()}
             if hasattr(e,'source_status'):race['errors'][site]['source_status']=e.source_status
     if not preview and clock()<datetime.fromisoformat(race['departure']):
+        race['final_check_completed_at']=clock().isoformat()
         observed=groups(race['tips'])
         if observed!=race['groups']:
             race['groups']=observed
@@ -154,11 +160,12 @@ def morning_preview(state,f,folder,clock=lambda:datetime.now(TZ)):
     races=[]
     for original in state['races']:
         if datetime.fromisoformat(original['departure'])<=clock():continue
-        race=copy.deepcopy(original);race.update(tips={},groups={},errors={})
+        race=copy.deepcopy(original);race.pop('preview_observations',None);race.update(tips={},groups={},errors={})
         # Refresh editorial choices as well as odds; old previews are not votes.
         try:
             collect_race(race,f,folder,clock,preview=True)
         except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
+        remember_preview(original,race,groups(race['tips']),clock())
         races.append(race)
     result={'version':PREVIEW_VERSION,'captured_at':clock().isoformat(),'races':races,
             'complete':bool(races) and all(set(r['tips'])==set(SITES) for r in races)}
@@ -310,12 +317,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
             notify_message('🔎 TONY ARTILLAN 2 — PRÉPARATION\n25/10 → 24/11/2026 · bilan le 25/11\nGeny et Canalturf\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nRepère +200 € NET, sans arrêt à ce seuil .\nPlafond : 1 200 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : accord Geny + Canalturf 2/2 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
-        preview=morning_preview(state,f,folder) if now.hour>=7 else {}
         write(path,state)
-        if preview.get('races'):
-            preview_text=preview_report(state,preview)
-            (folder/'apercu.txt').write_text(preview_text)
-            notify_message(preview_text)
         for race in state['races']:
             try:collect_race(race,f,folder)
             except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
@@ -346,6 +348,10 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                         tip['result_participants_evidence']=proof(path.parent,base+'/participants',f.get(base+'/participants'))
                 race.pop('settlement_error',None)
             except (ValueError,KeyError,requests.RequestException) as e:race['settlement_error']=type(e).__name__
+        played={b['race_id'] for a in state['solutions'].values() for b in a['bets']}
+        for race in state['races']:
+            if race['id'] not in played and datetime.now(TZ)>=datetime.fromisoformat(race['departure']):
+                race['no_bet_reason']=no_bet_reason(state,race)
         # After previous results are settled, engage next eligible course.
         # Place stakes share the account but do not advance the SG progression.
         if state['date']==day and START<=day<=END:
@@ -378,6 +384,16 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                 race['no_bet_reason']=no_bet_reason(state,race)
         write(path,state);states.append(state)
         if any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
+    if not probe:
+        for state in states:
+            if state['date']!=day:continue
+            folder=data/day;path=folder/'state.json'
+            preview=morning_preview(state,f,folder) if now.hour>=7 else {}
+            write(path,state)
+            if preview.get('races'):
+                preview_text=preview_report(state,preview)
+                (folder/'apercu.txt').write_text(preview_text)
+                notify_message(preview_text)
     b=summary(states);b['last_checked_at']=datetime.now(TZ).isoformat()
     write(data/'BILAN.json',b)
     daily={s['date']:summary([s]) for s in states};write(data/'BILANS_JOURNALIERS.json',daily)
@@ -397,6 +413,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');p.add_argument('--announce',action='store_true');a=p.parse_args()
     run(notify=not a.dry_run,probe=a.probe,announce=a.announce)
+
 
 
 

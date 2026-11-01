@@ -1,7 +1,7 @@
 name: Comparaison R1 quatre sites
 on:
   schedule:
-    - cron: '*/5 6-22 * * *'
+    - cron: '2-57/5 6-22 * * *'
     - cron: '45 5 * * *'
   workflow_dispatch:
     inputs:
@@ -13,13 +13,14 @@ on:
     paths: ['comparaison_r1/*.py', 'comparaison_r1/tests/**', '.github/workflows/comparaison_r1.yml']
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: comparaison-r1-independant
   cancel-in-progress: false
 jobs:
   comparaison:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,11 +30,14 @@ jobs:
           python-version: '3.12'
       - run: pip install -r comparaison_r1/requirements.txt
       - name: Tests du protocole
-        run: python -m unittest discover -s comparaison_r1/tests -v
+        run: |
+          python -m unittest discover -s comparaison_r1/tests -v
+          python -m unittest comparaison_r1.tests.test_run_health -v
       - name: Collecte et bilan independants
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GH_TOKEN: ${{ github.token }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           TODAY=$(TZ=Europe/Paris date +%F)
@@ -46,7 +50,11 @@ jobs:
               python -m comparaison_r1.main --announce $FLAGS
             fi
           elif [[ "$TODAY" < '2026-12-23' ]]; then
-            python -m comparaison_r1.main $FLAGS
+            if [ "$DRY_RUN" = true ]; then
+              python -m comparaison_r1.main --dry-run
+            else
+              python -m comparaison_r1.worker comparaison_r1 --persist --continue-run
+            fi
           fi
       - name: Persister les preuves et les recus
         if: always()
@@ -69,3 +77,4 @@ jobs:
           name: comparaison-r1-${{ github.run_id }}
           path: comparaison_r1/data
           retention-days: 90
+
