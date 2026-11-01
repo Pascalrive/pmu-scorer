@@ -199,6 +199,7 @@ class Integration(unittest.TestCase):
         state={'date':'2026-10-16','venue':'TEST','races':[r1,r2],'solutions':solutions}
         class FakeFetch:
             audit=[]
+            cache={}
             def json(self,u):
                 if 'rapports-definitifs' in u:return [{'typePari':'E_SIMPLE_GAGNANT','rapports':[{'combinaison':'1','dividendePourUnEuro':200}]}]
                 if u.endswith('/participants'):return {'participants':[horse]}
@@ -207,10 +208,16 @@ class Integration(unittest.TestCase):
             def get(self,u):return json.dumps(self.json(u))
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);p=root/'data/2026-10-16/state.json';runner.write(p,state)
-            with patch.object(runner,'datetime',Clock),patch.object(runner,'Fetcher',FakeFetch):runner.run(notify=False,root=root)
+            def sent(notices,message,token,chat,save,when):
+                notices['notifications'].append({'fingerprint':runner.hashlib.sha256(message.encode()).hexdigest(),
+                    'status':'SENT','receipts':[{'message_id':42,'date':int(now.timestamp())}]})
+                save()
+            with patch.object(runner,'datetime',Clock),patch.object(runner,'Fetcher',FakeFetch),patch.object(runner,'send',sent),patch.dict('os.environ',{'TELEGRAM_TOKEN':'test','TELEGRAM_CHAT_ID':'test'}):
+                runner.run(notify=True,root=root)
             actual=json.loads(p.read_text())['solutions']
             self.assertEqual(actual['majorite_3_ou_4']['bets'][0]['status'],'PERDU')
             self.assertEqual(actual['majorite_3_ou_4']['bets'][1]['stake_cents'],20000)
+            self.assertEqual(actual['majorite_3_ou_4']['bets'][1]['telegram_receipts'][0]['message_id'],42)
             self.assertEqual(set(actual),{'majorite_3_ou_4'})
             self.assertEqual(sum(len(s['bets']) for s in actual.values()),2)
 
@@ -226,3 +233,4 @@ class EditorialChoiceAudit(unittest.TestCase):
         url='https://www.canalturf.com/pronostics-PMU/2026-10-20/test.html'
         self.assertEqual(parse('canalturf',body,url,race,horses)['number'],7)
         self.assertEqual(parse('zeturf',body,url,race,horses)['number'],9)
+

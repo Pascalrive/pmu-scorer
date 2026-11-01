@@ -74,5 +74,18 @@ class RunHealthTests(unittest.TestCase):
             self.assertTrue(request.full_url.endswith('/tony_artillan_3_5.yml/dispatches'))
             self.assertEqual(request.get_method(),'POST')
 
+    def test_all_programs_require_complete_predeparture_receipts(self):
+        for pkg in PACKAGES:
+            mod=importlib.import_module(pkg+'.main')
+            departure=self.race['departure']
+            epoch=int(datetime.fromisoformat(departure).timestamp())
+            good={'status':'SENT','receipts':[{'message_id':4,'date':epoch-1}]}
+            self.assertTrue(mod.confirmed_before(good,departure))
+            for bad in (None,{'status':'SENT','receipts':[]},
+                        {'status':'UNCERTAIN','receipts':good['receipts']},
+                        {'status':'SENT','receipts':[{'message_id':4,'date':epoch}]},
+                        {'status':'SENT','receipts':good['receipts']+[{'message_id':5,'date':epoch+1}]}):
+                self.assertFalse(mod.confirmed_before(bad,departure))
+
 
 if __name__=='__main__':unittest.main()

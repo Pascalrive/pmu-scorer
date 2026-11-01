@@ -304,6 +304,12 @@ def report(b):
             'Classement descriptif provisoire, sans preuve automatique de supériorité. Accord 2/4 exclut les égalités 2–2.']
     return '\n'.join(lines)
 
+def confirmed_before(receipt,departure):
+    if not receipt or receipt.get('status')!='SENT' or not receipt.get('receipts'):return False
+    end=datetime.fromisoformat(departure).timestamp()
+    return all(type(r.get('date')) is int and type(r.get('message_id')) is int and r['date']<end for r in receipt['receipts'])
+
+
 def run(notify=True,probe=False,root=ROOT,announce=False):
     now=datetime.now(TZ);day=now.date().isoformat();f=Fetcher();data=root/'data';data.mkdir(parents=True,exist_ok=True)
     notices_path=data/'notifications.json'
@@ -313,6 +319,8 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             token,chat=os.environ.get('TELEGRAM_TOKEN'),os.environ.get('TELEGRAM_CHAT_ID')
             if not token or not chat:raise RuntimeError('Configuration Telegram absente')
             send(notices,message,token,chat,lambda:write(notices_path,notices),datetime.now(TZ))
+            fingerprint=hashlib.sha256(message.encode()).hexdigest()
+            return next((n for n in reversed(notices['notifications']) if n['fingerprint']==fingerprint),None)
     if day>='2026-10-19':
         notify_message('🔄 TONY ARTILLAN — RETOUR À LA MAJORITÉ\nÀ partir du 20/10/2026 : un simple gagnant uniquement si au moins 3 des 4 premiers choix sont identiques en R1.\nAucun nouveau pari placé, ni accord 2–2 ou 2–1–1.\nMises après pertes : 100 → 200 → 150 → 150 → 200 €, puis arrêt ; gain : retour à 100 €.\nPlafond 1 200 €/jour. +200 € reste un repère sans arrêt.\nLes paris du 19/10 restent dans le bilan. Simulation uniquement.')
     if announce:
@@ -377,6 +385,8 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                 if not 0<delta<=1800:continue
                 base=base_url(day,race['c'])
                 try:
+                    f.cache.pop(base,None)
+                    f.cache.pop(base+'/participants',None)
                     meta=f.json(base)
                     reconcile_schedule(race,meta,datetime.now(TZ))
                     race['market']=meta.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in meta.get('paris',[]))
@@ -390,8 +400,21 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
                         if not voters or voters[0] not in race['tips']:continue
                         tip=race['tips'][voters[0]]
                         horse=next((h for h in horses if h['numPmu']==tip['number']),{})
-                        if reserve(state['solutions'][key],race,tip,horse,datetime.now(TZ),voters):
-                            race.pop('no_bet_reason',None)
+                        import copy
+                        candidate=copy.deepcopy(state)
+                        if reserve(candidate['solutions'][key],race,tip,horse,datetime.now(TZ),voters):
+                            message=live_report(candidate)
+                            receipt=notify_message(message)
+                            if confirmed_before(receipt,race['departure']):
+                                bet=candidate['solutions'][key]['bets'][-1]
+                                bet['telegram_fingerprint']=receipt['fingerprint']
+                                bet['telegram_receipts']=receipt['receipts']
+                                state['solutions'][key]['bets'].append(bet)
+                                race.pop('no_bet_reason',None)
+                                write(path,state)
+                            else:
+                                race['no_bet_reason']='Envoi Telegram avant départ non confirmé ; aucune mise comptabilisée'
+                                race['delivery_attempt']={'at':datetime.now(TZ).isoformat(),'status':receipt['status'] if receipt else 'DRY_RUN'}
                         else:
                             race['last_reservation_check']={'at':datetime.now(TZ).isoformat(),'stop':account(state['solutions'][key])['stop']}
                 except (ValueError,KeyError,requests.RequestException) as e:race['errors']['reservation']={'reason':str(e)[:200]}
@@ -400,7 +423,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             if race['id'] not in played and datetime.now(TZ)>=datetime.fromisoformat(race['departure']):
                 race['no_bet_reason']=no_bet_reason(state,race)
         write(path,state);states.append(state)
-        if any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
+        if state['date']==day and any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
     if not probe:
         for state in states:
             if state['date']!=day:continue

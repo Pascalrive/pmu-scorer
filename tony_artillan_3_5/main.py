@@ -402,7 +402,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             if race['id'] not in played and datetime.now(TZ)>=datetime.fromisoformat(race['departure']):
                 race['no_bet_reason']=no_bet_reason(state,race)
         write(path,state);states.append(state)
-        if any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
+        if state['date']==day and any(a['bets'] for a in state['solutions'].values()):notify_message(live_report(state))
     if not probe:
         for state in states:
             if state['date']!=day:continue
