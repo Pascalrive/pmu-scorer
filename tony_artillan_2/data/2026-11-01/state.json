@@ -41,6 +41,30 @@
             "sha256": "e586f644070b05cb665484e1be2286ba2d776fc9e11de28ced75bc73dc6e759e",
             "file": "preuves/e586f644070b05cb665484e1be2286ba2d776fc9e11de28ced75bc73dc6e759e.gz"
           }
+        },
+        {
+          "race_id": "R1C9",
+          "departure": "2026-11-01T18:25:00+01:00",
+          "number": 16,
+          "name": "IMAGINE GIRL",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-01T18:14:14.515487+01:00",
+          "source_captured_at": "2026-11-01T17:46:37.993231+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 3.03,
+            "dateRapport": 1793553246000,
+            "favoris": true,
+            "numPmu1": 16,
+            "grossePrise": false
+          }
         }
       ],
       "budget_cents": 120000,
@@ -91,7 +115,7 @@
         "sha256": "3a4710e33e5cc32db05d6ae0c33f942e9c407a0add32789d7b9dc909af4a9047",
         "file": "preuves/3a4710e33e5cc32db05d6ae0c33f942e9c407a0add32789d7b9dc909af4a9047.gz"
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-01",
@@ -103,7 +127,7 @@
       "tips": {},
       "groups": {},
       "errors": {},
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible",
       "official_arrival": [
         {
           "number": 7,
@@ -505,7 +529,7 @@
         "sha256": "c6738c66ee01d5d9642e4ec04816eccc32108b0e742dd2b051e4eb8b92b80996",
         "file": "preuves/c6738c66ee01d5d9642e4ec04816eccc32108b0e742dd2b051e4eb8b92b80996.gz"
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-01",
@@ -549,7 +573,7 @@
         "sha256": "cfc74cdf98826a29f2e0e440d3faf41592f99954c2c7cd4292a350c72bd227ee",
         "file": "preuves/cfc74cdf98826a29f2e0e440d3faf41592f99954c2c7cd4292a350c72bd227ee.gz"
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-01",
@@ -593,7 +617,7 @@
         "sha256": "667102d07b77945e788abcb09e61f60a393043602f8272290b6f8dcf6cfa0406",
         "file": "preuves/667102d07b77945e788abcb09e61f60a393043602f8272290b6f8dcf6cfa0406.gz"
       },
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-01",
@@ -634,7 +658,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-01T18:14:14.514591+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "a04b0a43dfa8d70e4d3da6bfa29d5e95c8c3f1fbe232a3f4e3b8d11f2eac203f",
+            "file": "preuves/a04b0a43dfa8d70e4d3da6bfa29d5e95c8c3f1fbe232a3f4e3b8d11f2eac203f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409",
+            "file": "preuves/a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -667,7 +705,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-11-01T18:14:14.514918+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "a04b0a43dfa8d70e4d3da6bfa29d5e95c8c3f1fbe232a3f4e3b8d11f2eac203f",
+            "file": "preuves/a04b0a43dfa8d70e4d3da6bfa29d5e95c8c3f1fbe232a3f4e3b8d11f2eac203f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+            "sha256": "a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409",
+            "file": "preuves/a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409.gz"
+          }
         }
       },
       "groups": {},
@@ -683,7 +735,40 @@
           "sha256": "5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10",
           "file": "preuves/5160d8203364e61ed45668528522a485a3adf79e6ec6dfe0057729852ae23b10.gz"
         }
-      }
+      },
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "MEGA D'UZE",
+          "rank": 1
+        },
+        {
+          "number": 11,
+          "name": "MOSTRA DE CHANLECY",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "MARVA CALENDES",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "MIYA DE JOUDES",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "MISTRAL EXPRESS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/01112026/R1/C8/participants",
+        "sha256": "a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409",
+        "file": "preuves/a3ee4a8b555f3e9dacce20387c670c4416ac746f3c813fade92aaead77417409.gz"
+      },
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-11-01",
@@ -782,7 +867,9 @@
           "file": "preuves/527cc7dea7e97a2e1fdd0e3a86dc8808b4bb0d975b458b8c7b57644a173be3e9.gz"
         }
       },
-      "groups_frozen_at": "2026-11-01T17:46:38.041943+01:00"
+      "groups_frozen_at": "2026-11-01T17:46:38.041943+01:00",
+      "final_check_started_at": "2026-11-01T18:14:12.214965+01:00",
+      "final_check_completed_at": "2026-11-01T18:14:12.977862+01:00"
     }
   ],
   "notifications": [],
