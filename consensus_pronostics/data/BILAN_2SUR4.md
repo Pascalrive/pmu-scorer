@@ -1,5 +1,6 @@
 # Consensus — 2 sur 4 à 100 %
 
+Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.
 3 € par paire et par variante ; 9 € pour trois variantes complètes. Comptes séparés même si les paires sont identiques. Simulation uniquement. Début le 19/10/2026, uniquement après envoi Telegram confirmé avant départ.
 
 | Date | Variante | Paire | Mise | Retour | Net | Statut |

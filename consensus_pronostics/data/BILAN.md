@@ -1,5 +1,6 @@
 # Bilan indépendant du consensus
 
+Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.
 Simulation : 5 € en simple placé sur le premier du consensus (≥5 sources complètes). Groupe outsider distinct : 5 € sur le plus cité explicitement (≥2 sources). Aucun pari exécuté. Dernière collecte admissible avant départ. Rapports PMU INTERNET définitifs exclusivement.
 
 | Date | Stratégie | Paris | En attente | Mises réglées | Retours réglés | ROI |

@@ -1,5 +1,6 @@
 # Trois sélections de cinq chevaux — bilan indépendant
 
+Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.
 Simulation à mise fixe : 2 € par variante complète confirmée sur Telegram avant départ. Chaque variante est évaluée séparément, au dernier envoi admissible qui la contient complète. Une mixte incomplète ne bloque pas statistique et cotes. Aucun pari exécuté, aucun rattrapage des pertes. Quinté Internet sans Option Max, ticket dans l’ordre affiché ; règlement officiel Ordre, Désordre ou Bonus selon le rapport applicable. Cas non résolus, notamment non-partants et rapports ambigus : en attente. Recalcul corrigé le 26/10/2026 à partir des envois archivés, sans création de pronostics rétrospectifs.
 
 | Date | Variante | Numéros | Couverture des cinq premiers | Mise | Retour | Statut |
