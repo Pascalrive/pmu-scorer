@@ -1,4 +1,5 @@
 """Progressive-stake prospective comparison, integer cents, no actual bets."""
+from comparaison_r1.policy import flat_only_reason
 from collections import Counter, defaultdict
 from datetime import datetime
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
@@ -166,6 +167,7 @@ def account(solution):
             'pending_stake_cents':committed-settled_stakes,'consecutive_losses':losses,'stop':stop}
 
 def reserve(solution,race,tip,horse,now,voters=None):
+    if flat_only_reason(race):return False
     a=account(solution)
     if a['stop'] or any(b['race_id']==race['id'] for b in solution['bets']):return False
     if not START<=race['date']<=END or not race['market'] or not tip.get('playable'):return False
@@ -211,9 +213,11 @@ def summary(states):
         row['days_sequence_stop']=sum(account(a)['stop']=='SERIE_TERMINEE' for a in accounts)
         row['max_daily_committed_cents']=max([account(a)['committed_cents'] for a in accounts],default=0)
         row['committed_cents']=sum(account(a)['committed_cents'] for a in accounts)
+        row['policy_periods']={label:metrics([b for state in states if (state['date']>='2026-11-02')==new for b in state.get('solutions',{}).get(key,{'bets':[]})['bets']]) for label,new in (('historique_avant_02_11',False),('plat_depuis_02_11',True))}
         row['by_market']={market:metrics([b for a in accounts for b in a['bets'] if b.get('market','E_SIMPLE_GAGNANT')==market]) for market in ('E_SIMPLE_GAGNANT','E_SIMPLE_PLACE')}
         out['solutions'][key]=row
     out['ranking_by_net_profit']=sorted(STRATEGIES,key=lambda k:-out['solutions'][k]['profit_cents'])
     out['daily_accounts']={s['date']:{k:account({**a,'target_cents':daily_target(s['date']),'stop_at_target':stop_at_target(s['date']),'budget_cents':daily_budget(s['date'])}) for k,a in s.get('solutions',{}).items()} for s in states}
     return out
+
 

@@ -449,8 +449,9 @@ def formater_message_h15(course: dict, partants: list,
     if maj.get('non_partants'):
         lignes.append('Non-partants : ' + ', '.join(maj['non_partants']))
     lignes.append('')
-    lignes.extend(formater_selection(maj.get('top2_final', [])[:2], len(partants), True, maj.get('paris_disponibles')))
-    lignes.extend(formater_alertes(maj.get('experience', {}).get('alertes', [])))
+    lignes.extend(formater_selection(maj.get('top2_final', [])[:2], len(partants), True, maj.get('paris_disponibles'), day=depart.date().isoformat()))
+    if depart.date().isoformat() < '2026-11-02':
+        lignes.extend(formater_alertes(maj.get('experience', {}).get('alertes', [])))
     lignes.extend(['', 'Remplace le conseil precedent pour cette course.'])
     return '\n'.join(lignes)
 
@@ -474,7 +475,7 @@ def conseil_change(maj, nb_partants, precedent):
         return True
     top = maj.get('top2_final', [])[:2]
     # Comparer les numeros ET le type de pari, sans compter les variations de cote.
-    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True, maj.get('paris_disponibles')))
+    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True, maj.get('paris_disponibles'), day=datetime.now(TZ_PARIS).date().isoformat()))
     from pmu_tracking import analyser_message
     event = analyser_message(txt, datetime.now(TZ_PARIS))
     old = precedent['event']
@@ -548,6 +549,8 @@ def main():
             log.warning('%s : cotes incompletes, aucun nouveau conseil', cle)
             continue
         precedent = derniers.get(cle)
+        if date_iso >= '2026-11-02' and not precedent and not any(x.startswith('COUPLE ORDRE :') for x in paris_affiches(maj.get('top2_final',[])[:2], len(actifs), marches, day=date_iso)):
+            continue
         if precedent and precedent.get('delivery') != 'SENT':
             log.warning('%s : envoi precedent incertain, verification manuelle necessaire', cle)
             continue
@@ -560,4 +563,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

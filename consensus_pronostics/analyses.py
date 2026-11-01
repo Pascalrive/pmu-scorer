@@ -1,4 +1,5 @@
 """Frozen five-horse comparison rules, independent from original simple-place trial."""
+from policy import simplified, profile_enabled
 from collections import Counter
 import math
 VERSION_ANALYSES='trois-selections-v1-2026-10-13'
@@ -32,4 +33,10 @@ def build_analyses(rows,race):
 
  from two_of_four import tickets
  result['two_of_four']=tickets(result,race)
+ if simplified(race):
+  result['policy']='retained-formulas-2026-11-02'
+  for profile in profiles:
+   profile['financial_enabled']=profile_enabled(race,profile['id'])
+   if not profile['financial_enabled']:profile['stake_eur']=0
  return result
+

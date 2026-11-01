@@ -1,8 +1,5 @@
 name: Tony Artillan independant
 on:
-  schedule:
-    - cron: '*/10 6-22 * * *'
-    - cron: '35 5 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -62,3 +59,4 @@ jobs:
           name: tony-artillan-${{ github.run_id }}
           path: tony_artillan/data
           retention-days: 90
+

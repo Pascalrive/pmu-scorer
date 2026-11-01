@@ -1,4 +1,5 @@
 """Independent Quinté profiles: complete, confirmed pre-race tickets only."""
+from policy import simplified, profile_enabled
 import argparse,json,re
 from collections import defaultdict
 from datetime import datetime,date,timezone
@@ -42,6 +43,7 @@ def quinte_return(numbers,participants,reports):
 def select_sent(snaps,ledger,profile_id):
  valid=[]
  for s in snaps:
+  if not profile_enabled(s['race'],profile_id):continue
   a=s.get('analyses')
   if not a or a.get('version')!=VERSION_ANALYSES or not s.get('eligible_before_departure'):continue
   ps=[p for p in a.get('profiles',[]) if p.get('id')==profile_id]
@@ -53,6 +55,7 @@ def select_sent(snaps,ledger,profile_id):
    if captured>=departure:continue
   except (KeyError,TypeError,ValueError):continue
   for r in ledger:
+   if simplified(s['race']) and r.get('financial_profiles') != ['cotes']:continue
    if r.get('delivery')!='SENT' or r.get('snapshot_capture')!=s['captured_at'] or r.get('analyses')!=a:continue
    try:
     sent=datetime.fromisoformat(r['sent_at']);receipts=r.get('receipts',[])
@@ -102,7 +105,9 @@ def evaluate(root):
   stake=Decimal(STAKE_EUR*len(rs));ret=sum((Decimal(str(r['retour'])) for r in rs),Decimal('0'))
   roi=f'{(ret-stake)/stake*100:+.2f} %' if stake else '—'
   lines.append(f'| {key} | {len(rs)} | {stake:.2f} € | {ret:.2f} € | {ret-stake:.2f} € | {roi} |')
+ lines.insert(2,'Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.')
  (root/'BILAN_TROIS_SELECTIONS.md').write_text('\n'.join(lines));print(f'TROIS_SELECTIONS_TRACKED {len(rows)}')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');a=p.parse_args();evaluate(Path(a.output))
+
 

@@ -5,12 +5,16 @@ on:
     - cron: '45 5 * * *'
   workflow_dispatch:
     inputs:
+      relay_probe:
+        description: Internal no-bet relay verification
+        type: boolean
+        default: false
       dry_run:
         type: boolean
         default: false
   push:
     branches: [main]
-    paths: ['comparaison_r1/*.py', 'comparaison_r1/tests/**', '.github/workflows/comparaison_r1.yml']
+    paths: ['comparaison_r1/policy.py', 'comparaison_r1/tests/test_simplification.py', 'comparaison_r1/*.py', 'comparaison_r1/tests/**', '.github/workflows/comparaison_r1.yml']
 permissions:
   contents: write
   actions: write
@@ -20,7 +24,7 @@ concurrency:
 jobs:
   comparaison:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,8 +36,9 @@ jobs:
       - name: Tests du protocole
         run: |
           python -m unittest discover -s comparaison_r1/tests -v
-          python -m unittest comparaison_r1.tests.test_run_health -v
+          python -m unittest comparaison_r1.tests.test_run_health comparaison_r1.tests.test_simplification -v
       - name: Collecte et bilan independants
+        if: ${{ !inputs.relay_probe }}
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -57,24 +62,21 @@ jobs:
             fi
           fi
       - name: Persister les preuves et les recus
-        if: always()
-        run: |
-          mkdir -p comparaison_r1/data
-          git config user.name 'Comparaison R1'
-          git config user.email 'comparaison-r1@users.noreply.github.com'
-          git add comparaison_r1/data
-          if ! git diff --cached --quiet; then
-            git commit -m 'Archive comparatif R1 quatre sites'
-            for attempt in 1 2 3; do
-              git pull --rebase origin main
-              if git push origin HEAD:main; then break; fi
-              if [ "$attempt" = 3 ]; then exit 1; fi
-            done
-          fi
+        if: ${{ always() && !inputs.relay_probe }}
+        run: python -m comparaison_r1.worker comparaison_r1 --checkpoint-only
+      - name: Verifier le passage de relais sans paris
+        if: ${{ success() && github.event_name == 'push' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m comparaison_r1.worker comparaison_r1 --probe-relay
+      - name: Confirmer la reception du relais de controle
+        if: ${{ inputs.relay_probe }}
+        run: echo 'RELAY_PROBE_RECEIVED - no collection, no Telegram, no stakes'
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && !inputs.relay_probe }}
         with:
           name: comparaison-r1-${{ github.run_id }}
           path: comparaison_r1/data
           retention-days: 90
+
 

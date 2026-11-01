@@ -1,4 +1,5 @@
 """Prospective 100% 2sur4 tickets: one distinct account per profile."""
+from policy import simplified, profile_enabled
 import argparse,json,re
 from collections import defaultdict
 from datetime import date,datetime,timezone
@@ -16,7 +17,8 @@ def tickets(analyses,race):
     for p in analyses['profiles']:
         ns=p['numbers'][:2]
         ready=p['qualified'] and len(set(ns))==2 and race.get('internet_2sur4_available') is True
-        out.append({'version':VERSION,'profile':p['id'],'numbers':ns,'stake_eur':STAKE,
+        out.append({'version':VERSION,'profile':p['id'],'numbers':ns,'stake_eur':0 if simplified(race) else STAKE,
+                    'mode':('OBSERVATION' if p['id']=='mixte' else 'SUSPENDU') if simplified(race) else 'SIMULATION',
                     'market':MARKET,'percentage':100,'qualified':ready})
     return out
 
@@ -52,6 +54,7 @@ def payout(ns,participants,reports):
 def select_ticket(snaps,ledger,profile):
     valid=[]
     for s in snaps:
+        if simplified(s['race']):continue
         if s['race']['date']<START or not s.get('eligible_before_departure') or s['captured_at']>=s['race']['departure']:continue
         ts=s.get('analyses',{}).get('two_of_four',[])
         t=next((t for t in ts if t['profile']==profile and t.get('version')==VERSION and t.get('qualified')),None)
@@ -94,9 +97,11 @@ def evaluate(root):
         stake=STAKE*len(done);ret=sum(Decimal(str(r['retour'])) for r in done);net=ret-stake
         roi=f'{100*net/stake:+.2f} %' if stake else '—'
         lines.append(f'| {key} | {len(done)} | {len(rs)-len(done)} | {stake:.2f} | {ret:.2f} | {net:.2f} | {roi} |')
+    lines.insert(2,'Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.')
     (root/'BILAN_2SUR4.md').write_text('\n'.join(lines))
     print('2SUR4_TRACKED',len(rows))
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');a=p.parse_args();evaluate(Path(a.output))
+
 

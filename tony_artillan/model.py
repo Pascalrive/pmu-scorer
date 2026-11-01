@@ -96,6 +96,8 @@ def next_stake(races, index):
 
 def reserve(races, index, now, horse):
     race = races[index]
+    if stamp(race['departure']).date().isoformat() >= '2026-11-02':
+        return False  # Programme Paris Turf suspendu ; règlements historiques conservés.
     if race['status'] != 'A_VENIR' or 'selection' not in race:
         return False
     if now >= stamp(race['departure']):
@@ -174,3 +176,4 @@ def score(state):
             'pending_stake_cents': sum(r['stake_cents'] for r in pending),
             'cash_required_cents': -minimum, 'max_stake_cents': max([r.get('stake_cents',0) for r in state['races']]),
             'complete': all(r['status'] in TERMINAL for r in state['races'])}
+

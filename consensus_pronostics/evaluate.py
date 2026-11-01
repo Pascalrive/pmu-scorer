@@ -1,4 +1,5 @@
 """Settle frozen pre-race consensus simulations against PMU INTERNET only."""
+from policy import simplified, profile_enabled
 import argparse,json
 from collections import defaultdict
 from datetime import date,datetime,timedelta
@@ -26,12 +27,53 @@ def selected(snapshots):
  valid=[s for s in snapshots if s.get('version')==VERSION and s.get('eligible_before_departure') and s['captured_at']<s['race']['departure'] and s['consensus']['qualified']]
  return max(valid,key=lambda s:s['captured_at']) if valid else None
 
+def observation_rows(root, byrace, fetcher):
+ """Zero-stake observations, matched to the exact confirmed pre-race message."""
+ rows=[]
+ for (day,ident),snaps in sorted(byrace.items()):
+  if day < '2026-11-02':continue
+  lp=root/day/'notifications.json'
+  ledger=json.loads(lp.read_text()) if lp.exists() else []
+  valid=[]
+  for snap in snaps:
+   if not snap.get('eligible_before_departure'):continue
+   departure=datetime.fromisoformat(snap['race']['departure'])
+   captured=datetime.fromisoformat(snap['captured_at'])
+   for receipt in ledger:
+    if receipt.get('delivery')!='SENT' or receipt.get('financial_profiles')!=['cotes'] or receipt.get('snapshot_capture')!=snap['captured_at'] or receipt.get('analyses')!=snap.get('analyses'):continue
+    rs=receipt.get('receipts',[])
+    if rs and captured<departure and all(r.get('message_id') and captured.timestamp()//1<=r.get('date',0)<departure.timestamp() for r in rs):
+     valid.append(snap);break
+  if not valid:continue
+  snap=max(valid,key=lambda x:x['captured_at']);race=snap['race']
+  candidates=[]
+  mix=next((t for t in snap.get('analyses',{}).get('two_of_four',[]) if t['profile']=='mixte' and t.get('qualified')),None)
+  if mix:candidates.append(('2sur4_mixte',mix['numbers'],4))
+  outsiders=[x for x in snap['consensus'].get('outsiders',[]) if x['votes']>=2]
+  if outsiders:candidates.append(('outsider', [outsiders[0]['number']],None))
+  people=[]
+  if datetime.fromisoformat(race['departure'])<datetime.now().astimezone():
+   try:people=fetcher.json(API+date.fromisoformat(day).strftime('%d%m%Y')+f'/R{race["r"]}/C{race["c"]}/participants')['participants']
+   except Exception:pass
+  by={x['numPmu']:x for x in people}
+  for arm,ns,limit in candidates:
+   identity=all(norm(by.get(n,{}).get('nom',''))==norm(race['horses'].get(str(n),race['horses'].get(n,{})).get('nom','')) for n in ns)
+   ranks=[by.get(n,{}).get('ordreArrivee') if identity else None for n in ns]
+   rows.append({'date':day,'course':ident,'observation':arm,'numeros':ns,'rangs':ranks,
+                'incidents':[by.get(n,{}).get('incident') if identity else None for n in ns],
+                'mise':0,'retour':None,'net':None,'mode':'OBSERVATION_SANS_MISE',
+                'capture':snap['captured_at'],'identite_verifiee':identity})
+ return rows
+
 def evaluate(root):
  f=Fetcher();byrace=defaultdict(list)
  for p in root.glob('*/R*.json'):
   s=json.loads(p.read_text());byrace[(s['race']['date'],s['race']['id'])].append(s)
+ observations=observation_rows(root,byrace,f)
+ (root/'OBSERVATIONS_SANS_MISE.json').write_text(json.dumps(observations,ensure_ascii=False,indent=2))
  rows=[]
  for (day,ident),snaps in sorted(byrace.items()):
+  if day >= '2026-11-02':continue  # SP et outsider : observation sans mise uniquement.
   snap=selected(snaps)
   if not snap:continue
   race=snap['race'];prefix=API+date.fromisoformat(day).strftime('%d%m%Y')+f'/R{race["r"]}/C{race["c"]}'
@@ -57,7 +99,9 @@ def evaluate(root):
   roi=f'{(ret-Decimal(stake))/Decimal(stake)*100:+.2f} %' if stake and not pending else 'INCOMPLET'
   lines.append(f'| {day} | {arm} | {len(rs)} | {pending} | {stake:.2f} € | {ret:.2f} € | {roi} |')
  if not rows:lines+=['','Aucune course admissible déjà réglable. Les collectes après départ servent uniquement à vérifier les lecteurs des sites.']
+ lines.insert(2,'Depuis le 02/11/2026 : seul le Quinté cotes conserve des mises (2 €). 2sur4 mixte et outsider en observation à 0 €. Historique antérieur conservé.')
  (root/'BILAN.md').write_text('\n'.join(lines))
  print(f'{len(rows)} simulations, {sum(r["statut"]=="EN_ATTENTE" for r in rows)} en attente')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');a=p.parse_args();evaluate(Path(a.output))
+

@@ -18,6 +18,7 @@ from .telegram import send
 from comparaison_r1.geny_fallback import unavailable_label
 from .sources import read_tip
 from comparaison_r1.odds import odds_label
+from comparaison_r1.policy import flat_only_reason
 from comparaison_r1.run_health import missing_control_reason, remember_preview
 
 ROOT=Path(__file__).parent
@@ -69,6 +70,7 @@ def meeting(day,f):
     return {'date':day,'venue':r['hippodrome']['libelleCourt'],'solutions':{k:{'bets':[]} for k in STRATEGIES},'races':[
         {'date':day,'id':f'R1C{c["numOrdre"]}','c':c['numOrdre'],'title':c['libelle'],
          'departure':datetime.fromtimestamp(c['heureDepart']/1000,TZ).isoformat(),
+         'discipline':c.get('discipline'),
          'market':c.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in c.get('paris',[])),
          'tips':{},'groups':{},'errors':{}}
         for c in sorted(r['courses'],key=lambda c:c['heureDepart'])],'notifications':[]}
@@ -80,6 +82,7 @@ def reconcile_schedule(race, meta, now):
     if (meta.get('numReunion')!=1 or meta.get('numOrdre')!=race['c']
             or norm(meta.get('libelle'))!=norm(race['title'])):
         raise ValueError('Identité officielle modifiée : collecte suspendue')
+    race['discipline']=meta.get('discipline')
     old=datetime.fromisoformat(race['departure'])
     new=datetime.fromtimestamp(meta['heureDepart']/1000,TZ)
     if new!=old:
@@ -92,6 +95,7 @@ def reconcile_schedule(race, meta, now):
     race['errors'].pop('reservation',None)
 
 def no_bet_reason(state,race):
+    if flat_only_reason(race):return flat_only_reason(race)
     if race.get('delivery_attempt') and race.get('no_bet_reason'):
         return race['no_bet_reason']
     for key in ('reservation','official'):
@@ -189,12 +193,14 @@ def preview_report(state,preview):
                 lines.append(f'{names[site]}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · {odds_label(t)}'+(' · NON PARTANT / non jouable' if not t['playable'] else ''))
             else:lines.append(names[site]+' : '+unavailable_label(race,site))
         g=groups(race['tips']).get('majorite_3_sur_5')
-        if place_plan(race):lines.append(place_description(race))
+        if flat_only_reason(race):lines.append('⏭ AUCUN PARI : '+flat_only_reason(race))
+        elif place_plan(race):lines.append(place_description(race))
         elif g:lines.append(f'✅ ADMISSIBLE {len(g["sites"])}/5 : N°{g["number"]} — un seul pari potentiel')
         else:lines.append('⏭ AUCUN PARI : Moins de trois premiers choix identiques validés' if state['date']>='2026-10-20' else '⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible')
         lines.append('')
     lines.append('Seules les courses admissibles font avancer la progression, sous réserve du résultat précédent et des limites quotidiennes.')
     lines.append('Aucune mise engagée par cet aperçu. Les choix définitifs et mises seront envoyés avant chaque départ.')
+    if state['date']>='2026-11-02':lines.insert(2,'PLAT UNIQUEMENT depuis le 02/11 ; trot et obstacles exclus. Historique antérieur conservé.')
     return '\n'.join(lines)
 
 def race_message(r):
@@ -207,7 +213,8 @@ def race_message(r):
         lines.append(f'{site.upper()}'+(' (secours Genybet)' if t.get('fallback') else '')+f' : N°{t["number"]} {t["name"]} · {odds_label(t)}'+(' · non jouable' if not t['playable'] else ''))
         if 'return_cents' in t:lines.append(f'  Résultat du choix : {t["status"]}')
     g=r['groups'].get('majorite_3_sur_5')
-    if place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
+    if flat_only_reason(r):lines+=['','⏭ AUCUN PARI : '+flat_only_reason(r)]
+    elif place_plan(r):lines+=['',place_description(r)+' · sous réserve du budget.']
     elif g:lines+=['',f'✅ ADMISSIBLE {len(g["sites"])}/5 : N°{g["number"]}', ' + '.join(g['sites']), 'Un seul pari potentiel, selon budget et résultat précédent.']
     else:lines+=['','⏭ AUCUN PARI : Moins de trois premiers choix identiques validés.' if r['date']>='2026-10-20' else '⏭ AUCUN PARI : aucun accord exploitable ou exception indisponible.']
     lines+=['Les choix sont figés avant départ.','Cotes indicatives ; règlement aux rapports définitifs PMU INTERNET.']
@@ -239,6 +246,7 @@ def live_report(state):
         lines.append('COURSES NON JOUÉES')
         lines.extend(r['id']+' : '+r['no_bet_reason'] for r in skipped)
     lines.append('Un seul compte : majorité 3/5 en simple gagnant uniquement . Remboursements inclus dans le plafond. Aucun pari réel.')
+    if state['date']>='2026-11-02':lines.insert(2,'PLAT UNIQUEMENT depuis le 02/11 ; trot et obstacles exclus. Historique antérieur conservé.')
     return '\n'.join(lines)
 
 def daily_report(state):
@@ -277,10 +285,14 @@ def daily_report(state):
             'Maximum du solde réglé : '+euros(peak)+' · recul maximal depuis un sommet : '+euros(max_drawdown)]
     if first:lines.append('Écart final / arrêt au premier seuil : '+euros(a['profit_cents']-first['profit']))
     lines.append('Les courses sans mise ne sont pas ajoutées rétroactivement au résultat financier.')
+    if state['date']>='2026-11-02':lines.insert(2,'PLAT UNIQUEMENT depuis le 02/11 ; trot et obstacles exclus. Historique antérieur conservé.')
     return '\n'.join(lines)
 
 def report(b):
     s=b['solutions']['majorite_3_sur_5']
+    periods=[]
+    for label,p in s.get('policy_periods',{}).items():
+        periods.append(label.replace('_',' ')+' : mises réglées '+euros(p['stake_cents'])+' · net '+euros(p['profit_cents'])+' · ROI '+str(p['roi_percent'])+' % · en attente '+str(p['pending']))
     return '\n'.join(['📊 TONY ARTILLAN 3/5 — BILAN CUMULÉ',f'{START} → {END}',
         'Au moins 3 premiers choix identiques sur 5 ; simple gagnant uniquement. Compte indépendant.',
         '100 → 200 → 150 → 150 → 200 € après pertes, puis arrêt ; gain : retour à 100 €.',
@@ -288,7 +300,7 @@ def report(b):
         f"{s['wins']} gagnants · {s['losses']} perdants · {s['refunds']} remboursements · {s['pending']} en attente",
         f"Mises réglées {euros(s['stake_cents'])} · retours {euros(s['return_cents'])} · net {euros(s['profit_cents'])}",
         f"ROI : {s['roi_percent']} % · jours actifs : {s['days_active']} · seuil atteint : {s['days_target_reached']}",
-        'Les paris manqués ne sont jamais reconstitués. ROI limité aux règlements disponibles.'])
+        'Les paris manqués ne sont jamais reconstitués. ROI limité aux règlements disponibles.']+periods)
 
 
 def confirmed_before(receipt,departure):
@@ -437,6 +449,7 @@ if __name__=='__main__':
             run(notify=False,probe=a.probe,announce=a.announce,root=Path(tmp))
     else:
         run(probe=a.probe,announce=a.announce)
+
 
 
 

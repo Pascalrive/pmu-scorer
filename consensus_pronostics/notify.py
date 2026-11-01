@@ -1,4 +1,5 @@
 """Daily Telegram delivery, with separate receipts and no imports from PMU scorer."""
+from policy import simplified, profile_enabled
 import argparse,hashlib,json,os,html
 from datetime import datetime,timezone
 from pathlib import Path
@@ -20,7 +21,28 @@ def quote(race,n):
 def card(race,n):
  return html.escape(horse(race,n))+' · <b>'+html.escape(quote(race,n))+'</b>'
 
+def retained_messages(s):
+ race=s['race'];a=s.get('analyses') or {}
+ profile=next((p for p in a.get('profiles',[]) if p['id']=='cotes'),None)
+ lines=[f"🏇 CONSENSUS — {race['date']} · {race['id']}",html.escape(race['title']),
+        'QUINTÉ COTES — seul test financier Consensus actif depuis le 02/11',
+        'Simulation : 2 € par ticket complet, sans Option Max. Mise fixe.']
+ if profile and profile.get('qualified') and len(profile.get('numbers',[]))==5:
+  lines += [str(i)+'. '+card(race,n) for i,n in enumerate(profile['numbers'],1)]
+ else:lines.append('NON JOUÉ : sélection cotes ou marché incomplet.')
+ lines+=['','OBSERVATIONS SEULEMENT — mise 0 €, aucun gain comptabilisé']
+ mix=next((t for t in a.get('two_of_four',[]) if t['profile']=='mixte'),None)
+ if mix and mix.get('qualified'):lines.append('2sur4 mixte : '+' + '.join('N°'+str(n) for n in mix['numbers']))
+ else:lines.append('2sur4 mixte : observation indisponible.')
+ outsiders=[x for x in s['consensus'].get('outsiders',[]) if x['votes']>=2]
+ if outsiders:
+  x=outsiders[0];lines.append('Outsider Consensus : '+card(race,x['number'])+f" · {x['votes']} sources")
+ else:lines.append('Outsider Consensus : aucun accord suffisant.')
+ lines+=['','Cotes PMU indicatives. Règlement du Quinté aux rapports PMU Internet définitifs.', 'Aucun pari réel.']
+ return ['\n'.join(lines)]
+
 def format_messages(s):
+ if simplified(s['race']):return retained_messages(s)
  from collector import SOURCES,display_top5
  race=s['race'];con=s['consensus'];display=s.get('display_top5')
  if display is None:
@@ -103,7 +125,7 @@ def notify(root,now=None,post=requests.post,clock=lambda:datetime.now(timezone.u
   if any(r['delivery']=='SENT' for r in prior):print(f'CONSENSUS_ALREADY_SENT {ident}');continue
   if any(r['delivery'] in ('PENDING','UNCERTAIN') for r in prior):
    print(f'CONSENSUS_DELIVERY_UNCERTAIN {ident} — contrôle manuel nécessaire');failed=True;continue
-  record={'date':s['race']['date'],'course':ident,'snapshot_capture':s['captured_at'],'fingerprint':fingerprint,'text':message,'analyses':s.get('analyses'),'delivery':'PENDING','receipts':[]};ledger.append(record);persist()
+  record={'date':s['race']['date'],'course':ident,'snapshot_capture':s['captured_at'],'fingerprint':fingerprint,'text':message,'analyses':s.get('analyses'),'delivery':'PENDING','receipts':[]};record['financial_profiles']=['cotes'] if simplified(s['race']) else ['statistique','cotes','mixte'];ledger.append(record);persist()
   parts=[part for section in format_messages(s) for part in chunks(section)]
   for part in parts:
    # Check departure again before each send. Never retry a timeout automatically.
@@ -121,4 +143,5 @@ def notify(root,now=None,post=requests.post,clock=lambda:datetime.now(timezone.u
  if failed:raise RuntimeError('Envoi consensus non confirmé ; consulter les reçus indépendants')
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--output',default='consensus_pronostics/data');args=p.parse_args();notify(Path(args.output))
+
 

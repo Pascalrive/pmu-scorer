@@ -29,25 +29,31 @@ def active(state, now):
 def checkpoint(package):
     """Fail closed on persistence failure: do not send another unarchived stake."""
     def git(*args, check=True):
-        return subprocess.run(['git', *args], check=check, timeout=120)
+        return subprocess.run(['git', *args], check=check, timeout=30)
     git('config', 'user.name', 'Tony Artillan archives')
     git('config', 'user.email', 'tony-artillan@users.noreply.github.com')
     git('add', package+'/data')
-    if git('diff', '--cached', '--quiet', check=False).returncode == 0:
-        return
-    git('commit', '-m', 'Archive '+package+' continuous follow-up')
+    if git('diff', '--cached', '--quiet', check=False).returncode != 0:
+        git('commit', '-m', 'Archive '+package+' continuous follow-up')
+    # Even with a clean index, a previous attempt may have committed locally
+    # but failed to push. Always synchronize; never discard that commit.
     for attempt in range(3):
-        git('pull', '--rebase', 'origin', 'main')
-        if git('push', 'origin', 'HEAD:main', check=False).returncode == 0:
-            return
+        try:
+            git('pull', '--rebase', 'origin', 'main')
+            if git('push', 'origin', 'HEAD:main', check=False).returncode == 0:
+                return
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+            # A rebase conflict is not safe to auto-resolve. The next pull fails
+            # too; the artifact and failed run preserve evidence for inspection.
+            if attempt == 2:raise
     raise RuntimeError('Archive push failed; worker stopped before next pass')
 
 
-def dispatch(package):
+def dispatch(package, probe=False):
     token = os.environ['GH_TOKEN']
     repo = os.environ['GITHUB_REPOSITORY']
     url = f'https://api.github.com/repos/{repo}/actions/workflows/{package}.yml/dispatches'
-    req = Request(url, data=json.dumps({'ref':'main','inputs':{'dry_run':False}}).encode(),
+    req = Request(url, data=json.dumps({'ref':'main','inputs':{'dry_run':probe, 'relay_probe':probe}}).encode(),
                   headers={'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json',
                            'Content-Type':'application/json'}, method='POST')
     with urlopen(req, timeout=30) as response:
@@ -55,7 +61,7 @@ def dispatch(package):
             raise RuntimeError('Continuation not accepted by GitHub')
 
 
-def run(package, persist=False, continue_run=False, duration=70, interval=60):
+def run(package, persist=False, continue_run=False, duration=10, interval=60):
     model = importlib.import_module(package+'.model')
     data = Path(package)/'data'
     data.mkdir(parents=True, exist_ok=True)
@@ -85,10 +91,14 @@ def run(package, persist=False, continue_run=False, duration=70, interval=60):
             return
         if failures >= 3:
             raise RuntimeError('Three failed passes; inspect Actions logs before retrying')
-        # Leave ten minutes for a pass and archival before the Actions job timeout.
-        if time.monotonic()-started >= duration*60:
+        # Ten-minute sessions; a last pass is bounded to ten more minutes.
+        # Archival is bounded to three minutes; job timeout is 25 minutes.
+        if time.monotonic()-started >= duration*60-interval:
             if continue_run:
                 dispatch(package)
+                heartbeat.update(status='RELAY_ACCEPTED', relay_at=datetime.now(TZ).isoformat())
+                (data/'worker.json').write_text(json.dumps(heartbeat, indent=2))
+                if persist:checkpoint(package)
             return
         time.sleep(interval)
 
@@ -96,7 +106,14 @@ def run(package, persist=False, continue_run=False, duration=70, interval=60):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('package', choices=PACKAGES)
+    parser.add_argument('--checkpoint-only', action='store_true')
+    parser.add_argument('--probe-relay', action='store_true')
     parser.add_argument('--persist', action='store_true')
     parser.add_argument('--continue-run', action='store_true')
     args = parser.parse_args()
-    run(args.package, persist=args.persist, continue_run=args.continue_run)
+    if args.checkpoint_only:checkpoint(args.package)
+    elif args.probe_relay:
+        dispatch(args.package, probe=True)
+        print('RELAY_PROBE_ACCEPTED '+args.package)
+    else:run(args.package, persist=args.persist, continue_run=args.continue_run)
+

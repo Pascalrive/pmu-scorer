@@ -254,21 +254,26 @@ def formater_message_telegram(courses_galop, courses_trot, date_aff, run_label) 
         stamp = course.get("heure", 0)
         depart = datetime.fromtimestamp(stamp / 1000, tz=TZ_PARIS) if stamp else None
         top = course["top5"][:2]
+        day = depart.date().isoformat() if depart else datetime.now(TZ_PARIS).date().isoformat()
+        if day >= '2026-11-02' and not any(line.startswith('COUPLE ORDRE :') for line in paris_affiches(top, top[0].get('nb_partants',0), course.get('paris_disponibles'), day=day)):
+            return []
         lignes = [f"COURSE {course.get('reunion', '')}{course.get('course', '')} — DEPART {depart:%Hh%M}" if depart else f"COURSE {course.get('reunion', '')}{course.get('course', '')}"]
         if depart:
             lignes.append(f"DATE : {depart:%Y-%m-%d}")
         lignes.extend([str(course.get('hippodrome', '')).replace('HIPPODROME DE ', ''),
                        course.get('libelle', ''),
                        str(course.get('discipline', '')).replace('_', ' '), '', 'SELECTION INITIALE', ''])
-        lignes.extend(formater_selection(top, top[0].get('nb_partants', 0), marches=course.get('paris_disponibles')))
+        lignes.extend(formater_selection(top, top[0].get('nb_partants', 0), marches=course.get('paris_disponibles'), day=depart.date().isoformat() if depart else datetime.now(TZ_PARIS).date().isoformat()))
         lignes.append('')
         return lignes
 
-    lignes = [f"🐎 PMU — {date_aff}", f"{len(selection)} course(s) retenue(s).", '']
-    if not selection:
+    cards = [formater_course(c) for c in selection]
+    cards = [c for c in cards if c]
+    lignes = [f"🐎 PMU — {date_aff}", f"{len(cards)} course(s) retenue(s).", '']
+    if not cards:
         lignes.append("Aucune course retenue aujourd'hui.")
-    for c in selection:
-        lignes.extend(formater_course(c))
+    for card in cards:
+        lignes.extend(card)
     return "\n".join(lignes)
 
 
@@ -1268,4 +1273,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

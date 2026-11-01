@@ -12,6 +12,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'consensus_pronostics/policy.py'
       - 'consensus_pronostics/collector.py'
       - 'consensus_pronostics/evaluate.py'
       - 'consensus_pronostics/analyses.py'
@@ -78,3 +79,4 @@ jobs:
           name: consensus-pronostics-${{ github.run_id }}
           path: consensus_pronostics/data
           retention-days: 90
+

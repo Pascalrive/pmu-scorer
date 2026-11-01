@@ -61,7 +61,7 @@ def erreur_chevaux(choix, participants):
     return ''
 
 
-def formater_selection(top, nb_partants, actualisation=False, marches=None):
+def formater_selection(top, nb_partants, actualisation=False, marches=None, day=None):
     """Présentation seule : aucun changement des chevaux ni des mises."""
     lines = ['CHEVAUX RETENUS']
     for i, ch in enumerate(top[:2]):
@@ -76,7 +76,7 @@ def formater_selection(top, nb_partants, actualisation=False, marches=None):
         lines.append(detail)
         lines.append('')
     lines.append('PARIS CONSEILLES')
-    lines.extend(paris_affiches(top[:2], nb_partants, marches))
+    lines.extend(paris_affiches(top[:2], nb_partants, marches, day=day))
     return lines
 
 
@@ -90,7 +90,15 @@ def archiver_observation(course, phase, partants, *, calcul=None, debut=None, so
     return path
 
 
-def paris_affiches(top, nb_partants, marches=None):
+def paris_affiches(top, nb_partants, marches=None, day=None):
+    if day and str(day).replace('-', '') >= '20261102':
+        original = paris_affiches(top, nb_partants, marches)
+        retained = [line for line in original if line.startswith('COUPLE ORDRE :')]
+        return retained or ['AUCUN PARI CONSEILLE : seul le couple ordre est actif depuis le 02/11.']
+    return _paris_affiches_legacy(top, nb_partants, marches)
+
+
+def _paris_affiches_legacy(top, nb_partants, marches=None):
     """Une seule source pour les lignes de paris, sans modifier le classement."""
     if not top:
         return ['AUCUN PARI CONSEILLE : selection indisponible.']
@@ -141,7 +149,7 @@ def analyser_message(text, now):
     couple = re.search(r'COUPLE (PLACE|GAGNANT|ORDRE)[^\n]*?:\s*N(\d+)[^\n]*?\+\s*N(\d+)', text)
     if couple:
         bets.append({'type': 'COUPLE_' + couple[1], 'numeros': [str(int(couple[2])), str(int(couple[3]))], 'mise': '5.00'})
-    if choices and not bets:
+    if choices and not bets and not (depart.date().isoformat()>='2026-11-02' and 'AUCUN PARI CONSEILLE' in text):
         raise ValueError('Choix sans pari explicite : ne pas inventer la mise')
     selected = [c['num'] for c in choices]
     for bet in bets:
@@ -180,6 +188,10 @@ def envoyer_trace(text, token, chat_id, *, post=None, journal=None, now=None, ex
         event = analyser_message(('ACTUALISATION\n' if source_h15 else '') + block, now)
         if has_courses and event is None:
             continue  # Une fiche par course, sans en-tete isole ni recapitulatif perime.
+        if event and event['date'] >= '20261102':
+            if any(b['type'] != 'COUPLE_ORDRE' for b in event['paris']):
+                raise ValueError('Formule suspendue depuis le 02/11 : envoi bloqué')
+            experience = None
         record = {'schema': 1, 'id': uuid4().hex, 'sent_at': now.isoformat(),
                   'revision': os.environ.get('GITHUB_SHA', 'local'), 'event': event,
                   'text': block, 'sha256': hashlib.sha256(block.encode()).hexdigest(),
@@ -304,6 +316,7 @@ def regler_pari(bet, participants, tables, *, definitif=False):
 
 
 def regler_experience(record, participants, tables):
+    if (record.get('event') or {}).get('date', '') >= '20261102':return None
     if record.get('delivery') != 'SENT':
         return None
     exp = record.get('experience') or {}
@@ -475,4 +488,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
