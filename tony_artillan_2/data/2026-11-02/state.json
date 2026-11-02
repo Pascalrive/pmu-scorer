@@ -55,7 +55,7 @@
           "number": 5,
           "name": "NOBLE MEMORY",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-02T15:45:42.271344+01:00",
           "source_captured_at": "2026-11-02T15:16:16.247398+01:00",
           "sites": [
@@ -77,6 +77,51 @@
             {
               "message_id": 6969,
               "date": 1793630742
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -20000,
+          "rank": 4,
+          "settled_at": "2026-11-02T16:41:11.109970+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b",
+            "file": "preuves/cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+            "sha256": "cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470",
+            "file": "preuves/cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470.gz"
+          }
+        },
+        {
+          "race_id": "R1C8",
+          "departure": "2026-11-02T17:01:00+01:00",
+          "number": 13,
+          "name": "MARKSWOMAN",
+          "stake_cents": 15000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-02T16:41:11.401990+01:00",
+          "source_captured_at": "2026-11-02T15:52:50.113539+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1793634052000,
+            "favoris": true,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "d255572682c0b6693ae8f0ce9e1db107358f29f5690ec844198aef72815ce3b1",
+          "telegram_receipts": [
+            {
+              "message_id": 6992,
+              "date": 1793634071
             }
           ]
         }
@@ -1277,7 +1322,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-02T16:41:11.109413+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b",
+            "file": "preuves/cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+            "sha256": "cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470",
+            "file": "preuves/cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1310,7 +1369,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-02T16:41:11.109750+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b",
+            "file": "preuves/cf15a6afedb73b5ce1ff4bd795e5d5d3c48bd3bdf1b8719fe1e5f9f9e62f202b.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+            "sha256": "cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470",
+            "file": "preuves/cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470.gz"
+          }
         }
       },
       "groups": {
@@ -1596,7 +1669,38 @@
           "checked_at": "2026-11-02T16:10:27.794893+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 15,
+          "name": "ARKEN",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "BEAU GARS",
+          "rank": 2
+        },
+        {
+          "number": 12,
+          "name": "WHITE PLATIN",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "NOBLE MEMORY",
+          "rank": 4
+        },
+        {
+          "number": 10,
+          "name": "SHUTTERWOOD",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+        "sha256": "cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470",
+        "file": "preuves/cfd817af26b80ac2b3d06bd72e10e553befbb2b547774b990743fc5f7b577470.gz"
+      }
     },
     {
       "date": "2026-11-02",
@@ -1926,7 +2030,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-02T16:40:06.906555+01:00",
+      "final_check_started_at": "2026-11-02T16:41:10.348917+01:00",
       "source_checks": {
         "canalturf": {
           "url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422282_prix-de-la-croix-du-grand-veneur.html",
@@ -1939,7 +2043,7 @@
           "file": "preuves/651abc95869b88b9d52499de5644a3be49a9ba5a93c8f52292dd7fd937ed7072.gz"
         }
       },
-      "final_check_completed_at": "2026-11-02T16:40:07.440521+01:00",
+      "final_check_completed_at": "2026-11-02T16:41:10.809704+01:00",
       "groups_frozen_at": "2026-11-02T15:52:50.113601+01:00",
       "last_reservation_check": {
         "at": "2026-11-02T16:40:07.895069+01:00",
