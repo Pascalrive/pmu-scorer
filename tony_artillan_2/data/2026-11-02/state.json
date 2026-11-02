@@ -811,7 +811,7 @@
       "id": "R1C6",
       "c": 6,
       "title": "PRIX DES FRENES",
-      "departure": "2026-11-02T15:40:00+01:00",
+      "departure": "2026-11-02T15:42:00+01:00",
       "discipline": "PLAT",
       "market": true,
       "tips": {
@@ -1030,7 +1030,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-02T15:14:50.477340+01:00",
+      "final_check_started_at": "2026-11-02T15:15:53.663305+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1695477-2026-11-02-fontainebleau-prix-des-frenes/partants-pronostics",
@@ -1043,7 +1043,14 @@
           "file": "preuves/6580693b5ffd702c7fef15b6d918e106577e8baa97b294cf315cff825e6cf539.gz"
         }
       },
-      "final_check_completed_at": "2026-11-02T15:14:51.175926+01:00"
+      "final_check_completed_at": "2026-11-02T15:15:54.562665+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-02T15:40:00+01:00",
+          "new": "2026-11-02T15:42:00+01:00",
+          "checked_at": "2026-11-02T15:15:53.663305+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-02",
@@ -1053,8 +1060,83 @@
       "departure": "2026-11-02T16:15:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 5,
+          "name": "NOBLE MEMORY",
+          "source_url": "https://www.geny.com/course/1695478-2026-11-02-fontainebleau-prix-du-centre-d-ecotourisme-de-franchard/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Centre d'Ecotourisme de Franchard",
+          "evidence": {
+            "url": "https://www.geny.com/course/1695478-2026-11-02-fontainebleau-prix-du-centre-d-ecotourisme-de-franchard/partants-pronostics",
+            "sha256": "bd80aa0629a05b82ba8e8d46c15ebb5b6711f9b62b4702ac9596d437941ece33",
+            "file": "preuves/bd80aa0629a05b82ba8e8d46c15ebb5b6711f9b62b4702ac9596d437941ece33.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+            "sha256": "6e0c32caad44d81787522017e6c8c9be900269f6d6dd74a981ee8c023a6eba8c",
+            "file": "preuves/6e0c32caad44d81787522017e6c8c9be900269f6d6dd74a981ee8c023a6eba8c.gz"
+          },
+          "captured_at": "2026-11-02T15:16:16.247398+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.4,
+            "dateRapport": 1793628904000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "NOBLE MEMORY",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422281_prix-du-centre-d-ecotourisme-de-franchard.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU CENTRE D'ECOTOURISME DE FRANCHARD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422281_prix-du-centre-d-ecotourisme-de-franchard.html",
+            "sha256": "f36f66d12e2c08b64f9ca03d63653cb1c55e9f7f6b6dfec016bb057682764cdf",
+            "file": "preuves/f36f66d12e2c08b64f9ca03d63653cb1c55e9f7f6b6dfec016bb057682764cdf.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C7/participants",
+            "sha256": "6e0c32caad44d81787522017e6c8c9be900269f6d6dd74a981ee8c023a6eba8c",
+            "file": "preuves/6e0c32caad44d81787522017e6c8c9be900269f6d6dd74a981ee8c023a6eba8c.gz"
+          },
+          "captured_at": "2026-11-02T15:16:17.975842+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.4,
+            "dateRapport": 1793628904000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 5,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -1217,7 +1299,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-02T15:15:55.013815+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1695478-2026-11-02-fontainebleau-prix-du-centre-d-ecotourisme-de-franchard/partants-pronostics",
+          "sha256": "bd80aa0629a05b82ba8e8d46c15ebb5b6711f9b62b4702ac9596d437941ece33",
+          "file": "preuves/bd80aa0629a05b82ba8e8d46c15ebb5b6711f9b62b4702ac9596d437941ece33.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422281_prix-du-centre-d-ecotourisme-de-franchard.html",
+          "sha256": "f36f66d12e2c08b64f9ca03d63653cb1c55e9f7f6b6dfec016bb057682764cdf",
+          "file": "preuves/f36f66d12e2c08b64f9ca03d63653cb1c55e9f7f6b6dfec016bb057682764cdf.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-02T15:16:17.975887+01:00",
+      "groups_frozen_at": "2026-11-02T15:16:17.975896+01:00"
     },
     {
       "date": "2026-11-02",
