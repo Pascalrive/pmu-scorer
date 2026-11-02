@@ -157,9 +157,9 @@ class CollectionTests(unittest.TestCase):
  def test_unchanged_advice_ignores_odds_only_changes(self):
   fn=formatter('pmu_notifier.py','conseil_change')
   horses=[dict(num_partant=4,nom_cheval='FEEL WELL',cote_jour=3,cote_actuel=4),dict(num_partant=12,nom_cheval='WINNIE CEN',cote_jour=3,cote_actuel=4)]
-  self.assertFalse(fn(dict(top2_final=horses),10,record()))
-  self.assertTrue(fn(dict(top2_final=horses),7,record()))
-  self.assertTrue(fn(dict(top2_final=horses[::-1]),10,record()))
+  self.assertFalse(fn(dict(top2_final=horses),10,record(),day=NOW.date().isoformat()))
+  self.assertTrue(fn(dict(top2_final=horses),7,record(),day=NOW.date().isoformat()))
+  self.assertTrue(fn(dict(top2_final=horses[::-1]),10,record(),day=NOW.date().isoformat()))
  def test_collection_retries_missing_odds_without_sending(self):
   import logging
   tree=ast.parse(Path(__file__).with_name('pmu_notifier.py').read_text())
@@ -317,4 +317,3 @@ class IdentityRegressionTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

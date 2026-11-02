@@ -2,6 +2,7 @@ import unittest
 from datetime import datetime
 from unittest.mock import Mock
 from pmu_tracking import paris_affiches, formater_selection, envoyer_trace, analyser_message
+from pmu_notifier import conseil_change
 
 class RetainedScorerTests(unittest.TestCase):
     def setUp(self):
@@ -20,3 +21,23 @@ class RetainedScorerTests(unittest.TestCase):
         txt='COURSE R1C1 — DEPART 15h00\nDATE : 2026-11-02\n'+'\n'.join(formater_selection(self.top,7,marches=['SIMPLE_PLACE','COUPLE_ORDRE'],day='2026-11-02'))
         e=analyser_message(txt,datetime.fromisoformat('2026-11-02T14:00:00+01:00'))
         self.assertEqual(e['paris'],[{'type':'COUPLE_ORDRE','numeros':['1','2'],'mise':'5.00'}])
+
+    def test_order_advice_ignores_odds_and_hidden_alert_changes(self):
+        day='2026-11-02'
+        markets=['SIMPLE_PLACE','COUPLE_ORDRE']
+        txt='COURSE R1C1 — DEPART 15h00\nDATE : '+day+'\n'+'\n'.join(formater_selection(self.top,7,marches=markets,day=day))
+        prev={'event':analyser_message(txt,datetime.fromisoformat(day+'T14:00:00+01:00'))}
+        maj={'top2_final':[dict(p,cote_actuel=3) for p in self.top],
+             'paris_disponibles':markets,
+             'experience':{'alertes':[{'num_partant':3,'motif':'Baisse de cote'}]}}
+        self.assertFalse(conseil_change(maj,7,prev,day=day))
+        self.assertTrue(conseil_change({**maj,'top2_final':self.top[::-1]},7,prev,day=day))
+        self.assertTrue(conseil_change({**maj,'paris_disponibles':['SIMPLE_PLACE']},7,prev,day=day))
+
+    def test_policy_change_is_detected_for_same_horses(self):
+        markets=['SIMPLE_PLACE','COUPLE_ORDRE']
+        txt='COURSE R1C1 — DEPART 15h00\nDATE : 2026-11-01\n'+'\n'.join(formater_selection(self.top,7,marches=markets,day='2026-11-01'))
+        prev={'event':analyser_message(txt,datetime.fromisoformat('2026-11-01T14:00:00+01:00'))}
+        maj={'top2_final':self.top,'paris_disponibles':markets}
+        self.assertFalse(conseil_change(maj,7,prev,day='2026-11-01'))
+        self.assertTrue(conseil_change(maj,7,prev,day='2026-11-02'))

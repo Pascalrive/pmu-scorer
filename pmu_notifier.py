@@ -470,18 +470,20 @@ def phase_collecte(minutes):
     return None
 
 
-def conseil_change(maj, nb_partants, precedent):
+def conseil_change(maj, nb_partants, precedent, *, day=None):
     if not precedent:
         return True
+    day = day or datetime.now(TZ_PARIS).date().isoformat()
     top = maj.get('top2_final', [])[:2]
     # Comparer les numeros ET le type de pari, sans compter les variations de cote.
-    txt = 'COURSE R1C1 — DEPART 23h59\n' + '\n'.join(formater_selection(top, nb_partants, True, maj.get('paris_disponibles'), day=datetime.now(TZ_PARIS).date().isoformat()))
+    txt = f'COURSE R1C1 — DEPART 23h59\nDATE : {day}\n' + '\n'.join(formater_selection(top, nb_partants, True, maj.get('paris_disponibles'), day=day))
     from pmu_tracking import analyser_message
     event = analyser_message(txt, datetime.now(TZ_PARIS))
     old = precedent['event']
     alerts = lambda e: [(str(p['num_partant']), p['motif']) for p in (e or {}).get('alertes', [])]
     return ((event['choix'], event['paris']) != (old['choix'], old['paris'])
-            or alerts(maj.get('experience')) != alerts(precedent.get('experience')))
+            or (day < '2026-11-02' and
+                alerts(maj.get('experience')) != alerts(precedent.get('experience'))))
 
 
 def main():
@@ -554,7 +556,7 @@ def main():
         if precedent and precedent.get('delivery') != 'SENT':
             log.warning('%s : envoi precedent incertain, verification manuelle necessaire', cle)
             continue
-        if precedent and precedent['event'].get('source') != 'MATIN' and not conseil_change(maj, len(actifs), precedent):
+        if precedent and precedent['event'].get('source') != 'MATIN' and not conseil_change(maj, len(actifs), precedent, day=date_iso):
             deja.add(f'{cle}:{phase}')  # Donnees archivees, aucun message identique.
         elif telegram_send(formater_message_h15({**course, 'phase': phase}, actifs, maj), maj.get('experience')):
             deja.add(f'{cle}:{phase}')
@@ -563,5 +565,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

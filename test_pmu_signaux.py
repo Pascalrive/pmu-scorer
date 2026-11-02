@@ -56,9 +56,9 @@ class SignauxTests(TestCase):
         exp = q.preparer_experience(hs, selection, 6, ['SIMPLE_PLACE', 'COUPLE_ORDRE'])
         prev = {'event': exp['reference']}
         maj = {'top2_final': selection, 'paris_disponibles': ['SIMPLE_PLACE', 'COUPLE_ORDRE'], 'experience': exp}
-        self.assertTrue(notifier.conseil_change(maj, 6, prev))
+        self.assertTrue(notifier.conseil_change(maj, 6, prev, day='2026-11-01'))
         prev['experience'] = exp
-        self.assertFalse(notifier.conseil_change(maj, 6, prev))
+        self.assertFalse(notifier.conseil_change(maj, 6, prev, day='2026-11-01'))
 
     def test_scorer_deferrage_does_not_confuse_protection_with_bare_feet(self):
         for code, flag, score in [
