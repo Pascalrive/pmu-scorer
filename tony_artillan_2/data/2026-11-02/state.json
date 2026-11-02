@@ -1426,7 +1426,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-02T15:49:53.495861+01:00",
+      "final_check_started_at": "2026-11-02T15:50:57.507106+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1695478-2026-11-02-fontainebleau-prix-du-centre-d-ecotourisme-de-franchard/partants-pronostics",
@@ -1439,10 +1439,10 @@
           "file": "preuves/f36f66d12e2c08b64f9ca03d63653cb1c55e9f7f6b6dfec016bb057682764cdf.gz"
         }
       },
-      "final_check_completed_at": "2026-11-02T15:49:53.564012+01:00",
+      "final_check_completed_at": "2026-11-02T15:50:57.732547+01:00",
       "groups_frozen_at": "2026-11-02T15:16:17.975896+01:00",
       "last_reservation_check": {
-        "at": "2026-11-02T15:49:53.788351+01:00",
+        "at": "2026-11-02T15:51:27.407484+01:00",
         "stop": "ATTENTE_RESULTAT"
       }
     },
@@ -1454,9 +1454,54 @@
       "departure": "2026-11-02T16:50:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "canalturf": {
+          "site": "canalturf",
+          "number": 13,
+          "name": "MARKSWOMAN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422282_prix-de-la-croix-du-grand-veneur.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE LA CROIX DU GRAND VENEUR",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422282_prix-de-la-croix-du-grand-veneur.html",
+            "sha256": "eeb1d7bedbcef513f46e63a7fefd19bdbde299a0fdef77e96a4eb86a5e443238",
+            "file": "preuves/eeb1d7bedbcef513f46e63a7fefd19bdbde299a0fdef77e96a4eb86a5e443238.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/02112026/R1/C8/participants",
+            "sha256": "3ec87b47c827171402c666f4c6511e2277f868f18fea5a95cf9db24fdff1bc5d",
+            "file": "preuves/3ec87b47c827171402c666f4c6511e2277f868f18fea5a95cf9db24fdff1bc5d.gz"
+          },
+          "captured_at": "2026-11-02T15:51:26.807371+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -7.69,
+            "dateRapport": 1793630711000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-02T15:51:24.515562+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "HTTPError: 500 Server Error: Internal Server Error for url: https://www.geny.com/course/1695479-2026-11-02-fontainebleau-prix-de-la-croix-du-grand-veneur/partants-pronosti",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-02T09:00:43.725539+01:00",
@@ -1618,7 +1663,16 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-02T15:50:57.734849+01:00",
+      "source_checks": {
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-02/fontainebleau/422282_prix-de-la-croix-du-grand-veneur.html",
+          "sha256": "eeb1d7bedbcef513f46e63a7fefd19bdbde299a0fdef77e96a4eb86a5e443238",
+          "file": "preuves/eeb1d7bedbcef513f46e63a7fefd19bdbde299a0fdef77e96a4eb86a5e443238.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-02T15:51:26.807407+01:00"
     }
   ],
   "notifications": [],
