@@ -177,7 +177,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-03T14:42:05.447486+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/03112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "fdcb5f72a8670e54a1206e93be3b1257d4b7e5472277a204ea378c87dbb06a79",
+            "file": "preuves/fdcb5f72a8670e54a1206e93be3b1257d4b7e5472277a204ea378c87dbb06a79.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/03112026/R1/C2/participants",
+            "sha256": "979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8",
+            "file": "preuves/979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -210,7 +224,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-03T14:42:05.447761+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/03112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "fdcb5f72a8670e54a1206e93be3b1257d4b7e5472277a204ea378c87dbb06a79",
+            "file": "preuves/fdcb5f72a8670e54a1206e93be3b1257d4b7e5472277a204ea378c87dbb06a79.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/03112026/R1/C2/participants",
+            "sha256": "979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8",
+            "file": "preuves/979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8.gz"
+          }
         }
       },
       "groups": {
@@ -404,8 +432,39 @@
         "at": "2026-11-03T14:29:43.952660+01:00",
         "stop": null
       },
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu"
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu",
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "NIGHT SESSION",
+          "rank": 1
+        },
+        {
+          "number": 15,
+          "name": "NETCHKA",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "NABUCA",
+          "rank": 3
+        },
+        {
+          "number": 12,
+          "name": "NOLLY WOOD",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "NINKASI SOYER",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/03112026/R1/C2/participants",
+        "sha256": "979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8",
+        "file": "preuves/979e59d50b782432d485208573102389b0349d708a0ecfcd662b4128ad0d40b8.gz"
+      }
     },
     {
       "date": "2026-11-03",
@@ -655,7 +714,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-03T14:40:31.732869+01:00",
+      "final_check_started_at": "2026-11-03T14:42:03.044461+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1695806-2026-11-03-vincennes-prix-de-gorron/partants-pronostics",
@@ -668,10 +727,10 @@
           "file": "preuves/5c0c9b9232094906e347692a43c6637ff61f29e7a5969621c6a691deae18f1bc.gz"
         }
       },
-      "final_check_completed_at": "2026-11-03T14:40:32.819532+01:00",
+      "final_check_completed_at": "2026-11-03T14:42:03.977159+01:00",
       "groups_frozen_at": "2026-11-03T14:06:16.822517+01:00",
       "last_reservation_check": {
-        "at": "2026-11-03T14:40:57.874991+01:00",
+        "at": "2026-11-03T14:42:05.534015+01:00",
         "stop": null
       }
     },
@@ -923,7 +982,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-03T14:40:32.821573+01:00",
+      "final_check_started_at": "2026-11-03T14:42:03.979165+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1695803-2026-11-03-vincennes-prix-d-arcachon/partants-pronostics",
@@ -936,7 +995,7 @@
           "file": "preuves/d0526a98cd1c0f01c42654b59f5ea945fd2ab737d620dab87d629e004d776205.gz"
         }
       },
-      "final_check_completed_at": "2026-11-03T14:40:56.328143+01:00",
+      "final_check_completed_at": "2026-11-03T14:42:04.753027+01:00",
       "groups_frozen_at": "2026-11-03T14:40:56.328150+01:00"
     },
     {
