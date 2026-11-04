@@ -1305,7 +1305,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-04T16:35:48.886108+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "402edeec782a9e297a6d003466d0753d26037904ec2e355100500db62862b19c",
+            "file": "preuves/402edeec782a9e297a6d003466d0753d26037904ec2e355100500db62862b19c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
+            "sha256": "18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27",
+            "file": "preuves/18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1338,7 +1352,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-04T16:35:48.886449+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "402edeec782a9e297a6d003466d0753d26037904ec2e355100500db62862b19c",
+            "file": "preuves/402edeec782a9e297a6d003466d0753d26037904ec2e355100500db62862b19c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
+            "sha256": "18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27",
+            "file": "preuves/18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27.gz"
+          }
         }
       },
       "groups": {},
@@ -1575,8 +1603,39 @@
         }
       },
       "final_check_completed_at": "2026-11-04T16:14:52.547945+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Test plat uniquement depuis le 02/11 : MONTE exclu"
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : MONTE exclu",
+      "official_arrival": [
+        {
+          "number": 8,
+          "name": "JOSELITO DU VIVIER",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "IZAAC D'HAVAROCHE",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "HOLD THE LINE",
+          "rank": 3
+        },
+        {
+          "number": 1,
+          "name": "JEDEO DES VAUX",
+          "rank": 4
+        },
+        {
+          "number": 9,
+          "name": "HUMOUR FESTIF",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
+        "sha256": "18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27",
+        "file": "preuves/18b3a6fe7e8694faa124016f95e6092b06cce8dbb1e73446d8f4866ca59ebd27.gz"
+      }
     },
     {
       "date": "2026-11-04",
@@ -1986,7 +2045,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-04T16:34:43.901974+01:00",
+      "final_check_started_at": "2026-11-04T16:35:47.483326+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696057-2026-11-04-nantes-prix-zeeland/partants-pronostics",
@@ -1999,10 +2058,10 @@
           "file": "preuves/52defdccc3e391910ba1a40f0aa4452f2f87089fd477b1f383cf15d23ddbf37d.gz"
         }
       },
-      "final_check_completed_at": "2026-11-04T16:34:44.360415+01:00",
+      "final_check_completed_at": "2026-11-04T16:35:48.084914+01:00",
       "groups_frozen_at": "2026-11-04T15:51:13.610028+01:00",
       "last_reservation_check": {
-        "at": "2026-11-04T16:34:45.020691+01:00",
+        "at": "2026-11-04T16:35:49.013396+01:00",
         "stop": null
       }
     },
@@ -2414,7 +2473,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-04T16:34:44.364037+01:00",
+      "final_check_started_at": "2026-11-04T16:35:48.088427+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696056-2026-11-04-nantes-prix-de-la-region-pays-de-loire/partants-pronostics",
@@ -2427,7 +2486,7 @@
           "file": "preuves/de0e24c0038c700632c1e1515d13df95ab755fcd844cf605af699467460e4c60.gz"
         }
       },
-      "final_check_completed_at": "2026-11-04T16:34:44.742796+01:00",
+      "final_check_completed_at": "2026-11-04T16:35:48.476101+01:00",
       "groups_frozen_at": "2026-11-04T16:26:19.496261+01:00"
     }
   ],
