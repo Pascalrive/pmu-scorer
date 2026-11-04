@@ -604,7 +604,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-04T15:20:09.991694+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f2ad6086d710361dae11d6d468ade78219e0c49b3c58961e883bc8a116f717d1",
+            "file": "preuves/f2ad6086d710361dae11d6d468ade78219e0c49b3c58961e883bc8a116f717d1.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/participants",
+            "sha256": "2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02",
+            "file": "preuves/2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -637,7 +651,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-04T15:20:09.991929+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "f2ad6086d710361dae11d6d468ade78219e0c49b3c58961e883bc8a116f717d1",
+            "file": "preuves/f2ad6086d710361dae11d6d468ade78219e0c49b3c58961e883bc8a116f717d1.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/participants",
+            "sha256": "2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02",
+            "file": "preuves/2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02.gz"
+          }
         }
       },
       "groups": {
@@ -831,8 +859,39 @@
         "at": "2026-11-04T15:04:39.814200+01:00",
         "stop": null
       },
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu"
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu",
+      "official_arrival": [
+        {
+          "number": 10,
+          "name": "NAEL D'AVEL",
+          "rank": 1
+        },
+        {
+          "number": 16,
+          "name": "NELSON EMGE",
+          "rank": 2
+        },
+        {
+          "number": 12,
+          "name": "NARCO DU CHATELET",
+          "rank": 3
+        },
+        {
+          "number": 13,
+          "name": "NONEKA",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "NEWTON TUILERIE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/participants",
+        "sha256": "2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02",
+        "file": "preuves/2239c6c7f12fa07a1688f7c53a6d4be11bb3d737fc2dc1d31b6a29a29ae98d02.gz"
+      }
     },
     {
       "date": "2026-11-04",
@@ -1056,9 +1115,81 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-04T15:20:33.039502+01:00",
+          "groups": {},
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 13,
+              "name": "KETBERNY",
+              "source_url": "https://www.geny.com/course/1696059-2026-11-04-nantes-prix-axa-frederic-veillon/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Axa Frédéric Veillon",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696059-2026-11-04-nantes-prix-axa-frederic-veillon/partants-pronostics",
+                "sha256": "2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a",
+                "file": "preuves/2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C5/participants",
+                "sha256": "d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd",
+                "file": "preuves/d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd.gz"
+              },
+              "captured_at": "2026-11-04T15:20:31.009407+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.92,
+                "dateRapport": 1793802001000,
+                "favoris": false,
+                "numPmu1": 13,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 6,
+              "name": "KIWI A TROIS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422535_prix-axa-frederic-veillon.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX AXA FREDERIC VEILLON",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422535_prix-axa-frederic-veillon.html",
+                "sha256": "8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445",
+                "file": "preuves/8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C5/participants",
+                "sha256": "d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd",
+                "file": "preuves/d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd.gz"
+              },
+              "captured_at": "2026-11-04T15:20:33.039440+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 8.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.2,
+                "dateRapport": 1793802001000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-04T15:19:03.030409+01:00",
+      "final_check_started_at": "2026-11-04T15:20:08.361514+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696059-2026-11-04-nantes-prix-axa-frederic-veillon/partants-pronostics",
@@ -1071,7 +1202,7 @@
           "file": "preuves/c8fd39fc27f4b4d922b5d29ff2ab261e74130b26d8c4b9a329d434e0e752afce.gz"
         }
       },
-      "final_check_completed_at": "2026-11-04T15:19:03.762971+01:00"
+      "final_check_completed_at": "2026-11-04T15:20:08.868236+01:00"
     },
     {
       "date": "2026-11-04",
@@ -1295,9 +1426,81 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-04T15:20:51.502252+01:00",
+          "groups": {},
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 7,
+              "name": "JUST BIRD",
+              "source_url": "https://www.geny.com/course/1696071-2026-11-04-nantes-prix-nozay-select-auto/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Nozay Select Auto",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696071-2026-11-04-nantes-prix-nozay-select-auto/partants-pronostics",
+                "sha256": "e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b",
+                "file": "preuves/e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
+                "sha256": "ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b",
+                "file": "preuves/ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b.gz"
+              },
+              "captured_at": "2026-11-04T15:20:50.848649+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.12,
+                "dateRapport": 1793801703000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 8,
+              "name": "JOSELITO DU VIVIER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422536_prix-nozay-select-auto-12eme-epreuve-du-grand-national-des-jockeys.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX NOZAY SELECT AUTO - 12EME EPREUVE DU GRAND NATIONAL DES JOCKEYS",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422536_prix-nozay-select-auto-12eme-epreuve-du-grand-national-des-jockeys.html",
+                "sha256": "eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d",
+                "file": "preuves/eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
+                "sha256": "ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b",
+                "file": "preuves/ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b.gz"
+              },
+              "captured_at": "2026-11-04T15:20:51.502192+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.63,
+                "dateRapport": 1793801703000,
+                "favoris": false,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-04T15:19:03.765794+01:00",
+      "final_check_started_at": "2026-11-04T15:20:08.870791+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696071-2026-11-04-nantes-prix-nozay-select-auto/partants-pronostics",
@@ -1310,7 +1513,7 @@
           "file": "preuves/49822baa6e09e8495124c65a81b48cfb233d1b569881814d5154420edc991a16.gz"
         }
       },
-      "final_check_completed_at": "2026-11-04T15:19:04.283987+01:00"
+      "final_check_completed_at": "2026-11-04T15:20:09.321540+01:00"
     },
     {
       "date": "2026-11-04",
@@ -1477,6 +1680,86 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": -3.33,
                 "dateRapport": 1793798134000,
+                "favoris": false,
+                "numPmu1": 17,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-04T15:21:11.720403+01:00",
+          "groups": {
+            "accord_geny_canalturf": {
+              "number": 17,
+              "sites": [
+                "geny",
+                "canalturf"
+              ]
+            }
+          },
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 17,
+              "name": "MIRAKALU MANAZIF",
+              "source_url": "https://www.geny.com/course/1696057-2026-11-04-nantes-prix-zeeland/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Zeeland",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696057-2026-11-04-nantes-prix-zeeland/partants-pronostics",
+                "sha256": "7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3",
+                "file": "preuves/7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C7/participants",
+                "sha256": "79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9",
+                "file": "preuves/79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9.gz"
+              },
+              "captured_at": "2026-11-04T15:21:11.050194+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 7.4,
+                "dateRapport": 1793801734000,
+                "favoris": false,
+                "numPmu1": 17,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 17,
+              "name": "MIRAKALU MANAZIF",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422537_prix-zeeland.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX ZEELAND",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422537_prix-zeeland.html",
+                "sha256": "d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958",
+                "file": "preuves/d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C7/participants",
+                "sha256": "79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9",
+                "file": "preuves/79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9.gz"
+              },
+              "captured_at": "2026-11-04T15:21:11.720330+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 7.4,
+                "dateRapport": 1793801734000,
                 "favoris": false,
                 "numPmu1": 17,
                 "grossePrise": false
@@ -1657,6 +1940,86 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-04T15:21:31.450427+01:00",
+          "groups": {
+            "accord_geny_canalturf": {
+              "number": 15,
+              "sites": [
+                "geny",
+                "canalturf"
+              ]
+            }
+          },
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 15,
+              "name": "LIBRIO BELLO",
+              "source_url": "https://www.geny.com/course/1696056-2026-11-04-nantes-prix-de-la-region-pays-de-loire/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de la Région Pays de Loire",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696056-2026-11-04-nantes-prix-de-la-region-pays-de-loire/partants-pronostics",
+                "sha256": "ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75",
+                "file": "preuves/ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C8/participants",
+                "sha256": "53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319",
+                "file": "preuves/53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319.gz"
+              },
+              "captured_at": "2026-11-04T15:21:30.756362+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1793801737000,
+                "favoris": true,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 15,
+              "name": "LIBRIO BELLO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422538_prix-de-la-region-pays-de-loire.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE LA REGION PAYS DE LOIRE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422538_prix-de-la-region-pays-de-loire.html",
+                "sha256": "b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099",
+                "file": "preuves/b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C8/participants",
+                "sha256": "53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319",
+                "file": "preuves/53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319.gz"
+              },
+              "captured_at": "2026-11-04T15:21:31.450361+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1793801737000,
+                "favoris": true,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -1664,195 +2027,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-04T14:19:20.200529+01:00",
+    "captured_at": "2026-11-04T15:21:31.450476+01:00",
     "races": [
-      {
-        "date": "2026-11-04",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX CCMB",
-        "departure": "2026-11-04T14:30:00+01:00",
-        "discipline": "ATTELE",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 8,
-            "name": "HOBBY DE L'EVRE",
-            "source_url": "https://www.geny.com/course/1696061-2026-11-04-nantes-prix-ccmb/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix CCMB",
-            "evidence": {
-              "url": "https://www.geny.com/course/1696061-2026-11-04-nantes-prix-ccmb/partants-pronostics",
-              "sha256": "4478cdb141d5afbecb06652c529edbed868a2e2521c1e9159e0aa16869ec2ee6",
-              "file": "preuves/4478cdb141d5afbecb06652c529edbed868a2e2521c1e9159e0aa16869ec2ee6.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C3/participants",
-              "sha256": "738f5063057c094b0f4418b5946497b8c3b1bcfb13f82890103a5852b1e34199",
-              "file": "preuves/738f5063057c094b0f4418b5946497b8c3b1bcfb13f82890103a5852b1e34199.gz"
-            },
-            "captured_at": "2026-11-04T14:18:02.232116+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798263000,
-              "favoris": false,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 16,
-            "name": "KEMILLA DE BRION",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422533_prix-ccmb-12eme-etape-du-grand-national-des-amateurs.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX CCMB - 12EME ETAPE DU GRAND NATIONAL DES AMATEURS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422533_prix-ccmb-12eme-etape-du-grand-national-des-amateurs.html",
-              "sha256": "331fa551518309b701d445ea0b7884101e3fe2d24653c8ad5c65ea83b227580d",
-              "file": "preuves/331fa551518309b701d445ea0b7884101e3fe2d24653c8ad5c65ea83b227580d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C3/participants",
-              "sha256": "738f5063057c094b0f4418b5946497b8c3b1bcfb13f82890103a5852b1e34199",
-              "file": "preuves/738f5063057c094b0f4418b5946497b8c3b1bcfb13f82890103a5852b1e34199.gz"
-            },
-            "captured_at": "2026-11-04T14:18:02.278381+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798263000,
-              "favoris": true,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-04T14:17:17.949845+01:00",
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1696061-2026-11-04-nantes-prix-ccmb/partants-pronostics",
-            "sha256": "4478cdb141d5afbecb06652c529edbed868a2e2521c1e9159e0aa16869ec2ee6",
-            "file": "preuves/4478cdb141d5afbecb06652c529edbed868a2e2521c1e9159e0aa16869ec2ee6.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422533_prix-ccmb-12eme-etape-du-grand-national-des-amateurs.html",
-            "sha256": "331fa551518309b701d445ea0b7884101e3fe2d24653c8ad5c65ea83b227580d",
-            "file": "preuves/331fa551518309b701d445ea0b7884101e3fe2d24653c8ad5c65ea83b227580d.gz"
-          }
-        },
-        "final_check_completed_at": "2026-11-04T14:17:41.742191+01:00"
-      },
-      {
-        "date": "2026-11-04",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX PMU LE DRIVER",
-        "departure": "2026-11-04T15:05:00+01:00",
-        "discipline": "ATTELE",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 16,
-            "name": "NELSON EMGE",
-            "source_url": "https://www.geny.com/course/1696058-2026-11-04-nantes-prix-pmu-le-driver/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Pmu le Driver",
-            "evidence": {
-              "url": "https://www.geny.com/course/1696058-2026-11-04-nantes-prix-pmu-le-driver/partants-pronostics",
-              "sha256": "ef8e23b5a083f6e006c23a142e7da0804467351b1680f1e62409f3bce62e5f87",
-              "file": "preuves/ef8e23b5a083f6e006c23a142e7da0804467351b1680f1e62409f3bce62e5f87.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/participants",
-              "sha256": "ed54fcf65c319a7d61baa1d010f930f0dbddef76a5b758b31724726bff40e72e",
-              "file": "preuves/ed54fcf65c319a7d61baa1d010f930f0dbddef76a5b758b31724726bff40e72e.gz"
-            },
-            "captured_at": "2026-11-04T14:18:02.354289+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -13.33,
-              "dateRapport": 1793798117000,
-              "favoris": true,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 16,
-            "name": "NELSON EMGE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422534_prix-pmu-le-driver.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX PMU LE DRIVER",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422534_prix-pmu-le-driver.html",
-              "sha256": "dfb9fcfad4952e0c0a535435ca6c160a70d4551ad16ede5d5775230de53d213f",
-              "file": "preuves/dfb9fcfad4952e0c0a535435ca6c160a70d4551ad16ede5d5775230de53d213f.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C4/participants",
-              "sha256": "ed54fcf65c319a7d61baa1d010f930f0dbddef76a5b758b31724726bff40e72e",
-              "file": "preuves/ed54fcf65c319a7d61baa1d010f930f0dbddef76a5b758b31724726bff40e72e.gz"
-            },
-            "captured_at": "2026-11-04T14:18:02.402282+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -13.33,
-              "dateRapport": 1793798117000,
-              "favoris": true,
-              "numPmu1": 16,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-04T14:17:42.220411+01:00",
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1696058-2026-11-04-nantes-prix-pmu-le-driver/partants-pronostics",
-            "sha256": "ef8e23b5a083f6e006c23a142e7da0804467351b1680f1e62409f3bce62e5f87",
-            "file": "preuves/ef8e23b5a083f6e006c23a142e7da0804467351b1680f1e62409f3bce62e5f87.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422534_prix-pmu-le-driver.html",
-            "sha256": "dfb9fcfad4952e0c0a535435ca6c160a70d4551ad16ede5d5775230de53d213f",
-            "file": "preuves/dfb9fcfad4952e0c0a535435ca6c160a70d4551ad16ede5d5775230de53d213f.gz"
-          }
-        },
-        "final_check_completed_at": "2026-11-04T14:18:00.080527+01:00",
-        "groups_frozen_at": "2026-11-04T14:18:00.080535+01:00"
-      },
       {
         "date": "2026-11-04",
         "id": "R1C5",
@@ -1872,24 +2048,24 @@
             "source_title": "Prix Axa Frédéric Veillon",
             "evidence": {
               "url": "https://www.geny.com/course/1696059-2026-11-04-nantes-prix-axa-frederic-veillon/partants-pronostics",
-              "sha256": "bde410ef3ed75b12b31e42e950aa3abc891b1b8760fc8edd2a86c7faad3e93dc",
-              "file": "preuves/bde410ef3ed75b12b31e42e950aa3abc891b1b8760fc8edd2a86c7faad3e93dc.gz"
+              "sha256": "2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a",
+              "file": "preuves/2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C5/participants",
-              "sha256": "a6e4602bdef324e0d5c81e5052342ee7afd6dfb3058834c783eeb2f6573a9f50",
-              "file": "preuves/a6e4602bdef324e0d5c81e5052342ee7afd6dfb3058834c783eeb2f6573a9f50.gz"
+              "sha256": "d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd",
+              "file": "preuves/d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd.gz"
             },
-            "captured_at": "2026-11-04T14:18:19.490285+01:00",
+            "captured_at": "2026-11-04T15:20:31.009407+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798129000,
+              "nombreIndicateurTendance": 1.92,
+              "dateRapport": 1793802001000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -1905,24 +2081,24 @@
             "source_title": "Le pronostic du PRIX AXA FREDERIC VEILLON",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422535_prix-axa-frederic-veillon.html",
-              "sha256": "a7a72126f9609f0c4c6911e484a323b126a2c7107d808fc3aeea6d1fc7a15b13",
-              "file": "preuves/a7a72126f9609f0c4c6911e484a323b126a2c7107d808fc3aeea6d1fc7a15b13.gz"
+              "sha256": "8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445",
+              "file": "preuves/8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C5/participants",
-              "sha256": "a6e4602bdef324e0d5c81e5052342ee7afd6dfb3058834c783eeb2f6573a9f50",
-              "file": "preuves/a6e4602bdef324e0d5c81e5052342ee7afd6dfb3058834c783eeb2f6573a9f50.gz"
+              "sha256": "d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd",
+              "file": "preuves/d3260e114cd1e88fde5727a490711021d0eb92700fe58eca7d93ca76c3d158fd.gz"
             },
-            "captured_at": "2026-11-04T14:18:20.066777+01:00",
+            "captured_at": "2026-11-04T15:20:33.039440+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 8.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798129000,
+              "nombreIndicateurTendance": 1.2,
+              "dateRapport": 1793802001000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -1931,18 +2107,20 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-04T15:20:08.361514+01:00",
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1696059-2026-11-04-nantes-prix-axa-frederic-veillon/partants-pronostics",
-            "sha256": "bde410ef3ed75b12b31e42e950aa3abc891b1b8760fc8edd2a86c7faad3e93dc",
-            "file": "preuves/bde410ef3ed75b12b31e42e950aa3abc891b1b8760fc8edd2a86c7faad3e93dc.gz"
+            "sha256": "2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a",
+            "file": "preuves/2382f851ef73bf996216bb41ac6d60ebbb0c4859e4a524eb33572376705aeb3a.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422535_prix-axa-frederic-veillon.html",
-            "sha256": "a7a72126f9609f0c4c6911e484a323b126a2c7107d808fc3aeea6d1fc7a15b13",
-            "file": "preuves/a7a72126f9609f0c4c6911e484a323b126a2c7107d808fc3aeea6d1fc7a15b13.gz"
+            "sha256": "8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445",
+            "file": "preuves/8aa847657a7fd69c258d92e6a138c6324331163e5d667091b61a2287392e4445.gz"
           }
-        }
+        },
+        "final_check_completed_at": "2026-11-04T15:20:08.868236+01:00"
       },
       {
         "date": "2026-11-04",
@@ -1963,24 +2141,24 @@
             "source_title": "Prix Nozay Select Auto",
             "evidence": {
               "url": "https://www.geny.com/course/1696071-2026-11-04-nantes-prix-nozay-select-auto/partants-pronostics",
-              "sha256": "6dc3bd6b41b17db699bea9ac3d11899e99ebbf61c55820fcfc46a1edd5303bc6",
-              "file": "preuves/6dc3bd6b41b17db699bea9ac3d11899e99ebbf61c55820fcfc46a1edd5303bc6.gz"
+              "sha256": "e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b",
+              "file": "preuves/e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
-              "sha256": "0b3cba4a526991e409b23053eed8a060fee33501a7da23860bff419b356b86a2",
-              "file": "preuves/0b3cba4a526991e409b23053eed8a060fee33501a7da23860bff419b356b86a2.gz"
+              "sha256": "ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b",
+              "file": "preuves/ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b.gz"
             },
-            "captured_at": "2026-11-04T14:18:39.789030+01:00",
+            "captured_at": "2026-11-04T15:20:50.848649+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.71,
-              "dateRapport": 1793798103000,
+              "nombreIndicateurTendance": -3.12,
+              "dateRapport": 1793801703000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -1996,24 +2174,24 @@
             "source_title": "Le pronostic du PRIX NOZAY SELECT AUTO - 12EME EPREUVE DU GRAND NATIONAL DES JOCKEYS",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422536_prix-nozay-select-auto-12eme-epreuve-du-grand-national-des-jockeys.html",
-              "sha256": "e6ff95354430a88a6cad770f2fefb4dd47554aeb2ba5711690c67bb6d1ae1d53",
-              "file": "preuves/e6ff95354430a88a6cad770f2fefb4dd47554aeb2ba5711690c67bb6d1ae1d53.gz"
+              "sha256": "eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d",
+              "file": "preuves/eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C6/participants",
-              "sha256": "0b3cba4a526991e409b23053eed8a060fee33501a7da23860bff419b356b86a2",
-              "file": "preuves/0b3cba4a526991e409b23053eed8a060fee33501a7da23860bff419b356b86a2.gz"
+              "sha256": "ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b",
+              "file": "preuves/ab1e0d22ae387df2948e9b2d29430c535e91644682bf3279efacf1a7cd2de68b.gz"
             },
-            "captured_at": "2026-11-04T14:18:40.443935+01:00",
+            "captured_at": "2026-11-04T15:20:51.502192+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.4,
+              "rapport": 6.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.47,
-              "dateRapport": 1793798103000,
+              "nombreIndicateurTendance": 1.63,
+              "dateRapport": 1793801703000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -2022,18 +2200,20 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-04T15:20:08.870791+01:00",
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1696071-2026-11-04-nantes-prix-nozay-select-auto/partants-pronostics",
-            "sha256": "6dc3bd6b41b17db699bea9ac3d11899e99ebbf61c55820fcfc46a1edd5303bc6",
-            "file": "preuves/6dc3bd6b41b17db699bea9ac3d11899e99ebbf61c55820fcfc46a1edd5303bc6.gz"
+            "sha256": "e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b",
+            "file": "preuves/e8d025173c36f67c5621739f108d682be0acb2a9a2a4a42f7ce8db125106c47b.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422536_prix-nozay-select-auto-12eme-epreuve-du-grand-national-des-jockeys.html",
-            "sha256": "e6ff95354430a88a6cad770f2fefb4dd47554aeb2ba5711690c67bb6d1ae1d53",
-            "file": "preuves/e6ff95354430a88a6cad770f2fefb4dd47554aeb2ba5711690c67bb6d1ae1d53.gz"
+            "sha256": "eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d",
+            "file": "preuves/eb1842426938f0ab0f3fa27bb8d0c01c2c78a0261bd7321df2a3aa5e5f33be1d.gz"
           }
-        }
+        },
+        "final_check_completed_at": "2026-11-04T15:20:09.321540+01:00"
       },
       {
         "date": "2026-11-04",
@@ -2054,15 +2234,15 @@
             "source_title": "Prix Zeeland",
             "evidence": {
               "url": "https://www.geny.com/course/1696057-2026-11-04-nantes-prix-zeeland/partants-pronostics",
-              "sha256": "29fb4eeed9468d70a03b2a46c437952d891a5d096553652c946517007e159023",
-              "file": "preuves/29fb4eeed9468d70a03b2a46c437952d891a5d096553652c946517007e159023.gz"
+              "sha256": "7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3",
+              "file": "preuves/7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C7/participants",
-              "sha256": "518c0138b69d38356f67af467fb3f57fcda3396cc85a24459369b91c924c73f5",
-              "file": "preuves/518c0138b69d38356f67af467fb3f57fcda3396cc85a24459369b91c924c73f5.gz"
+              "sha256": "79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9",
+              "file": "preuves/79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9.gz"
             },
-            "captured_at": "2026-11-04T14:18:59.705169+01:00",
+            "captured_at": "2026-11-04T15:21:11.050194+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2070,8 +2250,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793798134000,
+              "nombreIndicateurTendance": 7.4,
+              "dateRapport": 1793801734000,
               "favoris": false,
               "numPmu1": 17,
               "grossePrise": false
@@ -2087,15 +2267,15 @@
             "source_title": "Le pronostic du PRIX ZEELAND",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422537_prix-zeeland.html",
-              "sha256": "cf33bf6054ccb185474c1fc025da36bc6a988fc5717c5555a049419baf981092",
-              "file": "preuves/cf33bf6054ccb185474c1fc025da36bc6a988fc5717c5555a049419baf981092.gz"
+              "sha256": "d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958",
+              "file": "preuves/d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C7/participants",
-              "sha256": "518c0138b69d38356f67af467fb3f57fcda3396cc85a24459369b91c924c73f5",
-              "file": "preuves/518c0138b69d38356f67af467fb3f57fcda3396cc85a24459369b91c924c73f5.gz"
+              "sha256": "79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9",
+              "file": "preuves/79cc16902dde7ec0482ec71d894e40bb092e4270e0f00c0fb2ac1cb58fd776f9.gz"
             },
-            "captured_at": "2026-11-04T14:19:00.253063+01:00",
+            "captured_at": "2026-11-04T15:21:11.720330+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2103,8 +2283,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.33,
-              "dateRapport": 1793798134000,
+              "nombreIndicateurTendance": 7.4,
+              "dateRapport": 1793801734000,
               "favoris": false,
               "numPmu1": 17,
               "grossePrise": false
@@ -2116,13 +2296,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1696057-2026-11-04-nantes-prix-zeeland/partants-pronostics",
-            "sha256": "29fb4eeed9468d70a03b2a46c437952d891a5d096553652c946517007e159023",
-            "file": "preuves/29fb4eeed9468d70a03b2a46c437952d891a5d096553652c946517007e159023.gz"
+            "sha256": "7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3",
+            "file": "preuves/7fb89178d91bff6de43b2fd67841968de6d27a75df1e7481c63a334d03622ef3.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422537_prix-zeeland.html",
-            "sha256": "cf33bf6054ccb185474c1fc025da36bc6a988fc5717c5555a049419baf981092",
-            "file": "preuves/cf33bf6054ccb185474c1fc025da36bc6a988fc5717c5555a049419baf981092.gz"
+            "sha256": "d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958",
+            "file": "preuves/d3db955acc52bc27e7d7cf0fdda3c2270b28ed73021ddb8e2ecc4cf134fa8958.gz"
           }
         }
       },
@@ -2145,15 +2325,15 @@
             "source_title": "Prix de la Région Pays de Loire",
             "evidence": {
               "url": "https://www.geny.com/course/1696056-2026-11-04-nantes-prix-de-la-region-pays-de-loire/partants-pronostics",
-              "sha256": "35641014988d7f26f1c8fcb0e5c0faa6ac73693cc98fd67b7ea6cafafda24144",
-              "file": "preuves/35641014988d7f26f1c8fcb0e5c0faa6ac73693cc98fd67b7ea6cafafda24144.gz"
+              "sha256": "ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75",
+              "file": "preuves/ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C8/participants",
-              "sha256": "70340d3e8fd8b50c4f5ef456c6406ffb3ccf45abdb472fa55609c14afe431d77",
-              "file": "preuves/70340d3e8fd8b50c4f5ef456c6406ffb3ccf45abdb472fa55609c14afe431d77.gz"
+              "sha256": "53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319",
+              "file": "preuves/53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319.gz"
             },
-            "captured_at": "2026-11-04T14:19:19.584401+01:00",
+            "captured_at": "2026-11-04T15:21:30.756362+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2162,7 +2342,7 @@
               "rapport": 1.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798137000,
+              "dateRapport": 1793801737000,
               "favoris": true,
               "numPmu1": 15,
               "grossePrise": false
@@ -2178,15 +2358,15 @@
             "source_title": "Le pronostic du PRIX DE LA REGION PAYS DE LOIRE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422538_prix-de-la-region-pays-de-loire.html",
-              "sha256": "d1caa6913d6c2fcf710b491140736789a88847eae3aa31543fd1a0084a968513",
-              "file": "preuves/d1caa6913d6c2fcf710b491140736789a88847eae3aa31543fd1a0084a968513.gz"
+              "sha256": "b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099",
+              "file": "preuves/b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/04112026/R1/C8/participants",
-              "sha256": "70340d3e8fd8b50c4f5ef456c6406ffb3ccf45abdb472fa55609c14afe431d77",
-              "file": "preuves/70340d3e8fd8b50c4f5ef456c6406ffb3ccf45abdb472fa55609c14afe431d77.gz"
+              "sha256": "53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319",
+              "file": "preuves/53f07cbd4d635798c2f30565ead74c7fa1b9ec54f34b8c93d6206ab5ca0d8319.gz"
             },
-            "captured_at": "2026-11-04T14:19:20.200408+01:00",
+            "captured_at": "2026-11-04T15:21:31.450361+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -2195,7 +2375,7 @@
               "rapport": 1.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1793798137000,
+              "dateRapport": 1793801737000,
               "favoris": true,
               "numPmu1": 15,
               "grossePrise": false
@@ -2207,13 +2387,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1696056-2026-11-04-nantes-prix-de-la-region-pays-de-loire/partants-pronostics",
-            "sha256": "35641014988d7f26f1c8fcb0e5c0faa6ac73693cc98fd67b7ea6cafafda24144",
-            "file": "preuves/35641014988d7f26f1c8fcb0e5c0faa6ac73693cc98fd67b7ea6cafafda24144.gz"
+            "sha256": "ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75",
+            "file": "preuves/ceaf396ec4433e3c3b15fa160c4e1adda423ac4a7c2c2445302151dbf2f28f75.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-04/nantes/422538_prix-de-la-region-pays-de-loire.html",
-            "sha256": "d1caa6913d6c2fcf710b491140736789a88847eae3aa31543fd1a0084a968513",
-            "file": "preuves/d1caa6913d6c2fcf710b491140736789a88847eae3aa31543fd1a0084a968513.gz"
+            "sha256": "b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099",
+            "file": "preuves/b1e806089e8e0683c3f979ff1aef13f465eac7bcb56fa1f6624c9f86c3faf099.gz"
           }
         }
       }
