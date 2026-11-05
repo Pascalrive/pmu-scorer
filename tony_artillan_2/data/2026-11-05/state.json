@@ -658,7 +658,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-05T16:28:39.697188+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/05112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "384ec161bed06371a6066d38bf4a2ed06b7353f5ffad95dbaea25145acfdcb56",
+            "file": "preuves/384ec161bed06371a6066d38bf4a2ed06b7353f5ffad95dbaea25145acfdcb56.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/05112026/R1/C5/participants",
+            "sha256": "dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc",
+            "file": "preuves/dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -691,7 +705,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-05T16:28:39.697507+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/05112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "384ec161bed06371a6066d38bf4a2ed06b7353f5ffad95dbaea25145acfdcb56",
+            "file": "preuves/384ec161bed06371a6066d38bf4a2ed06b7353f5ffad95dbaea25145acfdcb56.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/05112026/R1/C5/participants",
+            "sha256": "dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc",
+            "file": "preuves/dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc.gz"
+          }
         }
       },
       "groups": {},
@@ -856,8 +884,39 @@
         }
       },
       "final_check_completed_at": "2026-11-05T16:14:58.061526+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu"
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu",
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "MALIUM",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "MOUFFETARD",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "MUST ATOUT",
+          "rank": 3
+        },
+        {
+          "number": 6,
+          "name": "MYSTERY QUEEN",
+          "rank": 4
+        },
+        {
+          "number": 5,
+          "name": "MOHAWK",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/05112026/R1/C5/participants",
+        "sha256": "dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc",
+        "file": "preuves/dbd45a6947513da7d0c5aab26ae1d3d39ba322eb3628d0397abaaec33e9d6edc.gz"
+      }
     },
     {
       "date": "2026-11-05",
@@ -1107,7 +1166,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-05T16:27:35.513661+01:00",
+      "final_check_started_at": "2026-11-05T16:28:38.808867+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696314-2026-11-05-vincennes-prix-reynolds/partants-pronostics",
@@ -1120,10 +1179,10 @@
           "file": "preuves/2096b8555e12b15de667dfaea703f16f4cc799935123f16634aed3306929b842.gz"
         }
       },
-      "final_check_completed_at": "2026-11-05T16:27:36.117599+01:00",
+      "final_check_completed_at": "2026-11-05T16:28:39.092487+01:00",
       "groups_frozen_at": "2026-11-05T15:50:30.548962+01:00",
       "last_reservation_check": {
-        "at": "2026-11-05T16:27:36.782101+01:00",
+        "at": "2026-11-05T16:28:39.769695+01:00",
         "stop": null
       }
     },
@@ -1345,7 +1404,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-05T16:27:36.120865+01:00",
+      "final_check_started_at": "2026-11-05T16:28:39.095729+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696310-2026-11-05-vincennes-prix-de-ranville/partants-pronostics",
@@ -1358,7 +1417,7 @@
           "file": "preuves/32fe0e7fdb2080f903e90e330d724cac1bf26f380ee30db448e960e7c27db74b.gz"
         }
       },
-      "final_check_completed_at": "2026-11-05T16:27:36.625344+01:00"
+      "final_check_completed_at": "2026-11-05T16:28:39.587381+01:00"
     },
     {
       "date": "2026-11-05",
