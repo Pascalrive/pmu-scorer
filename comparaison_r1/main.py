@@ -17,7 +17,7 @@ from .model import START, END, STRATEGIES, account, reserve, freeze, groups, set
 from .telegram import send
 from comparaison_r1.geny_fallback import read_tip, unavailable_label
 from comparaison_r1.odds import odds_label
-from comparaison_r1.run_health import missing_control_reason, remember_preview
+from comparaison_r1.run_health import missing_control_reason, remember_preview, urgent_course, live_window
 
 ROOT=Path(__file__).parent
 TZ=ZoneInfo('Europe/Paris')
@@ -118,6 +118,10 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
     race['market']=meta.get('hasEParis') is not False and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('enVente') is not False for x in meta.get('paris',[]))
     horses=f.json(base+'/participants')['participants']
     for site in SITES:
+        remaining=(datetime.fromisoformat(race['departure'])-clock()).total_seconds()
+        if remaining<=0:break
+        if not preview and remaining<=120 and race.get('groups',{}).get('majorite_3_ou_4'):
+            break
         if site in race['tips']:
             if preview:
                 t=race['tips'][site]
@@ -140,7 +144,11 @@ def collect_race(race,f,folder,clock=lambda:datetime.now(TZ),preview=False):
                     'status':'APERÇU','playable':horse.get('statut')=='PARTANT' and race['market'],
                     'odds':horse.get('dernierRapportDirect') or horse.get('dernierRapportReference')}
                 race['errors'].pop(site,None)
-            elif not preview and freeze(race,site,tip,horse,clock()):race['errors'].pop(site,None)
+            elif not preview and freeze(race,site,tip,horse,clock()):
+                race['errors'].pop(site,None)
+                # freeze accepted this vote before departure; never wait for a slow optional source.
+                race['groups']=groups(race['tips'])
+                if race['groups']:race['groups_frozen_at']=race['tips'][site]['captured_at']
         except (ValueError,KeyError,TypeError,requests.RequestException) as e:
             race['errors'][site]={'type':type(e).__name__,'reason':str(e).split('\n')[0][:200],'at':clock().isoformat()}
             if hasattr(e,'source_status'):race['errors'][site]['source_status']=e.source_status
@@ -310,6 +318,27 @@ def confirmed_before(receipt,departure):
     return all(type(r.get('date')) is int and type(r.get('message_id')) is int and r['date']<end for r in receipt['receipts'])
 
 
+def settle_state(state,f,folder,pending_only=False):
+    pending_ids={b['race_id'] for a in state.get('solutions',{}).values() for b in a['bets'] if b['status']=='EN_ATTENTE'}
+    for race in sorted(state['races'],key=lambda r:r['id'] not in pending_ids):
+        if pending_only and race['id'] not in pending_ids:continue
+        if urgent_course(state,datetime.now(TZ)) and race['id'] not in pending_ids:continue
+        if datetime.now(TZ)<datetime.fromisoformat(race['departure']):continue
+        bets=[b for a in state['solutions'].values() for b in a['bets'] if b['race_id']==race['id']]
+        if race.get('official_arrival') and not any(t['status']=='EN_ATTENTE' for t in list(race['tips'].values())+bets):continue
+        base=base_url(state['date'],race['c']);u=base+'/rapports-definitifs?specialisation=INTERNET'
+        try:
+            payload=f.json(u);horses=f.json(base+'/participants')['participants']
+            if isinstance(payload,list) and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('rapports') for x in payload):
+                race['official_arrival']=[{'number':h['numPmu'],'name':h['nom'],'rank':h['ordreArrivee']} for h in sorted(horses,key=lambda h:h.get('ordreArrivee') or 999) if isinstance(h.get('ordreArrivee'),int) and 1<=h['ordreArrivee']<=5]
+                race['arrival_evidence']=proof(folder,base+'/participants',f.get(base+'/participants'))
+            for tip in list(race['tips'].values())+bets:
+                if settle(tip,payload,horses):
+                    tip['settled_at']=datetime.now(TZ).isoformat();tip['result_evidence']=proof(folder,u,f.get(u))
+                    tip['result_participants_evidence']=proof(folder,base+'/participants',f.get(base+'/participants'))
+            race.pop('settlement_error',None)
+        except (ValueError,KeyError,requests.RequestException) as e:race['settlement_error']=type(e).__name__
+
 def run(notify=True,probe=False,root=ROOT,announce=False):
     now=datetime.now(TZ);day=now.date().isoformat();f=Fetcher();data=root/'data';data.mkdir(parents=True,exist_ok=True)
     notices_path=data/'notifications.json'
@@ -342,37 +371,31 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
             write(data/'probe'/'access.json',{'at':now.isoformat(),'race':race['id'],'results':results,'audit':f.audit})
             notify_message('🔎 TONY ARTILLAN — PRÉPARATION\n16/10 → 15/12/2026 · bilan le 16/12\nTurfin, Canalturf, ZEturf et Geny\nPertes successives : 100 → 200 → 150 → 150 → 200 €, puis arrêt. Gain : retour 100 €.\nRepère +200 € NET, sans arrêt à ce seuil depuis le 19/10.\nPlafond : 1 200 € de mises cumulées/jour/solution, remboursements inclus. Si la prochaine mise dépasse le reste, arrêt sans réduction.\nUn seul compte : majorité 3 ou 4/4 uniquement. Autres catégories observées sans mise.\n\nTest d’accès depuis GitHub :\n'+'\n'.join(k+' : '+v['status'] for k,v in results.items())+'\n\nAucun résultat rétrospectif ni pari réel. Les choix du diagnostic ne comptent pas dans le test.')
             print('PROBE',json.dumps({k:v['status'] for k,v in results.items()}));return
+        settle_state(state,f,folder,pending_only=True)
         write(path,state)
-        for race in state['races']:
+        for race in sorted(state['races'],key=lambda r:r['departure']):
+            urgent=urgent_course(state,datetime.now(TZ))
+            if urgent and race['id']!=urgent['id']:continue
             try:collect_race(race,f,folder)
             except (ValueError,KeyError,requests.RequestException) as e:race['errors']['official']={'reason':str(e)[:200]}
             write(path,state)
-            if race['tips'] and datetime.now(TZ)<datetime.fromisoformat(race['departure']):notify_message(race_message(race))
+            if race['tips'] and datetime.now(TZ)<datetime.fromisoformat(race['departure']) and not urgent_course(state,datetime.now(TZ)):
+                notify_message(race_message(race))
     states=[]
-    for path in sorted(data.glob('????-??-??/state.json')):
+    current_path=data/day/'state.json'
+    history_deferred=live_window(json.loads(current_path.read_text()),datetime.now(TZ)) if current_path.exists() else False
+    for path in sorted(data.glob('????-??-??/state.json'),key=lambda p:(p.parent.name!=day,p.parent.name)):
         state=json.loads(path.read_text())
         if not START<=state['date']<=END:continue
+        if state['date']!=day and history_deferred:
+            states.append(state)
+            continue
         for key in STRATEGIES:
             state.setdefault('solutions',{}).setdefault(key,{'bets':[]})
             state['solutions'][key]['budget_cents']=daily_budget(state['date'])
             state['solutions'][key]['target_cents']=daily_target(state['date'])
             state['solutions'][key]['stop_at_target']=stop_at_target(state['date'])
-        for race in state['races']:
-            if datetime.now(TZ)<datetime.fromisoformat(race['departure']):continue
-            bets=[b for a in state['solutions'].values() for b in a['bets'] if b['race_id']==race['id']]
-            if race.get('official_arrival') and not any(t['status']=='EN_ATTENTE' for t in list(race['tips'].values())+bets):continue
-            base=base_url(state['date'],race['c']);u=base+'/rapports-definitifs?specialisation=INTERNET'
-            try:
-                payload=f.json(u);horses=f.json(base+'/participants')['participants']
-                if isinstance(payload,list) and any(x.get('typePari')=='E_SIMPLE_GAGNANT' and x.get('rapports') for x in payload):
-                    race['official_arrival']=[{'number':h['numPmu'],'name':h['nom'],'rank':h['ordreArrivee']} for h in sorted(horses,key=lambda h:h.get('ordreArrivee') or 999) if isinstance(h.get('ordreArrivee'),int) and 1<=h['ordreArrivee']<=5]
-                    race['arrival_evidence']=proof(path.parent,base+'/participants',f.get(base+'/participants'))
-                for tip in list(race['tips'].values())+bets:
-                    if settle(tip,payload,horses):
-                        tip['settled_at']=datetime.now(TZ).isoformat();tip['result_evidence']=proof(path.parent,u,f.get(u))
-                        tip['result_participants_evidence']=proof(path.parent,base+'/participants',f.get(base+'/participants'))
-                race.pop('settlement_error',None)
-            except (ValueError,KeyError,requests.RequestException) as e:race['settlement_error']=type(e).__name__
+        settle_state(state,f,path.parent)
         played={b['race_id'] for a in state['solutions'].values() for b in a['bets']}
         for race in state['races']:
             if race['id'] not in played and datetime.now(TZ)>=datetime.fromisoformat(race['departure']):
@@ -428,7 +451,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
         for state in states:
             if state['date']!=day:continue
             folder=data/day;path=folder/'state.json'
-            preview=morning_preview(state,f,folder) if now.hour>=7 else {}
+            preview=morning_preview(state,f,folder) if now.hour>=7 and not urgent_course(state,datetime.now(TZ),seconds=600) else {}
             write(path,state)
             if preview.get('races'):
                 preview_text=preview_report(state,preview)
@@ -453,6 +476,7 @@ def run(notify=True,probe=False,root=ROOT,announce=False):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--probe',action='store_true');p.add_argument('--announce',action='store_true');a=p.parse_args()
     run(notify=not a.dry_run,probe=a.probe,announce=a.announce)
+
 
 
 
