@@ -74,9 +74,10 @@ class SimplificationTests(unittest.TestCase):
             try:
                 data=Path('comparaison_r1/data/2026-11-02');data.mkdir(parents=True)
                 (data/'state.json').write_text(json.dumps({'date':'2026-11-02','races':[{'departure':'2026-11-02T14:15:00+01:00'}]}))
-                with patch.object(worker,'datetime') as dt,patch.object(worker.time,'monotonic',side_effect=[0,600]),patch.object(worker.subprocess,'run',return_value=Mock(returncode=0)),patch.object(worker,'checkpoint') as cp,patch.object(worker,'dispatch') as send:
+                with patch.object(worker,'recover_previous',return_value=False),patch.object(worker,'datetime') as dt,patch.object(worker.time,'monotonic',side_effect=[0,600]),patch.object(worker.subprocess,'run',return_value=Mock(returncode=0)),patch.object(worker,'checkpoint') as cp,patch.object(worker,'dispatch') as send:
                     dt.now.return_value=fixed;dt.fromisoformat.side_effect=datetime.fromisoformat
                     worker.run('comparaison_r1',persist=True,continue_run=True)
                     send.assert_called_once_with('comparaison_r1');self.assertEqual(cp.call_count,2)
                 self.assertEqual(json.loads(Path('comparaison_r1/data/worker.json').read_text())['status'],'RELAY_ACCEPTED')
             finally:os.chdir(cwd)
+

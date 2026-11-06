@@ -9,6 +9,10 @@ on:
         description: Internal no-bet relay verification
         type: boolean
         default: false
+      recovery_attempt:
+        description: Bounded recovery retry counter
+        type: string
+        default: "0"
       dry_run:
         type: boolean
         default: false
@@ -44,6 +48,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GH_TOKEN: ${{ github.token }}
           DRY_RUN: ${{ inputs.dry_run }}
+          RECOVERY_ATTEMPT: ${{ inputs.recovery_attempt || '0' }}
         run: |
           TODAY=$(TZ=Europe/Paris date +%F)
           FLAGS=''
@@ -75,5 +80,6 @@ jobs:
           name: tony-artillan-2-${{ github.run_id }}
           path: tony_artillan_2/data
           retention-days: 90
+
 
 

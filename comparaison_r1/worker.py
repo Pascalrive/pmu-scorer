@@ -15,6 +15,8 @@ import time
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
+from .recovery import recover_previous
+
 TZ = ZoneInfo('Europe/Paris')
 PACKAGES = ('comparaison_r1', 'tony_artillan_2', 'tony_artillan_3_5')
 
@@ -49,11 +51,13 @@ def checkpoint(package):
     raise RuntimeError('Archive push failed; worker stopped before next pass')
 
 
-def dispatch(package, probe=False):
+def dispatch(package, probe=False, recovery_attempt=None):
     token = os.environ['GH_TOKEN']
     repo = os.environ['GITHUB_REPOSITORY']
     url = f'https://api.github.com/repos/{repo}/actions/workflows/{package}.yml/dispatches'
-    req = Request(url, data=json.dumps({'ref':'main','inputs':{'dry_run':probe, 'relay_probe':probe}}).encode(),
+    inputs={'dry_run':probe, 'relay_probe':probe}
+    if recovery_attempt is not None:inputs['recovery_attempt']=str(recovery_attempt)
+    req = Request(url, data=json.dumps({'ref':'main','inputs':inputs}).encode(),
                   headers={'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json',
                            'Content-Type':'application/json'}, method='POST')
     with urlopen(req, timeout=30) as response:
@@ -65,6 +69,8 @@ def run(package, persist=False, continue_run=False, duration=10, interval=60):
     model = importlib.import_module(package+'.model')
     data = Path(package)/'data'
     data.mkdir(parents=True, exist_ok=True)
+    # Reconcile a failed predecessor before any possible Telegram side effect.
+    if persist and recover_previous(package):checkpoint(package)
     started = time.monotonic()
     failures = 0
     while True:
@@ -82,7 +88,16 @@ def run(package, persist=False, continue_run=False, duration=10, interval=60):
         heartbeat.update(completed_at=datetime.now(TZ).isoformat(), status='OK' if ok else 'FAILED')
         (data/'worker.json').write_text(json.dumps(heartbeat, indent=2))
         if persist:
-            checkpoint(package)
+            try:
+                checkpoint(package)
+            except Exception:
+                # The artifact upload runs in the workflow's always() step. The
+                # same concurrency group holds the child until that upload ends.
+                state=json.loads(state_path.read_text()) if state_path.exists() else {}
+                attempt=int(os.environ.get('RECOVERY_ATTEMPT','0') or 0)
+                if continue_run and attempt<1 and active(state,datetime.now(TZ)):
+                    dispatch(package,recovery_attempt=attempt+1)
+                raise
         failures = 0 if ok else failures+1
         state = json.loads(state_path.read_text()) if state_path.exists() else {}
         now = datetime.now(TZ)
@@ -116,4 +131,5 @@ if __name__ == '__main__':
         dispatch(args.package, probe=True)
         print('RELAY_PROBE_ACCEPTED '+args.package)
     else:run(args.package, persist=args.persist, continue_run=args.continue_run)
+
 
