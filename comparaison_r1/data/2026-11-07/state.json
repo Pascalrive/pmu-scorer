@@ -567,7 +567,8 @@
       "last_reservation_check": {
         "at": "2026-11-07T13:57:32.608324+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-07",
@@ -1072,9 +1073,175 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-07T13:59:02.743832+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "ADICTA",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c2-deauville-prix-du-pont-d-ouilly",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Du Pont D'ouilly",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c2-deauville-prix-du-pont-d-ouilly",
+                "sha256": "2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3",
+                "file": "preuves/2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+                "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+                "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
+              },
+              "captured_at": "2026-11-07T13:58:40.567633+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "ADICTA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU PONT D'OUILLY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
+                "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+                "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+                "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+                "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
+              },
+              "captured_at": "2026-11-07T13:58:42.200849+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 3,
+              "name": "ADICTA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU PONT D'OUILLY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
+                "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+                "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+                "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+                "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
+              },
+              "captured_at": "2026-11-07T13:58:42.243452+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "ADICTA",
+              "source_url": "https://www.geny.com/course/1696803-2026-11-07-deauville-prix-du-pont-d-ouilly/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix du Pont d'Ouilly",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696803-2026-11-07-deauville-prix-du-pont-d-ouilly/partants-pronostics",
+                "sha256": "ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174",
+                "file": "preuves/ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+                "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+                "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
+              },
+              "captured_at": "2026-11-07T13:59:02.743764+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-07T13:55:45.939203+01:00",
+      "final_check_started_at": "2026-11-07T13:58:37.661466+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-07/r1c2-deauville-prix-du-pont-d-ouilly",
@@ -1098,7 +1265,7 @@
         }
       },
       "groups_frozen_at": "2026-11-07T13:34:05.581595+01:00",
-      "final_check_completed_at": "2026-11-07T13:55:46.507832+01:00"
+      "final_check_completed_at": "2026-11-07T13:58:38.355655+01:00"
     },
     {
       "date": "2026-11-07",
@@ -1442,6 +1609,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-07T13:59:22.807864+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "ZELORO",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c3-deauville-prix-de-l-operation-epsom",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'operation Epsom",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c3-deauville-prix-de-l-operation-epsom",
+                "sha256": "cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90",
+                "file": "preuves/cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
+                "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+                "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
+              },
+              "captured_at": "2026-11-07T13:59:04.385997+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055540000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "ZELORO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX DE L'OPERATION EPSOM",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
+                "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+                "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
+                "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+                "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
+              },
+              "captured_at": "2026-11-07T13:59:04.945587+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055540000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "ZELORO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX DE L'OPERATION EPSOM",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
+                "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+                "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
+                "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+                "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
+              },
+              "captured_at": "2026-11-07T13:59:04.991239+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055540000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "ZELORO",
+              "source_url": "https://www.geny.com/course/1696804-2026-11-07-deauville-prix-de-l-operation-epsom/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Opération Epsom",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696804-2026-11-07-deauville-prix-de-l-operation-epsom/partants-pronostics",
+                "sha256": "4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856",
+                "file": "preuves/4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
+                "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+                "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
+              },
+              "captured_at": "2026-11-07T13:59:22.807779+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055540000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -1755,6 +2088,159 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": -2.43,
                 "dateRapport": 1794051933000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-07T13:59:43.205799+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 5,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny": {
+              "number": 5,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 6,
+              "name": "ABLOOM",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c4-deauville-prix-porlezza",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Porlezza",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c4-deauville-prix-porlezza",
+                "sha256": "77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d",
+                "file": "preuves/77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
+                "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+                "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
+              },
+              "captured_at": "2026-11-07T13:59:24.688410+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -6.06,
+                "dateRapport": 1794055533000,
+                "favoris": true,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 5,
+              "name": "SIAM PARAGON",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PORLEZZA",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
+                "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+                "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
+                "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+                "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
+              },
+              "captured_at": "2026-11-07T13:59:25.265934+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.32,
+                "dateRapport": 1794055533000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 4,
+              "name": "VERTBOIS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PORLEZZA",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
+                "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+                "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
+                "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+                "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
+              },
+              "captured_at": "2026-11-07T13:59:25.305493+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.96,
+                "dateRapport": 1794055533000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 5,
+              "name": "SIAM PARAGON",
+              "source_url": "https://www.geny.com/course/1696805-2026-11-07-deauville-prix-porlezza/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Porlezza",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696805-2026-11-07-deauville-prix-porlezza/partants-pronostics",
+                "sha256": "6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f",
+                "file": "preuves/6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
+                "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+                "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
+              },
+              "captured_at": "2026-11-07T13:59:43.205737+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.32,
+                "dateRapport": 1794055533000,
                 "favoris": false,
                 "numPmu1": 5,
                 "grossePrise": false
@@ -2080,6 +2566,159 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-07T14:00:02.897352+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 1,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny": {
+              "number": 1,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "KAHOUNA",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c5-deauville-prix-de-l-operation-martlet",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'operation Martlet",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c5-deauville-prix-de-l-operation-martlet",
+                "sha256": "8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e",
+                "file": "preuves/8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+                "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+                "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
+              },
+              "captured_at": "2026-11-07T13:59:45.087464+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -5.35,
+                "dateRapport": 1794055536000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "RIVER QUARTZ",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION MARTLET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
+                "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+                "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+                "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+                "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
+              },
+              "captured_at": "2026-11-07T13:59:45.656346+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 12.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055536000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 7,
+              "name": "SEVEN TIMER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION MARTLET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
+                "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+                "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+                "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+                "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
+              },
+              "captured_at": "2026-11-07T13:59:45.701274+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.17,
+                "dateRapport": 1794055536000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "RIVER QUARTZ",
+              "source_url": "https://www.geny.com/course/1696806-2026-11-07-deauville-prix-de-l-operation-martlet/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Opération Martlet",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696806-2026-11-07-deauville-prix-de-l-operation-martlet/partants-pronostics",
+                "sha256": "ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951",
+                "file": "preuves/ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+                "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+                "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
+              },
+              "captured_at": "2026-11-07T14:00:02.897274+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 12.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794055536000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2399,6 +3038,159 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-07T14:00:22.701562+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 4,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny": {
+              "number": 4,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 9,
+              "name": "SIN CITY",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c6-deauville-prix-de-l-operation-spring",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'operation Spring",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c6-deauville-prix-de-l-operation-spring",
+                "sha256": "fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26",
+                "file": "preuves/fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+                "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+                "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
+              },
+              "captured_at": "2026-11-07T14:00:04.469849+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 17.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.71,
+                "dateRapport": 1794055508000,
+                "favoris": false,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 4,
+              "name": "TIMEA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION SPRING",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
+                "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+                "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+                "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+                "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
+              },
+              "captured_at": "2026-11-07T14:00:05.046795+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 17.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.67,
+                "dateRapport": 1794055508000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "NEUSCHWANSTEIN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION SPRING",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
+                "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+                "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+                "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+                "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
+              },
+              "captured_at": "2026-11-07T14:00:05.090670+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.66,
+                "dateRapport": 1794055508000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 4,
+              "name": "TIMEA",
+              "source_url": "https://www.geny.com/course/1696807-2026-11-07-deauville-prix-de-l-operation-spring/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Opération Spring",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696807-2026-11-07-deauville-prix-de-l-operation-spring/partants-pronostics",
+                "sha256": "a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da",
+                "file": "preuves/a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+                "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+                "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
+              },
+              "captured_at": "2026-11-07T14:00:22.701477+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 17.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.67,
+                "dateRapport": 1794055508000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2712,6 +3504,159 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 0.0,
                 "dateRapport": 1794051924000,
+                "favoris": false,
+                "numPmu1": 13,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-07T14:00:42.847504+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 2,
+              "sites": [
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "groupe_canalturf+zeturf": {
+              "number": 2,
+              "sites": [
+                "canalturf",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 12,
+              "name": "MELANIES JOY",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c7-deauville-prix-de-l-operation-windsor",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'operation Windsor",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c7-deauville-prix-de-l-operation-windsor",
+                "sha256": "1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816",
+                "file": "preuves/1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
+                "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+                "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
+              },
+              "captured_at": "2026-11-07T14:00:24.250547+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 15.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -0.64,
+                "dateRapport": 1794055524000,
+                "favoris": false,
+                "numPmu1": 12,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "DALYAMIX",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION WINDSOR",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
+                "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+                "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
+                "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+                "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
+              },
+              "captured_at": "2026-11-07T14:00:24.790445+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.96,
+                "dateRapport": 1794055524000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "DALYAMIX",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION WINDSOR",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
+                "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+                "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
+                "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+                "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
+              },
+              "captured_at": "2026-11-07T14:00:24.834324+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.96,
+                "dateRapport": 1794055524000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 13,
+              "name": "HARRISON POINT",
+              "source_url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Opération Windsor",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
+                "sha256": "f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23",
+                "file": "preuves/f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
+                "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+                "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
+              },
+              "captured_at": "2026-11-07T14:00:42.847424+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 13.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.73,
+                "dateRapport": 1794055524000,
                 "favoris": false,
                 "numPmu1": 13,
                 "grossePrise": false
@@ -3057,6 +4002,169 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-07T14:01:02.826400+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "SOEUR",
+              "source_url": "https://turfin.fr/course/2026-11-07/r1c8-deauville-prix-de-l-operation-goodwood",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'operation Goodwood",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-07/r1c8-deauville-prix-de-l-operation-goodwood",
+                "sha256": "b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb",
+                "file": "preuves/b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
+                "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+                "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
+              },
+              "captured_at": "2026-11-07T14:00:44.458551+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.12,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "SOEUR",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION GOODWOOD",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
+                "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+                "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
+                "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+                "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
+              },
+              "captured_at": "2026-11-07T14:00:45.038809+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.12,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 9,
+              "name": "DARI RIVER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'OPERATION GOODWOOD",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
+                "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+                "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
+                "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+                "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
+              },
+              "captured_at": "2026-11-07T14:00:45.084153+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.33,
+                "dateRapport": 1794055553000,
+                "favoris": false,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 2,
+              "name": "SOEUR",
+              "source_url": "https://www.geny.com/course/1696809-2026-11-07-deauville-prix-de-l-operation-goodwood/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Opération Goodwood",
+              "evidence": {
+                "url": "https://www.geny.com/course/1696809-2026-11-07-deauville-prix-de-l-operation-goodwood/partants-pronostics",
+                "sha256": "604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a",
+                "file": "preuves/604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
+                "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+                "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
+              },
+              "captured_at": "2026-11-07T14:01:02.826309+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.12,
+                "dateRapport": 1794055553000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -3064,174 +4172,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-07T12:58:19.533061+01:00",
+    "captured_at": "2026-11-07T14:01:02.826468+01:00",
     "races": [
-      {
-        "date": "2026-11-07",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX DE BRICQUEBEC-EN-COTENTIN",
-        "departure": "2026-11-07T13:58:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 3,
-            "name": "PRINCENOIR",
-            "source_url": "https://turfin.fr/course/2026-11-07/r1c1-deauville-prix-de-bricquebec-en-cotentin",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Bricquebec-En-Cotentin",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-07/r1c1-deauville-prix-de-bricquebec-en-cotentin",
-              "sha256": "f8e066f61e4c0aafaf9eb32edc9159188bd998873e6f3c9f5e185bfc55bd722e",
-              "file": "preuves/f8e066f61e4c0aafaf9eb32edc9159188bd998873e6f3c9f5e185bfc55bd722e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C1/participants",
-              "sha256": "817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100",
-              "file": "preuves/817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100.gz"
-            },
-            "captured_at": "2026-11-07T12:55:37.098850+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1794051940000,
-              "favoris": true,
-              "numPmu1": 3,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 3,
-            "name": "PRINCENOIR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE BRICQUEBEC-EN-COTENTIN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-              "sha256": "eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021",
-              "file": "preuves/eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C1/participants",
-              "sha256": "817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100",
-              "file": "preuves/817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100.gz"
-            },
-            "captured_at": "2026-11-07T12:55:38.700599+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1794051940000,
-              "favoris": true,
-              "numPmu1": 3,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 3,
-            "name": "PRINCENOIR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE BRICQUEBEC-EN-COTENTIN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-              "sha256": "eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021",
-              "file": "preuves/eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C1/participants",
-              "sha256": "817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100",
-              "file": "preuves/817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100.gz"
-            },
-            "captured_at": "2026-11-07T12:55:38.751243+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1794051940000,
-              "favoris": true,
-              "numPmu1": 3,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 2,
-            "name": "ATALAYA",
-            "source_url": "https://www.geny.com/course/1696802-2026-11-07-deauville-prix-de-bricquebec-en-cotentin/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Bricquebec-en-Cotentin",
-            "evidence": {
-              "url": "https://www.geny.com/course/1696802-2026-11-07-deauville-prix-de-bricquebec-en-cotentin/partants-pronostics",
-              "sha256": "dffeb031fc6f7f0fac30edc5ee2a7e2f39b3521f441105a70d0347c3164bf20b",
-              "file": "preuves/dffeb031fc6f7f0fac30edc5ee2a7e2f39b3521f441105a70d0347c3164bf20b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C1/participants",
-              "sha256": "817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100",
-              "file": "preuves/817b846cd49639791abc248adab614d136f26c23e07292cf9e1809d305c05100.gz"
-            },
-            "captured_at": "2026-11-07T12:55:59.596460+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 17.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 8.86,
-              "dateRapport": 1794051940000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-07/r1c1-deauville-prix-de-bricquebec-en-cotentin",
-            "sha256": "f8e066f61e4c0aafaf9eb32edc9159188bd998873e6f3c9f5e185bfc55bd722e",
-            "file": "preuves/f8e066f61e4c0aafaf9eb32edc9159188bd998873e6f3c9f5e185bfc55bd722e.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-            "sha256": "eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021",
-            "file": "preuves/eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422839_prix-de-bricquebec-en-cotentin.html",
-            "sha256": "eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021",
-            "file": "preuves/eefd9ccf33f6bdf56228a717533799d23a484d7ed86599ebe7e4308938d08021.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1696802-2026-11-07-deauville-prix-de-bricquebec-en-cotentin/partants-pronostics",
-            "sha256": "dffeb031fc6f7f0fac30edc5ee2a7e2f39b3521f441105a70d0347c3164bf20b",
-            "file": "preuves/dffeb031fc6f7f0fac30edc5ee2a7e2f39b3521f441105a70d0347c3164bf20b.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-07",
         "id": "R1C2",
@@ -3250,24 +4192,24 @@
             "source_title": "Prix Du Pont D'ouilly",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c2-deauville-prix-du-pont-d-ouilly",
-              "sha256": "f821039031bd1b98183da75ea42f5607d0a4ed02f1c452ba3ba3bd475788322e",
-              "file": "preuves/f821039031bd1b98183da75ea42f5607d0a4ed02f1c452ba3ba3bd475788322e.gz"
+              "sha256": "2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3",
+              "file": "preuves/2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
-              "sha256": "f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa",
-              "file": "preuves/f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa.gz"
+              "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+              "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
             },
-            "captured_at": "2026-11-07T12:56:01.461769+01:00",
+            "captured_at": "2026-11-07T13:58:40.567633+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 2.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051953000,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -3283,24 +4225,24 @@
             "source_title": "Le pronostic du PRIX DU PONT D'OUILLY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
-              "sha256": "02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216",
-              "file": "preuves/02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216.gz"
+              "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+              "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
-              "sha256": "f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa",
-              "file": "preuves/f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa.gz"
+              "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+              "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
             },
-            "captured_at": "2026-11-07T12:56:02.004614+01:00",
+            "captured_at": "2026-11-07T13:58:42.200849+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 2.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051953000,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -3316,24 +4258,24 @@
             "source_title": "Le pronostic du PRIX DU PONT D'OUILLY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
-              "sha256": "02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216",
-              "file": "preuves/02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216.gz"
+              "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+              "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
-              "sha256": "f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa",
-              "file": "preuves/f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa.gz"
+              "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+              "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
             },
-            "captured_at": "2026-11-07T12:56:02.054830+01:00",
+            "captured_at": "2026-11-07T13:58:42.243452+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 2.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051953000,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -3349,24 +4291,24 @@
             "source_title": "Prix du Pont d'Ouilly",
             "evidence": {
               "url": "https://www.geny.com/course/1696803-2026-11-07-deauville-prix-du-pont-d-ouilly/partants-pronostics",
-              "sha256": "85479bfc9c8ef97018b45bc04e7438aad72f5d716b915fb51065c6c0cfae049d",
-              "file": "preuves/85479bfc9c8ef97018b45bc04e7438aad72f5d716b915fb51065c6c0cfae049d.gz"
+              "sha256": "ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174",
+              "file": "preuves/ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
-              "sha256": "f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa",
-              "file": "preuves/f505219d7513a6aca1fbcc905ec25aa1298401ba8a113046bbe3bcfeeeecb7aa.gz"
+              "sha256": "4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa",
+              "file": "preuves/4ea77bb4d5530b136c1bb91db983a159e443315e428eec422802f387e61f99aa.gz"
             },
-            "captured_at": "2026-11-07T12:56:19.325052+01:00",
+            "captured_at": "2026-11-07T13:59:02.743764+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.9,
+              "rapport": 2.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051953000,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -3375,28 +4317,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-07T13:58:37.661466+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c2-deauville-prix-du-pont-d-ouilly",
-            "sha256": "f821039031bd1b98183da75ea42f5607d0a4ed02f1c452ba3ba3bd475788322e",
-            "file": "preuves/f821039031bd1b98183da75ea42f5607d0a4ed02f1c452ba3ba3bd475788322e.gz"
+            "sha256": "2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3",
+            "file": "preuves/2b802c842d87fa7bf03bc54723a0c7a4a3fb51a777874123ab6a229270eea3e3.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
-            "sha256": "02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216",
-            "file": "preuves/02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216.gz"
+            "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+            "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422840_prix-du-pont-d-ouilly.html",
-            "sha256": "02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216",
-            "file": "preuves/02ad4410e4f562e83cb103e82d66f3454ea7b3fe6513610b82aefea98bc87216.gz"
+            "sha256": "9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e",
+            "file": "preuves/9e84936126e424d964759457c533e2a86fc0d90c1e2030030150f9e219a7067e.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696803-2026-11-07-deauville-prix-du-pont-d-ouilly/partants-pronostics",
-            "sha256": "85479bfc9c8ef97018b45bc04e7438aad72f5d716b915fb51065c6c0cfae049d",
-            "file": "preuves/85479bfc9c8ef97018b45bc04e7438aad72f5d716b915fb51065c6c0cfae049d.gz"
+            "sha256": "ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174",
+            "file": "preuves/ed09bd4eb6f33504537f5e5436e293217fc4c49aac11ad2ed8473e8977b06174.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-07T13:34:05.581595+01:00",
+        "final_check_completed_at": "2026-11-07T13:58:38.355655+01:00"
       },
       {
         "date": "2026-11-07",
@@ -3416,15 +4361,15 @@
             "source_title": "Prix De L'operation Epsom",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c3-deauville-prix-de-l-operation-epsom",
-              "sha256": "92a3c50a4445bc896857d0e4f65bbcbdb53d9acccd0154905c89c48dc66ef10b",
-              "file": "preuves/92a3c50a4445bc896857d0e4f65bbcbdb53d9acccd0154905c89c48dc66ef10b.gz"
+              "sha256": "cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90",
+              "file": "preuves/cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
-              "sha256": "1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0",
-              "file": "preuves/1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0.gz"
+              "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+              "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
             },
-            "captured_at": "2026-11-07T12:56:20.851087+01:00",
+            "captured_at": "2026-11-07T13:59:04.385997+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3433,7 +4378,7 @@
               "rapport": 3.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051940000,
+              "dateRapport": 1794055540000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -3449,15 +4394,15 @@
             "source_title": "Le pronostic du Quinté PRIX DE L'OPERATION EPSOM",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
-              "sha256": "bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730",
-              "file": "preuves/bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730.gz"
+              "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+              "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
-              "sha256": "1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0",
-              "file": "preuves/1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0.gz"
+              "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+              "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
             },
-            "captured_at": "2026-11-07T12:56:21.424333+01:00",
+            "captured_at": "2026-11-07T13:59:04.945587+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3466,7 +4411,7 @@
               "rapport": 3.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051940000,
+              "dateRapport": 1794055540000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -3482,15 +4427,15 @@
             "source_title": "Le pronostic du Quinté PRIX DE L'OPERATION EPSOM",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
-              "sha256": "bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730",
-              "file": "preuves/bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730.gz"
+              "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+              "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
-              "sha256": "1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0",
-              "file": "preuves/1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0.gz"
+              "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+              "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
             },
-            "captured_at": "2026-11-07T12:56:21.480523+01:00",
+            "captured_at": "2026-11-07T13:59:04.991239+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3499,7 +4444,7 @@
               "rapport": 3.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051940000,
+              "dateRapport": 1794055540000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -3515,15 +4460,15 @@
             "source_title": "Prix de l'Opération Epsom",
             "evidence": {
               "url": "https://www.geny.com/course/1696804-2026-11-07-deauville-prix-de-l-operation-epsom/partants-pronostics",
-              "sha256": "d7375925496d1fda0479a9b343fca8b55c604c8f2a768921fb63161e58761f44",
-              "file": "preuves/d7375925496d1fda0479a9b343fca8b55c604c8f2a768921fb63161e58761f44.gz"
+              "sha256": "4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856",
+              "file": "preuves/4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C3/participants",
-              "sha256": "1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0",
-              "file": "preuves/1dbc9841d3655c4d6dbe525b78b41624ddd4bf78d394bd0d5f244e172199fad0.gz"
+              "sha256": "9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845",
+              "file": "preuves/9e10abb7c9ee39be6c35b77a2271ce53c2cf525ac7b35d97f37acfac2a453845.gz"
             },
-            "captured_at": "2026-11-07T12:56:39.137798+01:00",
+            "captured_at": "2026-11-07T13:59:22.807779+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3532,7 +4477,7 @@
               "rapport": 3.1,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051940000,
+              "dateRapport": 1794055540000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -3544,23 +4489,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c3-deauville-prix-de-l-operation-epsom",
-            "sha256": "92a3c50a4445bc896857d0e4f65bbcbdb53d9acccd0154905c89c48dc66ef10b",
-            "file": "preuves/92a3c50a4445bc896857d0e4f65bbcbdb53d9acccd0154905c89c48dc66ef10b.gz"
+            "sha256": "cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90",
+            "file": "preuves/cf23b06143291d9f322bd54f9e4159c56e5143bceb3397df13e2cb4c3a3b6f90.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
-            "sha256": "bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730",
-            "file": "preuves/bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730.gz"
+            "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+            "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422841_prix-de-l-operation-epsom.html",
-            "sha256": "bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730",
-            "file": "preuves/bb10e15628ba3ad5299819b38a169bc6c985d2f9f50e2e8781aa14fb7168e730.gz"
+            "sha256": "063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785",
+            "file": "preuves/063058cd100f4b8d38a270cb2b2b92a05767eab10fb2a0e210ffb6e3ac7b9785.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696804-2026-11-07-deauville-prix-de-l-operation-epsom/partants-pronostics",
-            "sha256": "d7375925496d1fda0479a9b343fca8b55c604c8f2a768921fb63161e58761f44",
-            "file": "preuves/d7375925496d1fda0479a9b343fca8b55c604c8f2a768921fb63161e58761f44.gz"
+            "sha256": "4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856",
+            "file": "preuves/4544dee21ce6e4ffc3ff717721242c3f62935f2f0dd8d6e0287ac237d2307856.gz"
           }
         }
       },
@@ -3582,24 +4527,24 @@
             "source_title": "Prix Porlezza",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c4-deauville-prix-porlezza",
-              "sha256": "66f9ee8b6106005edc250c5bc9643b83bcc7ae8f03f0dce256ee3e436cb0d924",
-              "file": "preuves/66f9ee8b6106005edc250c5bc9643b83bcc7ae8f03f0dce256ee3e436cb0d924.gz"
+              "sha256": "77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d",
+              "file": "preuves/77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
-              "sha256": "49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765",
-              "file": "preuves/49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765.gz"
+              "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+              "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
             },
-            "captured_at": "2026-11-07T12:56:40.900946+01:00",
+            "captured_at": "2026-11-07T13:59:24.688410+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 3.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.94,
-              "dateRapport": 1794051933000,
+              "nombreIndicateurTendance": -6.06,
+              "dateRapport": 1794055533000,
               "favoris": true,
               "numPmu1": 6,
               "grossePrise": false
@@ -3615,24 +4560,24 @@
             "source_title": "Le pronostic du PRIX PORLEZZA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
-              "sha256": "99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802",
-              "file": "preuves/99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802.gz"
+              "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+              "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
-              "sha256": "49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765",
-              "file": "preuves/49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765.gz"
+              "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+              "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
             },
-            "captured_at": "2026-11-07T12:56:41.486238+01:00",
+            "captured_at": "2026-11-07T13:59:25.265934+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
+              "rapport": 4.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.43,
-              "dateRapport": 1794051933000,
+              "nombreIndicateurTendance": 2.32,
+              "dateRapport": 1794055533000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -3648,24 +4593,24 @@
             "source_title": "Le pronostic du PRIX PORLEZZA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
-              "sha256": "99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802",
-              "file": "preuves/99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802.gz"
+              "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+              "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
-              "sha256": "49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765",
-              "file": "preuves/49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765.gz"
+              "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+              "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
             },
-            "captured_at": "2026-11-07T12:56:41.534566+01:00",
+            "captured_at": "2026-11-07T13:59:25.305493+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.7,
-              "dateRapport": 1794051933000,
+              "nombreIndicateurTendance": 1.96,
+              "dateRapport": 1794055533000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -3681,24 +4626,24 @@
             "source_title": "Prix Porlezza",
             "evidence": {
               "url": "https://www.geny.com/course/1696805-2026-11-07-deauville-prix-porlezza/partants-pronostics",
-              "sha256": "6abeb10b67931e8e13a1512117410f1aa82f76e44b39e1d6ebe6e7bd651cbc2e",
-              "file": "preuves/6abeb10b67931e8e13a1512117410f1aa82f76e44b39e1d6ebe6e7bd651cbc2e.gz"
+              "sha256": "6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f",
+              "file": "preuves/6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C4/participants",
-              "sha256": "49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765",
-              "file": "preuves/49c01f8b328c3237ae2c99bbc2c7cda8081c8f21ec05313ef10ebe9327a3a765.gz"
+              "sha256": "3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469",
+              "file": "preuves/3db8d4928e609e633e48d58c16552266a95d09a6567addab8f9a0c1f189dd469.gz"
             },
-            "captured_at": "2026-11-07T12:56:59.606902+01:00",
+            "captured_at": "2026-11-07T13:59:43.205737+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
+              "rapport": 4.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.43,
-              "dateRapport": 1794051933000,
+              "nombreIndicateurTendance": 2.32,
+              "dateRapport": 1794055533000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -3710,23 +4655,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c4-deauville-prix-porlezza",
-            "sha256": "66f9ee8b6106005edc250c5bc9643b83bcc7ae8f03f0dce256ee3e436cb0d924",
-            "file": "preuves/66f9ee8b6106005edc250c5bc9643b83bcc7ae8f03f0dce256ee3e436cb0d924.gz"
+            "sha256": "77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d",
+            "file": "preuves/77dbb1a7d0f46d24c01bd3686ebd641ba451d00f236c53645a8ec3038b6db76d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
-            "sha256": "99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802",
-            "file": "preuves/99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802.gz"
+            "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+            "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422842_prix-porlezza.html",
-            "sha256": "99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802",
-            "file": "preuves/99bcdf7d2291fba248ee662e1d3af9194a2ecfaed3cdc258f1ece5e61b22b802.gz"
+            "sha256": "64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9",
+            "file": "preuves/64df0dea1a4471d2cae79418fd30cc3b1449ad2cb53d6e51673ce031186125c9.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696805-2026-11-07-deauville-prix-porlezza/partants-pronostics",
-            "sha256": "6abeb10b67931e8e13a1512117410f1aa82f76e44b39e1d6ebe6e7bd651cbc2e",
-            "file": "preuves/6abeb10b67931e8e13a1512117410f1aa82f76e44b39e1d6ebe6e7bd651cbc2e.gz"
+            "sha256": "6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f",
+            "file": "preuves/6f74568b34a26e9566c0ab528ac47d360d7096d09ec4aee289a9888521f37a0f.gz"
           }
         }
       },
@@ -3748,24 +4693,24 @@
             "source_title": "Prix De L'operation Martlet",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c5-deauville-prix-de-l-operation-martlet",
-              "sha256": "7af01c20f0d64c579a5badd46ba41fe8b98a34558696479c49e5c16cf6690122",
-              "file": "preuves/7af01c20f0d64c579a5badd46ba41fe8b98a34558696479c49e5c16cf6690122.gz"
+              "sha256": "8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e",
+              "file": "preuves/8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
-              "sha256": "9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c",
-              "file": "preuves/9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c.gz"
+              "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+              "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
             },
-            "captured_at": "2026-11-07T12:57:01.817452+01:00",
+            "captured_at": "2026-11-07T13:59:45.087464+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.58,
-              "dateRapport": 1794051936000,
+              "nombreIndicateurTendance": -5.35,
+              "dateRapport": 1794055536000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -3781,15 +4726,15 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION MARTLET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
-              "sha256": "b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8",
-              "file": "preuves/b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8.gz"
+              "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+              "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
-              "sha256": "9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c",
-              "file": "preuves/9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c.gz"
+              "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+              "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
             },
-            "captured_at": "2026-11-07T12:57:02.359587+01:00",
+            "captured_at": "2026-11-07T13:59:45.656346+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3797,8 +4742,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.22,
-              "dateRapport": 1794051936000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794055536000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -3814,24 +4759,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION MARTLET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
-              "sha256": "b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8",
-              "file": "preuves/b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8.gz"
+              "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+              "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
-              "sha256": "9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c",
-              "file": "preuves/9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c.gz"
+              "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+              "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
             },
-            "captured_at": "2026-11-07T12:57:02.413415+01:00",
+            "captured_at": "2026-11-07T13:59:45.701274+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.9,
+              "rapport": 9.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.29,
-              "dateRapport": 1794051936000,
+              "nombreIndicateurTendance": 2.17,
+              "dateRapport": 1794055536000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -3847,15 +4792,15 @@
             "source_title": "Prix de l'Opération Martlet",
             "evidence": {
               "url": "https://www.geny.com/course/1696806-2026-11-07-deauville-prix-de-l-operation-martlet/partants-pronostics",
-              "sha256": "16fbcd35f322801941e37e48a182e195c607c83e8f9be9d0b8973e9e6196e2c6",
-              "file": "preuves/16fbcd35f322801941e37e48a182e195c607c83e8f9be9d0b8973e9e6196e2c6.gz"
+              "sha256": "ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951",
+              "file": "preuves/ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
-              "sha256": "9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c",
-              "file": "preuves/9327c0a250c14b8019837e66d70d39bae7e0d0015f0fadeca47e429ccaaeba5c.gz"
+              "sha256": "4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7",
+              "file": "preuves/4c0f69297efbb71a7895722220cf7d4cfa06bf9a67680a417fc925af6ac37ba7.gz"
             },
-            "captured_at": "2026-11-07T12:57:19.262935+01:00",
+            "captured_at": "2026-11-07T14:00:02.897274+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -3863,8 +4808,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.22,
-              "dateRapport": 1794051936000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794055536000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -3876,23 +4821,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c5-deauville-prix-de-l-operation-martlet",
-            "sha256": "7af01c20f0d64c579a5badd46ba41fe8b98a34558696479c49e5c16cf6690122",
-            "file": "preuves/7af01c20f0d64c579a5badd46ba41fe8b98a34558696479c49e5c16cf6690122.gz"
+            "sha256": "8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e",
+            "file": "preuves/8c3ec222ec781ed9e05b6ffba5605829fd756318f3a37bf5770eb7e8b6fd8d2e.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
-            "sha256": "b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8",
-            "file": "preuves/b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8.gz"
+            "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+            "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422843_prix-de-l-operation-martlet.html",
-            "sha256": "b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8",
-            "file": "preuves/b90cd01eae325ac174fdb2b37409a2dab50e360cdd1d6562e78bef45c4d456c8.gz"
+            "sha256": "55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5",
+            "file": "preuves/55578a82768363bccd1314c6893e6e790f8d34b0f992564a500de46c63879da5.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696806-2026-11-07-deauville-prix-de-l-operation-martlet/partants-pronostics",
-            "sha256": "16fbcd35f322801941e37e48a182e195c607c83e8f9be9d0b8973e9e6196e2c6",
-            "file": "preuves/16fbcd35f322801941e37e48a182e195c607c83e8f9be9d0b8973e9e6196e2c6.gz"
+            "sha256": "ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951",
+            "file": "preuves/ef478c0d556cb75ecd86a453dc51c50cb5a97d75b86e9a5a3dee2a93c4d61951.gz"
           }
         }
       },
@@ -3914,24 +4859,24 @@
             "source_title": "Prix De L'operation Spring",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c6-deauville-prix-de-l-operation-spring",
-              "sha256": "7a502a93181abcb9bd2e735f47c0306ce96a1cfeb87a6c32879882f934124e71",
-              "file": "preuves/7a502a93181abcb9bd2e735f47c0306ce96a1cfeb87a6c32879882f934124e71.gz"
+              "sha256": "fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26",
+              "file": "preuves/fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
-              "sha256": "8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9",
-              "file": "preuves/8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9.gz"
+              "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+              "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
             },
-            "captured_at": "2026-11-07T12:57:20.863284+01:00",
+            "captured_at": "2026-11-07T14:00:04.469849+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 16.0,
+              "rapport": 17.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.81,
-              "dateRapport": 1794051908000,
+              "nombreIndicateurTendance": 1.71,
+              "dateRapport": 1794055508000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
@@ -3947,24 +4892,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION SPRING",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
-              "sha256": "16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2",
-              "file": "preuves/16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2.gz"
+              "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+              "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
-              "sha256": "8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9",
-              "file": "preuves/8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9.gz"
+              "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+              "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
             },
-            "captured_at": "2026-11-07T12:57:21.417757+01:00",
+            "captured_at": "2026-11-07T14:00:05.046795+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 18.0,
+              "rapport": 17.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.54,
-              "dateRapport": 1794051908000,
+              "nombreIndicateurTendance": -1.67,
+              "dateRapport": 1794055508000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -3980,24 +4925,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION SPRING",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
-              "sha256": "16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2",
-              "file": "preuves/16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2.gz"
+              "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+              "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
-              "sha256": "8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9",
-              "file": "preuves/8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9.gz"
+              "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+              "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
             },
-            "captured_at": "2026-11-07T12:57:21.471766+01:00",
+            "captured_at": "2026-11-07T14:00:05.090670+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.5,
+              "rapport": 6.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051908000,
+              "nombreIndicateurTendance": 1.66,
+              "dateRapport": 1794055508000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -4013,24 +4958,24 @@
             "source_title": "Prix de l'Opération Spring",
             "evidence": {
               "url": "https://www.geny.com/course/1696807-2026-11-07-deauville-prix-de-l-operation-spring/partants-pronostics",
-              "sha256": "d8edf2ab7e21b597a7ff22b7c72fe859e742f080bf5bbaa991e1fbcea5b973b2",
-              "file": "preuves/d8edf2ab7e21b597a7ff22b7c72fe859e742f080bf5bbaa991e1fbcea5b973b2.gz"
+              "sha256": "a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da",
+              "file": "preuves/a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
-              "sha256": "8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9",
-              "file": "preuves/8bb4bddc03ff1c38451812e10cfd8a18eb19ac1c41bb4c998a29aabe6b8eb8e9.gz"
+              "sha256": "63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf",
+              "file": "preuves/63ec75b9aff871f098783a43b7d8ffbca7f93e07c0469100c864eb75a8faf3bf.gz"
             },
-            "captured_at": "2026-11-07T12:57:39.528392+01:00",
+            "captured_at": "2026-11-07T14:00:22.701477+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 18.0,
+              "rapport": 17.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.54,
-              "dateRapport": 1794051908000,
+              "nombreIndicateurTendance": -1.67,
+              "dateRapport": 1794055508000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -4042,23 +4987,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c6-deauville-prix-de-l-operation-spring",
-            "sha256": "7a502a93181abcb9bd2e735f47c0306ce96a1cfeb87a6c32879882f934124e71",
-            "file": "preuves/7a502a93181abcb9bd2e735f47c0306ce96a1cfeb87a6c32879882f934124e71.gz"
+            "sha256": "fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26",
+            "file": "preuves/fa271df13c7696359935712e3e33cddf8868dfc9241fe933fe489b6a7d5e3b26.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
-            "sha256": "16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2",
-            "file": "preuves/16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2.gz"
+            "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+            "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422844_prix-de-l-operation-spring.html",
-            "sha256": "16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2",
-            "file": "preuves/16076264e996ad1394af4d3d80f5fd3e770ccc8c96a57b1c2adefae0b3f19da2.gz"
+            "sha256": "4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822",
+            "file": "preuves/4a0cfa823e1ce359cda396a974f5f3f06e4fcdef0b2d88d30d841825f3f2d822.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696807-2026-11-07-deauville-prix-de-l-operation-spring/partants-pronostics",
-            "sha256": "d8edf2ab7e21b597a7ff22b7c72fe859e742f080bf5bbaa991e1fbcea5b973b2",
-            "file": "preuves/d8edf2ab7e21b597a7ff22b7c72fe859e742f080bf5bbaa991e1fbcea5b973b2.gz"
+            "sha256": "a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da",
+            "file": "preuves/a759e438bcfa0c52aabb84d65f79170d9ca2b1d6ab26261279fd828c8c4b73da.gz"
           }
         }
       },
@@ -4080,24 +5025,24 @@
             "source_title": "Prix De L'operation Windsor",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c7-deauville-prix-de-l-operation-windsor",
-              "sha256": "a4b0b68e933ab8945f3d354211f57a8ff6642db3c730f5082d106e64ffc2e420",
-              "file": "preuves/a4b0b68e933ab8945f3d354211f57a8ff6642db3c730f5082d106e64ffc2e420.gz"
+              "sha256": "1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816",
+              "file": "preuves/1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
-              "sha256": "b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9",
-              "file": "preuves/b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9.gz"
+              "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+              "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
             },
-            "captured_at": "2026-11-07T12:57:41.513143+01:00",
+            "captured_at": "2026-11-07T14:00:24.250547+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 14.0,
+              "rapport": 15.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.32,
-              "dateRapport": 1794051924000,
+              "nombreIndicateurTendance": -0.64,
+              "dateRapport": 1794055524000,
               "favoris": false,
               "numPmu1": 12,
               "grossePrise": false
@@ -4113,24 +5058,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION WINDSOR",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
-              "sha256": "b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56",
-              "file": "preuves/b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56.gz"
+              "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+              "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
-              "sha256": "b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9",
-              "file": "preuves/b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9.gz"
+              "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+              "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
             },
-            "captured_at": "2026-11-07T12:57:42.079781+01:00",
+            "captured_at": "2026-11-07T14:00:24.790445+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.92,
-              "dateRapport": 1794051924000,
+              "nombreIndicateurTendance": 1.96,
+              "dateRapport": 1794055524000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -4146,24 +5091,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION WINDSOR",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
-              "sha256": "b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56",
-              "file": "preuves/b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56.gz"
+              "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+              "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
-              "sha256": "b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9",
-              "file": "preuves/b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9.gz"
+              "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+              "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
             },
-            "captured_at": "2026-11-07T12:57:42.134571+01:00",
+            "captured_at": "2026-11-07T14:00:24.834324+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.92,
-              "dateRapport": 1794051924000,
+              "nombreIndicateurTendance": 1.96,
+              "dateRapport": 1794055524000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -4179,15 +5124,15 @@
             "source_title": "Prix de l'Opération Windsor",
             "evidence": {
               "url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
-              "sha256": "63cd87b0d4285e5c729a6b673d879ef7986de40951a760f74c687bdd29916361",
-              "file": "preuves/63cd87b0d4285e5c729a6b673d879ef7986de40951a760f74c687bdd29916361.gz"
+              "sha256": "f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23",
+              "file": "preuves/f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C7/participants",
-              "sha256": "b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9",
-              "file": "preuves/b982fc5e2adbd029548a166165c55e23a72f8fdbfbee28d7ba5d61aa946c5cd9.gz"
+              "sha256": "ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24",
+              "file": "preuves/ec63f0a87fadafae2c607e49a1b7abc3aea132a31f0aacf5e70c2739f70a5a24.gz"
             },
-            "captured_at": "2026-11-07T12:57:59.749645+01:00",
+            "captured_at": "2026-11-07T14:00:42.847424+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -4195,8 +5140,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 13.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794051924000,
+              "nombreIndicateurTendance": 0.73,
+              "dateRapport": 1794055524000,
               "favoris": false,
               "numPmu1": 13,
               "grossePrise": false
@@ -4208,23 +5153,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c7-deauville-prix-de-l-operation-windsor",
-            "sha256": "a4b0b68e933ab8945f3d354211f57a8ff6642db3c730f5082d106e64ffc2e420",
-            "file": "preuves/a4b0b68e933ab8945f3d354211f57a8ff6642db3c730f5082d106e64ffc2e420.gz"
+            "sha256": "1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816",
+            "file": "preuves/1c4fe609b7ca049b85a7476018678222d8ea0b7d67dd62b74b3c695c72db0816.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
-            "sha256": "b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56",
-            "file": "preuves/b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56.gz"
+            "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+            "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422845_prix-de-l-operation-windsor.html",
-            "sha256": "b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56",
-            "file": "preuves/b904e6ed54f71410aed817d49ae543b85aae24acdd3766e3b58feed65b1b3c56.gz"
+            "sha256": "bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8",
+            "file": "preuves/bd6d037979559228107afd4c1a1f45918070377b39f336528f77235a3fa076c8.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
-            "sha256": "63cd87b0d4285e5c729a6b673d879ef7986de40951a760f74c687bdd29916361",
-            "file": "preuves/63cd87b0d4285e5c729a6b673d879ef7986de40951a760f74c687bdd29916361.gz"
+            "sha256": "f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23",
+            "file": "preuves/f48653a63eb7b8b797297a6b2e9d36e45b0304ee46242ea2bc00ea00074b2e23.gz"
           }
         }
       },
@@ -4246,24 +5191,24 @@
             "source_title": "Prix De L'operation Goodwood",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-07/r1c8-deauville-prix-de-l-operation-goodwood",
-              "sha256": "19c3a2b94ccc818df150420f55f7f6cedbe27d0831512409a51898b8b036ef05",
-              "file": "preuves/19c3a2b94ccc818df150420f55f7f6cedbe27d0831512409a51898b8b036ef05.gz"
+              "sha256": "b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb",
+              "file": "preuves/b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
-              "sha256": "224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6",
-              "file": "preuves/224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6.gz"
+              "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+              "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
             },
-            "captured_at": "2026-11-07T12:58:01.728507+01:00",
+            "captured_at": "2026-11-07T14:00:44.458551+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.6,
+              "rapport": 4.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.12,
-              "dateRapport": 1794051953000,
+              "nombreIndicateurTendance": 2.12,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -4279,24 +5224,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION GOODWOOD",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
-              "sha256": "78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627",
-              "file": "preuves/78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627.gz"
+              "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+              "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
-              "sha256": "224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6",
-              "file": "preuves/224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6.gz"
+              "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+              "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
             },
-            "captured_at": "2026-11-07T12:58:02.289248+01:00",
+            "captured_at": "2026-11-07T14:00:45.038809+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.6,
+              "rapport": 4.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.12,
-              "dateRapport": 1794051953000,
+              "nombreIndicateurTendance": 2.12,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -4312,24 +5257,24 @@
             "source_title": "Le pronostic du PRIX DE L'OPERATION GOODWOOD",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
-              "sha256": "78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627",
-              "file": "preuves/78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627.gz"
+              "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+              "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
-              "sha256": "224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6",
-              "file": "preuves/224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6.gz"
+              "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+              "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
             },
-            "captured_at": "2026-11-07T12:58:02.343585+01:00",
+            "captured_at": "2026-11-07T14:00:45.084153+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.2,
+              "rapport": 7.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.0,
-              "dateRapport": 1794051953000,
+              "nombreIndicateurTendance": 1.33,
+              "dateRapport": 1794055553000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
@@ -4345,24 +5290,24 @@
             "source_title": "Prix de l'Opération Goodwood",
             "evidence": {
               "url": "https://www.geny.com/course/1696809-2026-11-07-deauville-prix-de-l-operation-goodwood/partants-pronostics",
-              "sha256": "a9f52dfd898137b82ea84d741680a3337042bcfd6517e5796e2a804a38ec7782",
-              "file": "preuves/a9f52dfd898137b82ea84d741680a3337042bcfd6517e5796e2a804a38ec7782.gz"
+              "sha256": "604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a",
+              "file": "preuves/604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C8/participants",
-              "sha256": "224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6",
-              "file": "preuves/224a0dc910d309c238861be7379c7e3cff459e6b1edae15013b543de2fcd60e6.gz"
+              "sha256": "71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606",
+              "file": "preuves/71b73c2335ac420fc009560e17313a0ff236b6b98a330830df5813ab94d4d606.gz"
             },
-            "captured_at": "2026-11-07T12:58:19.532895+01:00",
+            "captured_at": "2026-11-07T14:01:02.826309+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.6,
+              "rapport": 4.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.12,
-              "dateRapport": 1794051953000,
+              "nombreIndicateurTendance": 2.12,
+              "dateRapport": 1794055553000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -4374,23 +5319,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-07/r1c8-deauville-prix-de-l-operation-goodwood",
-            "sha256": "19c3a2b94ccc818df150420f55f7f6cedbe27d0831512409a51898b8b036ef05",
-            "file": "preuves/19c3a2b94ccc818df150420f55f7f6cedbe27d0831512409a51898b8b036ef05.gz"
+            "sha256": "b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb",
+            "file": "preuves/b474aa4976a820dde1676f5b81288e7e9c0d3a0a2523d26f434f867993351aeb.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
-            "sha256": "78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627",
-            "file": "preuves/78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627.gz"
+            "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+            "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-07/deauville/422846_prix-de-l-operation-goodwood.html",
-            "sha256": "78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627",
-            "file": "preuves/78d9c0ad424b15a9c3da85f3726a1b91c33d43e36f351976e25bdf21ba35e627.gz"
+            "sha256": "b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b",
+            "file": "preuves/b580d4cc7add08610f9e3c350a7233cc5c7da7464bbb360d69ce1c3208cee83b.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1696809-2026-11-07-deauville-prix-de-l-operation-goodwood/partants-pronostics",
-            "sha256": "a9f52dfd898137b82ea84d741680a3337042bcfd6517e5796e2a804a38ec7782",
-            "file": "preuves/a9f52dfd898137b82ea84d741680a3337042bcfd6517e5796e2a804a38ec7782.gz"
+            "sha256": "604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a",
+            "file": "preuves/604d50c6c6a37205002adb3aceef5825456f8b7ec2782da4c91f10bd7f1c9d2a.gz"
           }
         }
       }
