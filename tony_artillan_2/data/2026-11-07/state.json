@@ -10,7 +10,7 @@
           "number": 3,
           "name": "ADICTA",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-07T14:03:48.994036+01:00",
           "source_captured_at": "2026-11-07T13:34:08.074875+01:00",
           "sites": [
@@ -33,7 +33,21 @@
               "message_id": 7222,
               "date": 1794056629
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 2,
+          "settled_at": "2026-11-07T14:44:38.222535+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe",
+            "file": "preuves/3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+            "sha256": "5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74",
+            "file": "preuves/5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -382,7 +396,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-07T14:44:38.222094+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe",
+            "file": "preuves/3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+            "sha256": "5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74",
+            "file": "preuves/5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -415,7 +443,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-07T14:44:38.222406+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe",
+            "file": "preuves/3809eac8ed9497db3356fb1f4955f1b45adf72cdd0e2f320f3df3ba09bd423fe.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+            "sha256": "5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74",
+            "file": "preuves/5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74.gz"
+          }
         }
       },
       "groups": {
@@ -689,7 +731,38 @@
         "at": "2026-11-07T14:32:25.888009+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "SAINT MONCHIK",
+          "rank": 1
+        },
+        {
+          "number": 3,
+          "name": "ADICTA",
+          "rank": 2
+        },
+        {
+          "number": 2,
+          "name": "DERNI CHOP",
+          "rank": 3
+        },
+        {
+          "number": 8,
+          "name": "AUSTRALIAN ROMANCE",
+          "rank": 4
+        },
+        {
+          "number": 9,
+          "name": "SQUARE DU CROISIC",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C2/participants",
+        "sha256": "5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74",
+        "file": "preuves/5deebbf4eabddca65cfa914647ecccbc4363252d646cf40204bec4d8f220ed74.gz"
+      }
     },
     {
       "date": "2026-11-07",
@@ -1019,7 +1092,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-07T14:43:34.900617+01:00",
+      "final_check_started_at": "2026-11-07T14:44:38.233295+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696804-2026-11-07-deauville-prix-de-l-operation-epsom/partants-pronostics",
@@ -1033,7 +1106,7 @@
         }
       },
       "groups_frozen_at": "2026-11-07T14:15:23.522596+01:00",
-      "final_check_completed_at": "2026-11-07T14:43:35.557704+01:00"
+      "final_check_completed_at": "2026-11-07T14:44:38.740672+01:00"
     },
     {
       "date": "2026-11-07",
