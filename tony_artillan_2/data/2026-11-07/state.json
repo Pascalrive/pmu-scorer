@@ -145,7 +145,7 @@
           "number": 1,
           "name": "RIVER QUARTZ",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-07T16:01:50.461096+01:00",
           "source_captured_at": "2026-11-07T15:25:57.084582+01:00",
           "sites": [
@@ -167,6 +167,51 @@
             {
               "message_id": 7253,
               "date": 1794063710
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -20000,
+          "rank": 13,
+          "settled_at": "2026-11-07T16:38:20.581308+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4",
+            "file": "preuves/cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+            "sha256": "ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7",
+            "file": "preuves/ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7.gz"
+          }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-11-07T17:00:00+01:00",
+          "number": 4,
+          "name": "TIMEA",
+          "stake_cents": 15000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-07T16:38:21.528189+01:00",
+          "source_captured_at": "2026-11-07T16:00:44.350650+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 18.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794065892000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "c3f9224cffad79b2890f4f487abdd0da533f49741f1a8d73474d1e63a7732917",
+          "telegram_receipts": [
+            {
+              "message_id": 7262,
+              "date": 1794065902
             }
           ]
         }
@@ -1901,7 +1946,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 13,
+          "settled_at": "2026-11-07T16:38:20.580831+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4",
+            "file": "preuves/cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+            "sha256": "ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7",
+            "file": "preuves/ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1934,7 +1993,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 13,
+          "settled_at": "2026-11-07T16:38:20.581166+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4",
+            "file": "preuves/cee3728e8955d223d5e5ca752ffdfcd0cdf2cea9441bbe409ed3196a6b2322d4.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+            "sha256": "ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7",
+            "file": "preuves/ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7.gz"
+          }
         }
       },
       "groups": {
@@ -2368,7 +2441,38 @@
         "at": "2026-11-07T16:24:36.779224+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 11,
+          "name": "ZOUBAREVA",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "MANA SIS",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "KARKHOV",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "JOUKOVKA",
+          "rank": 4
+        },
+        {
+          "number": 14,
+          "name": "MAESTRO CHOP",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C5/participants",
+        "sha256": "ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7",
+        "file": "preuves/ab4afbf65b6222ac35ec9e3c075508609c96a1d923b1ddd8c75ebfba9e2292d7.gz"
+      }
     },
     {
       "date": "2026-11-07",
@@ -2858,7 +2962,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-07T16:37:16.427645+01:00",
+      "final_check_started_at": "2026-11-07T16:38:20.610514+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696807-2026-11-07-deauville-prix-de-l-operation-spring/partants-pronostics",
@@ -2872,7 +2976,7 @@
         }
       },
       "groups_frozen_at": "2026-11-07T16:00:46.097410+01:00",
-      "final_check_completed_at": "2026-11-07T16:37:17.165099+01:00",
+      "final_check_completed_at": "2026-11-07T16:38:20.985891+01:00",
       "last_reservation_check": {
         "at": "2026-11-07T16:37:17.824302+01:00",
         "stop": "ATTENTE_RESULTAT"
@@ -3318,7 +3422,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-07T16:37:17.170141+01:00",
+      "final_check_started_at": "2026-11-07T16:38:20.991001+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
@@ -3331,7 +3435,7 @@
           "file": "preuves/6e4c910c4c8414e66d51ff709bae8de9499e6d641507c1f3c6070b17029ff2e1.gz"
         }
       },
-      "final_check_completed_at": "2026-11-07T16:37:17.608343+01:00"
+      "final_check_completed_at": "2026-11-07T16:38:21.386956+01:00"
     },
     {
       "date": "2026-11-07",
