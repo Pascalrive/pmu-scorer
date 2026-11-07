@@ -190,7 +190,7 @@
           "number": 4,
           "name": "TIMEA",
           "stake_cents": 15000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-07T16:38:21.528189+01:00",
           "source_captured_at": "2026-11-07T16:00:44.350650+01:00",
           "sites": [
@@ -213,7 +213,21 @@
               "message_id": 7262,
               "date": 1794065902
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -15000,
+          "rank": null,
+          "settled_at": "2026-11-07T17:13:02.180905+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905",
+            "file": "preuves/26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+            "sha256": "2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011",
+            "file": "preuves/2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -2514,7 +2528,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-07T17:13:02.180357+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905",
+            "file": "preuves/26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+            "sha256": "2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011",
+            "file": "preuves/2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -2547,7 +2575,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-07T17:13:02.180755+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905",
+            "file": "preuves/26f533733a62ddafdee217b725dbc81a3efad788e09b804d4422800691992905.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+            "sha256": "2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011",
+            "file": "preuves/2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011.gz"
+          }
         }
       },
       "groups": {
@@ -2987,7 +3029,39 @@
           "new": "2026-11-07T17:02:00+01:00",
           "checked_at": "2026-11-07T16:46:32.323907+01:00"
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 12,
+          "name": "TAKE ME I'M YOURS",
+          "rank": 1
+        },
+        {
+          "number": 13,
+          "name": "HARTWOOD MAN",
+          "rank": 2
+        },
+        {
+          "number": 1,
+          "name": "KIEVSKY",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "NEUSCHWANSTEIN",
+          "rank": 4
+        },
+        {
+          "number": 6,
+          "name": "COMTE NOIR",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/07112026/R1/C6/participants",
+        "sha256": "2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011",
+        "file": "preuves/2775a97e81b6cc05bbc77f5ee16ddbd972b977deca3d90bc652bf68c84ef5011.gz"
+      }
     },
     {
       "date": "2026-11-07",
@@ -3501,7 +3575,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-07T17:11:58.382980+01:00",
+      "final_check_started_at": "2026-11-07T17:13:02.216194+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696808-2026-11-07-deauville-prix-de-l-operation-windsor/partants-pronostics",
@@ -3514,7 +3588,7 @@
           "file": "preuves/6e4c910c4c8414e66d51ff709bae8de9499e6d641507c1f3c6070b17029ff2e1.gz"
         }
       },
-      "final_check_completed_at": "2026-11-07T17:11:58.836552+01:00"
+      "final_check_completed_at": "2026-11-07T17:13:02.449839+01:00"
     },
     {
       "date": "2026-11-07",
@@ -4084,7 +4158,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-07T17:11:58.842153+01:00",
+      "final_check_started_at": "2026-11-07T17:13:02.455251+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1696809-2026-11-07-deauville-prix-de-l-operation-goodwood/partants-pronostics",
@@ -4098,7 +4172,7 @@
         }
       },
       "groups_frozen_at": "2026-11-07T17:11:17.900481+01:00",
-      "final_check_completed_at": "2026-11-07T17:11:59.398320+01:00"
+      "final_check_completed_at": "2026-11-07T17:13:02.727033+01:00"
     }
   ],
   "notifications": [],
