@@ -287,7 +287,8 @@
       "last_reservation_check": {
         "at": "2026-11-08T13:22:33.724081+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-08",
@@ -447,7 +448,7 @@
         }
       },
       "errors": {},
-      "final_check_started_at": "2026-11-08T13:20:44.532605+01:00",
+      "final_check_started_at": "2026-11-08T13:23:38.929583+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
@@ -471,7 +472,162 @@
         }
       },
       "groups_frozen_at": "2026-11-08T13:13:17.814559+01:00",
-      "final_check_completed_at": "2026-11-08T13:20:44.938096+01:00"
+      "final_check_completed_at": "2026-11-08T13:23:39.371190+01:00",
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:24:03.935704+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            },
+            "groupe_turfin+zeturf": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "MALIKA",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Douve",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
+                "sha256": "1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6",
+                "file": "preuves/1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+                "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+                "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+              },
+              "captured_at": "2026-11-08T13:23:41.645466+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.89,
+                "dateRapport": 1794140111000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 11,
+              "name": "ROMANTIQUE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DOUVE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+                "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+                "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+                "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+                "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+              },
+              "captured_at": "2026-11-08T13:23:43.348486+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -5.97,
+                "dateRapport": 1794140111000,
+                "favoris": false,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "MALIKA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DOUVE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+                "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+                "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+                "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+                "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+              },
+              "captured_at": "2026-11-08T13:23:43.405155+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.89,
+                "dateRapport": 1794140111000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "KASSKA",
+              "source_url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Douve",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+                "sha256": "82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46",
+                "file": "preuves/82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+                "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+                "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+              },
+              "captured_at": "2026-11-08T13:24:03.935643+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.59,
+                "dateRapport": 1794140111000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",
@@ -482,7 +638,172 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:24:24.537380+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_geny+turfin+zeturf": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "CROWN OF OAKS",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c4-saint-cloud-prix-tantieme",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Tantieme",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c4-saint-cloud-prix-tantieme",
+                "sha256": "bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9",
+                "file": "preuves/bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+                "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+                "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+              },
+              "captured_at": "2026-11-08T13:24:05.343286+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140102000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "SKYTREE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX TANTIEME",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+                "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+                "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+                "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+                "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+              },
+              "captured_at": "2026-11-08T13:24:05.972677+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 8.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140102000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "CROWN OF OAKS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX TANTIEME",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+                "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+                "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+                "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+                "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+              },
+              "captured_at": "2026-11-08T13:24:06.025969+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140102000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 2,
+              "name": "CROWN OF OAKS",
+              "source_url": "https://www.geny.com/course/1697143-2026-11-08-saint-cloud-prix-tantieme/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Tantième",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697143-2026-11-08-saint-cloud-prix-tantieme/partants-pronostics",
+                "sha256": "5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54",
+                "file": "preuves/5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+                "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+                "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+              },
+              "captured_at": "2026-11-08T13:24:24.537324+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140102000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",
@@ -493,7 +814,162 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:24:44.367574+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 7,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            },
+            "groupe_turfin+zeturf": {
+              "number": 7,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 7,
+              "name": "ORAGEUX",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c5-saint-cloud-prix-sagaro",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Sagaro",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c5-saint-cloud-prix-sagaro",
+                "sha256": "d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7",
+                "file": "preuves/d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+                "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+                "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+              },
+              "captured_at": "2026-11-08T13:24:26.203755+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140151000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "DON'T SHUT ME DOWN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX SAGARO",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+                "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+                "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+                "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+                "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+              },
+              "captured_at": "2026-11-08T13:24:26.841961+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 8.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.14,
+                "dateRapport": 1794140151000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 7,
+              "name": "ORAGEUX",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX SAGARO",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+                "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+                "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+                "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+                "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+              },
+              "captured_at": "2026-11-08T13:24:26.902774+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140151000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 10,
+              "name": "DARK ROCKSTER",
+              "source_url": "https://www.geny.com/course/1697144-2026-11-08-saint-cloud-prix-sagaro/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Sagaro",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697144-2026-11-08-saint-cloud-prix-sagaro/partants-pronostics",
+                "sha256": "954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc",
+                "file": "preuves/954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+                "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+                "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+              },
+              "captured_at": "2026-11-08T13:24:44.367486+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 14.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -0.69,
+                "dateRapport": 1794140151000,
+                "favoris": false,
+                "numPmu1": 10,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",
@@ -504,7 +980,162 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:25:03.990439+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 3,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_geny+zeturf": {
+              "number": 3,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "SHANOUR",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c6-saint-cloud-prix-vulcain",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Vulcain",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c6-saint-cloud-prix-vulcain",
+                "sha256": "0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74",
+                "file": "preuves/0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+                "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+                "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+              },
+              "captured_at": "2026-11-08T13:24:46.544578+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140100000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 5,
+              "name": "WIZARD OF LIPS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX VULCAIN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+                "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+                "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+                "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+                "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+              },
+              "captured_at": "2026-11-08T13:24:48.172524+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -5.55,
+                "dateRapport": 1794140100000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 3,
+              "name": "COSY BEAR",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX VULCAIN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+                "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+                "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+                "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+                "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+              },
+              "captured_at": "2026-11-08T13:24:48.258336+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140100000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "COSY BEAR",
+              "source_url": "https://www.geny.com/course/1697145-2026-11-08-saint-cloud-prix-vulcain/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Vulcain",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697145-2026-11-08-saint-cloud-prix-vulcain/partants-pronostics",
+                "sha256": "0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef",
+                "file": "preuves/0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+                "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+                "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+              },
+              "captured_at": "2026-11-08T13:25:03.990372+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140100000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",
@@ -515,7 +1146,81 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:25:24.572139+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 5,
+              "name": "INSEPARABLE",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c7-saint-cloud-prix-buckskin",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Buckskin",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c7-saint-cloud-prix-buckskin",
+                "sha256": "728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d",
+                "file": "preuves/728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C7/participants",
+                "sha256": "e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c",
+                "file": "preuves/e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c.gz"
+              },
+              "captured_at": "2026-11-08T13:25:05.642612+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140156000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 5,
+              "name": "INSEPARABLE",
+              "source_url": "https://www.geny.com/course/1697146-2026-11-08-saint-cloud-prix-buckskin/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Buckskin",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697146-2026-11-08-saint-cloud-prix-buckskin/partants-pronostics",
+                "sha256": "4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f",
+                "file": "preuves/4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C7/participants",
+                "sha256": "e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c",
+                "file": "preuves/e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c.gz"
+              },
+              "captured_at": "2026-11-08T13:25:24.572075+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794140156000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "date": "2026-11-08",
@@ -526,8 +1231,1114 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "preview_observations": [
+        {
+          "at": "2026-11-08T13:25:44.435798+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+zeturf": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 14,
+              "name": "RUMPUMPEL",
+              "source_url": "https://turfin.fr/course/2026-11-08/r1c8-saint-cloud-prix-solitude",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Solitude",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-08/r1c8-saint-cloud-prix-solitude",
+                "sha256": "8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd",
+                "file": "preuves/8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+                "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+                "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+              },
+              "captured_at": "2026-11-08T13:25:26.117050+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.57,
+                "dateRapport": 1794140124000,
+                "favoris": true,
+                "numPmu1": 14,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 7,
+              "name": "LEGACY LINK",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX SOLITUDE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+                "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+                "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+                "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+                "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+              },
+              "captured_at": "2026-11-08T13:25:26.772498+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.04,
+                "dateRapport": 1794140124000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 7,
+              "name": "LEGACY LINK",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX SOLITUDE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+                "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+                "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+                "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+                "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+              },
+              "captured_at": "2026-11-08T13:25:26.830998+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.04,
+                "dateRapport": 1794140124000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 7,
+              "name": "LEGACY LINK",
+              "source_url": "https://www.geny.com/course/1697147-2026-11-08-saint-cloud-prix-solitude/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Solitude",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697147-2026-11-08-saint-cloud-prix-solitude/partants-pronostics",
+                "sha256": "722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f",
+                "file": "preuves/722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+                "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+                "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+              },
+              "captured_at": "2026-11-08T13:25:44.435724+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.04,
+                "dateRapport": 1794140124000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            }
+          }
+        }
+      ]
     }
   ],
-  "notifications": []
+  "notifications": [],
+  "morning_preview": {
+    "version": 7,
+    "captured_at": "2026-11-08T13:25:44.435875+01:00",
+    "races": [
+      {
+        "date": "2026-11-08",
+        "id": "R1C3",
+        "c": 3,
+        "title": "PRIX DOUVE",
+        "departure": "2026-11-08T13:58:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 2,
+            "name": "MALIKA",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Douve",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
+              "sha256": "1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6",
+              "file": "preuves/1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+              "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+              "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+            },
+            "captured_at": "2026-11-08T13:23:41.645466+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 3.1,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 6.89,
+              "dateRapport": 1794140111000,
+              "favoris": true,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          },
+          "canalturf": {
+            "site": "canalturf",
+            "number": 11,
+            "name": "ROMANTIQUE",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+            "definition": "Premier cheval de la sélection Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX DOUVE",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+              "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+              "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+              "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+              "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+            },
+            "captured_at": "2026-11-08T13:23:43.348486+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 6.3,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": -5.97,
+              "dateRapport": 1794140111000,
+              "favoris": false,
+              "numPmu1": 11,
+              "grossePrise": false
+            }
+          },
+          "zeturf": {
+            "site": "zeturf",
+            "number": 2,
+            "name": "MALIKA",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+            "definition": "Sélection ZEturf publiée sur Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX DOUVE",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+              "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+              "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+              "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+              "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+            },
+            "captured_at": "2026-11-08T13:23:43.405155+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 3.1,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 6.89,
+              "dateRapport": 1794140111000,
+              "favoris": true,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 1,
+            "name": "KASSKA",
+            "source_url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Douve",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+              "sha256": "82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46",
+              "file": "preuves/82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+              "sha256": "dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494",
+              "file": "preuves/dc17ecf8bfbd1a0a7d60ce1ad011d2ac9d005638151e381690389d03145f3494.gz"
+            },
+            "captured_at": "2026-11-08T13:24:03.935643+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 9.1,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 4.59,
+              "dateRapport": 1794140111000,
+              "favoris": false,
+              "numPmu1": 1,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {},
+        "final_check_started_at": "2026-11-08T13:23:38.929583+01:00",
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c3-saint-cloud-prix-douve",
+            "sha256": "1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6",
+            "file": "preuves/1282123e37404f95099a7b87c514c66ced4269a69b475f33a833b6970cd8c7e6.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+            "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+            "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+            "sha256": "a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0",
+            "file": "preuves/a496e6eb3c60c7bb02610624153de9f515a753b9f78335790a1007aeaa5f29b0.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+            "sha256": "82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46",
+            "file": "preuves/82b9e8271de621b3393108374a92117336c5dcb08cf7520dc807bd5b01723e46.gz"
+          }
+        },
+        "groups_frozen_at": "2026-11-08T13:13:17.814559+01:00",
+        "final_check_completed_at": "2026-11-08T13:23:39.371190+01:00"
+      },
+      {
+        "date": "2026-11-08",
+        "id": "R1C4",
+        "c": 4,
+        "title": "PRIX TANTIEME",
+        "departure": "2026-11-08T14:33:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 2,
+            "name": "CROWN OF OAKS",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c4-saint-cloud-prix-tantieme",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Tantieme",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c4-saint-cloud-prix-tantieme",
+              "sha256": "bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9",
+              "file": "preuves/bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+              "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+              "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+            },
+            "captured_at": "2026-11-08T13:24:05.343286+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 2.4,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140102000,
+              "favoris": true,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          },
+          "canalturf": {
+            "site": "canalturf",
+            "number": 1,
+            "name": "SKYTREE",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+            "definition": "Premier cheval de la sélection Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX TANTIEME",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+              "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+              "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+              "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+              "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+            },
+            "captured_at": "2026-11-08T13:24:05.972677+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 8.4,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140102000,
+              "favoris": false,
+              "numPmu1": 1,
+              "grossePrise": false
+            }
+          },
+          "zeturf": {
+            "site": "zeturf",
+            "number": 2,
+            "name": "CROWN OF OAKS",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+            "definition": "Sélection ZEturf publiée sur Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX TANTIEME",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+              "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+              "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+              "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+              "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+            },
+            "captured_at": "2026-11-08T13:24:06.025969+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 2.4,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140102000,
+              "favoris": true,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 2,
+            "name": "CROWN OF OAKS",
+            "source_url": "https://www.geny.com/course/1697143-2026-11-08-saint-cloud-prix-tantieme/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Tantième",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697143-2026-11-08-saint-cloud-prix-tantieme/partants-pronostics",
+              "sha256": "5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54",
+              "file": "preuves/5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C4/participants",
+              "sha256": "534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb",
+              "file": "preuves/534ed52e677c094323dfa3ffae3031802de24a0bbef8bdd216d1e36827a08dbb.gz"
+            },
+            "captured_at": "2026-11-08T13:24:24.537324+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 2.4,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140102000,
+              "favoris": true,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c4-saint-cloud-prix-tantieme",
+            "sha256": "bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9",
+            "file": "preuves/bad984f0f42761f624654631b17078ad14953736b0bffbfd62b2a81ae5e831a9.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+            "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+            "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422900_prix-tantieme.html",
+            "sha256": "7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15",
+            "file": "preuves/7589fb345ee068bc1fc1e9a902a988a8452458eba5416fbb68d7be3baf2a4b15.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697143-2026-11-08-saint-cloud-prix-tantieme/partants-pronostics",
+            "sha256": "5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54",
+            "file": "preuves/5b6ec668a1b6c4255795fb2a190d03b5b16f0c8459a9963624ec337b41f09d54.gz"
+          }
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "id": "R1C5",
+        "c": 5,
+        "title": "PRIX SAGARO",
+        "departure": "2026-11-08T15:15:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 7,
+            "name": "ORAGEUX",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c5-saint-cloud-prix-sagaro",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Sagaro",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c5-saint-cloud-prix-sagaro",
+              "sha256": "d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7",
+              "file": "preuves/d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+              "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+              "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+            },
+            "captured_at": "2026-11-08T13:24:26.203755+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 4.8,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140151000,
+              "favoris": true,
+              "numPmu1": 7,
+              "grossePrise": false
+            }
+          },
+          "canalturf": {
+            "site": "canalturf",
+            "number": 1,
+            "name": "DON'T SHUT ME DOWN",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+            "definition": "Premier cheval de la sélection Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du Quinté PRIX SAGARO",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+              "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+              "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+              "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+              "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+            },
+            "captured_at": "2026-11-08T13:24:26.841961+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 8.8,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 1.14,
+              "dateRapport": 1794140151000,
+              "favoris": false,
+              "numPmu1": 1,
+              "grossePrise": false
+            }
+          },
+          "zeturf": {
+            "site": "zeturf",
+            "number": 7,
+            "name": "ORAGEUX",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+            "definition": "Sélection ZEturf publiée sur Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du Quinté PRIX SAGARO",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+              "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+              "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+              "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+              "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+            },
+            "captured_at": "2026-11-08T13:24:26.902774+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 4.8,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140151000,
+              "favoris": true,
+              "numPmu1": 7,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 10,
+            "name": "DARK ROCKSTER",
+            "source_url": "https://www.geny.com/course/1697144-2026-11-08-saint-cloud-prix-sagaro/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Sagaro",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697144-2026-11-08-saint-cloud-prix-sagaro/partants-pronostics",
+              "sha256": "954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc",
+              "file": "preuves/954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C5/participants",
+              "sha256": "1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8",
+              "file": "preuves/1ee50a75d7a50e3b4f8a311a49f41790751f3e4c687cdbef3534229d6a86a7e8.gz"
+            },
+            "captured_at": "2026-11-08T13:24:44.367486+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 14.0,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": -0.69,
+              "dateRapport": 1794140151000,
+              "favoris": false,
+              "numPmu1": 10,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c5-saint-cloud-prix-sagaro",
+            "sha256": "d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7",
+            "file": "preuves/d1375246663a4dc11f96ca55a48d098eda388af6ef42e5360ff9712c217175a7.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+            "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+            "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422901_prix-sagaro.html",
+            "sha256": "49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86",
+            "file": "preuves/49e366313bd88366365eacc55ac67911e5d3ffff5a60c5820aa9485cec005d86.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697144-2026-11-08-saint-cloud-prix-sagaro/partants-pronostics",
+            "sha256": "954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc",
+            "file": "preuves/954eda523bb2ae5184e1b139f93421f3d2e951b282c8c1509df52010e44149fc.gz"
+          }
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "id": "R1C6",
+        "c": 6,
+        "title": "PRIX VULCAIN",
+        "departure": "2026-11-08T15:50:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 2,
+            "name": "SHANOUR",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c6-saint-cloud-prix-vulcain",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Vulcain",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c6-saint-cloud-prix-vulcain",
+              "sha256": "0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74",
+              "file": "preuves/0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+              "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+              "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+            },
+            "captured_at": "2026-11-08T13:24:46.544578+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 4.9,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140100000,
+              "favoris": false,
+              "numPmu1": 2,
+              "grossePrise": false
+            }
+          },
+          "canalturf": {
+            "site": "canalturf",
+            "number": 5,
+            "name": "WIZARD OF LIPS",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+            "definition": "Premier cheval de la sélection Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX VULCAIN",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+              "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+              "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+              "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+              "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+            },
+            "captured_at": "2026-11-08T13:24:48.172524+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 6.8,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": -5.55,
+              "dateRapport": 1794140100000,
+              "favoris": false,
+              "numPmu1": 5,
+              "grossePrise": false
+            }
+          },
+          "zeturf": {
+            "site": "zeturf",
+            "number": 3,
+            "name": "COSY BEAR",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+            "definition": "Sélection ZEturf publiée sur Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX VULCAIN",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+              "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+              "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+              "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+              "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+            },
+            "captured_at": "2026-11-08T13:24:48.258336+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 4.1,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140100000,
+              "favoris": true,
+              "numPmu1": 3,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 3,
+            "name": "COSY BEAR",
+            "source_url": "https://www.geny.com/course/1697145-2026-11-08-saint-cloud-prix-vulcain/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Vulcain",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697145-2026-11-08-saint-cloud-prix-vulcain/partants-pronostics",
+              "sha256": "0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef",
+              "file": "preuves/0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C6/participants",
+              "sha256": "a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a",
+              "file": "preuves/a6d4748ad2814bd7c2b89c16026104d1718997cee5a8e10ba13d4afe6d3c3b0a.gz"
+            },
+            "captured_at": "2026-11-08T13:25:03.990372+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 4.1,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140100000,
+              "favoris": true,
+              "numPmu1": 3,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c6-saint-cloud-prix-vulcain",
+            "sha256": "0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74",
+            "file": "preuves/0ba16d17949120c7ec0cd14eb3f00f82a6fa6280dd3a40c852b35bc4cddc5a74.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+            "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+            "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422902_prix-vulcain.html",
+            "sha256": "a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf",
+            "file": "preuves/a25699e3a69ed214b547e8d4b8485a10ddc499f19c5ec41fb7377ea6acf4fadf.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697145-2026-11-08-saint-cloud-prix-vulcain/partants-pronostics",
+            "sha256": "0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef",
+            "file": "preuves/0c2ee2bed5891c5eca92e22b787c884a25108fbce9cedb4cfdb7899ee9b189ef.gz"
+          }
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "id": "R1C7",
+        "c": 7,
+        "title": "PRIX BUCKSKIN",
+        "departure": "2026-11-08T16:25:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 5,
+            "name": "INSEPARABLE",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c7-saint-cloud-prix-buckskin",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Buckskin",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c7-saint-cloud-prix-buckskin",
+              "sha256": "728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d",
+              "file": "preuves/728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C7/participants",
+              "sha256": "e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c",
+              "file": "preuves/e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c.gz"
+            },
+            "captured_at": "2026-11-08T13:25:05.642612+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 9.9,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140156000,
+              "favoris": false,
+              "numPmu1": 5,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 5,
+            "name": "INSEPARABLE",
+            "source_url": "https://www.geny.com/course/1697146-2026-11-08-saint-cloud-prix-buckskin/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Buckskin",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697146-2026-11-08-saint-cloud-prix-buckskin/partants-pronostics",
+              "sha256": "4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f",
+              "file": "preuves/4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C7/participants",
+              "sha256": "e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c",
+              "file": "preuves/e1d63b01faf85fba82e9e854788b4effcde8370cc2a7a950e1fda2031535e21c.gz"
+            },
+            "captured_at": "2026-11-08T13:25:24.572075+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 9.9,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794140156000,
+              "favoris": false,
+              "numPmu1": 5,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {
+          "canalturf": {
+            "type": "HTTPError",
+            "reason": "500 Server Error: Internal Server Error for url: https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422903_prix-buckskin.html",
+            "at": "2026-11-08T13:25:06.146351+01:00"
+          },
+          "zeturf": {
+            "type": "ValueError",
+            "reason": "Source inaccessible lors de ce passage",
+            "at": "2026-11-08T13:25:06.186094+01:00"
+          }
+        },
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c7-saint-cloud-prix-buckskin",
+            "sha256": "728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d",
+            "file": "preuves/728b5b5d484fc77e379cc8b793b321a596546adc6c253167fae9fd25484fc42d.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697146-2026-11-08-saint-cloud-prix-buckskin/partants-pronostics",
+            "sha256": "4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f",
+            "file": "preuves/4f4df4acc8bd1b62339a59e7c9ec9099230da784db925f609e84e49e4e6d259f.gz"
+          }
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "id": "R1C8",
+        "c": 8,
+        "title": "PRIX SOLITUDE",
+        "departure": "2026-11-08T17:00:00+01:00",
+        "market": true,
+        "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 14,
+            "name": "RUMPUMPEL",
+            "source_url": "https://turfin.fr/course/2026-11-08/r1c8-saint-cloud-prix-solitude",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Solitude",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-08/r1c8-saint-cloud-prix-solitude",
+              "sha256": "8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd",
+              "file": "preuves/8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+              "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+              "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+            },
+            "captured_at": "2026-11-08T13:25:26.117050+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 2.7,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": -3.57,
+              "dateRapport": 1794140124000,
+              "favoris": true,
+              "numPmu1": 14,
+              "grossePrise": false
+            }
+          },
+          "canalturf": {
+            "site": "canalturf",
+            "number": 7,
+            "name": "LEGACY LINK",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+            "definition": "Premier cheval de la sélection Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX SOLITUDE",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+              "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+              "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+              "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+              "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+            },
+            "captured_at": "2026-11-08T13:25:26.772498+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 5.0,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 2.04,
+              "dateRapport": 1794140124000,
+              "favoris": false,
+              "numPmu1": 7,
+              "grossePrise": false
+            }
+          },
+          "zeturf": {
+            "site": "zeturf",
+            "number": 7,
+            "name": "LEGACY LINK",
+            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+            "definition": "Sélection ZEturf publiée sur Canalturf",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Le pronostic du PRIX SOLITUDE",
+            "evidence": {
+              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+              "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+              "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+              "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+              "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+            },
+            "captured_at": "2026-11-08T13:25:26.830998+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 5.0,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 2.04,
+              "dateRapport": 1794140124000,
+              "favoris": false,
+              "numPmu1": 7,
+              "grossePrise": false
+            }
+          },
+          "geny": {
+            "site": "geny",
+            "number": 7,
+            "name": "LEGACY LINK",
+            "source_url": "https://www.geny.com/course/1697147-2026-11-08-saint-cloud-prix-solitude/partants-pronostics",
+            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Solitude",
+            "evidence": {
+              "url": "https://www.geny.com/course/1697147-2026-11-08-saint-cloud-prix-solitude/partants-pronostics",
+              "sha256": "722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f",
+              "file": "preuves/722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C8/participants",
+              "sha256": "e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3",
+              "file": "preuves/e3915a7b8ba29889b47c1d5d285bdc65c5c7458a34b9a4b1b41c75161bf3cbb3.gz"
+            },
+            "captured_at": "2026-11-08T13:25:44.435724+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 5.0,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 2.04,
+              "dateRapport": 1794140124000,
+              "favoris": false,
+              "numPmu1": 7,
+              "grossePrise": false
+            }
+          }
+        },
+        "groups": {},
+        "errors": {},
+        "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-08/r1c8-saint-cloud-prix-solitude",
+            "sha256": "8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd",
+            "file": "preuves/8344579fd088cf2ff3a94ff9bb630c52660fd463621245d429b3d9ed20cb2cdd.gz"
+          },
+          "canalturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+            "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+            "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+          },
+          "zeturf": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422904_prix-solitude.html",
+            "sha256": "6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a",
+            "file": "preuves/6847027a2ba5debf5276d68d36138ce3cdf97ef3abf270e279ab67258cb8537a.gz"
+          },
+          "geny": {
+            "url": "https://www.geny.com/course/1697147-2026-11-08-saint-cloud-prix-solitude/partants-pronostics",
+            "sha256": "722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f",
+            "file": "preuves/722766a1250074457c24ab1ddd0732372d418efb7d2affdf8d7a49201863a25f.gz"
+          }
+        }
+      }
+    ],
+    "complete": false
+  }
 }
