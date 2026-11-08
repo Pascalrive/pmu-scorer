@@ -10,7 +10,7 @@
           "number": 3,
           "name": "BELISA BAY",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-08T13:13:30.138381+01:00",
           "source_captured_at": "2026-11-08T13:13:07.553519+01:00",
           "sites": [
@@ -33,7 +33,21 @@
               "message_id": 7303,
               "date": 1794140010
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 4,
+          "settled_at": "2026-11-08T13:30:55.289829+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca",
+            "file": "preuves/c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+            "sha256": "0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a",
+            "file": "preuves/0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -127,7 +141,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-08T13:30:55.289381+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca",
+            "file": "preuves/c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+            "sha256": "0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a",
+            "file": "preuves/0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -160,7 +188,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-08T13:30:55.289712+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca",
+            "file": "preuves/c638277551ba1cbe365acdc617b4900c7338b5cc299bc35e71d82d510b2c9fca.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+            "sha256": "0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a",
+            "file": "preuves/0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a.gz"
+          }
         }
       },
       "groups": {
@@ -192,7 +234,38 @@
         "at": "2026-11-08T13:22:37.744078+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 6,
+          "name": "FLYING SPUR",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "TIMUR",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "HINATA GREY",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "BELISA BAY",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "NOUVEAUTE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+        "sha256": "0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a",
+        "file": "preuves/0886e654987727e93217fee7e3f0f62983bfbd4866329696e0599f48ef37590a.gz"
+      }
     },
     {
       "date": "2026-11-08",
@@ -272,7 +345,7 @@
       },
       "groups": {},
       "errors": {},
-      "final_check_started_at": "2026-11-08T13:29:52.583507+01:00",
+      "final_check_started_at": "2026-11-08T13:30:55.295443+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
@@ -285,7 +358,7 @@
           "file": "preuves/9566034e909bbedfe8681642ea6339c07cc402f54e79d6d6f214774aa0499ce3.gz"
         }
       },
-      "final_check_completed_at": "2026-11-08T13:29:52.895736+01:00",
+      "final_check_completed_at": "2026-11-08T13:30:55.572788+01:00",
       "preview_observations": [
         {
           "at": "2026-11-08T13:24:02.815667+01:00",
