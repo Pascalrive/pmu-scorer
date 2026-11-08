@@ -3,7 +3,39 @@
   "venue": "SAINT-CLOUD",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C2",
+          "departure": "2026-11-08T13:23:00+01:00",
+          "number": 3,
+          "name": "BELISA BAY",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-08T13:13:30.138381+01:00",
+          "source_captured_at": "2026-11-08T13:13:07.553519+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794140001000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "2e5af2b9b260b734431d15615effedeb5514bf91b35bb6f2d9311f214933c906",
+          "telegram_receipts": [
+            {
+              "message_id": 7303,
+              "date": 1794140010
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -20,7 +52,40 @@
       "market": true,
       "tips": {},
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "TRYSTAR",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "THE PYRENEES",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "LIMIT UP",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "BATUKHAN",
+          "rank": 4
+        },
+        {
+          "number": 5,
+          "name": "SZECHUAN",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C1/participants",
+        "sha256": "417a39e14568b6583433e305a54dfc844c85dbe88f402c9f89225d9f134eab17",
+        "file": "preuves/417a39e14568b6583433e305a54dfc844c85dbe88f402c9f89225d9f134eab17.gz"
+      },
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-08",
@@ -30,9 +95,99 @@
       "departure": "2026-11-08T13:23:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {}
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "BELISA BAY",
+          "source_url": "https://www.geny.com/course/1697141-2026-11-08-saint-cloud-prix-herod/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Herod",
+          "evidence": {
+            "url": "https://www.geny.com/course/1697141-2026-11-08-saint-cloud-prix-herod/partants-pronostics",
+            "sha256": "f23f8e885a825222718e1ba9e31f874c83f731551c8004c8759f772f07f1fbbc",
+            "file": "preuves/f23f8e885a825222718e1ba9e31f874c83f731551c8004c8759f772f07f1fbbc.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+            "sha256": "65f25c04b237034413b038167c6277f839e2c08e717bc4ffa082de2ebe252f81",
+            "file": "preuves/65f25c04b237034413b038167c6277f839e2c08e717bc4ffa082de2ebe252f81.gz"
+          },
+          "captured_at": "2026-11-08T13:13:07.553519+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.22,
+            "dateRapport": 1794139957000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "BELISA BAY",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422898_prix-herod.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX HEROD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422898_prix-herod.html",
+            "sha256": "affbda8098b6431d7dee2fae4c022ec14e520e70702e79eae0159cbe046c33f3",
+            "file": "preuves/affbda8098b6431d7dee2fae4c022ec14e520e70702e79eae0159cbe046c33f3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C2/participants",
+            "sha256": "65f25c04b237034413b038167c6277f839e2c08e717bc4ffa082de2ebe252f81",
+            "file": "preuves/65f25c04b237034413b038167c6277f839e2c08e717bc4ffa082de2ebe252f81.gz"
+          },
+          "captured_at": "2026-11-08T13:13:09.531857+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.22,
+            "dateRapport": 1794139957000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 3,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
+      "errors": {},
+      "final_check_started_at": "2026-11-08T13:12:45.877457+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1697141-2026-11-08-saint-cloud-prix-herod/partants-pronostics",
+          "sha256": "f23f8e885a825222718e1ba9e31f874c83f731551c8004c8759f772f07f1fbbc",
+          "file": "preuves/f23f8e885a825222718e1ba9e31f874c83f731551c8004c8759f772f07f1fbbc.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422898_prix-herod.html",
+          "sha256": "affbda8098b6431d7dee2fae4c022ec14e520e70702e79eae0159cbe046c33f3",
+          "file": "preuves/affbda8098b6431d7dee2fae4c022ec14e520e70702e79eae0159cbe046c33f3.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-08T13:13:09.531857+01:00",
+      "final_check_completed_at": "2026-11-08T13:13:09.531897+01:00"
     },
     {
       "date": "2026-11-08",
@@ -42,9 +197,90 @@
       "departure": "2026-11-08T13:58:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "KASSKA",
+          "source_url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Douve",
+          "evidence": {
+            "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+            "sha256": "bd88c3eb5221ebd9edcee455c63046990625e230f3a4321627741ae3b9e9b4ef",
+            "file": "preuves/bd88c3eb5221ebd9edcee455c63046990625e230f3a4321627741ae3b9e9b4ef.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+            "sha256": "8eb7632a6b2b819a83acf1620b1fec4293d886b62f1b06acfcda4223bf683d5d",
+            "file": "preuves/8eb7632a6b2b819a83acf1620b1fec4293d886b62f1b06acfcda4223bf683d5d.gz"
+          },
+          "captured_at": "2026-11-08T13:13:27.688915+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 3.57,
+            "dateRapport": 1794139211000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "ROMANTIQUE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DOUVE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+            "sha256": "9566034e909bbedfe8681642ea6339c07cc402f54e79d6d6f214774aa0499ce3",
+            "file": "preuves/9566034e909bbedfe8681642ea6339c07cc402f54e79d6d6f214774aa0499ce3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/08112026/R1/C3/participants",
+            "sha256": "8eb7632a6b2b819a83acf1620b1fec4293d886b62f1b06acfcda4223bf683d5d",
+            "file": "preuves/8eb7632a6b2b819a83acf1620b1fec4293d886b62f1b06acfcda4223bf683d5d.gz"
+          },
+          "captured_at": "2026-11-08T13:13:28.414296+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.89,
+            "dateRapport": 1794139211000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {}
+      "errors": {},
+      "final_check_started_at": "2026-11-08T13:13:10.053731+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1697142-2026-11-08-saint-cloud-prix-douve/partants-pronostics",
+          "sha256": "bd88c3eb5221ebd9edcee455c63046990625e230f3a4321627741ae3b9e9b4ef",
+          "file": "preuves/bd88c3eb5221ebd9edcee455c63046990625e230f3a4321627741ae3b9e9b4ef.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-08/saint-cloud/422899_prix-douve.html",
+          "sha256": "9566034e909bbedfe8681642ea6339c07cc402f54e79d6d6f214774aa0499ce3",
+          "file": "preuves/9566034e909bbedfe8681642ea6339c07cc402f54e79d6d6f214774aa0499ce3.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-08T13:13:28.414350+01:00"
     },
     {
       "date": "2026-11-08",
