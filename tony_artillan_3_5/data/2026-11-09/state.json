@@ -1315,7 +1315,9 @@
           "file": "preuves/15a69c439d5e5d9f91877a71b5adceea7ee70a3c0c801cce758c7d47110e679e.gz"
         }
       },
-      "final_check_completed_at": "2026-11-09T16:12:19.772192+01:00"
+      "final_check_completed_at": "2026-11-09T16:12:19.772192+01:00",
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu"
     },
     {
       "date": "2026-11-09",
@@ -1692,9 +1694,191 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-09T16:13:49.863523+01:00",
+          "groups": {
+            "majorite_3_sur_5": {
+              "number": 13,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny",
+                "zone_turf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 13,
+              "name": "LABEL GEMA",
+              "source_url": "https://turfin.fr/course/2026-11-09/r1c7-le-bouscat-prix-chateau-chantegrive",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Chateau Chantegrive",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-09/r1c7-le-bouscat-prix-chateau-chantegrive",
+                "sha256": "37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76",
+                "file": "preuves/37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
+                "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+                "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
+              },
+              "captured_at": "2026-11-09T16:13:25.434292+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -23.52,
+                "dateRapport": 1794236417000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": true
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 13,
+              "name": "LABEL GEMA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX CHATEAU CHANTEGRIVE (PRIX MARQUISE DE MORATALLA)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
+                "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+                "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
+                "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+                "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
+              },
+              "captured_at": "2026-11-09T16:13:27.652975+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -23.52,
+                "dateRapport": 1794236417000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": true
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 13,
+              "name": "LABEL GEMA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX CHATEAU CHANTEGRIVE (PRIX MARQUISE DE MORATALLA)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
+                "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+                "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
+                "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+                "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
+              },
+              "captured_at": "2026-11-09T16:13:27.740172+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -23.52,
+                "dateRapport": 1794236417000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": true
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 13,
+              "name": "LABEL GEMA",
+              "source_url": "https://www.geny.com/course/1697215-2026-11-09-bordeaux-le-bouscat-prix-chateau-chantegrive-prix-marquise-de-mortalla/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Château Chantegrive - Prix Marquise de Mortalla",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697215-2026-11-09-bordeaux-le-bouscat-prix-chateau-chantegrive-prix-marquise-de-mortalla/partants-pronostics",
+                "sha256": "b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5",
+                "file": "preuves/b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
+                "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+                "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
+              },
+              "captured_at": "2026-11-09T16:13:48.452199+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -23.52,
+                "dateRapport": 1794236417000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": true
+              }
+            },
+            "zone_turf": {
+              "site": "zone_turf",
+              "number": 13,
+              "name": "LABEL GEMA",
+              "source_url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
+              "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+              "identity_check": "date_rc_full_numbered_field",
+              "source_title": "R1 Course N°7 : C7 - Prix Chateau Chantegrive",
+              "evidence": {
+                "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
+                "sha256": "8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0",
+                "file": "preuves/8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
+                "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+                "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
+              },
+              "captured_at": "2026-11-09T16:13:49.863451+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -23.52,
+                "dateRapport": 1794236417000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": true
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-09T16:10:12.219955+01:00",
+      "final_check_started_at": "2026-11-09T16:13:22.202581+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-09/r1c7-le-bouscat-prix-chateau-chantegrive",
@@ -1723,7 +1907,7 @@
         }
       },
       "groups_frozen_at": "2026-11-09T15:46:08.833704+01:00",
-      "final_check_completed_at": "2026-11-09T16:10:12.890781+01:00"
+      "final_check_completed_at": "2026-11-09T16:13:22.949029+01:00"
     },
     {
       "date": "2026-11-09",
@@ -1874,6 +2058,144 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-09T16:14:09.682221+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "KORIOLIS DE ZIETTE",
+              "source_url": "https://turfin.fr/course/2026-11-09/r1c8-le-bouscat-prix-jonny-ruffato",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jonny Ruffato",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-09/r1c8-le-bouscat-prix-jonny-ruffato",
+                "sha256": "6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d",
+                "file": "preuves/6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
+                "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+                "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
+              },
+              "captured_at": "2026-11-09T16:13:51.745350+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.77,
+                "dateRapport": 1794236436000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "KORIOLIS DE ZIETTE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX JONNY RUFFATO",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
+                "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+                "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
+                "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+                "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
+              },
+              "captured_at": "2026-11-09T16:13:52.502756+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.77,
+                "dateRapport": 1794236436000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 16,
+              "name": "KESITO D'URVILLE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX JONNY RUFFATO",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
+                "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+                "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
+                "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+                "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
+              },
+              "captured_at": "2026-11-09T16:13:52.589357+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.56,
+                "dateRapport": 1794236436000,
+                "favoris": false,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 16,
+              "name": "KESITO D'URVILLE",
+              "source_url": "https://www.geny.com/course/1697221-2026-11-09-bordeaux-le-bouscat-prix-jonny-ruffato/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jonny Ruffato",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697221-2026-11-09-bordeaux-le-bouscat-prix-jonny-ruffato/partants-pronostics",
+                "sha256": "9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993",
+                "file": "preuves/9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
+                "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+                "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
+              },
+              "captured_at": "2026-11-09T16:14:08.933604+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.56,
+                "dateRapport": 1794236436000,
+                "favoris": false,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -1881,421 +2203,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-09T15:07:15.951155+01:00",
+    "captured_at": "2026-11-09T16:14:09.682315+01:00",
     "races": [
-      {
-        "date": "2026-11-09",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX BORDEAUX-METROPOLE",
-        "departure": "2026-11-09T15:40:00+01:00",
-        "discipline": "ATTELE",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 5,
-            "name": "KASH QUICK",
-            "source_url": "https://turfin.fr/course/2026-11-09/r1c5-le-bouscat-prix-bordeaux-metropole",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Bordeaux-Metropole",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-09/r1c5-le-bouscat-prix-bordeaux-metropole",
-              "sha256": "0da92044dd506271709706daa7ec7b5a856c0776c3aa4bcb476f3771b0f0bb85",
-              "file": "preuves/0da92044dd506271709706daa7ec7b5a856c0776c3aa4bcb476f3771b0f0bb85.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C5/participants",
-              "sha256": "301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb",
-              "file": "preuves/301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb.gz"
-            },
-            "captured_at": "2026-11-09T15:06:18.018190+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232811000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "KASH QUICK",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX BORDEAUX-METROPOLE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-              "sha256": "563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e",
-              "file": "preuves/563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C5/participants",
-              "sha256": "301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb",
-              "file": "preuves/301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb.gz"
-            },
-            "captured_at": "2026-11-09T15:06:18.054144+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232811000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 2,
-            "name": "KOUROUX",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX BORDEAUX-METROPOLE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-              "sha256": "563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e",
-              "file": "preuves/563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C5/participants",
-              "sha256": "301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb",
-              "file": "preuves/301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb.gz"
-            },
-            "captured_at": "2026-11-09T15:06:18.089645+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.11,
-              "dateRapport": 1794232811000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 2,
-            "name": "KOUROUX",
-            "source_url": "https://www.geny.com/course/1697219-2026-11-09-bordeaux-le-bouscat-prix-bordeaux-metropole/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Bordeaux-Métropole",
-            "evidence": {
-              "url": "https://www.geny.com/course/1697219-2026-11-09-bordeaux-le-bouscat-prix-bordeaux-metropole/partants-pronostics",
-              "sha256": "21cc30fd9d234b73498b2da01b0c586d1a1df539865f37b0ff539e6c345b57ef",
-              "file": "preuves/21cc30fd9d234b73498b2da01b0c586d1a1df539865f37b0ff539e6c345b57ef.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C5/participants",
-              "sha256": "301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb",
-              "file": "preuves/301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb.gz"
-            },
-            "captured_at": "2026-11-09T15:06:18.146238+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.11,
-              "dateRapport": 1794232811000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 2,
-            "name": "KOUROUX",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°5 : C5 - Prix Bordeaux-Metropole",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-              "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-              "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C5/participants",
-              "sha256": "301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb",
-              "file": "preuves/301de30c767738c3f8df3bcbcb6ec681fdc03234a6f6fdafa1f8df200d74edbb.gz"
-            },
-            "captured_at": "2026-11-09T15:06:18.461336+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -11.11,
-              "dateRapport": 1794232811000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-09T15:05:51.857015+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-09/r1c5-le-bouscat-prix-bordeaux-metropole",
-            "sha256": "0da92044dd506271709706daa7ec7b5a856c0776c3aa4bcb476f3771b0f0bb85",
-            "file": "preuves/0da92044dd506271709706daa7ec7b5a856c0776c3aa4bcb476f3771b0f0bb85.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-            "sha256": "563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e",
-            "file": "preuves/563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422980_prix-bordeaux-metropole.html",
-            "sha256": "563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e",
-            "file": "preuves/563094f759faf454e6f5927d639a078ee3d1477692cfb3f249a7fbb4f4831b8e.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1697219-2026-11-09-bordeaux-le-bouscat-prix-bordeaux-metropole/partants-pronostics",
-            "sha256": "21cc30fd9d234b73498b2da01b0c586d1a1df539865f37b0ff539e6c345b57ef",
-            "file": "preuves/21cc30fd9d234b73498b2da01b0c586d1a1df539865f37b0ff539e6c345b57ef.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-            "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-            "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-09T15:06:16.655332+01:00",
-        "final_check_completed_at": "2026-11-09T15:06:16.655373+01:00"
-      },
-      {
-        "date": "2026-11-09",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX JEAN-MAURICE BETEAU",
-        "departure": "2026-11-09T16:13:00+01:00",
-        "discipline": "ATTELE",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 9,
-            "name": "MAYERLING LEGACY",
-            "source_url": "https://turfin.fr/course/2026-11-09/r1c6-le-bouscat-prix-jean-maurice-beteau",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Jean-Maurice Beteau",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-09/r1c6-le-bouscat-prix-jean-maurice-beteau",
-              "sha256": "6ec9d8427c496353e5a0f6c079c239c4a5ae329463e0b1193dbb9dbd2ea1f9db",
-              "file": "preuves/6ec9d8427c496353e5a0f6c079c239c4a5ae329463e0b1193dbb9dbd2ea1f9db.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
-              "sha256": "36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a",
-              "file": "preuves/36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a.gz"
-            },
-            "captured_at": "2026-11-09T15:06:19.806030+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1794232854000,
-              "favoris": true,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 9,
-            "name": "MAYERLING LEGACY",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX JEAN-MAURICE BETEAU",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-              "sha256": "e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91",
-              "file": "preuves/e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
-              "sha256": "36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a",
-              "file": "preuves/36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a.gz"
-            },
-            "captured_at": "2026-11-09T15:06:20.297580+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1794232854000,
-              "favoris": true,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 6,
-            "name": "MIRABILIS VRIE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX JEAN-MAURICE BETEAU",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-              "sha256": "e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91",
-              "file": "preuves/e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
-              "sha256": "36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a",
-              "file": "preuves/36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a.gz"
-            },
-            "captured_at": "2026-11-09T15:06:20.333445+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1794232854000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "MILLESIME GWEN",
-            "source_url": "https://www.geny.com/course/1697220-2026-11-09-bordeaux-le-bouscat-prix-jean-maurice-beteau/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Jean-Maurice Beteau",
-            "evidence": {
-              "url": "https://www.geny.com/course/1697220-2026-11-09-bordeaux-le-bouscat-prix-jean-maurice-beteau/partants-pronostics",
-              "sha256": "1ffd3fda643243b8e57412d774c515cc9d0695e54f1a3fc4fd1c722c7d4912f5",
-              "file": "preuves/1ffd3fda643243b8e57412d774c515cc9d0695e54f1a3fc4fd1c722c7d4912f5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
-              "sha256": "36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a",
-              "file": "preuves/36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a.gz"
-            },
-            "captured_at": "2026-11-09T15:06:35.545290+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.41,
-              "dateRapport": 1794232854000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zone_turf": {
-            "site": "zone_turf",
-            "number": 5,
-            "name": "MILLESIME GWEN",
-            "source_url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-            "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
-            "identity_check": "date_rc_full_numbered_field",
-            "source_title": "R1 Course N°6 : C6 - Prix Jean-Maurice Beteau",
-            "evidence": {
-              "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-              "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-              "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
-              "sha256": "36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a",
-              "file": "preuves/36155bccbb821157833fba6ee04e84ad04ee534793d9f9534d84567e4835284a.gz"
-            },
-            "captured_at": "2026-11-09T15:06:35.898626+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.41,
-              "dateRapport": 1794232854000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-09/r1c6-le-bouscat-prix-jean-maurice-beteau",
-            "sha256": "6ec9d8427c496353e5a0f6c079c239c4a5ae329463e0b1193dbb9dbd2ea1f9db",
-            "file": "preuves/6ec9d8427c496353e5a0f6c079c239c4a5ae329463e0b1193dbb9dbd2ea1f9db.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-            "sha256": "e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91",
-            "file": "preuves/e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422981_prix-jean-maurice-beteau.html",
-            "sha256": "e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91",
-            "file": "preuves/e94f57019ca19f7ae43007836335001c5baa4a8a67dfafcd045281d9e1e08a91.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1697220-2026-11-09-bordeaux-le-bouscat-prix-jean-maurice-beteau/partants-pronostics",
-            "sha256": "1ffd3fda643243b8e57412d774c515cc9d0695e54f1a3fc4fd1c722c7d4912f5",
-            "file": "preuves/1ffd3fda643243b8e57412d774c515cc9d0695e54f1a3fc4fd1c722c7d4912f5.gz"
-          },
-          "zone_turf": {
-            "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-            "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-            "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-09",
         "id": "R1C7",
@@ -2315,27 +2224,27 @@
             "source_title": "Prix Chateau Chantegrive",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-09/r1c7-le-bouscat-prix-chateau-chantegrive",
-              "sha256": "59936214b0fa9bb651080844db3ba846722e0b990e00d4b0f1cd47052f5de7d6",
-              "file": "preuves/59936214b0fa9bb651080844db3ba846722e0b990e00d4b0f1cd47052f5de7d6.gz"
+              "sha256": "37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76",
+              "file": "preuves/37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
-              "sha256": "478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000",
-              "file": "preuves/478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000.gz"
+              "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+              "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
             },
-            "captured_at": "2026-11-09T15:06:37.417847+01:00",
+            "captured_at": "2026-11-09T16:13:25.434292+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.6,
+              "rapport": 1.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232817000,
+              "nombreIndicateurTendance": -23.52,
+              "dateRapport": 1794236417000,
               "favoris": true,
               "numPmu1": 13,
-              "grossePrise": false
+              "grossePrise": true
             }
           },
           "canalturf": {
@@ -2348,27 +2257,27 @@
             "source_title": "Le pronostic du PRIX CHATEAU CHANTEGRIVE (PRIX MARQUISE DE MORATALLA)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
-              "sha256": "011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72",
-              "file": "preuves/011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72.gz"
+              "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+              "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
-              "sha256": "478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000",
-              "file": "preuves/478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000.gz"
+              "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+              "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
             },
-            "captured_at": "2026-11-09T15:06:37.961702+01:00",
+            "captured_at": "2026-11-09T16:13:27.652975+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.6,
+              "rapport": 1.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232817000,
+              "nombreIndicateurTendance": -23.52,
+              "dateRapport": 1794236417000,
               "favoris": true,
               "numPmu1": 13,
-              "grossePrise": false
+              "grossePrise": true
             }
           },
           "zeturf": {
@@ -2381,27 +2290,27 @@
             "source_title": "Le pronostic du PRIX CHATEAU CHANTEGRIVE (PRIX MARQUISE DE MORATALLA)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
-              "sha256": "011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72",
-              "file": "preuves/011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72.gz"
+              "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+              "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
-              "sha256": "478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000",
-              "file": "preuves/478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000.gz"
+              "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+              "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
             },
-            "captured_at": "2026-11-09T15:06:38.000303+01:00",
+            "captured_at": "2026-11-09T16:13:27.740172+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.6,
+              "rapport": 1.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232817000,
+              "nombreIndicateurTendance": -23.52,
+              "dateRapport": 1794236417000,
               "favoris": true,
               "numPmu1": 13,
-              "grossePrise": false
+              "grossePrise": true
             }
           },
           "geny": {
@@ -2414,27 +2323,27 @@
             "source_title": "Prix Château Chantegrive - Prix Marquise de Mortalla",
             "evidence": {
               "url": "https://www.geny.com/course/1697215-2026-11-09-bordeaux-le-bouscat-prix-chateau-chantegrive-prix-marquise-de-mortalla/partants-pronostics",
-              "sha256": "64cb89ffe5885baa7472b94c4992171c099537c8e32a1d7a60604ce3fd5f801a",
-              "file": "preuves/64cb89ffe5885baa7472b94c4992171c099537c8e32a1d7a60604ce3fd5f801a.gz"
+              "sha256": "b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5",
+              "file": "preuves/b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
-              "sha256": "478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000",
-              "file": "preuves/478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000.gz"
+              "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+              "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
             },
-            "captured_at": "2026-11-09T15:06:55.513097+01:00",
+            "captured_at": "2026-11-09T16:13:48.452199+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.6,
+              "rapport": 1.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232817000,
+              "nombreIndicateurTendance": -23.52,
+              "dateRapport": 1794236417000,
               "favoris": true,
               "numPmu1": 13,
-              "grossePrise": false
+              "grossePrise": true
             }
           },
           "zone_turf": {
@@ -2447,59 +2356,62 @@
             "source_title": "R1 Course N°7 : C7 - Prix Chateau Chantegrive",
             "evidence": {
               "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-              "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-              "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
+              "sha256": "8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0",
+              "file": "preuves/8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C7/participants",
-              "sha256": "478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000",
-              "file": "preuves/478383fc0b8be9beda30559deb0b2f053c71b630ecf72b74ffd1dede52f13000.gz"
+              "sha256": "a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc",
+              "file": "preuves/a4c4ee802eb87724b3bba6fa210c9d86621e842f74c1fc799e3af8fe41e570bc.gz"
             },
-            "captured_at": "2026-11-09T15:06:55.931194+01:00",
+            "captured_at": "2026-11-09T16:13:49.863451+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.6,
+              "rapport": 1.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232817000,
+              "nombreIndicateurTendance": -23.52,
+              "dateRapport": 1794236417000,
               "favoris": true,
               "numPmu1": 13,
-              "grossePrise": false
+              "grossePrise": true
             }
           }
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-09T16:13:22.202581+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-09/r1c7-le-bouscat-prix-chateau-chantegrive",
-            "sha256": "59936214b0fa9bb651080844db3ba846722e0b990e00d4b0f1cd47052f5de7d6",
-            "file": "preuves/59936214b0fa9bb651080844db3ba846722e0b990e00d4b0f1cd47052f5de7d6.gz"
+            "sha256": "37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76",
+            "file": "preuves/37598840be85a240c661610ae5ff2bdfb0c99b18c21ec82238fb91ef83e92b76.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
-            "sha256": "011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72",
-            "file": "preuves/011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72.gz"
+            "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+            "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422982_prix-chateau-chantegrive-prix-marquise-de-moratalla.html",
-            "sha256": "011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72",
-            "file": "preuves/011b1b5f5c53e63b8798d4a77853637b3accc91cadad9a2cffe03fc5a49acb72.gz"
+            "sha256": "a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8",
+            "file": "preuves/a0cd86bc4dc61f1b0e26a0f3d4e599f2047e1a70ebe5645c27dc77d2884f0ac8.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697215-2026-11-09-bordeaux-le-bouscat-prix-chateau-chantegrive-prix-marquise-de-mortalla/partants-pronostics",
-            "sha256": "64cb89ffe5885baa7472b94c4992171c099537c8e32a1d7a60604ce3fd5f801a",
-            "file": "preuves/64cb89ffe5885baa7472b94c4992171c099537c8e32a1d7a60604ce3fd5f801a.gz"
+            "sha256": "b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5",
+            "file": "preuves/b204dd712476b7584e2fd1ab2e99985284065ee88450228647f75269db7ed8d5.gz"
           },
           "zone_turf": {
             "url": "https://www.zone-turf.fr/programmes/r1-bordeaux-le-bouscat-199940.html",
-            "sha256": "77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061",
-            "file": "preuves/77b8cced988aa508795e14426a05ad90d26cc96be2346f3735ffa5832673c061.gz"
+            "sha256": "8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0",
+            "file": "preuves/8c0fcbec57bd583c8626e83ee3fc986f3db8f4beeaa6f0808a8930597be8b4a0.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-09T15:46:08.833704+01:00",
+        "final_check_completed_at": "2026-11-09T16:13:22.949029+01:00"
       },
       {
         "date": "2026-11-09",
@@ -2520,25 +2432,25 @@
             "source_title": "Prix Jonny Ruffato",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-09/r1c8-le-bouscat-prix-jonny-ruffato",
-              "sha256": "1c76e58989859fa55a9d436818832d26c1a8cc1ba2fa536aa314d29f680507e2",
-              "file": "preuves/1c76e58989859fa55a9d436818832d26c1a8cc1ba2fa536aa314d29f680507e2.gz"
+              "sha256": "6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d",
+              "file": "preuves/6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
-              "sha256": "062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23",
-              "file": "preuves/062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23.gz"
+              "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+              "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
             },
-            "captured_at": "2026-11-09T15:06:57.478905+01:00",
+            "captured_at": "2026-11-09T16:13:51.745350+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 3.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232836000,
-              "favoris": false,
+              "nombreIndicateurTendance": 2.77,
+              "dateRapport": 1794236436000,
+              "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
             }
@@ -2553,25 +2465,25 @@
             "source_title": "Le pronostic du PRIX JONNY RUFFATO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
-              "sha256": "d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545",
-              "file": "preuves/d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545.gz"
+              "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+              "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
-              "sha256": "062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23",
-              "file": "preuves/062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23.gz"
+              "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+              "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
             },
-            "captured_at": "2026-11-09T15:06:57.980835+01:00",
+            "captured_at": "2026-11-09T16:13:52.502756+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 3.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794232836000,
-              "favoris": false,
+              "nombreIndicateurTendance": 2.77,
+              "dateRapport": 1794236436000,
+              "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
             }
@@ -2586,25 +2498,25 @@
             "source_title": "Le pronostic du PRIX JONNY RUFFATO",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
-              "sha256": "d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545",
-              "file": "preuves/d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545.gz"
+              "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+              "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
-              "sha256": "062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23",
-              "file": "preuves/062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23.gz"
+              "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+              "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
             },
-            "captured_at": "2026-11-09T15:06:58.021397+01:00",
+            "captured_at": "2026-11-09T16:13:52.589357+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.12,
-              "dateRapport": 1794232836000,
-              "favoris": true,
+              "nombreIndicateurTendance": 2.56,
+              "dateRapport": 1794236436000,
+              "favoris": false,
               "numPmu1": 16,
               "grossePrise": false
             }
@@ -2619,25 +2531,25 @@
             "source_title": "Prix Jonny Ruffato",
             "evidence": {
               "url": "https://www.geny.com/course/1697221-2026-11-09-bordeaux-le-bouscat-prix-jonny-ruffato/partants-pronostics",
-              "sha256": "6fb465ad578b8436dbb3413ac06fd6a13c24336b59a9125b61bc2991d6a4fa89",
-              "file": "preuves/6fb465ad578b8436dbb3413ac06fd6a13c24336b59a9125b61bc2991d6a4fa89.gz"
+              "sha256": "9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993",
+              "file": "preuves/9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C8/participants",
-              "sha256": "062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23",
-              "file": "preuves/062a49dd483f9196d3161628eb565607d91659e84fcc9877a7589f28ebd90a23.gz"
+              "sha256": "07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857",
+              "file": "preuves/07f7a8560b3807b43ab7889aaa9141bc69edeaff54f2e60592b0c0b15b615857.gz"
             },
-            "captured_at": "2026-11-09T15:07:15.621710+01:00",
+            "captured_at": "2026-11-09T16:14:08.933604+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.3,
+              "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.12,
-              "dateRapport": 1794232836000,
-              "favoris": true,
+              "nombreIndicateurTendance": 2.56,
+              "dateRapport": 1794236436000,
+              "favoris": false,
               "numPmu1": 16,
               "grossePrise": false
             }
@@ -2648,29 +2560,29 @@
           "zone_turf": {
             "type": "ValueError",
             "reason": "Sélection éditoriale Zone-Turf absente ou ambiguë",
-            "at": "2026-11-09T15:07:15.951002+01:00"
+            "at": "2026-11-09T16:14:09.682122+01:00"
           }
         },
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-09/r1c8-le-bouscat-prix-jonny-ruffato",
-            "sha256": "1c76e58989859fa55a9d436818832d26c1a8cc1ba2fa536aa314d29f680507e2",
-            "file": "preuves/1c76e58989859fa55a9d436818832d26c1a8cc1ba2fa536aa314d29f680507e2.gz"
+            "sha256": "6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d",
+            "file": "preuves/6c75abf4528ee2bea5e6212edab4629d6339116c329acaa1d981c97e9cfc685d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
-            "sha256": "d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545",
-            "file": "preuves/d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545.gz"
+            "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+            "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-09/bordeaux-le-bouscat/422983_prix-jonny-ruffato.html",
-            "sha256": "d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545",
-            "file": "preuves/d053caca707c5e756246bec0479cdb6b832256bd0b6029676e79de4d66c8a545.gz"
+            "sha256": "8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063",
+            "file": "preuves/8a75f9ccfc6e19ae74f806c8b672e64ea9b201222ec5666e6956bb07aa222063.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697221-2026-11-09-bordeaux-le-bouscat-prix-jonny-ruffato/partants-pronostics",
-            "sha256": "6fb465ad578b8436dbb3413ac06fd6a13c24336b59a9125b61bc2991d6a4fa89",
-            "file": "preuves/6fb465ad578b8436dbb3413ac06fd6a13c24336b59a9125b61bc2991d6a4fa89.gz"
+            "sha256": "9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993",
+            "file": "preuves/9f224ffcb256d4dae4d2d7f72c30eda2420a7b0c4887bfbfb9fb37f3c47ff993.gz"
           }
         }
       }
