@@ -580,7 +580,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-09T16:31:33.693545+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6788e0bc62ee68c1b21d75742e4cf36883164984437e3cb5e3179cd2c3ea3e9f",
+            "file": "preuves/6788e0bc62ee68c1b21d75742e4cf36883164984437e3cb5e3179cd2c3ea3e9f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
+            "sha256": "6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e",
+            "file": "preuves/6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -613,7 +627,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-09T16:31:33.693912+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6788e0bc62ee68c1b21d75742e4cf36883164984437e3cb5e3179cd2c3ea3e9f",
+            "file": "preuves/6788e0bc62ee68c1b21d75742e4cf36883164984437e3cb5e3179cd2c3ea3e9f.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
+            "sha256": "6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e",
+            "file": "preuves/6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e.gz"
+          }
         }
       },
       "groups": {},
@@ -706,8 +734,39 @@
         }
       },
       "final_check_completed_at": "2026-11-09T16:12:41.048249+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu"
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : ATTELE exclu",
+      "official_arrival": [
+        {
+          "number": 9,
+          "name": "MAYERLING LEGACY",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "MIMO DU MESNIL",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "MIRABILIS VRIE",
+          "rank": 3
+        },
+        {
+          "number": 1,
+          "name": "MADISON DANICA",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "MACUMBA MESLOISE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/09112026/R1/C6/participants",
+        "sha256": "6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e",
+        "file": "preuves/6466531f148179b69ce2b42d35ced4592e493ded6a5a1b0d5af7aff581a0560e.gz"
+      }
     },
     {
       "date": "2026-11-09",
@@ -957,7 +1016,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-09T16:30:29.775442+01:00",
+      "final_check_started_at": "2026-11-09T16:31:32.751893+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697215-2026-11-09-bordeaux-le-bouscat-prix-chateau-chantegrive-prix-marquise-de-mortalla/partants-pronostics",
@@ -971,9 +1030,9 @@
         }
       },
       "groups_frozen_at": "2026-11-09T15:45:50.925488+01:00",
-      "final_check_completed_at": "2026-11-09T16:30:30.133220+01:00",
+      "final_check_completed_at": "2026-11-09T16:31:33.132589+01:00",
       "last_reservation_check": {
-        "at": "2026-11-09T16:30:30.673541+01:00",
+        "at": "2026-11-09T16:31:33.762446+01:00",
         "stop": null
       }
     },
@@ -1201,7 +1260,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-09T16:30:30.135668+01:00",
+      "final_check_started_at": "2026-11-09T16:31:33.135058+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697221-2026-11-09-bordeaux-le-bouscat-prix-jonny-ruffato/partants-pronostics",
@@ -1214,7 +1273,7 @@
           "file": "preuves/02d6534c4b247572011322e6bc46d7f92a5866e8dfcb13d5cd42448baeda0b05.gz"
         }
       },
-      "final_check_completed_at": "2026-11-09T16:30:30.464784+01:00"
+      "final_check_completed_at": "2026-11-09T16:31:33.411983+01:00"
     }
   ],
   "notifications": [],
