@@ -100,7 +100,7 @@
           "number": 2,
           "name": "JASMIN DORE",
           "stake_cents": 15000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-10T14:00:29.362822+01:00",
           "source_captured_at": "2026-11-10T13:31:10.372414+01:00",
           "sites": [
@@ -122,6 +122,51 @@
             {
               "message_id": 7468,
               "date": 1794315629
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -15000,
+          "rank": 2,
+          "settled_at": "2026-11-10T14:39:32.535728+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5",
+            "file": "preuves/7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+            "sha256": "45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2",
+            "file": "preuves/45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2.gz"
+          }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-11-10T15:05:00+01:00",
+          "number": 6,
+          "name": "ZAKETT",
+          "stake_cents": 15000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-10T14:39:33.245151+01:00",
+          "source_captured_at": "2026-11-10T14:06:04.944368+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794317966000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "4e8db1c83473a544f9fde53e886c4ab453744dd67e1f5e934685013c7bb402cb",
+          "telegram_receipts": [
+            {
+              "message_id": 7474,
+              "date": 1794317973
             }
           ]
         }
@@ -2492,7 +2537,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-10T14:39:32.535428+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5",
+            "file": "preuves/7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+            "sha256": "45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2",
+            "file": "preuves/45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -2525,7 +2584,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-10T14:39:32.535636+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5",
+            "file": "preuves/7105e5ae89c895ff0e09fb754f2541c82a1adcb34fa0c7125d9454ff6ca82ff5.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+            "sha256": "45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2",
+            "file": "preuves/45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2.gz"
+          }
         }
       },
       "groups": {
@@ -3119,7 +3192,38 @@
         "at": "2026-11-10T14:29:15.070434+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 9,
+          "name": "BOMBEY",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "JASMIN DORE",
+          "rank": 2
+        },
+        {
+          "number": 8,
+          "name": "POSSI",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "HOLLYHOCK",
+          "rank": 4
+        },
+        {
+          "number": 14,
+          "name": "DENVER CHOP",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+        "sha256": "45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2",
+        "file": "preuves/45b576f18f80698f38c0baaa52031898593631edc08ac0c890718532311d58e2.gz"
+      }
     },
     {
       "date": "2026-11-10",
@@ -3769,7 +3873,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T14:38:27.165805+01:00",
+      "final_check_started_at": "2026-11-10T14:39:32.556471+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697367-2026-11-10-fontainebleau-prix-jour-de-galop/partants-pronostics",
@@ -3783,7 +3887,7 @@
         }
       },
       "groups_frozen_at": "2026-11-10T14:06:06.390671+01:00",
-      "final_check_completed_at": "2026-11-10T14:38:27.768517+01:00",
+      "final_check_completed_at": "2026-11-10T14:39:33.078400+01:00",
       "last_reservation_check": {
         "at": "2026-11-10T14:38:27.955901+01:00",
         "stop": "ATTENTE_RESULTAT"
