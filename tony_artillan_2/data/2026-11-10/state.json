@@ -18,7 +18,74 @@
       "departure": "2026-11-10T12:00:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 5,
+          "name": "KENERGY",
+          "source_url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de la Porte Nadon",
+          "evidence": {
+            "url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
+            "sha256": "1d7888e4fed2ce4e3898d8a9332285dcad72552c060a6473127bfe65b594e8ad",
+            "file": "preuves/1d7888e4fed2ce4e3898d8a9332285dcad72552c060a6473127bfe65b594e8ad.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
+            "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
+            "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
+          },
+          "captured_at": "2026-11-10T11:00:49.341821+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -17.64,
+            "dateRapport": 1794303955000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "SHUNSHOKU",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE LA PORTE NADON",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
+            "sha256": "22998b62af5cadef4a7cf2722fe9de7b0f635071e2d74f886b47df2bfbdcab03",
+            "file": "preuves/22998b62af5cadef4a7cf2722fe9de7b0f635071e2d74f886b47df2bfbdcab03.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
+            "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
+            "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
+          },
+          "captured_at": "2026-11-10T11:00:51.462384+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.14,
+            "dateRapport": 1794303955000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
       "errors": {},
       "preview_observations": [
@@ -310,7 +377,21 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-10T11:00:27.685011+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
+          "sha256": "1d7888e4fed2ce4e3898d8a9332285dcad72552c060a6473127bfe65b594e8ad",
+          "file": "preuves/1d7888e4fed2ce4e3898d8a9332285dcad72552c060a6473127bfe65b594e8ad.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
+          "sha256": "22998b62af5cadef4a7cf2722fe9de7b0f635071e2d74f886b47df2bfbdcab03",
+          "file": "preuves/22998b62af5cadef4a7cf2722fe9de7b0f635071e2d74f886b47df2bfbdcab03.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-10T11:00:51.462425+01:00"
     },
     {
       "date": "2026-11-10",
