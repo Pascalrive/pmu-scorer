@@ -190,7 +190,7 @@
           "number": 5,
           "name": "ARROW EAGLE",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-10T15:17:18.893715+01:00",
           "source_captured_at": "2026-11-10T14:40:57.566673+01:00",
           "sites": [
@@ -213,7 +213,21 @@
               "message_id": 7487,
               "date": 1794320239
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -20000,
+          "rank": 2,
+          "settled_at": "2026-11-10T15:54:44.956547+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727",
+            "file": "preuves/16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+            "sha256": "6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b",
+            "file": "preuves/6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -4038,7 +4052,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-10T15:54:44.956104+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727",
+            "file": "preuves/16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+            "sha256": "6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b",
+            "file": "preuves/6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -4071,7 +4099,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-10T15:54:44.956429+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727",
+            "file": "preuves/16b17095ec40d02548a30c5840790c912cbf2a87c9ed4322965eafa2db045727.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+            "sha256": "6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b",
+            "file": "preuves/6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b.gz"
+          }
         }
       },
       "groups": {
@@ -4757,7 +4799,38 @@
           "checked_at": "2026-11-10T15:26:31.160747+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 13,
+          "name": "GALASSI",
+          "rank": 1
+        },
+        {
+          "number": 5,
+          "name": "ARROW EAGLE",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "MARINALEDA",
+          "rank": 3
+        },
+        {
+          "number": 12,
+          "name": "URCHIN",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "PRINCESSE D'AMOUR",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+        "sha256": "6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b",
+        "file": "preuves/6f6d8df3e9c8a90c9f6fef1839d5f6f4fa8d9ffa73743bdf25de741b6c82438b.gz"
+      }
     },
     {
       "date": "2026-11-10",
@@ -5415,7 +5488,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T15:53:38.901625+01:00",
+      "final_check_started_at": "2026-11-10T15:54:45.012687+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
@@ -5428,7 +5501,7 @@
           "file": "preuves/a6287451475868d22e7fe220e41999ab8329b0fe92579a0a094041aa3d6c9c90.gz"
         }
       },
-      "final_check_completed_at": "2026-11-10T15:53:39.659972+01:00",
+      "final_check_completed_at": "2026-11-10T15:54:45.674805+01:00",
       "schedule_changes": [
         {
           "old": "2026-11-10T16:15:00+01:00",
@@ -6093,7 +6166,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T15:53:39.667334+01:00",
+      "final_check_started_at": "2026-11-10T15:54:45.682253+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697370-2026-11-10-fontainebleau-prix-de-chateau-landon/partants-pronostics",
@@ -6106,7 +6179,7 @@
           "file": "preuves/163e296c3e36cd33785df89c977255905a59f3b023703f0ee60fbbcbe7e3455c.gz"
         }
       },
-      "final_check_completed_at": "2026-11-10T15:53:40.523335+01:00"
+      "final_check_completed_at": "2026-11-10T15:54:46.530524+01:00"
     }
   ],
   "notifications": [],
