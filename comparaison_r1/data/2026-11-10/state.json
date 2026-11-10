@@ -893,7 +893,8 @@
       "last_reservation_check": {
         "at": "2026-11-10T11:59:07.445543+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-10",
@@ -1665,9 +1666,162 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:00:34.348830+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 6,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny": {
+              "number": 6,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "KESKAVIEL",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c2-fontainebleau-prix-de-la-lande-de-bruyere",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De La Lande De Bruyere",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c2-fontainebleau-prix-de-la-lande-de-bruyere",
+                "sha256": "53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3",
+                "file": "preuves/53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+                "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+                "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
+              },
+              "captured_at": "2026-11-10T12:00:12.210550+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 3.12,
+                "dateRapport": 1794307536000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 6,
+              "name": "FRANTZ",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE LA LANDE DE BRUYERE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
+                "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+                "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+                "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+                "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
+              },
+              "captured_at": "2026-11-10T12:00:13.795248+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -7.14,
+                "dateRapport": 1794307536000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 10,
+              "name": "MUHAATHER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE LA LANDE DE BRUYERE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
+                "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+                "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+                "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+                "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
+              },
+              "captured_at": "2026-11-10T12:00:13.841942+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -5.0,
+                "dateRapport": 1794307536000,
+                "favoris": false,
+                "numPmu1": 10,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 6,
+              "name": "FRANTZ",
+              "source_url": "https://www.geny.com/course/1697363-2026-11-10-fontainebleau-prix-de-la-lande-de-bruyere/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de la Lande de Bruyère",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697363-2026-11-10-fontainebleau-prix-de-la-lande-de-bruyere/partants-pronostics",
+                "sha256": "ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d",
+                "file": "preuves/ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+                "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+                "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
+              },
+              "captured_at": "2026-11-10T12:00:34.348746+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -7.14,
+                "dateRapport": 1794307536000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-10T11:57:00.894352+01:00",
+      "final_check_started_at": "2026-11-10T12:00:09.957278+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-10/r1c2-fontainebleau-prix-de-la-lande-de-bruyere",
@@ -1691,7 +1845,7 @@
         }
       },
       "groups_frozen_at": "2026-11-10T11:36:15.535659+01:00",
-      "final_check_completed_at": "2026-11-10T11:57:01.604298+01:00"
+      "final_check_completed_at": "2026-11-10T12:00:10.452760+01:00"
     },
     {
       "date": "2026-11-10",
@@ -2355,6 +2509,169 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:00:54.389690+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "LA BELLE ISOLA",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c3-fontainebleau-prix-de-vichy",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Vichy",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c3-fontainebleau-prix-de-vichy",
+                "sha256": "2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205",
+                "file": "preuves/2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
+                "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+                "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
+              },
+              "captured_at": "2026-11-10T12:00:35.346851+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.17,
+                "dateRapport": 1794307538000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "LA BELLE ISOLA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE VICHY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
+                "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+                "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
+                "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+                "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
+              },
+              "captured_at": "2026-11-10T12:00:35.917014+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.17,
+                "dateRapport": 1794307538000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "MAGNA GRACE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE VICHY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
+                "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+                "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
+                "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+                "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
+              },
+              "captured_at": "2026-11-10T12:00:35.959610+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 12.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -5.46,
+                "dateRapport": 1794307538000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "LA BELLE ISOLA",
+              "source_url": "https://www.geny.com/course/1697364-2026-11-10-fontainebleau-prix-de-vichy/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Vichy",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697364-2026-11-10-fontainebleau-prix-de-vichy/partants-pronostics",
+                "sha256": "4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f",
+                "file": "preuves/4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
+                "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+                "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
+              },
+              "captured_at": "2026-11-10T12:00:54.389619+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.17,
+                "dateRapport": 1794307538000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -2926,6 +3243,159 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": -2.27,
                 "dateRapport": 1794303946000,
+                "favoris": true,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-10T12:01:14.577698+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 14,
+              "sites": [
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "groupe_canalturf+zeturf": {
+              "number": 14,
+              "sites": [
+                "canalturf",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 8,
+              "name": "KHALINSKHA",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c4-fontainebleau-prix-roland-fougedoire",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Roland Fougedoire",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c4-fontainebleau-prix-roland-fougedoire",
+                "sha256": "9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605",
+                "file": "preuves/9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
+                "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+                "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
+              },
+              "captured_at": "2026-11-10T12:00:55.721857+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 14.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.69,
+                "dateRapport": 1794308446000,
+                "favoris": false,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 14,
+              "name": "ALPARSLAN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX ROLAND FOUGEDOIRE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
+                "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+                "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
+                "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+                "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
+              },
+              "captured_at": "2026-11-10T12:00:56.265471+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.8,
+                "dateRapport": 1794308446000,
+                "favoris": false,
+                "numPmu1": 14,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 14,
+              "name": "ALPARSLAN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX ROLAND FOUGEDOIRE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
+                "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+                "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
+                "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+                "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
+              },
+              "captured_at": "2026-11-10T12:00:56.343217+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.8,
+                "dateRapport": 1794308446000,
+                "favoris": false,
+                "numPmu1": 14,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 9,
+              "name": "SCHUMAN",
+              "source_url": "https://www.geny.com/course/1697365-2026-11-10-fontainebleau-prix-roland-fougedoire/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Roland Fougedoire",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697365-2026-11-10-fontainebleau-prix-roland-fougedoire/partants-pronostics",
+                "sha256": "fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00",
+                "file": "preuves/fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
+                "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+                "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
+              },
+              "captured_at": "2026-11-10T12:01:14.577617+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794308446000,
                 "favoris": true,
                 "numPmu1": 9,
                 "grossePrise": false
@@ -3597,6 +4067,172 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 4.65,
                 "dateRapport": 1794303910000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-10T12:01:34.770646+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 2,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "JASMIN DORE",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c5-fontainebleau-prix-fontainebleau-ville-du-cheval",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Fontainebleau Ville Du Cheval",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c5-fontainebleau-prix-fontainebleau-ville-du-cheval",
+                "sha256": "5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8",
+                "file": "preuves/5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+                "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+                "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
+              },
+              "captured_at": "2026-11-10T12:01:16.736725+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.56,
+                "dateRapport": 1794308410000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "JASMIN DORE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX FONTAINEBLEAU VILLE DU CHEVAL",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
+                "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+                "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+                "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+                "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
+              },
+              "captured_at": "2026-11-10T12:01:17.315251+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.56,
+                "dateRapport": 1794308410000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "JASMIN DORE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX FONTAINEBLEAU VILLE DU CHEVAL",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
+                "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+                "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+                "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+                "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
+              },
+              "captured_at": "2026-11-10T12:01:17.359640+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.56,
+                "dateRapport": 1794308410000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 2,
+              "name": "JASMIN DORE",
+              "source_url": "https://www.geny.com/course/1697366-2026-11-10-fontainebleau-prix-fontainebleau-ville-du-cheval/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Fontainebleau Ville du Cheval",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697366-2026-11-10-fontainebleau-prix-fontainebleau-ville-du-cheval/partants-pronostics",
+                "sha256": "0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e",
+                "file": "preuves/0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
+                "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+                "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
+              },
+              "captured_at": "2026-11-10T12:01:34.770544+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.56,
+                "dateRapport": 1794308410000,
                 "favoris": true,
                 "numPmu1": 2,
                 "grossePrise": false
@@ -4280,6 +4916,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:01:54.430682+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 6,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 6,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 6,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 6,
+              "name": "ZAKETT",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c6-fontainebleau-prix-jour-de-galop",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jour De Galop",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c6-fontainebleau-prix-jour-de-galop",
+                "sha256": "b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d",
+                "file": "preuves/b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+                "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+                "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
+              },
+              "captured_at": "2026-11-10T12:01:36.110241+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.32,
+                "dateRapport": 1794308424000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 6,
+              "name": "ZAKETT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX «JOUR DE GALOP»",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
+                "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+                "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+                "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+                "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
+              },
+              "captured_at": "2026-11-10T12:01:36.672323+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.32,
+                "dateRapport": 1794308424000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 6,
+              "name": "ZAKETT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX «JOUR DE GALOP»",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
+                "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+                "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+                "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+                "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
+              },
+              "captured_at": "2026-11-10T12:01:36.713796+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.32,
+                "dateRapport": 1794308424000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 6,
+              "name": "ZAKETT",
+              "source_url": "https://www.geny.com/course/1697367-2026-11-10-fontainebleau-prix-jour-de-galop/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jour de Galop",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697367-2026-11-10-fontainebleau-prix-jour-de-galop/partants-pronostics",
+                "sha256": "3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52",
+                "file": "preuves/3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+                "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+                "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
+              },
+              "captured_at": "2026-11-10T12:01:54.430589+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.32,
+                "dateRapport": 1794308424000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -4951,6 +5753,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:02:14.789050+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 5,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 5,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 5,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 5,
+              "name": "ARROW EAGLE",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c7-fontainebleau-prix-denisy",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Denisy",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c7-fontainebleau-prix-denisy",
+                "sha256": "09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee",
+                "file": "preuves/09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+                "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+                "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
+              },
+              "captured_at": "2026-11-10T12:01:56.430253+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.25,
+                "dateRapport": 1794308415000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 5,
+              "name": "ARROW EAGLE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DENISY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
+                "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+                "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+                "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+                "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
+              },
+              "captured_at": "2026-11-10T12:01:56.995243+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.25,
+                "dateRapport": 1794308415000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "ARROW EAGLE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DENISY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
+                "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+                "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+                "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+                "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
+              },
+              "captured_at": "2026-11-10T12:01:57.037938+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.25,
+                "dateRapport": 1794308415000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 5,
+              "name": "ARROW EAGLE",
+              "source_url": "https://www.geny.com/course/1697368-2026-11-10-fontainebleau-prix-denisy/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Denisy",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697368-2026-11-10-fontainebleau-prix-denisy/partants-pronostics",
+                "sha256": "c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b",
+                "file": "preuves/c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
+                "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+                "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
+              },
+              "captured_at": "2026-11-10T12:02:14.788947+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 6.25,
+                "dateRapport": 1794308415000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -5576,6 +6544,159 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:02:34.405999+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 4,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_geny+zeturf": {
+              "number": 4,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "DASH DIZZY",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c8-fontainebleau-prix-guy-thibault",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Guy Thibault",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c8-fontainebleau-prix-guy-thibault",
+                "sha256": "c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666",
+                "file": "preuves/c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
+                "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+                "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
+              },
+              "captured_at": "2026-11-10T12:02:16.318976+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1794308455000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 10,
+              "name": "WHITE PLATIN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX GUY THIBAULT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
+                "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+                "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
+                "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+                "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
+              },
+              "captured_at": "2026-11-10T12:02:17.059236+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.44,
+                "dateRapport": 1794308455000,
+                "favoris": true,
+                "numPmu1": 10,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 4,
+              "name": "GOUTTES DE DIEU",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX GUY THIBAULT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
+                "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+                "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
+                "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+                "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
+              },
+              "captured_at": "2026-11-10T12:02:17.102571+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.03,
+                "dateRapport": 1794308455000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 4,
+              "name": "GOUTTES DE DIEU",
+              "source_url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Guy Thibault",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
+                "sha256": "74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962",
+                "file": "preuves/74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
+                "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+                "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
+              },
+              "captured_at": "2026-11-10T12:02:34.405887+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.03,
+                "dateRapport": 1794308455000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -6141,6 +7262,144 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-10T12:02:54.642402+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 8,
+              "name": "RED GUST",
+              "source_url": "https://turfin.fr/course/2026-11-10/r1c9-fontainebleau-prix-de-chateau-landon",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Chateau-Landon",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-10/r1c9-fontainebleau-prix-de-chateau-landon",
+                "sha256": "f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb",
+                "file": "preuves/f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
+                "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+                "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
+              },
+              "captured_at": "2026-11-10T12:02:35.879405+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.88,
+                "dateRapport": 1794308445000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 8,
+              "name": "RED GUST",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE CHATEAU LANDON",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
+                "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+                "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
+                "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+                "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
+              },
+              "captured_at": "2026-11-10T12:02:36.453635+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.88,
+                "dateRapport": 1794308445000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "EAGLE GATE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE CHATEAU LANDON",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
+                "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+                "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
+                "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+                "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
+              },
+              "captured_at": "2026-11-10T12:02:36.498876+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 11.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.81,
+                "dateRapport": 1794308445000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "EAGLE GATE",
+              "source_url": "https://www.geny.com/course/1697370-2026-11-10-fontainebleau-prix-de-chateau-landon/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Château-Landon",
+              "evidence": {
+                "url": "https://www.geny.com/course/1697370-2026-11-10-fontainebleau-prix-de-chateau-landon/partants-pronostics",
+                "sha256": "51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4",
+                "file": "preuves/51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
+                "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+                "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
+              },
+              "captured_at": "2026-11-10T12:02:54.642290+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 11.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.81,
+                "dateRapport": 1794308445000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -6148,174 +7407,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-10T10:50:55.102616+01:00",
+    "captured_at": "2026-11-10T12:02:54.642479+01:00",
     "races": [
-      {
-        "date": "2026-11-10",
-        "id": "R1C1",
-        "c": 1,
-        "title": "PRIX DE LA PORTE NADON",
-        "departure": "2026-11-10T12:00:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 7,
-            "name": "SHUNSHOKU",
-            "source_url": "https://turfin.fr/course/2026-11-10/r1c1-fontainebleau-prix-de-la-porte-nadon",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De La Porte Nadon",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-10/r1c1-fontainebleau-prix-de-la-porte-nadon",
-              "sha256": "24c13cd8193c8cd1554a86c9385e087f63857c1953a8a155299afb836ca3322f",
-              "file": "preuves/24c13cd8193c8cd1554a86c9385e087f63857c1953a8a155299afb836ca3322f.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
-              "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
-              "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
-            },
-            "captured_at": "2026-11-10T10:47:48.009855+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1794303955000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 7,
-            "name": "SHUNSHOKU",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE LA PORTE NADON",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-              "sha256": "fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4",
-              "file": "preuves/fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
-              "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
-              "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
-            },
-            "captured_at": "2026-11-10T10:47:50.271545+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1794303955000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 7,
-            "name": "SHUNSHOKU",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE LA PORTE NADON",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-              "sha256": "fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4",
-              "file": "preuves/fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
-              "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
-              "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
-            },
-            "captured_at": "2026-11-10T10:47:50.314959+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 7.14,
-              "dateRapport": 1794303955000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 5,
-            "name": "KENERGY",
-            "source_url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de la Porte Nadon",
-            "evidence": {
-              "url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
-              "sha256": "fa4d5ce8a5845e20e649148efa33f7d87208ef38c36717bf9e36ae2037c592c2",
-              "file": "preuves/fa4d5ce8a5845e20e649148efa33f7d87208ef38c36717bf9e36ae2037c592c2.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C1/participants",
-              "sha256": "5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7",
-              "file": "preuves/5aa079860f76bd5f93ebb6ae376775549a3717056472fe304055f5ea061855b7.gz"
-            },
-            "captured_at": "2026-11-10T10:48:11.418030+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -17.64,
-              "dateRapport": 1794303955000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": true
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-10/r1c1-fontainebleau-prix-de-la-porte-nadon",
-            "sha256": "24c13cd8193c8cd1554a86c9385e087f63857c1953a8a155299afb836ca3322f",
-            "file": "preuves/24c13cd8193c8cd1554a86c9385e087f63857c1953a8a155299afb836ca3322f.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-            "sha256": "fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4",
-            "file": "preuves/fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423074_prix-de-la-porte-nadon.html",
-            "sha256": "fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4",
-            "file": "preuves/fb624d631da0fe8169f35c89a403b81a6c3e5e2401ead292fb70ad2c384013b4.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1697362-2026-11-10-fontainebleau-prix-de-la-porte-nadon/partants-pronostics",
-            "sha256": "fa4d5ce8a5845e20e649148efa33f7d87208ef38c36717bf9e36ae2037c592c2",
-            "file": "preuves/fa4d5ce8a5845e20e649148efa33f7d87208ef38c36717bf9e36ae2037c592c2.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-10",
         "id": "R1C2",
@@ -6334,25 +7427,25 @@
             "source_title": "Prix De La Lande De Bruyere",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c2-fontainebleau-prix-de-la-lande-de-bruyere",
-              "sha256": "2c53501d3941d7ea238cb99f4a9e27e9f307104c9979860ea233b88ff2517fa3",
-              "file": "preuves/2c53501d3941d7ea238cb99f4a9e27e9f307104c9979860ea233b88ff2517fa3.gz"
+              "sha256": "53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3",
+              "file": "preuves/53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
-              "sha256": "49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721",
-              "file": "preuves/49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721.gz"
+              "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+              "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
             },
-            "captured_at": "2026-11-10T10:48:20.177060+01:00",
+            "captured_at": "2026-11-10T12:00:12.210550+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.9,
+              "rapport": 3.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.72,
-              "dateRapport": 1794303936000,
-              "favoris": false,
+              "nombreIndicateurTendance": 3.12,
+              "dateRapport": 1794307536000,
+              "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -6367,24 +7460,24 @@
             "source_title": "Le pronostic du PRIX DE LA LANDE DE BRUYERE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
-              "sha256": "f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600",
-              "file": "preuves/f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600.gz"
+              "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+              "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
-              "sha256": "49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721",
-              "file": "preuves/49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721.gz"
+              "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+              "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
             },
-            "captured_at": "2026-11-10T10:48:20.808220+01:00",
+            "captured_at": "2026-11-10T12:00:13.795248+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.4,
+              "rapport": 7.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.03,
-              "dateRapport": 1794303936000,
+              "nombreIndicateurTendance": -7.14,
+              "dateRapport": 1794307536000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -6400,15 +7493,15 @@
             "source_title": "Le pronostic du PRIX DE LA LANDE DE BRUYERE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
-              "sha256": "f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600",
-              "file": "preuves/f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600.gz"
+              "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+              "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
-              "sha256": "49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721",
-              "file": "preuves/49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721.gz"
+              "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+              "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
             },
-            "captured_at": "2026-11-10T10:48:20.852853+01:00",
+            "captured_at": "2026-11-10T12:00:13.841942+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6416,9 +7509,9 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.55,
-              "dateRapport": 1794303936000,
-              "favoris": true,
+              "nombreIndicateurTendance": -5.0,
+              "dateRapport": 1794307536000,
+              "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
             }
@@ -6433,24 +7526,24 @@
             "source_title": "Prix de la Lande de Bruyère",
             "evidence": {
               "url": "https://www.geny.com/course/1697363-2026-11-10-fontainebleau-prix-de-la-lande-de-bruyere/partants-pronostics",
-              "sha256": "25759ee7b3e97379047077a3b96606ddccb3264d7b9a877318d4ae8ad1d01a30",
-              "file": "preuves/25759ee7b3e97379047077a3b96606ddccb3264d7b9a877318d4ae8ad1d01a30.gz"
+              "sha256": "ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d",
+              "file": "preuves/ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
-              "sha256": "49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721",
-              "file": "preuves/49897a324c407a02dff11dc9e1d4187cba440bd6f45d6883c1694e36e2fd8721.gz"
+              "sha256": "d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f",
+              "file": "preuves/d705652d533203add9360bd18441f70a72fc118fa635736021eace713d685b5f.gz"
             },
-            "captured_at": "2026-11-10T10:48:31.225721+01:00",
+            "captured_at": "2026-11-10T12:00:34.348746+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.4,
+              "rapport": 7.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.03,
-              "dateRapport": 1794303936000,
+              "nombreIndicateurTendance": -7.14,
+              "dateRapport": 1794307536000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -6459,28 +7552,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-10T12:00:09.957278+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c2-fontainebleau-prix-de-la-lande-de-bruyere",
-            "sha256": "2c53501d3941d7ea238cb99f4a9e27e9f307104c9979860ea233b88ff2517fa3",
-            "file": "preuves/2c53501d3941d7ea238cb99f4a9e27e9f307104c9979860ea233b88ff2517fa3.gz"
+            "sha256": "53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3",
+            "file": "preuves/53319a5365393b151bbd55fb332524f856a5c55b18ab2ff4e54ad30514dfd8e3.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
-            "sha256": "f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600",
-            "file": "preuves/f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600.gz"
+            "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+            "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423075_prix-de-la-lande-de-bruyere.html",
-            "sha256": "f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600",
-            "file": "preuves/f0dc5eb9e151c47b7bac17f6a2036a19c78727c922563f2ec98bfe5e0fcb2600.gz"
+            "sha256": "c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66",
+            "file": "preuves/c27850c8044fd86c6ff4c93d74f06da1d519354c4c44c6b60bfe24d8d5d69c66.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697363-2026-11-10-fontainebleau-prix-de-la-lande-de-bruyere/partants-pronostics",
-            "sha256": "25759ee7b3e97379047077a3b96606ddccb3264d7b9a877318d4ae8ad1d01a30",
-            "file": "preuves/25759ee7b3e97379047077a3b96606ddccb3264d7b9a877318d4ae8ad1d01a30.gz"
+            "sha256": "ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d",
+            "file": "preuves/ac48789288e58c70ea8da424ae273453c8c129bb8c8978471a92fc009f3a2d6d.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-10T11:36:15.535659+01:00",
+        "final_check_completed_at": "2026-11-10T12:00:10.452760+01:00"
       },
       {
         "date": "2026-11-10",
@@ -6500,24 +7596,24 @@
             "source_title": "Prix De Vichy",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c3-fontainebleau-prix-de-vichy",
-              "sha256": "398e7e158c45e3b98f7aff32bc7d69959657cef7baa6bf2a74f4c592452f7680",
-              "file": "preuves/398e7e158c45e3b98f7aff32bc7d69959657cef7baa6bf2a74f4c592452f7680.gz"
+              "sha256": "2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205",
+              "file": "preuves/2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
-              "sha256": "f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642",
-              "file": "preuves/f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642.gz"
+              "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+              "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
             },
-            "captured_at": "2026-11-10T10:48:50.407279+01:00",
+            "captured_at": "2026-11-10T12:00:35.346851+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.0,
-              "dateRapport": 1794303938000,
+              "nombreIndicateurTendance": -2.17,
+              "dateRapport": 1794307538000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -6533,24 +7629,24 @@
             "source_title": "Le pronostic du PRIX DE VICHY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
-              "sha256": "81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882",
-              "file": "preuves/81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882.gz"
+              "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+              "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
-              "sha256": "f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642",
-              "file": "preuves/f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642.gz"
+              "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+              "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
             },
-            "captured_at": "2026-11-10T10:48:51.048136+01:00",
+            "captured_at": "2026-11-10T12:00:35.917014+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.0,
-              "dateRapport": 1794303938000,
+              "nombreIndicateurTendance": -2.17,
+              "dateRapport": 1794307538000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -6566,24 +7662,24 @@
             "source_title": "Le pronostic du PRIX DE VICHY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
-              "sha256": "81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882",
-              "file": "preuves/81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882.gz"
+              "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+              "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
-              "sha256": "f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642",
-              "file": "preuves/f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642.gz"
+              "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+              "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
             },
-            "captured_at": "2026-11-10T10:48:51.092962+01:00",
+            "captured_at": "2026-11-10T12:00:35.959610+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.76,
-              "dateRapport": 1794303938000,
+              "nombreIndicateurTendance": -5.46,
+              "dateRapport": 1794307538000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -6599,24 +7695,24 @@
             "source_title": "Prix de Vichy",
             "evidence": {
               "url": "https://www.geny.com/course/1697364-2026-11-10-fontainebleau-prix-de-vichy/partants-pronostics",
-              "sha256": "523f0679d6e06bed704b7f3aea002b944d3093babf7d64fc3f2d5480af6ab1c3",
-              "file": "preuves/523f0679d6e06bed704b7f3aea002b944d3093babf7d64fc3f2d5480af6ab1c3.gz"
+              "sha256": "4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f",
+              "file": "preuves/4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C3/participants",
-              "sha256": "f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642",
-              "file": "preuves/f675f76a51991f4ed49583737df73f4d68e9854fc3f3e053526f0314d0981642.gz"
+              "sha256": "78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d",
+              "file": "preuves/78dc01c00ec9f7aa5f19dab84d5aac4ad9bdecbda4e7529be91b509a9103d59d.gz"
             },
-            "captured_at": "2026-11-10T10:48:52.152066+01:00",
+            "captured_at": "2026-11-10T12:00:54.389619+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.0,
-              "dateRapport": 1794303938000,
+              "nombreIndicateurTendance": -2.17,
+              "dateRapport": 1794307538000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -6628,23 +7724,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c3-fontainebleau-prix-de-vichy",
-            "sha256": "398e7e158c45e3b98f7aff32bc7d69959657cef7baa6bf2a74f4c592452f7680",
-            "file": "preuves/398e7e158c45e3b98f7aff32bc7d69959657cef7baa6bf2a74f4c592452f7680.gz"
+            "sha256": "2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205",
+            "file": "preuves/2b7c1489148e3cd8e4d309f8bfb2bc1a2b70fdeadc4da8ebbe3462ee9dd9b205.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
-            "sha256": "81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882",
-            "file": "preuves/81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882.gz"
+            "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+            "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423076_prix-de-vichy.html",
-            "sha256": "81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882",
-            "file": "preuves/81011df5b5e645d8aa0d43710ff3b0ac37bfb053fdcf33acf1893f9fb4a17882.gz"
+            "sha256": "339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c",
+            "file": "preuves/339c18b2b07f5c6703da707ebc19045d0bfa4a16ba45a97b0002e07aa208711c.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697364-2026-11-10-fontainebleau-prix-de-vichy/partants-pronostics",
-            "sha256": "523f0679d6e06bed704b7f3aea002b944d3093babf7d64fc3f2d5480af6ab1c3",
-            "file": "preuves/523f0679d6e06bed704b7f3aea002b944d3093babf7d64fc3f2d5480af6ab1c3.gz"
+            "sha256": "4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f",
+            "file": "preuves/4e0f2d67a2facfa425a1118f202c27e5047267313a56089c04dcaeb58f86d14f.gz"
           }
         }
       },
@@ -6656,6 +7752,39 @@
         "departure": "2026-11-10T13:55:00+01:00",
         "market": true,
         "tips": {
+          "turfin": {
+            "site": "turfin",
+            "number": 8,
+            "name": "KHALINSKHA",
+            "source_url": "https://turfin.fr/course/2026-11-10/r1c4-fontainebleau-prix-roland-fougedoire",
+            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+            "identity_check": "date_rc_title_number_name",
+            "source_title": "Prix Roland Fougedoire",
+            "evidence": {
+              "url": "https://turfin.fr/course/2026-11-10/r1c4-fontainebleau-prix-roland-fougedoire",
+              "sha256": "9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605",
+              "file": "preuves/9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605.gz"
+            },
+            "official_evidence": {
+              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
+              "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+              "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
+            },
+            "captured_at": "2026-11-10T12:00:55.721857+01:00",
+            "stake_cents": 0,
+            "status": "APERÇU",
+            "playable": true,
+            "odds": {
+              "typePari": "SIMPLE_GAGNANT",
+              "rapport": 14.0,
+              "typeRapport": "DIRECT",
+              "nombreIndicateurTendance": 0.69,
+              "dateRapport": 1794308446000,
+              "favoris": false,
+              "numPmu1": 8,
+              "grossePrise": false
+            }
+          },
           "canalturf": {
             "site": "canalturf",
             "number": 14,
@@ -6666,24 +7795,24 @@
             "source_title": "Le pronostic du Quinté PRIX ROLAND FOUGEDOIRE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
-              "sha256": "2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7",
-              "file": "preuves/2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7.gz"
+              "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+              "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
-              "sha256": "bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533",
-              "file": "preuves/bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533.gz"
+              "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+              "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
             },
-            "captured_at": "2026-11-10T10:49:13.734253+01:00",
+            "captured_at": "2026-11-10T12:00:56.265471+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.66,
-              "dateRapport": 1794303946000,
+              "nombreIndicateurTendance": -2.8,
+              "dateRapport": 1794308446000,
               "favoris": false,
               "numPmu1": 14,
               "grossePrise": false
@@ -6699,24 +7828,24 @@
             "source_title": "Le pronostic du Quinté PRIX ROLAND FOUGEDOIRE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
-              "sha256": "2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7",
-              "file": "preuves/2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7.gz"
+              "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+              "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
-              "sha256": "bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533",
-              "file": "preuves/bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533.gz"
+              "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+              "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
             },
-            "captured_at": "2026-11-10T10:49:13.784811+01:00",
+            "captured_at": "2026-11-10T12:00:56.343217+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.66,
-              "dateRapport": 1794303946000,
+              "nombreIndicateurTendance": -2.8,
+              "dateRapport": 1794308446000,
               "favoris": false,
               "numPmu1": 14,
               "grossePrise": false
@@ -6732,24 +7861,24 @@
             "source_title": "Prix Roland Fougedoire",
             "evidence": {
               "url": "https://www.geny.com/course/1697365-2026-11-10-fontainebleau-prix-roland-fougedoire/partants-pronostics",
-              "sha256": "9dbd5cc7f0796c35caf060652730a093fe71f9c3f283e362b3587a29f1979261",
-              "file": "preuves/9dbd5cc7f0796c35caf060652730a093fe71f9c3f283e362b3587a29f1979261.gz"
+              "sha256": "fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00",
+              "file": "preuves/fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C4/participants",
-              "sha256": "bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533",
-              "file": "preuves/bb8d63f551bd1f939de2843d68f4e583d23f3e6069d7fd1fa894af9bd35fb533.gz"
+              "sha256": "ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31",
+              "file": "preuves/ac28260994d4629bb32c434c288dd1d392c0f140b91f1c2a95d649d3aa796e31.gz"
             },
-            "captured_at": "2026-11-10T10:49:15.084254+01:00",
+            "captured_at": "2026-11-10T12:01:14.577617+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.27,
-              "dateRapport": 1794303946000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794308446000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -6757,28 +7886,27 @@
           }
         },
         "groups": {},
-        "errors": {
-          "turfin": {
-            "type": "ReadTimeout",
-            "reason": "HTTPSConnectionPool(host='turfin.fr', port=443): Read timed out. (read timeout=20)",
-            "at": "2026-11-10T10:49:13.099211+01:00"
-          }
-        },
+        "errors": {},
         "source_checks": {
+          "turfin": {
+            "url": "https://turfin.fr/course/2026-11-10/r1c4-fontainebleau-prix-roland-fougedoire",
+            "sha256": "9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605",
+            "file": "preuves/9c812488cc77f64442b6153e5669c4dc8b245468c9d9cf724e584064b834e605.gz"
+          },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
-            "sha256": "2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7",
-            "file": "preuves/2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7.gz"
+            "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+            "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423077_prix-roland-fougedoire.html",
-            "sha256": "2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7",
-            "file": "preuves/2ebf863a92a887f30c3922aa5fec8d1fbc85558f6632aabbbdca4902a1bb5dc7.gz"
+            "sha256": "7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68",
+            "file": "preuves/7402d13c2303d75e9221faf373aa5274df135477eac5ff779dafb8df85caaa68.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697365-2026-11-10-fontainebleau-prix-roland-fougedoire/partants-pronostics",
-            "sha256": "9dbd5cc7f0796c35caf060652730a093fe71f9c3f283e362b3587a29f1979261",
-            "file": "preuves/9dbd5cc7f0796c35caf060652730a093fe71f9c3f283e362b3587a29f1979261.gz"
+            "sha256": "fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00",
+            "file": "preuves/fdfe07dd943a69a3022c164e65e7c3da9307e139905a0f620d1853f9fee81f00.gz"
           }
         }
       },
@@ -6800,24 +7928,24 @@
             "source_title": "Prix Fontainebleau Ville Du Cheval",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c5-fontainebleau-prix-fontainebleau-ville-du-cheval",
-              "sha256": "55f32d03fbf5d53eeb5813faf1c395b54dd73b7d33057728c44fc7e73f6e014e",
-              "file": "preuves/55f32d03fbf5d53eeb5813faf1c395b54dd73b7d33057728c44fc7e73f6e014e.gz"
+              "sha256": "5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8",
+              "file": "preuves/5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
-              "sha256": "6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1",
-              "file": "preuves/6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1.gz"
+              "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+              "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
             },
-            "captured_at": "2026-11-10T10:49:24.018186+01:00",
+            "captured_at": "2026-11-10T12:01:16.736725+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.65,
-              "dateRapport": 1794303910000,
+              "nombreIndicateurTendance": -2.56,
+              "dateRapport": 1794308410000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6833,24 +7961,24 @@
             "source_title": "Le pronostic du PRIX FONTAINEBLEAU VILLE DU CHEVAL",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
-              "sha256": "5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e",
-              "file": "preuves/5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e.gz"
+              "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+              "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
-              "sha256": "6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1",
-              "file": "preuves/6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1.gz"
+              "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+              "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
             },
-            "captured_at": "2026-11-10T10:49:25.096794+01:00",
+            "captured_at": "2026-11-10T12:01:17.315251+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.65,
-              "dateRapport": 1794303910000,
+              "nombreIndicateurTendance": -2.56,
+              "dateRapport": 1794308410000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6866,24 +7994,24 @@
             "source_title": "Le pronostic du PRIX FONTAINEBLEAU VILLE DU CHEVAL",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
-              "sha256": "5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e",
-              "file": "preuves/5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e.gz"
+              "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+              "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
-              "sha256": "6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1",
-              "file": "preuves/6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1.gz"
+              "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+              "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
             },
-            "captured_at": "2026-11-10T10:49:25.144322+01:00",
+            "captured_at": "2026-11-10T12:01:17.359640+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.65,
-              "dateRapport": 1794303910000,
+              "nombreIndicateurTendance": -2.56,
+              "dateRapport": 1794308410000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6899,24 +8027,24 @@
             "source_title": "Prix Fontainebleau Ville du Cheval",
             "evidence": {
               "url": "https://www.geny.com/course/1697366-2026-11-10-fontainebleau-prix-fontainebleau-ville-du-cheval/partants-pronostics",
-              "sha256": "2b1defc1ecc4ed08817a2a0b56e7e8e966eaef4101cfc1150c602fa8b4711831",
-              "file": "preuves/2b1defc1ecc4ed08817a2a0b56e7e8e966eaef4101cfc1150c602fa8b4711831.gz"
+              "sha256": "0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e",
+              "file": "preuves/0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C5/participants",
-              "sha256": "6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1",
-              "file": "preuves/6ce2e341d437cde8eb85d51c45fc64c8fae42a1c66b70bc08df4e37dd87df7d1.gz"
+              "sha256": "9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5",
+              "file": "preuves/9aef8894a2fb94bfb80eef3fcef2ae534d2181934a24851b8c9ab84bf2f6e3d5.gz"
             },
-            "captured_at": "2026-11-10T10:49:34.213014+01:00",
+            "captured_at": "2026-11-10T12:01:34.770544+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 3.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.65,
-              "dateRapport": 1794303910000,
+              "nombreIndicateurTendance": -2.56,
+              "dateRapport": 1794308410000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6928,23 +8056,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c5-fontainebleau-prix-fontainebleau-ville-du-cheval",
-            "sha256": "55f32d03fbf5d53eeb5813faf1c395b54dd73b7d33057728c44fc7e73f6e014e",
-            "file": "preuves/55f32d03fbf5d53eeb5813faf1c395b54dd73b7d33057728c44fc7e73f6e014e.gz"
+            "sha256": "5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8",
+            "file": "preuves/5fc74df4de6d3fa24b942c7481ca4fe192a8746d7bc4e40826b058f0417a48b8.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
-            "sha256": "5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e",
-            "file": "preuves/5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e.gz"
+            "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+            "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423078_prix-fontainebleau-ville-du-cheval.html",
-            "sha256": "5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e",
-            "file": "preuves/5976fe2fd3394d00450b897e03eb0713d0c773b6702e97455f50cc3817b2ec9e.gz"
+            "sha256": "d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7",
+            "file": "preuves/d50315e71584dd89f40b9ae151ff881bbd66e92089e28b28cec1dd94d1350dd7.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697366-2026-11-10-fontainebleau-prix-fontainebleau-ville-du-cheval/partants-pronostics",
-            "sha256": "2b1defc1ecc4ed08817a2a0b56e7e8e966eaef4101cfc1150c602fa8b4711831",
-            "file": "preuves/2b1defc1ecc4ed08817a2a0b56e7e8e966eaef4101cfc1150c602fa8b4711831.gz"
+            "sha256": "0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e",
+            "file": "preuves/0792384f25cfb4d5320d976b34cd1d73ebfcb783d2d069c0501be57a6ebcf30e.gz"
           }
         }
       },
@@ -6966,15 +8094,15 @@
             "source_title": "Prix Jour De Galop",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c6-fontainebleau-prix-jour-de-galop",
-              "sha256": "e12babbce5abe7e32915c5a053ad936b3af37f84028df5040d6fb9250522ade3",
-              "file": "preuves/e12babbce5abe7e32915c5a053ad936b3af37f84028df5040d6fb9250522ade3.gz"
+              "sha256": "b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d",
+              "file": "preuves/b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
-              "sha256": "8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239",
-              "file": "preuves/8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239.gz"
+              "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+              "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
             },
-            "captured_at": "2026-11-10T10:49:35.965400+01:00",
+            "captured_at": "2026-11-10T12:01:36.110241+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6983,8 +8111,8 @@
               "rapport": 4.2,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": -2.32,
-              "dateRapport": 1794303924000,
-              "favoris": true,
+              "dateRapport": 1794308424000,
+              "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -6999,15 +8127,15 @@
             "source_title": "Le pronostic du PRIX «JOUR DE GALOP»",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
-              "sha256": "7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87",
-              "file": "preuves/7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87.gz"
+              "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+              "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
-              "sha256": "8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239",
-              "file": "preuves/8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239.gz"
+              "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+              "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
             },
-            "captured_at": "2026-11-10T10:49:36.557286+01:00",
+            "captured_at": "2026-11-10T12:01:36.672323+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -7016,8 +8144,8 @@
               "rapport": 4.2,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": -2.32,
-              "dateRapport": 1794303924000,
-              "favoris": true,
+              "dateRapport": 1794308424000,
+              "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -7032,15 +8160,15 @@
             "source_title": "Le pronostic du PRIX «JOUR DE GALOP»",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
-              "sha256": "7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87",
-              "file": "preuves/7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87.gz"
+              "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+              "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
-              "sha256": "8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239",
-              "file": "preuves/8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239.gz"
+              "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+              "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
             },
-            "captured_at": "2026-11-10T10:49:36.603732+01:00",
+            "captured_at": "2026-11-10T12:01:36.713796+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -7049,8 +8177,8 @@
               "rapport": 4.2,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": -2.32,
-              "dateRapport": 1794303924000,
-              "favoris": true,
+              "dateRapport": 1794308424000,
+              "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -7065,15 +8193,15 @@
             "source_title": "Prix Jour de Galop",
             "evidence": {
               "url": "https://www.geny.com/course/1697367-2026-11-10-fontainebleau-prix-jour-de-galop/partants-pronostics",
-              "sha256": "f675d097ae6d1607d473e7d6ca532125d318ead82e458292e619844c697b55e5",
-              "file": "preuves/f675d097ae6d1607d473e7d6ca532125d318ead82e458292e619844c697b55e5.gz"
+              "sha256": "3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52",
+              "file": "preuves/3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
-              "sha256": "8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239",
-              "file": "preuves/8ab7f469be3c9fcec4369d4411b908964e2986ae35c7f6059dc1a0cd4b6f6239.gz"
+              "sha256": "c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f",
+              "file": "preuves/c080e1f9290c3b0829e37c00c27229acf837b16929b6b62974c6756ff196392f.gz"
             },
-            "captured_at": "2026-11-10T10:49:54.254052+01:00",
+            "captured_at": "2026-11-10T12:01:54.430589+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -7082,8 +8210,8 @@
               "rapport": 4.2,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": -2.32,
-              "dateRapport": 1794303924000,
-              "favoris": true,
+              "dateRapport": 1794308424000,
+              "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
             }
@@ -7094,23 +8222,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c6-fontainebleau-prix-jour-de-galop",
-            "sha256": "e12babbce5abe7e32915c5a053ad936b3af37f84028df5040d6fb9250522ade3",
-            "file": "preuves/e12babbce5abe7e32915c5a053ad936b3af37f84028df5040d6fb9250522ade3.gz"
+            "sha256": "b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d",
+            "file": "preuves/b48458de77fcff40a6744bbd443a361b573cf610e33d8457c5ee6be14a59545d.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
-            "sha256": "7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87",
-            "file": "preuves/7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87.gz"
+            "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+            "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423079_prix-jour-de-galop.html",
-            "sha256": "7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87",
-            "file": "preuves/7f43cd4243f8235c98aa7796a8f1030e603ac13d92260f4b4169c8308247bf87.gz"
+            "sha256": "6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b",
+            "file": "preuves/6cb8eb6c7930bee4ce60a0e0d853a38e3a91e548755b05adbc2d4a9acfd13c9b.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697367-2026-11-10-fontainebleau-prix-jour-de-galop/partants-pronostics",
-            "sha256": "f675d097ae6d1607d473e7d6ca532125d318ead82e458292e619844c697b55e5",
-            "file": "preuves/f675d097ae6d1607d473e7d6ca532125d318ead82e458292e619844c697b55e5.gz"
+            "sha256": "3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52",
+            "file": "preuves/3eb04dcbf9c20a503dd76ec6fdeafd730728137d4f556d290734b4957fa1bb52.gz"
           }
         }
       },
@@ -7132,24 +8260,24 @@
             "source_title": "Prix Denisy",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c7-fontainebleau-prix-denisy",
-              "sha256": "19c429f985787895872725b147eda6e049f9e8f19f352a8a7a7924f76a4af80c",
-              "file": "preuves/19c429f985787895872725b147eda6e049f9e8f19f352a8a7a7924f76a4af80c.gz"
+              "sha256": "09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee",
+              "file": "preuves/09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
-              "sha256": "0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d",
-              "file": "preuves/0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d.gz"
+              "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+              "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
             },
-            "captured_at": "2026-11-10T10:49:56.150956+01:00",
+            "captured_at": "2026-11-10T12:01:56.430253+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1794303915000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1794308415000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -7165,24 +8293,24 @@
             "source_title": "Le pronostic du PRIX DENISY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
-              "sha256": "30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5",
-              "file": "preuves/30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5.gz"
+              "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+              "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
-              "sha256": "0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d",
-              "file": "preuves/0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d.gz"
+              "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+              "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
             },
-            "captured_at": "2026-11-10T10:49:56.791365+01:00",
+            "captured_at": "2026-11-10T12:01:56.995243+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1794303915000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1794308415000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -7198,24 +8326,24 @@
             "source_title": "Le pronostic du PRIX DENISY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
-              "sha256": "30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5",
-              "file": "preuves/30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5.gz"
+              "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+              "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
-              "sha256": "0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d",
-              "file": "preuves/0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d.gz"
+              "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+              "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
             },
-            "captured_at": "2026-11-10T10:49:56.866586+01:00",
+            "captured_at": "2026-11-10T12:01:57.037938+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1794303915000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1794308415000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -7231,24 +8359,24 @@
             "source_title": "Prix Denisy",
             "evidence": {
               "url": "https://www.geny.com/course/1697368-2026-11-10-fontainebleau-prix-denisy/partants-pronostics",
-              "sha256": "6ff5118d59aa581538d9ff2eb3f9220a984f9ff3a92a6c1d768e919de048e539",
-              "file": "preuves/6ff5118d59aa581538d9ff2eb3f9220a984f9ff3a92a6c1d768e919de048e539.gz"
+              "sha256": "c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b",
+              "file": "preuves/c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C7/participants",
-              "sha256": "0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d",
-              "file": "preuves/0d451b32a0a06354d1bdbbb88af0780e74c6cfddc6262104b5860a2d087baa9d.gz"
+              "sha256": "81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9",
+              "file": "preuves/81598eeee3bdfd58126defc3a5e57200c0a8353d2584b85672ae558802fa09b9.gz"
             },
-            "captured_at": "2026-11-10T10:50:14.419005+01:00",
+            "captured_at": "2026-11-10T12:02:14.788947+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.0,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1794303915000,
+              "nombreIndicateurTendance": 6.25,
+              "dateRapport": 1794308415000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -7260,23 +8388,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c7-fontainebleau-prix-denisy",
-            "sha256": "19c429f985787895872725b147eda6e049f9e8f19f352a8a7a7924f76a4af80c",
-            "file": "preuves/19c429f985787895872725b147eda6e049f9e8f19f352a8a7a7924f76a4af80c.gz"
+            "sha256": "09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee",
+            "file": "preuves/09bab611c1fda58ddb1f887aa90ee41b3450ccbcb74ad9e5ba321e4cd299d5ee.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
-            "sha256": "30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5",
-            "file": "preuves/30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5.gz"
+            "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+            "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423080_prix-denisy.html",
-            "sha256": "30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5",
-            "file": "preuves/30988bf4fe9e835938bd8f5428d8e9169bd4870196409f61441f356758c07ad5.gz"
+            "sha256": "689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84",
+            "file": "preuves/689c79e11309e00b0b713a4cbddb8f86d212cbfb65a49ae9198cadde3e064a84.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697368-2026-11-10-fontainebleau-prix-denisy/partants-pronostics",
-            "sha256": "6ff5118d59aa581538d9ff2eb3f9220a984f9ff3a92a6c1d768e919de048e539",
-            "file": "preuves/6ff5118d59aa581538d9ff2eb3f9220a984f9ff3a92a6c1d768e919de048e539.gz"
+            "sha256": "c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b",
+            "file": "preuves/c1ef53862166b5428f99c7b68933facf3e057dd0bee239a2391f72a7d1295d2b.gz"
           }
         }
       },
@@ -7298,24 +8426,24 @@
             "source_title": "Prix Guy Thibault",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c8-fontainebleau-prix-guy-thibault",
-              "sha256": "7a87f80fdfcc49a7fbc3afdaa947365b3eb1c9d8dc2f66293da677b231f2b3d7",
-              "file": "preuves/7a87f80fdfcc49a7fbc3afdaa947365b3eb1c9d8dc2f66293da677b231f2b3d7.gz"
+              "sha256": "c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666",
+              "file": "preuves/c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
-              "sha256": "6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412",
-              "file": "preuves/6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412.gz"
+              "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+              "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
             },
-            "captured_at": "2026-11-10T10:50:16.221782+01:00",
+            "captured_at": "2026-11-10T12:02:16.318976+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.0,
+              "rapport": 5.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.4,
-              "dateRapport": 1794303955000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1794308455000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -7331,24 +8459,24 @@
             "source_title": "Le pronostic du PRIX GUY THIBAULT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
-              "sha256": "85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b",
-              "file": "preuves/85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b.gz"
+              "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+              "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
-              "sha256": "6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412",
-              "file": "preuves/6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412.gz"
+              "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+              "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
             },
-            "captured_at": "2026-11-10T10:50:17.322974+01:00",
+            "captured_at": "2026-11-10T12:02:17.059236+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.3,
+              "rapport": 4.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.63,
-              "dateRapport": 1794303955000,
+              "nombreIndicateurTendance": 4.44,
+              "dateRapport": 1794308455000,
               "favoris": true,
               "numPmu1": 10,
               "grossePrise": false
@@ -7364,24 +8492,24 @@
             "source_title": "Le pronostic du PRIX GUY THIBAULT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
-              "sha256": "85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b",
-              "file": "preuves/85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b.gz"
+              "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+              "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
-              "sha256": "6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412",
-              "file": "preuves/6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412.gz"
+              "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+              "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
             },
-            "captured_at": "2026-11-10T10:50:17.371401+01:00",
+            "captured_at": "2026-11-10T12:02:17.102571+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.9,
+              "rapport": 9.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794303955000,
+              "nombreIndicateurTendance": -1.03,
+              "dateRapport": 1794308455000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -7397,24 +8525,24 @@
             "source_title": "Prix Guy Thibault",
             "evidence": {
               "url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
-              "sha256": "a9a0719d4ca00a053161ffa04d12ffcd6efa9906207232e769a6331a651e7d12",
-              "file": "preuves/a9a0719d4ca00a053161ffa04d12ffcd6efa9906207232e769a6331a651e7d12.gz"
+              "sha256": "74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962",
+              "file": "preuves/74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C8/participants",
-              "sha256": "6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412",
-              "file": "preuves/6302efe678c25e795bbea568e77c053cf892b2a4c00d41988102ed2620e30412.gz"
+              "sha256": "e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc",
+              "file": "preuves/e368092e21b2ad4a38f9743d164cf4b10228daeffe2a0f551632db0c93528cbc.gz"
             },
-            "captured_at": "2026-11-10T10:50:34.371845+01:00",
+            "captured_at": "2026-11-10T12:02:34.405887+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.9,
+              "rapport": 9.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794303955000,
+              "nombreIndicateurTendance": -1.03,
+              "dateRapport": 1794308455000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -7426,23 +8554,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c8-fontainebleau-prix-guy-thibault",
-            "sha256": "7a87f80fdfcc49a7fbc3afdaa947365b3eb1c9d8dc2f66293da677b231f2b3d7",
-            "file": "preuves/7a87f80fdfcc49a7fbc3afdaa947365b3eb1c9d8dc2f66293da677b231f2b3d7.gz"
+            "sha256": "c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666",
+            "file": "preuves/c69cb18218b28ac5a7317a4795d66d09817986b5f6ab4d4a6055f7ff5d5ce666.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
-            "sha256": "85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b",
-            "file": "preuves/85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b.gz"
+            "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+            "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423081_prix-guy-thibault.html",
-            "sha256": "85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b",
-            "file": "preuves/85ceeb901ca3970840cb5b3d09cef47ab056b0993d79f049d175dd703873ca7b.gz"
+            "sha256": "285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31",
+            "file": "preuves/285b07ff41983b96a324c225a581bdd4b35bc789f6cc1c953007df036581cf31.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
-            "sha256": "a9a0719d4ca00a053161ffa04d12ffcd6efa9906207232e769a6331a651e7d12",
-            "file": "preuves/a9a0719d4ca00a053161ffa04d12ffcd6efa9906207232e769a6331a651e7d12.gz"
+            "sha256": "74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962",
+            "file": "preuves/74438bfc391ee5514ff345991d88253705030555140033883d97d8ffe92ad962.gz"
           }
         }
       },
@@ -7464,24 +8592,24 @@
             "source_title": "Prix De Chateau-Landon",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-10/r1c9-fontainebleau-prix-de-chateau-landon",
-              "sha256": "d590f2d2ab4ecd4fb4bccae3128848965ff8b3b4fcafbd0cd4bef0b26992da23",
-              "file": "preuves/d590f2d2ab4ecd4fb4bccae3128848965ff8b3b4fcafbd0cd4bef0b26992da23.gz"
+              "sha256": "f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb",
+              "file": "preuves/f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
-              "sha256": "fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c",
-              "file": "preuves/fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c.gz"
+              "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+              "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
             },
-            "captured_at": "2026-11-10T10:50:36.225139+01:00",
+            "captured_at": "2026-11-10T12:02:35.879405+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.1,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.17,
-              "dateRapport": 1794303945000,
+              "nombreIndicateurTendance": -1.88,
+              "dateRapport": 1794308445000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -7497,24 +8625,24 @@
             "source_title": "Le pronostic du PRIX DE CHATEAU LANDON",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
-              "sha256": "3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341",
-              "file": "preuves/3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341.gz"
+              "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+              "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
-              "sha256": "fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c",
-              "file": "preuves/fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c.gz"
+              "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+              "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
             },
-            "captured_at": "2026-11-10T10:50:36.849884+01:00",
+            "captured_at": "2026-11-10T12:02:36.453635+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.1,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.17,
-              "dateRapport": 1794303945000,
+              "nombreIndicateurTendance": -1.88,
+              "dateRapport": 1794308445000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -7530,27 +8658,27 @@
             "source_title": "Le pronostic du PRIX DE CHATEAU LANDON",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
-              "sha256": "3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341",
-              "file": "preuves/3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341.gz"
+              "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+              "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
-              "sha256": "fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c",
-              "file": "preuves/fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c.gz"
+              "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+              "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
             },
-            "captured_at": "2026-11-10T10:50:36.896910+01:00",
+            "captured_at": "2026-11-10T12:02:36.498876+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.4,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -32.85,
-              "dateRapport": 1794303945000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1794308445000,
               "favoris": false,
               "numPmu1": 1,
-              "grossePrise": true
+              "grossePrise": false
             }
           },
           "geny": {
@@ -7563,27 +8691,27 @@
             "source_title": "Prix de Château-Landon",
             "evidence": {
               "url": "https://www.geny.com/course/1697370-2026-11-10-fontainebleau-prix-de-chateau-landon/partants-pronostics",
-              "sha256": "6c9a2bc1abedae075314ef4db44d6ba7ee53734fe6779edc16af2a4c046bc494",
-              "file": "preuves/6c9a2bc1abedae075314ef4db44d6ba7ee53734fe6779edc16af2a4c046bc494.gz"
+              "sha256": "51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4",
+              "file": "preuves/51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C9/participants",
-              "sha256": "fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c",
-              "file": "preuves/fe28c9667ba69c47cff948eb9b1a8433ed264e20e6681e45756eda3a91cecd1c.gz"
+              "sha256": "93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89",
+              "file": "preuves/93c5f0b87408a848aa7b0f96a32579ff49b638c62b975d897d6916916872be89.gz"
             },
-            "captured_at": "2026-11-10T10:50:55.102474+01:00",
+            "captured_at": "2026-11-10T12:02:54.642290+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.4,
+              "rapport": 11.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -32.85,
-              "dateRapport": 1794303945000,
+              "nombreIndicateurTendance": 1.81,
+              "dateRapport": 1794308445000,
               "favoris": false,
               "numPmu1": 1,
-              "grossePrise": true
+              "grossePrise": false
             }
           }
         },
@@ -7592,27 +8720,27 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-10/r1c9-fontainebleau-prix-de-chateau-landon",
-            "sha256": "d590f2d2ab4ecd4fb4bccae3128848965ff8b3b4fcafbd0cd4bef0b26992da23",
-            "file": "preuves/d590f2d2ab4ecd4fb4bccae3128848965ff8b3b4fcafbd0cd4bef0b26992da23.gz"
+            "sha256": "f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb",
+            "file": "preuves/f3280844038368016d4d4d658d33a46aa73b971c01080c9003cef27af2c9f5fb.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
-            "sha256": "3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341",
-            "file": "preuves/3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341.gz"
+            "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+            "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-10/fontainebleau/423082_prix-de-chateau-landon.html",
-            "sha256": "3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341",
-            "file": "preuves/3b4344f3c427b12f73fcd6b38500fe0baea3d91bd40a5da9b75d87563de77341.gz"
+            "sha256": "9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9",
+            "file": "preuves/9033eb91cd2ecad7d71743b479f9e178f1aba8a8e52341b4fbeab71db546a0b9.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1697370-2026-11-10-fontainebleau-prix-de-chateau-landon/partants-pronostics",
-            "sha256": "6c9a2bc1abedae075314ef4db44d6ba7ee53734fe6779edc16af2a4c046bc494",
-            "file": "preuves/6c9a2bc1abedae075314ef4db44d6ba7ee53734fe6779edc16af2a4c046bc494.gz"
+            "sha256": "51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4",
+            "file": "preuves/51a053e17f9c3baaf1ac3e33c2a6586f2c9f56b4c8318596bc508119711a19b4.gz"
           }
         }
       }
     ],
-    "complete": false
+    "complete": true
   }
 }
