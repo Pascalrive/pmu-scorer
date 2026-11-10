@@ -10,7 +10,7 @@
           "number": 6,
           "name": "FRANTZ",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-10T12:05:22.901047+01:00",
           "source_captured_at": "2026-11-10T11:35:39.445732+01:00",
           "sites": [
@@ -32,6 +32,51 @@
             {
               "message_id": 7439,
               "date": 1794308723
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 7,
+          "settled_at": "2026-11-10T12:47:17.018782+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3",
+            "file": "preuves/52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+            "sha256": "98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761",
+            "file": "preuves/98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761.gz"
+          }
+        },
+        {
+          "race_id": "R1C3",
+          "departure": "2026-11-10T13:10:00+01:00",
+          "number": 1,
+          "name": "LA BELLE ISOLA",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-10T12:47:18.087027+01:00",
+          "source_captured_at": "2026-11-10T12:11:02.409872+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.8,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794311212000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "8d6cf07887a77b01cae0ec62cdb900a7ab8f5aba83c544c538439a80756efb4f",
+          "telegram_receipts": [
+            {
+              "message_id": 7450,
+              "date": 1794311238
             }
           ]
         }
@@ -598,7 +643,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-11-10T12:47:17.018469+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3",
+            "file": "preuves/52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+            "sha256": "98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761",
+            "file": "preuves/98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -631,7 +690,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-11-10T12:47:17.018699+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3",
+            "file": "preuves/52468c6ff9341c60d820f76e390b7f6c434602d7990533a91acac66ab28195e3.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+            "sha256": "98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761",
+            "file": "preuves/98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761.gz"
+          }
         }
       },
       "groups": {
@@ -1065,7 +1138,38 @@
         "at": "2026-11-10T12:33:58.980599+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 1,
+          "name": "KESKAVIEL",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "PETITE VAGABONDE",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "MUHAATHER",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "ELMO PUTNEY",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "WALLABY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C2/participants",
+        "sha256": "98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761",
+        "file": "preuves/98e5dce501ab9eba3a6d0a8570e961e9b149bfbb1209985ac530782565cd7761.gz"
+      }
     },
     {
       "date": "2026-11-10",
@@ -1635,7 +1739,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T12:44:14.573982+01:00",
+      "final_check_started_at": "2026-11-10T12:47:17.141964+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697364-2026-11-10-fontainebleau-prix-de-vichy/partants-pronostics",
@@ -1649,7 +1753,7 @@
         }
       },
       "groups_frozen_at": "2026-11-10T12:11:04.520595+01:00",
-      "final_check_completed_at": "2026-11-10T12:44:15.207318+01:00",
+      "final_check_completed_at": "2026-11-10T12:47:17.476636+01:00",
       "last_reservation_check": {
         "at": "2026-11-10T12:44:15.513304+01:00",
         "stop": "ATTENTE_RESULTAT"
