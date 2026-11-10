@@ -145,7 +145,7 @@
           "number": 6,
           "name": "ZAKETT",
           "stake_cents": 15000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-10T14:39:33.245151+01:00",
           "source_captured_at": "2026-11-10T14:06:04.944368+01:00",
           "sites": [
@@ -167,6 +167,51 @@
             {
               "message_id": 7474,
               "date": 1794317973
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -15000,
+          "rank": 4,
+          "settled_at": "2026-11-10T15:17:18.071836+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc",
+            "file": "preuves/6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+            "sha256": "68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6",
+            "file": "preuves/68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6.gz"
+          }
+        },
+        {
+          "race_id": "R1C7",
+          "departure": "2026-11-10T15:40:00+01:00",
+          "number": 5,
+          "name": "ARROW EAGLE",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-10T15:17:18.893715+01:00",
+          "source_captured_at": "2026-11-10T14:40:57.566673+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794320211000,
+            "favoris": true,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "83277892da96465e06960cf49c6afa30da3f9f6b7d8af1ad82aa2c914de87cda",
+          "telegram_receipts": [
+            {
+              "message_id": 7487,
+              "date": 1794320239
             }
           ]
         }
@@ -3265,7 +3310,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-10T15:17:18.071244+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc",
+            "file": "preuves/6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+            "sha256": "68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6",
+            "file": "preuves/68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -3298,7 +3357,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-10T15:17:18.071681+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc",
+            "file": "preuves/6d9c4650a48ecfffb8fd121654f0fb8a8c7c02d4faf54e376ca36d4b8f8f07fc.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+            "sha256": "68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6",
+            "file": "preuves/68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6.gz"
+          }
         }
       },
       "groups": {
@@ -3892,7 +3965,38 @@
         "at": "2026-11-10T15:04:35.036080+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "WILD TRUE",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "WISH ME LUCK",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "COLCHESTER",
+          "rank": 3
+        },
+        {
+          "number": 6,
+          "name": "ZAKETT",
+          "rank": 4
+        },
+        {
+          "number": 12,
+          "name": "AUTRICHE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/10112026/R1/C6/participants",
+        "sha256": "68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6",
+        "file": "preuves/68e1061b50d9ad1e854a356b6cdfa29ff860cde2a4696853fd3874c435e3bca6.gz"
+      }
     },
     {
       "date": "2026-11-10",
@@ -4622,7 +4726,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T15:15:51.393720+01:00",
+      "final_check_started_at": "2026-11-10T15:17:18.126164+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697368-2026-11-10-fontainebleau-prix-denisy/partants-pronostics",
@@ -4636,7 +4740,7 @@
         }
       },
       "groups_frozen_at": "2026-11-10T14:40:59.250457+01:00",
-      "final_check_completed_at": "2026-11-10T15:15:51.972696+01:00",
+      "final_check_completed_at": "2026-11-10T15:17:18.504709+01:00",
       "last_reservation_check": {
         "at": "2026-11-10T15:16:15.340004+01:00",
         "stop": "ATTENTE_RESULTAT"
@@ -5298,7 +5402,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-10T15:15:51.980848+01:00",
+      "final_check_started_at": "2026-11-10T15:17:18.513311+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1697369-2026-11-10-fontainebleau-prix-guy-thibault/partants-pronostics",
@@ -5311,7 +5415,7 @@
           "file": "preuves/a6287451475868d22e7fe220e41999ab8329b0fe92579a0a094041aa3d6c9c90.gz"
         }
       },
-      "final_check_completed_at": "2026-11-10T15:16:14.670000+01:00"
+      "final_check_completed_at": "2026-11-10T15:17:18.786405+01:00"
     },
     {
       "date": "2026-11-10",
