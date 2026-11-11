@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C3 — PRIX DE LA VILLE DE TOULOUSE
 
-Collecte : 2026-11-11T07:15:55.886415+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-11T09:15:56.655805+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-11/toulouse/423224_prix-de-la-ville-de-toulouse.html) | 10 BRITANIA (cote 5.6) | 3 SPANISH BREEZE CEN (cote 13.0) | 11 KING TREZY (cote 3.4) | 12 GOLD PLAYER (cote 29.0) | 8 LOHENGREEN (cote 8.6) | 1 AGADOR (cote 22.0) — Outsider ; 5 XILOFONO (cote 12.0) — Outsider ; 13 BLACK ULTRA (cote 13.0) — Outsider ; 12 GOLD PLAYER (cote 29.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-11/toulouse/423224_prix-de-la-ville-de-toulouse.html) | 10 BRITANIA (cote 5.6) | 15 SPANISH LIGHT (cote 37.0) | 11 KING TREZY (cote 3.4) | 5 XILOFONO (cote 12.0) | 1 AGADOR (cote 22.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 10 BRITANIA (cote 5.6) | 3 SPANISH BREEZE CEN (cote 13.0) | 11 KING TREZY (cote 3.4) | 8 LOHENGREEN (cote 8.6) | 2 POCA GEN (cote 25.0) | 12 GOLD PLAYER (cote 29.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 11 KING TREZY (cote 3.4) | 10 BRITANIA (cote 5.6) | 8 LOHENGREEN (cote 8.6) | 7 SIGTUNA (cote 20.0) | 5 XILOFONO (cote 12.0) | 5 XILOFONO (cote 12.0) — Outsider ; 1 AGADOR (cote 22.0) — Outsider ; 13 BLACK ULTRA (cote 13.0) — Outsider ; 14 GEORGES VILLE (cote 35.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 BRITANIA (cote 5.6) | 11 KING TREZY (cote 3.4) | 5 XILOFONO (cote 12.0) | 3 SPANISH BREEZE CEN (cote 13.0) | 7 SIGTUNA (cote 20.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-11/toulouse/423224_prix-de-la-ville-de-toulouse.html) | 10 BRITANIA (cote 4.8) | 3 SPANISH BREEZE CEN (cote 8.9) | 11 KING TREZY (cote 4.2) | 12 GOLD PLAYER (cote 28.0) | 8 LOHENGREEN (cote 12.0) | 1 AGADOR (cote 20.0) — Outsider ; 5 XILOFONO (cote 16.0) — Outsider ; 13 BLACK ULTRA (cote 13.0) — Outsider ; 12 GOLD PLAYER (cote 28.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-11/toulouse/423224_prix-de-la-ville-de-toulouse.html) | 10 BRITANIA (cote 4.8) | 15 SPANISH LIGHT (cote 27.0) | 11 KING TREZY (cote 4.2) | 5 XILOFONO (cote 16.0) | 1 AGADOR (cote 20.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 10 BRITANIA (cote 4.8) | 3 SPANISH BREEZE CEN (cote 8.9) | 11 KING TREZY (cote 4.2) | 8 LOHENGREEN (cote 12.0) | 2 POCA GEN (cote 24.0) | 12 GOLD PLAYER (cote 28.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 11 KING TREZY (cote 4.2) | 10 BRITANIA (cote 4.8) | 8 LOHENGREEN (cote 12.0) | 7 SIGTUNA (cote 15.0) | 5 XILOFONO (cote 16.0) | 5 XILOFONO (cote 16.0) — Outsider ; 1 AGADOR (cote 20.0) — Outsider ; 13 BLACK ULTRA (cote 13.0) — Outsider ; 14 GEORGES VILLE (cote 20.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 10 BRITANIA (cote 4.8) | 11 KING TREZY (cote 4.2) | 5 XILOFONO (cote 16.0) | 3 SPANISH BREEZE CEN (cote 8.9) | 7 SIGTUNA (cote 15.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,19 +21,19 @@ Collecte : 2026-11-11T07:15:55.886415+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 10 BRITANIA (cote 5.6) | 5 |
-| 11 KING TREZY (cote 3.4) | 5 |
-| 3 SPANISH BREEZE CEN (cote 13.0) | 3 |
-| 5 XILOFONO (cote 12.0) | 3 |
-| 8 LOHENGREEN (cote 8.6) | 3 |
+| 10 BRITANIA (cote 4.8) | 5 |
+| 11 KING TREZY (cote 4.2) | 5 |
+| 3 SPANISH BREEZE CEN (cote 8.9) | 3 |
+| 5 XILOFONO (cote 16.0) | 3 |
+| 8 LOHENGREEN (cote 12.0) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 10 – 11 – 3 – 5 – 8 | 2 € |
-| Cotes | 11 – 10 – 8 – 5 – 3 | 2 € |
-| Bases + outsiders | 10 – 11 – 3 – 5 – 13 | 2 € |
+| Cotes | 11 – 10 – 3 – 8 – 13 | 2 € |
+| Bases + outsiders | 10 – 11 – 3 – 13 – 5 | 2 € |
 
 ### Cumul des trois premiers choix
 
