@@ -11,12 +11,10 @@ on:
       - 'tests/**'
       - '.github/workflows/pmu_daily.yml'
       - 'operations/morning_recovery.json'
+  # 5 passages par jour (UTC) : bilan 06h17, scorer 07h17, notifier 12h10, 16h10, 20h10 heure de Paris (hiver)
   schedule:
     - cron: '17 6 * * *'
-    - cron: '47 6 * * *'
-    - cron: '17 7 * * *'
-    - cron: '47 7 * * *'
-    - cron: '*/10 8-22 * * *'
+    - cron: '10 11,15,19 * * *'
     - cron: '17 5 * * *'
   workflow_dispatch:
     inputs:
@@ -56,10 +54,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
       (github.event_name == 'push' && contains(github.event.head_commit.message, '[morning-recovery]')) ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '17 6 * * *' ||
-        github.event.schedule == '47 6 * * *' ||
-        github.event.schedule == '17 7 * * *' ||
-        github.event.schedule == '47 7 * * *'
+        github.event.schedule == '17 6 * * *'
       ))
     permissions:
       contents: write
@@ -150,7 +145,7 @@ jobs:
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '*/10 8-22 * * *'
+        github.event.schedule == '10 11,15,19 * * *'
       ))
 
     steps:
