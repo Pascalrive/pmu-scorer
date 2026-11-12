@@ -2,7 +2,7 @@ name: PMU Daily Scorer v15.1
 
 # Crons UTC : GitHub peut retarder ou manquer un passage.
 # Collecte H60, actualisation H15, controle H5 selon le delai reel restant.
-# Bilan a 05h17 UTC pour la veille civile a Paris, meme si le lancement est retarde.
+# Bilan a 20h30 UTC (21h30 Paris) pour la journee en cours, apres la derniere course.
 on:
   push:
     branches: [main]
@@ -11,11 +11,11 @@ on:
       - 'tests/**'
       - '.github/workflows/pmu_daily.yml'
       - 'operations/morning_recovery.json'
-  # 5 passages par jour (UTC) : bilan 06h17, scorer 07h17, notifier 12h10, 16h10, 20h10 heure de Paris (hiver)
+  # 3 passages par jour (UTC) : scorer 9h00, notifier 13h15 (avant la course), bilan du jour 21h30 heure de Paris (hiver)
   schedule:
-    - cron: '17 6 * * *'
-    - cron: '10 11,15,19 * * *'
-    - cron: '17 5 * * *'
+    - cron: '0 8 * * *'
+    - cron: '15 12 * * *'
+    - cron: '30 20 * * *'
   workflow_dispatch:
     inputs:
       job:
@@ -54,7 +54,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'scorer') ||
       (github.event_name == 'push' && contains(github.event.head_commit.message, '[morning-recovery]')) ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '17 6 * * *'
+        github.event.schedule == '0 8 * * *'
       ))
     permissions:
       contents: write
@@ -145,7 +145,7 @@ jobs:
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '10 11,15,19 * * *'
+        github.event.schedule == '15 12 * * *'
       ))
 
     steps:
@@ -192,7 +192,7 @@ jobs:
     timeout-minutes: 30
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'results') ||
-      (github.event_name == 'schedule' && github.event.schedule == '17 5 * * *')
+      (github.event_name == 'schedule' && github.event.schedule == '30 20 * * *')
     permissions:
       contents: write
 
@@ -213,7 +213,7 @@ jobs:
           TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PMU_BILAN_DATE_INPUT: ${{ inputs.date_bilan }}
-          PMU_SCHEDULED: ${{ github.event_name == 'schedule' && '1' || '0' }}
+          PMU_SCHEDULED: '0'  # bilan du soir : journee en cours, pas la veille
           PMU_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
         run: python pmu_runtime.py bilan
       - name: Archiver le bilan et ses sources officielles
