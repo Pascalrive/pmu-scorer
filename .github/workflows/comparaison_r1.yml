@@ -1,9 +1,10 @@
 name: Comparaison R1 quatre sites
 on:
   schedule:
-    # 5 passages par jour (UTC) : 06h45, 11h02, 14h02, 17h02, 20h02 heure de Paris (hiver)
-    - cron: '45 5 * * *'
-    - cron: '2 10,13,16,19 * * *'
+    # 3 passages par jour (UTC) : 9h00, 13h15 et 21h30 heure de Paris (hiver ; 10h00, 14h15, 22h30 en ete)
+    - cron: '0 8 * * *'
+    - cron: '15 12 * * *'
+    - cron: '30 20 * * *'
   workflow_dispatch:
     inputs:
       relay_probe:
