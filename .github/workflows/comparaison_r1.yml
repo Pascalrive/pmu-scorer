@@ -1,8 +1,9 @@
 name: Comparaison R1 quatre sites
 on:
   schedule:
-    - cron: '2-57/5 6-22 * * *'
+    # 5 passages par jour (UTC) : 06h45, 11h02, 14h02, 17h02, 20h02 heure de Paris (hiver)
     - cron: '45 5 * * *'
+    - cron: '2 10,13,16,19 * * *'
   workflow_dispatch:
     inputs:
       relay_probe:
@@ -63,7 +64,7 @@ jobs:
             if [ "$DRY_RUN" = true ]; then
               python -m comparaison_r1.main --dry-run
             else
-              python -m comparaison_r1.worker comparaison_r1 --persist --continue-run
+              python -m comparaison_r1.worker comparaison_r1 --persist
             fi
           fi
       - name: Persister les preuves et les recus
