@@ -62,7 +62,7 @@ Simulation à mise fixe : 2 € par variante complète confirmée sur Telegram a
 | 2026-11-07 | cotes | 1 – 2 – 4 – 7 – 16 | 1 | 2 € | 0.00 € | REGLE |
 | 2026-11-11 | cotes | 11 – 10 – 3 – 8 – 13 | 1 | 2 € | 0.00 € | REGLE |
 | 2026-11-13 | cotes | 5 – 8 – 2 – 6 – 13 | 5 | 2 € | 6.80 € | REGLE |
-| 2026-11-14 | cotes | 15 – 17 – 8 – 11 – 5 | — | 2 € | — | AVANT_COURSE |
+| 2026-11-14 | cotes | 15 – 17 – 8 – 11 – 5 | 2 | 2 € | 0.00 € | REGLE |
 
 ## Cumul indépendant par variante
 
@@ -71,7 +71,7 @@ Les variantes peuvent couvrir des courses différentes ; utiliser le tableau com
 | Variante | Courses | En attente | Mises réglées | Retours réglés | ROI complet |
 |---|---:|---:|---:|---:|---|
 | statistique | 19 | 0 | 38.00 € | 8.60 € | -77.37 % |
-| cotes | 25 | 1 | 48.00 € | 51.40 € | INCOMPLET |
+| cotes | 25 | 0 | 50.00 € | 51.40 € | +2.80 % |
 | mixte | 14 | 0 | 28.00 € | 5.80 € | -79.29 % |
 
 ## Comparaison sur les mêmes courses réglées
