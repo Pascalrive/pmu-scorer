@@ -10,7 +10,7 @@
           "number": 6,
           "name": "METRONOMIQUE",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-11-15T13:28:39.220511+01:00",
           "source_captured_at": "2026-11-15T13:21:44.768107+01:00",
           "sites": [
@@ -34,7 +34,21 @@
               "message_id": 7617,
               "date": 1794745719
             }
-          ]
+          ],
+          "return_cents": 20000,
+          "profit_cents": 10000,
+          "rank": 1,
+          "settled_at": "2026-11-15T21:34:05.441479+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9",
+            "file": "preuves/ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
+            "sha256": "6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d",
+            "file": "preuves/6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -409,7 +423,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-15T21:34:05.829723+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d",
+            "file": "preuves/c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/participants",
+            "sha256": "7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323",
+            "file": "preuves/7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -442,7 +470,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 9,
+          "settled_at": "2026-11-15T21:34:05.830073+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d",
+            "file": "preuves/c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/participants",
+            "sha256": "7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323",
+            "file": "preuves/7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -475,7 +517,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-15T21:34:05.830215+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d",
+            "file": "preuves/c101e2afe0e65755863ba4c13e2252a5ab7135a05649f8b53ad3667259c7523d.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/participants",
+            "sha256": "7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323",
+            "file": "preuves/7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323.gz"
+          }
         }
       },
       "groups": {},
@@ -624,8 +680,39 @@
         }
       },
       "final_check_completed_at": "2026-11-15T13:23:59.638092+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "MON PETIT PRINCE",
+          "rank": 1
+        },
+        {
+          "number": 7,
+          "name": "PARFUM D'UNE REINE",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "TUTTI BELLA",
+          "rank": 3
+        },
+        {
+          "number": 14,
+          "name": "JUMPER BAIE",
+          "rank": 4
+        },
+        {
+          "number": 12,
+          "name": "LYCAON DE BERCE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/participants",
+        "sha256": "7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323",
+        "file": "preuves/7ab3e17a79794033fdf1b75e9ffe8cee75abf72396e91ef058b34dfbc5d2a323.gz"
+      }
     },
     {
       "date": "2026-11-15",
@@ -666,7 +753,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-15T21:34:05.440823+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9",
+            "file": "preuves/ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
+            "sha256": "6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d",
+            "file": "preuves/6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -699,7 +800,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-15T21:34:05.441148+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9",
+            "file": "preuves/ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
+            "sha256": "6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d",
+            "file": "preuves/6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -732,7 +847,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-15T21:34:05.441343+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9",
+            "file": "preuves/ee120e12891b25f48d80ecfa234bf10e436b7c5ddd6b9cd81b3a84a98f84d2e9.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
+            "sha256": "6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d",
+            "file": "preuves/6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d.gz"
+          }
         }
       },
       "groups": {
@@ -1058,6 +1187,38 @@
       "last_reservation_check": {
         "at": "2026-11-15T13:30:49.262934+01:00",
         "stop": "ATTENTE_RESULTAT"
+      },
+      "official_arrival": [
+        {
+          "number": 6,
+          "name": "METRONOMIQUE",
+          "rank": 1
+        },
+        {
+          "number": 3,
+          "name": "TEEN SPIRIT",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "MELISSE DU MATHAN",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "MONTANA DREAM",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "FRENCH LOVER",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
+        "sha256": "6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d",
+        "file": "preuves/6b2e15b72a003f7c6829e1af579001bc323e832e7f97fa71d0b4ea134071131d.gz"
       }
     },
     {
@@ -1281,7 +1442,40 @@
             }
           }
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 8,
+          "name": "HURON BLEU",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "NAVY DU SEUIL",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "NOM D'UN CHIEN",
+          "rank": 3
+        },
+        {
+          "number": 1,
+          "name": "KING DALEE",
+          "rank": 4
+        },
+        {
+          "number": 3,
+          "name": "MAGNUM VALLEY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C5/participants",
+        "sha256": "fb27c0bf80d2d8edd57ca010609264ebc9ad52dd6c647c11c04f48af5defeaed",
+        "file": "preuves/fb27c0bf80d2d8edd57ca010609264ebc9ad52dd6c647c11c04f48af5defeaed.gz"
+      },
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-15",
@@ -1504,7 +1698,40 @@
             }
           }
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 9,
+          "name": "KOLOKICO",
+          "rank": 1
+        },
+        {
+          "number": 4,
+          "name": "ROYAL SAGA",
+          "rank": 2
+        },
+        {
+          "number": 15,
+          "name": "LACOKOKELDY",
+          "rank": 3
+        },
+        {
+          "number": 10,
+          "name": "JOHNNY ROQUE",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "BON GARCON",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C6/participants",
+        "sha256": "7b6e68d496f391d05ea7a509bf933593a7c602488a7549c4f6b595d4c6d9e927",
+        "file": "preuves/7b6e68d496f391d05ea7a509bf933593a7c602488a7549c4f6b595d4c6d9e927.gz"
+      },
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-15",
@@ -1727,7 +1954,40 @@
             }
           }
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "GUADALQUIVIR",
+          "rank": 1
+        },
+        {
+          "number": 12,
+          "name": "DELMEGAN",
+          "rank": 2
+        },
+        {
+          "number": 1,
+          "name": "ITS NOW",
+          "rank": 3
+        },
+        {
+          "number": 11,
+          "name": "MYSOKO STAR",
+          "rank": 4
+        },
+        {
+          "number": 5,
+          "name": "MOX",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C7/participants",
+        "sha256": "ed8d92f5cfe7fb696276add2355a4b99c564d78be7a37ada2e6e340a71264cad",
+        "file": "preuves/ed8d92f5cfe7fb696276add2355a4b99c564d78be7a37ada2e6e340a71264cad.gz"
+      },
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     },
     {
       "date": "2026-11-15",
@@ -1950,713 +2210,47 @@
             }
           }
         }
-      ]
+      ],
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "DO IT AGAIN",
+          "rank": 1
+        },
+        {
+          "number": 13,
+          "name": "LIPRIKA D'ANJOU",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "JAGUAR DU BERLAIS",
+          "rank": 3
+        },
+        {
+          "number": 11,
+          "name": "ROBIN HILL",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "JOST",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C8/participants",
+        "sha256": "3159a6cfe4a90d6892837f1a77306b76fd13e1a03d85e7096186f11778e960fc",
+        "file": "preuves/3159a6cfe4a90d6892837f1a77306b76fd13e1a03d85e7096186f11778e960fc.gz"
+      },
+      "no_bet_reason": "contrôle final avant départ non enregistré ; course manquée ou contrôle indisponible"
     }
   ],
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-15T13:25:22.955862+01:00",
-    "races": [
-      {
-        "date": "2026-11-15",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX MAURICE GILLOIS - GRAND STEEPLE-CHASE DES 4 ANS",
-        "departure": "2026-11-15T13:58:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 6,
-            "name": "METRONOMIQUE",
-            "source_url": "https://turfin.fr/course/2026-11-15/r1c4-auteuil-prix-maurice-gillois-grand-steeple-chase-des-4-ans",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Maurice Gillois - Grand Steeple-Chase Des 4 Ans",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-15/r1c4-auteuil-prix-maurice-gillois-grand-steeple-chase-des-4-ans",
-              "sha256": "e9620cee1b117cfd753b3730f3eff6fcff97447d0533c8e8fb553a42f943ea3d",
-              "file": "preuves/e9620cee1b117cfd753b3730f3eff6fcff97447d0533c8e8fb553a42f943ea3d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
-              "sha256": "af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702",
-              "file": "preuves/af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702.gz"
-            },
-            "captured_at": "2026-11-15T13:25:06.596270+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.84,
-              "dateRapport": 1794744930000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "METRONOMIQUE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX MAURICE GILLOIS - GRAND STEEPLE-CHASE DES 4 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-              "sha256": "5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d",
-              "file": "preuves/5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
-              "sha256": "af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702",
-              "file": "preuves/af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702.gz"
-            },
-            "captured_at": "2026-11-15T13:25:08.175878+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.84,
-              "dateRapport": 1794744930000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 6,
-            "name": "METRONOMIQUE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX MAURICE GILLOIS - GRAND STEEPLE-CHASE DES 4 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-              "sha256": "5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d",
-              "file": "preuves/5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C4/participants",
-              "sha256": "af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702",
-              "file": "preuves/af25f5fa0886971cfe09dd585c753e3300a73af332a7600859e13c0a5c313702.gz"
-            },
-            "captured_at": "2026-11-15T13:25:08.268462+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.84,
-              "dateRapport": 1794744930000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-15T13:25:08.720195+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "final_check_started_at": "2026-11-15T13:25:02.122764+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-15/r1c4-auteuil-prix-maurice-gillois-grand-steeple-chase-des-4-ans",
-            "sha256": "e9620cee1b117cfd753b3730f3eff6fcff97447d0533c8e8fb553a42f943ea3d",
-            "file": "preuves/e9620cee1b117cfd753b3730f3eff6fcff97447d0533c8e8fb553a42f943ea3d.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-            "sha256": "5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d",
-            "file": "preuves/5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423669_prix-maurice-gillois-grand-steeple-chase-des-4-ans.html",
-            "sha256": "5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d",
-            "file": "preuves/5f175bdf6a69247594f12fb69e1d107f6efe5c49bdd893bf3f3c7338d6f1d54d.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-15T13:21:45.575437+01:00",
-        "final_check_completed_at": "2026-11-15T13:25:04.630447+01:00"
-      },
-      {
-        "date": "2026-11-15",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX CAMBACERES - GRANDE COURSE DE HAIES DES 3 ANS",
-        "departure": "2026-11-15T14:33:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 8,
-            "name": "HURON BLEU",
-            "source_url": "https://turfin.fr/course/2026-11-15/r1c5-auteuil-prix-cambaceres-grande-course-de-haies-des-3-ans",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Cambaceres - Grande Course De Haies Des 3 Ans",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-15/r1c5-auteuil-prix-cambaceres-grande-course-de-haies-des-3-ans",
-              "sha256": "b5efdf25967d01bff2e9f37cab17005fe013512d73667bc129805255b98aac68",
-              "file": "preuves/b5efdf25967d01bff2e9f37cab17005fe013512d73667bc129805255b98aac68.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C5/participants",
-              "sha256": "201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d",
-              "file": "preuves/201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d.gz"
-            },
-            "captured_at": "2026-11-15T13:25:10.552166+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.76,
-              "dateRapport": 1794744913000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 9,
-            "name": "VARSOVIE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX CAMBACERES - GRANDE COURSE DE HAIES DES 3 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-              "sha256": "3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8",
-              "file": "preuves/3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C5/participants",
-              "sha256": "201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d",
-              "file": "preuves/201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d.gz"
-            },
-            "captured_at": "2026-11-15T13:25:11.307411+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -8.16,
-              "dateRapport": 1794744913000,
-              "favoris": false,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 8,
-            "name": "HURON BLEU",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX CAMBACERES - GRANDE COURSE DE HAIES DES 3 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-              "sha256": "3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8",
-              "file": "preuves/3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C5/participants",
-              "sha256": "201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d",
-              "file": "preuves/201e52390da648e990ef234adf9d3f72b63645370144a7af258fc92e0da9499d.gz"
-            },
-            "captured_at": "2026-11-15T13:25:11.401793+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.76,
-              "dateRapport": 1794744913000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-15T13:25:12.158572+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-15/r1c5-auteuil-prix-cambaceres-grande-course-de-haies-des-3-ans",
-            "sha256": "b5efdf25967d01bff2e9f37cab17005fe013512d73667bc129805255b98aac68",
-            "file": "preuves/b5efdf25967d01bff2e9f37cab17005fe013512d73667bc129805255b98aac68.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-            "sha256": "3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8",
-            "file": "preuves/3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423670_prix-cambaceres-grande-course-de-haies-des-3-ans.html",
-            "sha256": "3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8",
-            "file": "preuves/3050c52b5fdb652b72224f64b6f2f9e69163917aa0f99ad0a2146339c902b3e8.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-15",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX LA HAYE JOUSSELIN",
-        "departure": "2026-11-15T15:15:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 7,
-            "name": "KILOMETRE ILLIMITE",
-            "source_url": "https://turfin.fr/course/2026-11-15/r1c6-auteuil-prix-la-haye-jousselin",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix La Haye Jousselin",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-15/r1c6-auteuil-prix-la-haye-jousselin",
-              "sha256": "ce6c6e3b3a2b9a3b5b49f22ce738fec4ac8c6af67fcdca378e1446699f3404a6",
-              "file": "preuves/ce6c6e3b3a2b9a3b5b49f22ce738fec4ac8c6af67fcdca378e1446699f3404a6.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C6/participants",
-              "sha256": "c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76",
-              "file": "preuves/c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76.gz"
-            },
-            "captured_at": "2026-11-15T13:25:13.644594+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.81,
-              "dateRapport": 1794744951000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 13,
-            "name": "KIVALA DU BERLAIS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX LA HAYE JOUSSELIN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-              "sha256": "044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be",
-              "file": "preuves/044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C6/participants",
-              "sha256": "c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76",
-              "file": "preuves/c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76.gz"
-            },
-            "captured_at": "2026-11-15T13:25:14.345272+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.03,
-              "dateRapport": 1794744951000,
-              "favoris": false,
-              "numPmu1": 13,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 7,
-            "name": "KILOMETRE ILLIMITE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX LA HAYE JOUSSELIN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-              "sha256": "044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be",
-              "file": "preuves/044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C6/participants",
-              "sha256": "c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76",
-              "file": "preuves/c893b57ca98f05c448e8432fa632ac3f61e3bcdbb8bacc7782f28727cfe0fa76.gz"
-            },
-            "captured_at": "2026-11-15T13:25:14.448649+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.81,
-              "dateRapport": 1794744951000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-15T13:25:15.666547+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-15/r1c6-auteuil-prix-la-haye-jousselin",
-            "sha256": "ce6c6e3b3a2b9a3b5b49f22ce738fec4ac8c6af67fcdca378e1446699f3404a6",
-            "file": "preuves/ce6c6e3b3a2b9a3b5b49f22ce738fec4ac8c6af67fcdca378e1446699f3404a6.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-            "sha256": "044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be",
-            "file": "preuves/044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423671_prix-la-haye-jousselin.html",
-            "sha256": "044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be",
-            "file": "preuves/044048b36028ef9e2a7c9145094e64292dbbf958aa27079c4cbdecbd9c9e27be.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-15",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PRIX RENAUD DU VIVIER - GRANDE COURSE DE HAIES DES 4 ANS",
-        "departure": "2026-11-15T15:55:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 12,
-            "name": "DELMEGAN",
-            "source_url": "https://turfin.fr/course/2026-11-15/r1c7-auteuil-prix-renaud-du-vivier-grande-course-de-haies-des-4-ans",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Renaud Du Vivier - Grande Course De Haies Des 4 Ans",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-15/r1c7-auteuil-prix-renaud-du-vivier-grande-course-de-haies-des-4-ans",
-              "sha256": "57d17a3ccb0e2c91b8d2b48f0a269681fe8b4d9e0d9e902ad0a34c2f2fe4cb2b",
-              "file": "preuves/57d17a3ccb0e2c91b8d2b48f0a269681fe8b4d9e0d9e902ad0a34c2f2fe4cb2b.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C7/participants",
-              "sha256": "d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762",
-              "file": "preuves/d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762.gz"
-            },
-            "captured_at": "2026-11-15T13:25:17.469704+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.59,
-              "dateRapport": 1794744921000,
-              "favoris": false,
-              "numPmu1": 12,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 4,
-            "name": "GUADALQUIVIR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RENAUD DU VIVIER - GRANDE COURSE DE HAIES DES 4 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-              "sha256": "829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488",
-              "file": "preuves/829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C7/participants",
-              "sha256": "d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762",
-              "file": "preuves/d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762.gz"
-            },
-            "captured_at": "2026-11-15T13:25:18.183046+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.49,
-              "dateRapport": 1794744921000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "GUADALQUIVIR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RENAUD DU VIVIER - GRANDE COURSE DE HAIES DES 4 ANS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-              "sha256": "829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488",
-              "file": "preuves/829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C7/participants",
-              "sha256": "d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762",
-              "file": "preuves/d627516360e27027dd35716e91ec9723afad067253edf549a8ea7a8798d1a762.gz"
-            },
-            "captured_at": "2026-11-15T13:25:18.277107+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.49,
-              "dateRapport": 1794744921000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-15T13:25:19.433258+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-15/r1c7-auteuil-prix-renaud-du-vivier-grande-course-de-haies-des-4-ans",
-            "sha256": "57d17a3ccb0e2c91b8d2b48f0a269681fe8b4d9e0d9e902ad0a34c2f2fe4cb2b",
-            "file": "preuves/57d17a3ccb0e2c91b8d2b48f0a269681fe8b4d9e0d9e902ad0a34c2f2fe4cb2b.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-            "sha256": "829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488",
-            "file": "preuves/829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423672_prix-renaud-du-vivier-grande-course-de-haies-des-4-ans.html",
-            "sha256": "829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488",
-            "file": "preuves/829dc1faa801fc72f6c93b892ed01915d19da1bc702030a8be21371a2f015488.gz"
-          }
-        }
-      },
-      {
-        "date": "2026-11-15",
-        "id": "R1C8",
-        "c": 8,
-        "title": "PRIX RMC - PRIX COUNT SCHOMBERG",
-        "departure": "2026-11-15T16:35:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 5,
-            "name": "DO IT AGAIN",
-            "source_url": "https://turfin.fr/course/2026-11-15/r1c8-auteuil-prix-rmc-prix-count-schomberg",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Rmc - Prix Count Schomberg",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-15/r1c8-auteuil-prix-rmc-prix-count-schomberg",
-              "sha256": "bc4c0ee9dd85b8dadd10f6c961fa142a810cb99301e30b35e978df4420639941",
-              "file": "preuves/bc4c0ee9dd85b8dadd10f6c961fa142a810cb99301e30b35e978df4420639941.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C8/participants",
-              "sha256": "c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0",
-              "file": "preuves/c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0.gz"
-            },
-            "captured_at": "2026-11-15T13:25:21.348867+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794744915000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 3,
-            "name": "JAGUAR DU BERLAIS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RMC - PRIX COUNT SCHOMBERG",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-              "sha256": "4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca",
-              "file": "preuves/4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C8/participants",
-              "sha256": "c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0",
-              "file": "preuves/c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0.gz"
-            },
-            "captured_at": "2026-11-15T13:25:22.075264+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 13.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -0.74,
-              "dateRapport": 1794744915000,
-              "favoris": false,
-              "numPmu1": 3,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 5,
-            "name": "DO IT AGAIN",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RMC - PRIX COUNT SCHOMBERG",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-              "sha256": "4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca",
-              "file": "preuves/4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C8/participants",
-              "sha256": "c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0",
-              "file": "preuves/c1de768aa13b3788b6ed90be28602bd7fa48ec9bf9d99c6a8388b983bb3971a0.gz"
-            },
-            "captured_at": "2026-11-15T13:25:22.174913+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1794744915000,
-              "favoris": true,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-15T13:25:22.955694+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-15/r1c8-auteuil-prix-rmc-prix-count-schomberg",
-            "sha256": "bc4c0ee9dd85b8dadd10f6c961fa142a810cb99301e30b35e978df4420639941",
-            "file": "preuves/bc4c0ee9dd85b8dadd10f6c961fa142a810cb99301e30b35e978df4420639941.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-            "sha256": "4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca",
-            "file": "preuves/4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423673_prix-rmc-prix-count-schomberg.html",
-            "sha256": "4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca",
-            "file": "preuves/4493914d4d219e3db01548d1cc02125f31ea6f5c1e6e6ac740214de32ab7bbca.gz"
-          }
-        }
-      }
-    ],
+    "captured_at": "2026-11-15T21:34:07.668910+01:00",
+    "races": [],
     "complete": false
   }
 }
