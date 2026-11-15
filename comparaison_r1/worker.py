@@ -65,7 +65,7 @@ def dispatch(package, probe=False, recovery_attempt=None):
             raise RuntimeError('Continuation not accepted by GitHub')
 
 
-def run(package, persist=False, continue_run=False, duration=10, interval=60):
+def run(package, persist=False, continue_run=False, duration=10, interval=60, once=False):
     model = importlib.import_module(package+'.model')
     data = Path(package)/'data'
     data.mkdir(parents=True, exist_ok=True)
@@ -98,6 +98,11 @@ def run(package, persist=False, continue_run=False, duration=10, interval=60):
                 if continue_run and attempt<1 and active(state,datetime.now(TZ)):
                     dispatch(package,recovery_attempt=attempt+1)
                 raise
+        # Scheduled economical mode: checkpoint once, release the paid runner.
+        # The next cron starts a fresh session; no sleeping or recursive dispatch.
+        if once:
+            if not ok:raise RuntimeError('Collection failed in single-pass session')
+            return
         failures = 0 if ok else failures+1
         state = json.loads(state_path.read_text()) if state_path.exists() else {}
         now = datetime.now(TZ)
@@ -125,11 +130,13 @@ if __name__ == '__main__':
     parser.add_argument('--probe-relay', action='store_true')
     parser.add_argument('--persist', action='store_true')
     parser.add_argument('--continue-run', action='store_true')
+    parser.add_argument('--once', action='store_true')
     args = parser.parse_args()
     if args.checkpoint_only:checkpoint(args.package)
     elif args.probe_relay:
         dispatch(args.package, probe=True)
         print('RELAY_PROBE_ACCEPTED '+args.package)
-    else:run(args.package, persist=args.persist, continue_run=args.continue_run)
+    else:run(args.package, persist=args.persist, continue_run=args.continue_run, once=args.once)
+
 
 
