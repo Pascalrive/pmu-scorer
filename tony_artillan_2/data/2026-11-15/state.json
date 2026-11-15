@@ -61,7 +61,8 @@
             }
           }
         }
-      ]
+      ],
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : HAIE exclu"
     },
     {
       "date": "2026-11-15",
@@ -114,19 +115,65 @@
             }
           }
         }
-      ]
+      ],
+      "no_bet_reason": "Test plat uniquement depuis le 02/11 : STEEPLECHASE exclu"
     },
     {
       "date": "2026-11-15",
       "id": "R1C3",
       "c": 3,
       "title": "PRIX MONDEVILLE",
-      "departure": "2026-11-15T13:23:00+01:00",
+      "departure": "2026-11-15T13:24:00+01:00",
       "discipline": "HAIE",
       "market": true,
-      "tips": {},
+      "tips": {
+        "canalturf": {
+          "site": "canalturf",
+          "number": 15,
+          "name": "FOR FRIENDSHIP",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423668_prix-mondeville.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX MONDEVILLE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423668_prix-mondeville.html",
+            "sha256": "ee8a144bc12da1df89f3aa00ddaf0eeeadacd2e290ccfa3776ee1f35ebe98387",
+            "file": "preuves/ee8a144bc12da1df89f3aa00ddaf0eeeadacd2e290ccfa3776ee1f35ebe98387.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/15112026/R1/C3/participants",
+            "sha256": "47cda95e061cd648817fbebead96023fa41a7c85462c94db3eb2a9abb7ee5496",
+            "file": "preuves/47cda95e061cd648817fbebead96023fa41a7c85462c94db3eb2a9abb7ee5496.gz"
+          },
+          "captured_at": "2026-11-15T13:22:15.352424+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1794745323000,
+            "favoris": true,
+            "numPmu1": 15,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-15T13:22:13.515890+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-15T09:10:48.009714+01:00",
@@ -167,7 +214,23 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-15T13:22:11.027205+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-15T13:23:00+01:00",
+          "new": "2026-11-15T13:24:00+01:00",
+          "checked_at": "2026-11-15T13:22:11.027205+01:00"
+        }
+      ],
+      "source_checks": {
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-15/auteuil/423668_prix-mondeville.html",
+          "sha256": "ee8a144bc12da1df89f3aa00ddaf0eeeadacd2e290ccfa3776ee1f35ebe98387",
+          "file": "preuves/ee8a144bc12da1df89f3aa00ddaf0eeeadacd2e290ccfa3776ee1f35ebe98387.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-15T13:22:15.352479+01:00"
     },
     {
       "date": "2026-11-15",
