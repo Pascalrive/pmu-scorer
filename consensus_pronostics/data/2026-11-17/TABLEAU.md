@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX DE BEAUVAIS
 
-Collecte : 2026-11-17T09:25:46.888467+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-17T12:25:50.679951+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-17/chantilly/423805_prix-de-beauvais.html) | 2 OLYMPIC MESSAGE (cote 3.7) | 8 FREERIDER (cote 7.6) | 14 MUENCHEN (cote 8.4) | 4 JUSEARTH FAL (cote 10.0) | 7 DUBALAA (cote 13.0) | 5 CHARENGO (cote 10.0) — Outsider ; 13 PUMALIN PARK (cote 14.0) — Outsider ; 10 FAST RAAJ (cote 36.0) — Outsider ; 4 JUSEARTH FAL (cote 10.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-17/chantilly/423805_prix-de-beauvais.html) | 4 JUSEARTH FAL (cote 10.0) | 2 OLYMPIC MESSAGE (cote 3.7) | 8 FREERIDER (cote 7.6) | 13 PUMALIN PARK (cote 14.0) | 3 THOR LIGHTNING (cote 31.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 2 OLYMPIC MESSAGE (cote 3.7) | 1 FERRARI FEVER (cote 17.0) | 4 JUSEARTH FAL (cote 10.0) | 5 CHARENGO (cote 10.0) | 13 PUMALIN PARK (cote 14.0) | 10 FAST RAAJ (cote 36.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 5 CHARENGO (cote 10.0) | 2 OLYMPIC MESSAGE (cote 3.7) | 7 DUBALAA (cote 13.0) | 14 MUENCHEN (cote 8.4) | 8 FREERIDER (cote 7.6) | 8 FREERIDER (cote 7.6) — Outsider ; 4 JUSEARTH FAL (cote 10.0) — Outsider ; 13 PUMALIN PARK (cote 14.0) — Outsider ; 11 MONTGAUDRY (cote 31.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 OLYMPIC MESSAGE (cote 3.7) | 8 FREERIDER (cote 7.6) | 4 JUSEARTH FAL (cote 10.0) | 14 MUENCHEN (cote 8.4) | 5 CHARENGO (cote 10.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-17/chantilly/423805_prix-de-beauvais.html) | 2 OLYMPIC MESSAGE (cote 4.4) | 8 FREERIDER (cote 6.8) | 14 MUENCHEN (cote 7.4) | 4 JUSEARTH FAL (cote 9.8) | 7 DUBALAA (cote 13.0) | 5 CHARENGO (cote 10.0) — Outsider ; 13 PUMALIN PARK (cote 14.0) — Outsider ; 10 FAST RAAJ (cote 31.0) — Outsider ; 4 JUSEARTH FAL (cote 9.8) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-17/chantilly/423805_prix-de-beauvais.html) | 4 JUSEARTH FAL (cote 9.8) | 2 OLYMPIC MESSAGE (cote 4.4) | 8 FREERIDER (cote 6.8) | 13 PUMALIN PARK (cote 14.0) | 3 THOR LIGHTNING (cote 29.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 2 OLYMPIC MESSAGE (cote 4.4) | 1 FERRARI FEVER (cote 15.0) | 4 JUSEARTH FAL (cote 9.8) | 5 CHARENGO (cote 10.0) | 13 PUMALIN PARK (cote 14.0) | 10 FAST RAAJ (cote 31.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 5 CHARENGO (cote 10.0) | 2 OLYMPIC MESSAGE (cote 4.4) | 7 DUBALAA (cote 13.0) | 14 MUENCHEN (cote 7.4) | 8 FREERIDER (cote 6.8) | 8 FREERIDER (cote 6.8) — Outsider ; 4 JUSEARTH FAL (cote 9.8) — Outsider ; 13 PUMALIN PARK (cote 14.0) — Outsider ; 11 MONTGAUDRY (cote 34.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 2 OLYMPIC MESSAGE (cote 4.4) | 8 FREERIDER (cote 6.8) | 4 JUSEARTH FAL (cote 9.8) | 14 MUENCHEN (cote 7.4) | 5 CHARENGO (cote 10.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,11 +21,11 @@ Collecte : 2026-11-17T09:25:46.888467+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 2 OLYMPIC MESSAGE (cote 3.7) | 5 |
-| 4 JUSEARTH FAL (cote 10.0) | 4 |
-| 8 FREERIDER (cote 7.6) | 4 |
+| 2 OLYMPIC MESSAGE (cote 4.4) | 5 |
+| 4 JUSEARTH FAL (cote 9.8) | 4 |
+| 8 FREERIDER (cote 6.8) | 4 |
 | 5 CHARENGO (cote 10.0) | 3 |
-| 14 MUENCHEN (cote 8.4) | 3 |
+| 14 MUENCHEN (cote 7.4) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
