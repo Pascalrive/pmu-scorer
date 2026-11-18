@@ -11,10 +11,11 @@ on:
       - 'tests/**'
       - '.github/workflows/pmu_daily.yml'
       - 'operations/morning_recovery.json'
-  # 3 passages par jour (UTC) : scorer 9h00, notifier 13h15 (avant la course), bilan du jour 21h30 heure de Paris (hiver)
+      - 'operations/live_window.py'
+  # UTC: scorer et bilan; notifier toutes les 10 min, seulement si course utile.
   schedule:
     - cron: '0 8 * * *'
-    - cron: '15 12 * * *'
+    - cron: '7,17,27,37,47,57 8-22 * * *'
     - cron: '30 20 * * *'
   workflow_dispatch:
     inputs:
@@ -141,30 +142,41 @@ jobs:
       contents: write
     name: Notifier H-15min v4
     runs-on: ubuntu-latest
-    timeout-minutes: 130
+    timeout-minutes: 20
     if: >-
       (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notifier') ||
       (github.event_name == 'schedule' && (
-        github.event.schedule == '15 12 * * *'
+        github.event.schedule == '7,17,27,37,47,57 8-22 * * *'
       ))
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Filtrer les passages sans course utile
+        id: window
+        env:
+          LIVE_POLL: ${{ github.event_name == 'schedule' }}
+        run: python operations/live_window.py scorer
       - uses: actions/setup-python@v5
+        if: steps.window.outputs.enabled == 'true'
         with:
           python-version: '3.12'
           cache: 'pip'
       - name: Installer dependances
+        if: steps.window.outputs.enabled == 'true'
         run: pip install -r requirements.txt
       - name: Tester le journal et le bilan
+        if: steps.window.outputs.enabled == 'true' && github.event_name != 'schedule'
         run: python -m unittest discover -v -p 'test_pmu_*.py'
       - name: Lancer notifier H-15min v4
+        if: steps.window.outputs.enabled == 'true'
         env:
           TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pmu_runtime.py collect
       - name: Archiver les preuves d envoi
-        if: always()
+        if: always() && steps.window.outputs.enabled == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: journal-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -172,18 +184,18 @@ jobs:
             resultats/journal/
             resultats/observations/
             resultats/pmu_*.csv
-          retention-days: 90
+          retention-days: 3
           if-no-files-found: ignore
       - name: Persister le journal pour le bilan
-        if: always()
+        if: always() && steps.window.outputs.enabled == 'true'
         run: python persist_journal.py
       - name: Sauvegarder logs
-        if: always()
+        if: always() && steps.window.outputs.enabled == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: notifier-logs-${{ github.run_id }}
           path: pmu_notifier.log
-          retention-days: 7
+          retention-days: 3
           overwrite: true
 
   results:
@@ -293,4 +305,5 @@ jobs:
       - run: python -m compileall -q pmu_tracking.py pmu_scorer.py pmu_notifier.py pmu_signaux.py pronos_gratuit.py pmu_results.py persist_journal.py pmu_runtime.py
       - name: Diagnostic lecture seule de la veille et du jour
         run: python pmu_runtime.py diagnostic "$(TZ=Europe/Paris date -d yesterday +%Y%m%d)" "$(TZ=Europe/Paris date +%Y%m%d)"
+
 

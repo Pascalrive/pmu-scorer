@@ -1,9 +1,9 @@
 name: Tony Artillan 3 sur 5
 on:
   schedule:
-    # 3 passages par jour (UTC) : 9h00, 13h15 et 21h30 heure de Paris (hiver ; 10h00, 14h15, 22h30 en ete)
+    # UTC: initial + bilan; controles courts toutes les 10 min, sans attente facturee.
     - cron: '0 8 * * *'
-    - cron: '15 12 * * *'
+    - cron: '7,17,27,37,47,57 8-22 * * *'
     - cron: '30 20 * * *'
   workflow_dispatch:
     inputs:
@@ -20,7 +20,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ['comparaison_r1/policy.py', 'comparaison_r1/tests/test_simplification.py', 'comparaison_r1/run_health.py', 'comparaison_r1/worker.py', 'tony_artillan_3_5/*.py', 'tony_artillan_3_5/tests/**', '.github/workflows/tony_artillan_3_5.yml']
+    paths: ['operations/live_window.py', 'comparaison_r1/policy.py', 'comparaison_r1/tests/test_simplification.py', 'comparaison_r1/run_health.py', 'comparaison_r1/worker.py', 'tony_artillan_3_5/*.py', 'tony_artillan_3_5/tests/**', '.github/workflows/tony_artillan_3_5.yml']
 permissions:
   contents: write
   actions: write
@@ -35,16 +35,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Filtrer les passages sans course utile
+        id: window
+        env:
+          LIVE_POLL: ${{ github.event_name == 'schedule' && github.event.schedule == '7,17,27,37,47,57 8-22 * * *' }}
+        run: python operations/live_window.py tony_artillan_3_5
       - uses: actions/setup-python@v5
+        if: steps.window.outputs.enabled == 'true'
         with:
           python-version: '3.12'
-      - run: pip install -r tony_artillan_3_5/requirements.txt
+      - if: steps.window.outputs.enabled == 'true'
+        run: pip install -r tony_artillan_3_5/requirements.txt
       - name: Tests du protocole
+        if: steps.window.outputs.enabled == 'true' && github.event_name != 'schedule'
         run: |
           python -m unittest discover -s tony_artillan_3_5/tests -v
           python -m unittest comparaison_r1.tests.test_run_health comparaison_r1.tests.test_simplification -v
       - name: Collecte et bilan independants
-        if: ${{ !inputs.relay_probe }}
+        if: ${{ steps.window.outputs.enabled == 'true' && !inputs.relay_probe }}
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -61,12 +69,12 @@ jobs:
             if [ "$DRY_RUN" = true ]; then
               python -m tony_artillan_3_5.main --dry-run
             else
-              python -m comparaison_r1.worker tony_artillan_3_5 --persist
+              python -m comparaison_r1.worker tony_artillan_3_5 --persist --once
             fi
           fi
 
       - name: Persister les preuves et les recus
-        if: ${{ always() && !inputs.relay_probe }}
+        if: ${{ always() && steps.window.outputs.enabled == 'true' && !inputs.relay_probe }}
         run: python -m comparaison_r1.worker tony_artillan_3_5 --checkpoint-only
       - name: Verifier le passage de relais sans paris
         if: ${{ success() && github.event_name == 'push' }}
@@ -77,11 +85,12 @@ jobs:
         if: ${{ inputs.relay_probe }}
         run: echo 'RELAY_PROBE_RECEIVED - no collection, no Telegram, no stakes'
       - uses: actions/upload-artifact@v4
-        if: ${{ always() && !inputs.relay_probe }}
+        if: ${{ always() && steps.window.outputs.enabled == 'true' && !inputs.relay_probe }}
         with:
           name: tony-artillan-3-5-${{ github.run_id }}
           path: tony_artillan_3_5/data
-          retention-days: 90
+          retention-days: 3
+
 
 
 
