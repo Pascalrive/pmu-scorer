@@ -143,6 +143,38 @@
             "sha256": "ed21bc8de108f0ba6f0297b64a0416c6d642ca06596aeab7910b73e1b45aed6a",
             "file": "preuves/ed21bc8de108f0ba6f0297b64a0416c6d642ca06596aeab7910b73e1b45aed6a.gz"
           }
+        },
+        {
+          "race_id": "R1C8",
+          "departure": "2026-11-18T18:00:00+01:00",
+          "number": 7,
+          "name": "KING OF THE WORLD",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-18T17:30:27.338254+01:00",
+          "source_captured_at": "2026-11-18T17:15:25.620358+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.85,
+            "dateRapport": 1795018546000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "560c8e9670223dd66b62c93e9bc3efe5ced71d3f4f73bb63334199de8c366769",
+          "telegram_receipts": [
+            {
+              "message_id": 7697,
+              "date": 1795019427
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -5988,7 +6020,9 @@
           "file": "preuves/601874708673e2a690f5cc31d3bf2a086f8e0a716d5a1b5372cbd8d71a29d0d3.gz"
         }
       },
-      "final_check_completed_at": "2026-11-18T17:23:28.780207+01:00"
+      "final_check_completed_at": "2026-11-18T17:23:28.780207+01:00",
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-18",
@@ -6973,9 +7007,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-18T17:30:51.713838+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 7,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 7,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin": {
+              "number": 7,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 7,
+              "name": "KING OF THE WORLD",
+              "source_url": "https://turfin.fr/course/2026-11-18/r1c8-mauquenchy-prix-jean-maizeret",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jean Maizeret",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-18/r1c8-mauquenchy-prix-jean-maizeret",
+                "sha256": "b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf",
+                "file": "preuves/b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
+                "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+                "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
+              },
+              "captured_at": "2026-11-18T17:30:29.639784+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.85,
+                "dateRapport": 1795018546000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 7,
+              "name": "KING OF THE WORLD",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX JEAN MAIZERET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
+                "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+                "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
+                "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+                "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
+              },
+              "captured_at": "2026-11-18T17:30:31.135437+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.85,
+                "dateRapport": 1795018546000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 18,
+              "name": "KRUGER DU NORD",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX JEAN MAIZERET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
+                "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+                "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
+                "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+                "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
+              },
+              "captured_at": "2026-11-18T17:30:31.208916+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -10.34,
+                "dateRapport": 1795018546000,
+                "favoris": false,
+                "numPmu1": 18,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 7,
+              "name": "KING OF THE WORLD",
+              "source_url": "https://www.geny.com/course/1698920-2026-11-18-rouen-mauquenchy-prix-jean-maizeret/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Jean Maizeret",
+              "evidence": {
+                "url": "https://www.geny.com/course/1698920-2026-11-18-rouen-mauquenchy-prix-jean-maizeret/partants-pronostics",
+                "sha256": "91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1",
+                "file": "preuves/91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
+                "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+                "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
+              },
+              "captured_at": "2026-11-18T17:30:51.713740+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.85,
+                "dateRapport": 1795018546000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-18T17:15:23.319244+01:00",
+      "final_check_started_at": "2026-11-18T17:30:26.492991+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-18/r1c8-mauquenchy-prix-jean-maizeret",
@@ -6999,353 +7196,14 @@
         }
       },
       "groups_frozen_at": "2026-11-18T17:15:48.273712+01:00",
-      "final_check_completed_at": "2026-11-18T17:15:48.273782+01:00"
+      "final_check_completed_at": "2026-11-18T17:30:26.900495+01:00"
     }
   ],
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-18T16:24:13.768050+01:00",
+    "captured_at": "2026-11-18T17:30:51.713943+01:00",
     "races": [
-      {
-        "date": "2026-11-18",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX DE MAUQUENCHY",
-        "departure": "2026-11-18T16:50:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 8,
-            "name": "LEARN TO FLY",
-            "source_url": "https://turfin.fr/course/2026-11-18/r1c6-mauquenchy-prix-de-mauquenchy",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Mauquenchy",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-18/r1c6-mauquenchy-prix-de-mauquenchy",
-              "sha256": "80374031f6e48c98f553007ace201676a3fe44cfe0b0dee154fd81a32e169334",
-              "file": "preuves/80374031f6e48c98f553007ace201676a3fe44cfe0b0dee154fd81a32e169334.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C6/participants",
-              "sha256": "d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21",
-              "file": "preuves/d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21.gz"
-            },
-            "captured_at": "2026-11-18T16:23:11.503699+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795015375000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 8,
-            "name": "LEARN TO FLY",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE MAUQUENCHY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-              "sha256": "00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1",
-              "file": "preuves/00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C6/participants",
-              "sha256": "d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21",
-              "file": "preuves/d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21.gz"
-            },
-            "captured_at": "2026-11-18T16:23:12.819971+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795015375000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 8,
-            "name": "LEARN TO FLY",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE MAUQUENCHY",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-              "sha256": "00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1",
-              "file": "preuves/00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C6/participants",
-              "sha256": "d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21",
-              "file": "preuves/d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21.gz"
-            },
-            "captured_at": "2026-11-18T16:23:12.857537+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795015375000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 8,
-            "name": "LEARN TO FLY",
-            "source_url": "https://www.geny.com/course/1698923-2026-11-18-rouen-mauquenchy-prix-de-mauquenchy/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Mauquenchy",
-            "evidence": {
-              "url": "https://www.geny.com/course/1698923-2026-11-18-rouen-mauquenchy-prix-de-mauquenchy/partants-pronostics",
-              "sha256": "d4e09c82fad2ab7407471746decfbcfbf9467825bba71c52d58eb9f667231f27",
-              "file": "preuves/d4e09c82fad2ab7407471746decfbcfbf9467825bba71c52d58eb9f667231f27.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C6/participants",
-              "sha256": "d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21",
-              "file": "preuves/d49fc6452ae6cf2b0d8ae1c1fcf32410ce1d81cd7b365272f2623b044bc03d21.gz"
-            },
-            "captured_at": "2026-11-18T16:23:33.331189+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795015375000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-18T16:23:09.804893+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-18/r1c6-mauquenchy-prix-de-mauquenchy",
-            "sha256": "80374031f6e48c98f553007ace201676a3fe44cfe0b0dee154fd81a32e169334",
-            "file": "preuves/80374031f6e48c98f553007ace201676a3fe44cfe0b0dee154fd81a32e169334.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-            "sha256": "00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1",
-            "file": "preuves/00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423928_prix-de-mauquenchy.html",
-            "sha256": "00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1",
-            "file": "preuves/00387f0fc27b8f427525d6a6c341487ade42b99f15d01a11878016f7566dead1.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1698923-2026-11-18-rouen-mauquenchy-prix-de-mauquenchy/partants-pronostics",
-            "sha256": "d4e09c82fad2ab7407471746decfbcfbf9467825bba71c52d58eb9f667231f27",
-            "file": "preuves/d4e09c82fad2ab7407471746decfbcfbf9467825bba71c52d58eb9f667231f27.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-18T15:59:42.200447+01:00",
-        "final_check_completed_at": "2026-11-18T16:23:10.165711+01:00",
-        "last_reservation_check": {
-          "at": "2026-11-18T16:23:10.268177+01:00",
-          "stop": "ATTENTE_RESULTAT"
-        }
-      },
-      {
-        "date": "2026-11-18",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PRIX DU PMU \"LE MAINTENON\" - SAINT-SAENS",
-        "departure": "2026-11-18T17:25:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 14,
-            "name": "JAZZMAN",
-            "source_url": "https://turfin.fr/course/2026-11-18/r1c7-mauquenchy-prix-du-pmu-le-maintenon-saint-saens",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Du Pmu \"le Maintenon\" - Saint-Saens",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-18/r1c7-mauquenchy-prix-du-pmu-le-maintenon-saint-saens",
-              "sha256": "d2b04c5773245e5d63536fe5e6452bf6857882e14ee4f6e8321d62c252708d7a",
-              "file": "preuves/d2b04c5773245e5d63536fe5e6452bf6857882e14ee4f6e8321d62c252708d7a.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C7/participants",
-              "sha256": "d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b",
-              "file": "preuves/d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b.gz"
-            },
-            "captured_at": "2026-11-18T16:23:34.784755+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795014913000,
-              "favoris": true,
-              "numPmu1": 14,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 2,
-            "name": "IMPERATUR AM",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DU PMU \"LE MAINTENON\" - SAINT-SAENS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-              "sha256": "cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123",
-              "file": "preuves/cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C7/participants",
-              "sha256": "d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b",
-              "file": "preuves/d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b.gz"
-            },
-            "captured_at": "2026-11-18T16:23:35.226275+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.27,
-              "dateRapport": 1795014913000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 14,
-            "name": "JAZZMAN",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DU PMU \"LE MAINTENON\" - SAINT-SAENS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-              "sha256": "cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123",
-              "file": "preuves/cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C7/participants",
-              "sha256": "d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b",
-              "file": "preuves/d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b.gz"
-            },
-            "captured_at": "2026-11-18T16:23:35.266310+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.4,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795014913000,
-              "favoris": true,
-              "numPmu1": 14,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 2,
-            "name": "IMPERATUR AM",
-            "source_url": "https://www.geny.com/course/1698927-2026-11-18-rouen-mauquenchy-prix-du-pmu-le-maintenon-saint-saens/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix du Pmu \"le Maintenon\" - Saint-Saens",
-            "evidence": {
-              "url": "https://www.geny.com/course/1698927-2026-11-18-rouen-mauquenchy-prix-du-pmu-le-maintenon-saint-saens/partants-pronostics",
-              "sha256": "71da808940b78878708aba6f323d37c64d6e9c49fb9773dc085bb9cd8eea009c",
-              "file": "preuves/71da808940b78878708aba6f323d37c64d6e9c49fb9773dc085bb9cd8eea009c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C7/participants",
-              "sha256": "d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b",
-              "file": "preuves/d635f62082ef366534689e7a9345d70ca1cc7166533344838bc62b3e51c6651b.gz"
-            },
-            "captured_at": "2026-11-18T16:23:53.375517+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.27,
-              "dateRapport": 1795014913000,
-              "favoris": false,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-18/r1c7-mauquenchy-prix-du-pmu-le-maintenon-saint-saens",
-            "sha256": "d2b04c5773245e5d63536fe5e6452bf6857882e14ee4f6e8321d62c252708d7a",
-            "file": "preuves/d2b04c5773245e5d63536fe5e6452bf6857882e14ee4f6e8321d62c252708d7a.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-            "sha256": "cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123",
-            "file": "preuves/cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423929_prix-du-pmu-le-maintenon-saint-saens.html",
-            "sha256": "cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123",
-            "file": "preuves/cc710aeebc7e7bcf52892f1bf417c1d6bcf40ee89c11485beab64ac3c449e123.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1698927-2026-11-18-rouen-mauquenchy-prix-du-pmu-le-maintenon-saint-saens/partants-pronostics",
-            "sha256": "71da808940b78878708aba6f323d37c64d6e9c49fb9773dc085bb9cd8eea009c",
-            "file": "preuves/71da808940b78878708aba6f323d37c64d6e9c49fb9773dc085bb9cd8eea009c.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-18",
         "id": "R1C8",
@@ -7364,24 +7222,24 @@
             "source_title": "Prix Jean Maizeret",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-18/r1c8-mauquenchy-prix-jean-maizeret",
-              "sha256": "67c8c0cff28573a0c79368d25cbab04c60bf22f16abc4b423147f0f0da90c9b1",
-              "file": "preuves/67c8c0cff28573a0c79368d25cbab04c60bf22f16abc4b423147f0f0da90c9b1.gz"
+              "sha256": "b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf",
+              "file": "preuves/b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
-              "sha256": "5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34",
-              "file": "preuves/5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34.gz"
+              "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+              "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
             },
-            "captured_at": "2026-11-18T16:23:54.521828+01:00",
+            "captured_at": "2026-11-18T17:30:29.639784+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795014946000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1795018546000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -7397,24 +7255,24 @@
             "source_title": "Le pronostic du PRIX JEAN MAIZERET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
-              "sha256": "7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881",
-              "file": "preuves/7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881.gz"
+              "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+              "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
-              "sha256": "5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34",
-              "file": "preuves/5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34.gz"
+              "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+              "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
             },
-            "captured_at": "2026-11-18T16:23:54.931407+01:00",
+            "captured_at": "2026-11-18T17:30:31.135437+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795014946000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1795018546000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -7430,24 +7288,24 @@
             "source_title": "Le pronostic du PRIX JEAN MAIZERET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
-              "sha256": "7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881",
-              "file": "preuves/7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881.gz"
+              "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+              "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
-              "sha256": "5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34",
-              "file": "preuves/5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34.gz"
+              "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+              "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
             },
-            "captured_at": "2026-11-18T16:23:54.972547+01:00",
+            "captured_at": "2026-11-18T17:30:31.208916+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.9,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.72,
-              "dateRapport": 1795014946000,
+              "nombreIndicateurTendance": -10.34,
+              "dateRapport": 1795018546000,
               "favoris": false,
               "numPmu1": 18,
               "grossePrise": false
@@ -7463,24 +7321,24 @@
             "source_title": "Prix Jean Maizeret",
             "evidence": {
               "url": "https://www.geny.com/course/1698920-2026-11-18-rouen-mauquenchy-prix-jean-maizeret/partants-pronostics",
-              "sha256": "f2f4d8bc0630403b1212db5b92510ecb25184c4c3a4f0bd1da207ebc8a707389",
-              "file": "preuves/f2f4d8bc0630403b1212db5b92510ecb25184c4c3a4f0bd1da207ebc8a707389.gz"
+              "sha256": "91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1",
+              "file": "preuves/91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/18112026/R1/C8/participants",
-              "sha256": "5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34",
-              "file": "preuves/5d55998e05b40949e67328ff3bcf7ceb344235b8442bef943016493579e58c34.gz"
+              "sha256": "03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de",
+              "file": "preuves/03effd4c0618208da791dae68dd9ecbc94f66e8058f81cbf0fab1243ce3272de.gz"
             },
-            "captured_at": "2026-11-18T16:24:13.767924+01:00",
+            "captured_at": "2026-11-18T17:30:51.713740+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
+              "rapport": 3.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795014946000,
+              "nombreIndicateurTendance": -2.85,
+              "dateRapport": 1795018546000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -7489,28 +7347,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-18T17:30:26.492991+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-18/r1c8-mauquenchy-prix-jean-maizeret",
-            "sha256": "67c8c0cff28573a0c79368d25cbab04c60bf22f16abc4b423147f0f0da90c9b1",
-            "file": "preuves/67c8c0cff28573a0c79368d25cbab04c60bf22f16abc4b423147f0f0da90c9b1.gz"
+            "sha256": "b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf",
+            "file": "preuves/b7c505f0b71598f8b833448362a7bae7fad7cfab884e14eaa9201b0accf90eaf.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
-            "sha256": "7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881",
-            "file": "preuves/7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881.gz"
+            "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+            "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423930_prix-jean-maizeret.html",
-            "sha256": "7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881",
-            "file": "preuves/7877e2b50e7de09ceb3e952679708e3abec602b831ce70c8b84ade9fbd291881.gz"
+            "sha256": "ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe",
+            "file": "preuves/ba963e83ce1f13d2b25962a22ffe1582cd2fdff97e6c8c9966094a308b26a4fe.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1698920-2026-11-18-rouen-mauquenchy-prix-jean-maizeret/partants-pronostics",
-            "sha256": "f2f4d8bc0630403b1212db5b92510ecb25184c4c3a4f0bd1da207ebc8a707389",
-            "file": "preuves/f2f4d8bc0630403b1212db5b92510ecb25184c4c3a4f0bd1da207ebc8a707389.gz"
+            "sha256": "91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1",
+            "file": "preuves/91dfc7168f3d53259a9534e506063fa8ef20905068ee082b75d36f667d2b2df1.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-18T17:15:48.273712+01:00",
+        "final_check_completed_at": "2026-11-18T17:30:26.900495+01:00"
       }
     ],
     "complete": true
