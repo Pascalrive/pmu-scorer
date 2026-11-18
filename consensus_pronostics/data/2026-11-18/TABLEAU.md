@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C1 — GRAND NATIONAL DU TROT
 
-Collecte : 2026-11-18T08:02:50.041811+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-18T12:25:29.137526+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423923_grand-national-du-trot.html) | 14 HULYSSE DIGEO (cote 5.0) | 9 ISOFOU DU CHENE (cote 4.1) | 12 JINGLE DU PONT (cote 8.3) | 3 LIGHT MY FIRE (cote 21.0) | 1 KEMIA DU CHENE (cote 7.7) | 8 IALTO D'HERTALS (cote 11.0) — Outsider ; 13 IDEAL DU ROCHER (cote 7.3) — Outsider ; 6 IGUANE DE CAPONET (cote 12.0) — Outsider ; 3 LIGHT MY FIRE (cote 21.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423923_grand-national-du-trot.html) | 3 LIGHT MY FIRE (cote 21.0) | 13 IDEAL DU ROCHER (cote 7.3) | 14 HULYSSE DIGEO (cote 5.0) | 9 ISOFOU DU CHENE (cote 4.1) | 12 JINGLE DU PONT (cote 8.3) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 9 ISOFOU DU CHENE (cote 4.1) | 14 HULYSSE DIGEO (cote 5.0) | 1 KEMIA DU CHENE (cote 7.7) | 8 IALTO D'HERTALS (cote 11.0) | 13 IDEAL DU ROCHER (cote 7.3) | 2 ILEO PIERJI (cote 19.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 9 ISOFOU DU CHENE (cote 4.1) | 12 JINGLE DU PONT (cote 8.3) | 14 HULYSSE DIGEO (cote 5.0) | 3 LIGHT MY FIRE (cote 21.0) | 13 IDEAL DU ROCHER (cote 7.3) | 13 IDEAL DU ROCHER (cote 7.3) — Outsider ; 8 IALTO D'HERTALS (cote 11.0) — Outsider ; 1 KEMIA DU CHENE (cote 7.7) — Outsider ; 6 IGUANE DE CAPONET (cote 12.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 4 HELIOS SI (cote 125.0) | 5 LOULOU DE MYE (cote 65.0) | 17 JEAN BALTHAZAR (cote 209.0) | 6 IGUANE DE CAPONET (cote 12.0) | 15 JUSTIN BOLD (cote 169.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423923_grand-national-du-trot.html) | 14 HULYSSE DIGEO (cote 6.3) | 9 ISOFOU DU CHENE (cote 3.5) | 12 JINGLE DU PONT (cote 8.7) | 3 LIGHT MY FIRE (cote 19.0) | 1 KEMIA DU CHENE (cote 8.2) | 8 IALTO D'HERTALS (cote 8.7) — Outsider ; 13 IDEAL DU ROCHER (cote 7.2) — Outsider ; 6 IGUANE DE CAPONET (cote 13.0) — Outsider ; 3 LIGHT MY FIRE (cote 19.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-18/mauquenchy/423923_grand-national-du-trot.html) | 3 LIGHT MY FIRE (cote 19.0) | 13 IDEAL DU ROCHER (cote 7.2) | 14 HULYSSE DIGEO (cote 6.3) | 9 ISOFOU DU CHENE (cote 3.5) | 12 JINGLE DU PONT (cote 8.7) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 9 ISOFOU DU CHENE (cote 3.5) | 14 HULYSSE DIGEO (cote 6.3) | 1 KEMIA DU CHENE (cote 8.2) | 8 IALTO D'HERTALS (cote 8.7) | 13 IDEAL DU ROCHER (cote 7.2) | 2 ILEO PIERJI (cote 23.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 9 ISOFOU DU CHENE (cote 3.5) | 12 JINGLE DU PONT (cote 8.7) | 14 HULYSSE DIGEO (cote 6.3) | 3 LIGHT MY FIRE (cote 19.0) | 13 IDEAL DU ROCHER (cote 7.2) | 13 IDEAL DU ROCHER (cote 7.2) — Outsider ; 8 IALTO D'HERTALS (cote 8.7) — Outsider ; 1 KEMIA DU CHENE (cote 8.2) — Outsider ; 6 IGUANE DE CAPONET (cote 13.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 4 HELIOS SI (cote 160.0) | 5 LOULOU DE MYE (cote 98.0) | 17 JEAN BALTHAZAR (cote 262.0) | 6 IGUANE DE CAPONET (cote 13.0) | 15 JUSTIN BOLD (cote 176.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,18 +21,18 @@ Collecte : 2026-11-18T08:02:50.041811+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 9 ISOFOU DU CHENE (cote 4.1) | 4 |
-| 14 HULYSSE DIGEO (cote 5.0) | 4 |
-| 3 LIGHT MY FIRE (cote 21.0) | 3 |
-| 12 JINGLE DU PONT (cote 8.3) | 3 |
-| 13 IDEAL DU ROCHER (cote 7.3) | 3 |
+| 9 ISOFOU DU CHENE (cote 3.5) | 4 |
+| 14 HULYSSE DIGEO (cote 6.3) | 4 |
+| 3 LIGHT MY FIRE (cote 19.0) | 3 |
+| 12 JINGLE DU PONT (cote 8.7) | 3 |
+| 13 IDEAL DU ROCHER (cote 7.2) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 9 – 14 – 3 – 12 – 13 | 2 € |
-| Cotes | 9 – 14 – 13 – 1 – 12 | 2 € |
+| Cotes | 9 – 14 – 13 – 1 – 8 | 2 € |
 | Bases + outsiders | 9 – 14 – 3 – 13 – 8 | 2 € |
 
 ### Cumul des trois premiers choix
