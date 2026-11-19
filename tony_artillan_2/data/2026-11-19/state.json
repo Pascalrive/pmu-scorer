@@ -3185,7 +3185,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 6,
+          "settled_at": "2026-11-19T15:24:38.560962+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "60cc0c626df411b0ee980e2a7ea870bf05e1bf636ab9a08e79a1a917d42f02bc",
+            "file": "preuves/60cc0c626df411b0ee980e2a7ea870bf05e1bf636ab9a08e79a1a917d42f02bc.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
+            "sha256": "147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460",
+            "file": "preuves/147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -3218,7 +3232,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 12,
+          "settled_at": "2026-11-19T15:24:38.561157+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "60cc0c626df411b0ee980e2a7ea870bf05e1bf636ab9a08e79a1a917d42f02bc",
+            "file": "preuves/60cc0c626df411b0ee980e2a7ea870bf05e1bf636ab9a08e79a1a917d42f02bc.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
+            "sha256": "147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460",
+            "file": "preuves/147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460.gz"
+          }
         }
       },
       "groups": {},
@@ -3678,15 +3706,46 @@
           "checked_at": "2026-11-19T14:50:37.611633+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 12,
+          "name": "JACK O'BOY",
+          "rank": 1
+        },
+        {
+          "number": 16,
+          "name": "THE WHEEL",
+          "rank": 2
+        },
+        {
+          "number": 11,
+          "name": "JIEPIES MELODY",
+          "rank": 3
+        },
+        {
+          "number": 9,
+          "name": "MELKISEDEK",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "EKLAIRDEGENY",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
+        "sha256": "147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460",
+        "file": "preuves/147d8dc9fa79ca09f3b01085f15b889671638841bb64025c02124c568547f460.gz"
+      }
     },
     {
       "date": "2026-11-19",
       "id": "R1C9",
       "c": 9,
       "title": "PRIX DES FALAISES DE JOBOURG",
-      "departure": "2026-11-19T15:40:00+01:00",
+      "departure": "2026-11-19T15:42:00+01:00",
       "discipline": "PLAT",
       "market": true,
       "tips": {
@@ -4249,7 +4308,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T15:15:29.477644+01:00",
+      "final_check_started_at": "2026-11-19T15:24:38.121344+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
@@ -4263,7 +4322,18 @@
         }
       },
       "groups_frozen_at": "2026-11-19T14:51:02.408502+01:00",
-      "final_check_completed_at": "2026-11-19T15:15:29.810579+01:00"
+      "final_check_completed_at": "2026-11-19T15:24:38.161769+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-19T15:40:00+01:00",
+          "new": "2026-11-19T15:42:00+01:00",
+          "checked_at": "2026-11-19T15:24:38.121344+01:00"
+        }
+      ],
+      "last_reservation_check": {
+        "at": "2026-11-19T15:24:38.596620+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-11-19",
@@ -4833,7 +4903,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T15:15:29.816434+01:00",
+      "final_check_started_at": "2026-11-19T15:24:38.483549+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
@@ -4847,7 +4917,7 @@
         }
       },
       "groups_frozen_at": "2026-11-19T15:15:52.451452+01:00",
-      "final_check_completed_at": "2026-11-19T15:15:52.451505+01:00"
+      "final_check_completed_at": "2026-11-19T15:24:38.520458+01:00"
     }
   ],
   "notifications": [],
