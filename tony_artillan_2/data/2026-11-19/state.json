@@ -50,7 +50,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-19T11:15:33.311599+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "74489e0af22af439655e40b3deb9210350d6013e31f549da72ac8c69bdb75655",
+            "file": "preuves/74489e0af22af439655e40b3deb9210350d6013e31f549da72ac8c69bdb75655.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C1/participants",
+            "sha256": "a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68",
+            "file": "preuves/a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -83,7 +97,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 7,
+          "settled_at": "2026-11-19T11:15:33.311882+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "74489e0af22af439655e40b3deb9210350d6013e31f549da72ac8c69bdb75655",
+            "file": "preuves/74489e0af22af439655e40b3deb9210350d6013e31f549da72ac8c69bdb75655.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C1/participants",
+            "sha256": "a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68",
+            "file": "preuves/a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68.gz"
+          }
         }
       },
       "groups": {},
@@ -248,8 +276,39 @@
         }
       },
       "final_check_completed_at": "2026-11-19T10:50:10.291028+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 8,
+          "name": "JANAH",
+          "rank": 1
+        },
+        {
+          "number": 3,
+          "name": "ORION ROCK",
+          "rank": 2
+        },
+        {
+          "number": 1,
+          "name": "SONNAZ",
+          "rank": 3
+        },
+        {
+          "number": 5,
+          "name": "AVANT L'ORAGE",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "ACOTANGO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C1/participants",
+        "sha256": "a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68",
+        "file": "preuves/a9c63f677e433a03393879b77e4b0461eae80c8f72b196f113e585f2800eca68.gz"
+      }
     },
     {
       "date": "2026-11-19",
@@ -475,7 +534,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T10:59:18.384002+01:00",
+      "final_check_started_at": "2026-11-19T11:15:08.400239+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699026-2026-11-19-saint-cloud-prix-de-la-frette/partants-pronostics",
@@ -488,7 +547,7 @@
           "file": "preuves/bb6e655c785b6814f47f1181a5031b53b3e4727985acf336c4fc0acc6824e1ce.gz"
         }
       },
-      "final_check_completed_at": "2026-11-19T10:59:18.867935+01:00"
+      "final_check_completed_at": "2026-11-19T11:15:09.037635+01:00"
     },
     {
       "date": "2026-11-19",
@@ -498,7 +557,74 @@
       "departure": "2026-11-19T12:00:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 9,
+          "name": "PAPATEOU",
+          "source_url": "https://www.geny.com/course/1699027-2026-11-19-saint-cloud-prix-du-pont-de-saint-cloud/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Pont de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699027-2026-11-19-saint-cloud-prix-du-pont-de-saint-cloud/partants-pronostics",
+            "sha256": "929882412e9ec5f96cd071e87b0f9c5b8d9826ef8200e2327689eea0d0167986",
+            "file": "preuves/929882412e9ec5f96cd071e87b0f9c5b8d9826ef8200e2327689eea0d0167986.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/participants",
+            "sha256": "a17a08a2161779c37eb372a90f27c441723f484e93eb8eae2d4e5501070ba8c5",
+            "file": "preuves/a17a08a2161779c37eb372a90f27c441723f484e93eb8eae2d4e5501070ba8c5.gz"
+          },
+          "captured_at": "2026-11-19T11:15:30.114820+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.44,
+            "dateRapport": 1795082438000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 5,
+          "name": "KELLY KEY",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424023_prix-du-pont-de-saint-cloud.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU PONT DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424023_prix-du-pont-de-saint-cloud.html",
+            "sha256": "75fe12187b89505b4495861e1d1e8c9639c6fdb27f36ce666226f8190273c0cf",
+            "file": "preuves/75fe12187b89505b4495861e1d1e8c9639c6fdb27f36ce666226f8190273c0cf.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/participants",
+            "sha256": "a17a08a2161779c37eb372a90f27c441723f484e93eb8eae2d4e5501070ba8c5",
+            "file": "preuves/a17a08a2161779c37eb372a90f27c441723f484e93eb8eae2d4e5501070ba8c5.gz"
+          },
+          "captured_at": "2026-11-19T11:15:32.135827+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.16,
+            "dateRapport": 1795082438000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
       "errors": {},
       "preview_observations": [
@@ -646,7 +772,21 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T11:15:09.041073+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699027-2026-11-19-saint-cloud-prix-du-pont-de-saint-cloud/partants-pronostics",
+          "sha256": "929882412e9ec5f96cd071e87b0f9c5b8d9826ef8200e2327689eea0d0167986",
+          "file": "preuves/929882412e9ec5f96cd071e87b0f9c5b8d9826ef8200e2327689eea0d0167986.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424023_prix-du-pont-de-saint-cloud.html",
+          "sha256": "75fe12187b89505b4495861e1d1e8c9639c6fdb27f36ce666226f8190273c0cf",
+          "file": "preuves/75fe12187b89505b4495861e1d1e8c9639c6fdb27f36ce666226f8190273c0cf.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-19T11:15:32.135876+01:00"
     },
     {
       "date": "2026-11-19",
