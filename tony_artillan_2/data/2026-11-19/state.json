@@ -10,7 +10,7 @@
           "number": 12,
           "name": "THIBERVILLE",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-19T12:50:16.889137+01:00",
           "source_captured_at": "2026-11-19T12:14:54.870921+01:00",
           "sites": [
@@ -32,6 +32,51 @@
             {
               "message_id": 7747,
               "date": 1795089017
+            }
+          ],
+          "return_cents": 0,
+          "profit_cents": -10000,
+          "rank": 11,
+          "settled_at": "2026-11-19T13:33:49.409366+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee",
+            "file": "preuves/544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+            "sha256": "77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0",
+            "file": "preuves/77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0.gz"
+          }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-11-19T13:55:00+01:00",
+          "number": 6,
+          "name": "ZARAMIX",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-19T13:34:16.269325+01:00",
+          "source_captured_at": "2026-11-19T13:00:02.943909+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795091646000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "3b541c0bb51db32f83683484e955eb9a70a59128d1e09c831480882dd0c1b423",
+          "telegram_receipts": [
+            {
+              "message_id": 7758,
+              "date": 1795091656
             }
           ]
         }
@@ -1426,7 +1471,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 11,
+          "settled_at": "2026-11-19T13:33:49.409031+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee",
+            "file": "preuves/544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+            "sha256": "77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0",
+            "file": "preuves/77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1459,7 +1518,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 11,
+          "settled_at": "2026-11-19T13:33:49.409270+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee",
+            "file": "preuves/544c5c7b6cd1a2ff0c0b764d4ba8bdaba156e33b5cb1586b5b5b68d7159a1eee.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+            "sha256": "77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0",
+            "file": "preuves/77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0.gz"
+          }
         }
       },
       "groups": {
@@ -1813,7 +1886,38 @@
         "at": "2026-11-19T13:00:05.865711+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "YOKEN",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "BAILEYS BACHELOR",
+          "rank": 2
+        },
+        {
+          "number": 9,
+          "name": "GARRIS",
+          "rank": 3
+        },
+        {
+          "number": 8,
+          "name": "DANELO",
+          "rank": 4
+        },
+        {
+          "number": 7,
+          "name": "GOUTTES DE DIEU",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+        "sha256": "77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0",
+        "file": "preuves/77d9ba1b929d0b2c2e633bc499a115f5f0f82889e3fac44fbb075b3022188af0.gz"
+      }
     },
     {
       "date": "2026-11-19",
@@ -2223,7 +2327,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T13:20:27.328306+01:00",
+      "final_check_started_at": "2026-11-19T13:33:49.429062+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
@@ -2237,7 +2341,7 @@
         }
       },
       "groups_frozen_at": "2026-11-19T13:00:04.605360+01:00",
-      "final_check_completed_at": "2026-11-19T13:20:27.604018+01:00"
+      "final_check_completed_at": "2026-11-19T13:33:50.499397+01:00"
     },
     {
       "date": "2026-11-19",
@@ -2247,8 +2351,83 @@
       "departure": "2026-11-19T14:30:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 6,
+          "name": "HEY JO",
+          "source_url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de Boadilla Del Monte",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
+            "sha256": "c9ee7b97426716e946d7b86d0a9bec56b8b99d3a3a5af9fa63c5f064b0199297",
+            "file": "preuves/c9ee7b97426716e946d7b86d0a9bec56b8b99d3a3a5af9fa63c5f064b0199297.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+            "sha256": "497c255c59f11a67d40816cddefdb0288cf098c087e52c41eccdfe5092dd08b6",
+            "file": "preuves/497c255c59f11a67d40816cddefdb0288cf098c087e52c41eccdfe5092dd08b6.gz"
+          },
+          "captured_at": "2026-11-19T13:34:11.727045+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795091401000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 6,
+          "name": "HEY JO",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE BOADILLA DEL MONTE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
+            "sha256": "980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e",
+            "file": "preuves/980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+            "sha256": "497c255c59f11a67d40816cddefdb0288cf098c087e52c41eccdfe5092dd08b6",
+            "file": "preuves/497c255c59f11a67d40816cddefdb0288cf098c087e52c41eccdfe5092dd08b6.gz"
+          },
+          "captured_at": "2026-11-19T13:34:14.913061+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795091401000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 6,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -2571,7 +2750,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T13:33:50.503068+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
+          "sha256": "c9ee7b97426716e946d7b86d0a9bec56b8b99d3a3a5af9fa63c5f064b0199297",
+          "file": "preuves/c9ee7b97426716e946d7b86d0a9bec56b8b99d3a3a5af9fa63c5f064b0199297.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
+          "sha256": "980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e",
+          "file": "preuves/980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-19T13:34:14.913061+01:00",
+      "final_check_completed_at": "2026-11-19T13:34:14.913106+01:00"
     },
     {
       "date": "2026-11-19",
