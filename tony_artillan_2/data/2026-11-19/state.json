@@ -100,7 +100,7 @@
           "number": 6,
           "name": "HEY JO",
           "stake_cents": 15000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-19T14:15:33.715925+01:00",
           "source_captured_at": "2026-11-19T13:34:11.727045+01:00",
           "sites": [
@@ -123,7 +123,21 @@
               "message_id": 7766,
               "date": 1795094134
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -15000,
+          "rank": 5,
+          "settled_at": "2026-11-19T14:50:37.581227+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633",
+            "file": "preuves/9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+            "sha256": "9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b",
+            "file": "preuves/9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -2572,7 +2586,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-11-19T14:50:37.580841+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633",
+            "file": "preuves/9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+            "sha256": "9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b",
+            "file": "preuves/9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -2605,7 +2633,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-11-19T14:50:37.581123+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633",
+            "file": "preuves/9fe2daaf596fb6c17aea539693c9de27408481d6fdb439c0c139e32a0f032633.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+            "sha256": "9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b",
+            "file": "preuves/9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b.gz"
+          }
         }
       },
       "groups": {
@@ -3039,14 +3081,45 @@
         "at": "2026-11-19T14:24:14.968081+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "LE ROI LEON",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "TIC TAC",
+          "rank": 2
+        },
+        {
+          "number": 13,
+          "name": "PERCEVAL",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "KENSILVER",
+          "rank": 4
+        },
+        {
+          "number": 6,
+          "name": "HEY JO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
+        "sha256": "9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b",
+        "file": "preuves/9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b.gz"
+      }
     },
     {
       "date": "2026-11-19",
       "id": "R1C8",
       "c": 8,
       "title": "PRIX DES FALAISES DES VACHES NOIRES",
-      "departure": "2026-11-19T15:05:00+01:00",
+      "departure": "2026-11-19T15:07:00+01:00",
       "discipline": "PLAT",
       "market": true,
       "tips": {
@@ -3479,9 +3552,81 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-19T14:51:20.737322+01:00",
+          "groups": {},
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "FASTER",
+              "source_url": "https://www.geny.com/course/1699032-2026-11-19-saint-cloud-prix-des-falaises-des-vaches-noires/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix des Falaises des Vaches Noires",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699032-2026-11-19-saint-cloud-prix-des-falaises-des-vaches-noires/partants-pronostics",
+                "sha256": "cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6",
+                "file": "preuves/cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
+                "sha256": "02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685",
+                "file": "preuves/02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685.gz"
+              },
+              "captured_at": "2026-11-19T14:51:20.060713+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 16.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.88,
+                "dateRapport": 1795096244000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "PROTAGONIST",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424028_prix-des-falaises-des-vaches-noires.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DES FALAISES DES VACHES NOIRES",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424028_prix-des-falaises-des-vaches-noires.html",
+                "sha256": "ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee",
+                "file": "preuves/ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
+                "sha256": "02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685",
+                "file": "preuves/02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685.gz"
+              },
+              "captured_at": "2026-11-19T14:51:20.737261+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.43,
+                "dateRapport": 1795096244000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-19T14:39:49.372732+01:00",
+      "final_check_started_at": "2026-11-19T14:50:37.611633+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699032-2026-11-19-saint-cloud-prix-des-falaises-des-vaches-noires/partants-pronostics",
@@ -3494,7 +3639,14 @@
           "file": "preuves/3373edd38e8575eb0ac9047d385cf781384607f98db4cbeb228287a598f7fe74.gz"
         }
       },
-      "final_check_completed_at": "2026-11-19T14:39:49.883874+01:00"
+      "final_check_completed_at": "2026-11-19T14:50:38.039056+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-19T15:05:00+01:00",
+          "new": "2026-11-19T15:07:00+01:00",
+          "checked_at": "2026-11-19T14:50:37.611633+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-19",
@@ -3504,8 +3656,83 @@
       "departure": "2026-11-19T15:40:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 3,
+          "name": "GALORD",
+          "source_url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix des Falaises de Jobourg",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
+            "sha256": "1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03",
+            "file": "preuves/1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
+            "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+            "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
+          },
+          "captured_at": "2026-11-19T14:51:00.178078+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.27,
+            "dateRapport": 1795095924000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 3,
+          "name": "GALORD",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DES FALAISES DE JOBOURG",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
+            "sha256": "9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770",
+            "file": "preuves/9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
+            "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+            "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
+          },
+          "captured_at": "2026-11-19T14:51:02.408502+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.27,
+            "dateRapport": 1795095924000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 3,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -3907,8 +4134,103 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-19T14:51:20.926102+01:00",
+          "groups": {
+            "accord_geny_canalturf": {
+              "number": 3,
+              "sites": [
+                "geny",
+                "canalturf"
+              ]
+            }
+          },
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "GALORD",
+              "source_url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix des Falaises de Jobourg",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
+                "sha256": "1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03",
+                "file": "preuves/1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
+                "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+                "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
+              },
+              "captured_at": "2026-11-19T14:51:20.874466+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.27,
+                "dateRapport": 1795095924000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "GALORD",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DES FALAISES DE JOBOURG",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
+                "sha256": "9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770",
+                "file": "preuves/9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
+                "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+                "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
+              },
+              "captured_at": "2026-11-19T14:51:20.926027+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.27,
+                "dateRapport": 1795095924000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T14:50:38.672672+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
+          "sha256": "1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03",
+          "file": "preuves/1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
+          "sha256": "9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770",
+          "file": "preuves/9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-19T14:51:02.408502+01:00",
+      "final_check_completed_at": "2026-11-19T14:51:02.408549+01:00"
     },
     {
       "date": "2026-11-19",
@@ -4321,6 +4643,86 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-19T14:51:41.871654+01:00",
+          "groups": {
+            "accord_geny_canalturf": {
+              "number": 1,
+              "sites": [
+                "geny",
+                "canalturf"
+              ]
+            }
+          },
+          "tips": {
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "VICTORY PACE",
+              "source_url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Bad Godesberg",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
+                "sha256": "96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842",
+                "file": "preuves/96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
+                "sha256": "887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d",
+                "file": "preuves/887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d.gz"
+              },
+              "captured_at": "2026-11-19T14:51:40.196595+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 9.8,
+                "dateRapport": 1795095948000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "VICTORY PACE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE BAD GODESBERG",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
+                "sha256": "82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6",
+                "file": "preuves/82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
+                "sha256": "887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d",
+                "file": "preuves/887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d.gz"
+              },
+              "captured_at": "2026-11-19T14:51:41.871587+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 9.8,
+                "dateRapport": 1795095948000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -4328,206 +4730,14 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-19T13:43:47.186523+01:00",
+    "captured_at": "2026-11-19T14:51:41.871701+01:00",
     "races": [
-      {
-        "date": "2026-11-19",
-        "id": "R1C6",
-        "c": 6,
-        "title": "PRIX DE WINDSOR",
-        "departure": "2026-11-19T13:55:00+01:00",
-        "discipline": "PLAT",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 6,
-            "name": "ZARAMIX",
-            "source_url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Windsor",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
-              "sha256": "80f064d3073be10aefea23d1be70b8368709dc70fcb44cb0f3ead9e1e79e6afe",
-              "file": "preuves/80f064d3073be10aefea23d1be70b8368709dc70fcb44cb0f3ead9e1e79e6afe.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C6/participants",
-              "sha256": "d5ef9134bd883df7c0d199a7cdde4411cbbbe4d767ca1dbf2bde0c6b2d853410",
-              "file": "preuves/d5ef9134bd883df7c0d199a7cdde4411cbbbe4d767ca1dbf2bde0c6b2d853410.gz"
-            },
-            "captured_at": "2026-11-19T13:42:26.796296+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795092108000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "ZARAMIX",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX DE WINDSOR",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
-              "sha256": "19c01200e2e0e6b0ac883ea898239a1122eb2cc1627a42b7b40308da417c4d64",
-              "file": "preuves/19c01200e2e0e6b0ac883ea898239a1122eb2cc1627a42b7b40308da417c4d64.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C6/participants",
-              "sha256": "d5ef9134bd883df7c0d199a7cdde4411cbbbe4d767ca1dbf2bde0c6b2d853410",
-              "file": "preuves/d5ef9134bd883df7c0d199a7cdde4411cbbbe4d767ca1dbf2bde0c6b2d853410.gz"
-            },
-            "captured_at": "2026-11-19T13:42:28.790873+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795092108000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-19T13:42:04.220632+01:00",
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
-            "sha256": "80f064d3073be10aefea23d1be70b8368709dc70fcb44cb0f3ead9e1e79e6afe",
-            "file": "preuves/80f064d3073be10aefea23d1be70b8368709dc70fcb44cb0f3ead9e1e79e6afe.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
-            "sha256": "19c01200e2e0e6b0ac883ea898239a1122eb2cc1627a42b7b40308da417c4d64",
-            "file": "preuves/19c01200e2e0e6b0ac883ea898239a1122eb2cc1627a42b7b40308da417c4d64.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-19T13:00:04.605360+01:00",
-        "final_check_completed_at": "2026-11-19T13:42:04.697721+01:00",
-        "last_reservation_check": {
-          "at": "2026-11-19T13:42:05.513715+01:00",
-          "stop": "ATTENTE_RESULTAT"
-        }
-      },
-      {
-        "date": "2026-11-19",
-        "id": "R1C7",
-        "c": 7,
-        "title": "PRIX DE BOADILLA DEL MONTE",
-        "departure": "2026-11-19T14:30:00+01:00",
-        "discipline": "PLAT",
-        "market": true,
-        "tips": {
-          "geny": {
-            "site": "geny",
-            "number": 6,
-            "name": "HEY JO",
-            "source_url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Boadilla Del Monte",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
-              "sha256": "377217d2fcf496cb73d17ed99a7569bf949c4fb2d087245ad9e27fa68c1f110d",
-              "file": "preuves/377217d2fcf496cb73d17ed99a7569bf949c4fb2d087245ad9e27fa68c1f110d.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
-              "sha256": "1ee0ac552e4a8f1711ce195865a9d18d6f97dd7e0583754b0cfd624b1a8d4340",
-              "file": "preuves/1ee0ac552e4a8f1711ce195865a9d18d6f97dd7e0583754b0cfd624b1a8d4340.gz"
-            },
-            "captured_at": "2026-11-19T13:42:46.542412+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795091401000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "HEY JO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE BOADILLA DEL MONTE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
-              "sha256": "980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e",
-              "file": "preuves/980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C7/participants",
-              "sha256": "1ee0ac552e4a8f1711ce195865a9d18d6f97dd7e0583754b0cfd624b1a8d4340",
-              "file": "preuves/1ee0ac552e4a8f1711ce195865a9d18d6f97dd7e0583754b0cfd624b1a8d4340.gz"
-            },
-            "captured_at": "2026-11-19T13:42:47.194263+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795091401000,
-              "favoris": true,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-19T13:42:04.701730+01:00",
-        "source_checks": {
-          "geny": {
-            "url": "https://www.geny.com/course/1699031-2026-11-19-saint-cloud-prix-de-boadilla-del-monte/partants-pronostics",
-            "sha256": "377217d2fcf496cb73d17ed99a7569bf949c4fb2d087245ad9e27fa68c1f110d",
-            "file": "preuves/377217d2fcf496cb73d17ed99a7569bf949c4fb2d087245ad9e27fa68c1f110d.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424027_prix-de-boadilla-del-monte.html",
-            "sha256": "980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e",
-            "file": "preuves/980b89407a4fc62ee610d9b79c66255bb50386f51f1cdc51be5ae35535e3e87e.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-19T13:34:14.913061+01:00",
-        "final_check_completed_at": "2026-11-19T13:42:05.231656+01:00"
-      },
       {
         "date": "2026-11-19",
         "id": "R1C8",
         "c": 8,
         "title": "PRIX DES FALAISES DES VACHES NOIRES",
-        "departure": "2026-11-19T15:05:00+01:00",
+        "departure": "2026-11-19T15:07:00+01:00",
         "discipline": "PLAT",
         "market": true,
         "tips": {
@@ -4541,15 +4751,15 @@
             "source_title": "Prix des Falaises des Vaches Noires",
             "evidence": {
               "url": "https://www.geny.com/course/1699032-2026-11-19-saint-cloud-prix-des-falaises-des-vaches-noires/partants-pronostics",
-              "sha256": "8c6786a546b60a5bd4ae097188b1b02964051131308d7853ada4c6c607161775",
-              "file": "preuves/8c6786a546b60a5bd4ae097188b1b02964051131308d7853ada4c6c607161775.gz"
+              "sha256": "cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6",
+              "file": "preuves/cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
-              "sha256": "e1d2f5341cce04a807c35d6e8fd2f7adcead5a157b765258887b662df2ee4625",
-              "file": "preuves/e1d2f5341cce04a807c35d6e8fd2f7adcead5a157b765258887b662df2ee4625.gz"
+              "sha256": "02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685",
+              "file": "preuves/02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685.gz"
             },
-            "captured_at": "2026-11-19T13:43:06.543093+01:00",
+            "captured_at": "2026-11-19T14:51:20.060713+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -4557,8 +4767,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 16.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.23,
-              "dateRapport": 1795091413000,
+              "nombreIndicateurTendance": 1.88,
+              "dateRapport": 1795096244000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -4574,24 +4784,24 @@
             "source_title": "Le pronostic du PRIX DES FALAISES DES VACHES NOIRES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424028_prix-des-falaises-des-vaches-noires.html",
-              "sha256": "c9a07121101d0ccb0dc1d31814cd88833edff06a4143be58f609039ea31666ca",
-              "file": "preuves/c9a07121101d0ccb0dc1d31814cd88833edff06a4143be58f609039ea31666ca.gz"
+              "sha256": "ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee",
+              "file": "preuves/ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C8/participants",
-              "sha256": "e1d2f5341cce04a807c35d6e8fd2f7adcead5a157b765258887b662df2ee4625",
-              "file": "preuves/e1d2f5341cce04a807c35d6e8fd2f7adcead5a157b765258887b662df2ee4625.gz"
+              "sha256": "02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685",
+              "file": "preuves/02a4a52db84b855e8f4b73eb486078f4df081093b691cb0b175229e6ba5c8685.gz"
             },
-            "captured_at": "2026-11-19T13:43:07.216217+01:00",
+            "captured_at": "2026-11-19T14:51:20.737261+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.2,
+              "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 8.33,
-              "dateRapport": 1795091413000,
+              "nombreIndicateurTendance": -2.43,
+              "dateRapport": 1795096244000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -4600,18 +4810,27 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-19T14:50:37.611633+01:00",
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1699032-2026-11-19-saint-cloud-prix-des-falaises-des-vaches-noires/partants-pronostics",
-            "sha256": "8c6786a546b60a5bd4ae097188b1b02964051131308d7853ada4c6c607161775",
-            "file": "preuves/8c6786a546b60a5bd4ae097188b1b02964051131308d7853ada4c6c607161775.gz"
+            "sha256": "cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6",
+            "file": "preuves/cd8d07401c6e74526414bfdbbd370099fa018500ab5dbefd18463001bccc89e6.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424028_prix-des-falaises-des-vaches-noires.html",
-            "sha256": "c9a07121101d0ccb0dc1d31814cd88833edff06a4143be58f609039ea31666ca",
-            "file": "preuves/c9a07121101d0ccb0dc1d31814cd88833edff06a4143be58f609039ea31666ca.gz"
+            "sha256": "ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee",
+            "file": "preuves/ba29cff82b2e14c4d766382bb4120aa4985080720de3734091b051b3218fc9ee.gz"
           }
-        }
+        },
+        "final_check_completed_at": "2026-11-19T14:50:38.039056+01:00",
+        "schedule_changes": [
+          {
+            "old": "2026-11-19T15:05:00+01:00",
+            "new": "2026-11-19T15:07:00+01:00",
+            "checked_at": "2026-11-19T14:50:37.611633+01:00"
+          }
+        ]
       },
       {
         "date": "2026-11-19",
@@ -4632,24 +4851,24 @@
             "source_title": "Prix des Falaises de Jobourg",
             "evidence": {
               "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
-              "sha256": "ee032a7a589abc799963e949353aed9c3492db3315ce74db1004a6d9c0502f2b",
-              "file": "preuves/ee032a7a589abc799963e949353aed9c3492db3315ce74db1004a6d9c0502f2b.gz"
+              "sha256": "1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03",
+              "file": "preuves/1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
-              "sha256": "e5b653ddad64872c91626e18d18f96099d6d16993945346a8f8e60aa87def94b",
-              "file": "preuves/e5b653ddad64872c91626e18d18f96099d6d16993945346a8f8e60aa87def94b.gz"
+              "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+              "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
             },
-            "captured_at": "2026-11-19T13:43:25.870789+01:00",
+            "captured_at": "2026-11-19T14:51:20.874466+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.38,
-              "dateRapport": 1795091424000,
+              "nombreIndicateurTendance": 2.27,
+              "dateRapport": 1795095924000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -4665,24 +4884,24 @@
             "source_title": "Le pronostic du PRIX DES FALAISES DE JOBOURG",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
-              "sha256": "1c5aa081b259a5d57098153bba151194006206df12d83367a7cbdab01d113213",
-              "file": "preuves/1c5aa081b259a5d57098153bba151194006206df12d83367a7cbdab01d113213.gz"
+              "sha256": "9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770",
+              "file": "preuves/9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C9/participants",
-              "sha256": "e5b653ddad64872c91626e18d18f96099d6d16993945346a8f8e60aa87def94b",
-              "file": "preuves/e5b653ddad64872c91626e18d18f96099d6d16993945346a8f8e60aa87def94b.gz"
+              "sha256": "53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03",
+              "file": "preuves/53e06999a56ec6dcf10457acd301dacf55df2cd8692d031af4e10b178cc37b03.gz"
             },
-            "captured_at": "2026-11-19T13:43:26.539227+01:00",
+            "captured_at": "2026-11-19T14:51:20.926027+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.38,
-              "dateRapport": 1795091424000,
+              "nombreIndicateurTendance": 2.27,
+              "dateRapport": 1795095924000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -4691,18 +4910,21 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-19T14:50:38.672672+01:00",
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
-            "sha256": "ee032a7a589abc799963e949353aed9c3492db3315ce74db1004a6d9c0502f2b",
-            "file": "preuves/ee032a7a589abc799963e949353aed9c3492db3315ce74db1004a6d9c0502f2b.gz"
+            "sha256": "1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03",
+            "file": "preuves/1b34084f3619a67bae18592e6e14302a01a555c1b531037211ebaa35a26adc03.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424029_prix-des-falaises-de-jobourg.html",
-            "sha256": "1c5aa081b259a5d57098153bba151194006206df12d83367a7cbdab01d113213",
-            "file": "preuves/1c5aa081b259a5d57098153bba151194006206df12d83367a7cbdab01d113213.gz"
+            "sha256": "9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770",
+            "file": "preuves/9c49e777367603b71dcbde61f52741da5a3c41d3adb053fc710d35fd78d5f770.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-19T14:51:02.408502+01:00",
+        "final_check_completed_at": "2026-11-19T14:51:02.408549+01:00"
       },
       {
         "date": "2026-11-19",
@@ -4723,24 +4945,24 @@
             "source_title": "Prix de Bad Godesberg",
             "evidence": {
               "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
-              "sha256": "50b48bd76b8c095216f84d46d5ddae686ac2b2508bd29675280269da81cf1d81",
-              "file": "preuves/50b48bd76b8c095216f84d46d5ddae686ac2b2508bd29675280269da81cf1d81.gz"
+              "sha256": "96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842",
+              "file": "preuves/96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
-              "sha256": "38caa736ec497e0f7529403bb9b316edd1e1711649f357b22ca96509fbac73bf",
-              "file": "preuves/38caa736ec497e0f7529403bb9b316edd1e1711649f357b22ca96509fbac73bf.gz"
+              "sha256": "887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d",
+              "file": "preuves/887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d.gz"
             },
-            "captured_at": "2026-11-19T13:43:46.525487+01:00",
+            "captured_at": "2026-11-19T14:51:40.196595+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.0,
-              "dateRapport": 1795091448000,
+              "nombreIndicateurTendance": 9.8,
+              "dateRapport": 1795095948000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -4756,24 +4978,24 @@
             "source_title": "Le pronostic du PRIX DE BAD GODESBERG",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
-              "sha256": "902fed3a78e3668ae37f9408b55643df3cebd644f3cf1447b4079e0fa51a51c3",
-              "file": "preuves/902fed3a78e3668ae37f9408b55643df3cebd644f3cf1447b4079e0fa51a51c3.gz"
+              "sha256": "82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6",
+              "file": "preuves/82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
-              "sha256": "38caa736ec497e0f7529403bb9b316edd1e1711649f357b22ca96509fbac73bf",
-              "file": "preuves/38caa736ec497e0f7529403bb9b316edd1e1711649f357b22ca96509fbac73bf.gz"
+              "sha256": "887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d",
+              "file": "preuves/887d31302b7dc2a4efbaa67bacdbe05229354fcd1bb96317c911c8edb641f95d.gz"
             },
-            "captured_at": "2026-11-19T13:43:47.186401+01:00",
+            "captured_at": "2026-11-19T14:51:41.871587+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
+              "rapport": 5.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.0,
-              "dateRapport": 1795091448000,
+              "nombreIndicateurTendance": 9.8,
+              "dateRapport": 1795095948000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -4785,13 +5007,13 @@
         "source_checks": {
           "geny": {
             "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
-            "sha256": "50b48bd76b8c095216f84d46d5ddae686ac2b2508bd29675280269da81cf1d81",
-            "file": "preuves/50b48bd76b8c095216f84d46d5ddae686ac2b2508bd29675280269da81cf1d81.gz"
+            "sha256": "96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842",
+            "file": "preuves/96100277f0ffb59ad459440a81f3017c260940957397ecfd5a4292a8ef53b842.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
-            "sha256": "902fed3a78e3668ae37f9408b55643df3cebd644f3cf1447b4079e0fa51a51c3",
-            "file": "preuves/902fed3a78e3668ae37f9408b55643df3cebd644f3cf1447b4079e0fa51a51c3.gz"
+            "sha256": "82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6",
+            "file": "preuves/82487b7295a9b64ac0453ceab3a23e6822a21795e43e7874268eba106f86bfd6.gz"
           }
         }
       }
