@@ -1,0 +1,60 @@
+name: Tierce CR - Favori 6 associes 30 EUR et 8 associes 56 EUR
+
+on:
+  schedule:
+    - cron: '3,13,23,33,43,53 8-21 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tierce_champ_reduit/**'
+      - '!tierce_champ_reduit/data/**'
+      - '.github/workflows/tierce_champ_reduit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tierce-champ-reduit-independant
+  cancel-in-progress: false
+
+jobs:
+  simulations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Exiger un depot public et un runner standard
+        env:
+          REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+        run: test "$REPOSITORY_PRIVATE" = false
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer les dependances existantes
+        run: pip install -r consensus_pronostics/requirements.txt
+      - name: Tester selections, couts, recus et reglements
+        run: python -m unittest discover -s tierce_champ_reduit/tests -v
+      - name: Configurer les archives publiques
+        run: |
+          git config user.name 'Tierce virtual collector'
+          git config user.email 'tierce-collector@users.noreply.github.com'
+      - name: Un passage court - collecter, figer, envoyer et regler
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m tierce_champ_reduit.run --send --persist
+      - name: Sauvegarde finale meme en cas d interruption
+        if: always()
+        run: |
+          if [ -d tierce_champ_reduit/data ]; then
+            git add tierce_champ_reduit/data
+            if ! git diff --cached --quiet; then
+              git commit -m 'Archive remaining Tierce virtual data'
+            fi
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
