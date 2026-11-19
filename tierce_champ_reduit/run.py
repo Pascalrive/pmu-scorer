@@ -7,7 +7,8 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import tempfile
+import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 
@@ -86,7 +87,7 @@ def prediction(record):
         'Dont outsiders confirmés : ' + ', '.join('N°'+str(n) for n in s['outsiders']),
         f"Champ réduit : {s['base']} – X – X ; X parmi les associés distincts.",
         f"{len(s['tickets'])} combinaisons ordonnées × 1 € = {s['stake_cents']/100:.0f} € à 100 %.",
-        'Mise fixe, sans Flexi ni progression. Une seule course par jour.',
+        'Mise fixe par course, sans Flexi ni progression. Toutes courses françaises avec Tiercé Internet admissibles.',
         'Cotes indicatives. Règlement aux rapports définitifs PMU INTERNET Ordre/Désordre.',
         'SIMULATION UNIQUEMENT — aucun pari réel.',
     ])
@@ -117,23 +118,71 @@ def deliver(record, save, sender=send_message, now=clock):
     save()
 
 
-def quinte_courses(programme):
-    return [(r['numOfficiel'], c) for r in programme['programme']['reunions']
+def tierce_courses(programme):
+    """All French meetings, including non-Quinte races; retain closed markets for coverage."""
+    return sorted([(r['numOfficiel'], c) for r in programme['programme']['reunions']
             if r.get('pays', {}).get('code') == 'FRA' for c in r['courses']
-            if any(p.get('typePari') == 'E_QUINTE_PLUS' for p in c.get('paris', []))]
+            if any(p.get('typePari') == 'E_TIERCE' and p.get('miseBase') == 100 for p in c.get('paris', []))],
+            key=lambda pair: (pair[1]['heureDepart'], pair[0], pair[1]['numOrdre']))
 
 
-def collect_plans(day, r, course):
+def course_states(ledger):
+    """Upgrade the original single-course ledger without losing receipts or frozen flags."""
+    states = ledger.setdefault('courses', {})
+    for record in ledger.get('records', []):
+        race = record['race']
+        states.setdefault(race['id'], {'departure': race['departure'], 'reasons': {},
+                          'selection_frozen_at': record['frozen_at'], 'status': 'CHOIX_DEJA_FIGES'})
+    ident = ledger.get('course')
+    if ident:
+        state = states.setdefault(ident, {'reasons': {}})
+        state.setdefault('reasons', {}).update(ledger.get('reasons', {}))
+        for key in ('departure', 'status', 'selection_frozen_at'):
+            if key in ledger:
+                state.setdefault(key, ledger[key])
+        for key in ('course', 'departure', 'selection_frozen_at', 'reasons'):
+            ledger.pop(key, None)
+    return states
+
+
+def collect_sources(day, r, course):
+    """Collect the requested race directly. Never substitute the daily Quinte's tips."""
+    sys.path.insert(0, str(REPO / 'consensus_pronostics'))
+    from collector import SOURCES, Fetcher, source_url, parse, pmu_odds
+    ident = f"R{r}C{course['numOrdre']}"
+    prefix = API + day.strftime('%d%m%Y') + f"/R{r}/C{course['numOrdre']}"
+    participants = get_json(prefix + '/participants')['participants']
+    race = dict(id=ident, date=day.isoformat(), r=r, c=course['numOrdre'], title=course['libelle'],
+                departure=datetime.fromtimestamp(course['heureDepart']/1000, timezone.utc).isoformat(),
+                odds_captured_at=clock().isoformat(),
+                horses={p['numPmu']: {**{k: p.get(k) for k in ('numPmu', 'nom', 'statut')},
+                                      'pmu_odds': pmu_odds(p)} for p in participants})
+    def one(key):
+        fetcher = Fetcher()
+        try:
+            url = source_url(key, race, fetcher)
+            body = fetcher.get(url)
+            row = parse(key, body, race)  # Requires exact date, race identity and horse names.
+            row.update(url=url, retrieved_at=clock().isoformat(), sha256=hashlib.sha256(body.encode()).hexdigest())
+            return row, {'source': key, 'status': 'OK', 'url': url}, fetcher.audit
+        except Exception as error:
+            reason = str(error)[:180] if isinstance(error, ValueError) else type(error).__name__
+            return None, {'source': key, 'status': 'INDISPONIBLE', 'reason': reason}, fetcher.audit
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        results = list(pool.map(one, SOURCES))
+    return {'version': VERSION, 'captured_at': clock().isoformat(), 'race': race,
+            'rows': [row for row, _, _ in results if row],
+            'statuses': [status for _, status, _ in results],
+            'http_audit': [entry for _, _, audit in results for entry in audit]}
+
+
+def collect_plans(day, r, course, archive=None):
     # Reuse public editorial parsers, but never write or send existing Consensus accounts.
     sys.path.insert(0, str(REPO / 'consensus_pronostics'))
-    from collector import collect, pmu_odds, norm
-    with tempfile.TemporaryDirectory() as temporary:
-        snapshots = collect(day, Path(temporary))
-    ident = f"R{r}C{course['numOrdre']}"
-    matches = [s for s in snapshots if s['race']['id'] == ident]
-    if len(matches) != 1:
-        raise ValueError('Course collectée absente ou ambiguë')
-    snapshot = matches[0]
+    from collector import pmu_odds, norm
+    snapshot = collect_sources(day, r, course)
+    if archive:
+        write(archive, snapshot)
     prefix = API + day.strftime('%d%m%Y') + f"/R{r}/C{course['numOrdre']}"
     latest = get_json(prefix)
     if latest.get('statut') != 'PROGRAMMEE' or latest.get('arriveeDefinitive'):
@@ -154,6 +203,8 @@ def collect_plans(day, r, course):
         internet_tierce_available=any(p.get('typePari') == 'E_TIERCE' and p.get('miseBase') == 100
                                       and p.get('enVente') is True for p in latest.get('paris', [])))
     snapshot['final_pmu_check'] = {'course': latest, 'participants': participants, 'url': prefix}
+    if archive:
+        write(archive, snapshot)
     return snapshot, prepare(snapshot, clock())
 
 
@@ -172,16 +223,21 @@ def summary_line(t):
 
 def reports(root, today):
     ledgers = [read(p, {}) for p in sorted(root.glob('????-??-??/journal.json'))]
+    for ledger in ledgers:
+        course_states(ledger)
     all_records = [r for ledger in ledgers for r in ledger['records']]
     daily = next((x for x in ledgers if x['date'] == today), {'records': [], 'status': 'Aucune donnée'})
-    lines = [f'TIERCÉ CHAMP RÉDUIT — BILAN {today}', 'SIMULATIONS — comptes indépendants, pas de ROI additionné.']
+    lines = [f'TIERCÉ CHAMP RÉDUIT — BILAN {today}', 'SIMULATIONS — comptes indépendants, pas de ROI additionné.',
+             'COUVERTURE : ' + daily.get('status', 'Programme indisponible')]
     for arm, (label, _) in ARMS.items():
         day_stats, cumulative = totals(daily['records'], arm), totals(all_records, arm)
-        reason = daily.get('reasons', {}).get(arm, daily.get('status', ''))
         lines += ['', label, 'JOUR : ' + summary_line(day_stats),
                   'CUMUL DEPUIS LE 19/11/2026 : ' + summary_line(cumulative)]
-        if not any(r['selection']['id'] == arm for r in daily['records']):
-            lines += ['NON JOUÉ / DONNÉES : ' + reason]
+        if not daily.get('courses'):
+            lines += ['COUVERTURE : ' + daily.get('status', 'Programme indisponible')]
+        for ident, state in daily.get('courses', {}).items():
+            if not any(r['selection']['id'] == arm and r['race']['id'] == ident for r in daily['records']):
+                lines += [ident + ' · NON JOUÉ / DONNÉES : ' + (state.get('reasons', {}).get(arm) or state.get('status', ''))]
         for record in daily['records']:
             if record['selection']['id'] == arm:
                 result = record.get('result', {})
@@ -189,6 +245,9 @@ def reports(root, today):
                           + ' · ' + result.get('reason', '')]
                 if result.get('arrival'):
                     lines += ['Arrivée : ' + ' – '.join(map(str, result['arrival']))]
+                if confirmed(record):
+                    lines += ['Mise ' + money(record['selection']['stake_cents']) + (' · retour ' + money(result['returns_cents'])
+                              + ' · net ' + money(result['net_cents']) if 'returns_cents' in result else ' · retour/net EN ATTENTE')]
         folder = root / arm
         folder.mkdir(parents=True, exist_ok=True)
         write(folder / 'bilan_cumule.json', {'formula': arm, 'label': label, **cumulative})
@@ -198,9 +257,17 @@ def reports(root, today):
             writer.writeheader()
             for ledger in ledgers:
                 writer.writerow({'date': ledger['date'], **totals(ledger['records'], arm),
-                                 'reason': ledger.get('reasons', {}).get(arm, ledger.get('status', ''))})
+                                 'reason': ledger.get('status', '')})
+        with (folder / 'bilans_par_course.csv').open('w', encoding='utf-8', newline='') as handle:
+            writer = csv.DictWriter(handle, fieldnames=['date', 'course', *day_stats.keys(), 'reason'])
+            writer.writeheader()
+            for ledger in ledgers:
+                for ident, state in ledger.get('courses', {}).items():
+                    records = [r for r in ledger['records'] if r['race']['id'] == ident]
+                    writer.writerow({'date': ledger['date'], 'course': ident, **totals(records, arm),
+                                     'reason': state.get('reasons', {}).get(arm) or state.get('status', '')})
         (folder / 'README.md').write_text('# ' + label + '\n\n' + summary_line(cumulative) + '\n\n'
-            + '[Journal quotidien (CSV)](bilans_quotidiens.csv) — montants en centimes.\n', encoding='utf-8')
+            + '[Par jour (CSV)](bilans_quotidiens.csv) · [Par course (CSV)](bilans_par_course.csv) — montants en centimes.\n', encoding='utf-8')
     text = '\n'.join(lines)
     (root / today / 'bilan_du_jour.txt').write_text(text + '\n', encoding='utf-8')
     (root / 'README.md').write_text('# Tiercé champ réduit — résultats indépendants\n\n'
@@ -209,39 +276,33 @@ def reports(root, today):
     return text
 
 
-def run(root, send=False, persist=False):
-    now = clock()
-    day = now.astimezone(TZ).date()
-    path = root / day.isoformat() / 'journal.json'
-    ledger = read(path, {'date': day.isoformat(), 'version': VERSION, 'records': [], 'reasons': {}})
-    save = lambda: (write(path, ledger), checkpoint(root, persist))
-    ledger['checked_at'] = now.isoformat()
-    course = None
+def process_course(ledger, day, r, course, folder, save, send, deadline):
+    ident = f"R{r}C{course['numOrdre']}"
+    state = course_states(ledger).setdefault(ident, {'reasons': {}})
+    state.update(title=course['libelle'], departure=datetime.fromtimestamp(course['heureDepart']/1000, timezone.utc).isoformat())
     try:
-        courses = quinte_courses(get_json(API + day.strftime('%d%m%Y')))
-        if len(courses) != 1:
-            raise ValueError('Aucune course Quinté française unique identifiable')
-        r, course = courses[0]
-        ledger['course'] = f"R{r}C{course['numOrdre']}"
-        ledger['departure'] = datetime.fromtimestamp(course['heureDepart']/1000, timezone.utc).isoformat()
-        remaining = (instant(ledger['departure']) - clock()).total_seconds()
-        existing = {x['selection']['id'] for x in ledger['records']}
+        remaining = (instant(state['departure']) - clock()).total_seconds()
+        existing = {x['selection']['id'] for x in ledger['records'] if x['race']['id'] == ident}
+        if existing or state.get('selection_frozen_at'):
+            state['status'] = 'CHOIX_DEJA_FIGES'
+            return
         if remaining > 3600:
-            ledger['status'] = 'EN_ATTENTE_FENETRE_H60'
+            state['status'] = 'EN_ATTENTE_FENETRE_H60'
         elif remaining <= 120:
-            ledger['status'] = 'Fenêtre pré-départ fermée ; aucune mise reconstituée'
-        elif len(existing) < len(ARMS) and not ledger.get('selection_frozen_at'):
-            snapshot, plans = collect_plans(day, r, course)
-            write(path.parent / 'derniere_collecte.json', snapshot)
+            state['status'] = 'Fenêtre pré-départ fermée ; aucune mise reconstituée'
+        elif not any(p.get('typePari') == 'E_TIERCE' and p.get('miseBase') == 100 and p.get('enVente') is True for p in course.get('paris', [])):
+            state['status'] = 'Tiercé Internet fermé ou disponibilité non confirmée'
+        elif time.monotonic() >= deadline:
+            state['status'] = 'REPORT_CONTROLE_PROCHAIN_PASSAGE : durée de session limitée'
+        else:
+            snapshot, plans = collect_plans(day, r, course, folder / ident / 'derniere_collecte.json')
             new_records = []
             for selection in plans:
-                if selection['id'] in existing:
-                    continue
-                ledger['reasons'][selection['id']] = selection['reason']
+                state['reasons'][selection['id']] = selection['reason']
                 if selection['reason']:
                     continue
                 if not send:
-                    ledger['reasons'][selection['id']] = 'Mode contrôle sans envoi, aucune mise'
+                    state['reasons'][selection['id']] = 'Mode contrôle sans envoi, aucune mise'
                     continue
                 record = dict(selection=selection, race=snapshot['race'], frozen_at=clock().isoformat(),
                               source_snapshot=snapshot)
@@ -250,15 +311,44 @@ def run(root, send=False, persist=False):
             if new_records:
                 # Both variants use the very same favourite and source snapshot.
                 # An incomplete sibling is not silently rebuilt on different later choices.
-                ledger['selection_frozen_at'] = clock().isoformat()
+                state['selection_frozen_at'] = clock().isoformat()
             for record in new_records:
                 deliver(record, save)
-            ledger['status'] = 'CONTROLE_EFFECTUE'
-        else:
-            ledger['status'] = 'CHOIX_DEJA_FIGES'
+            state['status'] = 'CONTROLE_EFFECTUE'
     except Exception as error:
-        # Public log must never contain auth URLs. Error type + safe known validation text only.
-        ledger['status'] = ('Données indisponibles : ' + str(error)) if isinstance(error, ValueError) else ('Erreur de collecte : ' + type(error).__name__)
+        state['status'] = ('Données indisponibles : ' + str(error)) if isinstance(error, ValueError) else ('Erreur de collecte : ' + type(error).__name__)
+
+
+def message_parts(text, limit=3500):
+    parts, current = [], ''
+    for line in text.splitlines():
+        for start in range(0, max(1, len(line)), limit):
+            segment = line[start:start+limit]
+            if current and len(current) + len(segment) + 1 > limit:
+                parts.append(current)
+                current = ''
+            current += ('\n' if current else '') + segment
+    if current:
+        parts.append(current)
+    return parts
+
+
+def run(root, send=False, persist=False):
+    now = clock()
+    day = now.astimezone(TZ).date()
+    path = root / day.isoformat() / 'journal.json'
+    ledger = read(path, {'date': day.isoformat(), 'version': VERSION, 'records': [], 'courses': {}})
+    course_states(ledger)
+    ledger.update(version=VERSION, checked_at=now.isoformat())
+    save = lambda: (write(path, ledger), checkpoint(root, persist))
+    deadline = time.monotonic() + 480
+    try:
+        courses = tierce_courses(get_json(API + day.strftime('%d%m%Y')))
+        ledger['status'] = f'{len(courses)} courses françaises avec Tiercé Internet à 1 € au programme'
+        for r, course in courses:
+            process_course(ledger, day, r, course, path.parent, save, send, deadline)
+    except Exception as error:
+        ledger['status'] = 'Programme indisponible : ' + type(error).__name__
     save()
     for journal in sorted(root.glob('????-??-??/journal.json')):
         data = read(journal, {})
@@ -268,6 +358,9 @@ def run(root, send=False, persist=False):
                 continue
             if clock() <= instant(record['race']['departure']):
                 continue
+            if time.monotonic() >= deadline + 120:
+                record.setdefault('result', {'status': 'EN_ATTENTE', 'reason': 'Règlement reporté au prochain passage : session limitée'})
+                continue
             race = record['race']
             prefix = API + datetime.fromisoformat(race['date']).strftime('%d%m%Y') + f"/R{race['r']}/C{race['c']}"
             try:
@@ -276,7 +369,7 @@ def run(root, send=False, persist=False):
                         'reports_url': prefix + '/rapports-definitifs?combinaisonEnTableau=true&specialisation=INTERNET',
                         'course': get_json(prefix), 'participants': get_json(prefix + '/participants'),
                         'reports': get_json(prefix + '/rapports-definitifs?combinaisonEnTableau=true&specialisation=INTERNET')}
-                    write(journal.parent / 'rapports_pmu_internet.json', cache[prefix])
+                    write(journal.parent / race['id'] / 'rapports_pmu_internet.json', cache[prefix])
                 record['result'] = settle(record, cache[prefix])
             except Exception as error:
                 record['result'] = {'status': 'EN_ATTENTE', 'reason': 'Rapports indisponibles : ' + type(error).__name__}
@@ -284,17 +377,20 @@ def run(root, send=False, persist=False):
     text = reports(root, day.isoformat())
     checkpoint(root, persist)
     # One receipt per distinct end-of-course balance, never resend an uncertain attempt.
-    if send and ledger.get('departure') and clock() > instant(ledger['departure']):
+    if send and any(s.get('departure') and clock() > instant(s['departure']) for s in ledger['courses'].values()):
         fingerprint = hashlib.sha256(text.encode()).hexdigest()
         notices_path = root / day.isoformat() / 'bilans_telegram.json'
         notices = read(notices_path, [])
         if not any(x['fingerprint'] == fingerprint for x in notices):
-            notice = {'fingerprint': fingerprint, 'delivery': 'PENDING', 'text': text}
+            notice = {'fingerprint': fingerprint, 'delivery': 'PENDING', 'text': text, 'receipts': []}
             notices.append(notice)
             write(notices_path, notices)
             checkpoint(root, persist)
             try:
-                notice['receipt'] = send_message(text)
+                for part in message_parts(text):
+                    notice['receipts'].append(send_message(part))
+                    write(notices_path, notices)
+                    checkpoint(root, persist)
                 notice['delivery'] = 'SENT'
             except Exception as error:
                 notice.update(delivery='UNCERTAIN', error_type=type(error).__name__)

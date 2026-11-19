@@ -1,10 +1,14 @@
 import copy
+import csv
+import json
+import tempfile
+from pathlib import Path
 from datetime import datetime, timedelta, timezone
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from tierce_champ_reduit.model import ARMS, confirmed, prepare, settle, tickets, totals
-from tierce_champ_reduit.run import deliver
+from tierce_champ_reduit.run import deliver, tierce_courses, course_states, process_course, reports, write, message_parts
 
 NOW = datetime(2026, 11, 19, 12, 30, tzinfo=timezone.utc)
 
@@ -179,6 +183,89 @@ class DeliveryTests(unittest.TestCase):
         r = self.fresh(); sender = Mock()
         deliver(r, lambda: None, sender, lambda: NOW+timedelta(minutes=29))
         sender.assert_not_called()
+
+
+class MultiCourseTests(unittest.TestCase):
+    def market_course(self, number, tierce=True, quinte=False):
+        markets = []
+        if tierce: markets.append({'typePari': 'E_TIERCE', 'miseBase': 100, 'enVente': True})
+        if quinte: markets.append({'typePari': 'E_QUINTE_PLUS', 'miseBase': 200})
+        return {'numOrdre': number, 'libelle': 'TEST', 'heureDepart': int((NOW+timedelta(minutes=30)).timestamp()*1000), 'paris': markets}
+
+    def test_other_meetings_and_non_quinte_discovered(self):
+        programme = {'programme': {'reunions': [
+            {'numOfficiel': 1, 'pays': {'code': 'FRA'}, 'courses': [self.market_course(1, True, True), self.market_course(2, False, True)]},
+            {'numOfficiel': 2, 'pays': {'code': 'FRA'}, 'courses': [self.market_course(3, True, False)]},
+            {'numOfficiel': 3, 'pays': {'code': 'BEL'}, 'courses': [self.market_course(1)]}]}}
+        self.assertEqual([(r, c['numOrdre']) for r,c in tierce_courses(programme)], [(1,1), (2,3)])
+
+    def test_legacy_single_course_preserved(self):
+        r = record()
+        ledger = {'records': [r], 'course': 'R1C1', 'departure': r['race']['departure'],
+                  'selection_frozen_at': NOW.isoformat(), 'reasons': {list(ARMS)[1]: 'INCOMPLET'}}
+        states = course_states(ledger)
+        self.assertTrue(states['R1C1']['selection_frozen_at'])
+        self.assertEqual(states['R1C1']['reasons'][list(ARMS)[1]], 'INCOMPLET')
+        self.assertEqual(ledger['records'][0], r)
+        self.assertNotIn('selection_frozen_at', ledger)
+
+    def test_two_courses_both_sent_without_duplicate(self):
+        ledger = {'records': [], 'courses': {}}
+        def plans(day, r, c, archive):
+            s = snapshot(); s['race'].update(id=f"R{r}C{c['numOrdre']}", r=r, c=c['numOrdre'])
+            return s, prepare(s, NOW)
+        sender = Mock(return_value={'message_id': 42, 'date': int(NOW.timestamp())})
+        delivery = lambda r, save: deliver(r, save, sender, lambda: NOW)
+        with tempfile.TemporaryDirectory() as tmp, patch('tierce_champ_reduit.run.clock', return_value=NOW), \
+             patch('tierce_champ_reduit.run.collect_plans', side_effect=plans) as collector, \
+             patch('tierce_champ_reduit.run.deliver', side_effect=delivery):
+            for _ in range(2):
+                for reunion, c in [(1, self.market_course(1)), (2, self.market_course(3))]:
+                    process_course(ledger, NOW.date(), reunion, c, Path(tmp), lambda: None, True, float('inf'))
+        self.assertEqual(collector.call_count, 2)
+        self.assertEqual(sender.call_count, 4)
+        self.assertEqual(len(ledger['records']), 4)
+        self.assertEqual(totals(ledger['records'], list(ARMS)[0])['engaged_cents'], 6000)
+        self.assertEqual(totals(ledger['records'], list(ARMS)[1])['engaged_cents'], 11200)
+
+    def test_failed_course_does_not_freeze_next(self):
+        ledger = {'records': [], 'courses': {}}
+        s = snapshot(); s['race'].update(id='R2C3', r=2, c=3)
+        with tempfile.TemporaryDirectory() as tmp, patch('tierce_champ_reduit.run.clock', return_value=NOW), \
+             patch('tierce_champ_reduit.run.collect_plans', side_effect=[ValueError('sources incomplètes'), (s, prepare(s, NOW))]), \
+             patch('tierce_champ_reduit.run.deliver'):
+            process_course(ledger, NOW.date(), 1, self.market_course(1), Path(tmp), lambda: None, True, float('inf'))
+            process_course(ledger, NOW.date(), 2, self.market_course(3), Path(tmp), lambda: None, True, float('inf'))
+        self.assertEqual(len(ledger['records']), 2)
+        self.assertTrue(all(r['race']['id']=='R2C3' for r in ledger['records']))
+        self.assertIn('sources incomplètes', ledger['courses']['R1C1']['status'])
+
+    def test_reports_separate_courses_and_reasons(self):
+        r = record(); r['result'] = settle(r, official())
+        p = copy.deepcopy(r); p['race']['id'] = 'R2C3'; p['race']['r'] = 2; p['race']['c'] = 3
+        p['result'] = settle(p, official((2,3,4)))
+        ledger = {'date': '2026-11-19', 'records': [r,p], 'courses': {
+            'R1C1': {'reasons': {}}, 'R2C3': {'reasons': {}}, 'R4C5': {'status': 'COTES_MANQUANTES', 'reasons': {}}}}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write(root / '2026-11-19/journal.json', ledger)
+            text = reports(root, '2026-11-19')
+            self.assertIn('R4C5 · NON JOUÉ / DONNÉES : COTES_MANQUANTES', text)
+            arm = list(ARMS)[0]
+            summary = json.loads((root / arm / 'bilan_cumule.json').read_text())
+            self.assertEqual(summary['stake_cents'], 6000)
+            self.assertEqual(summary['net_cents'], 17000)
+            with (root / arm / 'bilans_par_course.csv').open() as handle:
+                rows = list(csv.DictReader(handle))
+            self.assertEqual(len(rows), 3)
+            self.assertEqual(rows[2]['engaged_cents'], '0')
+
+    def test_long_report_split_below_telegram_limit(self):
+        text = '\n'.join(f'R1C{n} : '+('x'*100) for n in range(120))
+        parts = message_parts(text)
+        self.assertTrue(len(parts) > 1)
+        self.assertTrue(all(len(p)<=3500 for p in parts))
+        self.assertEqual('\n'.join(parts), text)
 
 
 if __name__ == '__main__':
