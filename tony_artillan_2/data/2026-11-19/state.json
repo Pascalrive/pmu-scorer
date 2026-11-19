@@ -3,7 +3,39 @@
   "venue": "SAINT-CLOUD",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C5",
+          "departure": "2026-11-19T13:10:00+01:00",
+          "number": 12,
+          "name": "THIBERVILLE",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-19T12:50:16.889137+01:00",
+          "source_captured_at": "2026-11-19T12:14:54.870921+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795088999000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "48094518b118d12730ce110b40161a27d63cd32f9725c1beb71361472173b407",
+          "telegram_receipts": [
+            {
+              "message_id": 7747,
+              "date": 1795089017
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -1022,7 +1054,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 4,
+          "settled_at": "2026-11-19T12:50:16.777584+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "03bbd7b0f32127a96dc34d363d4638c9cd0f7edbc8a10e02ed15eaf5d3ce6d47",
+            "file": "preuves/03bbd7b0f32127a96dc34d363d4638c9cd0f7edbc8a10e02ed15eaf5d3ce6d47.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/participants",
+            "sha256": "e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a",
+            "file": "preuves/e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1055,7 +1101,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-19T12:50:16.777897+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "03bbd7b0f32127a96dc34d363d4638c9cd0f7edbc8a10e02ed15eaf5d3ce6d47",
+            "file": "preuves/03bbd7b0f32127a96dc34d363d4638c9cd0f7edbc8a10e02ed15eaf5d3ce6d47.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/participants",
+            "sha256": "e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a",
+            "file": "preuves/e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a.gz"
+          }
         }
       },
       "groups": {},
@@ -1292,8 +1352,39 @@
         }
       },
       "final_check_completed_at": "2026-11-19T12:29:51.583393+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "MARY JAYNE",
+          "rank": 1
+        },
+        {
+          "number": 15,
+          "name": "JESS LIVERMORE",
+          "rank": 2
+        },
+        {
+          "number": 13,
+          "name": "TIME LIKE A RIVER",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "BELL SONG",
+          "rank": 4
+        },
+        {
+          "number": 10,
+          "name": "LOVER SONG",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/participants",
+        "sha256": "e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a",
+        "file": "preuves/e033ede16dd45afa4d045279b7186d7fb54994483579a151c46d8a09e0235e0a.gz"
+      }
     },
     {
       "date": "2026-11-19",
@@ -1703,7 +1794,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T12:39:36.705016+01:00",
+      "final_check_started_at": "2026-11-19T12:50:16.448062+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699029-2026-11-19-saint-cloud-prix-du-tunnel-de-saint-cloud/partants-pronostics",
@@ -1717,7 +1808,7 @@
         }
       },
       "groups_frozen_at": "2026-11-19T12:14:56.817305+01:00",
-      "final_check_completed_at": "2026-11-19T12:39:37.345862+01:00"
+      "final_check_completed_at": "2026-11-19T12:50:16.631849+01:00"
     },
     {
       "date": "2026-11-19",
