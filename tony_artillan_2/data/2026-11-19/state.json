@@ -138,6 +138,37 @@
             "sha256": "9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b",
             "file": "preuves/9b039abf1676f3fe9748a5591c230682438a2f036f84f6b27e5d7bed366fa74b.gz"
           }
+        },
+        {
+          "race_id": "R1C9",
+          "departure": "2026-11-19T15:40:00+01:00",
+          "number": 3,
+          "name": "GALORD",
+          "stake_cents": 15000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-19T15:15:53.676631+01:00",
+          "source_captured_at": "2026-11-19T14:51:00.178078+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.08,
+            "dateRapport": 1795097732000,
+            "favoris": true,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "6a5151c09d418076f642a99f2bb4d36edf1b4124400bdb3279d2c02c53ef5d47",
+          "telegram_receipts": [
+            {
+              "message_id": 7782,
+              "date": 1795097754
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -3646,7 +3677,9 @@
           "new": "2026-11-19T15:07:00+01:00",
           "checked_at": "2026-11-19T14:50:37.611633+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
     },
     {
       "date": "2026-11-19",
@@ -4216,7 +4249,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T14:59:34.276809+01:00",
+      "final_check_started_at": "2026-11-19T15:15:29.477644+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699033-2026-11-19-saint-cloud-prix-des-falaises-de-jobourg/partants-pronostics",
@@ -4230,7 +4263,7 @@
         }
       },
       "groups_frozen_at": "2026-11-19T14:51:02.408502+01:00",
-      "final_check_completed_at": "2026-11-19T14:59:35.147883+01:00"
+      "final_check_completed_at": "2026-11-19T15:15:29.810579+01:00"
     },
     {
       "date": "2026-11-19",
@@ -4240,8 +4273,83 @@
       "departure": "2026-11-19T16:15:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "VICTORY PACE",
+          "source_url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de Bad Godesberg",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
+            "sha256": "b912b902d80bfe2a9a3a693e6cefb131d20766c137fcf5a0393f74b686f5f448",
+            "file": "preuves/b912b902d80bfe2a9a3a693e6cefb131d20766c137fcf5a0393f74b686f5f448.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
+            "sha256": "0382fd543f95de6ccc66f2e516db27bb8f861e93cc424c6cb89d811e6b20cb92",
+            "file": "preuves/0382fd543f95de6ccc66f2e516db27bb8f861e93cc424c6cb89d811e6b20cb92.gz"
+          },
+          "captured_at": "2026-11-19T15:15:50.845131+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.78,
+            "dateRapport": 1795096848000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "VICTORY PACE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE BAD GODESBERG",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
+            "sha256": "749f6356c71a58692e38fa2b523407bc1680ec292aef00c000d73b3d898ca76d",
+            "file": "preuves/749f6356c71a58692e38fa2b523407bc1680ec292aef00c000d73b3d898ca76d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C10/participants",
+            "sha256": "0382fd543f95de6ccc66f2e516db27bb8f861e93cc424c6cb89d811e6b20cb92",
+            "file": "preuves/0382fd543f95de6ccc66f2e516db27bb8f861e93cc424c6cb89d811e6b20cb92.gz"
+          },
+          "captured_at": "2026-11-19T15:15:52.451452+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.78,
+            "dateRapport": 1795096848000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 1,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -4724,7 +4832,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T15:15:29.816434+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699034-2026-11-19-saint-cloud-prix-de-bad-godesberg/partants-pronostics",
+          "sha256": "b912b902d80bfe2a9a3a693e6cefb131d20766c137fcf5a0393f74b686f5f448",
+          "file": "preuves/b912b902d80bfe2a9a3a693e6cefb131d20766c137fcf5a0393f74b686f5f448.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424030_prix-de-bad-godesberg.html",
+          "sha256": "749f6356c71a58692e38fa2b523407bc1680ec292aef00c000d73b3d898ca76d",
+          "file": "preuves/749f6356c71a58692e38fa2b523407bc1680ec292aef00c000d73b3d898ca76d.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-19T15:15:52.451452+01:00",
+      "final_check_completed_at": "2026-11-19T15:15:52.451505+01:00"
     }
   ],
   "notifications": [],
