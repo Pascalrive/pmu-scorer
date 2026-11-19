@@ -1794,7 +1794,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T12:50:16.448062+01:00",
+      "final_check_started_at": "2026-11-19T12:59:41.045469+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699029-2026-11-19-saint-cloud-prix-du-tunnel-de-saint-cloud/partants-pronostics",
@@ -1808,7 +1808,11 @@
         }
       },
       "groups_frozen_at": "2026-11-19T12:14:56.817305+01:00",
-      "final_check_completed_at": "2026-11-19T12:50:16.631849+01:00"
+      "final_check_completed_at": "2026-11-19T12:59:41.584153+01:00",
+      "last_reservation_check": {
+        "at": "2026-11-19T13:00:05.865711+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-11-19",
@@ -1818,8 +1822,83 @@
       "departure": "2026-11-19T13:55:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 6,
+          "name": "ZARAMIX",
+          "source_url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de Windsor",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
+            "sha256": "574d1c0da1392feefa43ed96196ebe8efc92210a71ca2a2d25bba2d674b4e718",
+            "file": "preuves/574d1c0da1392feefa43ed96196ebe8efc92210a71ca2a2d25bba2d674b4e718.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C6/participants",
+            "sha256": "675318c7957b8a41bd943dff3a24c04e1a59de007f416bb240589d26b03b3aa4",
+            "file": "preuves/675318c7957b8a41bd943dff3a24c04e1a59de007f416bb240589d26b03b3aa4.gz"
+          },
+          "captured_at": "2026-11-19T13:00:02.943909+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.38,
+            "dateRapport": 1795088718000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 6,
+          "name": "ZARAMIX",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du Quinté PRIX DE WINDSOR",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
+            "sha256": "415ca7106c03eb29246af78cb7f1910217e3d3afeca2dbac4097cbbb64f9867f",
+            "file": "preuves/415ca7106c03eb29246af78cb7f1910217e3d3afeca2dbac4097cbbb64f9867f.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C6/participants",
+            "sha256": "675318c7957b8a41bd943dff3a24c04e1a59de007f416bb240589d26b03b3aa4",
+            "file": "preuves/675318c7957b8a41bd943dff3a24c04e1a59de007f416bb240589d26b03b3aa4.gz"
+          },
+          "captured_at": "2026-11-19T13:00:04.605360+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.38,
+            "dateRapport": 1795088718000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 6,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -2142,7 +2221,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T12:59:41.587213+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699030-2026-11-19-saint-cloud-prix-de-windsor/partants-pronostics",
+          "sha256": "574d1c0da1392feefa43ed96196ebe8efc92210a71ca2a2d25bba2d674b4e718",
+          "file": "preuves/574d1c0da1392feefa43ed96196ebe8efc92210a71ca2a2d25bba2d674b4e718.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424026_prix-de-windsor.html",
+          "sha256": "415ca7106c03eb29246af78cb7f1910217e3d3afeca2dbac4097cbbb64f9867f",
+          "file": "preuves/415ca7106c03eb29246af78cb7f1910217e3d3afeca2dbac4097cbbb64f9867f.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-19T13:00:04.605360+01:00",
+      "final_check_completed_at": "2026-11-19T13:00:04.605405+01:00"
     },
     {
       "date": "2026-11-19",
