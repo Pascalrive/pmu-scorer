@@ -350,7 +350,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 12,
+          "settled_at": "2026-11-19T11:40:36.861872+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "af226731bee89730dbe35a727f55e93b9ca03f82058e14bf9e030cdcc5c33a02",
+            "file": "preuves/af226731bee89730dbe35a727f55e93b9ca03f82058e14bf9e030cdcc5c33a02.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C2/participants",
+            "sha256": "6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57",
+            "file": "preuves/6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -383,7 +397,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-19T11:40:36.862094+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "af226731bee89730dbe35a727f55e93b9ca03f82058e14bf9e030cdcc5c33a02",
+            "file": "preuves/af226731bee89730dbe35a727f55e93b9ca03f82058e14bf9e030cdcc5c33a02.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C2/participants",
+            "sha256": "6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57",
+            "file": "preuves/6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57.gz"
+          }
         }
       },
       "groups": {},
@@ -548,8 +576,39 @@
         }
       },
       "final_check_completed_at": "2026-11-19T11:23:28.047857+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 3,
+          "name": "CREW DRAGON",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "MISTER SKETCH",
+          "rank": 2
+        },
+        {
+          "number": 9,
+          "name": "CORTADO",
+          "rank": 3
+        },
+        {
+          "number": 1,
+          "name": "MY UNIVERSE",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "CIEL DE PARIS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C2/participants",
+        "sha256": "6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57",
+        "file": "preuves/6cc5f9fb9df840e0aca50cce9d785ec462dd63962afc33be88d9715dfabefe57.gz"
+      }
     },
     {
       "date": "2026-11-19",
@@ -847,7 +906,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T11:30:26.828583+01:00",
+      "final_check_started_at": "2026-11-19T11:40:12.646050+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699027-2026-11-19-saint-cloud-prix-du-pont-de-saint-cloud/partants-pronostics",
@@ -860,7 +919,7 @@
           "file": "preuves/75fe12187b89505b4495861e1d1e8c9639c6fdb27f36ce666226f8190273c0cf.gz"
         }
       },
-      "final_check_completed_at": "2026-11-19T11:30:27.261304+01:00"
+      "final_check_completed_at": "2026-11-19T11:40:12.980960+01:00"
     },
     {
       "date": "2026-11-19",
@@ -870,7 +929,74 @@
       "departure": "2026-11-19T12:35:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 4,
+          "name": "BELL SONG",
+          "source_url": "https://www.geny.com/course/1699028-2026-11-19-saint-cloud-prix-du-viaduc-de-saint-cloud/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Viaduc de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699028-2026-11-19-saint-cloud-prix-du-viaduc-de-saint-cloud/partants-pronostics",
+            "sha256": "34d57940a33a4f531fc7ac26f25b32dc41863b1aeba6ac79bad3622acd391a55",
+            "file": "preuves/34d57940a33a4f531fc7ac26f25b32dc41863b1aeba6ac79bad3622acd391a55.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/participants",
+            "sha256": "64810416f24f8c0d3d477e0c3d956ac586916ec15370698910c71285c1eae7d3",
+            "file": "preuves/64810416f24f8c0d3d477e0c3d956ac586916ec15370698910c71285c1eae7d3.gz"
+          },
+          "captured_at": "2026-11-19T11:40:34.134021+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -28.0,
+            "dateRapport": 1795084235000,
+            "favoris": false,
+            "numPmu1": 4,
+            "grossePrise": true
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 15,
+          "name": "JESS LIVERMORE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424024_prix-du-viaduc-de-saint-cloud.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU VIADUC DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424024_prix-du-viaduc-de-saint-cloud.html",
+            "sha256": "276810644b2cdb7edaaa9b7119a4a33a5e0a48cc3dc8056e02704f29732c26de",
+            "file": "preuves/276810644b2cdb7edaaa9b7119a4a33a5e0a48cc3dc8056e02704f29732c26de.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C4/participants",
+            "sha256": "64810416f24f8c0d3d477e0c3d956ac586916ec15370698910c71285c1eae7d3",
+            "file": "preuves/64810416f24f8c0d3d477e0c3d956ac586916ec15370698910c71285c1eae7d3.gz"
+          },
+          "captured_at": "2026-11-19T11:40:35.974148+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 10.52,
+            "dateRapport": 1795084235000,
+            "favoris": true,
+            "numPmu1": 15,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
       "errors": {},
       "preview_observations": [
@@ -1090,7 +1216,21 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T11:40:12.984229+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699028-2026-11-19-saint-cloud-prix-du-viaduc-de-saint-cloud/partants-pronostics",
+          "sha256": "34d57940a33a4f531fc7ac26f25b32dc41863b1aeba6ac79bad3622acd391a55",
+          "file": "preuves/34d57940a33a4f531fc7ac26f25b32dc41863b1aeba6ac79bad3622acd391a55.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424024_prix-du-viaduc-de-saint-cloud.html",
+          "sha256": "276810644b2cdb7edaaa9b7119a4a33a5e0a48cc3dc8056e02704f29732c26de",
+          "file": "preuves/276810644b2cdb7edaaa9b7119a4a33a5e0a48cc3dc8056e02704f29732c26de.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-19T11:40:35.974189+01:00"
     },
     {
       "date": "2026-11-19",
