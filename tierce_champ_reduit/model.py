@@ -6,7 +6,7 @@ from math import isfinite
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo('Europe/Paris')
-VERSION = 'tierce-cr-v1-2026-11-19'
+VERSION = 'tierce-cr-v2-toutes-courses-2026-11-19'
 ARMS = {
     'tierce_favori_6_associes_30eur': ('TIERCÉ — FAVORI + 6 ASSOCIÉS — 30 €', 6),
     'tierce_favori_8_associes_56eur': ('TIERCÉ — FAVORI + 8 ASSOCIÉS — 56 €', 8),
