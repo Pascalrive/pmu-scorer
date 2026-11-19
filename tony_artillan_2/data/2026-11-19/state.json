@@ -650,7 +650,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 12,
+          "settled_at": "2026-11-19T12:14:57.858137+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "63ebb157a0ceec57ee350ee71cedf432d187f4a472ac9f001b6e96e2bef3c964",
+            "file": "preuves/63ebb157a0ceec57ee350ee71cedf432d187f4a472ac9f001b6e96e2bef3c964.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/participants",
+            "sha256": "6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c",
+            "file": "preuves/6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -683,7 +697,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 3,
+          "settled_at": "2026-11-19T12:14:57.858382+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "63ebb157a0ceec57ee350ee71cedf432d187f4a472ac9f001b6e96e2bef3c964",
+            "file": "preuves/63ebb157a0ceec57ee350ee71cedf432d187f4a472ac9f001b6e96e2bef3c964.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/participants",
+            "sha256": "6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c",
+            "file": "preuves/6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c.gz"
+          }
         }
       },
       "groups": {},
@@ -920,8 +948,39 @@
         }
       },
       "final_check_completed_at": "2026-11-19T11:49:52.033332+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 13,
+          "name": "EYWA",
+          "rank": 1
+        },
+        {
+          "number": 11,
+          "name": "HOLLYHOCK",
+          "rank": 2
+        },
+        {
+          "number": 5,
+          "name": "KELLY KEY",
+          "rank": 3
+        },
+        {
+          "number": 4,
+          "name": "CHARMING CAT",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "AMICO PIETRO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C3/participants",
+        "sha256": "6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c",
+        "file": "preuves/6def529d8a1c8545e7c131b901bc58c3b8a7a8fc1bf18cb7b6cc635e8dde278c.gz"
+      }
     },
     {
       "date": "2026-11-19",
@@ -1219,7 +1278,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-19T12:00:09.468571+01:00",
+      "final_check_started_at": "2026-11-19T12:14:32.930486+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699028-2026-11-19-saint-cloud-prix-du-viaduc-de-saint-cloud/partants-pronostics",
@@ -1232,7 +1291,7 @@
           "file": "preuves/276810644b2cdb7edaaa9b7119a4a33a5e0a48cc3dc8056e02704f29732c26de.gz"
         }
       },
-      "final_check_completed_at": "2026-11-19T12:00:09.930146+01:00"
+      "final_check_completed_at": "2026-11-19T12:14:33.355268+01:00"
     },
     {
       "date": "2026-11-19",
@@ -1242,8 +1301,83 @@
       "departure": "2026-11-19T13:10:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 12,
+          "name": "THIBERVILLE",
+          "source_url": "https://www.geny.com/course/1699029-2026-11-19-saint-cloud-prix-du-tunnel-de-saint-cloud/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Tunnel de Saint-Cloud",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699029-2026-11-19-saint-cloud-prix-du-tunnel-de-saint-cloud/partants-pronostics",
+            "sha256": "c0c27daa64364c8abfba8e7c7355f37db10188c01abee916e3bcca21dbedced9",
+            "file": "preuves/c0c27daa64364c8abfba8e7c7355f37db10188c01abee916e3bcca21dbedced9.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+            "sha256": "9df967b0cc6663dc8637174f6b9f0315c6ce2652eadddbeb74dae436241fad7b",
+            "file": "preuves/9df967b0cc6663dc8637174f6b9f0315c6ce2652eadddbeb74dae436241fad7b.gz"
+          },
+          "captured_at": "2026-11-19T12:14:54.870921+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -9.09,
+            "dateRapport": 1795086027000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 12,
+          "name": "THIBERVILLE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424025_prix-du-tunnel-de-saint-cloud.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU TUNNEL DE SAINT-CLOUD",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424025_prix-du-tunnel-de-saint-cloud.html",
+            "sha256": "5f9323deadd814db58c5b9701dbff951774604cb22341bfb20f7d8440a75ec00",
+            "file": "preuves/5f9323deadd814db58c5b9701dbff951774604cb22341bfb20f7d8440a75ec00.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/19112026/R1/C5/participants",
+            "sha256": "9df967b0cc6663dc8637174f6b9f0315c6ce2652eadddbeb74dae436241fad7b",
+            "file": "preuves/9df967b0cc6663dc8637174f6b9f0315c6ce2652eadddbeb74dae436241fad7b.gz"
+          },
+          "captured_at": "2026-11-19T12:14:56.817305+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -9.09,
+            "dateRapport": 1795086027000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 12,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -1486,7 +1620,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-19T12:14:33.358708+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699029-2026-11-19-saint-cloud-prix-du-tunnel-de-saint-cloud/partants-pronostics",
+          "sha256": "c0c27daa64364c8abfba8e7c7355f37db10188c01abee916e3bcca21dbedced9",
+          "file": "preuves/c0c27daa64364c8abfba8e7c7355f37db10188c01abee916e3bcca21dbedced9.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-19/saint-cloud/424025_prix-du-tunnel-de-saint-cloud.html",
+          "sha256": "5f9323deadd814db58c5b9701dbff951774604cb22341bfb20f7d8440a75ec00",
+          "file": "preuves/5f9323deadd814db58c5b9701dbff951774604cb22341bfb20f7d8440a75ec00.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-19T12:14:56.817305+01:00",
+      "final_check_completed_at": "2026-11-19T12:14:56.817350+01:00"
     },
     {
       "date": "2026-11-19",
