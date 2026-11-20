@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX TRITON
 
-Collecte : 2026-11-20T08:02:59.037177+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-20T12:25:40.033846+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424125_prix-triton.html) | 5 KELLER DE L'ITON (cote 4.1) | 4 KERVELEAN (cote 6.0) | 13 KING D'HERMES (cote 5.7) | 1 KING FROMENTRO (cote 15.0) | 11 KER POULGWEN (cote 14.0) | 9 KANNABIS JELOCA (cote 12.0) — Outsider ; 14 KANCALAIS (cote 8.5) — Outsider ; 10 KARMA (cote 15.0) — Outsider ; 1 KING FROMENTRO (cote 15.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424125_prix-triton.html) | 5 KELLER DE L'ITON (cote 4.1) | 4 KERVELEAN (cote 6.0) | 14 KANCALAIS (cote 8.5) | 13 KING D'HERMES (cote 5.7) | 9 KANNABIS JELOCA (cote 12.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 13 KING D'HERMES (cote 5.7) | 4 KERVELEAN (cote 6.0) | 1 KING FROMENTRO (cote 15.0) | 14 KANCALAIS (cote 8.5) | 5 KELLER DE L'ITON (cote 4.1) | 10 KARMA (cote 15.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 13 KING D'HERMES (cote 5.7) | 4 KERVELEAN (cote 6.0) | 5 KELLER DE L'ITON (cote 4.1) | 14 KANCALAIS (cote 8.5) | 9 KANNABIS JELOCA (cote 12.0) | 9 KANNABIS JELOCA (cote 12.0) — Outsider ; 10 KARMA (cote 15.0) — Outsider ; 11 KER POULGWEN (cote 14.0) — Outsider ; 1 KING FROMENTRO (cote 15.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 5 KELLER DE L'ITON (cote 4.1) | 4 KERVELEAN (cote 6.0) | 1 KING FROMENTRO (cote 15.0) | 14 KANCALAIS (cote 8.5) | 6 KETBERNY (cote 22.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424125_prix-triton.html) | 5 KELLER DE L'ITON (cote 4.0) | 4 KERVELEAN (cote 6.9) | 13 KING D'HERMES (cote 6.1) | 1 KING FROMENTRO (cote 14.0) | 11 KER POULGWEN (cote 14.0) | 9 KANNABIS JELOCA (cote 10.0) — Outsider ; 14 KANCALAIS (cote 7.5) — Outsider ; 10 KARMA (cote 18.0) — Outsider ; 1 KING FROMENTRO (cote 14.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424125_prix-triton.html) | 5 KELLER DE L'ITON (cote 4.0) | 4 KERVELEAN (cote 6.9) | 14 KANCALAIS (cote 7.5) | 13 KING D'HERMES (cote 6.1) | 9 KANNABIS JELOCA (cote 10.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 13 KING D'HERMES (cote 6.1) | 4 KERVELEAN (cote 6.9) | 1 KING FROMENTRO (cote 14.0) | 14 KANCALAIS (cote 7.5) | 5 KELLER DE L'ITON (cote 4.0) | 10 KARMA (cote 18.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 13 KING D'HERMES (cote 6.1) | 4 KERVELEAN (cote 6.9) | 5 KELLER DE L'ITON (cote 4.0) | 14 KANCALAIS (cote 7.5) | 9 KANNABIS JELOCA (cote 10.0) | 9 KANNABIS JELOCA (cote 10.0) — Outsider ; 10 KARMA (cote 18.0) — Outsider ; 11 KER POULGWEN (cote 14.0) — Outsider ; 1 KING FROMENTRO (cote 14.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 5 KELLER DE L'ITON (cote 4.0) | 4 KERVELEAN (cote 6.9) | 1 KING FROMENTRO (cote 14.0) | 14 KANCALAIS (cote 7.5) | 6 KETBERNY (cote 20.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,11 +21,11 @@ Collecte : 2026-11-20T08:02:59.037177+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 4 KERVELEAN (cote 6.0) | 5 |
-| 5 KELLER DE L'ITON (cote 4.1) | 5 |
-| 13 KING D'HERMES (cote 5.7) | 4 |
-| 14 KANCALAIS (cote 8.5) | 4 |
-| 1 KING FROMENTRO (cote 15.0) | 3 |
+| 4 KERVELEAN (cote 6.9) | 5 |
+| 5 KELLER DE L'ITON (cote 4.0) | 5 |
+| 13 KING D'HERMES (cote 6.1) | 4 |
+| 14 KANCALAIS (cote 7.5) | 4 |
+| 1 KING FROMENTRO (cote 14.0) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
