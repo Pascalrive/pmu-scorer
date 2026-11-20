@@ -5017,7 +5017,9 @@
         }
       },
       "groups_frozen_at": "2026-11-20T20:30:12.061115+01:00",
-      "final_check_completed_at": "2026-11-20T21:22:17.597263+01:00"
+      "final_check_completed_at": "2026-11-20T21:22:17.597263+01:00",
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-20",
@@ -5821,7 +5823,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-20T21:22:17.601949+01:00",
+      "final_check_started_at": "2026-11-20T21:29:28.484904+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-20/r1c7-vincennes-prix-agathe",
@@ -5844,7 +5846,7 @@
           "file": "preuves/f50a975aa2974cfe2a3acde84cad8540fe62e69160d54b1e165500715a65bb94.gz"
         }
       },
-      "final_check_completed_at": "2026-11-20T21:22:18.096075+01:00"
+      "final_check_completed_at": "2026-11-20T21:29:29.326357+01:00"
     },
     {
       "date": "2026-11-20",
@@ -5853,8 +5855,169 @@
       "title": "PRIX LEONA",
       "departure": "2026-11-20T22:25:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 11,
+          "name": "MEMPHIS ELLIS",
+          "source_url": "https://turfin.fr/course/2026-11-20/r1c8-vincennes-prix-leona",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Leona",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-20/r1c8-vincennes-prix-leona",
+            "sha256": "2b84ef2d05c02d2c1b0ee8f131354417e76732060f4a384566931ab82aa34a12",
+            "file": "preuves/2b84ef2d05c02d2c1b0ee8f131354417e76732060f4a384566931ab82aa34a12.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20112026/R1/C8/participants",
+            "sha256": "19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036",
+            "file": "preuves/19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036.gz"
+          },
+          "captured_at": "2026-11-20T21:29:32.328779+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795205734000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "MEMPHIS ELLIS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LEONA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+            "sha256": "714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320",
+            "file": "preuves/714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20112026/R1/C8/participants",
+            "sha256": "19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036",
+            "file": "preuves/19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036.gz"
+          },
+          "captured_at": "2026-11-20T21:29:34.306817+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795205734000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 11,
+          "name": "MEMPHIS ELLIS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LEONA",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+            "sha256": "714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320",
+            "file": "preuves/714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20112026/R1/C8/participants",
+            "sha256": "19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036",
+            "file": "preuves/19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036.gz"
+          },
+          "captured_at": "2026-11-20T21:29:34.372404+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795205734000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 11,
+          "name": "MEMPHIS ELLIS",
+          "source_url": "https://www.geny.com/course/1699165-2026-11-20-vincennes-prix-leona/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Leona",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699165-2026-11-20-vincennes-prix-leona/partants-pronostics",
+            "sha256": "e83e7a54e62a740cf7b7755eca0cd149f74548529e2f6d09cd3d0be9e08e4e00",
+            "file": "preuves/e83e7a54e62a740cf7b7755eca0cd149f74548529e2f6d09cd3d0be9e08e4e00.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/20112026/R1/C8/participants",
+            "sha256": "19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036",
+            "file": "preuves/19f4fd041163d650e6721c1bed17b103f099dbd247f7bb89c23853d93535f036.gz"
+          },
+          "captured_at": "2026-11-20T21:29:55.532482+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795205734000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_4_sur_4": {
+          "number": 11,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 11,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_canalturf+geny+turfin+zeturf": {
+          "number": 11,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -6651,7 +6814,32 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-20T21:29:29.334154+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-20/r1c8-vincennes-prix-leona",
+          "sha256": "2b84ef2d05c02d2c1b0ee8f131354417e76732060f4a384566931ab82aa34a12",
+          "file": "preuves/2b84ef2d05c02d2c1b0ee8f131354417e76732060f4a384566931ab82aa34a12.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+          "sha256": "714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320",
+          "file": "preuves/714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-20/paris-vincennes/424129_prix-leona.html",
+          "sha256": "714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320",
+          "file": "preuves/714887fd87d990adecffa3492e1375d49eacfae5fef1479d73c397e2e5cf2320.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1699165-2026-11-20-vincennes-prix-leona/partants-pronostics",
+          "sha256": "e83e7a54e62a740cf7b7755eca0cd149f74548529e2f6d09cd3d0be9e08e4e00",
+          "file": "preuves/e83e7a54e62a740cf7b7755eca0cd149f74548529e2f6d09cd3d0be9e08e4e00.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-20T21:29:55.532482+01:00",
+      "final_check_completed_at": "2026-11-20T21:29:55.532561+01:00"
     }
   ],
   "notifications": [],
