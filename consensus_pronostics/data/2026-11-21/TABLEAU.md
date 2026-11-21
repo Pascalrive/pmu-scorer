@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C6 — PRIX MARC ANTONY
 
-Collecte : 2026-11-21T08:02:48.593799+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-21T12:23:30.224428+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html) | 1 SILAWAY (cote 6.8) | 5 LOUMINOS (cote 22.0) | 2 FALCON JET (cote 10.0) | 14 ALHUNTER (cote indisponible) (NP) | 8 PAREIL PAREIL (cote 8.3) | 3 NORMANDY MAN (cote 20.0) — Outsider ; 6 TIGRESS DU BERLAIS (cote 3.6) — Outsider ; 7 RAFFLES PRINCESS (cote 13.0) — Outsider ; 7 RAFFLES PRINCESS (cote 13.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html) | 1 SILAWAY (cote 6.8) | 8 PAREIL PAREIL (cote 8.3) | 2 FALCON JET (cote 10.0) | 9 MOUSSE DU CHEF (cote 10.0) | 12 BLIDA (cote 17.0) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 1 SILAWAY (cote 6.8) | 8 PAREIL PAREIL (cote 8.3) | 7 RAFFLES PRINCESS (cote 13.0) | 3 NORMANDY MAN (cote 20.0) | 10 EH MAN (cote 10.0) | 13 OPTIMUS (cote 33.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 8 PAREIL PAREIL (cote 8.3) | 9 MOUSSE DU CHEF (cote 10.0) | 6 TIGRESS DU BERLAIS (cote 3.6) | 7 RAFFLES PRINCESS (cote 13.0) | 10 EH MAN (cote 10.0) | 10 EH MAN (cote 10.0) — Outsider ; 14 ALHUNTER (cote indisponible) (NP) — Outsider ; 2 FALCON JET (cote 10.0) — Outsider ; 1 SILAWAY (cote 6.8) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 1 SILAWAY (cote 6.8) | 6 TIGRESS DU BERLAIS (cote 3.6) | 8 PAREIL PAREIL (cote 8.3) | 2 FALCON JET (cote 10.0) | 9 MOUSSE DU CHEF (cote 10.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html) | 1 SILAWAY (cote 7.4) | 5 LOUMINOS (cote 17.0) | 2 FALCON JET (cote 10.0) | 14 ALHUNTER (cote indisponible) (NP) | 8 PAREIL PAREIL (cote 6.7) | 3 NORMANDY MAN (cote 19.0) — Outsider ; 6 TIGRESS DU BERLAIS (cote 4.3) — Outsider ; 7 RAFFLES PRINCESS (cote 12.0) — Outsider ; 7 RAFFLES PRINCESS (cote 12.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html) | 1 SILAWAY (cote 7.4) | 8 PAREIL PAREIL (cote 6.7) | 10 EH MAN (cote 9.6) | 6 TIGRESS DU BERLAIS (cote 4.3) | 2 FALCON JET (cote 10.0) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 1 SILAWAY (cote 7.4) | 8 PAREIL PAREIL (cote 6.7) | 7 RAFFLES PRINCESS (cote 12.0) | 3 NORMANDY MAN (cote 19.0) | 10 EH MAN (cote 9.6) | 13 OPTIMUS (cote 29.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 8 PAREIL PAREIL (cote 6.7) | 9 MOUSSE DU CHEF (cote 10.0) | 6 TIGRESS DU BERLAIS (cote 4.3) | 7 RAFFLES PRINCESS (cote 12.0) | 10 EH MAN (cote 9.6) | 10 EH MAN (cote 9.6) — Outsider ; 14 ALHUNTER (cote indisponible) (NP) — Outsider ; 2 FALCON JET (cote 10.0) — Outsider ; 1 SILAWAY (cote 7.4) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 1 SILAWAY (cote 7.4) | 6 TIGRESS DU BERLAIS (cote 4.3) | 8 PAREIL PAREIL (cote 6.7) | 2 FALCON JET (cote 10.0) | 9 MOUSSE DU CHEF (cote 10.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,19 +21,19 @@ Collecte : 2026-11-21T08:02:48.593799+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 8 PAREIL PAREIL (cote 8.3) | 5 |
-| 1 SILAWAY (cote 6.8) | 4 |
+| 8 PAREIL PAREIL (cote 6.7) | 5 |
+| 1 SILAWAY (cote 7.4) | 4 |
+| 6 TIGRESS DU BERLAIS (cote 4.3) | 3 |
 | 2 FALCON JET (cote 10.0) | 3 |
-| 9 MOUSSE DU CHEF (cote 10.0) | 3 |
-| 6 TIGRESS DU BERLAIS (cote 3.6) | 2 |
+| 10 EH MAN (cote 9.6) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
 | Variante | Sélection | Simulation |
 |---|---|---|
-| Statistique | 8 – 1 – 2 – 9 – 6 | 2 € |
-| Cotes | 6 – 1 – 8 – 2 – 9 | 2 € |
-| Bases + outsiders | 8 – 1 – 2 | INCOMPLET : pas de simulation |
+| Statistique | 8 – 1 – 6 – 2 – 10 | 2 € |
+| Cotes | 6 – 8 – 1 – 10 – 2 | 2 € |
+| Bases + outsiders | 8 – 1 – 6 | INCOMPLET : pas de simulation |
 
 ### Cumul des trois premiers choix
 
