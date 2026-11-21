@@ -83,7 +83,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 6,
+          "settled_at": "2026-11-21T12:39:04.014064+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "c9e2ef2b725f7eb4d59d2f7b732a430c48a5fdbd83ff0fa5a660da77238a6121",
+            "file": "preuves/c9e2ef2b725f7eb4d59d2f7b732a430c48a5fdbd83ff0fa5a660da77238a6121.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C1/participants",
+            "sha256": "781e1000a50f4c41792cf5c4018842536dc3f918d932cd267fcc1a8f2b32ee1a",
+            "file": "preuves/781e1000a50f4c41792cf5c4018842536dc3f918d932cd267fcc1a8f2b32ee1a.gz"
+          }
         }
       },
       "groups": {},
@@ -198,8 +212,39 @@
         }
       },
       "final_check_completed_at": "2026-11-21T12:12:47.822424+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "LOKI DE LA BRUNIE AA",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "ISISDELAGARDE AA",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "STINGO AA",
+          "rank": 3
+        },
+        {
+          "number": 2,
+          "name": "FENOMENE D'OC AA",
+          "rank": 4
+        },
+        {
+          "number": 3,
+          "name": "CHUCK BERRY AA",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C1/participants",
+        "sha256": "781e1000a50f4c41792cf5c4018842536dc3f918d932cd267fcc1a8f2b32ee1a",
+        "file": "preuves/781e1000a50f4c41792cf5c4018842536dc3f918d932cd267fcc1a8f2b32ee1a.gz"
+      }
     },
     {
       "date": "2026-11-21",
@@ -872,7 +917,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-21T12:28:54.340182+01:00",
+      "final_check_started_at": "2026-11-21T12:39:03.157196+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
@@ -896,9 +941,9 @@
         }
       },
       "groups_frozen_at": "2026-11-21T11:50:17.690365+01:00",
-      "final_check_completed_at": "2026-11-21T12:28:55.030114+01:00",
+      "final_check_completed_at": "2026-11-21T12:39:03.548672+01:00",
       "last_reservation_check": {
-        "at": "2026-11-21T12:29:21.092055+01:00",
+        "at": "2026-11-21T12:39:04.045140+01:00",
         "stop": "ATTENTE_RESULTAT"
       }
     },
@@ -1461,7 +1506,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-21T12:28:55.035319+01:00",
+      "final_check_started_at": "2026-11-21T12:39:03.553124+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-21/r1c3-auteuil-prix-bernard-de-dufau",
@@ -1484,7 +1529,7 @@
           "file": "preuves/ad9fc6cd3901d7f6694de7ac8b4449774bc38f5672db38a0e83ff8c36166488b.gz"
         }
       },
-      "final_check_completed_at": "2026-11-21T12:29:19.762733+01:00"
+      "final_check_completed_at": "2026-11-21T12:39:03.768900+01:00"
     },
     {
       "date": "2026-11-21",
