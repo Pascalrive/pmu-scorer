@@ -50,6 +50,38 @@
             "sha256": "44b56f10697c9147e64b92b062dc5d7cb8b3deec12e71231ec26b463d80a57f2",
             "file": "preuves/44b56f10697c9147e64b92b062dc5d7cb8b3deec12e71231ec26b463d80a57f2.gz"
           }
+        },
+        {
+          "race_id": "R1C4",
+          "departure": "2026-11-21T13:58:00+01:00",
+          "number": 1,
+          "name": "LOOPING DU BERLAIS",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-21T13:31:49.745460+01:00",
+          "source_captured_at": "2026-11-21T12:59:15.783978+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795264299000,
+            "favoris": false,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "b3b8fe4c34bc4ec17a68a4b712bae2d6daa27791f575ab631b7c96146c2d4567",
+          "telegram_receipts": [
+            {
+              "message_id": 7872,
+              "date": 1795264310
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -1631,7 +1663,9 @@
           "file": "preuves/ad9fc6cd3901d7f6694de7ac8b4449774bc38f5672db38a0e83ff8c36166488b.gz"
         }
       },
-      "final_check_completed_at": "2026-11-21T13:18:55.104301+01:00"
+      "final_check_completed_at": "2026-11-21T13:18:55.104301+01:00",
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-21",
@@ -2290,9 +2324,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-21T13:32:15.210573+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "groupe_canalturf+turfin+zeturf": {
+              "number": 1,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "LOOPING DU BERLAIS",
+              "source_url": "https://turfin.fr/course/2026-11-21/r1c4-auteuil-prix-de-bagatelle",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Bagatelle",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-21/r1c4-auteuil-prix-de-bagatelle",
+                "sha256": "70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5",
+                "file": "preuves/70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
+                "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+                "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
+              },
+              "captured_at": "2026-11-21T13:31:52.231851+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264299000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "LOOPING DU BERLAIS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE BAGATELLE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
+                "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+                "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
+                "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+                "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
+              },
+              "captured_at": "2026-11-21T13:31:54.094913+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264299000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "LOOPING DU BERLAIS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE BAGATELLE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
+                "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+                "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
+                "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+                "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
+              },
+              "captured_at": "2026-11-21T13:31:54.190783+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264299000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 4,
+              "name": "GRECIAN LIGHTNING",
+              "source_url": "https://www.geny.com/course/1699240-2026-11-21-auteuil-prix-de-bagatelle/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Bagatelle",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699240-2026-11-21-auteuil-prix-de-bagatelle/partants-pronostics",
+                "sha256": "5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87",
+                "file": "preuves/5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
+                "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+                "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
+              },
+              "captured_at": "2026-11-21T13:32:15.210501+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264299000,
+                "favoris": true,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-21T13:18:55.108809+01:00",
+      "final_check_started_at": "2026-11-21T13:31:49.009843+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-21/r1c4-auteuil-prix-de-bagatelle",
@@ -2316,7 +2513,7 @@
         }
       },
       "groups_frozen_at": "2026-11-21T12:59:38.350968+01:00",
-      "final_check_completed_at": "2026-11-21T13:18:55.234994+01:00"
+      "final_check_completed_at": "2026-11-21T13:31:49.368440+01:00"
     },
     {
       "date": "2026-11-21",
@@ -2781,6 +2978,159 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 10.25,
                 "dateRapport": 1795259758000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-21T13:32:34.754442+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 6,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny": {
+              "number": 6,
+              "sites": [
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 4,
+              "name": "MISTRAL D ANGE",
+              "source_url": "https://turfin.fr/course/2026-11-21/r1c5-auteuil-prix-sambristan",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Sambristan",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-21/r1c5-auteuil-prix-sambristan",
+                "sha256": "af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd",
+                "file": "preuves/af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
+                "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+                "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
+              },
+              "captured_at": "2026-11-21T13:32:16.890201+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.08,
+                "dateRapport": 1795264258000,
+                "favoris": false,
+                "numPmu1": 4,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 6,
+              "name": "MALFOY DE LABRUNIE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX SAMBRISTAN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
+                "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+                "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
+                "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+                "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
+              },
+              "captured_at": "2026-11-21T13:32:17.578093+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.22,
+                "dateRapport": 1795264258000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "MULOUGHBOY",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX SAMBRISTAN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
+                "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+                "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
+                "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+                "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
+              },
+              "captured_at": "2026-11-21T13:32:17.666840+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 5.88,
+                "dateRapport": 1795264258000,
+                "favoris": true,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 6,
+              "name": "MALFOY DE LABRUNIE",
+              "source_url": "https://www.geny.com/course/1699241-2026-11-21-auteuil-prix-sambristan/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Sambristan",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699241-2026-11-21-auteuil-prix-sambristan/partants-pronostics",
+                "sha256": "dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd",
+                "file": "preuves/dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
+                "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+                "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
+              },
+              "captured_at": "2026-11-21T13:32:34.754374+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.22,
+                "dateRapport": 1795264258000,
                 "favoris": false,
                 "numPmu1": 6,
                 "grossePrise": false
@@ -3283,6 +3633,169 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 1.49,
                 "dateRapport": 1795259750000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-21T13:32:54.709159+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 1,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 1,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+zeturf": {
+              "number": 1,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "FALCON JET",
+              "source_url": "https://turfin.fr/course/2026-11-21/r1c6-auteuil-prix-marc-antony",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Marc Antony",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-21/r1c6-auteuil-prix-marc-antony",
+                "sha256": "3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571",
+                "file": "preuves/3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
+                "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+                "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:36.167247+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264250000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "SILAWAY",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX MARC ANTONY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
+                "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+                "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
+                "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+                "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:36.916483+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.35,
+                "dateRapport": 1795264250000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "SILAWAY",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX MARC ANTONY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
+                "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+                "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
+                "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+                "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:37.012132+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.35,
+                "dateRapport": 1795264250000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "SILAWAY",
+              "source_url": "https://www.geny.com/course/1699242-2026-11-21-auteuil-prix-marc-antony/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Marc Antony",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699242-2026-11-21-auteuil-prix-marc-antony/partants-pronostics",
+                "sha256": "5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f",
+                "file": "preuves/5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
+                "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+                "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:54.709067+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.35,
+                "dateRapport": 1795264250000,
                 "favoris": false,
                 "numPmu1": 1,
                 "grossePrise": false
@@ -3800,6 +4313,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-21T13:33:14.982441+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "MAGIE DU CHENET",
+              "source_url": "https://turfin.fr/course/2026-11-21/r1c7-auteuil-prix-tournay",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Tournay",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-21/r1c7-auteuil-prix-tournay",
+                "sha256": "4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473",
+                "file": "preuves/4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
+                "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+                "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:56.442281+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264217000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "MAGIE DU CHENET",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX TOURNAY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
+                "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+                "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
+                "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+                "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:57.155422+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264217000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 3,
+              "name": "MAGIE DU CHENET",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX TOURNAY",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
+                "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+                "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
+                "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+                "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
+              },
+              "captured_at": "2026-11-21T13:32:57.245094+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264217000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "MAGIE DU CHENET",
+              "source_url": "https://www.geny.com/course/1699243-2026-11-21-auteuil-prix-tournay/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Tournay",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699243-2026-11-21-auteuil-prix-tournay/partants-pronostics",
+                "sha256": "2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8",
+                "file": "preuves/2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
+                "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+                "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
+              },
+              "captured_at": "2026-11-21T13:33:14.982388+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795264217000,
+                "favoris": true,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -4227,6 +4906,144 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-21T13:33:34.715584+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "QUEEN SISTER",
+              "source_url": "https://turfin.fr/course/2026-11-21/r1c8-auteuil-prix-pierre-biancone",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Pierre Biancone",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-21/r1c8-auteuil-prix-pierre-biancone",
+                "sha256": "4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c",
+                "file": "preuves/4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
+                "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+                "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
+              },
+              "captured_at": "2026-11-21T13:33:16.687610+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.56,
+                "dateRapport": 1795264221000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 3,
+              "name": "LOVELY JAP",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PIERRE BIANCONE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
+                "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+                "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
+                "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+                "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
+              },
+              "captured_at": "2026-11-21T13:33:17.395043+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -4.46,
+                "dateRapport": 1795264221000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 1,
+              "name": "QUEEN SISTER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PIERRE BIANCONE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
+                "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+                "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
+                "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+                "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
+              },
+              "captured_at": "2026-11-21T13:33:17.485851+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.56,
+                "dateRapport": 1795264221000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "LOVELY JAP",
+              "source_url": "https://www.geny.com/course/1699244-2026-11-21-auteuil-prix-pierre-biancone/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Pierre Biancone",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699244-2026-11-21-auteuil-prix-pierre-biancone/partants-pronostics",
+                "sha256": "df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b",
+                "file": "preuves/df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
+                "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+                "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
+              },
+              "captured_at": "2026-11-21T13:33:34.715520+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -4.46,
+                "dateRapport": 1795264221000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -4234,343 +5051,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-21T12:22:45.995030+01:00",
+    "captured_at": "2026-11-21T13:33:34.715682+01:00",
     "races": [
-      {
-        "date": "2026-11-21",
-        "id": "R1C2",
-        "c": 2,
-        "title": "PRIX JEAN SENS",
-        "departure": "2026-11-21T12:48:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 1,
-            "name": "LA REINE DE CHOEUR",
-            "source_url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Jean Sens",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
-              "sha256": "13bb24c639623cec419468bee28ad68e0fbe306df1133955b88d5610ea4c9298",
-              "file": "preuves/13bb24c639623cec419468bee28ad68e0fbe306df1133955b88d5610ea4c9298.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
-              "sha256": "fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471",
-              "file": "preuves/fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471.gz"
-            },
-            "captured_at": "2026-11-21T12:20:23.099691+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795260009000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 1,
-            "name": "LA REINE DE CHOEUR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX JEAN SENS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-              "sha256": "c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274",
-              "file": "preuves/c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
-              "sha256": "fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471",
-              "file": "preuves/fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471.gz"
-            },
-            "captured_at": "2026-11-21T12:20:25.464652+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795260009000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 1,
-            "name": "LA REINE DE CHOEUR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX JEAN SENS",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-              "sha256": "c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274",
-              "file": "preuves/c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
-              "sha256": "fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471",
-              "file": "preuves/fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471.gz"
-            },
-            "captured_at": "2026-11-21T12:20:25.555837+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795260009000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 1,
-            "name": "LA REINE DE CHOEUR",
-            "source_url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Jean Sens",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
-              "sha256": "b2408c7410867f76cf358c603459bfd6c8d8148ac05c0d11bb0585d70cfab2dc",
-              "file": "preuves/b2408c7410867f76cf358c603459bfd6c8d8148ac05c0d11bb0585d70cfab2dc.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
-              "sha256": "fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471",
-              "file": "preuves/fe8a2c981057c82e17841ce7d866137cc09d174c9471d69d9dc892ad00507471.gz"
-            },
-            "captured_at": "2026-11-21T12:20:46.158882+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795260009000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-21T12:20:18.964382+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
-            "sha256": "13bb24c639623cec419468bee28ad68e0fbe306df1133955b88d5610ea4c9298",
-            "file": "preuves/13bb24c639623cec419468bee28ad68e0fbe306df1133955b88d5610ea4c9298.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-            "sha256": "c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274",
-            "file": "preuves/c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
-            "sha256": "c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274",
-            "file": "preuves/c72c1dd03bbe1c55565d7bcff733f328e678422a0f548f0f98c37a1c5b969274.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
-            "sha256": "b2408c7410867f76cf358c603459bfd6c8d8148ac05c0d11bb0585d70cfab2dc",
-            "file": "preuves/b2408c7410867f76cf358c603459bfd6c8d8148ac05c0d11bb0585d70cfab2dc.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-21T11:50:17.690365+01:00",
-        "final_check_completed_at": "2026-11-21T12:20:19.687767+01:00"
-      },
-      {
-        "date": "2026-11-21",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX BERNARD DE DUFAU",
-        "departure": "2026-11-21T13:23:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 6,
-            "name": "BELARIA",
-            "source_url": "https://turfin.fr/course/2026-11-21/r1c3-auteuil-prix-bernard-de-dufau",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Bernard De Dufau",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-21/r1c3-auteuil-prix-bernard-de-dufau",
-              "sha256": "396f7a29fb8f5992fed3a1e7cf0f4019d4471021223552b26f35491a61250ce5",
-              "file": "preuves/396f7a29fb8f5992fed3a1e7cf0f4019d4471021223552b26f35491a61250ce5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C3/participants",
-              "sha256": "b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8",
-              "file": "preuves/b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8.gz"
-            },
-            "captured_at": "2026-11-21T12:20:47.956816+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1795259706000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 6,
-            "name": "BELARIA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX BERNARD DE DUFAU",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-              "sha256": "36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd",
-              "file": "preuves/36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C3/participants",
-              "sha256": "b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8",
-              "file": "preuves/b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8.gz"
-            },
-            "captured_at": "2026-11-21T12:20:48.675837+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.55,
-              "dateRapport": 1795259706000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "HIM MALAYA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX BERNARD DE DUFAU",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-              "sha256": "36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd",
-              "file": "preuves/36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C3/participants",
-              "sha256": "b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8",
-              "file": "preuves/b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8.gz"
-            },
-            "captured_at": "2026-11-21T12:20:48.763105+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259706000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "HIM MALAYA",
-            "source_url": "https://www.geny.com/course/1699239-2026-11-21-auteuil-prix-bernard-de-dufau/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Bernard de Dufau",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699239-2026-11-21-auteuil-prix-bernard-de-dufau/partants-pronostics",
-              "sha256": "9d3dd341be3c39b4f55c9130ce8ed7ed5a3d552aca0f46e6065385156aeb32a9",
-              "file": "preuves/9d3dd341be3c39b4f55c9130ce8ed7ed5a3d552aca0f46e6065385156aeb32a9.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C3/participants",
-              "sha256": "b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8",
-              "file": "preuves/b41e32c36b1802c86757c4551789a93ec6446bd76731b47ca7057768183df8d8.gz"
-            },
-            "captured_at": "2026-11-21T12:21:06.555403+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259706000,
-              "favoris": true,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-21/r1c3-auteuil-prix-bernard-de-dufau",
-            "sha256": "396f7a29fb8f5992fed3a1e7cf0f4019d4471021223552b26f35491a61250ce5",
-            "file": "preuves/396f7a29fb8f5992fed3a1e7cf0f4019d4471021223552b26f35491a61250ce5.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-            "sha256": "36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd",
-            "file": "preuves/36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424243_prix-bernard-de-dufau.html",
-            "sha256": "36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd",
-            "file": "preuves/36799d14624ac0c20654b9e3d457de79425c09bb337b7bdbbd3d27a1189bc6cd.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699239-2026-11-21-auteuil-prix-bernard-de-dufau/partants-pronostics",
-            "sha256": "9d3dd341be3c39b4f55c9130ce8ed7ed5a3d552aca0f46e6065385156aeb32a9",
-            "file": "preuves/9d3dd341be3c39b4f55c9130ce8ed7ed5a3d552aca0f46e6065385156aeb32a9.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-21",
         "id": "R1C4",
@@ -4589,25 +5071,25 @@
             "source_title": "Prix De Bagatelle",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-21/r1c4-auteuil-prix-de-bagatelle",
-              "sha256": "6d608889b4a5590d85a4c17ffde73fe9602b71e5ed72ba903b079c6f49d4992c",
-              "file": "preuves/6d608889b4a5590d85a4c17ffde73fe9602b71e5ed72ba903b079c6f49d4992c.gz"
+              "sha256": "70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5",
+              "file": "preuves/70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
-              "sha256": "1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9",
-              "file": "preuves/1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9.gz"
+              "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+              "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
             },
-            "captured_at": "2026-11-21T12:21:08.133672+01:00",
+            "captured_at": "2026-11-21T13:31:52.231851+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.81,
-              "dateRapport": 1795259743000,
-              "favoris": true,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795264299000,
+              "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -4622,25 +5104,25 @@
             "source_title": "Le pronostic du PRIX DE BAGATELLE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
-              "sha256": "f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e",
-              "file": "preuves/f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e.gz"
+              "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+              "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
-              "sha256": "1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9",
-              "file": "preuves/1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9.gz"
+              "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+              "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
             },
-            "captured_at": "2026-11-21T12:21:08.857635+01:00",
+            "captured_at": "2026-11-21T13:31:54.094913+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.81,
-              "dateRapport": 1795259743000,
-              "favoris": true,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795264299000,
+              "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -4655,25 +5137,25 @@
             "source_title": "Le pronostic du PRIX DE BAGATELLE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
-              "sha256": "f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e",
-              "file": "preuves/f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e.gz"
+              "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+              "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
-              "sha256": "1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9",
-              "file": "preuves/1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9.gz"
+              "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+              "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
             },
-            "captured_at": "2026-11-21T12:21:08.948026+01:00",
+            "captured_at": "2026-11-21T13:31:54.190783+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.81,
-              "dateRapport": 1795259743000,
-              "favoris": true,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795264299000,
+              "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
             }
@@ -4688,24 +5170,24 @@
             "source_title": "Prix de Bagatelle",
             "evidence": {
               "url": "https://www.geny.com/course/1699240-2026-11-21-auteuil-prix-de-bagatelle/partants-pronostics",
-              "sha256": "2bd623435490eea9504c2da09e83e5c255a537d026709c067f1cace933926e5e",
-              "file": "preuves/2bd623435490eea9504c2da09e83e5c255a537d026709c067f1cace933926e5e.gz"
+              "sha256": "5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87",
+              "file": "preuves/5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C4/participants",
-              "sha256": "1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9",
-              "file": "preuves/1667568e5e30fade9df75906da0b5cc5489d187fd46177212f772ea9bf0f3db9.gz"
+              "sha256": "2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93",
+              "file": "preuves/2d8819826e1386ae17dcbc91985c80cf30f5d585a1490af5cb7c69c4be6aea93.gz"
             },
-            "captured_at": "2026-11-21T12:21:26.191816+01:00",
+            "captured_at": "2026-11-21T13:32:15.210501+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 4.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -9.61,
-              "dateRapport": 1795259743000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795264299000,
               "favoris": true,
               "numPmu1": 4,
               "grossePrise": false
@@ -4714,28 +5196,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-21T13:31:49.009843+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-21/r1c4-auteuil-prix-de-bagatelle",
-            "sha256": "6d608889b4a5590d85a4c17ffde73fe9602b71e5ed72ba903b079c6f49d4992c",
-            "file": "preuves/6d608889b4a5590d85a4c17ffde73fe9602b71e5ed72ba903b079c6f49d4992c.gz"
+            "sha256": "70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5",
+            "file": "preuves/70b284784823a951641b64cca676018e3c46d1a60f86d9fe9ba7ae92b97b0ae5.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
-            "sha256": "f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e",
-            "file": "preuves/f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e.gz"
+            "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+            "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424244_prix-de-bagatelle.html",
-            "sha256": "f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e",
-            "file": "preuves/f73f2daa129b8e28207e8a41c3b63b8546f40b99b19d7ba3601b320db1b06b5e.gz"
+            "sha256": "aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90",
+            "file": "preuves/aa8b7efc7e747f7b6cd37a48e31121a15aa666877d17bc2ff48a850b98ef7e90.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699240-2026-11-21-auteuil-prix-de-bagatelle/partants-pronostics",
-            "sha256": "2bd623435490eea9504c2da09e83e5c255a537d026709c067f1cace933926e5e",
-            "file": "preuves/2bd623435490eea9504c2da09e83e5c255a537d026709c067f1cace933926e5e.gz"
+            "sha256": "5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87",
+            "file": "preuves/5f8157f4f484bf9747dbef44e808a407fbb29662e92f6e02017f87d94761fe87.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-21T12:59:38.350968+01:00",
+        "final_check_completed_at": "2026-11-21T13:31:49.368440+01:00"
       },
       {
         "date": "2026-11-21",
@@ -4755,24 +5240,24 @@
             "source_title": "Prix Sambristan",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-21/r1c5-auteuil-prix-sambristan",
-              "sha256": "2d6fdd9825f6325d56f33f9145a0ac74162b5a090f252d7b99d84c880f0f5036",
-              "file": "preuves/2d6fdd9825f6325d56f33f9145a0ac74162b5a090f252d7b99d84c880f0f5036.gz"
+              "sha256": "af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd",
+              "file": "preuves/af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
-              "sha256": "d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2",
-              "file": "preuves/d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2.gz"
+              "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+              "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
             },
-            "captured_at": "2026-11-21T12:21:28.048324+01:00",
+            "captured_at": "2026-11-21T13:32:16.890201+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.8,
+              "rapport": 9.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.52,
-              "dateRapport": 1795259758000,
+              "nombreIndicateurTendance": -2.08,
+              "dateRapport": 1795264258000,
               "favoris": false,
               "numPmu1": 4,
               "grossePrise": false
@@ -4788,24 +5273,24 @@
             "source_title": "Le pronostic du PRIX SAMBRISTAN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
-              "sha256": "0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475",
-              "file": "preuves/0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475.gz"
+              "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+              "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
-              "sha256": "d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2",
-              "file": "preuves/d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2.gz"
+              "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+              "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
             },
-            "captured_at": "2026-11-21T12:21:28.776725+01:00",
+            "captured_at": "2026-11-21T13:32:17.578093+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 10.25,
-              "dateRapport": 1795259758000,
+              "nombreIndicateurTendance": 2.22,
+              "dateRapport": 1795264258000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -4821,24 +5306,24 @@
             "source_title": "Le pronostic du PRIX SAMBRISTAN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
-              "sha256": "0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475",
-              "file": "preuves/0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475.gz"
+              "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+              "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
-              "sha256": "d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2",
-              "file": "preuves/d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2.gz"
+              "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+              "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
             },
-            "captured_at": "2026-11-21T12:21:28.865093+01:00",
+            "captured_at": "2026-11-21T13:32:17.666840+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 11.11,
-              "dateRapport": 1795259758000,
+              "nombreIndicateurTendance": 5.88,
+              "dateRapport": 1795264258000,
               "favoris": true,
               "numPmu1": 1,
               "grossePrise": false
@@ -4854,24 +5339,24 @@
             "source_title": "Prix Sambristan",
             "evidence": {
               "url": "https://www.geny.com/course/1699241-2026-11-21-auteuil-prix-sambristan/partants-pronostics",
-              "sha256": "422479db111406bb64dc51c0072bf7b2b8543b634f025fa2a9c1d14cf0288d65",
-              "file": "preuves/422479db111406bb64dc51c0072bf7b2b8543b634f025fa2a9c1d14cf0288d65.gz"
+              "sha256": "dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd",
+              "file": "preuves/dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C5/participants",
-              "sha256": "d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2",
-              "file": "preuves/d91d39312bfd75a1393586622f675c895feeab4e3b4631d0fca80a29c18a79d2.gz"
+              "sha256": "6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968",
+              "file": "preuves/6cd79c4d5dbb5f447568d4e1952740aa15006bd2cd39c1db9c144c95233cb968.gz"
             },
-            "captured_at": "2026-11-21T12:21:46.264046+01:00",
+            "captured_at": "2026-11-21T13:32:34.754374+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 10.25,
-              "dateRapport": 1795259758000,
+              "nombreIndicateurTendance": 2.22,
+              "dateRapport": 1795264258000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -4883,23 +5368,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-21/r1c5-auteuil-prix-sambristan",
-            "sha256": "2d6fdd9825f6325d56f33f9145a0ac74162b5a090f252d7b99d84c880f0f5036",
-            "file": "preuves/2d6fdd9825f6325d56f33f9145a0ac74162b5a090f252d7b99d84c880f0f5036.gz"
+            "sha256": "af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd",
+            "file": "preuves/af810d03e00c787a4cdd2cfd061f17184bf5378a493abfce6f3ff064c24030dd.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
-            "sha256": "0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475",
-            "file": "preuves/0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475.gz"
+            "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+            "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424245_prix-sambristan.html",
-            "sha256": "0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475",
-            "file": "preuves/0712f574cfd93c7ce2878939f6e9dd00ea784fe867135505a747fa5536773475.gz"
+            "sha256": "7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf",
+            "file": "preuves/7720c5c16789aba4b46fcf2549c454c6ee1885054526cadc9608cea2f952fabf.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699241-2026-11-21-auteuil-prix-sambristan/partants-pronostics",
-            "sha256": "422479db111406bb64dc51c0072bf7b2b8543b634f025fa2a9c1d14cf0288d65",
-            "file": "preuves/422479db111406bb64dc51c0072bf7b2b8543b634f025fa2a9c1d14cf0288d65.gz"
+            "sha256": "dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd",
+            "file": "preuves/dd9ac033ba0bf0ef7043f7a525702e70d3d1063ad49300b552e9d0497d5c52cd.gz"
           }
         }
       },
@@ -4921,15 +5406,15 @@
             "source_title": "Prix Marc Antony",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-21/r1c6-auteuil-prix-marc-antony",
-              "sha256": "4bfc4eb01ddf67b88d79e765988b863834d35536b413e3321d9935e0a739d574",
-              "file": "preuves/4bfc4eb01ddf67b88d79e765988b863834d35536b413e3321d9935e0a739d574.gz"
+              "sha256": "3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571",
+              "file": "preuves/3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
-              "sha256": "a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7",
-              "file": "preuves/a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7.gz"
+              "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+              "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
             },
-            "captured_at": "2026-11-21T12:21:47.692507+01:00",
+            "captured_at": "2026-11-21T13:32:36.167247+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -4937,8 +5422,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.97,
-              "dateRapport": 1795259750000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795264250000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -4954,24 +5439,24 @@
             "source_title": "Le pronostic du Quinté PRIX MARC ANTONY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
-              "sha256": "2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993",
-              "file": "preuves/2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993.gz"
+              "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+              "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
-              "sha256": "a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7",
-              "file": "preuves/a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7.gz"
+              "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+              "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
             },
-            "captured_at": "2026-11-21T12:21:48.441339+01:00",
+            "captured_at": "2026-11-21T13:32:36.916483+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.49,
-              "dateRapport": 1795259750000,
+              "nombreIndicateurTendance": 1.35,
+              "dateRapport": 1795264250000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -4987,24 +5472,24 @@
             "source_title": "Le pronostic du Quinté PRIX MARC ANTONY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
-              "sha256": "2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993",
-              "file": "preuves/2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993.gz"
+              "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+              "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
-              "sha256": "a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7",
-              "file": "preuves/a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7.gz"
+              "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+              "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
             },
-            "captured_at": "2026-11-21T12:21:48.536988+01:00",
+            "captured_at": "2026-11-21T13:32:37.012132+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.49,
-              "dateRapport": 1795259750000,
+              "nombreIndicateurTendance": 1.35,
+              "dateRapport": 1795264250000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -5020,24 +5505,24 @@
             "source_title": "Prix Marc Antony",
             "evidence": {
               "url": "https://www.geny.com/course/1699242-2026-11-21-auteuil-prix-marc-antony/partants-pronostics",
-              "sha256": "0fcb7a359d5592a0b77f062a000c3d6b22eca23f1d1e634e8b0b8673a200ae34",
-              "file": "preuves/0fcb7a359d5592a0b77f062a000c3d6b22eca23f1d1e634e8b0b8673a200ae34.gz"
+              "sha256": "5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f",
+              "file": "preuves/5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C6/participants",
-              "sha256": "a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7",
-              "file": "preuves/a7522669530257d9c897d456508a878a8d0b915e8cee7a16e5d0af5b6d6496f7.gz"
+              "sha256": "c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c",
+              "file": "preuves/c9e3b79504b544af51ee0eb6762b28c599381c7fa1b45836b944b39da963177c.gz"
             },
-            "captured_at": "2026-11-21T12:22:06.108217+01:00",
+            "captured_at": "2026-11-21T13:32:54.709067+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.8,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.49,
-              "dateRapport": 1795259750000,
+              "nombreIndicateurTendance": 1.35,
+              "dateRapport": 1795264250000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -5049,23 +5534,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-21/r1c6-auteuil-prix-marc-antony",
-            "sha256": "4bfc4eb01ddf67b88d79e765988b863834d35536b413e3321d9935e0a739d574",
-            "file": "preuves/4bfc4eb01ddf67b88d79e765988b863834d35536b413e3321d9935e0a739d574.gz"
+            "sha256": "3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571",
+            "file": "preuves/3a690206aa115bd0c15c23561312e1f18738260a072f8ab7697a7eaf031ce571.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
-            "sha256": "2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993",
-            "file": "preuves/2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993.gz"
+            "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+            "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424246_prix-marc-antony.html",
-            "sha256": "2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993",
-            "file": "preuves/2d2e8097e86a86c30d6ca7af2b5c4a22716ea6d28fea8d6a88fa4c7af08ed993.gz"
+            "sha256": "8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1",
+            "file": "preuves/8e2e3fdc12eb074e9906851b2674d2ae8a3374dfbc7d974872bed1fe063504f1.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699242-2026-11-21-auteuil-prix-marc-antony/partants-pronostics",
-            "sha256": "0fcb7a359d5592a0b77f062a000c3d6b22eca23f1d1e634e8b0b8673a200ae34",
-            "file": "preuves/0fcb7a359d5592a0b77f062a000c3d6b22eca23f1d1e634e8b0b8673a200ae34.gz"
+            "sha256": "5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f",
+            "file": "preuves/5ac243961a63eafdc10ddf5a3b6cd266081c68d0ebb1e9166ed84e9285427f5f.gz"
           }
         }
       },
@@ -5087,15 +5572,15 @@
             "source_title": "Prix Tournay",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-21/r1c7-auteuil-prix-tournay",
-              "sha256": "7a95e7998dd2ff48fff02e63b29a0fce0fdb317fbf648b8a596de8816d7c93ae",
-              "file": "preuves/7a95e7998dd2ff48fff02e63b29a0fce0fdb317fbf648b8a596de8816d7c93ae.gz"
+              "sha256": "4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473",
+              "file": "preuves/4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
-              "sha256": "b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610",
-              "file": "preuves/b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610.gz"
+              "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+              "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
             },
-            "captured_at": "2026-11-21T12:22:07.479819+01:00",
+            "captured_at": "2026-11-21T13:32:56.442281+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5104,7 +5589,7 @@
               "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259717000,
+              "dateRapport": 1795264217000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -5120,15 +5605,15 @@
             "source_title": "Le pronostic du PRIX TOURNAY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
-              "sha256": "aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737",
-              "file": "preuves/aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737.gz"
+              "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+              "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
-              "sha256": "b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610",
-              "file": "preuves/b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610.gz"
+              "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+              "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
             },
-            "captured_at": "2026-11-21T12:22:08.188379+01:00",
+            "captured_at": "2026-11-21T13:32:57.155422+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5137,7 +5622,7 @@
               "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259717000,
+              "dateRapport": 1795264217000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -5153,15 +5638,15 @@
             "source_title": "Le pronostic du PRIX TOURNAY",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
-              "sha256": "aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737",
-              "file": "preuves/aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737.gz"
+              "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+              "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
-              "sha256": "b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610",
-              "file": "preuves/b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610.gz"
+              "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+              "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
             },
-            "captured_at": "2026-11-21T12:22:08.279324+01:00",
+            "captured_at": "2026-11-21T13:32:57.245094+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5170,7 +5655,7 @@
               "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259717000,
+              "dateRapport": 1795264217000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -5186,15 +5671,15 @@
             "source_title": "Prix Tournay",
             "evidence": {
               "url": "https://www.geny.com/course/1699243-2026-11-21-auteuil-prix-tournay/partants-pronostics",
-              "sha256": "2f8fbc8ca6807335b48c8ab91826f8196c0ab80b5ac8515ee51c68b1301ec4f5",
-              "file": "preuves/2f8fbc8ca6807335b48c8ab91826f8196c0ab80b5ac8515ee51c68b1301ec4f5.gz"
+              "sha256": "2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8",
+              "file": "preuves/2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C7/participants",
-              "sha256": "b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610",
-              "file": "preuves/b2cb8bf2dc6103025861fc82277ee51bd6750920b4d99ac6450e4a3bd0f45610.gz"
+              "sha256": "405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c",
+              "file": "preuves/405157f558e34facd3868811c3cae2ac57c7f57aad7b48f58217788e1532bf8c.gz"
             },
-            "captured_at": "2026-11-21T12:22:26.060492+01:00",
+            "captured_at": "2026-11-21T13:33:14.982388+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5203,7 +5688,7 @@
               "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795259717000,
+              "dateRapport": 1795264217000,
               "favoris": true,
               "numPmu1": 3,
               "grossePrise": false
@@ -5215,23 +5700,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-21/r1c7-auteuil-prix-tournay",
-            "sha256": "7a95e7998dd2ff48fff02e63b29a0fce0fdb317fbf648b8a596de8816d7c93ae",
-            "file": "preuves/7a95e7998dd2ff48fff02e63b29a0fce0fdb317fbf648b8a596de8816d7c93ae.gz"
+            "sha256": "4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473",
+            "file": "preuves/4bd031d0b77ef79b0025f23341978ff7f69255fee418ae6fd11b945099a12473.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
-            "sha256": "aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737",
-            "file": "preuves/aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737.gz"
+            "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+            "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424247_prix-tournay.html",
-            "sha256": "aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737",
-            "file": "preuves/aa3af88cde97bc86e217b13c32a7aeeb562c0be22e56c67749a700ac1250f737.gz"
+            "sha256": "c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9",
+            "file": "preuves/c6816616005671bd31031d94a62c8f301e1bb5c750075f8668b55dba77d9b2e9.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699243-2026-11-21-auteuil-prix-tournay/partants-pronostics",
-            "sha256": "2f8fbc8ca6807335b48c8ab91826f8196c0ab80b5ac8515ee51c68b1301ec4f5",
-            "file": "preuves/2f8fbc8ca6807335b48c8ab91826f8196c0ab80b5ac8515ee51c68b1301ec4f5.gz"
+            "sha256": "2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8",
+            "file": "preuves/2daa580fa6ad9432d67a36077f0fcf0c1dda901f216a2d29accda9d135bb1fe8.gz"
           }
         }
       },
@@ -5253,24 +5738,24 @@
             "source_title": "Prix Pierre Biancone",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-21/r1c8-auteuil-prix-pierre-biancone",
-              "sha256": "85b013502dfdffa3f321fc09a4d9ae867abf31a62801436a0cc0b64e77693057",
-              "file": "preuves/85b013502dfdffa3f321fc09a4d9ae867abf31a62801436a0cc0b64e77693057.gz"
+              "sha256": "4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c",
+              "file": "preuves/4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
-              "sha256": "b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3",
-              "file": "preuves/b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3.gz"
+              "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+              "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
             },
-            "captured_at": "2026-11-21T12:22:28.163504+01:00",
+            "captured_at": "2026-11-21T13:33:16.687610+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.15,
-              "dateRapport": 1795259721000,
+              "nombreIndicateurTendance": 1.56,
+              "dateRapport": 1795264221000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -5286,15 +5771,15 @@
             "source_title": "Le pronostic du PRIX PIERRE BIANCONE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
-              "sha256": "392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28",
-              "file": "preuves/392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28.gz"
+              "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+              "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
-              "sha256": "b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3",
-              "file": "preuves/b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3.gz"
+              "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+              "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
             },
-            "captured_at": "2026-11-21T12:22:28.898292+01:00",
+            "captured_at": "2026-11-21T13:33:17.395043+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5302,8 +5787,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.25,
-              "dateRapport": 1795259721000,
+              "nombreIndicateurTendance": -4.46,
+              "dateRapport": 1795264221000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -5319,24 +5804,24 @@
             "source_title": "Le pronostic du PRIX PIERRE BIANCONE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
-              "sha256": "392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28",
-              "file": "preuves/392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28.gz"
+              "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+              "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
-              "sha256": "b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3",
-              "file": "preuves/b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3.gz"
+              "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+              "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
             },
-            "captured_at": "2026-11-21T12:22:28.988719+01:00",
+            "captured_at": "2026-11-21T13:33:17.485851+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 6.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.15,
-              "dateRapport": 1795259721000,
+              "nombreIndicateurTendance": 1.56,
+              "dateRapport": 1795264221000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -5352,15 +5837,15 @@
             "source_title": "Prix Pierre Biancone",
             "evidence": {
               "url": "https://www.geny.com/course/1699244-2026-11-21-auteuil-prix-pierre-biancone/partants-pronostics",
-              "sha256": "2abbb6199ee8f8792e6bd40ee8db101ffbbe7efe25a429c1dd2f73554b316b62",
-              "file": "preuves/2abbb6199ee8f8792e6bd40ee8db101ffbbe7efe25a429c1dd2f73554b316b62.gz"
+              "sha256": "df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b",
+              "file": "preuves/df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C8/participants",
-              "sha256": "b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3",
-              "file": "preuves/b0282ef1f05e16b6e772fd79f63ee254e1f61588762cc7381359bc3eadad14e3.gz"
+              "sha256": "180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7",
+              "file": "preuves/180e3a95643f695c60e9514b4be66c68dcc038e30d5251d28356432ba4f95fe7.gz"
             },
-            "captured_at": "2026-11-21T12:22:45.994887+01:00",
+            "captured_at": "2026-11-21T13:33:34.715520+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5368,8 +5853,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.25,
-              "dateRapport": 1795259721000,
+              "nombreIndicateurTendance": -4.46,
+              "dateRapport": 1795264221000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -5381,23 +5866,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-21/r1c8-auteuil-prix-pierre-biancone",
-            "sha256": "85b013502dfdffa3f321fc09a4d9ae867abf31a62801436a0cc0b64e77693057",
-            "file": "preuves/85b013502dfdffa3f321fc09a4d9ae867abf31a62801436a0cc0b64e77693057.gz"
+            "sha256": "4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c",
+            "file": "preuves/4a7780912c1e776d8c030352b7680e1ea3dd0629148e5d5f24c79b873255002c.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
-            "sha256": "392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28",
-            "file": "preuves/392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28.gz"
+            "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+            "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424248_prix-pierre-biancone.html",
-            "sha256": "392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28",
-            "file": "preuves/392ece60f68358c4b66a54768914ff11a6f62da4dc4a585eb09fc2d05b3c9c28.gz"
+            "sha256": "5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2",
+            "file": "preuves/5857f82002e314e2b7a2df4aff2eb19b602d8080f90bc990b7a3293e28013aa2.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699244-2026-11-21-auteuil-prix-pierre-biancone/partants-pronostics",
-            "sha256": "2abbb6199ee8f8792e6bd40ee8db101ffbbe7efe25a429c1dd2f73554b316b62",
-            "file": "preuves/2abbb6199ee8f8792e6bd40ee8db101ffbbe7efe25a429c1dd2f73554b316b62.gz"
+            "sha256": "df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b",
+            "file": "preuves/df7c550b9ce88d4bb22e343ac3290fbfc6a42d49f2f9953a246d4a42f94f012b.gz"
           }
         }
       }
