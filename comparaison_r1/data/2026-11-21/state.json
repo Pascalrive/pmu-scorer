@@ -57,17 +57,17 @@
         "canalturf": {
           "type": "ValueError",
           "reason": "Numéro/nom PMU non concordant",
-          "at": "2026-11-21T11:39:51.520669+01:00"
+          "at": "2026-11-21T11:49:37.008497+01:00"
         },
         "zeturf": {
           "type": "ValueError",
           "reason": "Numéro/nom PMU non concordant",
-          "at": "2026-11-21T11:39:51.571563+01:00"
+          "at": "2026-11-21T11:49:37.099809+01:00"
         },
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-21T11:40:12.912582+01:00",
+          "at": "2026-11-21T11:49:58.528742+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Numéro/nom PMU non concordant",
@@ -155,7 +155,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-21T11:39:49.182487+01:00",
+      "final_check_started_at": "2026-11-21T11:49:34.605862+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-21/r1c1-auteuil-steeple-chase-national-des-anglo-arabes",
@@ -163,7 +163,7 @@
           "file": "preuves/9d05e9e5aea089ea43f229dd64cf3f5807704773295c256461ba21d89e5b11e2.gz"
         }
       },
-      "final_check_completed_at": "2026-11-21T11:40:12.912605+01:00"
+      "final_check_completed_at": "2026-11-21T11:49:58.528766+01:00"
     },
     {
       "date": "2026-11-21",
@@ -172,8 +172,169 @@
       "title": "PRIX JEAN SENS",
       "departure": "2026-11-21T12:48:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 1,
+          "name": "LA REINE DE CHOEUR",
+          "source_url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Jean Sens",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
+            "sha256": "c8c4f13dc9c61bc8117ef224e4070ded16d4bcf494fb52494e1351bc4f1f99c0",
+            "file": "preuves/c8c4f13dc9c61bc8117ef224e4070ded16d4bcf494fb52494e1351bc4f1f99c0.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
+            "sha256": "4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050",
+            "file": "preuves/4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050.gz"
+          },
+          "captured_at": "2026-11-21T11:50:00.783854+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795257919000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 1,
+          "name": "LA REINE DE CHOEUR",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JEAN SENS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+            "sha256": "63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e",
+            "file": "preuves/63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
+            "sha256": "4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050",
+            "file": "preuves/4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050.gz"
+          },
+          "captured_at": "2026-11-21T11:50:01.510256+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795257919000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 1,
+          "name": "LA REINE DE CHOEUR",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX JEAN SENS",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+            "sha256": "63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e",
+            "file": "preuves/63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
+            "sha256": "4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050",
+            "file": "preuves/4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050.gz"
+          },
+          "captured_at": "2026-11-21T11:50:01.599187+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795257919000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 1,
+          "name": "LA REINE DE CHOEUR",
+          "source_url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Jean Sens",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
+            "sha256": "3a6002ec711f4df95d3d1497f1f40211d012f32d3d4f3f75dd13e9750729fa71",
+            "file": "preuves/3a6002ec711f4df95d3d1497f1f40211d012f32d3d4f3f75dd13e9750729fa71.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/21112026/R1/C2/participants",
+            "sha256": "4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050",
+            "file": "preuves/4c6b4278775b2b81b90e7752f0cc89f9ffb4712566c7eacdca895ffc1c7b2050.gz"
+          },
+          "captured_at": "2026-11-21T11:50:17.690365+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795257919000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_4_sur_4": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_canalturf+geny+turfin+zeturf": {
+          "number": 1,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -508,7 +669,32 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-21T11:49:58.534988+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-21/r1c2-auteuil-prix-jean-sens",
+          "sha256": "c8c4f13dc9c61bc8117ef224e4070ded16d4bcf494fb52494e1351bc4f1f99c0",
+          "file": "preuves/c8c4f13dc9c61bc8117ef224e4070ded16d4bcf494fb52494e1351bc4f1f99c0.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+          "sha256": "63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e",
+          "file": "preuves/63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-21/auteuil/424242_prix-jean-sens.html",
+          "sha256": "63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e",
+          "file": "preuves/63b1a4403719558a910955721404ba97b4e1ef48cfc6029e86d3d0c1345dae1e.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1699238-2026-11-21-auteuil-prix-jean-sens/partants-pronostics",
+          "sha256": "3a6002ec711f4df95d3d1497f1f40211d012f32d3d4f3f75dd13e9750729fa71",
+          "file": "preuves/3a6002ec711f4df95d3d1497f1f40211d012f32d3d4f3f75dd13e9750729fa71.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-21T11:50:17.690365+01:00",
+      "final_check_completed_at": "2026-11-21T11:50:17.690425+01:00"
     },
     {
       "date": "2026-11-21",
