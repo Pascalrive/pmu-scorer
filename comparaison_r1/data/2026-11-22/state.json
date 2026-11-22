@@ -2013,7 +2013,8 @@
       "last_reservation_check": {
         "at": "2026-11-22T14:29:34.849898+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-22",
@@ -2672,9 +2673,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-22T14:39:40.665156+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 16,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 16,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin": {
+              "number": 16,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 16,
+              "name": "FRANK GIO",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c4-vincennes-prix-de-bretagne-amerique-races-q1",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Bretagne-Amerique Races Q1",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c4-vincennes-prix-de-bretagne-amerique-races-q1",
+                "sha256": "7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13",
+                "file": "preuves/7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
+                "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+                "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
+              },
+              "captured_at": "2026-11-22T14:39:17.470102+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354209000,
+                "favoris": true,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 16,
+              "name": "FRANK GIO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX DE BRETAGNE - AMERIQUE RACES Q1",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
+                "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+                "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
+                "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+                "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
+              },
+              "captured_at": "2026-11-22T14:39:19.396720+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354209000,
+                "favoris": true,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 15,
+              "name": "BORUPS VICTORY",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du Quinté PRIX DE BRETAGNE - AMERIQUE RACES Q1",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
+                "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+                "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
+                "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+                "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
+              },
+              "captured_at": "2026-11-22T14:39:19.449777+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -4.28,
+                "dateRapport": 1795354209000,
+                "favoris": false,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 16,
+              "name": "FRANK GIO",
+              "source_url": "https://www.geny.com/course/1699522-2026-11-22-vincennes-prix-de-bretagne-amerique-races-q1/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Bretagne-Amérique Races Q1",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699522-2026-11-22-vincennes-prix-de-bretagne-amerique-races-q1/partants-pronostics",
+                "sha256": "6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93",
+                "file": "preuves/6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
+                "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+                "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
+              },
+              "captured_at": "2026-11-22T14:39:40.665074+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354209000,
+                "favoris": true,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-22T14:29:34.231784+01:00",
+      "final_check_started_at": "2026-11-22T14:39:14.545336+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-22/r1c4-vincennes-prix-de-bretagne-amerique-races-q1",
@@ -2698,7 +2862,7 @@
         }
       },
       "groups_frozen_at": "2026-11-22T14:20:35.004882+01:00",
-      "final_check_completed_at": "2026-11-22T14:29:34.680681+01:00"
+      "final_check_completed_at": "2026-11-22T14:39:15.189599+01:00"
     },
     {
       "date": "2026-11-22",
@@ -3193,6 +3357,169 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 3.7,
                 "dateRapport": 1795350625000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-22T14:40:00.691546+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 5,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 5,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+zeturf": {
+              "number": 5,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "GOLDEN GIO",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c5-vincennes-prix-horse-gp-prix-de-boissy-saint-leger",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Horse Gp (Prix De Boissy-Saint-Leger)",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c5-vincennes-prix-horse-gp-prix-de-boissy-saint-leger",
+                "sha256": "74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1",
+                "file": "preuves/74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
+                "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+                "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
+              },
+              "captured_at": "2026-11-22T14:39:42.095617+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354225000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 5,
+              "name": "LORD DELO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_full_numbered_field",
+              "source_title": "Le pronostic du PRIX HORSE GP",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
+                "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+                "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
+                "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+                "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
+              },
+              "captured_at": "2026-11-22T14:39:42.742158+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354225000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "LORD DELO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_full_numbered_field",
+              "source_title": "Le pronostic du PRIX HORSE GP",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
+                "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+                "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
+                "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+                "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
+              },
+              "captured_at": "2026-11-22T14:39:42.790321+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354225000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 5,
+              "name": "LORD DELO",
+              "source_url": "https://www.geny.com/course/1699519-2026-11-22-vincennes-prix-horse-gp-prix-de-boissy-saint-leger/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Horse Gp (Prix de Boissy-Saint-Léger)",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699519-2026-11-22-vincennes-prix-horse-gp-prix-de-boissy-saint-leger/partants-pronostics",
+                "sha256": "69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00",
+                "file": "preuves/69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
+                "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+                "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
+              },
+              "captured_at": "2026-11-22T14:40:00.691474+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354225000,
                 "favoris": true,
                 "numPmu1": 5,
                 "grossePrise": false
@@ -3710,6 +4037,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-22T14:40:19.980187+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 11,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 11,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 11,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 11,
+              "name": "NOBEL DU RIB",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c6-vincennes-prix-pierre-plazen",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Pierre Plazen",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c6-vincennes-prix-pierre-plazen",
+                "sha256": "a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676",
+                "file": "preuves/a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
+                "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+                "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
+              },
+              "captured_at": "2026-11-22T14:40:02.958090+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 3.84,
+                "dateRapport": 1795354202000,
+                "favoris": true,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 11,
+              "name": "NOBEL DU RIB",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PIERRE PLAZEN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
+                "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+                "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
+                "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+                "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
+              },
+              "captured_at": "2026-11-22T14:40:03.570972+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 3.84,
+                "dateRapport": 1795354202000,
+                "favoris": true,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 11,
+              "name": "NOBEL DU RIB",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX PIERRE PLAZEN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
+                "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+                "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
+                "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+                "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
+              },
+              "captured_at": "2026-11-22T14:40:03.620364+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 3.84,
+                "dateRapport": 1795354202000,
+                "favoris": true,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 11,
+              "name": "NOBEL DU RIB",
+              "source_url": "https://www.geny.com/course/1699524-2026-11-22-vincennes-prix-pierre-plazen/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Pierre Plazen",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699524-2026-11-22-vincennes-prix-pierre-plazen/partants-pronostics",
+                "sha256": "d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61",
+                "file": "preuves/d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
+                "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+                "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
+              },
+              "captured_at": "2026-11-22T14:40:19.980118+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 3.84,
+                "dateRapport": 1795354202000,
+                "favoris": true,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -4176,6 +4669,159 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 0.0,
                 "dateRapport": 1795350651000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-22T14:40:40.685226+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "geny"
+              ]
+            },
+            "groupe_geny+turfin": {
+              "number": 3,
+              "sites": [
+                "turfin",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 3,
+              "name": "JIPET DE CREPIN",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c7-vincennes-prix-de-cosse-le-vivien",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Cosse Le Vivien",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c7-vincennes-prix-de-cosse-le-vivien",
+                "sha256": "04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1",
+                "file": "preuves/04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
+                "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+                "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
+              },
+              "captured_at": "2026-11-22T14:40:21.851162+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354251000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "KELLE BEAUTE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE COSSE-LE-VIVIEN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
+                "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+                "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
+                "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+                "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
+              },
+              "captured_at": "2026-11-22T14:40:22.471524+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.89,
+                "dateRapport": 1795354251000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 8,
+              "name": "KIKA JOSSELYN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE COSSE-LE-VIVIEN",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
+                "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+                "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
+                "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+                "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
+              },
+              "captured_at": "2026-11-22T14:40:22.536329+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354251000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 3,
+              "name": "JIPET DE CREPIN",
+              "source_url": "https://www.geny.com/course/1699526-2026-11-22-vincennes-prix-de-cosse-le-vivien/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Cossé-le-Vivien",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699526-2026-11-22-vincennes-prix-de-cosse-le-vivien/partants-pronostics",
+                "sha256": "e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505",
+                "file": "preuves/e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
+                "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+                "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
+              },
+              "captured_at": "2026-11-22T14:40:40.685130+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354251000,
                 "favoris": false,
                 "numPmu1": 3,
                 "grossePrise": false
@@ -4693,6 +5339,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-22T14:41:00.372933+01:00",
+          "groups": {
+            "accord_4_sur_4": {
+              "number": 9,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 9,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin+zeturf": {
+              "number": 9,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 9,
+              "name": "NAYA D'ERONVILLE",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c8-vincennes-prix-guy-deloison",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Guy Deloison",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c8-vincennes-prix-guy-deloison",
+                "sha256": "8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771",
+                "file": "preuves/8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
+                "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+                "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
+              },
+              "captured_at": "2026-11-22T14:40:42.112508+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354215000,
+                "favoris": true,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 9,
+              "name": "NAYA D'ERONVILLE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX GUY DELOISON",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
+                "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+                "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
+                "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+                "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
+              },
+              "captured_at": "2026-11-22T14:40:42.729551+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354215000,
+                "favoris": true,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 9,
+              "name": "NAYA D'ERONVILLE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX GUY DELOISON",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
+                "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+                "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
+                "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+                "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
+              },
+              "captured_at": "2026-11-22T14:40:42.777530+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354215000,
+                "favoris": true,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 9,
+              "name": "NAYA D'ERONVILLE",
+              "source_url": "https://www.geny.com/course/1699521-2026-11-22-vincennes-prix-guy-deloison/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Guy Deloison",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699521-2026-11-22-vincennes-prix-guy-deloison/partants-pronostics",
+                "sha256": "58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3",
+                "file": "preuves/58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
+                "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+                "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
+              },
+              "captured_at": "2026-11-22T14:41:00.372866+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354215000,
+                "favoris": true,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -5120,6 +5932,144 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-22T14:41:19.831804+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 13,
+              "name": "LITTLE ROAD",
+              "source_url": "https://turfin.fr/course/2026-11-22/r1c9-vincennes-prix-de-manciet",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Manciet",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-22/r1c9-vincennes-prix-de-manciet",
+                "sha256": "c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f",
+                "file": "preuves/c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
+                "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+                "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
+              },
+              "captured_at": "2026-11-22T14:41:02.115915+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354257000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 13,
+              "name": "LITTLE ROAD",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE MANCIET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
+                "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+                "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
+                "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+                "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
+              },
+              "captured_at": "2026-11-22T14:41:02.758031+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 3.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795354257000,
+                "favoris": true,
+                "numPmu1": 13,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 11,
+              "name": "LORA SCOTIA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE MANCIET",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
+                "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+                "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
+                "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+                "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
+              },
+              "captured_at": "2026-11-22T14:41:02.866487+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.56,
+                "dateRapport": 1795354257000,
+                "favoris": false,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 11,
+              "name": "LORA SCOTIA",
+              "source_url": "https://www.geny.com/course/1699523-2026-11-22-vincennes-prix-de-manciet/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Manciet",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699523-2026-11-22-vincennes-prix-de-manciet/partants-pronostics",
+                "sha256": "9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b",
+                "file": "preuves/9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
+                "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+                "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
+              },
+              "captured_at": "2026-11-22T14:41:19.831722+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.56,
+                "dateRapport": 1795354257000,
+                "favoris": false,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -5127,343 +6077,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-22T13:34:20.947923+01:00",
+    "captured_at": "2026-11-22T14:41:19.831862+01:00",
     "races": [
-      {
-        "date": "2026-11-22",
-        "id": "R1C2",
-        "c": 2,
-        "title": "PRIX DES HIPPODROMES DU MORBIHAN",
-        "departure": "2026-11-22T13:58:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 9,
-            "name": "MY DARLING HAUFOR",
-            "source_url": "https://turfin.fr/course/2026-11-22/r1c2-vincennes-prix-des-hippodromes-du-morbihan",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Des Hippodromes Du Morbihan",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-22/r1c2-vincennes-prix-des-hippodromes-du-morbihan",
-              "sha256": "a7875a115ea9b6e4b34b6929ea363ba9fdbb44215bce372c41861af8c8d07f0c",
-              "file": "preuves/a7875a115ea9b6e4b34b6929ea363ba9fdbb44215bce372c41861af8c8d07f0c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C2/participants",
-              "sha256": "7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c",
-              "file": "preuves/7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c.gz"
-            },
-            "captured_at": "2026-11-22T13:31:39.136977+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350690000,
-              "favoris": true,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 10,
-            "name": "MOSTRA DU TRIO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DES HIPPODROMES DU MORBIHAN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-              "sha256": "819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c",
-              "file": "preuves/819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C2/participants",
-              "sha256": "7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c",
-              "file": "preuves/7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c.gz"
-            },
-            "captured_at": "2026-11-22T13:31:40.408392+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 27.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.73,
-              "dateRapport": 1795350690000,
-              "favoris": false,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 4,
-            "name": "MA AM CHENU",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DES HIPPODROMES DU MORBIHAN",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-              "sha256": "819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c",
-              "file": "preuves/819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C2/participants",
-              "sha256": "7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c",
-              "file": "preuves/7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c.gz"
-            },
-            "captured_at": "2026-11-22T13:31:40.509280+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350690000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 4,
-            "name": "MA AM CHENU",
-            "source_url": "https://www.geny.com/course/1699527-2026-11-22-vincennes-prix-des-hippodromes-du-morbihan/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix des Hippodromes du Morbihan",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699527-2026-11-22-vincennes-prix-des-hippodromes-du-morbihan/partants-pronostics",
-              "sha256": "73267db9405ec0c848c9eadacc77e7629ce47c85705aa70bfa55c9bb0f3c4329",
-              "file": "preuves/73267db9405ec0c848c9eadacc77e7629ce47c85705aa70bfa55c9bb0f3c4329.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C2/participants",
-              "sha256": "7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c",
-              "file": "preuves/7dd3277eb846ed7531d9e87b022b8375b57c712009482f505b4e91846ae9244c.gz"
-            },
-            "captured_at": "2026-11-22T13:32:00.791697+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350690000,
-              "favoris": false,
-              "numPmu1": 4,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-22T13:31:37.247701+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-22/r1c2-vincennes-prix-des-hippodromes-du-morbihan",
-            "sha256": "a7875a115ea9b6e4b34b6929ea363ba9fdbb44215bce372c41861af8c8d07f0c",
-            "file": "preuves/a7875a115ea9b6e4b34b6929ea363ba9fdbb44215bce372c41861af8c8d07f0c.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-            "sha256": "819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c",
-            "file": "preuves/819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424349_prix-des-hippodromes-du-morbihan.html",
-            "sha256": "819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c",
-            "file": "preuves/819e4a3d16b50495103d3d4023213756db1bfc89446c643c0ddb4d0e101d905c.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699527-2026-11-22-vincennes-prix-des-hippodromes-du-morbihan/partants-pronostics",
-            "sha256": "73267db9405ec0c848c9eadacc77e7629ce47c85705aa70bfa55c9bb0f3c4329",
-            "file": "preuves/73267db9405ec0c848c9eadacc77e7629ce47c85705aa70bfa55c9bb0f3c4329.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-22T12:59:09.661694+01:00",
-        "final_check_completed_at": "2026-11-22T13:31:37.584307+01:00"
-      },
-      {
-        "date": "2026-11-22",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX D'HARFLEUR",
-        "departure": "2026-11-22T14:33:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 2,
-            "name": "LEZZO FIGHTER",
-            "source_url": "https://turfin.fr/course/2026-11-22/r1c3-vincennes-prix-d-harfleur",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix D'harfleur",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-22/r1c3-vincennes-prix-d-harfleur",
-              "sha256": "b4ec80c36b23760bd1c0388d1717f69ba28b8a7b0d705aed3eceecfb8aa33d6c",
-              "file": "preuves/b4ec80c36b23760bd1c0388d1717f69ba28b8a7b0d705aed3eceecfb8aa33d6c.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C3/participants",
-              "sha256": "f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba",
-              "file": "preuves/f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba.gz"
-            },
-            "captured_at": "2026-11-22T13:32:01.987937+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350618000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "LUCKY MESLOIS",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX D'HARFLEUR",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-              "sha256": "968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4",
-              "file": "preuves/968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C3/participants",
-              "sha256": "f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba",
-              "file": "preuves/f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba.gz"
-            },
-            "captured_at": "2026-11-22T13:32:02.466672+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 12.0,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.47,
-              "dateRapport": 1795350618000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 2,
-            "name": "LEZZO FIGHTER",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX D'HARFLEUR",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-              "sha256": "968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4",
-              "file": "preuves/968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C3/participants",
-              "sha256": "f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba",
-              "file": "preuves/f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba.gz"
-            },
-            "captured_at": "2026-11-22T13:32:02.597181+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350618000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 2,
-            "name": "LEZZO FIGHTER",
-            "source_url": "https://www.geny.com/course/1699520-2026-11-22-vincennes-prix-d-harfleur/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix d'Harfleur",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699520-2026-11-22-vincennes-prix-d-harfleur/partants-pronostics",
-              "sha256": "dde008eabd9fef6957c58237e7b076b4bc757a825de0d18ead2656b9e2b31581",
-              "file": "preuves/dde008eabd9fef6957c58237e7b076b4bc757a825de0d18ead2656b9e2b31581.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C3/participants",
-              "sha256": "f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba",
-              "file": "preuves/f66302abd29ca4801cffda772158de9a55a49bfe95cc0493e7cd419c81c2c1ba.gz"
-            },
-            "captured_at": "2026-11-22T13:32:21.161571+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350618000,
-              "favoris": true,
-              "numPmu1": 2,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-22/r1c3-vincennes-prix-d-harfleur",
-            "sha256": "b4ec80c36b23760bd1c0388d1717f69ba28b8a7b0d705aed3eceecfb8aa33d6c",
-            "file": "preuves/b4ec80c36b23760bd1c0388d1717f69ba28b8a7b0d705aed3eceecfb8aa33d6c.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-            "sha256": "968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4",
-            "file": "preuves/968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424350_prix-d-harfleur.html",
-            "sha256": "968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4",
-            "file": "preuves/968e4577c54c76a3de6a78b99b22c9c5fb3ba0e24d0d25977824a46736ded0c4.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699520-2026-11-22-vincennes-prix-d-harfleur/partants-pronostics",
-            "sha256": "dde008eabd9fef6957c58237e7b076b4bc757a825de0d18ead2656b9e2b31581",
-            "file": "preuves/dde008eabd9fef6957c58237e7b076b4bc757a825de0d18ead2656b9e2b31581.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-22",
         "id": "R1C4",
@@ -5482,24 +6097,24 @@
             "source_title": "Prix De Bretagne-Amerique Races Q1",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c4-vincennes-prix-de-bretagne-amerique-races-q1",
-              "sha256": "617fd5dfbed0e3e9a1eb138cf98b6308cd47f3736043393633b29e3228e8823e",
-              "file": "preuves/617fd5dfbed0e3e9a1eb138cf98b6308cd47f3736043393633b29e3228e8823e.gz"
+              "sha256": "7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13",
+              "file": "preuves/7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
-              "sha256": "9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331",
-              "file": "preuves/9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331.gz"
+              "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+              "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
             },
-            "captured_at": "2026-11-22T13:32:22.295693+01:00",
+            "captured_at": "2026-11-22T14:39:17.470102+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350609000,
+              "dateRapport": 1795354209000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -5515,24 +6130,24 @@
             "source_title": "Le pronostic du Quinté PRIX DE BRETAGNE - AMERIQUE RACES Q1",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
-              "sha256": "82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b",
-              "file": "preuves/82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b.gz"
+              "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+              "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
-              "sha256": "9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331",
-              "file": "preuves/9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331.gz"
+              "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+              "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
             },
-            "captured_at": "2026-11-22T13:32:22.784570+01:00",
+            "captured_at": "2026-11-22T14:39:19.396720+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350609000,
+              "dateRapport": 1795354209000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -5548,24 +6163,24 @@
             "source_title": "Le pronostic du Quinté PRIX DE BRETAGNE - AMERIQUE RACES Q1",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
-              "sha256": "82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b",
-              "file": "preuves/82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b.gz"
+              "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+              "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
-              "sha256": "9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331",
-              "file": "preuves/9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331.gz"
+              "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+              "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
             },
-            "captured_at": "2026-11-22T13:32:22.889065+01:00",
+            "captured_at": "2026-11-22T14:39:19.449777+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.7,
+              "rapport": 6.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350609000,
+              "nombreIndicateurTendance": -4.28,
+              "dateRapport": 1795354209000,
               "favoris": false,
               "numPmu1": 15,
               "grossePrise": false
@@ -5581,24 +6196,24 @@
             "source_title": "Prix de Bretagne-Amérique Races Q1",
             "evidence": {
               "url": "https://www.geny.com/course/1699522-2026-11-22-vincennes-prix-de-bretagne-amerique-races-q1/partants-pronostics",
-              "sha256": "2f978de6d0c38d8db17687f8426c304f49965c21f817dccb6f838375931a803e",
-              "file": "preuves/2f978de6d0c38d8db17687f8426c304f49965c21f817dccb6f838375931a803e.gz"
+              "sha256": "6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93",
+              "file": "preuves/6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C4/participants",
-              "sha256": "9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331",
-              "file": "preuves/9c8542d09387266072cbe1ac5602ef3d0e141eff7387f246d4d1dfc1a73d8331.gz"
+              "sha256": "be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84",
+              "file": "preuves/be7887e0aeab95b7702b3533f96000e95634c75c13193f28c83d064045035f84.gz"
             },
-            "captured_at": "2026-11-22T13:32:40.977429+01:00",
+            "captured_at": "2026-11-22T14:39:40.665074+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.7,
+              "rapport": 3.6,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350609000,
+              "dateRapport": 1795354209000,
               "favoris": true,
               "numPmu1": 16,
               "grossePrise": false
@@ -5607,28 +6222,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-22T14:39:14.545336+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c4-vincennes-prix-de-bretagne-amerique-races-q1",
-            "sha256": "617fd5dfbed0e3e9a1eb138cf98b6308cd47f3736043393633b29e3228e8823e",
-            "file": "preuves/617fd5dfbed0e3e9a1eb138cf98b6308cd47f3736043393633b29e3228e8823e.gz"
+            "sha256": "7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13",
+            "file": "preuves/7a0bf50986de57f26145191d9978cc96792025e2e012fb16730439070d042c13.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
-            "sha256": "82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b",
-            "file": "preuves/82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b.gz"
+            "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+            "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424351_prix-de-bretagne-amerique-races-q1.html",
-            "sha256": "82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b",
-            "file": "preuves/82c29fa9872c562a3a62561e1378a1569e2af09af76b1c6d73bd04a17a80c56b.gz"
+            "sha256": "59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc",
+            "file": "preuves/59e80a307493ce2d19492456e3e20c213e64f7cac7fa37f1d44038216dd99efc.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699522-2026-11-22-vincennes-prix-de-bretagne-amerique-races-q1/partants-pronostics",
-            "sha256": "2f978de6d0c38d8db17687f8426c304f49965c21f817dccb6f838375931a803e",
-            "file": "preuves/2f978de6d0c38d8db17687f8426c304f49965c21f817dccb6f838375931a803e.gz"
+            "sha256": "6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93",
+            "file": "preuves/6e9ab2252477e307dbd36c3f6aeaef3188a04d5e1a9e8a353642ec289f590f93.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-22T14:20:35.004882+01:00",
+        "final_check_completed_at": "2026-11-22T14:39:15.189599+01:00"
       },
       {
         "date": "2026-11-22",
@@ -5648,15 +6266,15 @@
             "source_title": "Prix Horse Gp (Prix De Boissy-Saint-Leger)",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c5-vincennes-prix-horse-gp-prix-de-boissy-saint-leger",
-              "sha256": "9cea7e9602e38b134e7058772bbe3903f53b3257aae3262b6ab6b3ec01ac3035",
-              "file": "preuves/9cea7e9602e38b134e7058772bbe3903f53b3257aae3262b6ab6b3ec01ac3035.gz"
+              "sha256": "74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1",
+              "file": "preuves/74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
-              "sha256": "37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc",
-              "file": "preuves/37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc.gz"
+              "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+              "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
             },
-            "captured_at": "2026-11-22T13:32:42.462817+01:00",
+            "captured_at": "2026-11-22T14:39:42.095617+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5665,7 +6283,7 @@
               "rapport": 3.8,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350625000,
+              "dateRapport": 1795354225000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -5681,24 +6299,24 @@
             "source_title": "Le pronostic du PRIX HORSE GP",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
-              "sha256": "c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0",
-              "file": "preuves/c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0.gz"
+              "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+              "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
-              "sha256": "37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc",
-              "file": "preuves/37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc.gz"
+              "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+              "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
             },
-            "captured_at": "2026-11-22T13:32:42.931099+01:00",
+            "captured_at": "2026-11-22T14:39:42.742158+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
+              "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.7,
-              "dateRapport": 1795350625000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354225000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -5714,24 +6332,24 @@
             "source_title": "Le pronostic du PRIX HORSE GP",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
-              "sha256": "c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0",
-              "file": "preuves/c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0.gz"
+              "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+              "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
-              "sha256": "37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc",
-              "file": "preuves/37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc.gz"
+              "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+              "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
             },
-            "captured_at": "2026-11-22T13:32:43.030322+01:00",
+            "captured_at": "2026-11-22T14:39:42.790321+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
+              "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.7,
-              "dateRapport": 1795350625000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354225000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -5747,24 +6365,24 @@
             "source_title": "Prix Horse Gp (Prix de Boissy-Saint-Léger)",
             "evidence": {
               "url": "https://www.geny.com/course/1699519-2026-11-22-vincennes-prix-horse-gp-prix-de-boissy-saint-leger/partants-pronostics",
-              "sha256": "f15bcf79b2442986bb2db7ce54ec2f5c998a91c74d54a34ca32cd65a16244649",
-              "file": "preuves/f15bcf79b2442986bb2db7ce54ec2f5c998a91c74d54a34ca32cd65a16244649.gz"
+              "sha256": "69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00",
+              "file": "preuves/69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C5/participants",
-              "sha256": "37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc",
-              "file": "preuves/37af07f5b2eeff74254e6b3536c5298dbbe6e6763eec6063f597284d97eeffdc.gz"
+              "sha256": "d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442",
+              "file": "preuves/d80f2d6f7236255ea9cf997abfb7ca674cb68f7130227f52792df3bc3af84442.gz"
             },
-            "captured_at": "2026-11-22T13:33:00.932665+01:00",
+            "captured_at": "2026-11-22T14:40:00.691474+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.8,
+              "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.7,
-              "dateRapport": 1795350625000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354225000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -5776,23 +6394,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c5-vincennes-prix-horse-gp-prix-de-boissy-saint-leger",
-            "sha256": "9cea7e9602e38b134e7058772bbe3903f53b3257aae3262b6ab6b3ec01ac3035",
-            "file": "preuves/9cea7e9602e38b134e7058772bbe3903f53b3257aae3262b6ab6b3ec01ac3035.gz"
+            "sha256": "74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1",
+            "file": "preuves/74e91333f0b042fb116ea27f67c55747e69c342ed1e06e95f0c56b580dd23ce1.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
-            "sha256": "c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0",
-            "file": "preuves/c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0.gz"
+            "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+            "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424352_prix-horse-gp.html",
-            "sha256": "c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0",
-            "file": "preuves/c049661177fab506a8bad82794258204eab021d8eaf29a130d9d9a5116a63ec0.gz"
+            "sha256": "3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5",
+            "file": "preuves/3248701127af5c278437374a15511a3c8b04889acf65fbe49115db500ef857c5.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699519-2026-11-22-vincennes-prix-horse-gp-prix-de-boissy-saint-leger/partants-pronostics",
-            "sha256": "f15bcf79b2442986bb2db7ce54ec2f5c998a91c74d54a34ca32cd65a16244649",
-            "file": "preuves/f15bcf79b2442986bb2db7ce54ec2f5c998a91c74d54a34ca32cd65a16244649.gz"
+            "sha256": "69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00",
+            "file": "preuves/69612c01c8da69ee6485dabd5f393585216c80f464bfa323aac79f880598be00.gz"
           }
         }
       },
@@ -5814,15 +6432,15 @@
             "source_title": "Prix Pierre Plazen",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c6-vincennes-prix-pierre-plazen",
-              "sha256": "85b3dc267dd8d2c37beeec3cb2aa821c23a461ddc3fc5a8421cecfefd950261c",
-              "file": "preuves/85b3dc267dd8d2c37beeec3cb2aa821c23a461ddc3fc5a8421cecfefd950261c.gz"
+              "sha256": "a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676",
+              "file": "preuves/a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
-              "sha256": "336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3",
-              "file": "preuves/336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3.gz"
+              "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+              "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
             },
-            "captured_at": "2026-11-22T13:33:02.530101+01:00",
+            "captured_at": "2026-11-22T14:40:02.958090+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5830,8 +6448,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.89,
-              "dateRapport": 1795350602000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1795354202000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -5847,15 +6465,15 @@
             "source_title": "Le pronostic du PRIX PIERRE PLAZEN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
-              "sha256": "80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4",
-              "file": "preuves/80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4.gz"
+              "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+              "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
-              "sha256": "336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3",
-              "file": "preuves/336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3.gz"
+              "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+              "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
             },
-            "captured_at": "2026-11-22T13:33:03.019565+01:00",
+            "captured_at": "2026-11-22T14:40:03.570972+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5863,8 +6481,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.89,
-              "dateRapport": 1795350602000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1795354202000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -5880,15 +6498,15 @@
             "source_title": "Le pronostic du PRIX PIERRE PLAZEN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
-              "sha256": "80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4",
-              "file": "preuves/80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4.gz"
+              "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+              "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
-              "sha256": "336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3",
-              "file": "preuves/336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3.gz"
+              "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+              "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
             },
-            "captured_at": "2026-11-22T13:33:03.116968+01:00",
+            "captured_at": "2026-11-22T14:40:03.620364+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5896,8 +6514,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.89,
-              "dateRapport": 1795350602000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1795354202000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -5913,15 +6531,15 @@
             "source_title": "Prix Pierre Plazen",
             "evidence": {
               "url": "https://www.geny.com/course/1699524-2026-11-22-vincennes-prix-pierre-plazen/partants-pronostics",
-              "sha256": "43a63f1e95684258990b4881d1b91f3b678cbc3e702bc7d2088dbd2b874347c5",
-              "file": "preuves/43a63f1e95684258990b4881d1b91f3b678cbc3e702bc7d2088dbd2b874347c5.gz"
+              "sha256": "d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61",
+              "file": "preuves/d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C6/participants",
-              "sha256": "336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3",
-              "file": "preuves/336ec5737723ece80507aa59ddf544ebdef536ef0a08be7f6b3af811bc6da4c3.gz"
+              "sha256": "1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d",
+              "file": "preuves/1b2fa253be0399e1006be8140cba2181c4f083944a346a4800c61f29b3e09d6d.gz"
             },
-            "captured_at": "2026-11-22T13:33:20.922340+01:00",
+            "captured_at": "2026-11-22T14:40:19.980118+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5929,8 +6547,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.89,
-              "dateRapport": 1795350602000,
+              "nombreIndicateurTendance": 3.84,
+              "dateRapport": 1795354202000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -5942,23 +6560,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c6-vincennes-prix-pierre-plazen",
-            "sha256": "85b3dc267dd8d2c37beeec3cb2aa821c23a461ddc3fc5a8421cecfefd950261c",
-            "file": "preuves/85b3dc267dd8d2c37beeec3cb2aa821c23a461ddc3fc5a8421cecfefd950261c.gz"
+            "sha256": "a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676",
+            "file": "preuves/a4b20904a386da330173ed4628e260a310914ae1b5feebae3af4865b4fed5676.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
-            "sha256": "80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4",
-            "file": "preuves/80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4.gz"
+            "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+            "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424353_prix-pierre-plazen.html",
-            "sha256": "80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4",
-            "file": "preuves/80b7cee9a670654663382dd9b68b1517e4525eb773cf0ae6d9eb010574bc57d4.gz"
+            "sha256": "9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622",
+            "file": "preuves/9791811f12d346593cab9588e893361ea3f3dfcbded943f5225fa725a3733622.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699524-2026-11-22-vincennes-prix-pierre-plazen/partants-pronostics",
-            "sha256": "43a63f1e95684258990b4881d1b91f3b678cbc3e702bc7d2088dbd2b874347c5",
-            "file": "preuves/43a63f1e95684258990b4881d1b91f3b678cbc3e702bc7d2088dbd2b874347c5.gz"
+            "sha256": "d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61",
+            "file": "preuves/d379eefb2271d25aeff583cf1e3ffbf1edeeeab9fa37da320bee633356026c61.gz"
           }
         }
       },
@@ -5980,24 +6598,24 @@
             "source_title": "Prix De Cosse Le Vivien",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c7-vincennes-prix-de-cosse-le-vivien",
-              "sha256": "fcb17ba02e1be617607571ac855aab4ac8cd3e9b194fc4f5c806e66fcfbf45a7",
-              "file": "preuves/fcb17ba02e1be617607571ac855aab4ac8cd3e9b194fc4f5c806e66fcfbf45a7.gz"
+              "sha256": "04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1",
+              "file": "preuves/04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
-              "sha256": "08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124",
-              "file": "preuves/08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124.gz"
+              "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+              "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
             },
-            "captured_at": "2026-11-22T13:33:21.969857+01:00",
+            "captured_at": "2026-11-22T14:40:21.851162+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
+              "rapport": 4.9,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350651000,
+              "dateRapport": 1795354251000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -6013,15 +6631,15 @@
             "source_title": "Le pronostic du PRIX DE COSSE-LE-VIVIEN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
-              "sha256": "1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0",
-              "file": "preuves/1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0.gz"
+              "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+              "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
-              "sha256": "08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124",
-              "file": "preuves/08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124.gz"
+              "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+              "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
             },
-            "captured_at": "2026-11-22T13:33:22.463552+01:00",
+            "captured_at": "2026-11-22T14:40:22.471524+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6029,8 +6647,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 6.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -5.63,
-              "dateRapport": 1795350651000,
+              "nombreIndicateurTendance": -2.89,
+              "dateRapport": 1795354251000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -6046,24 +6664,24 @@
             "source_title": "Le pronostic du PRIX DE COSSE-LE-VIVIEN",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
-              "sha256": "1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0",
-              "file": "preuves/1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0.gz"
+              "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+              "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
-              "sha256": "08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124",
-              "file": "preuves/08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124.gz"
+              "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+              "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
             },
-            "captured_at": "2026-11-22T13:33:22.597329+01:00",
+            "captured_at": "2026-11-22T14:40:22.536329+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.4,
+              "rapport": 3.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.03,
-              "dateRapport": 1795350651000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354251000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -6079,24 +6697,24 @@
             "source_title": "Prix de Cossé-le-Vivien",
             "evidence": {
               "url": "https://www.geny.com/course/1699526-2026-11-22-vincennes-prix-de-cosse-le-vivien/partants-pronostics",
-              "sha256": "a5648928c37270361e2a2d352f39a4bcc8ad2ac14e7a333286ee4beb448eb2e7",
-              "file": "preuves/a5648928c37270361e2a2d352f39a4bcc8ad2ac14e7a333286ee4beb448eb2e7.gz"
+              "sha256": "e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505",
+              "file": "preuves/e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C7/participants",
-              "sha256": "08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124",
-              "file": "preuves/08dbbd15c20684e05713d30adcb3bb834c56a389f1909be3647d731eff213124.gz"
+              "sha256": "296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6",
+              "file": "preuves/296fd9fcaf7f8f695f412b4fda6ddf8e47124729b8af60a51e7369bd03b5d6e6.gz"
             },
-            "captured_at": "2026-11-22T13:33:41.028866+01:00",
+            "captured_at": "2026-11-22T14:40:40.685130+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
+              "rapport": 4.9,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350651000,
+              "dateRapport": 1795354251000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -6108,23 +6726,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c7-vincennes-prix-de-cosse-le-vivien",
-            "sha256": "fcb17ba02e1be617607571ac855aab4ac8cd3e9b194fc4f5c806e66fcfbf45a7",
-            "file": "preuves/fcb17ba02e1be617607571ac855aab4ac8cd3e9b194fc4f5c806e66fcfbf45a7.gz"
+            "sha256": "04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1",
+            "file": "preuves/04a0f722a005b5a9b5183c489ebb769f1e193ac2b2e0c136b5c666e534aa26a1.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
-            "sha256": "1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0",
-            "file": "preuves/1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0.gz"
+            "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+            "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424354_prix-de-cosse-le-vivien.html",
-            "sha256": "1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0",
-            "file": "preuves/1ca942d8f60c12d471527ac741fa55a2bb683a858c124d842398b4dea84a81f0.gz"
+            "sha256": "06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff",
+            "file": "preuves/06551f90f2054c89f7502e27949e8b9a235c86d95876a9351378cac4c188acff.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699526-2026-11-22-vincennes-prix-de-cosse-le-vivien/partants-pronostics",
-            "sha256": "a5648928c37270361e2a2d352f39a4bcc8ad2ac14e7a333286ee4beb448eb2e7",
-            "file": "preuves/a5648928c37270361e2a2d352f39a4bcc8ad2ac14e7a333286ee4beb448eb2e7.gz"
+            "sha256": "e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505",
+            "file": "preuves/e192efb19b16d0faa9f296adc62f187b0fd47d87e08466ef323802b625bfd505.gz"
           }
         }
       },
@@ -6146,15 +6764,15 @@
             "source_title": "Prix Guy Deloison",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c8-vincennes-prix-guy-deloison",
-              "sha256": "f2aaab2c6e7a1c50a123c51e5cc06f57a3b5656c01a1cbdb20c5f1bb6ac057cd",
-              "file": "preuves/f2aaab2c6e7a1c50a123c51e5cc06f57a3b5656c01a1cbdb20c5f1bb6ac057cd.gz"
+              "sha256": "8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771",
+              "file": "preuves/8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
-              "sha256": "ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82",
-              "file": "preuves/ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82.gz"
+              "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+              "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
             },
-            "captured_at": "2026-11-22T13:33:42.660454+01:00",
+            "captured_at": "2026-11-22T14:40:42.112508+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6162,8 +6780,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795350615000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354215000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -6179,15 +6797,15 @@
             "source_title": "Le pronostic du PRIX GUY DELOISON",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
-              "sha256": "0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711",
-              "file": "preuves/0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711.gz"
+              "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+              "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
-              "sha256": "ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82",
-              "file": "preuves/ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82.gz"
+              "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+              "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
             },
-            "captured_at": "2026-11-22T13:33:43.171892+01:00",
+            "captured_at": "2026-11-22T14:40:42.729551+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6195,8 +6813,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795350615000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354215000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -6212,15 +6830,15 @@
             "source_title": "Le pronostic du PRIX GUY DELOISON",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
-              "sha256": "0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711",
-              "file": "preuves/0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711.gz"
+              "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+              "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
-              "sha256": "ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82",
-              "file": "preuves/ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82.gz"
+              "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+              "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
             },
-            "captured_at": "2026-11-22T13:33:43.268740+01:00",
+            "captured_at": "2026-11-22T14:40:42.777530+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6228,8 +6846,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795350615000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354215000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -6245,15 +6863,15 @@
             "source_title": "Prix Guy Deloison",
             "evidence": {
               "url": "https://www.geny.com/course/1699521-2026-11-22-vincennes-prix-guy-deloison/partants-pronostics",
-              "sha256": "0ce21f5a51e2e9e71c3a30a0f69ff5ed477d8a0da303e5b4a07cd8a218e47d1a",
-              "file": "preuves/0ce21f5a51e2e9e71c3a30a0f69ff5ed477d8a0da303e5b4a07cd8a218e47d1a.gz"
+              "sha256": "58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3",
+              "file": "preuves/58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C8/participants",
-              "sha256": "ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82",
-              "file": "preuves/ed4c505d4ce570140854cb09317c5a52b8fd8532b4df8a8d3f42de227dcb5b82.gz"
+              "sha256": "6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e",
+              "file": "preuves/6f985407ec2894fc3061422e8f11ad0f22960b6dda06fb6e7ce521db172ba50e.gz"
             },
-            "captured_at": "2026-11-22T13:34:00.900519+01:00",
+            "captured_at": "2026-11-22T14:41:00.372866+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6261,8 +6879,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 2.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795350615000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795354215000,
               "favoris": true,
               "numPmu1": 9,
               "grossePrise": false
@@ -6274,23 +6892,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c8-vincennes-prix-guy-deloison",
-            "sha256": "f2aaab2c6e7a1c50a123c51e5cc06f57a3b5656c01a1cbdb20c5f1bb6ac057cd",
-            "file": "preuves/f2aaab2c6e7a1c50a123c51e5cc06f57a3b5656c01a1cbdb20c5f1bb6ac057cd.gz"
+            "sha256": "8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771",
+            "file": "preuves/8038bdf05324c94428d0ee2a2655a82995c8089fbac2f0e68dc3077700353771.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
-            "sha256": "0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711",
-            "file": "preuves/0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711.gz"
+            "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+            "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424355_prix-guy-deloison.html",
-            "sha256": "0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711",
-            "file": "preuves/0ac9c0d6be65f5964496a9d0b736bbb84315869df8358fd54a916818f4a5b711.gz"
+            "sha256": "1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2",
+            "file": "preuves/1604093d17dfa6bf7a032432b5516025aebe3600b40f8ae6ac102b1de050cfc2.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699521-2026-11-22-vincennes-prix-guy-deloison/partants-pronostics",
-            "sha256": "0ce21f5a51e2e9e71c3a30a0f69ff5ed477d8a0da303e5b4a07cd8a218e47d1a",
-            "file": "preuves/0ce21f5a51e2e9e71c3a30a0f69ff5ed477d8a0da303e5b4a07cd8a218e47d1a.gz"
+            "sha256": "58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3",
+            "file": "preuves/58af99a45002472941c2150cd1a0d782169ae9be0a9c0d11288f058e99b4b5a3.gz"
           }
         }
       },
@@ -6312,24 +6930,24 @@
             "source_title": "Prix De Manciet",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-22/r1c9-vincennes-prix-de-manciet",
-              "sha256": "44b724f16321b2d0f277e4f58daae6f66e885c1f47a301d8e13247ebe53e18b5",
-              "file": "preuves/44b724f16321b2d0f277e4f58daae6f66e885c1f47a301d8e13247ebe53e18b5.gz"
+              "sha256": "c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f",
+              "file": "preuves/c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
-              "sha256": "d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae",
-              "file": "preuves/d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae.gz"
+              "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+              "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
             },
-            "captured_at": "2026-11-22T13:34:02.444163+01:00",
+            "captured_at": "2026-11-22T14:41:02.115915+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 3.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350657000,
+              "dateRapport": 1795354257000,
               "favoris": true,
               "numPmu1": 13,
               "grossePrise": false
@@ -6345,24 +6963,24 @@
             "source_title": "Le pronostic du PRIX DE MANCIET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
-              "sha256": "01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20",
-              "file": "preuves/01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20.gz"
+              "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+              "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
-              "sha256": "d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae",
-              "file": "preuves/d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae.gz"
+              "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+              "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
             },
-            "captured_at": "2026-11-22T13:34:02.905537+01:00",
+            "captured_at": "2026-11-22T14:41:02.758031+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.8,
+              "rapport": 3.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795350657000,
+              "dateRapport": 1795354257000,
               "favoris": true,
               "numPmu1": 13,
               "grossePrise": false
@@ -6378,24 +6996,24 @@
             "source_title": "Le pronostic du PRIX DE MANCIET",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
-              "sha256": "01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20",
-              "file": "preuves/01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20.gz"
+              "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+              "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
-              "sha256": "d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae",
-              "file": "preuves/d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae.gz"
+              "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+              "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
             },
-            "captured_at": "2026-11-22T13:34:03.003617+01:00",
+            "captured_at": "2026-11-22T14:41:02.866487+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.27,
-              "dateRapport": 1795350657000,
+              "nombreIndicateurTendance": 2.56,
+              "dateRapport": 1795354257000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -6411,24 +7029,24 @@
             "source_title": "Prix de Manciet",
             "evidence": {
               "url": "https://www.geny.com/course/1699523-2026-11-22-vincennes-prix-de-manciet/partants-pronostics",
-              "sha256": "2ae7c8e979e05b59fd6c7597ebe6c0653d9577468f9f17832640ee58203abb36",
-              "file": "preuves/2ae7c8e979e05b59fd6c7597ebe6c0653d9577468f9f17832640ee58203abb36.gz"
+              "sha256": "9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b",
+              "file": "preuves/9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/22112026/R1/C9/participants",
-              "sha256": "d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae",
-              "file": "preuves/d8455db739a03fde44b6513f18c3661f02068a81a01a7e2e58c482b95d9229ae.gz"
+              "sha256": "4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2",
+              "file": "preuves/4a2e2b42a10af98bffaa63e89de2888413aaf21557318705103d7061022146f2.gz"
             },
-            "captured_at": "2026-11-22T13:34:20.947774+01:00",
+            "captured_at": "2026-11-22T14:41:19.831722+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.5,
+              "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.27,
-              "dateRapport": 1795350657000,
+              "nombreIndicateurTendance": 2.56,
+              "dateRapport": 1795354257000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -6440,23 +7058,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-22/r1c9-vincennes-prix-de-manciet",
-            "sha256": "44b724f16321b2d0f277e4f58daae6f66e885c1f47a301d8e13247ebe53e18b5",
-            "file": "preuves/44b724f16321b2d0f277e4f58daae6f66e885c1f47a301d8e13247ebe53e18b5.gz"
+            "sha256": "c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f",
+            "file": "preuves/c860cf0155ea936bbb8897c894c1c1be0a2b7f546f154a6850295c0c6d09337f.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
-            "sha256": "01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20",
-            "file": "preuves/01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20.gz"
+            "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+            "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-22/paris-vincennes/424356_prix-de-manciet.html",
-            "sha256": "01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20",
-            "file": "preuves/01decd0708ecb4a69d7db069c8a6d2a378e67460141abff5aa25c001e6f98a20.gz"
+            "sha256": "eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513",
+            "file": "preuves/eb492fc121d17fc1794528c76f7bf9bcecdde26000db0807de072683ce085513.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699523-2026-11-22-vincennes-prix-de-manciet/partants-pronostics",
-            "sha256": "2ae7c8e979e05b59fd6c7597ebe6c0653d9577468f9f17832640ee58203abb36",
-            "file": "preuves/2ae7c8e979e05b59fd6c7597ebe6c0653d9577468f9f17832640ee58203abb36.gz"
+            "sha256": "9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b",
+            "file": "preuves/9ecddc2affc229288bb610686d3042037cf2b7c975c06fc54adab0aaacd0fe9b.gz"
           }
         }
       }
