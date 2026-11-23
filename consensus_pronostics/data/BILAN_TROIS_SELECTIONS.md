@@ -68,7 +68,7 @@ Simulation à mise fixe : 2 € par variante complète confirmée sur Telegram a
 | 2026-11-17 | cotes | 2 – 8 – 14 – 4 – 5 | 3 | 2 € | 0.00 € | REGLE |
 | 2026-11-19 | cotes | 6 – 16 – 14 – 2 – 1 | 2 | 2 € | 0.00 € | REGLE |
 | 2026-11-21 | cotes | 6 – 1 – 8 – 2 – 9 | 2 | 2 € | 0.00 € | REGLE |
-| 2026-11-23 | cotes | 14 – 17 – 3 – 11 – 12 | — | 2 € | — | AVANT_COURSE |
+| 2026-11-23 | cotes | 14 – 17 – 11 – 3 – 13 | — | 2 € | — | AVANT_COURSE |
 
 ## Cumul indépendant par variante
 
