@@ -1746,7 +1746,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-24T16:40:02.296504+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "34ed4f378834e5fa27d9f0b748bc7b012eb912e2f50de573c5e28b1a0a81a3fe",
+            "file": "preuves/34ed4f378834e5fa27d9f0b748bc7b012eb912e2f50de573c5e28b1a0a81a3fe.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb",
+            "file": "preuves/0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1779,7 +1793,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 12,
+          "settled_at": "2026-11-24T16:40:02.296708+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "34ed4f378834e5fa27d9f0b748bc7b012eb912e2f50de573c5e28b1a0a81a3fe",
+            "file": "preuves/34ed4f378834e5fa27d9f0b748bc7b012eb912e2f50de573c5e28b1a0a81a3fe.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb",
+            "file": "preuves/0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb.gz"
+          }
         }
       },
       "groups": {},
@@ -2088,15 +2116,46 @@
         }
       },
       "final_check_completed_at": "2026-11-24T15:59:19.926308+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 5,
+          "name": "VESINABA",
+          "rank": 1
+        },
+        {
+          "number": 2,
+          "name": "LITTLE HAVANA",
+          "rank": 2
+        },
+        {
+          "number": 12,
+          "name": "MAESTRO CHOP",
+          "rank": 3
+        },
+        {
+          "number": 8,
+          "name": "SIXTINE BAAL",
+          "rank": 4
+        },
+        {
+          "number": 11,
+          "name": "ECLAIR DE VATI",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+        "sha256": "0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb",
+        "file": "preuves/0f904e1798769ba75eedced4bcddde9aaf9ca84496ceafe7b1acbea951cd91fb.gz"
+      }
     },
     {
       "date": "2026-11-24",
       "id": "R1C6",
       "c": 6,
       "title": "PRIX DU GRAND HOTEL D'ARGOUGES",
-      "departure": "2026-11-24T16:50:00+01:00",
+      "departure": "2026-11-24T16:53:00+01:00",
       "discipline": "PLAT",
       "market": true,
       "tips": {
@@ -2579,7 +2638,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T16:32:20.251430+01:00",
+      "final_check_started_at": "2026-11-24T16:40:00.274540+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
@@ -2593,11 +2652,18 @@
         }
       },
       "groups_frozen_at": "2026-11-24T15:50:29.043991+01:00",
-      "final_check_completed_at": "2026-11-24T16:32:20.910466+01:00",
+      "final_check_completed_at": "2026-11-24T16:40:00.874492+01:00",
       "last_reservation_check": {
-        "at": "2026-11-24T16:32:45.288026+01:00",
+        "at": "2026-11-24T16:40:02.453903+01:00",
         "stop": "ATTENTE_RESULTAT"
-      }
+      },
+      "schedule_changes": [
+        {
+          "old": "2026-11-24T16:50:00+01:00",
+          "new": "2026-11-24T16:53:00+01:00",
+          "checked_at": "2026-11-24T16:40:00.274540+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-24",
@@ -3039,7 +3105,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T16:32:20.914821+01:00",
+      "final_check_started_at": "2026-11-24T16:40:01.511763+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
@@ -3052,7 +3118,7 @@
           "file": "preuves/840e3506fdb3b858afcfc4f89be577e79f3f0e638d447ff4dbed3d23003ff868.gz"
         }
       },
-      "final_check_completed_at": "2026-11-24T16:32:43.835618+01:00"
+      "final_check_completed_at": "2026-11-24T16:40:01.944707+01:00"
     },
     {
       "date": "2026-11-24",
