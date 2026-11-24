@@ -3,7 +3,39 @@
   "venue": "DEAUVILLE",
   "solutions": {
     "accord_geny_canalturf": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C2",
+          "departure": "2026-11-24T14:30:00+01:00",
+          "number": 1,
+          "name": "CENTRAL PARK WEST",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-24T14:16:00.167043+01:00",
+          "source_captured_at": "2026-11-24T13:34:44.592701+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 7.14,
+            "dateRapport": 1795526147000,
+            "favoris": true,
+            "numPmu1": 1,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "114efd54064f1e083c09fdb408714bc6120d11398981e8285f749e5798b2260d",
+          "telegram_receipts": [
+            {
+              "message_id": 8016,
+              "date": 1795526160
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -50,7 +82,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 3,
+          "settled_at": "2026-11-24T14:15:59.522804+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "735351cf9a0c9841d189aa26dcb3d6c780b188e0df96333b23bd6b3ea16b8ef7",
+            "file": "preuves/735351cf9a0c9841d189aa26dcb3d6c780b188e0df96333b23bd6b3ea16b8ef7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C1/participants",
+            "sha256": "959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a",
+            "file": "preuves/959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -83,7 +129,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 5,
+          "settled_at": "2026-11-24T14:15:59.523040+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "735351cf9a0c9841d189aa26dcb3d6c780b188e0df96333b23bd6b3ea16b8ef7",
+            "file": "preuves/735351cf9a0c9841d189aa26dcb3d6c780b188e0df96333b23bd6b3ea16b8ef7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C1/participants",
+            "sha256": "959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a",
+            "file": "preuves/959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a.gz"
+          }
         }
       },
       "groups": {},
@@ -248,8 +308,39 @@
         }
       },
       "final_check_completed_at": "2026-11-24T13:50:46.906222+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Geny et Canalturf différents ou source indisponible"
+      "no_bet_reason": "Geny et Canalturf différents ou source indisponible",
+      "official_arrival": [
+        {
+          "number": 16,
+          "name": "STARAC",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "TAMYZ",
+          "rank": 2
+        },
+        {
+          "number": 3,
+          "name": "COLGAN SENORA",
+          "rank": 3
+        },
+        {
+          "number": 2,
+          "name": "CHESS",
+          "rank": 4
+        },
+        {
+          "number": 1,
+          "name": "CASSIUS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C1/participants",
+        "sha256": "959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a",
+        "file": "preuves/959cfddc0efaac0161bb477d1b4b8a30659bc16c2973e2bc7998f0a15952689a.gz"
+      }
     },
     {
       "date": "2026-11-24",
@@ -579,7 +670,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T13:59:35.383412+01:00",
+      "final_check_started_at": "2026-11-24T14:15:33.065997+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699651-2026-11-24-deauville-prix-de-vadalliere/partants-pronostics",
@@ -593,7 +684,7 @@
         }
       },
       "groups_frozen_at": "2026-11-24T13:34:46.132103+01:00",
-      "final_check_completed_at": "2026-11-24T13:59:35.888742+01:00"
+      "final_check_completed_at": "2026-11-24T14:15:33.940956+01:00"
     },
     {
       "date": "2026-11-24",
@@ -603,8 +694,83 @@
       "departure": "2026-11-24T15:05:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 11,
+          "name": "UPMANIA",
+          "source_url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de Préaux",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
+            "sha256": "4f5275b98ddd8ab940e3b1c687ca39207ae25c727833e26905e7b7c940ea45fd",
+            "file": "preuves/4f5275b98ddd8ab940e3b1c687ca39207ae25c727833e26905e7b7c940ea45fd.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
+            "sha256": "9d562bbe563c16ff004f3876d27d7dee48ee1381fa516493a7152c4feae7d325",
+            "file": "preuves/9d562bbe563c16ff004f3876d27d7dee48ee1381fa516493a7152c4feae7d325.gz"
+          },
+          "captured_at": "2026-11-24T14:15:55.681852+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -14.28,
+            "dateRapport": 1795526122000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "UPMANIA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE PREAUX",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
+            "sha256": "832df352094766995c77fe7faa1b83c796ee6223d73b2370ec7b8fa01013672a",
+            "file": "preuves/832df352094766995c77fe7faa1b83c796ee6223d73b2370ec7b8fa01013672a.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
+            "sha256": "9d562bbe563c16ff004f3876d27d7dee48ee1381fa516493a7152c4feae7d325",
+            "file": "preuves/9d562bbe563c16ff004f3876d27d7dee48ee1381fa516493a7152c4feae7d325.gz"
+          },
+          "captured_at": "2026-11-24T14:15:58.431805+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -14.28,
+            "dateRapport": 1795526122000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_geny_canalturf": {
+          "number": 11,
+          "sites": [
+            "geny",
+            "canalturf"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -847,7 +1013,22 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-24T14:15:33.943155+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
+          "sha256": "4f5275b98ddd8ab940e3b1c687ca39207ae25c727833e26905e7b7c940ea45fd",
+          "file": "preuves/4f5275b98ddd8ab940e3b1c687ca39207ae25c727833e26905e7b7c940ea45fd.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
+          "sha256": "832df352094766995c77fe7faa1b83c796ee6223d73b2370ec7b8fa01013672a",
+          "file": "preuves/832df352094766995c77fe7faa1b83c796ee6223d73b2370ec7b8fa01013672a.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-24T14:15:58.431805+01:00",
+      "final_check_completed_at": "2026-11-24T14:15:58.431853+01:00"
     },
     {
       "date": "2026-11-24",
