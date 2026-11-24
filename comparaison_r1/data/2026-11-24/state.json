@@ -2154,7 +2154,8 @@
           "new": "2026-11-24T15:07:00+01:00",
           "checked_at": "2026-11-24T14:59:24.861587+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-24",
@@ -2773,9 +2774,162 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-24T15:16:11.528882+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 8,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            },
+            "groupe_turfin+zeturf": {
+              "number": 8,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 8,
+              "name": "VEGAWAN",
+              "source_url": "https://turfin.fr/course/2026-11-24/r1c4-deauville-prix-de-montfort",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Montfort",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-24/r1c4-deauville-prix-de-montfort",
+                "sha256": "2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8",
+                "file": "preuves/2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+                "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+                "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
+              },
+              "captured_at": "2026-11-24T15:15:53.079931+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.43,
+                "dateRapport": 1795529726000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 10,
+              "name": "SILVER BAY",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE MONTFORT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+                "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+                "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+                "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+                "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
+              },
+              "captured_at": "2026-11-24T15:15:53.516920+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.69,
+                "dateRapport": 1795529726000,
+                "favoris": false,
+                "numPmu1": 10,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 8,
+              "name": "VEGAWAN",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE MONTFORT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+                "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+                "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+                "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+                "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
+              },
+              "captured_at": "2026-11-24T15:15:53.560244+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.43,
+                "dateRapport": 1795529726000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 12,
+              "name": "PORTO URBINO",
+              "source_url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Montfort",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
+                "sha256": "8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e",
+                "file": "preuves/8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+                "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+                "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
+              },
+              "captured_at": "2026-11-24T15:16:11.528805+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.1,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 2.5,
+                "dateRapport": 1795529726000,
+                "favoris": false,
+                "numPmu1": 12,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-24T14:59:25.939179+01:00",
+      "final_check_started_at": "2026-11-24T15:15:26.983593+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-24/r1c4-deauville-prix-de-montfort",
@@ -2799,7 +2953,7 @@
         }
       },
       "groups_frozen_at": "2026-11-24T14:50:20.451972+01:00",
-      "final_check_completed_at": "2026-11-24T14:59:26.622940+01:00"
+      "final_check_completed_at": "2026-11-24T15:15:27.486378+01:00"
     },
     {
       "date": "2026-11-24",
@@ -2808,8 +2962,156 @@
       "title": "PRIX DE L'HOTEL DU CROISSANT",
       "departure": "2026-11-24T16:15:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 2,
+          "name": "LITTLE HAVANA",
+          "source_url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix De L'hotel Du Croissant",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
+            "sha256": "91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c",
+            "file": "preuves/91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+            "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+          },
+          "captured_at": "2026-11-24T15:15:29.544260+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.56,
+            "dateRapport": 1795528843000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "AMICIS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+            "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+            "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+            "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+          },
+          "captured_at": "2026-11-24T15:15:30.987253+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 12.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.52,
+            "dateRapport": 1795528843000,
+            "favoris": false,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 5,
+          "name": "VESINABA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+            "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+            "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+            "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+          },
+          "captured_at": "2026-11-24T15:15:31.031955+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.89,
+            "dateRapport": 1795528843000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 5,
+          "name": "VESINABA",
+          "source_url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de l'Hôtel du Croissant",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
+            "sha256": "62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca",
+            "file": "preuves/62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+            "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+            "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+          },
+          "captured_at": "2026-11-24T15:15:51.403385+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.89,
+            "dateRapport": 1795528843000,
+            "favoris": false,
+            "numPmu1": 5,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_2_sur_4": {
+          "number": 5,
+          "sites": [
+            "zeturf",
+            "geny"
+          ]
+        },
+        "groupe_geny+zeturf": {
+          "number": 5,
+          "sites": [
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -3270,8 +3572,186 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-24T15:16:11.820041+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 5,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_geny+zeturf": {
+              "number": 5,
+              "sites": [
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "LITTLE HAVANA",
+              "source_url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'hotel Du Croissant",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
+                "sha256": "91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c",
+                "file": "preuves/91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+                "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+                "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+              },
+              "captured_at": "2026-11-24T15:16:11.649801+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.56,
+                "dateRapport": 1795528843000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 7,
+              "name": "AMICIS",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+                "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+                "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+                "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+                "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+              },
+              "captured_at": "2026-11-24T15:16:11.694454+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 12.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.52,
+                "dateRapport": 1795528843000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "VESINABA",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+                "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+                "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+                "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+                "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+              },
+              "captured_at": "2026-11-24T15:16:11.739921+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.89,
+                "dateRapport": 1795528843000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 5,
+              "name": "VESINABA",
+              "source_url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Hôtel du Croissant",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
+                "sha256": "62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca",
+                "file": "preuves/62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
+                "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+                "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
+              },
+              "captured_at": "2026-11-24T15:16:11.819963+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.89,
+                "dateRapport": 1795528843000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            }
+          }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-24T15:15:27.491347+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
+          "sha256": "91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c",
+          "file": "preuves/91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+          "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+          "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
+          "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+          "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
+          "sha256": "62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca",
+          "file": "preuves/62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-24T15:15:51.403385+01:00",
+      "final_check_completed_at": "2026-11-24T15:15:51.403443+01:00"
     },
     {
       "date": "2026-11-24",
@@ -3772,6 +4252,169 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-24T15:16:31.473794+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+zeturf": {
+              "number": 7,
+              "sites": [
+                "canalturf",
+                "zeturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "ZELZANA",
+              "source_url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Du Grand Hotel D'argouges",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
+                "sha256": "eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa",
+                "file": "preuves/eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+                "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+                "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
+              },
+              "captured_at": "2026-11-24T15:16:13.445921+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -11.49,
+                "dateRapport": 1795529709000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 7,
+              "name": "LE GARDOLOT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+                "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+                "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+                "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+                "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
+              },
+              "captured_at": "2026-11-24T15:16:13.865592+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.54,
+                "dateRapport": 1795529709000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 7,
+              "name": "LE GARDOLOT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+                "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+                "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+                "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+                "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
+              },
+              "captured_at": "2026-11-24T15:16:13.964656+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.54,
+                "dateRapport": 1795529709000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 7,
+              "name": "LE GARDOLOT",
+              "source_url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix du Grand Hôtel d'Argouges",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
+                "sha256": "a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b",
+                "file": "preuves/a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+                "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+                "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
+              },
+              "captured_at": "2026-11-24T15:16:31.473708+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.54,
+                "dateRapport": 1795529709000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     },
@@ -4189,6 +4832,142 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": -2.17,
                 "dateRapport": 1795524346000,
+                "favoris": false,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-24T15:16:51.570211+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 1,
+              "name": "GOT MAN",
+              "source_url": "https://turfin.fr/course/2026-11-24/r1c7-deauville-prix-du-manoir-de-la-caillerie",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Du Manoir De La Caillerie",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-24/r1c7-deauville-prix-du-manoir-de-la-caillerie",
+                "sha256": "60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e",
+                "file": "preuves/60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
+                "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+                "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
+              },
+              "captured_at": "2026-11-24T15:16:32.991761+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.65,
+                "dateRapport": 1795529746000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "NOVA MOON",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU MANOIR DE LA CAILLERIE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
+                "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+                "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
+                "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+                "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
+              },
+              "captured_at": "2026-11-24T15:16:33.411717+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 12.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -0.79,
+                "dateRapport": 1795529746000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "LE GAST",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU MANOIR DE LA CAILLERIE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
+                "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+                "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
+                "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+                "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
+              },
+              "captured_at": "2026-11-24T15:16:33.456216+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": false,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "typeRapport": "DIRECT",
+                "dateRapport": 1795529746000,
+                "favoris": false,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 11,
+              "name": "SOGYNT",
+              "source_url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix du Manoir de la Caillerie",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
+                "sha256": "06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01",
+                "file": "preuves/06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
+                "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+                "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
+              },
+              "captured_at": "2026-11-24T15:16:51.570122+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 8.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795529746000,
                 "favoris": false,
                 "numPmu1": 11,
                 "grossePrise": false
@@ -4667,6 +5446,159 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-24T15:17:11.502869+01:00",
+          "groups": {
+            "accord_2_sur_4": {
+              "number": 5,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            },
+            "groupe_turfin+zeturf": {
+              "number": 5,
+              "sites": [
+                "turfin",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 5,
+              "name": "RHIPPER",
+              "source_url": "https://turfin.fr/course/2026-11-24/r1c8-deauville-prix-du-conservatoire-de-la-dentelle",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Du Conservatoire De La Dentelle",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-24/r1c8-deauville-prix-du-conservatoire-de-la-dentelle",
+                "sha256": "8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b",
+                "file": "preuves/8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+                "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+                "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
+              },
+              "captured_at": "2026-11-24T15:16:53.237364+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.7,
+                "dateRapport": 1795529750000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 2,
+              "name": "LETTYT FIGHT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU CONSERVATOIRE DE LA DENTELLE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+                "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+                "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+                "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+                "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
+              },
+              "captured_at": "2026-11-24T15:16:53.673950+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.5,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 4.16,
+                "dateRapport": 1795529750000,
+                "favoris": false,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 5,
+              "name": "RHIPPER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DU CONSERVATOIRE DE LA DENTELLE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+                "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+                "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+                "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+                "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
+              },
+              "captured_at": "2026-11-24T15:16:53.719084+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.7,
+                "dateRapport": 1795529750000,
+                "favoris": true,
+                "numPmu1": 5,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 8,
+              "name": "BECQUANIENTE",
+              "source_url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix du Conservatoire de la Dentelle",
+              "evidence": {
+                "url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
+                "sha256": "2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a",
+                "file": "preuves/2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+                "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+                "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
+              },
+              "captured_at": "2026-11-24T15:17:11.502763+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 7.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -1.26,
+                "dateRapport": 1795529750000,
+                "favoris": false,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -4674,343 +5606,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-24T14:01:20.175590+01:00",
+    "captured_at": "2026-11-24T15:17:11.502951+01:00",
     "races": [
-      {
-        "date": "2026-11-24",
-        "id": "R1C2",
-        "c": 2,
-        "title": "PRIX DE VADALLIERE",
-        "departure": "2026-11-24T14:30:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 1,
-            "name": "CENTRAL PARK WEST",
-            "source_url": "https://turfin.fr/course/2026-11-24/r1c2-deauville-prix-de-vadalliere",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Vadalliere",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-24/r1c2-deauville-prix-de-vadalliere",
-              "sha256": "2244ee621c0c6bc919dba44d8b37ab8c0a41114f66c56ab3ffe00d5882f1e705",
-              "file": "preuves/2244ee621c0c6bc919dba44d8b37ab8c0a41114f66c56ab3ffe00d5882f1e705.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
-              "sha256": "eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d",
-              "file": "preuves/eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d.gz"
-            },
-            "captured_at": "2026-11-24T13:58:58.078764+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795524301000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 1,
-            "name": "CENTRAL PARK WEST",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE VADALLIERE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-              "sha256": "2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1",
-              "file": "preuves/2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
-              "sha256": "eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d",
-              "file": "preuves/eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d.gz"
-            },
-            "captured_at": "2026-11-24T13:58:59.672703+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795524301000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 1,
-            "name": "CENTRAL PARK WEST",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE VADALLIERE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-              "sha256": "2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1",
-              "file": "preuves/2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
-              "sha256": "eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d",
-              "file": "preuves/eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d.gz"
-            },
-            "captured_at": "2026-11-24T13:58:59.742586+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795524301000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 1,
-            "name": "CENTRAL PARK WEST",
-            "source_url": "https://www.geny.com/course/1699651-2026-11-24-deauville-prix-de-vadalliere/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Vadallière",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699651-2026-11-24-deauville-prix-de-vadalliere/partants-pronostics",
-              "sha256": "8c2f2bf1e380bb16cb6184f01f76276944c155bb8cc12577af707e270c7abddd",
-              "file": "preuves/8c2f2bf1e380bb16cb6184f01f76276944c155bb8cc12577af707e270c7abddd.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
-              "sha256": "eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d",
-              "file": "preuves/eefc90c2a6a53d9566e9c2351c17aded594951e40ec6dbe61f01c25d798ba79d.gz"
-            },
-            "captured_at": "2026-11-24T13:59:20.122402+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795524301000,
-              "favoris": true,
-              "numPmu1": 1,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-24T13:58:55.988465+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-24/r1c2-deauville-prix-de-vadalliere",
-            "sha256": "2244ee621c0c6bc919dba44d8b37ab8c0a41114f66c56ab3ffe00d5882f1e705",
-            "file": "preuves/2244ee621c0c6bc919dba44d8b37ab8c0a41114f66c56ab3ffe00d5882f1e705.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-            "sha256": "2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1",
-            "file": "preuves/2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424504_prix-de-vadalliere.html",
-            "sha256": "2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1",
-            "file": "preuves/2ba992d00a21a783b89e6c03fea0052fa5567349886cf4ad361f1b14f683a6e1.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699651-2026-11-24-deauville-prix-de-vadalliere/partants-pronostics",
-            "sha256": "8c2f2bf1e380bb16cb6184f01f76276944c155bb8cc12577af707e270c7abddd",
-            "file": "preuves/8c2f2bf1e380bb16cb6184f01f76276944c155bb8cc12577af707e270c7abddd.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-24T13:34:49.326730+01:00",
-        "final_check_completed_at": "2026-11-24T13:58:56.404882+01:00"
-      },
-      {
-        "date": "2026-11-24",
-        "id": "R1C3",
-        "c": 3,
-        "title": "PRIX DE PREAUX",
-        "departure": "2026-11-24T15:05:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 11,
-            "name": "UPMANIA",
-            "source_url": "https://turfin.fr/course/2026-11-24/r1c3-deauville-prix-de-preaux",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Preaux",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-24/r1c3-deauville-prix-de-preaux",
-              "sha256": "4612df726b5e3b0891148e077f061403e77b3b629b650d411dd08dbf1e4a5fe9",
-              "file": "preuves/4612df726b5e3b0891148e077f061403e77b3b629b650d411dd08dbf1e4a5fe9.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
-              "sha256": "4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134",
-              "file": "preuves/4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134.gz"
-            },
-            "captured_at": "2026-11-24T13:59:21.626286+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1795524322000,
-              "favoris": true,
-              "numPmu1": 11,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 11,
-            "name": "UPMANIA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE PREAUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-              "sha256": "17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32",
-              "file": "preuves/17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
-              "sha256": "4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134",
-              "file": "preuves/4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134.gz"
-            },
-            "captured_at": "2026-11-24T13:59:22.067653+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1795524322000,
-              "favoris": true,
-              "numPmu1": 11,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 9,
-            "name": "STELLIA",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE PREAUX",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-              "sha256": "17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32",
-              "file": "preuves/17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
-              "sha256": "4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134",
-              "file": "preuves/4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134.gz"
-            },
-            "captured_at": "2026-11-24T13:59:22.138315+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.2,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -6.66,
-              "dateRapport": 1795524322000,
-              "favoris": false,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 11,
-            "name": "UPMANIA",
-            "source_url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Préaux",
-            "evidence": {
-              "url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
-              "sha256": "f615fdeb9c6bff63f515443f4b59d2ac8bc5985e9a00f571143327e61e55856a",
-              "file": "preuves/f615fdeb9c6bff63f515443f4b59d2ac8bc5985e9a00f571143327e61e55856a.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C3/participants",
-              "sha256": "4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134",
-              "file": "preuves/4a3f04b9b7bb4104ddefc8e2429d7e7f6cb9e9c7c51600f3bed45ef8302eb134.gz"
-            },
-            "captured_at": "2026-11-24T13:59:40.473218+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 5.88,
-              "dateRapport": 1795524322000,
-              "favoris": true,
-              "numPmu1": 11,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-24/r1c3-deauville-prix-de-preaux",
-            "sha256": "4612df726b5e3b0891148e077f061403e77b3b629b650d411dd08dbf1e4a5fe9",
-            "file": "preuves/4612df726b5e3b0891148e077f061403e77b3b629b650d411dd08dbf1e4a5fe9.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-            "sha256": "17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32",
-            "file": "preuves/17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424505_prix-de-preaux.html",
-            "sha256": "17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32",
-            "file": "preuves/17f9057f4ddda750511f6ff8730eb13138cc9cb3ff5e93de176e5ddc6bb88d32.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
-            "sha256": "f615fdeb9c6bff63f515443f4b59d2ac8bc5985e9a00f571143327e61e55856a",
-            "file": "preuves/f615fdeb9c6bff63f515443f4b59d2ac8bc5985e9a00f571143327e61e55856a.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-24",
         "id": "R1C4",
@@ -5029,15 +5626,15 @@
             "source_title": "Prix De Montfort",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-24/r1c4-deauville-prix-de-montfort",
-              "sha256": "da2bb3971627b988670c3bb958166026910da86b4504b9db3420c1ad8aeb75c4",
-              "file": "preuves/da2bb3971627b988670c3bb958166026910da86b4504b9db3420c1ad8aeb75c4.gz"
+              "sha256": "2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8",
+              "file": "preuves/2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
-              "sha256": "c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9",
-              "file": "preuves/c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9.gz"
+              "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+              "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
             },
-            "captured_at": "2026-11-24T13:59:41.547573+01:00",
+            "captured_at": "2026-11-24T15:15:53.079931+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5045,11 +5642,11 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -20.0,
-              "dateRapport": 1795524340000,
+              "nombreIndicateurTendance": -2.43,
+              "dateRapport": 1795529726000,
               "favoris": true,
               "numPmu1": 8,
-              "grossePrise": true
+              "grossePrise": false
             }
           },
           "canalturf": {
@@ -5062,24 +5659,24 @@
             "source_title": "Le pronostic du PRIX DE MONTFORT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
-              "sha256": "b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e",
-              "file": "preuves/b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e.gz"
+              "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+              "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
-              "sha256": "c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9",
-              "file": "preuves/c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9.gz"
+              "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+              "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
             },
-            "captured_at": "2026-11-24T13:59:41.997329+01:00",
+            "captured_at": "2026-11-24T15:15:53.516920+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.4,
+              "rapport": 5.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.58,
-              "dateRapport": 1795524340000,
+              "nombreIndicateurTendance": -1.69,
+              "dateRapport": 1795529726000,
               "favoris": false,
               "numPmu1": 10,
               "grossePrise": false
@@ -5095,15 +5692,15 @@
             "source_title": "Le pronostic du PRIX DE MONTFORT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
-              "sha256": "b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e",
-              "file": "preuves/b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e.gz"
+              "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+              "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
-              "sha256": "c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9",
-              "file": "preuves/c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9.gz"
+              "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+              "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
             },
-            "captured_at": "2026-11-24T13:59:42.099490+01:00",
+            "captured_at": "2026-11-24T15:15:53.560244+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5111,11 +5708,11 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 4.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -20.0,
-              "dateRapport": 1795524340000,
+              "nombreIndicateurTendance": -2.43,
+              "dateRapport": 1795529726000,
               "favoris": true,
               "numPmu1": 8,
-              "grossePrise": true
+              "grossePrise": false
             }
           },
           "geny": {
@@ -5128,24 +5725,24 @@
             "source_title": "Prix de Montfort",
             "evidence": {
               "url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
-              "sha256": "73ee790153f682f31af0fc96305110d59c648cd300d5dfef055d3a1e34401ccb",
-              "file": "preuves/73ee790153f682f31af0fc96305110d59c648cd300d5dfef055d3a1e34401ccb.gz"
+              "sha256": "8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e",
+              "file": "preuves/8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
-              "sha256": "c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9",
-              "file": "preuves/c3f9b2848bc7a1a8cd5cdcde643d3563e4b416fa46212cfb8da047cc0397a4c9.gz"
+              "sha256": "6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2",
+              "file": "preuves/6ea27c5b95892e00d5f8c656ad9ca1d4e1c5df88b5d1d8618e76b234042ea4d2.gz"
             },
-            "captured_at": "2026-11-24T14:00:00.118977+01:00",
+            "captured_at": "2026-11-24T15:16:11.528805+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.0,
+              "rapport": 4.1,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.38,
-              "dateRapport": 1795524340000,
+              "nombreIndicateurTendance": 2.5,
+              "dateRapport": 1795529726000,
               "favoris": false,
               "numPmu1": 12,
               "grossePrise": false
@@ -5154,28 +5751,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-24T15:15:26.983593+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-24/r1c4-deauville-prix-de-montfort",
-            "sha256": "da2bb3971627b988670c3bb958166026910da86b4504b9db3420c1ad8aeb75c4",
-            "file": "preuves/da2bb3971627b988670c3bb958166026910da86b4504b9db3420c1ad8aeb75c4.gz"
+            "sha256": "2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8",
+            "file": "preuves/2e9a4f8babd61dab6ec6c65bb28422a68a1adf81940cf5eb66d3a82d908aa6b8.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
-            "sha256": "b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e",
-            "file": "preuves/b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e.gz"
+            "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+            "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
-            "sha256": "b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e",
-            "file": "preuves/b99afb6f5ef9a15136f49eb8af143bab49b978bd9faefa37aa403553eb15385e.gz"
+            "sha256": "49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687",
+            "file": "preuves/49894fd2031b956d45d479f350a5503bbe2e3cfc92ee0005e04ad33b4302b687.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
-            "sha256": "73ee790153f682f31af0fc96305110d59c648cd300d5dfef055d3a1e34401ccb",
-            "file": "preuves/73ee790153f682f31af0fc96305110d59c648cd300d5dfef055d3a1e34401ccb.gz"
+            "sha256": "8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e",
+            "file": "preuves/8a142df86bb12c294e3e3e13b2ee1ea5c7e32207723196cb9c5cccbc44513d6e.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-24T14:50:20.451972+01:00",
+        "final_check_completed_at": "2026-11-24T15:15:27.486378+01:00"
       },
       {
         "date": "2026-11-24",
@@ -5195,24 +5795,24 @@
             "source_title": "Prix De L'hotel Du Croissant",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
-              "sha256": "ad340581bc1d02c261ad74f128d1ada3948bb761a849bec60ff4909542d903e2",
-              "file": "preuves/ad340581bc1d02c261ad74f128d1ada3948bb761a849bec60ff4909542d903e2.gz"
+              "sha256": "91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c",
+              "file": "preuves/91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
-              "sha256": "d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe",
-              "file": "preuves/d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe.gz"
+              "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+              "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
             },
-            "captured_at": "2026-11-24T14:00:01.214883+01:00",
+            "captured_at": "2026-11-24T15:16:11.649801+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 7.3,
+              "rapport": 6.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.81,
-              "dateRapport": 1795524343000,
+              "nombreIndicateurTendance": -1.56,
+              "dateRapport": 1795528843000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -5228,15 +5828,15 @@
             "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
-              "sha256": "6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df",
-              "file": "preuves/6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df.gz"
+              "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+              "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
-              "sha256": "d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe",
-              "file": "preuves/d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe.gz"
+              "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+              "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
             },
-            "captured_at": "2026-11-24T14:00:01.660681+01:00",
+            "captured_at": "2026-11-24T15:16:11.694454+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5244,8 +5844,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.09,
-              "dateRapport": 1795524343000,
+              "nombreIndicateurTendance": -1.52,
+              "dateRapport": 1795528843000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -5261,15 +5861,15 @@
             "source_title": "Le pronostic du PRIX DE L'HOTEL DU CROISSANT",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
-              "sha256": "6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df",
-              "file": "preuves/6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df.gz"
+              "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+              "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
-              "sha256": "d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe",
-              "file": "preuves/d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe.gz"
+              "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+              "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
             },
-            "captured_at": "2026-11-24T14:00:01.734170+01:00",
+            "captured_at": "2026-11-24T15:16:11.739921+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5277,8 +5877,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 7.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.63,
-              "dateRapport": 1795524343000,
+              "nombreIndicateurTendance": -3.89,
+              "dateRapport": 1795528843000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -5294,15 +5894,15 @@
             "source_title": "Prix de l'Hôtel du Croissant",
             "evidence": {
               "url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
-              "sha256": "19c25ffdc17ab4ecc3616552a8283e3763e706fabb30a19e93973ff9f9acdfa9",
-              "file": "preuves/19c25ffdc17ab4ecc3616552a8283e3763e706fabb30a19e93973ff9f9acdfa9.gz"
+              "sha256": "62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca",
+              "file": "preuves/62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C5/participants",
-              "sha256": "d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe",
-              "file": "preuves/d5eac73a147287308d88c431d6234da7a9b3534f8730295da4006d7d0b445bbe.gz"
+              "sha256": "d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614",
+              "file": "preuves/d92953caef72976acc9615ddc3f2c0c1c8ed69ee20da42ce3d59ed0a6b957614.gz"
             },
-            "captured_at": "2026-11-24T14:00:20.297174+01:00",
+            "captured_at": "2026-11-24T15:16:11.819963+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -5310,8 +5910,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 7.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.63,
-              "dateRapport": 1795524343000,
+              "nombreIndicateurTendance": -3.89,
+              "dateRapport": 1795528843000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -5320,28 +5920,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-24T15:15:27.491347+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
-            "sha256": "ad340581bc1d02c261ad74f128d1ada3948bb761a849bec60ff4909542d903e2",
-            "file": "preuves/ad340581bc1d02c261ad74f128d1ada3948bb761a849bec60ff4909542d903e2.gz"
+            "sha256": "91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c",
+            "file": "preuves/91d96b5d5cd0b8289639be1fba66fcb268591ac09bc9e61765c012a7cf9c104c.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
-            "sha256": "6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df",
-            "file": "preuves/6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df.gz"
+            "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+            "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424507_prix-de-l-hotel-du-croissant.html",
-            "sha256": "6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df",
-            "file": "preuves/6d35b50e7bdb5d6e244e9d6f5df383534b377d35e3263901953178481f4ab7df.gz"
+            "sha256": "3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893",
+            "file": "preuves/3028c5b9fb2bcce5fb7db6fcc27c3a41d38d5e520000dc60e1d652b1f0a8f893.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699654-2026-11-24-deauville-prix-de-l-hotel-du-croissant/partants-pronostics",
-            "sha256": "19c25ffdc17ab4ecc3616552a8283e3763e706fabb30a19e93973ff9f9acdfa9",
-            "file": "preuves/19c25ffdc17ab4ecc3616552a8283e3763e706fabb30a19e93973ff9f9acdfa9.gz"
+            "sha256": "62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca",
+            "file": "preuves/62a9cb39eb9f5f48336230c8dc03f9a5585bdb69c8dc112d19364386fe5bf7ca.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-24T15:15:51.403385+01:00",
+        "final_check_completed_at": "2026-11-24T15:15:51.403443+01:00"
       },
       {
         "date": "2026-11-24",
@@ -5361,24 +5964,24 @@
             "source_title": "Prix Du Grand Hotel D'argouges",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
-              "sha256": "b959bf03cf380237585ad8895394d0adb1e24d8e9e064bb911c34fb0ca6a2a39",
-              "file": "preuves/b959bf03cf380237585ad8895394d0adb1e24d8e9e064bb911c34fb0ca6a2a39.gz"
+              "sha256": "eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa",
+              "file": "preuves/eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
-              "sha256": "bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638",
-              "file": "preuves/bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638.gz"
+              "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+              "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
             },
-            "captured_at": "2026-11-24T14:00:22.163733+01:00",
+            "captured_at": "2026-11-24T15:16:13.445921+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.2,
+              "rapport": 7.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795525209000,
+              "nombreIndicateurTendance": -11.49,
+              "dateRapport": 1795529709000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -5394,24 +5997,24 @@
             "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
-              "sha256": "4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609",
-              "file": "preuves/4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609.gz"
+              "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+              "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
-              "sha256": "bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638",
-              "file": "preuves/bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638.gz"
+              "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+              "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
             },
-            "captured_at": "2026-11-24T14:00:22.610380+01:00",
+            "captured_at": "2026-11-24T15:16:13.865592+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.69,
-              "dateRapport": 1795525209000,
+              "nombreIndicateurTendance": 4.54,
+              "dateRapport": 1795529709000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -5427,24 +6030,24 @@
             "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
-              "sha256": "4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609",
-              "file": "preuves/4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609.gz"
+              "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+              "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
-              "sha256": "bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638",
-              "file": "preuves/bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638.gz"
+              "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+              "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
             },
-            "captured_at": "2026-11-24T14:00:22.682450+01:00",
+            "captured_at": "2026-11-24T15:16:13.964656+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.69,
-              "dateRapport": 1795525209000,
+              "nombreIndicateurTendance": 4.54,
+              "dateRapport": 1795529709000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -5460,24 +6063,24 @@
             "source_title": "Prix du Grand Hôtel d'Argouges",
             "evidence": {
               "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
-              "sha256": "41547a9d16ee2bc0d1e1ecfc24f1105fddc9f80e0e001862c6889dab0cd073e4",
-              "file": "preuves/41547a9d16ee2bc0d1e1ecfc24f1105fddc9f80e0e001862c6889dab0cd073e4.gz"
+              "sha256": "a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b",
+              "file": "preuves/a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
-              "sha256": "bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638",
-              "file": "preuves/bdb3213f88cd293d222486e6f08200e573e41aa533637d34becee668ff8ee638.gz"
+              "sha256": "04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea",
+              "file": "preuves/04142d63eb91e7741bf88b2d20ec1031537c60a5206d83f5bbb1b376be4874ea.gz"
             },
-            "captured_at": "2026-11-24T14:00:40.306002+01:00",
+            "captured_at": "2026-11-24T15:16:31.473708+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.69,
-              "dateRapport": 1795525209000,
+              "nombreIndicateurTendance": 4.54,
+              "dateRapport": 1795529709000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -5489,23 +6092,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
-            "sha256": "b959bf03cf380237585ad8895394d0adb1e24d8e9e064bb911c34fb0ca6a2a39",
-            "file": "preuves/b959bf03cf380237585ad8895394d0adb1e24d8e9e064bb911c34fb0ca6a2a39.gz"
+            "sha256": "eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa",
+            "file": "preuves/eb3ad11ee8ba32baa69048020264c622c2e8bbe8fd1d0b7fc0996c839cc476aa.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
-            "sha256": "4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609",
-            "file": "preuves/4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609.gz"
+            "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+            "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
-            "sha256": "4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609",
-            "file": "preuves/4c1fbf67f3655aaa5f2c2db781886f9a221650f4bbcb9e34b74abbca15665609.gz"
+            "sha256": "cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee",
+            "file": "preuves/cf4f0e5ecc81f653cd969a5fe100f2ecd1cf69ac6c3f00080a61f633383209ee.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
-            "sha256": "41547a9d16ee2bc0d1e1ecfc24f1105fddc9f80e0e001862c6889dab0cd073e4",
-            "file": "preuves/41547a9d16ee2bc0d1e1ecfc24f1105fddc9f80e0e001862c6889dab0cd073e4.gz"
+            "sha256": "a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b",
+            "file": "preuves/a4358bdc3a4ec78edcd5b30371c152f967a88101ff3f99ec428424d262b8a14b.gz"
           }
         }
       },
@@ -5527,24 +6130,24 @@
             "source_title": "Prix Du Manoir De La Caillerie",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-24/r1c7-deauville-prix-du-manoir-de-la-caillerie",
-              "sha256": "c5064ef6d886db71fd8bb35a3c0a5d3d9b9c579a10673aee8c571daa6aa944c9",
-              "file": "preuves/c5064ef6d886db71fd8bb35a3c0a5d3d9b9c579a10673aee8c571daa6aa944c9.gz"
+              "sha256": "60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e",
+              "file": "preuves/60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
-              "sha256": "a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169",
-              "file": "preuves/a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169.gz"
+              "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+              "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
             },
-            "captured_at": "2026-11-24T14:00:41.493047+01:00",
+            "captured_at": "2026-11-24T15:16:32.991761+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.2,
+              "rapport": 7.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795524346000,
+              "nombreIndicateurTendance": -3.65,
+              "dateRapport": 1795529746000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -5560,24 +6163,24 @@
             "source_title": "Le pronostic du PRIX DU MANOIR DE LA CAILLERIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
-              "sha256": "52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2",
-              "file": "preuves/52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2.gz"
+              "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+              "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
-              "sha256": "a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169",
-              "file": "preuves/a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169.gz"
+              "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+              "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
             },
-            "captured_at": "2026-11-24T14:00:41.962448+01:00",
+            "captured_at": "2026-11-24T15:16:33.411717+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 12.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.81,
-              "dateRapport": 1795524346000,
+              "nombreIndicateurTendance": -0.79,
+              "dateRapport": 1795529746000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -5593,22 +6196,22 @@
             "source_title": "Le pronostic du PRIX DU MANOIR DE LA CAILLERIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
-              "sha256": "52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2",
-              "file": "preuves/52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2.gz"
+              "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+              "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
-              "sha256": "a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169",
-              "file": "preuves/a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169.gz"
+              "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+              "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
             },
-            "captured_at": "2026-11-24T14:00:42.035907+01:00",
+            "captured_at": "2026-11-24T15:16:33.456216+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": false,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
               "typeRapport": "DIRECT",
-              "dateRapport": 1795524346000,
+              "dateRapport": 1795529746000,
               "favoris": false,
               "numPmu1": 5,
               "grossePrise": false
@@ -5624,24 +6227,24 @@
             "source_title": "Prix du Manoir de la Caillerie",
             "evidence": {
               "url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
-              "sha256": "447002f85ac95f318be70136cd7cb6d0885f83be65cc4ce5868ed2748f49130a",
-              "file": "preuves/447002f85ac95f318be70136cd7cb6d0885f83be65cc4ce5868ed2748f49130a.gz"
+              "sha256": "06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01",
+              "file": "preuves/06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C7/participants",
-              "sha256": "a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169",
-              "file": "preuves/a767464db705f3e2a9a800b09b1cbb0a6f818e08add26a22a8ab59a1b5c40169.gz"
+              "sha256": "ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131",
+              "file": "preuves/ecf2207ad688cb38ed0d9d01d8446e3748762c823ea3e99eed233d1f098ac131.gz"
             },
-            "captured_at": "2026-11-24T14:01:00.368031+01:00",
+            "captured_at": "2026-11-24T15:16:51.570122+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.0,
+              "rapport": 8.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -2.17,
-              "dateRapport": 1795524346000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795529746000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -5653,23 +6256,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-24/r1c7-deauville-prix-du-manoir-de-la-caillerie",
-            "sha256": "c5064ef6d886db71fd8bb35a3c0a5d3d9b9c579a10673aee8c571daa6aa944c9",
-            "file": "preuves/c5064ef6d886db71fd8bb35a3c0a5d3d9b9c579a10673aee8c571daa6aa944c9.gz"
+            "sha256": "60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e",
+            "file": "preuves/60d5adf353d8d7fc14c24b2212488adee7dc14d09e1f2007a40911d261bbc77e.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
-            "sha256": "52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2",
-            "file": "preuves/52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2.gz"
+            "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+            "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424509_prix-du-manoir-de-la-caillerie.html",
-            "sha256": "52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2",
-            "file": "preuves/52b173ca6006361738150aff705bf55b1be196b138a5912b7b47fe7788feeaf2.gz"
+            "sha256": "b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef",
+            "file": "preuves/b9d2c577d8ef7f942bdf0b61372fdab348e02aaf6737eca3a0fdf0cdc9e687ef.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
-            "sha256": "447002f85ac95f318be70136cd7cb6d0885f83be65cc4ce5868ed2748f49130a",
-            "file": "preuves/447002f85ac95f318be70136cd7cb6d0885f83be65cc4ce5868ed2748f49130a.gz"
+            "sha256": "06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01",
+            "file": "preuves/06eff79fa31142437eff893f05f66e44d1d12130d61f0c6fd25c5d872113eb01.gz"
           }
         }
       },
@@ -5691,24 +6294,24 @@
             "source_title": "Prix Du Conservatoire De La Dentelle",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-24/r1c8-deauville-prix-du-conservatoire-de-la-dentelle",
-              "sha256": "a2acdbc492a6b3940f7871e7d4788e6a332f8dab531a1979551ca840739f44b8",
-              "file": "preuves/a2acdbc492a6b3940f7871e7d4788e6a332f8dab531a1979551ca840739f44b8.gz"
+              "sha256": "8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b",
+              "file": "preuves/8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
-              "sha256": "af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015",
-              "file": "preuves/af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015.gz"
+              "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+              "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
             },
-            "captured_at": "2026-11-24T14:01:03.388235+01:00",
+            "captured_at": "2026-11-24T15:16:53.237364+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.61,
-              "dateRapport": 1795525250000,
+              "nombreIndicateurTendance": -3.7,
+              "dateRapport": 1795529750000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -5724,24 +6327,24 @@
             "source_title": "Le pronostic du PRIX DU CONSERVATOIRE DE LA DENTELLE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
-              "sha256": "f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46",
-              "file": "preuves/f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46.gz"
+              "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+              "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
-              "sha256": "af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015",
-              "file": "preuves/af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015.gz"
+              "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+              "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
             },
-            "captured_at": "2026-11-24T14:01:03.856675+01:00",
+            "captured_at": "2026-11-24T15:16:53.673950+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 12.0,
+              "rapport": 7.5,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795525250000,
+              "nombreIndicateurTendance": 4.16,
+              "dateRapport": 1795529750000,
               "favoris": false,
               "numPmu1": 2,
               "grossePrise": false
@@ -5757,24 +6360,24 @@
             "source_title": "Le pronostic du PRIX DU CONSERVATOIRE DE LA DENTELLE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
-              "sha256": "f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46",
-              "file": "preuves/f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46.gz"
+              "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+              "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
-              "sha256": "af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015",
-              "file": "preuves/af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015.gz"
+              "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+              "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
             },
-            "captured_at": "2026-11-24T14:01:03.928731+01:00",
+            "captured_at": "2026-11-24T15:16:53.719084+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.3,
+              "rapport": 5.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.61,
-              "dateRapport": 1795525250000,
+              "nombreIndicateurTendance": -3.7,
+              "dateRapport": 1795529750000,
               "favoris": true,
               "numPmu1": 5,
               "grossePrise": false
@@ -5790,24 +6393,24 @@
             "source_title": "Prix du Conservatoire de la Dentelle",
             "evidence": {
               "url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
-              "sha256": "d54e2f61a7927d4371dde12c5858bb835a0cadaaf3be4a4b773079fa9e72f352",
-              "file": "preuves/d54e2f61a7927d4371dde12c5858bb835a0cadaaf3be4a4b773079fa9e72f352.gz"
+              "sha256": "2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a",
+              "file": "preuves/2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
-              "sha256": "af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015",
-              "file": "preuves/af04bfe539c9c5542996183e4d327a379feef5dfa36c7360757887ca37de1015.gz"
+              "sha256": "36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5",
+              "file": "preuves/36f3063007247520f4ad831a1ed03dbb20c6823dbcd20e3d2d00d1d9a9f063e5.gz"
             },
-            "captured_at": "2026-11-24T14:01:20.175390+01:00",
+            "captured_at": "2026-11-24T15:17:11.502763+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.9,
+              "rapport": 7.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 1.47,
-              "dateRapport": 1795525250000,
+              "nombreIndicateurTendance": -1.26,
+              "dateRapport": 1795529750000,
               "favoris": false,
               "numPmu1": 8,
               "grossePrise": false
@@ -5819,23 +6422,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-24/r1c8-deauville-prix-du-conservatoire-de-la-dentelle",
-            "sha256": "a2acdbc492a6b3940f7871e7d4788e6a332f8dab531a1979551ca840739f44b8",
-            "file": "preuves/a2acdbc492a6b3940f7871e7d4788e6a332f8dab531a1979551ca840739f44b8.gz"
+            "sha256": "8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b",
+            "file": "preuves/8e550dc7c9a044054e79fcd05820c803d180a9caf08ff0fe652bb88593a76a4b.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
-            "sha256": "f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46",
-            "file": "preuves/f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46.gz"
+            "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+            "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
-            "sha256": "f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46",
-            "file": "preuves/f837b8841d3087b4f40526f570faba267fdfffa680fc0e84d7c6495656c71a46.gz"
+            "sha256": "fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98",
+            "file": "preuves/fddc5d3a9ffe40995be879b93ae1b0f6755b1c7fce4b3f473687cbaf14c12e98.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
-            "sha256": "d54e2f61a7927d4371dde12c5858bb835a0cadaaf3be4a4b773079fa9e72f352",
-            "file": "preuves/d54e2f61a7927d4371dde12c5858bb835a0cadaaf3be4a4b773079fa9e72f352.gz"
+            "sha256": "2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a",
+            "file": "preuves/2f099ac2438eedc373d4a34864dbb994ff67964598afaa18879cb243f559b40a.gz"
           }
         }
       }
