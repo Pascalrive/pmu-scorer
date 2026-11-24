@@ -10,7 +10,7 @@
           "number": 1,
           "name": "CENTRAL PARK WEST",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-11-24T14:16:00.167043+01:00",
           "source_captured_at": "2026-11-24T13:34:44.592701+01:00",
           "sites": [
@@ -32,6 +32,51 @@
             {
               "message_id": 8016,
               "date": 1795526160
+            }
+          ],
+          "return_cents": 16000,
+          "profit_cents": 6000,
+          "rank": 1,
+          "settled_at": "2026-11-24T14:50:14.471428+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061",
+            "file": "preuves/3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
+            "sha256": "c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040",
+            "file": "preuves/c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040.gz"
+          }
+        },
+        {
+          "race_id": "R1C3",
+          "departure": "2026-11-24T15:05:00+01:00",
+          "number": 11,
+          "name": "UPMANIA",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-24T14:50:40.113913+01:00",
+          "source_captured_at": "2026-11-24T14:15:55.681852+01:00",
+          "sites": [
+            "geny",
+            "canalturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -10.71,
+            "dateRapport": 1795528224000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "141586d40e331a34bebce426de29acb5a93eb2cc13629f4845f595f49794cd55",
+          "telegram_receipts": [
+            {
+              "message_id": 8025,
+              "date": 1795528240
             }
           ]
         }
@@ -382,7 +427,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-24T14:50:14.471145+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061",
+            "file": "preuves/3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
+            "sha256": "c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040",
+            "file": "preuves/c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -415,7 +474,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-24T14:50:14.471354+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061",
+            "file": "preuves/3176c0386554cc4901517d3fd3fe561618528d28e4c506e4ef80d45fefa6f061.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
+            "sha256": "c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040",
+            "file": "preuves/c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040.gz"
+          }
         }
       },
       "groups": {
@@ -689,7 +762,38 @@
         "at": "2026-11-24T14:23:56.686341+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 1,
+          "name": "CENTRAL PARK WEST",
+          "rank": 1
+        },
+        {
+          "number": 3,
+          "name": "AGADOR",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "BLACK PHANTOM",
+          "rank": 3
+        },
+        {
+          "number": 9,
+          "name": "VENTOSILLA",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "GET SET",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C2/participants",
+        "sha256": "c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040",
+        "file": "preuves/c7c5b5622e643edc5f5dc5659920d7131c94938eaad96ca585e76d698e92f040.gz"
+      }
     },
     {
       "date": "2026-11-24",
@@ -1019,7 +1123,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T14:39:27.449677+01:00",
+      "final_check_started_at": "2026-11-24T14:50:14.477134+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699652-2026-11-24-deauville-prix-de-preaux/partants-pronostics",
@@ -1033,7 +1137,7 @@
         }
       },
       "groups_frozen_at": "2026-11-24T14:15:58.431805+01:00",
-      "final_check_completed_at": "2026-11-24T14:39:28.173046+01:00",
+      "final_check_completed_at": "2026-11-24T14:50:15.083230+01:00",
       "last_reservation_check": {
         "at": "2026-11-24T14:39:28.361756+01:00",
         "stop": "ATTENTE_RESULTAT"
@@ -1047,7 +1151,74 @@
       "departure": "2026-11-24T15:40:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 12,
+          "name": "PORTO URBINO",
+          "source_url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix de Montfort",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
+            "sha256": "df7a951dbf05183c734113cc357914d04fb5d16e601ac8e4405c50522cf37d55",
+            "file": "preuves/df7a951dbf05183c734113cc357914d04fb5d16e601ac8e4405c50522cf37d55.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+            "sha256": "9a0929e99b8b96e77d4e53490c1979c241b3f2a449ff7794210dd5cb7fc85083",
+            "file": "preuves/9a0929e99b8b96e77d4e53490c1979c241b3f2a449ff7794210dd5cb7fc85083.gz"
+          },
+          "captured_at": "2026-11-24T14:50:36.417868+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795527940000,
+            "favoris": false,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 10,
+          "name": "SILVER BAY",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE MONTFORT",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+            "sha256": "b41ca840bf1acfcbe7b9a165c5ab69010e6b94d4f9214c337eb198c1ab35ee7c",
+            "file": "preuves/b41ca840bf1acfcbe7b9a165c5ab69010e6b94d4f9214c337eb198c1ab35ee7c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C4/participants",
+            "sha256": "9a0929e99b8b96e77d4e53490c1979c241b3f2a449ff7794210dd5cb7fc85083",
+            "file": "preuves/9a0929e99b8b96e77d4e53490c1979c241b3f2a449ff7794210dd5cb7fc85083.gz"
+          },
+          "captured_at": "2026-11-24T14:50:39.129588+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.85,
+            "dateRapport": 1795527940000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
       "errors": {},
       "preview_observations": [
@@ -1267,7 +1438,21 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-24T14:50:15.085512+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699653-2026-11-24-deauville-prix-de-montfort/partants-pronostics",
+          "sha256": "df7a951dbf05183c734113cc357914d04fb5d16e601ac8e4405c50522cf37d55",
+          "file": "preuves/df7a951dbf05183c734113cc357914d04fb5d16e601ac8e4405c50522cf37d55.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424506_prix-de-montfort.html",
+          "sha256": "b41ca840bf1acfcbe7b9a165c5ab69010e6b94d4f9214c337eb198c1ab35ee7c",
+          "file": "preuves/b41ca840bf1acfcbe7b9a165c5ab69010e6b94d4f9214c337eb198c1ab35ee7c.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-24T14:50:39.129623+01:00"
     },
     {
       "date": "2026-11-24",
