@@ -100,7 +100,7 @@
           "number": 7,
           "name": "LE GARDOLOT",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-11-24T16:24:25.664220+01:00",
           "source_captured_at": "2026-11-24T15:50:27.383612+01:00",
           "sites": [
@@ -123,7 +123,21 @@
               "message_id": 8051,
               "date": 1795533865
             }
-          ]
+          ],
+          "return_cents": 98000,
+          "profit_cents": 78000,
+          "rank": 1,
+          "settled_at": "2026-11-24T17:17:35.032996+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae",
+            "file": "preuves/a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3",
+            "file": "preuves/a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -2190,7 +2204,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-24T17:17:35.032514+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae",
+            "file": "preuves/a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3",
+            "file": "preuves/a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -2223,7 +2251,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-24T17:17:35.032868+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae",
+            "file": "preuves/a1257d67612a8ca9937edf21919adac7b492cb9aed8e007be8ef9382088313ae.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3",
+            "file": "preuves/a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3.gz"
+          }
         }
       },
       "groups": {
@@ -2669,14 +2711,45 @@
           "checked_at": "2026-11-24T16:50:27.255119+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 7,
+          "name": "LE GARDOLOT",
+          "rank": 1
+        },
+        {
+          "number": 14,
+          "name": "SUPERCLASS",
+          "rank": 2
+        },
+        {
+          "number": 1,
+          "name": "CHERRY PIE",
+          "rank": 3
+        },
+        {
+          "number": 10,
+          "name": "ALREADY QUEEN",
+          "rank": 4
+        },
+        {
+          "number": 11,
+          "name": "MY DARLING",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+        "sha256": "a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3",
+        "file": "preuves/a11e070f3ac4d1c57657c2ca02074dd85030e1362f8bc1ed0c1f4051b2b21ac3.gz"
+      }
     },
     {
       "date": "2026-11-24",
       "id": "R1C7",
       "c": 7,
       "title": "PRIX DU MANOIR DE LA CAILLERIE",
-      "departure": "2026-11-24T17:25:00+01:00",
+      "departure": "2026-11-24T17:29:00+01:00",
       "discipline": "PLAT",
       "market": true,
       "tips": {
@@ -3111,7 +3184,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T16:59:34.575029+01:00",
+      "final_check_started_at": "2026-11-24T17:17:35.057333+01:00",
       "source_checks": {
         "geny": {
           "url": "https://www.geny.com/course/1699656-2026-11-24-deauville-prix-du-manoir-de-la-caillerie/partants-pronostics",
@@ -3124,7 +3197,14 @@
           "file": "preuves/840e3506fdb3b858afcfc4f89be577e79f3f0e638d447ff4dbed3d23003ff868.gz"
         }
       },
-      "final_check_completed_at": "2026-11-24T16:59:34.977357+01:00"
+      "final_check_completed_at": "2026-11-24T17:17:35.961009+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-24T17:25:00+01:00",
+          "new": "2026-11-24T17:29:00+01:00",
+          "checked_at": "2026-11-24T17:17:35.057333+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-24",
@@ -3134,7 +3214,74 @@
       "departure": "2026-11-24T18:00:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
+      "tips": {
+        "geny": {
+          "site": "geny",
+          "number": 8,
+          "name": "BECQUANIENTE",
+          "source_url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Conservatoire de la Dentelle",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
+            "sha256": "8071fe83c10212f6b147605f525f83f34baf780a30132af922b62dec298e5c59",
+            "file": "preuves/8071fe83c10212f6b147605f525f83f34baf780a30132af922b62dec298e5c59.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+            "sha256": "13e20efa34e1a8b8b3e4257484d14f64eb45ae36cb6bbf36a2ea13c9f7140d91",
+            "file": "preuves/13e20efa34e1a8b8b3e4257484d14f64eb45ae36cb6bbf36a2ea13c9f7140d91.gz"
+          },
+          "captured_at": "2026-11-24T17:17:58.227513+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -11.76,
+            "dateRapport": 1795536950000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 2,
+          "name": "LETTYT FIGHT",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU CONSERVATOIRE DE LA DENTELLE",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+            "sha256": "b9ee7ec8c2c2f0d690527456594c0b7341e39ba2d6bad03bc8fbaa938e613c96",
+            "file": "preuves/b9ee7ec8c2c2f0d690527456594c0b7341e39ba2d6bad03bc8fbaa938e613c96.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C8/participants",
+            "sha256": "13e20efa34e1a8b8b3e4257484d14f64eb45ae36cb6bbf36a2ea13c9f7140d91",
+            "file": "preuves/13e20efa34e1a8b8b3e4257484d14f64eb45ae36cb6bbf36a2ea13c9f7140d91.gz"
+          },
+          "captured_at": "2026-11-24T17:18:00.341498+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.87,
+            "dateRapport": 1795536950000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
       "errors": {},
       "preview_observations": [
@@ -3498,7 +3645,21 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-24T17:17:36.596295+01:00",
+      "source_checks": {
+        "geny": {
+          "url": "https://www.geny.com/course/1699657-2026-11-24-deauville-prix-du-conservatoire-de-la-dentelle/partants-pronostics",
+          "sha256": "8071fe83c10212f6b147605f525f83f34baf780a30132af922b62dec298e5c59",
+          "file": "preuves/8071fe83c10212f6b147605f525f83f34baf780a30132af922b62dec298e5c59.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424510_prix-du-conservatoire-de-la-dentelle.html",
+          "sha256": "b9ee7ec8c2c2f0d690527456594c0b7341e39ba2d6bad03bc8fbaa938e613c96",
+          "file": "preuves/b9ee7ec8c2c2f0d690527456594c0b7341e39ba2d6bad03bc8fbaa938e613c96.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-24T17:18:00.341549+01:00"
     }
   ],
   "notifications": [],
