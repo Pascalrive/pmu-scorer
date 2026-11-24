@@ -3509,7 +3509,8 @@
           "new": "2026-11-24T15:43:00+01:00",
           "checked_at": "2026-11-24T15:34:27.120604+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError"
     },
     {
       "date": "2026-11-24",
@@ -4424,7 +4425,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-24T15:34:27.808466+01:00",
+      "final_check_started_at": "2026-11-24T15:50:10.171559+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-24/r1c5-deauville-prix-de-l-hotel-du-croissant",
@@ -4453,7 +4454,11 @@
         }
       },
       "groups_frozen_at": "2026-11-24T15:17:00.975473+01:00",
-      "final_check_completed_at": "2026-11-24T15:34:28.192786+01:00"
+      "final_check_completed_at": "2026-11-24T15:50:10.391617+01:00",
+      "last_reservation_check": {
+        "at": "2026-11-24T15:50:34.892048+01:00",
+        "stop": "ATTENTE_RESULTAT"
+      }
     },
     {
       "date": "2026-11-24",
@@ -4463,8 +4468,188 @@
       "departure": "2026-11-24T16:50:00+01:00",
       "discipline": "PLAT",
       "market": true,
-      "tips": {},
-      "groups": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 2,
+          "name": "ZELZANA",
+          "source_url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Du Grand Hotel D'argouges",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
+            "sha256": "8ee19ac3be727c90f7fa45629148452e7fda49941688b968e9284983d917fe3c",
+            "file": "preuves/8ee19ac3be727c90f7fa45629148452e7fda49941688b968e9284983d917fe3c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740",
+            "file": "preuves/e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740.gz"
+          },
+          "captured_at": "2026-11-24T15:50:12.171215+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.56,
+            "dateRapport": 1795531509000,
+            "favoris": false,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-24T16:50:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "LE GARDOLOT",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+            "sha256": "a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c",
+            "file": "preuves/a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740",
+            "file": "preuves/e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740.gz"
+          },
+          "captured_at": "2026-11-24T15:50:13.390979+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795531509000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-24T16:50:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 7,
+          "name": "LE GARDOLOT",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DU GRAND HOTEL D'ARGOUGES",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+            "sha256": "a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c",
+            "file": "preuves/a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740",
+            "file": "preuves/e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740.gz"
+          },
+          "captured_at": "2026-11-24T15:50:13.433338+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795531509000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-24T16:50:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "geny": {
+          "site": "geny",
+          "number": 7,
+          "name": "LE GARDOLOT",
+          "source_url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
+          "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix du Grand Hôtel d'Argouges",
+          "evidence": {
+            "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
+            "sha256": "e94e84610c3a5062f2169ef937f08bad3085f09d93e565585cab377e10c26381",
+            "file": "preuves/e94e84610c3a5062f2169ef937f08bad3085f09d93e565585cab377e10c26381.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740",
+            "file": "preuves/e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740.gz"
+          },
+          "captured_at": "2026-11-24T15:50:33.734267+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.4,
+            "dateRapport": 1795531509000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-24T16:50:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zone_turf": {
+          "site": "zone_turf",
+          "number": 14,
+          "name": "SUPERCLASS",
+          "source_url": "https://www.zone-turf.fr/programmes/r1-deauville-200243.html",
+          "definition": "Premier cheval de la sélection éditoriale Zone-Turf.fr (hors Top chances)",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "R1 Course N°6 : C6 - Prix du Grand Hotel d'Argouges",
+          "evidence": {
+            "url": "https://www.zone-turf.fr/programmes/r1-deauville-200243.html",
+            "sha256": "d0abc8093be95feadaee29c13ab7992bcb8084a27ef641360cea4ed0015661a5",
+            "file": "preuves/d0abc8093be95feadaee29c13ab7992bcb8084a27ef641360cea4ed0015661a5.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/24112026/R1/C6/participants",
+            "sha256": "e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740",
+            "file": "preuves/e87e840f510a156f7c947521b4b50a50a38a450e6f256f8fbfedc7771bee4740.gz"
+          },
+          "captured_at": "2026-11-24T15:50:34.329689+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 7.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.7,
+            "dateRapport": 1795531509000,
+            "favoris": false,
+            "numPmu1": 14,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "departure_at_capture": "2026-11-24T16:50:00+01:00",
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "majorite_3_sur_5": {
+          "number": 7,
+          "sites": [
+            "canalturf",
+            "zeturf",
+            "geny"
+          ]
+        }
+      },
       "errors": {},
       "preview_observations": [
         {
@@ -5187,7 +5372,37 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-24T15:50:10.397926+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-24/r1c6-deauville-prix-du-grand-hotel-d-argouges",
+          "sha256": "8ee19ac3be727c90f7fa45629148452e7fda49941688b968e9284983d917fe3c",
+          "file": "preuves/8ee19ac3be727c90f7fa45629148452e7fda49941688b968e9284983d917fe3c.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+          "sha256": "a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c",
+          "file": "preuves/a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-24/deauville/424508_prix-du-grand-hotel-d-argouges.html",
+          "sha256": "a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c",
+          "file": "preuves/a476d1a20fd1f955ca3690d44f02d35a05c7b5fa2af0818dba64ca9a40525f8c.gz"
+        },
+        "geny": {
+          "url": "https://www.geny.com/course/1699655-2026-11-24-deauville-prix-du-grand-hotel-d-argouges/partants-pronostics",
+          "sha256": "e94e84610c3a5062f2169ef937f08bad3085f09d93e565585cab377e10c26381",
+          "file": "preuves/e94e84610c3a5062f2169ef937f08bad3085f09d93e565585cab377e10c26381.gz"
+        },
+        "zone_turf": {
+          "url": "https://www.zone-turf.fr/programmes/r1-deauville-200243.html",
+          "sha256": "d0abc8093be95feadaee29c13ab7992bcb8084a27ef641360cea4ed0015661a5",
+          "file": "preuves/d0abc8093be95feadaee29c13ab7992bcb8084a27ef641360cea4ed0015661a5.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-24T15:50:34.329689+01:00",
+      "final_check_completed_at": "2026-11-24T15:50:34.329756+01:00"
     },
     {
       "date": "2026-11-24",
