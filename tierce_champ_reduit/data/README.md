@@ -3,4 +3,4 @@
 - [TIERCÉ — FAVORI + 6 ASSOCIÉS — 30 €](tierce_favori_6_associes_30eur/README.md)
 - [TIERCÉ — FAVORI + 8 ASSOCIÉS — 56 €](tierce_favori_8_associes_56eur/README.md)
 
-Dernier bilan : [2026-11-25](2026-11-25/bilan_du_jour.txt).
+Dernier bilan : [2026-11-26](2026-11-26/bilan_du_jour.txt).
