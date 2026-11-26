@@ -49,6 +49,38 @@
             "sha256": "d1593a7135b6f76fdb0508f4b8e98e93027384c4c733d9e9381d7e3a58ef2215",
             "file": "preuves/d1593a7135b6f76fdb0508f4b8e98e93027384c4c733d9e9381d7e3a58ef2215.gz"
           }
+        },
+        {
+          "race_id": "R1C6",
+          "departure": "2026-11-26T16:50:00+01:00",
+          "number": 12,
+          "name": "MELLOW SPEED",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-26T16:23:19.180381+01:00",
+          "source_captured_at": "2026-11-26T15:50:10.496918+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "geny"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -7.69,
+            "dateRapport": 1795706579000,
+            "favoris": true,
+            "numPmu1": 12,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "7bf7471946f83df201c069e5eeecaf163c3d0d619f49bc11848ac3db461104c6",
+          "telegram_receipts": [
+            {
+              "message_id": 8148,
+              "date": 1795706599
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -3646,7 +3678,9 @@
           "new": "2026-11-26T16:16:00+01:00",
           "checked_at": "2026-11-26T16:14:46.523711+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-26",
@@ -4468,9 +4502,172 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-26T16:23:44.709237+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 12,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 12,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            },
+            "groupe_canalturf+geny+turfin": {
+              "number": 12,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "geny"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 12,
+              "name": "MELLOW SPEED",
+              "source_url": "https://turfin.fr/course/2026-11-26/r1c6-vincennes-prix-de-picardie",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De Picardie",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-26/r1c6-vincennes-prix-de-picardie",
+                "sha256": "1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc",
+                "file": "preuves/1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
+                "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+                "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
+              },
+              "captured_at": "2026-11-26T16:23:22.195333+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -7.69,
+                "dateRapport": 1795706579000,
+                "favoris": true,
+                "numPmu1": 12,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 12,
+              "name": "MELLOW SPEED",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE PICARDIE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
+                "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+                "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
+                "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+                "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
+              },
+              "captured_at": "2026-11-26T16:23:24.087754+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -7.69,
+                "dateRapport": 1795706579000,
+                "favoris": true,
+                "numPmu1": 12,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 11,
+              "name": "GEILES LEBEN HOME",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE PICARDIE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
+                "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+                "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
+                "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+                "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
+              },
+              "captured_at": "2026-11-26T16:23:24.138896+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 15.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 8.51,
+                "dateRapport": 1795706579000,
+                "favoris": false,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 12,
+              "name": "MELLOW SPEED",
+              "source_url": "https://www.geny.com/course/1700106-2026-11-26-vincennes-prix-de-picardie/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de Picardie",
+              "evidence": {
+                "url": "https://www.geny.com/course/1700106-2026-11-26-vincennes-prix-de-picardie/partants-pronostics",
+                "sha256": "4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322",
+                "file": "preuves/4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
+                "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+                "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
+              },
+              "captured_at": "2026-11-26T16:23:44.709174+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.2,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -7.69,
+                "dateRapport": 1795706579000,
+                "favoris": true,
+                "numPmu1": 12,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-26T15:59:24.330480+01:00",
+      "final_check_started_at": "2026-11-26T16:23:18.234700+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-26/r1c6-vincennes-prix-de-picardie",
@@ -4494,7 +4691,7 @@
         }
       },
       "groups_frozen_at": "2026-11-26T15:50:33.011204+01:00",
-      "final_check_completed_at": "2026-11-26T15:59:24.623563+01:00"
+      "final_check_completed_at": "2026-11-26T16:23:18.733624+01:00"
     },
     {
       "date": "2026-11-26",
@@ -5052,6 +5249,144 @@
                 "typeRapport": "DIRECT",
                 "nombreIndicateurTendance": 2.17,
                 "dateRapport": 1795702558000,
+                "favoris": true,
+                "numPmu1": 11,
+                "grossePrise": false
+              }
+            }
+          }
+        },
+        {
+          "at": "2026-11-26T16:24:04.725309+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 9,
+              "name": "KOVES DU PONT",
+              "source_url": "https://turfin.fr/course/2026-11-26/r1c7-vincennes-prix-de-la-camargue",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De La Camargue",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-26/r1c7-vincennes-prix-de-la-camargue",
+                "sha256": "c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc",
+                "file": "preuves/c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
+                "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+                "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
+              },
+              "captured_at": "2026-11-26T16:23:46.314015+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.98,
+                "dateRapport": 1795706158000,
+                "favoris": false,
+                "numPmu1": 9,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 7,
+              "name": "KHEO VIVANCIERE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE LA CAMARGUE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
+                "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+                "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
+                "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+                "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
+              },
+              "captured_at": "2026-11-26T16:23:46.995572+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 6.4,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 1.58,
+                "dateRapport": 1795706158000,
+                "favoris": false,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 6,
+              "name": "EL DORADO BAR",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE LA CAMARGUE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
+                "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+                "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
+                "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+                "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
+              },
+              "captured_at": "2026-11-26T16:23:47.046464+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.0,
+                "dateRapport": 1795706158000,
+                "favoris": false,
+                "numPmu1": 6,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 11,
+              "name": "JUST A LADY (DEN)",
+              "source_url": "https://www.geny.com/course/1700107-2026-11-26-vincennes-prix-de-la-camargue/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de la Camargue",
+              "evidence": {
+                "url": "https://www.geny.com/course/1700107-2026-11-26-vincennes-prix-de-la-camargue/partants-pronostics",
+                "sha256": "8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b",
+                "file": "preuves/8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
+                "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+                "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
+              },
+              "captured_at": "2026-11-26T16:24:04.725242+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.3,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.27,
+                "dateRapport": 1795706158000,
                 "favoris": true,
                 "numPmu1": 11,
                 "grossePrise": false
@@ -5623,6 +5958,144 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-26T16:24:25.346098+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 2,
+              "name": "COMPETIVO",
+              "source_url": "https://turfin.fr/course/2026-11-26/r1c8-vincennes-prix-de-l-ile-de-re",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix De L'ile De Re",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-26/r1c8-vincennes-prix-de-l-ile-de-re",
+                "sha256": "074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a",
+                "file": "preuves/074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
+                "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+                "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
+              },
+              "captured_at": "2026-11-26T16:24:06.727720+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795706117000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 1,
+              "name": "KENYAN BLUES",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'ILE DE RE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
+                "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+                "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
+                "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+                "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
+              },
+              "captured_at": "2026-11-26T16:24:07.413190+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795706117000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 2,
+              "name": "COMPETIVO",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DE L'ILE DE RE",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
+                "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+                "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
+                "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+                "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
+              },
+              "captured_at": "2026-11-26T16:24:07.462429+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 2.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795706117000,
+                "favoris": true,
+                "numPmu1": 2,
+                "grossePrise": false
+              }
+            },
+            "geny": {
+              "site": "geny",
+              "number": 1,
+              "name": "KENYAN BLUES",
+              "source_url": "https://www.geny.com/course/1700108-2026-11-26-vincennes-prix-de-l-ile-de-re/partants-pronostics",
+              "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix de l'Ile de Ré",
+              "evidence": {
+                "url": "https://www.geny.com/course/1700108-2026-11-26-vincennes-prix-de-l-ile-de-re/partants-pronostics",
+                "sha256": "7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d",
+                "file": "preuves/7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
+                "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+                "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
+              },
+              "captured_at": "2026-11-26T16:24:25.346032+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795706117000,
+                "favoris": false,
+                "numPmu1": 1,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -5630,345 +6103,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-26T15:18:12.411706+01:00",
+    "captured_at": "2026-11-26T16:24:25.346169+01:00",
     "races": [
-      {
-        "date": "2026-11-26",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX RAOUL BALLIERE",
-        "departure": "2026-11-26T15:40:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 10,
-            "name": "NUEVO CASH",
-            "source_url": "https://turfin.fr/course/2026-11-26/r1c4-vincennes-prix-raoul-balliere",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Raoul Balliere",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-26/r1c4-vincennes-prix-raoul-balliere",
-              "sha256": "b19202f5af758fc7034d33fbebf47fc8e354ae7a4359b488462f3751c1d68a52",
-              "file": "preuves/b19202f5af758fc7034d33fbebf47fc8e354ae7a4359b488462f3751c1d68a52.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C4/participants",
-              "sha256": "8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824",
-              "file": "preuves/8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824.gz"
-            },
-            "captured_at": "2026-11-26T15:16:54.956071+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.25,
-              "dateRapport": 1795702600000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 10,
-            "name": "NUEVO CASH",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RAOUL BALLIERE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-              "sha256": "b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5",
-              "file": "preuves/b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C4/participants",
-              "sha256": "8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824",
-              "file": "preuves/8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824.gz"
-            },
-            "captured_at": "2026-11-26T15:16:55.433026+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.25,
-              "dateRapport": 1795702600000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 10,
-            "name": "NUEVO CASH",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX RAOUL BALLIERE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-              "sha256": "b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5",
-              "file": "preuves/b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C4/participants",
-              "sha256": "8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824",
-              "file": "preuves/8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824.gz"
-            },
-            "captured_at": "2026-11-26T15:16:55.524059+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.7,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 6.25,
-              "dateRapport": 1795702600000,
-              "favoris": true,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 9,
-            "name": "NIKITA DES CHARMES",
-            "source_url": "https://www.geny.com/course/1700111-2026-11-26-vincennes-prix-raoul-balliere/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Raoul Ballière",
-            "evidence": {
-              "url": "https://www.geny.com/course/1700111-2026-11-26-vincennes-prix-raoul-balliere/partants-pronostics",
-              "sha256": "5e5d230516e168cd151e30c32a1af05e773f99f2ee299f2408ee128f90998157",
-              "file": "preuves/5e5d230516e168cd151e30c32a1af05e773f99f2ee299f2408ee128f90998157.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C4/participants",
-              "sha256": "8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824",
-              "file": "preuves/8917f0e78617d15778836296a4a9f8c98d85dd7bf8f1b5b508b25967d3a3e824.gz"
-            },
-            "captured_at": "2026-11-26T15:17:12.546608+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.1,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -1.92,
-              "dateRapport": 1795702600000,
-              "favoris": false,
-              "numPmu1": 9,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-26T15:16:27.998204+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-26/r1c4-vincennes-prix-raoul-balliere",
-            "sha256": "b19202f5af758fc7034d33fbebf47fc8e354ae7a4359b488462f3751c1d68a52",
-            "file": "preuves/b19202f5af758fc7034d33fbebf47fc8e354ae7a4359b488462f3751c1d68a52.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-            "sha256": "b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5",
-            "file": "preuves/b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424717_prix-raoul-balliere.html",
-            "sha256": "b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5",
-            "file": "preuves/b052cee545ce7623c6b7f6519d6082a316b92c9ce5e67e4d71d24d6b1ed5c1a5.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1700111-2026-11-26-vincennes-prix-raoul-balliere/partants-pronostics",
-            "sha256": "5e5d230516e168cd151e30c32a1af05e773f99f2ee299f2408ee128f90998157",
-            "file": "preuves/5e5d230516e168cd151e30c32a1af05e773f99f2ee299f2408ee128f90998157.gz"
-          }
-        },
-        "groups_frozen_at": "2026-11-26T14:50:25.517856+01:00",
-        "final_check_completed_at": "2026-11-26T15:16:28.265285+01:00"
-      },
-      {
-        "date": "2026-11-26",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX DE ROZAY EN BRIE",
-        "departure": "2026-11-26T16:15:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 10,
-            "name": "LOUISIANE GIRL",
-            "source_url": "https://turfin.fr/course/2026-11-26/r1c5-vincennes-prix-de-rozay-en-brie",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix De Rozay En Brie",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-26/r1c5-vincennes-prix-de-rozay-en-brie",
-              "sha256": "f56f6c6eb38d6a90236e74c38ed7aef34c767c550fd2bb589ab66de2290430b1",
-              "file": "preuves/f56f6c6eb38d6a90236e74c38ed7aef34c767c550fd2bb589ab66de2290430b1.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C5/participants",
-              "sha256": "cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c",
-              "file": "preuves/cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c.gz"
-            },
-            "captured_at": "2026-11-26T15:17:12.721977+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.12,
-              "dateRapport": 1795702552000,
-              "favoris": false,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 7,
-            "name": "LA VISTA HAUFOR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE ROZAY-EN-BRIE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-              "sha256": "bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67",
-              "file": "preuves/bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C5/participants",
-              "sha256": "cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c",
-              "file": "preuves/cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c.gz"
-            },
-            "captured_at": "2026-11-26T15:17:12.803479+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795702552000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 7,
-            "name": "LA VISTA HAUFOR",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX DE ROZAY-EN-BRIE",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-              "sha256": "bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67",
-              "file": "preuves/bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C5/participants",
-              "sha256": "cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c",
-              "file": "preuves/cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c.gz"
-            },
-            "captured_at": "2026-11-26T15:17:12.886550+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.16,
-              "dateRapport": 1795702552000,
-              "favoris": true,
-              "numPmu1": 7,
-              "grossePrise": false
-            }
-          },
-          "geny": {
-            "site": "geny",
-            "number": 10,
-            "name": "LOUISIANE GIRL",
-            "source_url": "https://www.geny.com/course/1700109-2026-11-26-vincennes-prix-de-rozay-en-brie/partants-pronostics",
-            "definition": "Premier cheval de listeBase du pronostic éditorial Geny",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix de Rozay-en-Brie",
-            "evidence": {
-              "url": "https://www.geny.com/course/1700109-2026-11-26-vincennes-prix-de-rozay-en-brie/partants-pronostics",
-              "sha256": "ed9b0d1bd8f88b5041c217874264e434bfae93854367e7ef190f669a6da9ec83",
-              "file": "preuves/ed9b0d1bd8f88b5041c217874264e434bfae93854367e7ef190f669a6da9ec83.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C5/participants",
-              "sha256": "cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c",
-              "file": "preuves/cece3a92804cfe8c59cda8587963ee87f07f193bcac3ce111987f01ee5e6ed9c.gz"
-            },
-            "captured_at": "2026-11-26T15:17:13.024365+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.12,
-              "dateRapport": 1795702552000,
-              "favoris": false,
-              "numPmu1": 10,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {},
-        "final_check_started_at": "2026-11-26T15:16:28.271659+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-26/r1c5-vincennes-prix-de-rozay-en-brie",
-            "sha256": "f56f6c6eb38d6a90236e74c38ed7aef34c767c550fd2bb589ab66de2290430b1",
-            "file": "preuves/f56f6c6eb38d6a90236e74c38ed7aef34c767c550fd2bb589ab66de2290430b1.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-            "sha256": "bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67",
-            "file": "preuves/bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424718_prix-de-rozay-en-brie.html",
-            "sha256": "bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67",
-            "file": "preuves/bcac1ce3074f0df552edead7d8eae1185ba839d876ce00a2e6b634fe556cab67.gz"
-          },
-          "geny": {
-            "url": "https://www.geny.com/course/1700109-2026-11-26-vincennes-prix-de-rozay-en-brie/partants-pronostics",
-            "sha256": "ed9b0d1bd8f88b5041c217874264e434bfae93854367e7ef190f669a6da9ec83",
-            "file": "preuves/ed9b0d1bd8f88b5041c217874264e434bfae93854367e7ef190f669a6da9ec83.gz"
-          }
-        },
-        "final_check_completed_at": "2026-11-26T15:16:52.404412+01:00"
-      },
       {
         "date": "2026-11-26",
         "id": "R1C6",
@@ -5987,24 +6123,24 @@
             "source_title": "Prix De Picardie",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-26/r1c6-vincennes-prix-de-picardie",
-              "sha256": "34cad82491e10a56909f91b45d3c6602bedcc552758a89e16b60cb8206321a31",
-              "file": "preuves/34cad82491e10a56909f91b45d3c6602bedcc552758a89e16b60cb8206321a31.gz"
+              "sha256": "1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc",
+              "file": "preuves/1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
-              "sha256": "0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca",
-              "file": "preuves/0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca.gz"
+              "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+              "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
             },
-            "captured_at": "2026-11-26T15:17:14.515104+01:00",
+            "captured_at": "2026-11-26T16:23:22.195333+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702503000,
+              "nombreIndicateurTendance": -7.69,
+              "dateRapport": 1795706579000,
               "favoris": true,
               "numPmu1": 12,
               "grossePrise": false
@@ -6020,24 +6156,24 @@
             "source_title": "Le pronostic du PRIX DE PICARDIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
-              "sha256": "33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788",
-              "file": "preuves/33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788.gz"
+              "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+              "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
-              "sha256": "0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca",
-              "file": "preuves/0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca.gz"
+              "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+              "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
             },
-            "captured_at": "2026-11-26T15:17:14.979712+01:00",
+            "captured_at": "2026-11-26T16:23:24.087754+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702503000,
+              "nombreIndicateurTendance": -7.69,
+              "dateRapport": 1795706579000,
               "favoris": true,
               "numPmu1": 12,
               "grossePrise": false
@@ -6053,24 +6189,24 @@
             "source_title": "Le pronostic du PRIX DE PICARDIE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
-              "sha256": "33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788",
-              "file": "preuves/33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788.gz"
+              "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+              "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
-              "sha256": "0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca",
-              "file": "preuves/0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca.gz"
+              "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+              "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
             },
-            "captured_at": "2026-11-26T15:17:15.064234+01:00",
+            "captured_at": "2026-11-26T16:23:24.138896+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 10.0,
+              "rapport": 15.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -0.91,
-              "dateRapport": 1795702503000,
+              "nombreIndicateurTendance": 8.51,
+              "dateRapport": 1795706579000,
               "favoris": false,
               "numPmu1": 11,
               "grossePrise": false
@@ -6086,24 +6222,24 @@
             "source_title": "Prix de Picardie",
             "evidence": {
               "url": "https://www.geny.com/course/1700106-2026-11-26-vincennes-prix-de-picardie/partants-pronostics",
-              "sha256": "dbcd6bf9061dfc8316108a6636da120d1238461f8538042abf572ca92c76d674",
-              "file": "preuves/dbcd6bf9061dfc8316108a6636da120d1238461f8538042abf572ca92c76d674.gz"
+              "sha256": "4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322",
+              "file": "preuves/4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C6/participants",
-              "sha256": "0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca",
-              "file": "preuves/0ecc119d80812babd4a7c3954ad026c5301ba9f1628d16f95ee6c42031417dca.gz"
+              "sha256": "250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad",
+              "file": "preuves/250187566400f9cdf7d50ea68a398b6600327381ee70a21e3702cb753a4a21ad.gz"
             },
-            "captured_at": "2026-11-26T15:17:32.690271+01:00",
+            "captured_at": "2026-11-26T16:23:44.709174+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.5,
+              "rapport": 1.2,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702503000,
+              "nombreIndicateurTendance": -7.69,
+              "dateRapport": 1795706579000,
               "favoris": true,
               "numPmu1": 12,
               "grossePrise": false
@@ -6112,28 +6248,31 @@
         },
         "groups": {},
         "errors": {},
+        "final_check_started_at": "2026-11-26T16:23:18.234700+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-26/r1c6-vincennes-prix-de-picardie",
-            "sha256": "34cad82491e10a56909f91b45d3c6602bedcc552758a89e16b60cb8206321a31",
-            "file": "preuves/34cad82491e10a56909f91b45d3c6602bedcc552758a89e16b60cb8206321a31.gz"
+            "sha256": "1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc",
+            "file": "preuves/1533baf16ffa9172241cc0c7a951ec1373aa70e2d2dab44527816616c0184ccc.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
-            "sha256": "33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788",
-            "file": "preuves/33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788.gz"
+            "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+            "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424719_prix-de-picardie.html",
-            "sha256": "33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788",
-            "file": "preuves/33252f88d3ee947a03cbb4b65ac78ae96d49b0f3bee5704d400d57e96b8b8788.gz"
+            "sha256": "2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f",
+            "file": "preuves/2c9af76a4367fbdb91b67306d58687bb6b12c030f1b78f5df24790fe75404b5f.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1700106-2026-11-26-vincennes-prix-de-picardie/partants-pronostics",
-            "sha256": "dbcd6bf9061dfc8316108a6636da120d1238461f8538042abf572ca92c76d674",
-            "file": "preuves/dbcd6bf9061dfc8316108a6636da120d1238461f8538042abf572ca92c76d674.gz"
+            "sha256": "4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322",
+            "file": "preuves/4d5e918a1602163e53e7bc3bcde0546c30ff3e686120c1dbdbf88b9135203322.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-26T15:50:33.011204+01:00",
+        "final_check_completed_at": "2026-11-26T16:23:18.733624+01:00"
       },
       {
         "date": "2026-11-26",
@@ -6153,15 +6292,15 @@
             "source_title": "Prix De La Camargue",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-26/r1c7-vincennes-prix-de-la-camargue",
-              "sha256": "224963d9dcc1d0fded69b968b207ce58cb7719cb035635f4780c8ecb6684d62b",
-              "file": "preuves/224963d9dcc1d0fded69b968b207ce58cb7719cb035635f4780c8ecb6684d62b.gz"
+              "sha256": "c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc",
+              "file": "preuves/c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
-              "sha256": "7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4",
-              "file": "preuves/7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4.gz"
+              "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+              "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
             },
-            "captured_at": "2026-11-26T15:17:34.415689+01:00",
+            "captured_at": "2026-11-26T16:23:46.314015+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
@@ -6169,8 +6308,8 @@
               "typePari": "SIMPLE_GAGNANT",
               "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702558000,
+              "nombreIndicateurTendance": 0.98,
+              "dateRapport": 1795706158000,
               "favoris": false,
               "numPmu1": 9,
               "grossePrise": false
@@ -6186,24 +6325,24 @@
             "source_title": "Le pronostic du PRIX DE LA CAMARGUE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
-              "sha256": "2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2",
-              "file": "preuves/2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2.gz"
+              "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+              "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
-              "sha256": "7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4",
-              "file": "preuves/7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4.gz"
+              "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+              "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
             },
-            "captured_at": "2026-11-26T15:17:34.915994+01:00",
+            "captured_at": "2026-11-26T16:23:46.995572+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.0,
+              "rapport": 6.4,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 3.44,
-              "dateRapport": 1795702558000,
+              "nombreIndicateurTendance": 1.58,
+              "dateRapport": 1795706158000,
               "favoris": false,
               "numPmu1": 7,
               "grossePrise": false
@@ -6219,24 +6358,24 @@
             "source_title": "Le pronostic du PRIX DE LA CAMARGUE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
-              "sha256": "2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2",
-              "file": "preuves/2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2.gz"
+              "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+              "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
-              "sha256": "7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4",
-              "file": "preuves/7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4.gz"
+              "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+              "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
             },
-            "captured_at": "2026-11-26T15:17:35.002138+01:00",
+            "captured_at": "2026-11-26T16:23:47.046464+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 11.0,
+              "rapport": 9.7,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -0.87,
-              "dateRapport": 1795702558000,
+              "nombreIndicateurTendance": -3.0,
+              "dateRapport": 1795706158000,
               "favoris": false,
               "numPmu1": 6,
               "grossePrise": false
@@ -6252,24 +6391,24 @@
             "source_title": "Prix de la Camargue",
             "evidence": {
               "url": "https://www.geny.com/course/1700107-2026-11-26-vincennes-prix-de-la-camargue/partants-pronostics",
-              "sha256": "507b4a40ea18b3245299fb2b90efdc5152a7f32a9c25914d0695a1f3051d620f",
-              "file": "preuves/507b4a40ea18b3245299fb2b90efdc5152a7f32a9c25914d0695a1f3051d620f.gz"
+              "sha256": "8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b",
+              "file": "preuves/8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C7/participants",
-              "sha256": "7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4",
-              "file": "preuves/7b2083d6dbd5664808813ee4b300854557be879d80e79b77f3266e54d96283c4.gz"
+              "sha256": "bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956",
+              "file": "preuves/bb7d625a392c61ef7835e43d9b218d6d4a8dc53f63f8551b7fa6ae576650f956.gz"
             },
-            "captured_at": "2026-11-26T15:17:52.282278+01:00",
+            "captured_at": "2026-11-26T16:24:04.725242+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 4.3,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 2.17,
-              "dateRapport": 1795702558000,
+              "nombreIndicateurTendance": -2.27,
+              "dateRapport": 1795706158000,
               "favoris": true,
               "numPmu1": 11,
               "grossePrise": false
@@ -6281,23 +6420,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-26/r1c7-vincennes-prix-de-la-camargue",
-            "sha256": "224963d9dcc1d0fded69b968b207ce58cb7719cb035635f4780c8ecb6684d62b",
-            "file": "preuves/224963d9dcc1d0fded69b968b207ce58cb7719cb035635f4780c8ecb6684d62b.gz"
+            "sha256": "c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc",
+            "file": "preuves/c079d2ef79619adff9caf8fb5fc772160895f0912ef6d1cc56f62c3009d550bc.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
-            "sha256": "2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2",
-            "file": "preuves/2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2.gz"
+            "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+            "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424720_prix-de-la-camargue.html",
-            "sha256": "2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2",
-            "file": "preuves/2a27038bd570e286b7fa4423fe938a708d6a90d98716e6e3528c80f5634d0db2.gz"
+            "sha256": "21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa",
+            "file": "preuves/21c79f783802c3b2b6c314037dd940709ee75b02a07ff562155a2cc8366dfdfa.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1700107-2026-11-26-vincennes-prix-de-la-camargue/partants-pronostics",
-            "sha256": "507b4a40ea18b3245299fb2b90efdc5152a7f32a9c25914d0695a1f3051d620f",
-            "file": "preuves/507b4a40ea18b3245299fb2b90efdc5152a7f32a9c25914d0695a1f3051d620f.gz"
+            "sha256": "8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b",
+            "file": "preuves/8d41de55ff38079190e2694a3e04b7238b195649fbbc37b80822d5c742cc324b.gz"
           }
         }
       },
@@ -6319,24 +6458,24 @@
             "source_title": "Prix De L'ile De Re",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-26/r1c8-vincennes-prix-de-l-ile-de-re",
-              "sha256": "0d6974f32020c2b50d64b6c7ea26fcf5e77a9ef448293ec12e85950a230b8537",
-              "file": "preuves/0d6974f32020c2b50d64b6c7ea26fcf5e77a9ef448293ec12e85950a230b8537.gz"
+              "sha256": "074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a",
+              "file": "preuves/074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
-              "sha256": "bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03",
-              "file": "preuves/bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03.gz"
+              "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+              "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
             },
-            "captured_at": "2026-11-26T15:17:53.679474+01:00",
+            "captured_at": "2026-11-26T16:24:06.727720+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702517000,
+              "dateRapport": 1795706117000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6352,24 +6491,24 @@
             "source_title": "Le pronostic du PRIX DE L'ILE DE RE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
-              "sha256": "c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2",
-              "file": "preuves/c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2.gz"
+              "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+              "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
-              "sha256": "bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03",
-              "file": "preuves/bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03.gz"
+              "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+              "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
             },
-            "captured_at": "2026-11-26T15:17:54.200693+01:00",
+            "captured_at": "2026-11-26T16:24:07.413190+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 5.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702517000,
+              "dateRapport": 1795706117000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -6385,24 +6524,24 @@
             "source_title": "Le pronostic du PRIX DE L'ILE DE RE",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
-              "sha256": "c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2",
-              "file": "preuves/c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2.gz"
+              "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+              "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
-              "sha256": "bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03",
-              "file": "preuves/bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03.gz"
+              "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+              "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
             },
-            "captured_at": "2026-11-26T15:17:54.285542+01:00",
+            "captured_at": "2026-11-26T16:24:07.462429+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 2.9,
+              "rapport": 2.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702517000,
+              "dateRapport": 1795706117000,
               "favoris": true,
               "numPmu1": 2,
               "grossePrise": false
@@ -6418,24 +6557,24 @@
             "source_title": "Prix de l'Ile de Ré",
             "evidence": {
               "url": "https://www.geny.com/course/1700108-2026-11-26-vincennes-prix-de-l-ile-de-re/partants-pronostics",
-              "sha256": "de09056cb433ab418ea83d82d5303ab2c26135d684792d73665502e7177f2992",
-              "file": "preuves/de09056cb433ab418ea83d82d5303ab2c26135d684792d73665502e7177f2992.gz"
+              "sha256": "7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d",
+              "file": "preuves/7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/26112026/R1/C8/participants",
-              "sha256": "bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03",
-              "file": "preuves/bbd71a7f5332d0b4379de08c19a657089f9171ffb91e906dd9a35fdc718bec03.gz"
+              "sha256": "1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f",
+              "file": "preuves/1046e9b9a3c688aee70fbdeb9af87d32f0c12c33ec1643197460a48210ded72f.gz"
             },
-            "captured_at": "2026-11-26T15:18:12.411534+01:00",
+            "captured_at": "2026-11-26T16:24:25.346032+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.7,
+              "rapport": 5.0,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795702517000,
+              "dateRapport": 1795706117000,
               "favoris": false,
               "numPmu1": 1,
               "grossePrise": false
@@ -6447,23 +6586,23 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-26/r1c8-vincennes-prix-de-l-ile-de-re",
-            "sha256": "0d6974f32020c2b50d64b6c7ea26fcf5e77a9ef448293ec12e85950a230b8537",
-            "file": "preuves/0d6974f32020c2b50d64b6c7ea26fcf5e77a9ef448293ec12e85950a230b8537.gz"
+            "sha256": "074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a",
+            "file": "preuves/074b2f372ea06e897b9cfb228a961623a57b8a0bf208e1444b8677b1ff02b49a.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
-            "sha256": "c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2",
-            "file": "preuves/c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2.gz"
+            "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+            "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-26/paris-vincennes/424721_prix-de-l-ile-de-re.html",
-            "sha256": "c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2",
-            "file": "preuves/c61df751cdc5c8b3dd909ed6d6c472c244b25fbb09af9a2e78c48ca0ef3ec7e2.gz"
+            "sha256": "6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9",
+            "file": "preuves/6624d0d86d0b806cb6fe5d53518467093a3b3f20c45dd473d6f557b1c8e4f2d9.gz"
           },
           "geny": {
             "url": "https://www.geny.com/course/1700108-2026-11-26-vincennes-prix-de-l-ile-de-re/partants-pronostics",
-            "sha256": "de09056cb433ab418ea83d82d5303ab2c26135d684792d73665502e7177f2992",
-            "file": "preuves/de09056cb433ab418ea83d82d5303ab2c26135d684792d73665502e7177f2992.gz"
+            "sha256": "7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d",
+            "file": "preuves/7f370412f1befb2170fdb6ddb7228b8258704665716e6d9fab3db8e5de5f3c0d.gz"
           }
         }
       }
