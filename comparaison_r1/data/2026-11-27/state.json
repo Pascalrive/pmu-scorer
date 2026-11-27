@@ -2237,7 +2237,9 @@
           "file": "preuves/d15bf82aefd58ee97eb4efaeaca3c64673c9dd536706bf443069b9599458be5c.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T20:11:40.741069+01:00"
+      "final_check_completed_at": "2026-11-27T20:11:40.741069+01:00",
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-27",
@@ -2352,7 +2354,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T20:11:41.630041+01:00",
+          "at": "2026-11-27T20:19:53.898523+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -2782,7 +2784,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T20:11:40.746521+01:00",
+      "final_check_started_at": "2026-11-27T20:19:50.860894+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
@@ -2800,7 +2802,7 @@
           "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T20:11:41.630073+01:00"
+      "final_check_completed_at": "2026-11-27T20:19:53.898545+01:00"
     },
     {
       "date": "2026-11-27",
@@ -2809,9 +2811,120 @@
       "title": "PRIX DON DU SANG (PRIX CERES)",
       "departure": "2026-11-27T21:18:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 15,
+          "name": "MAGIE MESLOISE",
+          "source_url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Don Du Sang (Prix Ceres)",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
+            "sha256": "e8d6fa4081a1ac7126279552875df7f808feb4eb8804a8c75e6bddce262cccf6",
+            "file": "preuves/e8d6fa4081a1ac7126279552875df7f808feb4eb8804a8c75e6bddce262cccf6.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+            "sha256": "4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2",
+            "file": "preuves/4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2.gz"
+          },
+          "captured_at": "2026-11-27T20:19:56.519309+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795806910000,
+            "favoris": false,
+            "numPmu1": 15,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 16,
+          "name": "MIGRAINE DE CONNEE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+            "sha256": "905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28",
+            "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+            "sha256": "4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2",
+            "file": "preuves/4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2.gz"
+          },
+          "captured_at": "2026-11-27T20:19:58.975626+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.04,
+            "dateRapport": 1795806910000,
+            "favoris": false,
+            "numPmu1": 16,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 3,
+          "name": "MOON DU VIVIER",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+            "sha256": "905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28",
+            "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+            "sha256": "4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2",
+            "file": "preuves/4028aefb75002aad0866233d714c25019a05f511a6dbd9b8303b7f9d88b350c2.gz"
+          },
+          "captured_at": "2026-11-27T20:19:59.016160+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 18.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.57,
+            "dateRapport": 1795806910000,
+            "favoris": false,
+            "numPmu1": 3,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-27T20:19:59.869998+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-27T09:08:20.667282+01:00",
@@ -3233,7 +3346,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-27T20:19:53.901968+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
+          "sha256": "e8d6fa4081a1ac7126279552875df7f808feb4eb8804a8c75e6bddce262cccf6",
+          "file": "preuves/e8d6fa4081a1ac7126279552875df7f808feb4eb8804a8c75e6bddce262cccf6.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+          "sha256": "905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28",
+          "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+          "sha256": "905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28",
+          "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-27T20:19:59.870012+01:00"
     },
     {
       "date": "2026-11-27",
