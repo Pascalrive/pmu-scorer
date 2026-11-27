@@ -49,6 +49,38 @@
             "sha256": "d91d9d15028551e2240fd59e873badbcede48d74059d38b8a5c95aa222d26166",
             "file": "preuves/d91d9d15028551e2240fd59e873badbcede48d74059d38b8a5c95aa222d26166.gz"
           }
+        },
+        {
+          "race_id": "R1C7",
+          "departure": "2026-11-27T21:48:00+01:00",
+          "number": 8,
+          "name": "IBIZA DE CONNEE",
+          "stake_cents": 20000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-27T21:22:27.669668+01:00",
+          "source_captured_at": "2026-11-27T20:49:32.809748+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795810944000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "c872b98060334ed65a6bcf2ecdab18f14894447ca3d8fd5e0750bdb76722005f",
+          "telegram_receipts": [
+            {
+              "message_id": 8186,
+              "date": 1795810947
+            }
+          ]
         }
       ],
       "budget_cents": 120000,
@@ -3632,7 +3664,9 @@
           "new": "2026-11-27T21:19:00+01:00",
           "checked_at": "2026-11-27T20:59:02.524628+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-27",
@@ -3772,7 +3806,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T21:14:15.967307+01:00",
+          "at": "2026-11-27T21:22:26.341775+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -4432,7 +4466,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T21:14:15.369733+01:00",
+      "final_check_started_at": "2026-11-27T21:22:24.522843+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
@@ -4451,7 +4485,7 @@
         }
       },
       "groups_frozen_at": "2026-11-27T20:49:34.731042+01:00",
-      "final_check_completed_at": "2026-11-27T21:14:15.967323+01:00"
+      "final_check_completed_at": "2026-11-27T21:22:26.341802+01:00"
     },
     {
       "date": "2026-11-27",
@@ -4566,7 +4600,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T21:14:19.270534+01:00",
+          "at": "2026-11-27T21:22:27.175088+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -5101,7 +5135,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T21:14:15.971382+01:00",
+      "final_check_started_at": "2026-11-27T21:22:26.347225+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
@@ -5119,7 +5153,7 @@
           "file": "preuves/65ca9a11b765bb262bcf28d65223bd3563185a8df721accd3f4b886651def3d9.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T21:14:19.270551+01:00"
+      "final_check_completed_at": "2026-11-27T21:22:27.175116+01:00"
     }
   ],
   "notifications": [],
