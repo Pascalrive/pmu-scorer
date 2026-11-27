@@ -49,7 +49,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 10,
+          "settled_at": "2026-11-27T18:49:51.930398+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de",
+            "file": "preuves/5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/participants",
+            "sha256": "897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad",
+            "file": "preuves/897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -82,7 +96,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-27T18:49:51.930654+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de",
+            "file": "preuves/5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/participants",
+            "sha256": "897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad",
+            "file": "preuves/897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -115,7 +143,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-27T18:49:51.930751+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de",
+            "file": "preuves/5bdcfa4b4a6a7323accd8aa6828953de31707b11f4f3ca1a8dc0ffc320dbd8de.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/participants",
+            "sha256": "897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad",
+            "file": "preuves/897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad.gz"
+          }
         }
       },
       "groups": {},
@@ -369,8 +411,39 @@
           "checked_at": "2026-11-27T18:13:42.550871+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 7,
+          "name": "KELLE HAUFOR",
+          "rank": 1
+        },
+        {
+          "number": 13,
+          "name": "KOTKITA GIRL",
+          "rank": 2
+        },
+        {
+          "number": 12,
+          "name": "KISS ME TO LIVE",
+          "rank": 3
+        },
+        {
+          "number": 10,
+          "name": "KHOSIAB",
+          "rank": 4
+        },
+        {
+          "number": 4,
+          "name": "KONTESSA DREAM",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C1/participants",
+        "sha256": "897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad",
+        "file": "preuves/897e48d2c25bc688137094fc94962ba2b54eb80c5c08a5d9040ff92f97093aad.gz"
+      }
     },
     {
       "date": "2026-11-27",
@@ -485,7 +558,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T18:39:04.582866+01:00",
+          "at": "2026-11-27T18:49:50.275593+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -810,7 +883,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T18:39:02.121126+01:00",
+      "final_check_started_at": "2026-11-27T18:49:47.470264+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c2-vincennes-prix-fontenaython-prix-hermantaria",
@@ -828,7 +901,7 @@
           "file": "preuves/623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T18:39:04.582889+01:00",
+      "final_check_completed_at": "2026-11-27T18:49:50.275622+01:00",
       "schedule_changes": [
         {
           "old": "2026-11-27T18:58:00+01:00",
@@ -975,7 +1048,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T18:39:09.514504+01:00",
+          "at": "2026-11-27T18:49:51.154247+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -1375,7 +1448,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T18:39:05.178694+01:00",
+      "final_check_started_at": "2026-11-27T18:49:50.279615+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c3-vincennes-prix-le-souvenir-francais-prix-brasilia",
@@ -1394,7 +1467,7 @@
         }
       },
       "groups_frozen_at": "2026-11-27T18:39:08.989869+01:00",
-      "final_check_completed_at": "2026-11-27T18:39:09.514532+01:00"
+      "final_check_completed_at": "2026-11-27T18:49:51.154277+01:00"
     },
     {
       "date": "2026-11-27",
