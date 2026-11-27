@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX VILLE DE FONTENAY SOUS BOIS (PRIX MELUSINA)
 
-Collecte : 2026-11-27T08:03:06.297346+00:00. Avant départ : True. Sources complètes : 4/8.
+Collecte : 2026-11-27T12:26:59.331214+00:00. Avant départ : True. Sources complètes : 4/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html) | 5 KALIAKIE PHEDO (cote 6.4) | 11 KELLY JANE (cote 10.0) | 4 KUNAMATATA (cote 8.3) | 8 KISS ME DU LIVET (cote 4.2) | 3 KARA D'OR (cote 24.0) | 14 KIPHYLE DESBOIS (cote 10.0) — Outsider ; 13 KALINKA DU GRENAT (cote 24.0) — Outsider ; 10 JACINTHE DU BOIRON (cote 11.0) — Outsider ; 3 KARA D'OR (cote 24.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html) | 8 KISS ME DU LIVET (cote 4.2) | 10 JACINTHE DU BOIRON (cote 11.0) | 4 KUNAMATATA (cote 8.3) | 7 KYNTE FLUSH (cote 10.0) | 11 KELLY JANE (cote 10.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html) | 5 KALIAKIE PHEDO (cote 6.7) | 11 KELLY JANE (cote 10.0) | 4 KUNAMATATA (cote 8.0) | 8 KISS ME DU LIVET (cote 4.0) | 3 KARA D'OR (cote 19.0) | 14 KIPHYLE DESBOIS (cote 10.0) — Outsider ; 13 KALINKA DU GRENAT (cote 20.0) — Outsider ; 10 JACINTHE DU BOIRON (cote 11.0) — Outsider ; 3 KARA D'OR (cote 19.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html) | 8 KISS ME DU LIVET (cote 4.0) | 10 JACINTHE DU BOIRON (cote 11.0) | 4 KUNAMATATA (cote 8.0) | 7 KYNTE FLUSH (cote 12.0) | 11 KELLY JANE (cote 10.0) | Non publié |
 | Zone-Turf | — | — | — | — | — | Indisponible |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 5 KALIAKIE PHEDO (cote 6.4) | 8 KISS ME DU LIVET (cote 4.2) | 4 KUNAMATATA (cote 8.3) | 10 JACINTHE DU BOIRON (cote 11.0) | 11 KELLY JANE (cote 10.0) | 11 KELLY JANE (cote 10.0) — Outsider ; 3 KARA D'OR (cote 24.0) — Outsider ; 7 KYNTE FLUSH (cote 10.0) — Outsider ; 2 KISS ME DE NAVARY (cote 21.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 5 KALIAKIE PHEDO (cote 6.4) | 8 KISS ME DU LIVET (cote 4.2) | 11 KELLY JANE (cote 10.0) | 4 KUNAMATATA (cote 8.3) | 14 KIPHYLE DESBOIS (cote 10.0) | Non publié |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 5 KALIAKIE PHEDO (cote 6.7) | 8 KISS ME DU LIVET (cote 4.0) | 4 KUNAMATATA (cote 8.0) | 10 JACINTHE DU BOIRON (cote 11.0) | 11 KELLY JANE (cote 10.0) | 11 KELLY JANE (cote 10.0) — Outsider ; 3 KARA D'OR (cote 19.0) — Outsider ; 7 KYNTE FLUSH (cote 12.0) — Outsider ; 2 KISS ME DE NAVARY (cote 22.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 5 KALIAKIE PHEDO (cote 6.7) | 8 KISS ME DU LIVET (cote 4.0) | 11 KELLY JANE (cote 10.0) | 4 KUNAMATATA (cote 8.0) | 14 KIPHYLE DESBOIS (cote 10.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,10 +21,10 @@ Collecte : 2026-11-27T08:03:06.297346+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 8 KISS ME DU LIVET (cote 4.2) | 4 |
-| 4 KUNAMATATA (cote 8.3) | 4 |
+| 8 KISS ME DU LIVET (cote 4.0) | 4 |
+| 4 KUNAMATATA (cote 8.0) | 4 |
 | 11 KELLY JANE (cote 10.0) | 4 |
-| 5 KALIAKIE PHEDO (cote 6.4) | 3 |
+| 5 KALIAKIE PHEDO (cote 6.7) | 3 |
 | 10 JACINTHE DU BOIRON (cote 11.0) | 2 |
 
 ### Notre analyse — trois sélections de cinq chevaux
@@ -32,7 +32,7 @@ Collecte : 2026-11-27T08:03:06.297346+00:00. Avant départ : True. Sources compl
 | Variante | Sélection | Simulation |
 |---|---|---|
 | Statistique | 8 – 4 – 11 – 5 – 10 | INCOMPLET : pas de simulation |
-| Cotes | 8 – 5 – 4 – 7 – 11 | INCOMPLET : pas de simulation |
+| Cotes | 8 – 5 – 4 – 11 – 14 | INCOMPLET : pas de simulation |
 | Bases + outsiders | 8 – 4 – 11 – 3 | INCOMPLET : pas de simulation |
 
 ### Cumul des trois premiers choix
