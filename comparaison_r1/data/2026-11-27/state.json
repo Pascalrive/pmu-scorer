@@ -123,7 +123,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T17:49:35.787769+01:00",
+          "at": "2026-11-27T17:59:18.685289+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -343,7 +343,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T17:49:34.051046+01:00",
+      "final_check_started_at": "2026-11-27T17:59:15.896434+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c1-vincennes-prix-les-ami-e-s-de-fontenay-prix-elma",
@@ -361,7 +361,7 @@
           "file": "preuves/84eb499d0ef02ac35a63dc52f8e18dee1234c34e4683a4907f1f39b88256d98a.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T17:49:35.787796+01:00"
+      "final_check_completed_at": "2026-11-27T17:59:18.685327+01:00"
     },
     {
       "date": "2026-11-27",
@@ -370,9 +370,120 @@
       "title": "PRIX FONTENAYTHON (PRIX HERMANTARIA)",
       "departure": "2026-11-27T18:58:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 8,
+          "name": "NORMAN PIERJI",
+          "source_url": "https://turfin.fr/course/2026-11-27/r1c2-vincennes-prix-fontenaython-prix-hermantaria",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Fontenaython (Prix Hermantaria)",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-27/r1c2-vincennes-prix-fontenaython-prix-hermantaria",
+            "sha256": "fe56a778175f6fb1d351c77c5a782054714a49d05e19aa8aea611f8cb8e5b393",
+            "file": "preuves/fe56a778175f6fb1d351c77c5a782054714a49d05e19aa8aea611f8cb8e5b393.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C2/participants",
+            "sha256": "aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182",
+            "file": "preuves/aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182.gz"
+          },
+          "captured_at": "2026-11-27T17:59:21.343100+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795797930000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "NARCO DU CHATELET",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "Le pronostic du PRIX FONTEYNAYTHON (PRIX HERMANTARIA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+            "sha256": "623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016",
+            "file": "preuves/623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C2/participants",
+            "sha256": "aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182",
+            "file": "preuves/aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182.gz"
+          },
+          "captured_at": "2026-11-27T17:59:23.379093+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 9.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795797930000,
+            "favoris": false,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 9,
+          "name": "NICOU CHAK",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_full_numbered_field",
+          "source_title": "Le pronostic du PRIX FONTEYNAYTHON (PRIX HERMANTARIA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+            "sha256": "623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016",
+            "file": "preuves/623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C2/participants",
+            "sha256": "aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182",
+            "file": "preuves/aeab6eb1a1b834fff80cf7f1eba230ea0e3abf167674b944037f589897ae1182.gz"
+          },
+          "captured_at": "2026-11-27T17:59:23.462897+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 6.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 1.47,
+            "dateRapport": 1795797930000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-27T17:59:24.049617+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-27T09:08:04.145171+01:00",
@@ -584,7 +695,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-27T17:59:18.689310+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-27/r1c2-vincennes-prix-fontenaython-prix-hermantaria",
+          "sha256": "fe56a778175f6fb1d351c77c5a782054714a49d05e19aa8aea611f8cb8e5b393",
+          "file": "preuves/fe56a778175f6fb1d351c77c5a782054714a49d05e19aa8aea611f8cb8e5b393.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+          "sha256": "623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016",
+          "file": "preuves/623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424792_prix-fonteynaython-prix-hermantaria.html",
+          "sha256": "623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016",
+          "file": "preuves/623f3eb972aa92384370bfb44c82b6841e540a5f959314f95f6f511b419a1016.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-27T17:59:24.049643+01:00"
     },
     {
       "date": "2026-11-27",
