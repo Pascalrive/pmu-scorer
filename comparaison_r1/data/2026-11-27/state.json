@@ -2882,7 +2882,9 @@
           "new": "2026-11-27T20:49:00+01:00",
           "checked_at": "2026-11-27T20:39:13.637875+01:00"
         }
-      ]
+      ],
+      "settlement_error": "JSONDecodeError",
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
     },
     {
       "date": "2026-11-27",
@@ -2997,7 +2999,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T20:39:16.040603+01:00",
+          "at": "2026-11-27T20:49:30.576535+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -3425,9 +3427,114 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-27T20:49:39.126383+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 15,
+              "name": "MAGIE MESLOISE",
+              "source_url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Don Du Sang (Prix Ceres)",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
+                "sha256": "20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78",
+                "file": "preuves/20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+                "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+                "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
+              },
+              "captured_at": "2026-11-27T20:49:38.317788+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 9.9,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -3.88,
+                "dateRapport": 1795808956000,
+                "favoris": false,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 16,
+              "name": "MIGRAINE DE CONNEE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+                "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+                "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+                "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+                "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
+              },
+              "captured_at": "2026-11-27T20:49:38.935236+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 10.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.99,
+                "dateRapport": 1795808956000,
+                "favoris": false,
+                "numPmu1": 16,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 3,
+              "name": "MOON DU VIVIER",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
+                "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+                "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
+                "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+                "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
+              },
+              "captured_at": "2026-11-27T20:49:38.973801+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 21.0,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.46,
+                "dateRapport": 1795808956000,
+                "favoris": false,
+                "numPmu1": 3,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ],
-      "final_check_started_at": "2026-11-27T20:39:15.351280+01:00",
+      "final_check_started_at": "2026-11-27T20:49:28.696969+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
@@ -3445,7 +3552,7 @@
           "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T20:39:16.040631+01:00"
+      "final_check_completed_at": "2026-11-27T20:49:30.576548+01:00"
     },
     {
       "date": "2026-11-27",
@@ -3454,9 +3561,145 @@
       "title": "PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
       "departure": "2026-11-27T21:48:00+01:00",
       "market": true,
-      "tips": {},
-      "groups": {},
-      "errors": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 8,
+          "name": "IBIZA DE CONNEE",
+          "source_url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Les Restos Du Coeur (Prix Philagoria)",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
+            "sha256": "4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae",
+            "file": "preuves/4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+            "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+          },
+          "captured_at": "2026-11-27T20:49:32.809748+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795808722000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 8,
+          "name": "IBIZA DE CONNEE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+            "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+            "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+            "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+          },
+          "captured_at": "2026-11-27T20:49:34.694507+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795808722000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 8,
+          "name": "IBIZA DE CONNEE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+            "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+            "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+            "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+          },
+          "captured_at": "2026-11-27T20:49:34.731042+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795808722000,
+            "favoris": true,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
+      "groups": {
+        "accord_3_sur_4": {
+          "number": 8,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "majorite_3_ou_4": {
+          "number": 8,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        },
+        "groupe_canalturf+turfin+zeturf": {
+          "number": 8,
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ]
+        }
+      },
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-27T20:49:35.072031+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-27T09:08:23.731875+01:00",
@@ -3977,8 +4220,158 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-27T20:49:39.414464+01:00",
+          "groups": {
+            "accord_3_sur_4": {
+              "number": 8,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "majorite_3_ou_4": {
+              "number": 8,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            },
+            "groupe_canalturf+turfin+zeturf": {
+              "number": 8,
+              "sites": [
+                "turfin",
+                "canalturf",
+                "zeturf"
+              ]
+            }
+          },
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 8,
+              "name": "IBIZA DE CONNEE",
+              "source_url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Les Restos Du Coeur (Prix Philagoria)",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
+                "sha256": "4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae",
+                "file": "preuves/4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+                "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+                "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+              },
+              "captured_at": "2026-11-27T20:49:39.181610+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795808722000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 8,
+              "name": "IBIZA DE CONNEE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+                "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+                "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+                "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+                "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+              },
+              "captured_at": "2026-11-27T20:49:39.217003+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795808722000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 8,
+              "name": "IBIZA DE CONNEE",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+                "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+                "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+                "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+                "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
+              },
+              "captured_at": "2026-11-27T20:49:39.252768+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 1.7,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795808722000,
+                "favoris": true,
+                "numPmu1": 8,
+                "grossePrise": false
+              }
+            }
+          }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-27T20:49:30.580017+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
+          "sha256": "4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae",
+          "file": "preuves/4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+          "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+          "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
+          "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+          "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
+        }
+      },
+      "groups_frozen_at": "2026-11-27T20:49:34.731042+01:00",
+      "final_check_completed_at": "2026-11-27T20:49:35.072044+01:00"
     },
     {
       "date": "2026-11-27",
@@ -4410,6 +4803,111 @@
               }
             }
           }
+        },
+        {
+          "at": "2026-11-27T20:49:41.776983+01:00",
+          "groups": {},
+          "tips": {
+            "turfin": {
+              "site": "turfin",
+              "number": 7,
+              "name": "NEW GIRL DU NOYER",
+              "source_url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
+              "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Prix Ottilia",
+              "evidence": {
+                "url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
+                "sha256": "7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b",
+                "file": "preuves/7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
+                "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+                "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
+              },
+              "captured_at": "2026-11-27T20:49:40.681957+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 4.6,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": -2.12,
+                "dateRapport": 1795808703000,
+                "favoris": true,
+                "numPmu1": 7,
+                "grossePrise": false
+              }
+            },
+            "canalturf": {
+              "site": "canalturf",
+              "number": 15,
+              "name": "NATHALINA D'ARGENT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
+              "definition": "Premier cheval de la sélection Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX OTTILIA",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
+                "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+                "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
+                "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+                "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
+              },
+              "captured_at": "2026-11-27T20:49:41.298470+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795808703000,
+                "favoris": false,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            },
+            "zeturf": {
+              "site": "zeturf",
+              "number": 15,
+              "name": "NATHALINA D'ARGENT",
+              "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
+              "definition": "Sélection ZEturf publiée sur Canalturf",
+              "identity_check": "date_rc_title_number_name",
+              "source_title": "Le pronostic du PRIX OTTILIA",
+              "evidence": {
+                "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
+                "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+                "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
+              },
+              "official_evidence": {
+                "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
+                "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+                "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
+              },
+              "captured_at": "2026-11-27T20:49:41.337147+01:00",
+              "stake_cents": 0,
+              "status": "APERÇU",
+              "playable": true,
+              "odds": {
+                "typePari": "SIMPLE_GAGNANT",
+                "rapport": 5.8,
+                "typeRapport": "DIRECT",
+                "nombreIndicateurTendance": 0.0,
+                "dateRapport": 1795808703000,
+                "favoris": false,
+                "numPmu1": 15,
+                "grossePrise": false
+              }
+            }
+          }
         }
       ]
     }
@@ -4417,288 +4915,8 @@
   "notifications": [],
   "morning_preview": {
     "version": 7,
-    "captured_at": "2026-11-27T19:35:43.338626+01:00",
+    "captured_at": "2026-11-27T20:49:41.777025+01:00",
     "races": [
-      {
-        "date": "2026-11-27",
-        "id": "R1C4",
-        "c": 4,
-        "title": "PRIX VILLE DE FONTENAY SOUS BOIS (PRIX MELUSINA)",
-        "departure": "2026-11-27T20:15:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 8,
-            "name": "KISS ME DU LIVET",
-            "source_url": "https://turfin.fr/course/2026-11-27/r1c4-vincennes-prix-ville-de-fontenay-sous-bois-prix-melusina",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Ville De Fontenay Sous Bois (Prix Melusina)",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-27/r1c4-vincennes-prix-ville-de-fontenay-sous-bois-prix-melusina",
-              "sha256": "4d0d0cb6fec0b14e456e4e7ce5767af2e6c3d6be6ab2020112961bc0831c54cf",
-              "file": "preuves/4d0d0cb6fec0b14e456e4e7ce5767af2e6c3d6be6ab2020112961bc0831c54cf.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
-              "sha256": "709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46",
-              "file": "preuves/709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46.gz"
-            },
-            "captured_at": "2026-11-27T19:35:33.931998+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804200000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 5,
-            "name": "KALIAKIE PHEDO",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX VILLE DE FONTENAY-SOUS-BOIS (PRIX MELUSINA)",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-              "sha256": "d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301",
-              "file": "preuves/d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
-              "sha256": "709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46",
-              "file": "preuves/709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46.gz"
-            },
-            "captured_at": "2026-11-27T19:35:35.062096+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.8,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.0,
-              "dateRapport": 1795804200000,
-              "favoris": false,
-              "numPmu1": 5,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 8,
-            "name": "KISS ME DU LIVET",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du Quinté PRIX VILLE DE FONTENAY-SOUS-BOIS (PRIX MELUSINA)",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-              "sha256": "d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301",
-              "file": "preuves/d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
-              "sha256": "709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46",
-              "file": "preuves/709be910b304b0e24ae36acdb4a81f4468f28311071e847556ac0d1f7d32de46.gz"
-            },
-            "captured_at": "2026-11-27T19:35:35.136729+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 3.6,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804200000,
-              "favoris": true,
-              "numPmu1": 8,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Course Genybet absente ou ambiguë",
-            "at": "2026-11-27T19:35:35.240587+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Course Genybet absente ou ambiguë"
-            }
-          }
-        },
-        "final_check_started_at": "2026-11-27T19:35:31.923484+01:00",
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-27/r1c4-vincennes-prix-ville-de-fontenay-sous-bois-prix-melusina",
-            "sha256": "4d0d0cb6fec0b14e456e4e7ce5767af2e6c3d6be6ab2020112961bc0831c54cf",
-            "file": "preuves/4d0d0cb6fec0b14e456e4e7ce5767af2e6c3d6be6ab2020112961bc0831c54cf.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-            "sha256": "d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301",
-            "file": "preuves/d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424794_prix-ville-de-fontenay-sous-bois-prix-melusina.html",
-            "sha256": "d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301",
-            "file": "preuves/d5a8dbcd5ee091c0de01c7091b6d0cf1d2af21adf9095e08271148df62b84301.gz"
-          }
-        },
-        "final_check_completed_at": "2026-11-27T19:35:32.756889+01:00"
-      },
-      {
-        "date": "2026-11-27",
-        "id": "R1C5",
-        "c": 5,
-        "title": "PRIX USF (PRIX FEMINA)",
-        "departure": "2026-11-27T20:48:00+01:00",
-        "market": true,
-        "tips": {
-          "turfin": {
-            "site": "turfin",
-            "number": 6,
-            "name": "JAYA DU QUENNE",
-            "source_url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
-            "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Prix Usf (Prix Femina)",
-            "evidence": {
-              "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
-              "sha256": "02de1353df276be3a618257ef518c43f5b313304f62b386b64afb53be24701fc",
-              "file": "preuves/02de1353df276be3a618257ef518c43f5b313304f62b386b64afb53be24701fc.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
-              "sha256": "7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901",
-              "file": "preuves/7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901.gz"
-            },
-            "captured_at": "2026-11-27T19:35:36.380303+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804203000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          },
-          "canalturf": {
-            "site": "canalturf",
-            "number": 11,
-            "name": "JACK DES MALBERAUX",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-            "definition": "Premier cheval de la sélection Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX USF (PRIX FEMINA)",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-              "sha256": "8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166",
-              "file": "preuves/8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
-              "sha256": "7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901",
-              "file": "preuves/7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901.gz"
-            },
-            "captured_at": "2026-11-27T19:35:36.816526+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.3,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 4.87,
-              "dateRapport": 1795804203000,
-              "favoris": true,
-              "numPmu1": 11,
-              "grossePrise": false
-            }
-          },
-          "zeturf": {
-            "site": "zeturf",
-            "number": 6,
-            "name": "JAYA DU QUENNE",
-            "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-            "definition": "Sélection ZEturf publiée sur Canalturf",
-            "identity_check": "date_rc_title_number_name",
-            "source_title": "Le pronostic du PRIX USF (PRIX FEMINA)",
-            "evidence": {
-              "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-              "sha256": "8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166",
-              "file": "preuves/8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166.gz"
-            },
-            "official_evidence": {
-              "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
-              "sha256": "7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901",
-              "file": "preuves/7c93f5e9a5679d60d90d6e7825d9dc8bde44625dd1443899ee0638e0de967901.gz"
-            },
-            "captured_at": "2026-11-27T19:35:36.897718+01:00",
-            "stake_cents": 0,
-            "status": "APERÇU",
-            "playable": true,
-            "odds": {
-              "typePari": "SIMPLE_GAGNANT",
-              "rapport": 4.9,
-              "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804203000,
-              "favoris": false,
-              "numPmu1": 6,
-              "grossePrise": false
-            }
-          }
-        },
-        "groups": {},
-        "errors": {
-          "geny": {
-            "type": "GenyFallbackError",
-            "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-27T19:35:37.251681+01:00",
-            "source_status": {
-              "fallback_attempted": true,
-              "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
-              "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
-            }
-          }
-        },
-        "source_checks": {
-          "turfin": {
-            "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
-            "sha256": "02de1353df276be3a618257ef518c43f5b313304f62b386b64afb53be24701fc",
-            "file": "preuves/02de1353df276be3a618257ef518c43f5b313304f62b386b64afb53be24701fc.gz"
-          },
-          "canalturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-            "sha256": "8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166",
-            "file": "preuves/8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166.gz"
-          },
-          "zeturf": {
-            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
-            "sha256": "8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166",
-            "file": "preuves/8a3ecbaf63c2b78d454c52a25704cd7d7e5fa697669ce84e62262c27dd8da166.gz"
-          }
-        }
-      },
       {
         "date": "2026-11-27",
         "id": "R1C6",
@@ -4717,24 +4935,24 @@
             "source_title": "Prix Don Du Sang (Prix Ceres)",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
-              "sha256": "e7c80ecbaf1b13974c278da065ea2037ac1e5b5a1d28ad8fcd36b1128a5f978c",
-              "file": "preuves/e7c80ecbaf1b13974c278da065ea2037ac1e5b5a1d28ad8fcd36b1128a5f978c.gz"
+              "sha256": "20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78",
+              "file": "preuves/20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
-              "sha256": "3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2",
-              "file": "preuves/3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2.gz"
+              "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+              "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
             },
-            "captured_at": "2026-11-27T19:35:38.537243+01:00",
+            "captured_at": "2026-11-27T20:49:38.317788+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 8.6,
+              "rapport": 9.9,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -3.37,
-              "dateRapport": 1795804210000,
+              "nombreIndicateurTendance": -3.88,
+              "dateRapport": 1795808956000,
               "favoris": false,
               "numPmu1": 15,
               "grossePrise": false
@@ -4750,24 +4968,24 @@
             "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
-              "sha256": "9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b",
-              "file": "preuves/9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b.gz"
+              "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+              "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
-              "sha256": "3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2",
-              "file": "preuves/3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2.gz"
+              "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+              "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
             },
-            "captured_at": "2026-11-27T19:35:38.994575+01:00",
+            "captured_at": "2026-11-27T20:49:38.935236+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 9.4,
+              "rapport": 10.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804210000,
+              "nombreIndicateurTendance": 0.99,
+              "dateRapport": 1795808956000,
               "favoris": false,
               "numPmu1": 16,
               "grossePrise": false
@@ -4783,24 +5001,24 @@
             "source_title": "Le pronostic du PRIX DON DU SANG (PRIX CERES)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
-              "sha256": "9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b",
-              "file": "preuves/9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b.gz"
+              "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+              "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C6/participants",
-              "sha256": "3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2",
-              "file": "preuves/3c17e182a13e86d4c283ba9aeaf3eb4ee2bbba985bf95e80bee9ad7375769ba2.gz"
+              "sha256": "dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec",
+              "file": "preuves/dfa6f6406abd7afee193d1035e18c6568195d65e5b0492e89cdb2c5cd42e9eec.gz"
             },
-            "captured_at": "2026-11-27T19:35:39.043015+01:00",
+            "captured_at": "2026-11-27T20:49:38.973801+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 17.0,
+              "rapport": 21.0,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.56,
-              "dateRapport": 1795804210000,
+              "nombreIndicateurTendance": 0.46,
+              "dateRapport": 1795808956000,
               "favoris": false,
               "numPmu1": 3,
               "grossePrise": false
@@ -4812,7 +5030,7 @@
           "geny": {
             "type": "GenyFallbackError",
             "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-27T19:35:39.359436+01:00",
+            "at": "2026-11-27T20:49:39.126325+01:00",
             "source_status": {
               "fallback_attempted": true,
               "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -4820,23 +5038,25 @@
             }
           }
         },
+        "final_check_started_at": "2026-11-27T20:49:28.696969+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
-            "sha256": "e7c80ecbaf1b13974c278da065ea2037ac1e5b5a1d28ad8fcd36b1128a5f978c",
-            "file": "preuves/e7c80ecbaf1b13974c278da065ea2037ac1e5b5a1d28ad8fcd36b1128a5f978c.gz"
+            "sha256": "20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78",
+            "file": "preuves/20f07dad300b1b1e3125a59e85042962763c04d4a601bf3129fe89d455139a78.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
-            "sha256": "9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b",
-            "file": "preuves/9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b.gz"
+            "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+            "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424796_prix-don-du-sang-prix-ceres.html",
-            "sha256": "9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b",
-            "file": "preuves/9bdce843c955900011bc8f4690ea826211f24c1ec9ff99af559e44525b80bb1b.gz"
+            "sha256": "0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635",
+            "file": "preuves/0a54acdd806ce8dfc6fa3df8cecb725be6bee282016dd4f7ebb9a225e4fb7635.gz"
           }
-        }
+        },
+        "final_check_completed_at": "2026-11-27T20:49:30.576548+01:00"
       },
       {
         "date": "2026-11-27",
@@ -4856,24 +5076,24 @@
             "source_title": "Prix Les Restos Du Coeur (Prix Philagoria)",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
-              "sha256": "41c20c67e6320a24188a73dc4eb8ffb4085f51fcb5a553a7b4304127542673ef",
-              "file": "preuves/41c20c67e6320a24188a73dc4eb8ffb4085f51fcb5a553a7b4304127542673ef.gz"
+              "sha256": "4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae",
+              "file": "preuves/4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
-              "sha256": "cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e",
-              "file": "preuves/cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e.gz"
+              "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+              "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
             },
-            "captured_at": "2026-11-27T19:35:40.426652+01:00",
+            "captured_at": "2026-11-27T20:49:39.181610+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.8,
+              "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804222000,
+              "dateRapport": 1795808722000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -4889,24 +5109,24 @@
             "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
-              "sha256": "79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31",
-              "file": "preuves/79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31.gz"
+              "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+              "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
-              "sha256": "cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e",
-              "file": "preuves/cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e.gz"
+              "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+              "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
             },
-            "captured_at": "2026-11-27T19:35:40.846928+01:00",
+            "captured_at": "2026-11-27T20:49:39.217003+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.8,
+              "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804222000,
+              "dateRapport": 1795808722000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -4922,24 +5142,24 @@
             "source_title": "Le pronostic du PRIX LES RESTOS DU COEUR (PRIX PHILAGORIA)",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
-              "sha256": "79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31",
-              "file": "preuves/79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31.gz"
+              "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+              "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
-              "sha256": "cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e",
-              "file": "preuves/cb7d620546467b06f4762d2560daf3c68b0373fc3e460b6d7cd720c6ed989c4e.gz"
+              "sha256": "6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc",
+              "file": "preuves/6c07477b3c7e495f16512046e48c6a4023c12c81e19cb1c6db1a75584e77c9dc.gz"
             },
-            "captured_at": "2026-11-27T19:35:40.891230+01:00",
+            "captured_at": "2026-11-27T20:49:39.252768+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 1.8,
+              "rapport": 1.7,
               "typeRapport": "DIRECT",
               "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804222000,
+              "dateRapport": 1795808722000,
               "favoris": true,
               "numPmu1": 8,
               "grossePrise": false
@@ -4951,7 +5171,7 @@
           "geny": {
             "type": "GenyFallbackError",
             "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-27T19:35:41.190132+01:00",
+            "at": "2026-11-27T20:49:39.414410+01:00",
             "source_status": {
               "fallback_attempted": true,
               "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -4959,23 +5179,26 @@
             }
           }
         },
+        "final_check_started_at": "2026-11-27T20:49:30.580017+01:00",
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-27/r1c7-vincennes-prix-les-restos-du-coeur-prix-philagoria",
-            "sha256": "41c20c67e6320a24188a73dc4eb8ffb4085f51fcb5a553a7b4304127542673ef",
-            "file": "preuves/41c20c67e6320a24188a73dc4eb8ffb4085f51fcb5a553a7b4304127542673ef.gz"
+            "sha256": "4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae",
+            "file": "preuves/4782493f6c7d9fd6322e9609e5e2df96ed9483ba4f9b930fdcfc3e4fc8357fae.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
-            "sha256": "79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31",
-            "file": "preuves/79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31.gz"
+            "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+            "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424797_prix-les-restos-du-coeur-prix-philagoria.html",
-            "sha256": "79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31",
-            "file": "preuves/79d8b1700ac4a0e14306728209b0e3e97b463d3eb5a395e0acc0e32d4484bf31.gz"
+            "sha256": "918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b",
+            "file": "preuves/918770e77c55f366766b696bf7763805b9d28f75a205234f2078e337ea5b509b.gz"
           }
-        }
+        },
+        "groups_frozen_at": "2026-11-27T20:49:34.731042+01:00",
+        "final_check_completed_at": "2026-11-27T20:49:35.072044+01:00"
       },
       {
         "date": "2026-11-27",
@@ -4995,24 +5218,24 @@
             "source_title": "Prix Ottilia",
             "evidence": {
               "url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
-              "sha256": "73b7c0118dd59a7743e4a95715d405aa250f9205333a02c0759084b3b6fbceeb",
-              "file": "preuves/73b7c0118dd59a7743e4a95715d405aa250f9205333a02c0759084b3b6fbceeb.gz"
+              "sha256": "7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b",
+              "file": "preuves/7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
-              "sha256": "853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538",
-              "file": "preuves/853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538.gz"
+              "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+              "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
             },
-            "captured_at": "2026-11-27T19:35:42.372464+01:00",
+            "captured_at": "2026-11-27T20:49:40.681957+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 5.0,
+              "rapport": 4.6,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": 0.0,
-              "dateRapport": 1795804203000,
+              "nombreIndicateurTendance": -2.12,
+              "dateRapport": 1795808703000,
               "favoris": true,
               "numPmu1": 7,
               "grossePrise": false
@@ -5028,24 +5251,24 @@
             "source_title": "Le pronostic du PRIX OTTILIA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
-              "sha256": "95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435",
-              "file": "preuves/95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435.gz"
+              "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+              "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
-              "sha256": "853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538",
-              "file": "preuves/853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538.gz"
+              "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+              "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
             },
-            "captured_at": "2026-11-27T19:35:42.882824+01:00",
+            "captured_at": "2026-11-27T20:49:41.298470+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.1,
+              "rapport": 5.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.68,
-              "dateRapport": 1795804203000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795808703000,
               "favoris": false,
               "numPmu1": 15,
               "grossePrise": false
@@ -5061,24 +5284,24 @@
             "source_title": "Le pronostic du PRIX OTTILIA",
             "evidence": {
               "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
-              "sha256": "95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435",
-              "file": "preuves/95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435.gz"
+              "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+              "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
             },
             "official_evidence": {
               "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C8/participants",
-              "sha256": "853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538",
-              "file": "preuves/853be1879093c137cef60743d7192ac73e58828a961610b9c7181e0dfd1c4538.gz"
+              "sha256": "89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211",
+              "file": "preuves/89229a72b6ce6f045e528173bab1317725115bde81903ae67355f07511271211.gz"
             },
-            "captured_at": "2026-11-27T19:35:42.934137+01:00",
+            "captured_at": "2026-11-27T20:49:41.337147+01:00",
             "stake_cents": 0,
             "status": "APERÇU",
             "playable": true,
             "odds": {
               "typePari": "SIMPLE_GAGNANT",
-              "rapport": 6.1,
+              "rapport": 5.8,
               "typeRapport": "DIRECT",
-              "nombreIndicateurTendance": -4.68,
-              "dateRapport": 1795804203000,
+              "nombreIndicateurTendance": 0.0,
+              "dateRapport": 1795808703000,
               "favoris": false,
               "numPmu1": 15,
               "grossePrise": false
@@ -5090,7 +5313,7 @@
           "geny": {
             "type": "GenyFallbackError",
             "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-            "at": "2026-11-27T19:35:43.338465+01:00",
+            "at": "2026-11-27T20:49:41.776932+01:00",
             "source_status": {
               "fallback_attempted": true,
               "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -5101,18 +5324,18 @@
         "source_checks": {
           "turfin": {
             "url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
-            "sha256": "73b7c0118dd59a7743e4a95715d405aa250f9205333a02c0759084b3b6fbceeb",
-            "file": "preuves/73b7c0118dd59a7743e4a95715d405aa250f9205333a02c0759084b3b6fbceeb.gz"
+            "sha256": "7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b",
+            "file": "preuves/7a6730609f7f506e6ef77ee83979893c5e22a94933895f654af787396691d78b.gz"
           },
           "canalturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
-            "sha256": "95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435",
-            "file": "preuves/95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435.gz"
+            "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+            "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
           },
           "zeturf": {
             "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424798_prix-ottilia.html",
-            "sha256": "95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435",
-            "file": "preuves/95647b17f9d7c6a583b0a7bde45b9e9e75a84ca9af2b665089444d6b12fb2435.gz"
+            "sha256": "317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2",
+            "file": "preuves/317fd2b91cc2e830bc34b21760e873e2c06fbe0b0c7118cab14236f9d05626d2.gz"
           }
         }
       }
