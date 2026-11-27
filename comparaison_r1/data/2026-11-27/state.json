@@ -1715,7 +1715,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-27T20:29:16.777134+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031",
+            "file": "preuves/ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
+            "sha256": "42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112",
+            "file": "preuves/42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1748,7 +1762,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-27T20:29:16.777483+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031",
+            "file": "preuves/ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
+            "sha256": "42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112",
+            "file": "preuves/42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -1781,7 +1809,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-27T20:29:16.777589+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031",
+            "file": "preuves/ffd3e9f7112dd8bb6bf928c43d1c68b79c7aa35f3d35a21c639dec884b940031.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
+            "sha256": "42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112",
+            "file": "preuves/42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112.gz"
+          }
         }
       },
       "groups": {},
@@ -2238,8 +2280,39 @@
         }
       },
       "final_check_completed_at": "2026-11-27T20:11:40.741069+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "KUNAMATATA",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "KISS ME DU LIVET",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "JACINTHE DU BOIRON",
+          "rank": 3
+        },
+        {
+          "number": 3,
+          "name": "KARA D'OR",
+          "rank": 4
+        },
+        {
+          "number": 14,
+          "name": "KIPHYLE DESBOIS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C4/participants",
+        "sha256": "42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112",
+        "file": "preuves/42fa122dff1cd601400eb4a79d80a6a0fe59b398738219aa5e04ab1461cd1112.gz"
+      }
     },
     {
       "date": "2026-11-27",
@@ -2354,7 +2427,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T20:19:53.898523+01:00",
+          "at": "2026-11-27T20:29:14.798947+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -2784,7 +2857,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T20:19:50.860894+01:00",
+      "final_check_started_at": "2026-11-27T20:29:12.173164+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
@@ -2802,7 +2875,7 @@
           "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T20:19:53.898545+01:00"
+      "final_check_completed_at": "2026-11-27T20:29:14.798972+01:00"
     },
     {
       "date": "2026-11-27",
@@ -2917,7 +2990,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T20:19:59.869998+01:00",
+          "at": "2026-11-27T20:29:16.254155+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -3347,7 +3420,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T20:19:53.901968+01:00",
+      "final_check_started_at": "2026-11-27T20:29:14.804319+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c6-vincennes-prix-don-du-sang-prix-ceres",
@@ -3365,7 +3438,7 @@
           "file": "preuves/905cc0821e155ff9e942434ffb7a511418a81dd885a1f5e43b1be37962a95a28.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T20:19:59.870012+01:00"
+      "final_check_completed_at": "2026-11-27T20:29:16.254179+01:00"
     },
     {
       "date": "2026-11-27",
