@@ -56,7 +56,7 @@
           "number": 8,
           "name": "IBIZA DE CONNEE",
           "stake_cents": 20000,
-          "status": "EN_ATTENTE",
+          "status": "PERDU",
           "reserved_at": "2026-11-27T21:22:27.669668+01:00",
           "source_captured_at": "2026-11-27T20:49:32.809748+01:00",
           "sites": [
@@ -80,7 +80,21 @@
               "message_id": 8186,
               "date": 1795810947
             }
-          ]
+          ],
+          "return_cents": 0,
+          "profit_cents": -20000,
+          "rank": 2,
+          "settled_at": "2026-11-27T22:13:35.430107+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7",
+            "file": "preuves/d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360",
+            "file": "preuves/a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -3780,7 +3794,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-27T22:13:35.429710+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7",
+            "file": "preuves/d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360",
+            "file": "preuves/a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -3813,7 +3841,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-27T22:13:35.429948+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7",
+            "file": "preuves/d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360",
+            "file": "preuves/a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -3846,7 +3888,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-27T22:13:35.430032+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7",
+            "file": "preuves/d32830028facb3f363a98fc909540628fe5a97f0422d60b13d8c83e72920c5a7.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+            "sha256": "a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360",
+            "file": "preuves/a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360.gz"
+          }
         }
       },
       "groups": {
@@ -4570,7 +4626,38 @@
           "checked_at": "2026-11-27T21:34:33.754545+01:00"
         }
       ],
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 4,
+          "name": "ILOVIROIZ DI LEONE",
+          "rank": 1
+        },
+        {
+          "number": 8,
+          "name": "IBIZA DE CONNEE",
+          "rank": 2
+        },
+        {
+          "number": 7,
+          "name": "IN LOVE DE BLARY",
+          "rank": 3
+        },
+        {
+          "number": 6,
+          "name": "CREEK'S NU LOVE",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "HEGA DES LANDIERS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C7/participants",
+        "sha256": "a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360",
+        "file": "preuves/a8efb5f888de2f7a8f8164e52dec312fe8dae71e966b0438fc09c87295c2b360.gz"
+      }
     },
     {
       "date": "2026-11-27",
@@ -4685,7 +4772,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-27T21:59:19.819375+01:00",
+          "at": "2026-11-27T22:13:37.483204+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -5325,7 +5412,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T21:59:17.167578+01:00",
+      "final_check_started_at": "2026-11-27T22:13:35.435260+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c8-vincennes-prix-ottilia",
@@ -5343,7 +5430,7 @@
           "file": "preuves/65ca9a11b765bb262bcf28d65223bd3563185a8df721accd3f4b886651def3d9.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T21:59:19.819403+01:00",
+      "final_check_completed_at": "2026-11-27T22:13:37.483231+01:00",
       "schedule_changes": [
         {
           "old": "2026-11-27T22:13:00+01:00",
