@@ -1702,7 +1702,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Course Genybet absente ou ambiguë",
-          "at": "2026-11-27T19:42:41.275957+01:00",
+          "at": "2026-11-27T19:50:15.837667+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -2132,7 +2132,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-27T19:42:39.636466+01:00",
+      "final_check_started_at": "2026-11-27T19:50:13.430160+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-27/r1c4-vincennes-prix-ville-de-fontenay-sous-bois-prix-melusina",
@@ -2150,7 +2150,7 @@
           "file": "preuves/d15bf82aefd58ee97eb4efaeaca3c64673c9dd536706bf443069b9599458be5c.gz"
         }
       },
-      "final_check_completed_at": "2026-11-27T19:42:41.275986+01:00"
+      "final_check_completed_at": "2026-11-27T19:50:15.837691+01:00"
     },
     {
       "date": "2026-11-27",
@@ -2159,9 +2159,120 @@
       "title": "PRIX USF (PRIX FEMINA)",
       "departure": "2026-11-27T20:48:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 6,
+          "name": "JAYA DU QUENNE",
+          "source_url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Usf (Prix Femina)",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
+            "sha256": "f086b47e716e17851061cd2fcd201f0e60059917fd0560f62b2acdf65ebd5cac",
+            "file": "preuves/f086b47e716e17851061cd2fcd201f0e60059917fd0560f62b2acdf65ebd5cac.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
+            "sha256": "47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74",
+            "file": "preuves/47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74.gz"
+          },
+          "captured_at": "2026-11-27T19:50:18.204430+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795805103000,
+            "favoris": false,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 11,
+          "name": "JACK DES MALBERAUX",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX USF (PRIX FEMINA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+            "sha256": "0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec",
+            "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
+            "sha256": "47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74",
+            "file": "preuves/47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74.gz"
+          },
+          "captured_at": "2026-11-27T19:50:20.024561+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795805103000,
+            "favoris": true,
+            "numPmu1": 11,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 6,
+          "name": "JAYA DU QUENNE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX USF (PRIX FEMINA)",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+            "sha256": "0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec",
+            "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/27112026/R1/C5/participants",
+            "sha256": "47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74",
+            "file": "preuves/47c2c255156bcf4cd33391d8ebd5a63a9ee4f5340810ce99d4181cad4a96ff74.gz"
+          },
+          "captured_at": "2026-11-27T19:50:20.096361+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795805103000,
+            "favoris": false,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-27T19:50:20.588539+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-27T09:08:15.886786+01:00",
@@ -2583,7 +2694,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-27T19:50:15.842622+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-27/r1c5-vincennes-prix-usf-prix-femina",
+          "sha256": "f086b47e716e17851061cd2fcd201f0e60059917fd0560f62b2acdf65ebd5cac",
+          "file": "preuves/f086b47e716e17851061cd2fcd201f0e60059917fd0560f62b2acdf65ebd5cac.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+          "sha256": "0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec",
+          "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-27/paris-vincennes/424795_prix-usf-prix-femina.html",
+          "sha256": "0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec",
+          "file": "preuves/0358c44829ff223c66a708a218f2445d38eb8b504e3ac9e39cd2537dee67e7ec.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-27T19:50:20.588565+01:00"
     },
     {
       "date": "2026-11-27",
