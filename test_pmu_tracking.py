@@ -315,5 +315,31 @@ class IdentityRegressionTests(unittest.TestCase):
             collect.assert_not_called()
             run.assert_not_called()
 
+class EmptyDayCoverageTests(unittest.TestCase):
+    def programme(self, market):
+        return {'programme': {'reunions': [{'numOfficiel': 2, 'pays': {'code': 'FRA'},
+            'courses': [{'numOrdre': 2, 'paris': [{'typePari': market, 'enVente': False}]}]}]}}
+
+    def test_closed_market_is_still_evidence_of_a_missed_course(self):
+        coverage = p.couverture_sans_envoi('20261127', lambda _: self.programme('E_COUPLE_ORDRE'))
+        self.assertEqual(coverage['status'], 'ENVOIS_MANQUANTS')
+        self.assertEqual(coverage['courses_eligibles'], ['R2C2'])
+
+    def test_day_without_retained_market_is_not_an_error(self):
+        coverage = p.couverture_sans_envoi('20261125', lambda _: self.programme('E_SIMPLE_GAGNANT'))
+        self.assertEqual(coverage['status'], 'AUCUNE_COURSE_ELIGIBLE')
+
+    def test_missing_or_partial_programme_never_becomes_zero_bets(self):
+        for payload in (None, {}, {'programme': {'reunions': []}},
+                        {'programme': {'reunions': [{'pays': {'code': 'FRA'}}]}}):
+            self.assertNotEqual(p.couverture_sans_envoi('20261127', lambda _: payload)['status'], 'AUCUNE_COURSE_ELIGIBLE')
+
+    def test_old_rules_are_not_reinterpreted(self):
+        from unittest.mock import Mock
+        fetch = Mock()
+        self.assertEqual(p.couverture_sans_envoi('20261019', fetch)['status'], 'HISTORIQUE_MANQUANT')
+        fetch.assert_not_called()
+
+
 if __name__ == '__main__':
     unittest.main()

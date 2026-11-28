@@ -41,3 +41,19 @@ class RetainedScorerTests(unittest.TestCase):
         maj={'top2_final':self.top,'paris_disponibles':markets}
         self.assertFalse(conseil_change(maj,7,prev,day='2026-11-01'))
         self.assertTrue(conseil_change(maj,7,prev,day='2026-11-02'))
+
+
+class OfficialDisciplineTests(unittest.TestCase):
+    def test_pmu_obstacle_codes_reach_notifier_and_initial_scorer(self):
+        from unittest.mock import patch
+        import pmu_notifier as notifier
+        import pmu_scorer as scorer
+        courses = [{'numOrdre': i, 'discipline': code, 'heureDepart': 1,
+                    'paris': [{'typePari': 'E_COUPLE_ORDRE'}]}
+                   for i, code in enumerate(('HAIE', 'STEEPLECHASE', 'HAIES', 'STEEPLE'), 1)]
+        programme = {'programme': {'reunions': [{'numOfficiel': 2,
+                     'pays': {'code': 'FRA'}, 'courses': courses}]}}
+        with patch.object(notifier, 'api_get', return_value=programme):
+            self.assertEqual(len(notifier.get_courses_du_jour('27112026')), 4)
+        for course in courses:
+            self.assertIn(course['discipline'], scorer.DISCIPLINES)
