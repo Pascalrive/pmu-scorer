@@ -10,7 +10,7 @@
           "number": 9,
           "name": "OLDHAM",
           "stake_cents": 10000,
-          "status": "EN_ATTENTE",
+          "status": "GAGNE",
           "reserved_at": "2026-11-28T12:59:25.486581+01:00",
           "source_captured_at": "2026-11-28T12:29:41.558154+01:00",
           "sites": [
@@ -34,7 +34,21 @@
               "message_id": 8207,
               "date": 1795867165
             }
-          ]
+          ],
+          "return_cents": 16000,
+          "profit_cents": 6000,
+          "rank": 1,
+          "settled_at": "2026-11-28T13:49:41.240395+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14",
+            "file": "preuves/6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/participants",
+            "sha256": "375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156",
+            "file": "preuves/375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156.gz"
+          }
         }
       ],
       "budget_cents": 120000,
@@ -82,7 +96,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-28T13:49:41.239889+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14",
+            "file": "preuves/6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/participants",
+            "sha256": "375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156",
+            "file": "preuves/375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -115,7 +143,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-28T13:49:41.240216+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14",
+            "file": "preuves/6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/participants",
+            "sha256": "375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156",
+            "file": "preuves/375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -148,7 +190,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-28T13:49:41.240311+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14",
+            "file": "preuves/6df9658bf51365376e06af0532ce11cd2b79ee9c98d01197123f34995217cf14.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/participants",
+            "sha256": "375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156",
+            "file": "preuves/375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156.gz"
+          }
         }
       },
       "groups": {
@@ -475,7 +531,38 @@
         "at": "2026-11-28T13:18:38.130910+01:00",
         "stop": "ATTENTE_RESULTAT"
       },
-      "settlement_error": "JSONDecodeError"
+      "official_arrival": [
+        {
+          "number": 9,
+          "name": "OLDHAM",
+          "rank": 1
+        },
+        {
+          "number": 5,
+          "name": "ORIGINE CASTELLE",
+          "rank": 2
+        },
+        {
+          "number": 6,
+          "name": "OLYMPIC JOY",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "ORFEE ROSA",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "OLYMPE DE BELINE",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C1/participants",
+        "sha256": "375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156",
+        "file": "preuves/375bdf8f31b44427ee86dcb67a66084c32c731c2c112e13e097a4703364c4156.gz"
+      }
     },
     {
       "date": "2026-11-28",
@@ -590,7 +677,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T13:39:10.736103+01:00",
+          "at": "2026-11-28T13:49:43.357117+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -915,7 +1002,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T13:39:07.667572+01:00",
+      "final_check_started_at": "2026-11-28T13:49:41.250189+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c2-vincennes-prix-timoko",
@@ -933,7 +1020,7 @@
           "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T13:39:10.736130+01:00"
+      "final_check_completed_at": "2026-11-28T13:49:43.357160+01:00"
     },
     {
       "date": "2026-11-28",
@@ -1048,7 +1135,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T13:39:15.707373+01:00",
+          "at": "2026-11-28T13:49:44.246761+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -1373,7 +1460,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T13:39:10.740616+01:00",
+      "final_check_started_at": "2026-11-28T13:49:43.362443+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c3-vincennes-prix-de-pontchateau",
@@ -1391,7 +1478,7 @@
           "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T13:39:15.707402+01:00"
+      "final_check_completed_at": "2026-11-28T13:49:44.246793+01:00"
     },
     {
       "date": "2026-11-28",
