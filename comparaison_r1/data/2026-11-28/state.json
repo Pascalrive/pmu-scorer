@@ -1136,7 +1136,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-28T14:49:44.873286+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866",
+            "file": "preuves/773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546",
+            "file": "preuves/708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -1169,7 +1183,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 2,
+          "settled_at": "2026-11-28T14:49:44.873520+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866",
+            "file": "preuves/773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546",
+            "file": "preuves/708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -1202,7 +1230,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-28T14:49:44.873609+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866",
+            "file": "preuves/773244b793be6f979da3b8692335bd399dfeb6d3e4760769e55cd6d97838d866.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546",
+            "file": "preuves/708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546.gz"
+          }
         }
       },
       "groups": {},
@@ -1554,8 +1596,39 @@
         }
       },
       "final_check_completed_at": "2026-11-28T14:29:14.494914+01:00",
-      "settlement_error": "JSONDecodeError",
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 13,
+          "name": "NICO DU CAIEU",
+          "rank": 1
+        },
+        {
+          "number": 9,
+          "name": "NOBEL DU GERS",
+          "rank": 2
+        },
+        {
+          "number": 10,
+          "name": "NOBELL DALLAUCH",
+          "rank": 3
+        },
+        {
+          "number": 11,
+          "name": "NO LIMITS QUICK",
+          "rank": 4
+        },
+        {
+          "number": 2,
+          "name": "NATIONAL HERO",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+        "sha256": "708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546",
+        "file": "preuves/708572cb2c975a8efc40c2ace25fc6699c2fbe8b402dacd8678b266f75935546.gz"
+      }
     },
     {
       "date": "2026-11-28",
@@ -1670,7 +1743,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T14:39:14.370296+01:00",
+          "at": "2026-11-28T14:49:44.682005+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -2100,7 +2173,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T14:39:11.396472+01:00",
+      "final_check_started_at": "2026-11-28T14:49:42.349821+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c4-vincennes-prix-d-oraison",
@@ -2118,7 +2191,7 @@
           "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T14:39:14.370323+01:00"
+      "final_check_completed_at": "2026-11-28T14:49:44.682030+01:00"
     },
     {
       "date": "2026-11-28",
