@@ -1210,7 +1210,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T14:13:07.004235+01:00",
+          "at": "2026-11-28T14:20:34.903029+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -1535,7 +1535,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T14:13:05.138022+01:00",
+      "final_check_started_at": "2026-11-28T14:20:32.964254+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c3-vincennes-prix-de-pontchateau",
@@ -1553,7 +1553,7 @@
           "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T14:13:07.004262+01:00"
+      "final_check_completed_at": "2026-11-28T14:20:34.903057+01:00"
     },
     {
       "date": "2026-11-28",
@@ -1562,9 +1562,120 @@
       "title": "PRIX D'ORAISON",
       "departure": "2026-11-28T15:15:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 10,
+          "name": "MARTIN DOL",
+          "source_url": "https://turfin.fr/course/2026-11-28/r1c4-vincennes-prix-d-oraison",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix D'oraison",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-28/r1c4-vincennes-prix-d-oraison",
+            "sha256": "d804a875b30462db836154e7f79fac73c2d671143528ef0c6d4aafaf123805ff",
+            "file": "preuves/d804a875b30462db836154e7f79fac73c2d671143528ef0c6d4aafaf123805ff.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C4/participants",
+            "sha256": "7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115",
+            "file": "preuves/7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115.gz"
+          },
+          "captured_at": "2026-11-28T14:20:36.535059+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.7,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -2.08,
+            "dateRapport": 1795871739000,
+            "favoris": false,
+            "numPmu1": 10,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 9,
+          "name": "MOSCATO SHOW",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du Quinté PRIX D'ORAISON",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+            "sha256": "9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434",
+            "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C4/participants",
+            "sha256": "7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115",
+            "file": "preuves/7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115.gz"
+          },
+          "captured_at": "2026-11-28T14:20:39.120555+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 8.5,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795871739000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 7,
+          "name": "MOJI DE VANDEL",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du Quinté PRIX D'ORAISON",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+            "sha256": "9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434",
+            "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C4/participants",
+            "sha256": "7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115",
+            "file": "preuves/7b41df5db31491b4c96c89d29af260b7cdbe5e6a3ea6898c7899f3d73c17e115.gz"
+          },
+          "captured_at": "2026-11-28T14:20:39.246671+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795871739000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-28T14:20:39.773583+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-28T09:07:04.322638+01:00",
@@ -1881,7 +1992,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-28T14:20:34.908682+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-28/r1c4-vincennes-prix-d-oraison",
+          "sha256": "d804a875b30462db836154e7f79fac73c2d671143528ef0c6d4aafaf123805ff",
+          "file": "preuves/d804a875b30462db836154e7f79fac73c2d671143528ef0c6d4aafaf123805ff.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+          "sha256": "9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434",
+          "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html",
+          "sha256": "9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434",
+          "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-28T14:20:39.773621+01:00"
     },
     {
       "date": "2026-11-28",
