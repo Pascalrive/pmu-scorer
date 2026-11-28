@@ -4,15 +4,15 @@ Expérience indépendante • aucun pari exécuté • choix manquants non inven
 
 ## R1C4 — PRIX D'ORAISON
 
-Collecte : 2026-11-28T08:02:45.260936+00:00. Avant départ : True. Sources complètes : 5/8.
+Collecte : 2026-11-28T12:24:19.059506+00:00. Avant départ : True. Sources complètes : 5/8.
 
 | Source | Choix 1 | Choix 2 | Choix 3 | Choix 4 | Choix 5 | Outsider / trouble-fête |
 |---|---|---|---|---|---|---|
-| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html) | 9 MOSCATO SHOW (cote 9.7) | 12 MAESTRO DE BRION (cote 14.0) | 3 MUSTANG HAUFOR (cote 23.0) | 1 MASTER PIT (cote 12.0) | 15 MADMAX JEF (cote 15.0) | 10 MARTIN DOL (cote 5.6) — Outsider ; 4 MEC DE MUTRECY (cote 15.0) — Outsider ; 6 MIRABILIS VRIE (cote 24.0) — Outsider ; 15 MADMAX JEF (cote 15.0) — Coup de folie |
-| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html) | 7 MOJI DE VANDEL (cote 2.6) | 10 MARTIN DOL (cote 5.6) | 12 MAESTRO DE BRION (cote 14.0) | 4 MEC DE MUTRECY (cote 15.0) | 9 MOSCATO SHOW (cote 9.7) | Non publié |
-| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 10 MARTIN DOL (cote 5.6) | 7 MOJI DE VANDEL (cote 2.6) | 15 MADMAX JEF (cote 15.0) | 9 MOSCATO SHOW (cote 9.7) | 4 MEC DE MUTRECY (cote 15.0) | 3 MUSTANG HAUFOR (cote 23.0) — Coup de folie |
-| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 7 MOJI DE VANDEL (cote 2.6) | 10 MARTIN DOL (cote 5.6) | 12 MAESTRO DE BRION (cote 14.0) | 1 MASTER PIT (cote 12.0) | 9 MOSCATO SHOW (cote 9.7) | 9 MOSCATO SHOW (cote 9.7) — Outsider ; 4 MEC DE MUTRECY (cote 15.0) — Outsider ; 6 MIRABILIS VRIE (cote 24.0) — Outsider ; 15 MADMAX JEF (cote 15.0) — Outsider |
-| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 7 MOJI DE VANDEL (cote 2.6) | 10 MARTIN DOL (cote 5.6) | 12 MAESTRO DE BRION (cote 14.0) | 1 MASTER PIT (cote 12.0) | 5 MONEY DI MALAVITA (cote 37.0) | Non publié |
+| [Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html) | 9 MOSCATO SHOW (cote 8.7) | 12 MAESTRO DE BRION (cote 10.0) | 3 MUSTANG HAUFOR (cote 17.0) | 1 MASTER PIT (cote 9.4) | 15 MADMAX JEF (cote 13.0) | 10 MARTIN DOL (cote 4.8) — Outsider ; 4 MEC DE MUTRECY (cote 13.0) — Outsider ; 6 MIRABILIS VRIE (cote 22.0) — Outsider ; 15 MADMAX JEF (cote 13.0) — Coup de folie |
+| [ZEturf via Canalturf](https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424888_prix-d-oraison.html) | 7 MOJI DE VANDEL (cote 4.2) | 10 MARTIN DOL (cote 4.8) | 12 MAESTRO DE BRION (cote 10.0) | 4 MEC DE MUTRECY (cote 13.0) | 9 MOSCATO SHOW (cote 8.7) | Non publié |
+| [Zone-Turf](https://www.zone-turf.fr/quinte/) | 10 MARTIN DOL (cote 4.8) | 7 MOJI DE VANDEL (cote 4.2) | 15 MADMAX JEF (cote 13.0) | 9 MOSCATO SHOW (cote 8.7) | 4 MEC DE MUTRECY (cote 13.0) | 3 MUSTANG HAUFOR (cote 17.0) — Coup de folie |
+| [Stats-Quinté](https://stats-quinte.com/pronostic-quinte-du-jour/) | 7 MOJI DE VANDEL (cote 4.2) | 10 MARTIN DOL (cote 4.8) | 12 MAESTRO DE BRION (cote 10.0) | 1 MASTER PIT (cote 9.4) | 9 MOSCATO SHOW (cote 8.7) | 9 MOSCATO SHOW (cote 8.7) — Outsider ; 4 MEC DE MUTRECY (cote 13.0) — Outsider ; 6 MIRABILIS VRIE (cote 22.0) — Outsider ; 15 MADMAX JEF (cote 13.0) — Outsider |
+| [Turf-Pronostics](https://www.turf-pronostics.com/pronostics-quinte-du-jour-pmu/) | 7 MOJI DE VANDEL (cote 4.2) | 10 MARTIN DOL (cote 4.8) | 12 MAESTRO DE BRION (cote 10.0) | 1 MASTER PIT (cote 9.4) | 5 MONEY DI MALAVITA (cote 43.0) | Non publié |
 | Rue des Joueurs | — | — | — | — | — | Indisponible |
 | Fréquence Turf | — | — | — | — | — | Indisponible |
 | Prono Turf Gratuit | — | — | — | — | — | Indisponible |
@@ -21,11 +21,11 @@ Collecte : 2026-11-28T08:02:45.260936+00:00. Avant départ : True. Sources compl
 
 | Cheval | Sources le citant |
 |---|---:|
-| 7 MOJI DE VANDEL (cote 2.6) | 4 |
-| 10 MARTIN DOL (cote 5.6) | 4 |
-| 12 MAESTRO DE BRION (cote 14.0) | 4 |
-| 9 MOSCATO SHOW (cote 9.7) | 4 |
-| 1 MASTER PIT (cote 12.0) | 3 |
+| 7 MOJI DE VANDEL (cote 4.2) | 4 |
+| 10 MARTIN DOL (cote 4.8) | 4 |
+| 12 MAESTRO DE BRION (cote 10.0) | 4 |
+| 9 MOSCATO SHOW (cote 8.7) | 4 |
+| 1 MASTER PIT (cote 9.4) | 3 |
 
 ### Notre analyse — trois sélections de cinq chevaux
 
