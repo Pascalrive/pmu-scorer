@@ -3,7 +3,40 @@
   "venue": "VINCENNES",
   "solutions": {
     "majorite_3_ou_4": {
-      "bets": [],
+      "bets": [
+        {
+          "race_id": "R1C1",
+          "departure": "2026-11-28T13:23:00+01:00",
+          "number": 9,
+          "name": "OLDHAM",
+          "stake_cents": 10000,
+          "status": "EN_ATTENTE",
+          "reserved_at": "2026-11-28T12:59:25.486581+01:00",
+          "source_captured_at": "2026-11-28T12:29:41.558154+01:00",
+          "sites": [
+            "turfin",
+            "canalturf",
+            "zeturf"
+          ],
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 1.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 0.0,
+            "dateRapport": 1795867140000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "telegram_fingerprint": "58ac4027cb40daf5f30d5a3b3e0c3b687606ef14d318c96546c91415a301ad08",
+          "telegram_receipts": [
+            {
+              "message_id": 8207,
+              "date": 1795867165
+            }
+          ]
+        }
+      ],
       "budget_cents": 120000,
       "target_cents": 20000,
       "stop_at_target": false
@@ -148,7 +181,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T12:49:52.081408+01:00",
+          "at": "2026-11-28T12:59:20.529041+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -418,7 +451,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T12:49:50.112273+01:00",
+      "final_check_started_at": "2026-11-28T12:59:18.817246+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c1-vincennes-prix-vourasie",
@@ -437,7 +470,7 @@
         }
       },
       "groups_frozen_at": "2026-11-28T12:29:43.154852+01:00",
-      "final_check_completed_at": "2026-11-28T12:49:52.081439+01:00"
+      "final_check_completed_at": "2026-11-28T12:59:20.529068+01:00"
     },
     {
       "date": "2026-11-28",
@@ -446,9 +479,120 @@
       "title": "PRIX TIMOKO",
       "departure": "2026-11-28T13:58:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 9,
+          "name": "OSSAU DU PRE",
+          "source_url": "https://turfin.fr/course/2026-11-28/r1c2-vincennes-prix-timoko",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Timoko",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-28/r1c2-vincennes-prix-timoko",
+            "sha256": "d3d143512c426050937b58cd1936e2764936c06bbbe2673bcb5f6e9c86e64353",
+            "file": "preuves/d3d143512c426050937b58cd1936e2764936c06bbbe2673bcb5f6e9c86e64353.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C2/participants",
+            "sha256": "0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9",
+            "file": "preuves/0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9.gz"
+          },
+          "captured_at": "2026-11-28T12:59:22.330032+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.32,
+            "dateRapport": 1795866326000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 7,
+          "name": "OSWALD PORT",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX TIMOKO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+            "sha256": "e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7",
+            "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C2/participants",
+            "sha256": "0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9",
+            "file": "preuves/0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9.gz"
+          },
+          "captured_at": "2026-11-28T12:59:23.778152+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.1,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 5.0,
+            "dateRapport": 1795866326000,
+            "favoris": true,
+            "numPmu1": 7,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 9,
+          "name": "OSSAU DU PRE",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX TIMOKO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+            "sha256": "e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7",
+            "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C2/participants",
+            "sha256": "0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9",
+            "file": "preuves/0dbd1afebd28f38fcc4e3b254c8b6e114f5aa36091a24bcdc79bd16aba0932c9.gz"
+          },
+          "captured_at": "2026-11-28T12:59:23.896926+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.4,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.32,
+            "dateRapport": 1795866326000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-28T12:59:24.394343+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-28T09:06:58.535824+01:00",
@@ -660,7 +804,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-28T12:59:20.533382+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-28/r1c2-vincennes-prix-timoko",
+          "sha256": "d3d143512c426050937b58cd1936e2764936c06bbbe2673bcb5f6e9c86e64353",
+          "file": "preuves/d3d143512c426050937b58cd1936e2764936c06bbbe2673bcb5f6e9c86e64353.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+          "sha256": "e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7",
+          "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424886_prix-timoko.html",
+          "sha256": "e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7",
+          "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-28T12:59:24.394363+01:00"
     },
     {
       "date": "2026-11-28",
