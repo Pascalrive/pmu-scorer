@@ -456,6 +456,34 @@ def bilan(records, day, fetch):
     return '\n'.join(lines), audit
 
 
+def couverture_sans_envoi(day, fetch):
+    """Aucun pari seulement si le programme complet prouve l'absence de marche."""
+    if day < '20261102':
+        return {'status': 'HISTORIQUE_MANQUANT'}
+    api_date = day[6:8] + day[4:6] + day[:4]
+    payload = fetch(f'/programme/{api_date}?specialisation=INTERNET')
+    reunions = (payload or {}).get('programme', {}).get('reunions')
+    if not isinstance(reunions, list) or not reunions:
+        return {'status': 'PROGRAMME_INDISPONIBLE'}
+    eligible = []
+    for reunion in reunions:
+        pays = reunion.get('pays', {})
+        code = pays.get('code', '') if isinstance(pays, dict) else str(pays)
+        if code not in {'FRA', 'FRANCE'}:
+            continue
+        courses = reunion.get('courses')
+        if not isinstance(courses, list) or not courses:
+            return {'status': 'PROGRAMME_INCOMPLET'}
+        for course in courses:
+            if not isinstance(course.get('paris'), list) or not course['paris']:
+                return {'status': 'PROGRAMME_INCOMPLET'}
+            # Apres depart, enVente=false ne signifie pas que le marche etait absent.
+            if any(p.get('typePari') == 'E_COUPLE_ORDRE' for p in course['paris']):
+                eligible.append(f"R{reunion['numOfficiel']}C{course['numOrdre']}")
+    return {'status': 'ENVOIS_MANQUANTS' if eligible else 'AUCUNE_COURSE_ELIGIBLE',
+            'courses_eligibles': eligible}
+
+
 def main():
     import requests
     day = os.environ.get('PMU_BILAN_DATE', datetime.now(TZ).strftime('%Y%m%d'))
@@ -476,13 +504,25 @@ def main():
             LOG.warning('Donnees PMU indisponibles pour %s', path)
             return None
     message, audit = bilan(records, day, fetch)
+    coverage = None
+    if not dernieres_selections(records, day):
+        coverage = couverture_sans_envoi(day, fetch)
+        if coverage['status'] == 'AUCUNE_COURSE_ELIGIBLE':
+            message = (f'BILAN SCORER — {day[6:8]}/{day[4:6]}/{day[:4]}\n'
+                       'Aucune course francaise avec Couple ordre PMU Internet au programme.\n'
+                       'Aucun pari : mises 0 EUR ; retours 0 EUR ; net 0 EUR ; ROI non applicable.\n'
+                       'Simulation uniquement ; aucun pari reel.')
+        else:
+            message += '\nCOUVERTURE : ' + coverage['status']
+            if coverage.get('courses_eligibles'):
+                message += ' — ' + ', '.join(coverage['courses_eligibles'])
     destination = Path('resultats/bilans')
-    _write(destination / f'bilan_{day}.json', {'date': day, 'generated_at': datetime.now(TZ).isoformat(), 'audit': audit, 'message': message})
+    _write(destination / f'bilan_{day}.json', {'date': day, 'generated_at': datetime.now(TZ).isoformat(), 'audit': audit, 'message': message, 'coverage': coverage})
     print(message)
     if os.environ.get('PMU_DRY_RUN') != '1':
         if not envoyer_trace(message, os.environ.get('TELEGRAM_TOKEN'), os.environ.get('TELEGRAM_CHAT_ID')):
             raise RuntimeError('Bilan non envoye a Telegram')
-    if not dernieres_selections(records, day):
+    if coverage and coverage['status'] != 'AUCUNE_COURSE_ELIGIBLE':
         raise RuntimeError('SUIVI EN ECHEC : aucun historique avant depart ; diagnostic archive')
 
 
