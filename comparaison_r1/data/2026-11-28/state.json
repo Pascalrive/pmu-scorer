@@ -590,7 +590,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T13:32:14.945939+01:00",
+          "at": "2026-11-28T13:39:10.736103+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -915,7 +915,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T13:32:12.930151+01:00",
+      "final_check_started_at": "2026-11-28T13:39:07.667572+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c2-vincennes-prix-timoko",
@@ -933,7 +933,7 @@
           "file": "preuves/e108d58f75c2b95291ae3d3d2f67d5502a003b9736dfcf6c40b1b4b6a8068cd7.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T13:32:14.945964+01:00"
+      "final_check_completed_at": "2026-11-28T13:39:10.736130+01:00"
     },
     {
       "date": "2026-11-28",
@@ -942,9 +942,120 @@
       "title": "PRIX DE PONTCHATEAU",
       "departure": "2026-11-28T14:33:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 6,
+          "name": "NICKEL GEMA",
+          "source_url": "https://turfin.fr/course/2026-11-28/r1c3-vincennes-prix-de-pontchateau",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix De Pontchateau",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-28/r1c3-vincennes-prix-de-pontchateau",
+            "sha256": "5d0f3c6d5cecb9adf381e082955f8b339d70a3282504d0c3326afcc6d1a7888b",
+            "file": "preuves/5d0f3c6d5cecb9adf381e082955f8b339d70a3282504d0c3326afcc6d1a7888b.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0",
+            "file": "preuves/d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0.gz"
+          },
+          "captured_at": "2026-11-28T13:39:13.490067+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.63,
+            "dateRapport": 1795869045000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 9,
+          "name": "NOBEL DU GERS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE PONTCHATEAU",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+            "sha256": "6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869",
+            "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0",
+            "file": "preuves/d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0.gz"
+          },
+          "captured_at": "2026-11-28T13:39:15.156647+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.2,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.88,
+            "dateRapport": 1795869045000,
+            "favoris": false,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 6,
+          "name": "NICKEL GEMA",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE PONTCHATEAU",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+            "sha256": "6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869",
+            "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C3/participants",
+            "sha256": "d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0",
+            "file": "preuves/d8f4cca23cc8d92de6c36d676d43172e6227a2e64cf64064b941163dd98952f0.gz"
+          },
+          "captured_at": "2026-11-28T13:39:15.239934+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.9,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 2.63,
+            "dateRapport": 1795869045000,
+            "favoris": true,
+            "numPmu1": 6,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-28T13:39:15.707373+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-28T09:07:02.148117+01:00",
@@ -1261,7 +1372,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-28T13:39:10.740616+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-28/r1c3-vincennes-prix-de-pontchateau",
+          "sha256": "5d0f3c6d5cecb9adf381e082955f8b339d70a3282504d0c3326afcc6d1a7888b",
+          "file": "preuves/5d0f3c6d5cecb9adf381e082955f8b339d70a3282504d0c3326afcc6d1a7888b.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+          "sha256": "6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869",
+          "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424887_prix-de-pontchateau.html",
+          "sha256": "6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869",
+          "file": "preuves/6128f9a4f2dd91e56beb422e368da748552908d71761893b9a996a430a5ac869.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-28T13:39:15.707402+01:00"
     },
     {
       "date": "2026-11-28",
