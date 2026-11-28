@@ -228,6 +228,20 @@ class MultiCourseTests(unittest.TestCase):
         self.assertEqual(totals(ledger['records'], list(ARMS)[0])['engaged_cents'], 6000)
         self.assertEqual(totals(ledger['records'], list(ARMS)[1])['engaged_cents'], 11200)
 
+    def test_cutoff_preserves_last_source_failure_without_creating_a_bet(self):
+        ledger = {'records': [], 'courses': {}}
+        course = self.market_course(1)
+        with tempfile.TemporaryDirectory() as tmp, patch('tierce_champ_reduit.run.clock', return_value=NOW) as clock, \
+             patch('tierce_champ_reduit.run.collect_plans', side_effect=ValueError('4 sources valides, 5 requises')), \
+             patch('tierce_champ_reduit.run.deliver') as sender:
+            process_course(ledger, NOW.date(), 1, course, Path(tmp), lambda: None, True, float('inf'))
+            clock.return_value = NOW + timedelta(minutes=31)
+            process_course(ledger, NOW.date(), 1, course, Path(tmp), lambda: None, True, float('inf'))
+        self.assertIn('4 sources valides', ledger['courses']['R1C1']['status'])
+        self.assertIn('fermée', ledger['courses']['R1C1']['status'])
+        self.assertEqual(ledger['records'], [])
+        sender.assert_not_called()
+
     def test_failed_course_does_not_freeze_next(self):
         ledger = {'records': [], 'courses': {}}
         s = snapshot(); s['race'].update(id='R2C3', r=2, c=3)
