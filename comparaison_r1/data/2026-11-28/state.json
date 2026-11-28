@@ -2319,7 +2319,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-28T16:13:42.894272+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c",
+            "file": "preuves/2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8",
+            "file": "preuves/fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8.gz"
+          }
         },
         "canalturf": {
           "site": "canalturf",
@@ -2352,7 +2366,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "PERDU",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": null,
+          "settled_at": "2026-11-28T16:13:42.894507+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c",
+            "file": "preuves/2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8",
+            "file": "preuves/fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8.gz"
+          }
         },
         "zeturf": {
           "site": "zeturf",
@@ -2385,7 +2413,21 @@
           },
           "stake_cents": 0,
           "playable": true,
-          "status": "EN_ATTENTE"
+          "status": "GAGNE",
+          "return_cents": 0,
+          "profit_cents": 0,
+          "rank": 1,
+          "settled_at": "2026-11-28T16:13:42.894608+01:00",
+          "result_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/rapports-definitifs?specialisation=INTERNET",
+            "sha256": "2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c",
+            "file": "preuves/2cad69466ed5ff8d90b0c791322012ae8626f5603a2077055885e9eb6cd3973c.gz"
+          },
+          "result_participants_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8",
+            "file": "preuves/fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8.gz"
+          }
         }
       },
       "groups": {},
@@ -2849,14 +2891,46 @@
           "checked_at": "2026-11-28T15:39:17.820098+01:00"
         }
       ],
-      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes"
+      "no_bet_reason": "Accord inférieur à 3/4 ou sources incomplètes",
+      "official_arrival": [
+        {
+          "number": 2,
+          "name": "LADY HAUFOR",
+          "rank": 1
+        },
+        {
+          "number": 1,
+          "name": "LADY DES ARRIS",
+          "rank": 2
+        },
+        {
+          "number": 4,
+          "name": "LATIKA BELLA",
+          "rank": 3
+        },
+        {
+          "number": 7,
+          "name": "LAGUNE PIYA",
+          "rank": 4
+        },
+        {
+          "number": 8,
+          "name": "LOUANGE CASTELETS",
+          "rank": 5
+        }
+      ],
+      "arrival_evidence": {
+        "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+        "sha256": "fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8",
+        "file": "preuves/fe6995c1fa05fde79a8100ad3243cf6d90566223805cb13a0cd07a57feae53b8.gz"
+      }
     },
     {
       "date": "2026-11-28",
       "id": "R1C6",
       "c": 6,
       "title": "PRIX PHILIPPE DU ROZIER",
-      "departure": "2026-11-28T16:25:00+01:00",
+      "departure": "2026-11-28T16:26:00+01:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -2964,7 +3038,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T15:59:25.802969+01:00",
+          "at": "2026-11-28T16:13:34.974083+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -3499,7 +3573,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T15:59:23.957497+01:00",
+      "final_check_started_at": "2026-11-28T16:13:32.389195+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c6-vincennes-prix-philippe-du-rozier",
@@ -3517,7 +3591,14 @@
           "file": "preuves/98203a275d00ad67da1220c14f3d2d811e658756206c3924dada2aad60ac8c39.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T15:59:25.802993+01:00"
+      "final_check_completed_at": "2026-11-28T16:13:34.974107+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-28T16:25:00+01:00",
+          "new": "2026-11-28T16:26:00+01:00",
+          "checked_at": "2026-11-28T16:13:32.389195+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-28",
@@ -3526,9 +3607,120 @@
       "title": "PRIX DE CHENONCEAUX",
       "departure": "2026-11-28T17:00:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 8,
+          "name": "LORD DU BASSIN",
+          "source_url": "https://turfin.fr/course/2026-11-28/r1c7-vincennes-prix-de-chenonceaux",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix De Chenonceaux",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-28/r1c7-vincennes-prix-de-chenonceaux",
+            "sha256": "4dfd7c4af6d454d4de02c9dc96f36408ff496736f17bdbcc0ae049c7f2f65d6d",
+            "file": "preuves/4dfd7c4af6d454d4de02c9dc96f36408ff496736f17bdbcc0ae049c7f2f65d6d.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C7/participants",
+            "sha256": "39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de",
+            "file": "preuves/39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de.gz"
+          },
+          "captured_at": "2026-11-28T16:13:38.850031+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.22,
+            "dateRapport": 1795878010000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 9,
+          "name": "PHANTOM EXPRESS",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE CHENONCEAUX",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+            "sha256": "109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911",
+            "file": "preuves/109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C7/participants",
+            "sha256": "39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de",
+            "file": "preuves/39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de.gz"
+          },
+          "captured_at": "2026-11-28T16:13:40.800821+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 2.3,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": 4.54,
+            "dateRapport": 1795878010000,
+            "favoris": true,
+            "numPmu1": 9,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 8,
+          "name": "LORD DU BASSIN",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DE CHENONCEAUX",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+            "sha256": "109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911",
+            "file": "preuves/109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C7/participants",
+            "sha256": "39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de",
+            "file": "preuves/39756cad7de10a2932214e9ed9e13f5740fbbf0fab608131e1286d489a8ce0de.gz"
+          },
+          "captured_at": "2026-11-28T16:13:40.880540+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 3.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -3.22,
+            "dateRapport": 1795878010000,
+            "favoris": false,
+            "numPmu1": 8,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-28T16:13:41.730354+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-28T09:07:13.648585+01:00",
@@ -4055,7 +4247,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-28T16:13:35.597124+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-28/r1c7-vincennes-prix-de-chenonceaux",
+          "sha256": "4dfd7c4af6d454d4de02c9dc96f36408ff496736f17bdbcc0ae049c7f2f65d6d",
+          "file": "preuves/4dfd7c4af6d454d4de02c9dc96f36408ff496736f17bdbcc0ae049c7f2f65d6d.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+          "sha256": "109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911",
+          "file": "preuves/109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424891_prix-de-chenonceaux.html",
+          "sha256": "109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911",
+          "file": "preuves/109c0fccba99c2949d1d04406bf9c9f1601128ff1beb316fc1244f2ccfa96911.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-28T16:13:41.730379+01:00"
     },
     {
       "date": "2026-11-28",
