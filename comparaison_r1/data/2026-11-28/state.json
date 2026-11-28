@@ -1635,7 +1635,7 @@
       "id": "R1C4",
       "c": 4,
       "title": "PRIX D'ORAISON",
-      "departure": "2026-11-28T15:15:00+01:00",
+      "departure": "2026-11-28T15:18:00+01:00",
       "market": true,
       "tips": {
         "turfin": {
@@ -1743,7 +1743,7 @@
         "geny": {
           "type": "GenyFallbackError",
           "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
-          "at": "2026-11-28T14:49:44.682005+01:00",
+          "at": "2026-11-28T14:59:03.665639+01:00",
           "source_status": {
             "fallback_attempted": true,
             "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
@@ -2173,7 +2173,7 @@
           }
         }
       ],
-      "final_check_started_at": "2026-11-28T14:49:42.349821+01:00",
+      "final_check_started_at": "2026-11-28T14:59:00.527401+01:00",
       "source_checks": {
         "turfin": {
           "url": "https://turfin.fr/course/2026-11-28/r1c4-vincennes-prix-d-oraison",
@@ -2191,7 +2191,14 @@
           "file": "preuves/9bd88f53cb11034a9772d7fa676207b184b93eda6145bb9578719f56e3dca434.gz"
         }
       },
-      "final_check_completed_at": "2026-11-28T14:49:44.682030+01:00"
+      "final_check_completed_at": "2026-11-28T14:59:03.665671+01:00",
+      "schedule_changes": [
+        {
+          "old": "2026-11-28T15:15:00+01:00",
+          "new": "2026-11-28T15:18:00+01:00",
+          "checked_at": "2026-11-28T14:59:00.527401+01:00"
+        }
+      ]
     },
     {
       "date": "2026-11-28",
@@ -2200,9 +2207,120 @@
       "title": "PRIX DRACO",
       "departure": "2026-11-28T15:50:00+01:00",
       "market": true,
-      "tips": {},
+      "tips": {
+        "turfin": {
+          "site": "turfin",
+          "number": 13,
+          "name": "LOU DU DONJON",
+          "source_url": "https://turfin.fr/course/2026-11-28/r1c5-vincennes-prix-draco",
+          "definition": "Cheval principal Turfin ; classement systématique, même si le site conseille l’abstention",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Prix Draco",
+          "evidence": {
+            "url": "https://turfin.fr/course/2026-11-28/r1c5-vincennes-prix-draco",
+            "sha256": "3f159d8c28490bae734af81ed0223f7851ababadac9be28fb5c8303cd808cdee",
+            "file": "preuves/3f159d8c28490bae734af81ed0223f7851ababadac9be28fb5c8303cd808cdee.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62",
+            "file": "preuves/b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62.gz"
+          },
+          "captured_at": "2026-11-28T14:59:06.838441+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.96,
+            "dateRapport": 1795873507000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "canalturf": {
+          "site": "canalturf",
+          "number": 13,
+          "name": "LOU DU DONJON",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+          "definition": "Premier cheval de la sélection Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DRACO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+            "sha256": "a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3",
+            "file": "preuves/a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62",
+            "file": "preuves/b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62.gz"
+          },
+          "captured_at": "2026-11-28T14:59:08.634998+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 5.0,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -1.96,
+            "dateRapport": 1795873507000,
+            "favoris": false,
+            "numPmu1": 13,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        },
+        "zeturf": {
+          "site": "zeturf",
+          "number": 2,
+          "name": "LADY HAUFOR",
+          "source_url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+          "definition": "Sélection ZEturf publiée sur Canalturf",
+          "identity_check": "date_rc_title_number_name",
+          "source_title": "Le pronostic du PRIX DRACO",
+          "evidence": {
+            "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+            "sha256": "a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3",
+            "file": "preuves/a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3.gz"
+          },
+          "official_evidence": {
+            "url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C5/participants",
+            "sha256": "b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62",
+            "file": "preuves/b66eea01c903b6a3bb71b26dbbce6ab576c87d8e392d027ad2685243e85fce62.gz"
+          },
+          "captured_at": "2026-11-28T14:59:08.720476+01:00",
+          "odds": {
+            "typePari": "SIMPLE_GAGNANT",
+            "rapport": 4.6,
+            "typeRapport": "DIRECT",
+            "nombreIndicateurTendance": -4.16,
+            "dateRapport": 1795873507000,
+            "favoris": true,
+            "numPmu1": 2,
+            "grossePrise": false
+          },
+          "stake_cents": 0,
+          "playable": true,
+          "status": "EN_ATTENTE"
+        }
+      },
       "groups": {},
-      "errors": {},
+      "errors": {
+        "geny": {
+          "type": "GenyFallbackError",
+          "reason": "Secours Genybet tenté : ValueError: Rubrique éditoriale Geny absente ou ambiguë",
+          "at": "2026-11-28T14:59:09.261700+01:00",
+          "source_status": {
+            "fallback_attempted": true,
+            "primary_failure": "ValueError: Course datée absente ou ambiguë dans l’index",
+            "fallback_failure": "ValueError: Rubrique éditoriale Geny absente ou ambiguë"
+          }
+        }
+      },
       "preview_observations": [
         {
           "at": "2026-11-28T09:07:07.395145+01:00",
@@ -2624,7 +2742,26 @@
             }
           }
         }
-      ]
+      ],
+      "final_check_started_at": "2026-11-28T14:59:04.245276+01:00",
+      "source_checks": {
+        "turfin": {
+          "url": "https://turfin.fr/course/2026-11-28/r1c5-vincennes-prix-draco",
+          "sha256": "3f159d8c28490bae734af81ed0223f7851ababadac9be28fb5c8303cd808cdee",
+          "file": "preuves/3f159d8c28490bae734af81ed0223f7851ababadac9be28fb5c8303cd808cdee.gz"
+        },
+        "canalturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+          "sha256": "a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3",
+          "file": "preuves/a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3.gz"
+        },
+        "zeturf": {
+          "url": "https://www.canalturf.com/pronostics-PMU/2026-11-28/paris-vincennes/424889_prix-draco.html",
+          "sha256": "a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3",
+          "file": "preuves/a8a4d9431f70ab040c854a9e21f6c3d952fc7fa6bc63c345da8d0cba58968ed3.gz"
+        }
+      },
+      "final_check_completed_at": "2026-11-28T14:59:09.261725+01:00"
     },
     {
       "date": "2026-11-28",
