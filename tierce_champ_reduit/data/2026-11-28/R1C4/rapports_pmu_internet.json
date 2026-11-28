@@ -1,10 +1,11 @@
 {
-  "retrieved_at": "2026-11-28T14:22:01.703896+00:00",
+  "retrieved_at": "2026-11-28T14:31:07.990889+00:00",
   "specialisation": "INTERNET",
   "reports_url": "https://online.turfinfo.api.pmu.fr/rest/client/61/programme/28112026/R1/C4/rapports-definitifs?combinaisonEnTableau=true&specialisation=INTERNET",
   "course": {
     "cached": true,
     "departImminent": false,
+    "arriveeDefinitive": true,
     "timezoneOffset": 3600000,
     "numReunion": 1,
     "numExterneReunion": 1,
@@ -51,12 +52,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "SIMPLE_GAGNANT",
         "spotAutorise": true,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": true,
         "complement": false,
+        "codePari": "SIMPLE_GAGNANT",
         "infosJackpot": {
           "miseBase": 300,
           "tauxContribution": {
@@ -74,12 +75,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "E_SIMPLE_GAGNANT",
         "spotAutorise": true,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": true,
         "complement": false,
+        "codePari": "E_SIMPLE_GAGNANT",
         "infosJackpot": {
           "miseBase": 150,
           "tauxContribution": {
@@ -97,12 +98,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "SIMPLE_PLACE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": true,
         "complement": false,
+        "codePari": "SIMPLE_PLACE",
         "infosJackpot": {
           "miseBase": 300,
           "tauxContribution": {
@@ -120,12 +121,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "E_SIMPLE_PLACE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": true,
         "complement": false,
+        "codePari": "E_SIMPLE_PLACE",
         "infosJackpot": {
           "miseBase": 150,
           "tauxContribution": {
@@ -143,7 +144,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "COUPLE_GAGNANT",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
@@ -151,7 +151,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "COUPLE_GAGNANT"
       },
       {
         "poolId": "e569aaa0-6e82-4e11-a374-ec5b068c946f",
@@ -162,12 +163,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "E_COUPLE_GAGNANT",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
         "combine": true,
-        "complement": true
+        "complement": true,
+        "codePari": "E_COUPLE_GAGNANT"
       },
       {
         "poolId": "feadae6c-6ec2-4172-9e98-f2366f07e925",
@@ -178,7 +179,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "COUPLE_PLACE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
@@ -186,7 +186,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "COUPLE_PLACE"
       },
       {
         "poolId": "56157200-d9b5-4eab-aec9-7fa0e5aad44a",
@@ -197,12 +198,12 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "E_COUPLE_PLACE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
         "combine": true,
-        "complement": true
+        "complement": true,
+        "codePari": "E_COUPLE_PLACE"
       },
       {
         "poolId": "6ecd3131-9dcd-4330-b5c9-56312d5e64cb",
@@ -213,7 +214,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "DEUX_SUR_QUATRE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
@@ -223,6 +223,7 @@
           25
         ],
         "complement": true,
+        "codePari": "DEUX_SUR_QUATRE",
         "infosJackpot": {
           "miseBase": 400,
           "tauxContribution": {
@@ -240,7 +241,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": true,
-        "codePari": "E_DEUX_SUR_QUATRE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 2,
         "ordre": false,
@@ -249,6 +249,7 @@
           50
         ],
         "complement": true,
+        "codePari": "E_DEUX_SUR_QUATRE",
         "infosJackpot": {
           "miseBase": 400,
           "tauxContribution": {
@@ -266,22 +267,22 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "MULTI",
         "spotAutorise": true,
         "nbChevauxReglementaire": 4,
         "ordre": false,
         "combine": true,
-        "valeursFlexiAutorisees": [
-          50,
-          25
-        ],
         "valeursRisqueAutorisees": [
           4,
           5,
           6,
           7
         ],
-        "complement": false
+        "valeursFlexiAutorisees": [
+          50,
+          25
+        ],
+        "complement": false,
+        "codePari": "MULTI"
       },
       {
         "poolId": "04d44c6f-7656-4a95-9614-d65c41bcdca2",
@@ -292,21 +293,21 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "E_MULTI",
         "spotAutorise": true,
         "nbChevauxReglementaire": 4,
         "ordre": false,
         "combine": true,
-        "valeursFlexiAutorisees": [
-          50
-        ],
         "valeursRisqueAutorisees": [
           4,
           5,
           6,
           7
         ],
-        "complement": false
+        "valeursFlexiAutorisees": [
+          50
+        ],
+        "complement": false,
+        "codePari": "E_MULTI"
       },
       {
         "poolId": "03cdde55-97ae-4752-b578-559288071554",
@@ -317,7 +318,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "TIERCE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 3,
         "ordre": true,
@@ -325,7 +325,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "TIERCE"
       },
       {
         "poolId": "1d1d4b74-652e-43b6-b7c6-62ac213652a7",
@@ -336,7 +337,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "E_TIERCE",
         "spotAutorise": true,
         "nbChevauxReglementaire": 3,
         "ordre": true,
@@ -344,7 +344,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "E_TIERCE"
       },
       {
         "poolId": "b7279feb-1c6e-47b4-bc07-b8eb53b5e9b5",
@@ -355,7 +356,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "QUARTE_PLUS",
         "spotAutorise": true,
         "nbChevauxReglementaire": 4,
         "ordre": true,
@@ -363,7 +363,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "QUARTE_PLUS"
       },
       {
         "poolId": "374c907a-b7bb-469c-b0b8-e3581b999e27",
@@ -374,7 +375,6 @@
         "audience": "NATIONAL",
         "cagnotte": 0,
         "reportable": false,
-        "codePari": "E_QUARTE_PLUS",
         "spotAutorise": true,
         "nbChevauxReglementaire": 4,
         "ordre": true,
@@ -382,7 +382,8 @@
         "valeursFlexiAutorisees": [
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "E_QUARTE_PLUS"
       },
       {
         "poolId": "f39f5f4d-4180-4715-9536-f7a8d3b532e0",
@@ -418,7 +419,6 @@
             }
           ]
         },
-        "codePari": "QUINTE_PLUS",
         "spotAutorise": true,
         "nbChevauxReglementaire": 5,
         "ordre": true,
@@ -427,7 +427,8 @@
           50,
           25
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "QUINTE_PLUS"
       },
       {
         "poolId": "885d7fb2-7fb5-44e5-94cb-615a30a50b4b",
@@ -464,7 +465,6 @@
             }
           ]
         },
-        "codePari": "E_QUINTE_PLUS",
         "spotAutorise": true,
         "nbChevauxReglementaire": 5,
         "ordre": true,
@@ -473,7 +473,8 @@
           25,
           50
         ],
-        "complement": true
+        "complement": true,
+        "codePari": "E_QUINTE_PLUS"
       },
       {
         "poolId": "93d07e26-b3d9-4fdd-9c1b-acb41a7d39e4",
@@ -483,12 +484,12 @@
         "enVente": true,
         "audience": "NATIONAL",
         "reportable": false,
-        "codePari": "REPORT_PLUS",
         "spotAutorise": false,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": false,
-        "complement": false
+        "complement": false,
+        "codePari": "REPORT_PLUS"
       },
       {
         "poolId": "556b2ac4-7ec5-4d85-b44a-79d1136cecc5",
@@ -498,18 +499,36 @@
         "enVente": true,
         "audience": "NATIONAL",
         "reportable": false,
-        "codePari": "E_REPORT_PLUS",
         "spotAutorise": false,
         "nbChevauxReglementaire": 1,
         "ordre": false,
         "combine": false,
-        "complement": false
+        "complement": false,
+        "codePari": "E_REPORT_PLUS"
       }
     ],
-    "statut": "DEPART_CONFIRME",
-    "categorieStatut": "EN_COURS",
+    "statut": "ARRIVEE_DEFINITIVE",
+    "categorieStatut": "ARRIVEE",
+    "dureeCourse": 197350,
     "participants": [],
     "ecuries": [],
+    "photosArrivee": [],
+    "incidents": [
+      {
+        "type": "ARRETE",
+        "numeroParticipants": [
+          15
+        ]
+      },
+      {
+        "type": "DISQUALIFIE_POUR_ALLURE_IRREGULIERE",
+        "numeroParticipants": [
+          6,
+          11
+        ]
+      }
+    ],
+    "isArriveeDefinitive": true,
     "isDepartImminent": false,
     "isDepartAJPlusUn": false,
     "cagnottes": [],
@@ -524,7 +543,24 @@
     "courseTrackee": false,
     "courseExclusiveInternet": false,
     "formuleChampLibreIndisponible": false,
-    "hasEParis": true
+    "hasEParis": true,
+    "ordreArrivee": [
+      [
+        7
+      ],
+      [
+        10
+      ],
+      [
+        5
+      ],
+      [
+        12
+      ],
+      [
+        4
+      ]
+    ]
   },
   "participants": {
     "participants": [
@@ -757,11 +793,14 @@
         },
         "nomPere": "VALKO JENILAT",
         "nomMere": "DELPHYSIA",
+        "ordreArrivee": 5,
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
         "handicapDistance": 2700,
         "poidsConditionMonteChange": false,
+        "tempsObtenu": 199200,
+        "reductionKilometrique": 73800,
         "dernierRapportDirect": {
           "typePari": "SIMPLE_GAGNANT",
           "rapport": 16.0,
@@ -822,11 +861,14 @@
         },
         "nomPere": "HOOKER BERRY",
         "nomMere": "UKRAINSKA DARBY",
+        "ordreArrivee": 3,
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
         "handicapDistance": 2700,
         "poidsConditionMonteChange": false,
+        "tempsObtenu": 198650,
+        "reductionKilometrique": 73600,
         "dernierRapportDirect": {
           "typePari": "SIMPLE_GAGNANT",
           "rapport": 41.0,
@@ -887,6 +929,7 @@
         },
         "nomPere": "ETONNANT",
         "nomMere": "BASTIDE VRIE",
+        "incident": "DISQUALIFIE_POUR_ALLURE_IRREGULIERE",
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
@@ -952,11 +995,14 @@
         },
         "nomPere": "VILLAGE MYSTIC",
         "nomMere": "DAELIA DE VANDEL",
+        "ordreArrivee": 1,
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
         "handicapDistance": 2700,
         "poidsConditionMonteChange": false,
+        "tempsObtenu": 197350,
+        "reductionKilometrique": 73100,
         "dernierRapportDirect": {
           "typePari": "SIMPLE_GAGNANT",
           "rapport": 3.3,
@@ -1147,11 +1193,14 @@
         },
         "nomPere": "DJANGO RIFF",
         "nomMere": "DOLGA DU VIVIER",
+        "ordreArrivee": 2,
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
         "handicapDistance": 2700,
         "poidsConditionMonteChange": false,
+        "tempsObtenu": 197430,
+        "reductionKilometrique": 73100,
         "dernierRapportDirect": {
           "typePari": "SIMPLE_GAGNANT",
           "rapport": 5.3,
@@ -1278,11 +1327,14 @@
         },
         "nomPere": "UP AND QUICK",
         "nomMere": "DIVINE DU KLAU",
+        "ordreArrivee": 4,
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
         "handicapDistance": 2700,
         "poidsConditionMonteChange": false,
+        "tempsObtenu": 199160,
+        "reductionKilometrique": 73800,
         "dernierRapportDirect": {
           "typePari": "SIMPLE_GAGNANT",
           "rapport": 8.6,
@@ -1473,6 +1525,7 @@
         },
         "nomPere": "BOLERO LOVE",
         "nomMere": "TOPAZE JEF",
+        "incident": "ARRETE",
         "jumentPleine": false,
         "engagement": false,
         "supplement": 0,
