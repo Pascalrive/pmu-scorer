@@ -74,7 +74,7 @@ TELEGRAM_CHAT  = os.environ.get("TELEGRAM_CHAT_ID", "")
 OUTPUT_DIR     = "resultats"
 
 PAYS_AUTORISES    = {"FRA", "FRANCE"}
-DISCIPLINES_GALOP = {"PLAT", "HAIES", "STEEPLE", "GALOP"}
+DISCIPLINES_GALOP = {"PLAT", "HAIE", "HAIES", "STEEPLE", "STEEPLECHASE", "STEEPLE_CHASE", "GALOP"}
 DISCIPLINES_TROT  = {"TROT_ATTELE", "TROT_MONTE", "ATTELE", "MONTE"}
 DISCIPLINES       = DISCIPLINES_GALOP | DISCIPLINES_TROT
 
@@ -668,7 +668,7 @@ def score_corde(place_corde, nb_partants, discipline, distance) -> float:
         facteur = 0.85
     elif disc in ("PLAT", "GALOP"):
         facteur = 0.4
-    elif disc in ("HAIES", "STEEPLE"):
+    elif disc in ("HAIE", "HAIES", "STEEPLE", "STEEPLECHASE", "STEEPLE_CHASE"):
         facteur = 0.2
     else:
         facteur = 0.5
