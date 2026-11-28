@@ -290,12 +290,15 @@ def process_course(ledger, day, r, course, folder, save, send, deadline):
             state['status'] = 'EN_ATTENTE_FENETRE_H60'
         elif remaining <= 120:
             state['status'] = 'Fenêtre pré-départ fermée ; aucune mise reconstituée'
+            if state.get('last_collection_error'):
+                state['status'] += ' · Dernier contrôle : ' + state['last_collection_error']
         elif not any(p.get('typePari') == 'E_TIERCE' and p.get('miseBase') == 100 and p.get('enVente') is True for p in course.get('paris', [])):
             state['status'] = 'Tiercé Internet fermé ou disponibilité non confirmée'
         elif time.monotonic() >= deadline:
             state['status'] = 'REPORT_CONTROLE_PROCHAIN_PASSAGE : durée de session limitée'
         else:
             snapshot, plans = collect_plans(day, r, course, folder / ident / 'derniere_collecte.json')
+            state.pop('last_collection_error', None)
             new_records = []
             for selection in plans:
                 state['reasons'][selection['id']] = selection['reason']
@@ -317,6 +320,8 @@ def process_course(ledger, day, r, course, folder, save, send, deadline):
             state['status'] = 'CONTROLE_EFFECTUE'
     except Exception as error:
         state['status'] = ('Données indisponibles : ' + str(error)) if isinstance(error, ValueError) else ('Erreur de collecte : ' + type(error).__name__)
+        state['last_collection_error'] = state['status']
+        state['last_collection_error_at'] = clock().isoformat()
 
 
 def message_parts(text, limit=3500):
